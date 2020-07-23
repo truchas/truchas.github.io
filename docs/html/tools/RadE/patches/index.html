@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enclosure Patches &#8212; Truchas 1.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Vertex Anchor Cluster Paving (PAVE)" href="pave.html" />
+    <link rel="prev" title="Radiation Enclosure Tools" href="../index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../../../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../../../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../../../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html">
+          Truchas</a>
+        <span class="navbar-text navbar-version pull-left"><b>1.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Radiation Enclosure Tools</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Enclosure Patches</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pave.html">Vertex Anchor Cluster Paving (PAVE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vac.html">Vertex Anchor Cluster (VAC)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vsa.html">Variational Shape Approximation (VSA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="patches_namelist.html">PATCHES Namelist</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../style_guide.html">Sphinx Documentation Style Guide</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="../index.html" title="Previous Chapter: Radiation Enclosure Tools"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Radiation Enc...</span>
+    </a>
+  </li>
+  <li>
+    <a href="pave.html" title="Next Chapter: Vertex Anchor Cluster Paving (PAVE)"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Vertex Anchor... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../../../_sources/tools/RadE/patches/index.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><!--
+Based on globaltoc.html from the Guzzle Sphinx theme: https://github.com/guzzle/guzzle_sphinx_theme
+-->
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h3>Site Contents</h3>
+    <div class="sidebar-toc">
+      
+      
+        <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Radiation Enclosure Tools</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Enclosure Patches</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="pave.html">Vertex Anchor Cluster Paving (PAVE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vac.html">Vertex Anchor Cluster (VAC)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vsa.html">Variational Shape Approximation (VSA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="patches_namelist.html">PATCHES Namelist</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../style_guide.html">Sphinx Documentation Style Guide</a></li>
+</ul>
+
+      
+    </div>
+  </div>
+</div><!--
+Based on localtoc.html from the Guzzle Sphinx theme: https://github.com/guzzle/guzzle_sphinx_theme
+-->
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h3>Page Contents</h3>
+    <div class="sidebar-localtoc">
+      <ul>
+<li><a class="reference internal" href="#">Enclosure Patches</a><ul>
+<li><a class="reference internal" href="#patch-algorithms">Patch Algorithms</a></li>
+<li><a class="reference internal" href="#patches-namelist">PATCHES Namelist</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="section" id="enclosure-patches">
+<h1>Enclosure Patches<a class="headerlink" href="#enclosure-patches" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>finish RadE patches page</p>
+</div>
+<div class="section" id="patch-algorithms">
+<h2>Patch Algorithms<a class="headerlink" href="#patch-algorithms" title="Permalink to this headline">¶</a></h2>
+<p><strong class="program">genre</strong> includes three patching algorithms.</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pave.html">Vertex Anchor Cluster Paving (PAVE)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vac.html">Vertex Anchor Cluster (VAC)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vsa.html">Variational Shape Approximation (VSA)</a></li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <a class="reference internal" href="vac.html"><span class="doc">VAC</span></a> and <a class="reference internal" href="vsa.html"><span class="doc">VSA</span></a> algorithms are experimental and not recommended for
+regular users. For best results, use the <a class="reference internal" href="pave.html"><span class="doc">PAVE</span></a> algorithm.</p>
+</div>
+<table class="fig-table docutils align-center">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../../../_images/basic_hemi_pave_1.png"><img alt="pave_patches" class="align-middle" src="../../../_images/basic_hemi_pave_1.png" style="width: 100%;" /></a></p></td>
+<td><p><a class="reference internal" href="../../../_images/basic_hemi_vac_1.png"><img alt="vac_patches" class="align-middle" src="../../../_images/basic_hemi_vac_1.png" style="width: 100%;" /></a></p></td>
+<td><p><a class="reference internal" href="../../../_images/basic_hemi_vsa_1.png"><img alt="vsa_patches" class="align-middle" src="../../../_images/basic_hemi_vsa_1.png" style="width: 100%;" /></a></p></td>
+</tr>
+<tr class="row-even"><td colspan="3"><p>Result of running <strong>PAVE</strong> (left), <strong>VAC</strong>
+(center),and <strong>VSA</strong> (right) on the ‘basic hemi’
+enclosure.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="patches-namelist">
+<h2>PATCHES Namelist<a class="headerlink" href="#patches-namelist" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+</div>
+<p>The <cite>PATCHES</cite> namelist defines the parameters used by the patching algorithms. The namelist supports
+many parameters, but not all parameters are used by all algorithms. Parameters only used by a
+particular algorithm are prefixed with the algorithm’s name.</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&amp;PATCHES</span>
+<span class="go">  patch_algorithm = &#39;PAVE&#39;</span>
+<span class="go">  verbosity_level = 3</span>
+<span class="go">  max_angle = 30.0</span>
+<span class="go">  pave_split_patch_size = 4</span>
+<span class="go">/</span>
+</pre></div>
+</div>
+<p><sup>Example PATCHES namelist</sup></p>
+<p>The <cite>PATCHES</cite> namelist parameters include:</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="patches_namelist.html#patch-algorithm"><span class="std std-ref">PATCH_ALGORITHM</span></a>: Patch algorithm to execute.</p></li>
+<li><p><a class="reference internal" href="patches_namelist.html#verbosity-level"><span class="std std-ref">VERBOSITY_LEVEL</span></a>: Verbosity level of the patch algorithm.</p></li>
+<li><p><a class="reference internal" href="patches_namelist.html#max-angle"><span class="std std-ref">MAX_ANGLE</span></a>: Maximum angle between adjacent faces</p></li>
+<li><p><a class="reference internal" href="patches_namelist.html#pave-merge-level"><span class="std std-ref">PAVE_MERGE_LEVEL</span></a>: Controls the aggressiveness of patch merging</p></li>
+<li><p><a class="reference internal" href="patches_namelist.html#pave-split-patch-size"><span class="std std-ref">PAVE_SPLIT_PATCH_SIZE</span></a>: Split patches with up to this number of faces</p></li>
+<li><p><a class="reference internal" href="patches_namelist.html#pave-random-seed"><span class="std std-ref">PAVE_RANDOM_SEED</span></a>: Sets random number generator seed.</p></li>
+<li><p><a class="reference internal" href="patches_namelist.html#vac-merge-level"><span class="std std-ref">VAC_MERGE_LEVEL</span></a>: Controls the aggressiveness of patch merging</p></li>
+<li><p><a class="reference internal" href="patches_namelist.html#vac-split-patch-size"><span class="std std-ref">VAC_SPLIT_PATCH_SIZE</span></a>: Split patches with up to this number of faces</p></li>
+<li><p><a class="reference internal" href="patches_namelist.html#vsa-max-iter"><span class="std std-ref">VSA_MAX_ITER</span></a>: Maximum iterations for the VSA algorithm</p></li>
+<li><p><a class="reference internal" href="patches_namelist.html#vsa-min-delta"><span class="std std-ref">VSA_MIN_DELTA</span></a>: Minimum change in patch proxies for the VSA algorithm</p></li>
+<li><p><a class="reference internal" href="patches_namelist.html#vsa-avg-faces-per-patch"><span class="std std-ref">VSA_AVG_FACES_PER_PATCH</span></a>: Average faces per patch for the VSA algorithm</p></li>
+<li><p><a class="reference internal" href="patches_namelist.html#vsa-random-seed"><span class="std std-ref">VSA_RANDOM_SEED</span></a>: Sets random number generator seed.</p></li>
+</ol>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>For detailed information on these parameters, refer to the <a class="reference internal" href="patches_namelist.html"><span class="doc">PATCES namelist
+documentation</span></a>.</p>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019, Los Alamos National Laboratory.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.1.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

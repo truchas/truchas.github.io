@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertex Anchor Cluster (VAC) &#8212; Truchas 1.0 documentation</title>
+    <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css" />
+    <script id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Variational Shape Approximation (VSA)" href="vsa.html" />
+    <link rel="prev" title="Vertex Anchor Cluster Paving (PAVE)" href="pave.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../../../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../../../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../../../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../../../index.html">
+          Truchas</a>
+        <span class="navbar-text navbar-version pull-left"><b>1.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../../../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Radiation Enclosure Tools</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Enclosure Patches</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="pave.html">Vertex Anchor Cluster Paving (PAVE)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Vertex Anchor Cluster (VAC)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vsa.html">Variational Shape Approximation (VSA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="patches_namelist.html">PATCHES Namelist</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../style_guide.html">Sphinx Documentation Style Guide</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="pave.html" title="Previous Chapter: Vertex Anchor Cluster Paving (PAVE)"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Vertex Anchor...</span>
+    </a>
+  </li>
+  <li>
+    <a href="vsa.html" title="Next Chapter: Variational Shape Approximation (VSA)"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Variational S... &raquo;</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="../../../_sources/tools/RadE/patches/vac.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../../../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><!--
+Based on globaltoc.html from the Guzzle Sphinx theme: https://github.com/guzzle/guzzle_sphinx_theme
+-->
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h3>Site Contents</h3>
+    <div class="sidebar-toc">
+      
+      
+        <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Radiation Enclosure Tools</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">Enclosure Patches</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="pave.html">Vertex Anchor Cluster Paving (PAVE)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Vertex Anchor Cluster (VAC)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vsa.html">Variational Shape Approximation (VSA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="patches_namelist.html">PATCHES Namelist</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../style_guide.html">Sphinx Documentation Style Guide</a></li>
+</ul>
+
+      
+    </div>
+  </div>
+</div><!--
+Based on localtoc.html from the Guzzle Sphinx theme: https://github.com/guzzle/guzzle_sphinx_theme
+-->
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h3>Page Contents</h3>
+    <div class="sidebar-localtoc">
+      <ul>
+<li><a class="reference internal" href="#">Vertex Anchor Cluster (VAC)</a><ul>
+<li><a class="reference internal" href="#algorithm">Algorithm</a><ul>
+<li><a class="reference internal" href="#outline">Outline</a></li>
+<li><a class="reference internal" href="#connected-components">Connected Components</a></li>
+<li><a class="reference internal" href="#patch-weight">Patch Weight</a><ul>
+<li><a class="reference internal" href="#normal-bias">Normal Bias</a></li>
+<li><a class="reference internal" href="#shape-bias">Shape Bias</a></li>
+<li><a class="reference internal" href="#size-bias">Size Bias</a></li>
+<li><a class="reference internal" href="#full-patch-bias">Full Patch Bias</a></li>
+<li><a class="reference internal" href="#position-bias">Position Bias</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#patch-merging">Patch Merging</a><ul>
+<li><a class="reference internal" href="#patch-splitting">Patch Splitting</a></li>
+<li><a class="reference internal" href="#merge-level-0">Merge Level 0</a></li>
+<li><a class="reference internal" href="#merge-level-1">Merge Level 1</a></li>
+<li><a class="reference internal" href="#merge-level-2">Merge Level 2</a></li>
+<li><a class="reference internal" href="#merge-level-3">Merge Level 3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#namelist-parameters">Namelist Parameters</a><ul>
+<li><a class="reference internal" href="#vac-merge-level">VAC_MERGE_LEVEL</a></li>
+<li><a class="reference internal" href="#vac-split-patch-size">VAC_SPLIT_PATCH_SIZE</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#glossary">Glossary</a></li>
+<li><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="section" id="vertex-anchor-cluster-vac">
+<h1>Vertex Anchor Cluster (VAC)<a class="headerlink" href="#vertex-anchor-cluster-vac" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The VAC algorithm is experimental and not recommended for regular users. For best results, use
+the <a class="reference internal" href="pave.html"><span class="doc">PAVE patching algorithm</span></a>.</p>
+</div>
+<div class="figure align-right" id="id3" style="width: 35%">
+<a class="reference internal image-reference" href="../../../_images/basic_hemi_vac_2.png"><img alt="../../../_images/basic_hemi_vac_2.png" src="../../../_images/basic_hemi_vac_2.png" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">Result of VAC on a quarter cyclinder.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+<p>The Vertex Anchor Cluster (VAC) patching algorithm is based on the observation that the set of all
+faces sharing a particular vertex (the faces of a vertex) tend to form patches with desirable
+properties. Such patches are connected, relatively small, and tend to be roughly circular. These
+patches have an associated ‘<a class="reference internal" href="#term-vertex-anchor"><span class="xref std std-term">vertex anchor</span></a>’, namely the vertex shared by all their faces. We
+use the term ‘<a class="reference internal" href="#term-full-patch"><span class="xref std std-term">full patch</span></a>’ to refer to patches consisting of all the faces of their vertex
+anchor. ‘<a class="reference internal" href="#term-partial-patch"><span class="xref std std-term">Partial patches</span></a>’, conversely, refers to patches whose faces are a
+strict subset of the faces of their vertex anchor. The VAC algorithm attempts to maximize the number
+of full patches generated.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#algorithm" id="id5">Algorithm</a></p>
+<ul>
+<li><p><a class="reference internal" href="#outline" id="id6">Outline</a></p></li>
+<li><p><a class="reference internal" href="#connected-components" id="id7">Connected Components</a></p></li>
+<li><p><a class="reference internal" href="#patch-weight" id="id8">Patch Weight</a></p>
+<ul>
+<li><p><a class="reference internal" href="#normal-bias" id="id9">Normal Bias</a></p></li>
+<li><p><a class="reference internal" href="#shape-bias" id="id10">Shape Bias</a></p></li>
+<li><p><a class="reference internal" href="#size-bias" id="id11">Size Bias</a></p></li>
+<li><p><a class="reference internal" href="#full-patch-bias" id="id12">Full Patch Bias</a></p></li>
+<li><p><a class="reference internal" href="#position-bias" id="id13">Position Bias</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#patch-merging" id="id14">Patch Merging</a></p>
+<ul>
+<li><p><a class="reference internal" href="#patch-splitting" id="id15">Patch Splitting</a></p></li>
+<li><p><a class="reference internal" href="#merge-level-0" id="id16">Merge Level 0</a></p></li>
+<li><p><a class="reference internal" href="#merge-level-1" id="id17">Merge Level 1</a></p></li>
+<li><p><a class="reference internal" href="#merge-level-2" id="id18">Merge Level 2</a></p></li>
+<li><p><a class="reference internal" href="#merge-level-3" id="id19">Merge Level 3</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#namelist-parameters" id="id20">Namelist Parameters</a></p>
+<ul>
+<li><p><a class="reference internal" href="#vac-merge-level" id="id21">VAC_MERGE_LEVEL</a></p></li>
+<li><p><a class="reference internal" href="#vac-split-patch-size" id="id22">VAC_SPLIT_PATCH_SIZE</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#glossary" id="id23">Glossary</a></p></li>
+<li><p><a class="reference internal" href="#references" id="id24">References</a></p></li>
+</ul>
+</div>
+<div class="section" id="algorithm">
+<h2>Algorithm<a class="headerlink" href="#algorithm" title="Permalink to this headline">¶</a></h2>
+<p>The VAC algorithm begins by iterating through each vertex and adding its corresponding <a class="reference internal" href="#term-full-patch"><span class="xref std std-term">full
+patch</span></a> to a global priority queue. The queue entries are then popped one by one until the queue is
+empty. If all the faces of a queue entry are unassigned, a new patch is created from the entry.
+Otherwise, VAC makes a new entry from the subset of faces of the original entry that are still
+unassigned, and adds that entry to the queue. Once the queue is empty, we have a valid patching of
+the enclosure. Finally, VAC merges patches where possible, in accordance with the
+<a class="reference internal" href="#vac-merge-level"><span class="std std-ref">VAC_MERGE_LEVEL</span></a> namelist parameter.</p>
+<div class="section" id="outline">
+<h3>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">¶</a></h3>
+<p>The following is a high-level outline of the VAC algorithm.</p>
+<ol class="arabic simple">
+<li><p><strong>Initialization</strong></p>
+<ol class="arabic simple">
+<li><p>Generate the <em>vface</em> array that maps a vertex to the faces of that vertex.</p></li>
+<li><p>Generate the face adjacency matrix. Faces at angles greater than
+<a class="reference internal" href="patches_namelist.html#max-angle"><span class="std std-ref">MAX_ANGLE</span></a> are not adjacent.</p></li>
+<li><p>Generate the <em>boundary</em> boolean array that records whether a vertex is on the boundary of an
+enclosure component.</p></li>
+</ol>
+</li>
+<li><p><strong>Patch Assignment</strong></p>
+<ol class="arabic simple">
+<li><p>For each vertex <span class="math notranslate nohighlight">\(V_j\)</span> of the enclosure, define a patch <span class="math notranslate nohighlight">\(P_i\)</span> that consists of all the faces
+of <span class="math notranslate nohighlight">\(V_j\)</span>. Add the tuple <span class="math notranslate nohighlight">\((P_i, V_j)\)</span> to a global priority queue with weight <span class="math notranslate nohighlight">\(E(P_i, V_j)\)</span>.</p></li>
+<li><p>Call SET_PATCHES(TRUE)</p></li>
+</ol>
+</li>
+<li><p><strong>Patch Merging</strong></p>
+<ol class="arabic simple">
+<li><p>If VAC_MERGE_LEVEL &gt;= 1 then:</p>
+<ol class="arabic simple">
+<li><p>Call SPLIT_PATCHES()</p></li>
+<li><p>For each vertex <span class="math notranslate nohighlight">\(V_j\)</span>, check if the faces <span class="math notranslate nohighlight">\(V_j\)</span> fully contain two or more patches. If so,
+unassign all the faces of <span class="math notranslate nohighlight">\(V_j\)</span>, re-queue all the enclosed patches with their original
+weight, and queue a new patch <span class="math notranslate nohighlight">\(P_i\)</span> consisting of the faces of <span class="math notranslate nohighlight">\(V_j\)</span> with weight
+<span class="math notranslate nohighlight">\(E(P_k,V_j)\)</span>.</p></li>
+<li><p>Call SET_PATCHES(TRUE)</p></li>
+</ol>
+</li>
+<li><p>If VAC_MERGE_LEVEL &gt;= 2 then:</p>
+<ol class="arabic simple">
+<li><p>Call SPLIT_PATCHES()</p></li>
+<li><p>For each vertex <span class="math notranslate nohighlight">\(V_j\)</span>, find its neighboring vertices (those connected to <span class="math notranslate nohighlight">\(V_j\)</span> by an edge).
+For each neighbor <span class="math notranslate nohighlight">\(V_n\)</span> of <span class="math notranslate nohighlight">\(V_j\)</span>, let <span class="math notranslate nohighlight">\(F\)</span> be the union of the faces of <span class="math notranslate nohighlight">\(V_j\)</span> and <span class="math notranslate nohighlight">\(V_n\)</span>.
+Check if <span class="math notranslate nohighlight">\(F\)</span> fully contains two or more patches. If so, unassign all faces in <span class="math notranslate nohighlight">\(F\)</span>, re-queue
+all the enclosed patches with their original weight, and queue a new patch consisting of
+<span class="math notranslate nohighlight">\(F\)</span> whose vertex anchor is <span class="math notranslate nohighlight">\(V_j\)</span> if it is not a boundary vertex, and <span class="math notranslate nohighlight">\(V_n\)</span> otherwise.</p></li>
+<li><p>Call SET_PATCHES(FALSE)</p></li>
+</ol>
+</li>
+<li><p>If VAC_MERGE_LEVEL &gt;= 3 then:</p>
+<ol class="arabic simple">
+<li><p>Repeat step 3.2, but add a large constant to the original weight of the enclosed patches
+before queueing them.</p></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<ul class="simple">
+<li><p><strong>Subroutines</strong></p>
+<ul>
+<li><p>SET_PATCHES(re-queue)</p>
+<ol class="arabic simple">
+<li><p>While the priority queue is not empty:</p>
+<ol class="arabic simple">
+<li><p>Pop the tuple <span class="math notranslate nohighlight">\((P_i, V_j)\)</span> of least weight from the queue.</p></li>
+<li><p>If all of the faces <span class="math notranslate nohighlight">\(F_k\)</span> of <span class="math notranslate nohighlight">\(P_i\)</span> are <em>unassigned</em>, then assign all the faces to a new patch.</p></li>
+<li><p>Otherwise:</p>
+<ol class="arabic simple">
+<li><p>If re-queue is TRUE, then for each connected subset of faces <span class="math notranslate nohighlight">\(P_k \subset P_i\)</span> that are
+<em>unassigned</em>, create a new tuple <span class="math notranslate nohighlight">\((P_k, V_j)\)</span> and add it to the queue with weight
+<span class="math notranslate nohighlight">\(E(P_k, V_j)\)</span>.</p></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>SPLIT_PATCHES()</p>
+<ol class="arabic simple">
+<li><p>For each patch <span class="math notranslate nohighlight">\(P_i\)</span> with less than VAC_SPLIT_PATCH_SIZE faces, unassign all the faces of
+<span class="math notranslate nohighlight">\(P_i\)</span>, queue these faces as 1-face patches, and re-queue <span class="math notranslate nohighlight">\(P_i\)</span> with its original weight.</p></li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="connected-components">
+<h3>Connected Components<a class="headerlink" href="#connected-components" title="Permalink to this headline">¶</a></h3>
+<p>During initialization, the VAC algorithm constructs the face adjacency graph of the enclosure. This
+graph defines the connected components of the enclosure, and is used to quickly determine connected
+subsets of queue entry faces.</p>
+<p>The face adjacency graph is defined by the topology of the mesh and the <a class="reference internal" href="patches_namelist.html#max-angle"><span class="std std-ref">MAX_ANGLE</span></a> namelist parameter which controls the maximum
+allowable angle between the (normals of) adjacent faces. Specifically, two topologically adjacent
+faces at a angle greater than MAX_ANGLE will not share an edge in the adjacency graph. The
+<em>connected components</em> of the face adjacency graph thus represent collections of faces that are
+bounded by ‘sharp’ edges (angles greater than MAX_ANGLE) or the mesh boundary itself.</p>
+<p>The face adjacency graph defines a set of <a class="reference internal" href="#term-boundary-vertex"><span class="xref std std-term">boundary vertices</span></a>, namely the
+vertices incident on edges along the boundary of a component. These boundary vertices play a role in
+both computing the <a class="reference internal" href="#position-bias"><span class="std std-ref">weight of queue entries</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Throughout this document we use the terms ‘enclosure components’ or simply ‘components’ as a
+short-hand for refering to the connected components of the face adjacency graph.</p>
+</div>
+</div>
+<div class="section" id="patch-weight">
+<h3>Patch Weight<a class="headerlink" href="#patch-weight" title="Permalink to this headline">¶</a></h3>
+<p>Each entry of the global priority queue has an associated weight which determines their order in
+the queue. The VAC queue prioritizes entries with a lower weight, so the lowest weight patches are
+assigned first.</p>
+<p>Let the tuple <span class="math notranslate nohighlight">\((P_i, V_j)\)</span> denote the patch <span class="math notranslate nohighlight">\(P_i\)</span> with vertex anchor <span class="math notranslate nohighlight">\(V_j\)</span>. The weight <span class="math notranslate nohighlight">\(E\)</span> of a
+patch <span class="math notranslate nohighlight">\((P_i, V_j)\)</span> is given by the error metric:</p>
+<div class="math notranslate nohighlight">
+\[E(P_i, V_j) = E_{normal}(P_i) + E_{shape}(P_i) + E_{size}(P_i) + E_{full}(P_i, V_j) + E_{pos}(V_j)\]</div>
+<p>The terms of <span class="math notranslate nohighlight">\(E(P_i,V_j)\)</span> are discussed in detail below.</p>
+<div class="section" id="normal-bias">
+<h4>Normal Bias<a class="headerlink" href="#normal-bias" title="Permalink to this headline">¶</a></h4>
+<p>We want patches to be roughly planar so that all their faces have similar views of the rest of the
+enclosure. This ensures that the patch view factor is a reasonable approximation of the view factors
+of its faces.</p>
+<p>We use the <span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric defined by Cohen-Steiner et al. <a class="bibtex reference internal" href="#vac-cohen-steiner-2004-vsa" id="id1">[1]</a> to
+measure the planarity of a patch. The <span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric is based on an <span class="math notranslate nohighlight">\(\mathcal{L}^2\)</span> measure of the normal field
+over the patch. Given a patch <span class="math notranslate nohighlight">\(P_i\)</span> with normal <span class="math notranslate nohighlight">\(\vec{n}_i\)</span> we define</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}^{2,1}(P_i) = \iint\limits_{x \in P_i} \lVert \vec{n}(x)  - \vec{n}_i \rVert^2 \,dx\]</div>
+<p>where <span class="math notranslate nohighlight">\(\vec{n}_i(x)\)</span> is the normal at the point <span class="math notranslate nohighlight">\(x \in P_i\)</span>.</p>
+<p>Given that <span class="math notranslate nohighlight">\(P_i\)</span> is a set of faces, we discretize the <span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric of <span class="math notranslate nohighlight">\(P_i\)</span> as</p>
+<div class="math notranslate nohighlight">
+\[\mathcal{L}^{2,1}(P_i) = \frac{\sum_{F_k \in P_i} \lVert \vec{n}_k - \vec{n}_i \rVert^2}{\lvert P_i \rvert}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\vec{n}_k\)</span> is the normal of face <span class="math notranslate nohighlight">\(F_k \in P_i\)</span> and <span class="math notranslate nohighlight">\(\vec{n}_i\)</span> is the normalized area-weighted
+average of the face normals. In other words, <span class="math notranslate nohighlight">\(\vec{n}_i\)</span> is the normalized vector</p>
+<div class="math notranslate nohighlight">
+\[\vec{n}_i = \sum_{F_k \in P_i} \vec{n}_k \cdot w_k\]</div>
+<p>where <span class="math notranslate nohighlight">\(w_k\)</span> is the area of face <span class="math notranslate nohighlight">\(F_k \in P_i\)</span>.</p>
+<p>Notice that in our discretization of the <span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric we omit multiplication by the face areas, so
+its not a true approximation of the integral. We do this to give equal weighting to all faces in a
+patch. Without this correction, small (in area) faces could be at large angles to the other faces
+in the patch, but the patch might still have a low <span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric. Moreover, we normalize by the
+number of faces <span class="math notranslate nohighlight">\(\lvert P_i \rvert\)</span> to give all patches a similar weight. Without this
+normalization, patches with more faces tend to have a greater weight than smaller patches,
+regardless of their planarity.</p>
+<p>We define the <em>normal bias</em> of patch <span class="math notranslate nohighlight">\(P_i\)</span> as its discretized <span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric:</p>
+<div class="math notranslate nohighlight">
+\[E_{normal}(P_i) =
+\mathcal{L}^{2,1}(P_i) = \frac{\sum_{F_k \in P_i} \lVert \vec{n}_k - \vec{n}_i \rVert^2}{\lvert P_i \rvert}\]</div>
+<p>Since the largest deviation between the patch normal <span class="math notranslate nohighlight">\(\vec{n}_i\)</span> and a face normal <span class="math notranslate nohighlight">\(\vec{n}_k\)</span> is
+when these vectors are
+<a class="reference external" href="https://en.wikipedia.org/wiki/Antiparallel_(mathematics)#Antiparallel_vectors">antiparallel</a>
+it follows that <span class="math notranslate nohighlight">\(0 \le E_{normal}(P_i) \le 4\)</span> for any patch <span class="math notranslate nohighlight">\(P_i\)</span>.</p>
+</div>
+<div class="section" id="shape-bias">
+<h4>Shape Bias<a class="headerlink" href="#shape-bias" title="Permalink to this headline">¶</a></h4>
+<p>We want to prioritize patches that are as circular as possible to ensure that all their faces have
+similar views of the rest of the enclosure. In particular, long skinny patches are more likely to
+have shadow discontinuities fall across them.</p>
+<p>We use the <em>irregularity metric</em> defined by Garland et al. <a class="bibtex reference internal" href="#vac-garland-2001-hfc" id="id2">[2]</a> to measure
+the compactness of a patch. Given a patch <span class="math notranslate nohighlight">\(P_i\)</span> with area <span class="math notranslate nohighlight">\(w\)</span> and perimeter <span class="math notranslate nohighlight">\(\rho\)</span>, the
+<em>irregularity</em> <span class="math notranslate nohighlight">\(\gamma\)</span> of the patch is defined as</p>
+<div class="math notranslate nohighlight">
+\[\gamma = \frac{\rho^2}{4\pi w}\]</div>
+<p>A circle has irregularity <span class="math notranslate nohighlight">\(\gamma=1\)</span> and larger values of <span class="math notranslate nohighlight">\(\gamma\)</span> correspond to more irregular
+(less compact) regions. It is possible to have patches with <span class="math notranslate nohighlight">\(\gamma &lt; 1\)</span> if the patches have large
+internal curvature (e.g. patches spanning a corner). This does not occur in practice because VAC
+avoids disconnected patches and the maximum angle between connected faces tends to be small (see the
+<a class="reference internal" href="patches_namelist.html#max-angle"><span class="std std-ref">MAX_ANGLE namelist parameter reference</span></a>).</p>
+<p>We define the <em>shape bias</em> of patch <span class="math notranslate nohighlight">\(P_i\)</span> as its irregularity:</p>
+<div class="math notranslate nohighlight">
+\[E_{shape}(P_i) = \frac{\rho^2}{4\pi w}\]</div>
+</div>
+<div class="section" id="size-bias">
+<h4>Size Bias<a class="headerlink" href="#size-bias" title="Permalink to this headline">¶</a></h4>
+<p>We want to maximize the number of patches generated, and therefore must discourage 1-face patches as
+much as possible. However, 1-face patches tend to have a low weight in the above metrics, since
+individual faces are fairly compact (low <span class="math notranslate nohighlight">\(E_{shape}\)</span>) and their <span class="math notranslate nohighlight">\(E_{normal}\)</span> bias is 0.</p>
+<p>We define a <em>size bias</em> for a patch <span class="math notranslate nohighlight">\(P_i\)</span> as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}E_{size}(P_i) =
+\begin{cases}
+   0 &amp; \text{if } \lvert P_i \rvert &gt; 1 \\
+   4 &amp; \text{if } \lvert P_i \rvert = 1
+\end{cases} \\\end{split}\]</div>
+<p>We set <span class="math notranslate nohighlight">\(E_{size}(P_i)=4\)</span> for 1-face patches because <span class="math notranslate nohighlight">\(E_{normal}(P_i) \le 4\)</span>. In effect, this means
+that VAC considers a 1-face patch to be as bad as a highly distorted patch.</p>
+</div>
+<div class="section" id="full-patch-bias">
+<h4>Full Patch Bias<a class="headerlink" href="#full-patch-bias" title="Permalink to this headline">¶</a></h4>
+<p>We want to maximize the number of <a class="reference internal" href="#term-full-patch"><span class="xref std std-term">full patches</span></a> generated, because such patches
+tend to have desirable properties. Moreover, we want to discourage <a class="reference internal" href="#term-partial-patch"><span class="xref std std-term">partial patches</span></a>, as they can have arbitrarily bad shapes and prevent full patches from being formed
+elsewhere.</p>
+<p>Thus, we define a <em>full patch bias</em> for a patch <span class="math notranslate nohighlight">\(P_i\)</span> with vertex anchor <span class="math notranslate nohighlight">\(V_j\)</span> as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}E_{full}(P_i, V_j) =
+\begin{cases}
+   0 &amp; \text{if } P_i \text{ includes all faces of } V_j \\
+   1 &amp; \text{Otherwise}
+\end{cases} \\\end{split}\]</div>
+</div>
+<div class="section" id="position-bias">
+<h4>Position Bias<a class="headerlink" href="#position-bias" title="Permalink to this headline">¶</a></h4>
+<p>Vertices on the boundary of enclosure components are poor vertex anchor candidates. The faces of
+boundary vertices can span more than one component, and connected subsets of such faces tend to form
+badly shaped patches. For example, the faces of a vertex on the boundary between two enclosure
+components will form two patches, one in each component, and these patches will likely have a
+suboptimal shape, since they are essentially <a class="reference internal" href="#term-partial-patch"><span class="xref std std-term">partial patches</span></a> relative to a
+vertex in the component interior. Moreover, the faces of a vertex on the mesh boundary form a
+<a class="reference internal" href="#term-full-patch"><span class="xref std std-term">full patch</span></a> with <span class="math notranslate nohighlight">\(E_{size} = 0\)</span>, despite their suboptimal shape.</p>
+<div class="figure align-center" id="id4" style="width: 90%">
+<img alt="../../../_images/vertex_anchor_edges.svg" src="../../../_images/vertex_anchor_edges.svg" /><p class="caption"><span class="caption-text"><strong>Top:</strong> Two enclosure components meet at a boundary. A vertex on that boundary is labeled in
+red. The faces of the red vertex form two patches, colored grey and numbered. These grey patches
+are poorly shaped. Conversely, the blue patches formed by the blue vertices in the interior of
+each component are full patches with a desirable shape.
+<strong>Bottom:</strong> The red vertex is on the mesh boundary, and its faces are colored gray. These faces
+form a poorly shaped patch, despite it being a full patch (it includes all the faces of its
+vertex anchor). Note that the grey patch is a partial patch relative to the yellow vertex. The
+blue vertices in the interior of the component form full patches with a desirable shape.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</div>
+<p>Therefore, we want to heavily bias against patches with a boundary vertex as their anchor. We define
+a <em>position bias</em> for a patch <span class="math notranslate nohighlight">\(P_i\)</span> with vertex anchor <span class="math notranslate nohighlight">\(V_j\)</span> as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}E_{pos}(V_j) =
+\begin{cases}
+   100   &amp; \text{if } V_j \text{ is a boundary vertex}\\
+   0 &amp; \text{Otherwise}
+\end{cases} \\\end{split}\]</div>
+<p>We set <span class="math notranslate nohighlight">\(E_{pos}\)</span> to such a high value for boundary vertices because, as discussed above, the faces
+of such vertices tend to form suboptimally shaped patches. So why not avoid boundary vertices
+altogether?  We need to queue boundary vertices to handle the corner case where an enclosure
+component is only one face wide. Such a component has no interior vertices! Thus, ignoring boundary
+vertices would leaves those faces without a patch assignment. Our definition of <span class="math notranslate nohighlight">\(E_{pos}\)</span> allows us
+to cleanly handle the corner case, while making sure that boundary vertices are not used unless
+absolutely necessary.</p>
+</div>
+</div>
+<div class="section" id="patch-merging">
+<h3>Patch Merging<a class="headerlink" href="#patch-merging" title="Permalink to this headline">¶</a></h3>
+<p>After the patch assignment step of the VAC algorithm, all faces are assigned to a patch. However, we
+may still reduce the patch count by <em>merging</em> patches together. Therefore, VAC implements several
+patch merging subroutines of increasing aggressiveness. To ensure the resulting merged patches are
+well-formed, the merge subroutines will only create <a class="reference internal" href="#term-full-patch"><span class="xref std std-term">full patches</span></a>.</p>
+<p>In order to increase the number of merge candidates, all the merge subroutines begin by ‘splitting’
+small patches. The effects of patch splitting are discussed briefly below.</p>
+<p>The <a class="reference internal" href="#vac-merge-level"><span class="std std-ref">VAC_MERGE_LEVEL</span></a> namelist parameter controls the
+aggressiveness of patch merging. VAC currently support four merge levels. They are described in
+detail below.</p>
+<div class="section" id="patch-splitting">
+<h4>Patch Splitting<a class="headerlink" href="#patch-splitting" title="Permalink to this headline">¶</a></h4>
+<p>All the merge subroutines begin by ‘splitting’ small patches. The idea here is to increase the
+number of merge candidates by providing more 1-face patches. The small patches aren’t technically
+split, rather they are deleted and added back to the queue with their original weight. Each patch’s
+constituent faces are also added to the queue as 1-face patches.</p>
+<p>The small patches are re-queued so that they will be reassigned if none of their faces are used.
+This makes sure that splitting does not produce unnecessary 1-face patches. If no merges occur, then
+the enclosure is left in the same patch configuration as before the split.</p>
+<p>Note that the 1-face patches will have a large weight and thus are only used to ‘fill-in the gaps’
+between the newly merged patches. The 1-face patches are needed because some of the merge
+subroutines do not re-queue connected subsets of a queue entry’s faces (see the <a class="reference internal" href="#outline"><span class="std std-ref">VAC outline</span></a> section ). The 1-face patches ensure that all faces are assigned
+to a patch at the end of the merge procedure.</p>
+<p>The <a class="reference internal" href="#vac-split-patch-size"><span class="std std-ref">VAC_SPLIT_PATCH_SIZE</span></a> namelist parameter
+determines the maximum size of patches to be split. Patches with up to VAC_SPLIT_PATCH_SIZE faces
+are split.</p>
+</div>
+<div class="section" id="merge-level-0">
+<h4>Merge Level 0<a class="headerlink" href="#merge-level-0" title="Permalink to this headline">¶</a></h4>
+<p>No merging is performed. The algorithm terminates immediately after the patch assignment stage.</p>
+</div>
+<div class="section" id="merge-level-1">
+<h4>Merge Level 1<a class="headerlink" href="#merge-level-1" title="Permalink to this headline">¶</a></h4>
+<p>Merge patches that are within the faces of a vertex.</p>
+<p>For each vertex <span class="math notranslate nohighlight">\(V_j\)</span>, let <span class="math notranslate nohighlight">\(F_j\)</span> be the faces of <span class="math notranslate nohighlight">\(V_j\)</span> and check whether <span class="math notranslate nohighlight">\(F_j\)</span> fully encloses two or
+more patches. If so, then the enclosed patches can be safely merged into a new <a class="reference internal" href="#term-full-patch"><span class="xref std std-term">full patch</span></a>
+with <span class="math notranslate nohighlight">\(V_j\)</span> as a vertex anchor. Thus, we delete the enclosed patches and add the <span class="math notranslate nohighlight">\((F_j, V_j)\)</span> to the
+queue with weight <span class="math notranslate nohighlight">\(E(F_j, V_j)\)</span>.</p>
+<p>Although unlikely, it is possible for some of the enclosed patches to have a lower weight than
+<span class="math notranslate nohighlight">\(F_j\)</span>. Thus we also add the enclosed patches back to the queue with their original weight. The merge
+will only happen if <span class="math notranslate nohighlight">\(F_j\)</span> has a lower weight than all of the enclosed patches.</p>
+</div>
+<div class="section" id="merge-level-2">
+<h4>Merge Level 2<a class="headerlink" href="#merge-level-2" title="Permalink to this headline">¶</a></h4>
+<p>Same as Merge Level 1. Additionally, merge patches that are within the faces of pairs of adjacent
+vertices.</p>
+<p>For each vertex <span class="math notranslate nohighlight">\(V_j\)</span>, find all its vertex neighbors, i.e. those vertices connected to <span class="math notranslate nohighlight">\(V_j\)</span> by an
+edge. For each neighbor <span class="math notranslate nohighlight">\(V_n\)</span> of <span class="math notranslate nohighlight">\(V_j\)</span>, let <span class="math notranslate nohighlight">\(F\)</span> be the union of the faces of <span class="math notranslate nohighlight">\(V_j\)</span> and <span class="math notranslate nohighlight">\(V_n\)</span>. Check
+whether <span class="math notranslate nohighlight">\(F\)</span> fully encloses two or more patches. If so, then the enclosed patches can be safely
+merged into a new patch. To avoid an unnecessarily high weight, we choose as vertex anchor whichever
+of <span class="math notranslate nohighlight">\(V_j\)</span> or <span class="math notranslate nohighlight">\(V_n\)</span> is not a boundary vertex. If neither is on the boundary, we chose <span class="math notranslate nohighlight">\(V_n\)</span> as anchor.
+Finally, we delete the enclosed patches and add <span class="math notranslate nohighlight">\((F, V_k)\)</span> to the queue with weight <span class="math notranslate nohighlight">\(E(F, V_k)\)</span>,
+where <span class="math notranslate nohighlight">\(V_k\)</span> is the previously determined vertex anchor.</p>
+<p>Note that the patch <span class="math notranslate nohighlight">\(F\)</span> is different from all other patches discussed so far in that <span class="math notranslate nohighlight">\(F\)</span> consists of
+the faces of two vertices. Such patches have similar properties to <a class="reference internal" href="#term-full-patch"><span class="xref std std-term">full patches</span></a>, but are larger and may not be as circular. Despite their less desirable shape, such
+patches are still admissible for the purposes of solving the radiosity problem.</p>
+<p>Since full patches are generally preferred, we also add the enclosed patches back to the queue with
+their original weight. Thus, the merge will only happen if <span class="math notranslate nohighlight">\(F\)</span> has a lower weight than all of the
+enclosed patches. Note that <span class="math notranslate nohighlight">\(F\)</span> will tend to have a low weight, since <span class="math notranslate nohighlight">\(E_{size}(F) = 0\)</span> and
+<span class="math notranslate nohighlight">\(E_{full}(F,V_k)=0\)</span> regardless of the choice of vertex anchor <span class="math notranslate nohighlight">\(V_k\)</span>. Therefore <span class="math notranslate nohighlight">\(F\)</span> will not tend to
+replace full patches that are fairly planar and compact, but will tend to replace incomplete patches
+patches and irregular full patches.</p>
+</div>
+<div class="section" id="merge-level-3">
+<h4>Merge Level 3<a class="headerlink" href="#merge-level-3" title="Permalink to this headline">¶</a></h4>
+<p>Same as Merge Level 2. Additionally, merge patches that are within the faces of pairs of adjacent
+vertices, but add a large constant to the weight of the enclosed patches.</p>
+<p>We repeat the same procedure as for Merge Level 2, but in this case we add a large constant <span class="math notranslate nohighlight">\(c=100\)</span>
+to the original weight of the enclosed patches before adding them back to the queue. The idea here
+is that we want to always replace the enclosed patches with the merge candidate <span class="math notranslate nohighlight">\(F\)</span>.</p>
+<p>So why add the enclosed patches to the queue in the first place? It’s possible for two merge
+candidates to have some faces in common. When one of the candidates is assigned, its faces are no
+longer available for the second candidate. If we did not re-queue the enclosed patches of the second
+candidate, then some of its faces would remain unassigned.</p>
+<p>Note that Merge Level 3 implies Merge Level 2. Thus the ‘faces of vertex neighbors’ merge is
+executed twice, once with and once without the added constant to the enclosed patch weight. We do
+this so that the merge candidates with a lower weight than their enclosed patches are assigned
+before all other candidates.</p>
+</div>
+</div>
+</div>
+<div class="section" id="namelist-parameters">
+<h2>Namelist Parameters<a class="headerlink" href="#namelist-parameters" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="patches_namelist.html"><span class="doc">PATCHES namelist</span></a> allows a user to configure the VAC algorithm
+parameters. Although the PATCHES namelist supports nine parameters, only four are used by VAC, and
+only two of those are unique to VAC.</p>
+<p>The general parameters used by VAC are VERBOSITY_LEVEL and MAX_ANGLE. Refer to the <a class="reference internal" href="patches_namelist.html#general-parameters"><span class="std std-ref">PATCHES
+namelist documentation</span></a> for more
+information on those parameters.</p>
+<p>The two parameters unique to VAC are aptly named VAC_MERGE_LEVEL and VAC_SPLIT_PATCH_SIZE. These
+have already been discussed, so we’ll only touch on them briefly here and link to the previous
+discussion.</p>
+<div class="section" id="vac-merge-level">
+<h3>VAC_MERGE_LEVEL<a class="headerlink" href="#vac-merge-level" title="Permalink to this headline">¶</a></h3>
+<p>Controls the aggressiveness of patch merging.</p>
+<blockquote class="nml-param">
+<div><p><strong>Type:</strong> <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code></p>
+<p><strong>Domain:</strong> vac_merge_level &gt;= 0</p>
+<p><strong>Default:</strong> vac_merge_level = 3</p>
+</div></blockquote>
+<p>After the patch assignment stage, all faces are assigned to a patch. The algorithm then attempts to
+merge patches in order to reduce the patch count.</p>
+<p>The merge levels are defined as follows:</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Value</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>vac_merge_level = 0</p></td>
+<td><p>No merging.</p></td>
+</tr>
+<tr class="row-odd"><td><p>vac_merge_level = 1</p></td>
+<td><p>Merge patches that are within the faces of a vertex.</p></td>
+</tr>
+<tr class="row-even"><td><p>vac_merge_level = 2</p></td>
+<td><p>Same as 1. Additionally, merge patches that are within the faces of pairs
+of adjacent vertices. The old patches are requeued with their original
+weight so that a merge is only performed if the merge candidate has a
+lower weight than any of its consituent patches.</p></td>
+</tr>
+<tr class="row-odd"><td><p>vac_merge_level &gt;= 3</p></td>
+<td><p>Same as 2. Additionally, merge patches within the faces of pairs of
+adjacent vertices, but add a large weight to the requeued old patches.
+This ensures that the merge is always performed.</p></td>
+</tr>
+</tbody>
+</table>
+<p>For a more details on each merge level, refer to the section on <a class="reference internal" href="#patch-merging"><span class="std std-ref">patch merging</span></a>.</p>
+</div>
+<div class="section" id="vac-split-patch-size">
+<h3>VAC_SPLIT_PATCH_SIZE<a class="headerlink" href="#vac-split-patch-size" title="Permalink to this headline">¶</a></h3>
+<p>Defines the maximum size of patches to be split during patch merging.</p>
+<blockquote class="nml-param">
+<div><p><strong>Type:</strong> <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code></p>
+<p><strong>Domain:</strong> vac_split_patch_size &gt; 1</p>
+<p><strong>Default:</strong> vac_split_patch_size = 3</p>
+</div></blockquote>
+<p>Before merging patches, all <a class="reference internal" href="#patch-merging"><span class="std std-ref">merge subroutines</span></a> find
+patches with less than <code class="docutils literal notranslate"><span class="pre">vac_split_patch_size</span></code> faces and ‘split’ them into 1-face patches. The
+original patches aren’t actually modified, rather they are re-queued along with their constituent
+faces. This allows the algorithm to find more merge candidates and then ‘fill in the gaps’ with the
+1-face patches.</p>
+<p>The 1-face patches have a large weight, so they will only be used after all other patches are
+assigned. Therefore, the enclosure will tend retain the same patches as before the split, unless
+this is not possible due to a merge.</p>
+<p>For a more details on this parameter, refer to the section on <a class="reference internal" href="#patch-splitting"><span class="std std-ref">patch splitting</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For best results, set <code class="docutils literal notranslate"><span class="pre">vac_split_patch_size</span></code> to 3 for quadrilateral meshes and to 5 for
+triangular meshes. This avoids splitting too many patches.</p>
+</div>
+</div>
+</div>
+<div class="section" id="glossary">
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h2>
+<dl class="glossary simple">
+<dt id="term-boundary-vertex">boundary vertex</dt><dd><p>A vertex incident on an edge located along the boundary of a connected component of the face
+adjacency graph. Such an edge is either on the mesh boundary, or between two faces at an angle
+greater than <a class="reference internal" href="patches_namelist.html#max-angle"><span class="std std-ref">MAX_ANGLE</span></a>.</p>
+</dd>
+<dt id="term-faces-of-a-vertex">faces of a vertex</dt><dd><p>The set of all faces that have a particular vertex of the enclosure mesh as one of their
+vertices.</p>
+</dd>
+<dt id="term-full-patch">full patch</dt><dd><p>A patch consisting of all the faces of its vertex anchor. Such patches tend to have desirable
+properties such as connectedness, a small (topological) size, and a roughly circular shape.
+VAC attempts to maximize the number of full patches generated.</p>
+</dd>
+<dt id="term-partial-patch">partial patch</dt><dd><p>A patch whose faces are a strict subset of the faces of its vertex anchor.</p>
+</dd>
+<dt id="term-vertex-anchor">vertex anchor</dt><dd><p>A special vertex that defines a patch. A patch with a given vertex anchor consists of a subset
+of the faces of that vertex.</p>
+</dd>
+</dl>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p id="bibtex-bibliography-tools/RadE/patches/vac-0"><dl class="citation">
+<dt class="bibtex label" id="vac-cohen-steiner-2004-vsa"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>David Cohen-Steiner, Pierre Alliez, and Mathieu Desbrun. Variational Shape Approximation. In <em>ACM SIGGRAPH 2004 Papers</em>, SIGGRAPH ‘04, 905–914. New York, NY, USA, 2004. ACM. <a class="reference external" href="https://doi.org/10.1145/1186562.1015817">doi:10.1145/1186562.1015817</a>.</p>
+</dd>
+<dt class="bibtex label" id="vac-garland-2001-hfc"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Michael Garland, Andrew Willmott, and Paul S. Heckbert. Hierarchical Face Clustering on Polygonal Surfaces. In <em>Proceedings of the 2001 Symposium on Interactive 3D Graphics</em>, I3D ‘01, 49–58. New York, NY, USA, 2001. ACM. <a class="reference external" href="https://doi.org/10.1145/364338.364345">doi:10.1145/364338.364345</a>.</p>
+</dd>
+</dl>
+</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019, Los Alamos National Laboratory.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.1.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

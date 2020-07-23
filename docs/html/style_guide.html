@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sphinx Documentation Style Guide &#8212; Truchas 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/sphinxdoc.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="PATCHES Namelist" href="tools/RadE/patches/patches_namelist.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">
+          Truchas</a>
+        <span class="navbar-text navbar-version pull-left"><b>1.0</b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tools/RadE/index.html">Radiation Enclosure Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools/RadE/patches/index.html">Enclosure Patches</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tools/RadE/patches/pave.html">Vertex Anchor Cluster Paving (PAVE)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tools/RadE/patches/vac.html">Vertex Anchor Cluster (VAC)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tools/RadE/patches/vsa.html">Variational Shape Approximation (VSA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tools/RadE/patches/patches_namelist.html">PATCHES Namelist</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sphinx Documentation Style Guide</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li>
+    <a href="tools/RadE/patches/patches_namelist.html" title="Previous Chapter: PATCHES Namelist"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; PATCHES Namelist</span>
+    </a>
+  </li>
+              
+            
+            
+            
+            
+              <li class="hidden-sm">
+<div id="sourcelink">
+  <a href="_sources/style_guide.rst.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><!--
+Based on globaltoc.html from the Guzzle Sphinx theme: https://github.com/guzzle/guzzle_sphinx_theme
+-->
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h3>Site Contents</h3>
+    <div class="sidebar-toc">
+      
+      
+        <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="tools/RadE/index.html">Radiation Enclosure Tools</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Sphinx Documentation Style Guide</a></li>
+</ul>
+
+      
+    </div>
+  </div>
+</div><!--
+Based on localtoc.html from the Guzzle Sphinx theme: https://github.com/guzzle/guzzle_sphinx_theme
+-->
+<div class="sidebar-block">
+  <div class="sidebar-wrapper">
+    <h3>Page Contents</h3>
+    <div class="sidebar-localtoc">
+      <ul>
+<li><a class="reference internal" href="#">Sphinx Documentation Style Guide</a><ul>
+<li><a class="reference internal" href="#authors">Authors</a></li>
+<li><a class="reference internal" href="#headings">Headings</a></li>
+<li><a class="reference internal" href="#figures">Figures</a><ul>
+<li><a class="reference internal" href="#single-figure">Single Figure</a></li>
+<li><a class="reference internal" href="#side-by-side-figures">Side-by-Side Figures</a><ul>
+<li><a class="reference internal" href="#individual-captions">Individual Captions</a></li>
+<li><a class="reference internal" href="#shared-captions">Shared Captions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#namelists">Namelists</a><ul>
+<li><a class="reference internal" href="#namelist-parameter-directive">Namelist Parameter Directive</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#inline-fortran-code">Inline Fortran Code</a></li>
+<li><a class="reference internal" href="#other-tips">Other Tips</a><ul>
+<li><a class="reference internal" href="#math-default-role">Math default role</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+</div>
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="section" id="sphinx-documentation-style-guide">
+<h1>Sphinx Documentation Style Guide<a class="headerlink" href="#sphinx-documentation-style-guide" title="Permalink to this headline">¶</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This is a work in progress.</p>
+</div>
+<p>This style guide provides best-practices for writing the Truchas Sphinx documentation. We encourage
+documentation authors to follow this guide to ensure the quality and consistency of all Truchas
+documentation.</p>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#authors" id="id4">Authors</a></p></li>
+<li><p><a class="reference internal" href="#headings" id="id5">Headings</a></p></li>
+<li><p><a class="reference internal" href="#figures" id="id6">Figures</a></p>
+<ul>
+<li><p><a class="reference internal" href="#single-figure" id="id7">Single Figure</a></p></li>
+<li><p><a class="reference internal" href="#side-by-side-figures" id="id8">Side-by-Side Figures</a></p>
+<ul>
+<li><p><a class="reference internal" href="#individual-captions" id="id9">Individual Captions</a></p></li>
+<li><p><a class="reference internal" href="#shared-captions" id="id10">Shared Captions</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#namelists" id="id11">Namelists</a></p>
+<ul>
+<li><p><a class="reference internal" href="#namelist-parameter-directive" id="id12">Namelist Parameter Directive</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#inline-fortran-code" id="id13">Inline Fortran Code</a></p></li>
+<li><p><a class="reference internal" href="#other-tips" id="id14">Other Tips</a></p>
+<ul>
+<li><p><a class="reference internal" href="#math-default-role" id="id15">Math default role</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="authors">
+<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
+<p>Every RST document should include the author near the top of the document. This is done with the
+<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-sectionauthor">sectionauthor directive</a>.</p>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">sectionauthor</span><span class="p">::</span> name &lt;email&gt;
+</pre></div>
+</div>
+</div>
+<div class="section" id="headings">
+<h2>Headings<a class="headerlink" href="#headings" title="Permalink to this headline">¶</a></h2>
+<p>reStructuredText does not assign heading levels to particular characters. Instead, heading levels
+are determined by the order in which they appear. For example, the first heading style creates a top
+level heading, and any further instances of that heading style also creates top level heading.</p>
+<p>For consistency, we use the following succession of headings.</p>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="gh">Page Title</span>
+<span class="gh">==========</span>
+
+<span class="gh">Heading 1</span>
+<span class="gh">---------</span>
+
+<span class="gh">Heading 2</span>
+<span class="gh">+++++++++</span>
+
+<span class="gh">Heading 3</span>
+<span class="gh">^^^^^^^^^</span>
+
+<span class="gh">Heading 4</span>
+<span class="gh">~~~~~~~~~</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="figures">
+<h2>Figures<a class="headerlink" href="#figures" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="single-figure">
+<h3>Single Figure<a class="headerlink" href="#single-figure" title="Permalink to this headline">¶</a></h3>
+<p>When placing a single centered figure with no text wrapping around it, use a <code class="code rst RST docutils literal notranslate"><span class="pre">figwidth</span></code> of at
+most 90%. This provides a visual distinction between the text and the figure. The following code
+block produces the figure below it.</p>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">figure</span><span class="p">::</span> https://via.placeholder.com/800x600
+   <span class="nc">:figwidth:</span> 90%
+   <span class="nc">:align:</span> center
+
+   This is a caption for the figure.
+</pre></div>
+</div>
+<div class="figure align-center" id="id1" style="width: 90%">
+<img alt="https://via.placeholder.com/800x600" src="https://via.placeholder.com/800x600" />
+<p class="caption"><span class="caption-text">This is a caption for the figure.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<p>Notice how the figure has some padding to its right and left that distinguishes it from the text
+before and after it. This padding is not part of the CSS to prevent excessive white space
+around figures that have text wrapping around them.</p>
+</div>
+<div class="section" id="side-by-side-figures">
+<h3>Side-by-Side Figures<a class="headerlink" href="#side-by-side-figures" title="Permalink to this headline">¶</a></h3>
+<p>Placing figures side-by-side in reStructuredText can be tricky. The best method we’ve found so far
+is to put the figures in a table. We use the <code class="code rst RST docutils literal notranslate"><span class="pre">list-table</span></code> directive when each figure has its
+own caption, and the generic <code class="code rst RST docutils literal notranslate"><span class="pre">table</span></code> directive when a caption is shared between figures.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>All figure tables <strong>must</strong> be of the <code class="code rst RST docutils literal notranslate"><span class="pre">fig-table</span></code> class. This makes sure that all figure
+tables are styled consistently, and that styling changes apply across the entire documentation.</p>
+</div>
+<div class="section" id="individual-captions">
+<h4>Individual Captions<a class="headerlink" href="#individual-captions" title="Permalink to this headline">¶</a></h4>
+<p>The <code class="code rst RST docutils literal notranslate"><span class="pre">list-table</span></code> directive is useful when each figure has its own caption. For example, the
+following code produces the figures below it.</p>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">list-table</span><span class="p">::</span>
+   <span class="nc">:align:</span> center
+   <span class="nc">:class:</span> fig-table
+
+   <span class="m">*</span> - .. figure:: https://via.placeholder.com/400x300
+          <span class="nc">:width:</span> 100%
+          <span class="nc">:align:</span> center
+
+          This is the caption.
+
+     <span class="m">-</span> .. figure:: https://via.placeholder.com/400x300
+          <span class="nc">:figwidth:</span> 100%
+          <span class="nc">:align:</span> center
+
+          This is the caption.
+</pre></div>
+</div>
+<table class="fig-table docutils align-center">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><div class="figure align-center" id="id2">
+<a class="reference internal image-reference" href="https://via.placeholder.com/400x300"><img alt="https://via.placeholder.com/400x300" src="https://via.placeholder.com/400x300" style="width: 100%;" /></a>
+<p class="caption"><span class="caption-text">This is the caption.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+<td><div class="figure align-center" id="id3" style="width: 100%">
+<img alt="https://via.placeholder.com/400x300" src="https://via.placeholder.com/400x300" />
+<p class="caption"><span class="caption-text">This is the caption.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="shared-captions">
+<h4>Shared Captions<a class="headerlink" href="#shared-captions" title="Permalink to this headline">¶</a></h4>
+<p>The <code class="code rst RST docutils literal notranslate"><span class="pre">list-table</span></code> syntax does not allow multi-column cells, so we instead use the more general
+<code class="code rst RST docutils literal notranslate"><span class="pre">table</span></code> directive. Due to how tables are parsed, however, this means that images must be
+included indirectly through a substitution.</p>
+<p>The following code block shows how to implement a caption spanning multiple images.</p>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="nt">|image1|</span> <span class="ow">image</span><span class="p">::</span> https://via.placeholder.com/300x500
+   <span class="nc">:width:</span> 100%
+   <span class="nc">:align:</span> middle
+
+<span class="p">..</span> <span class="nt">|image2|</span> <span class="ow">image</span><span class="p">::</span> https://via.placeholder.com/300x500
+   <span class="nc">:width:</span> 100%
+   <span class="nc">:align:</span> middle
+
+<span class="p">..</span> <span class="nt">|image3|</span> <span class="ow">image</span><span class="p">::</span> https://via.placeholder.com/300x500
+   <span class="nc">:width:</span> 100%
+   <span class="nc">:align:</span> middle
+
+<span class="p">..</span> <span class="ow">table</span><span class="p">::</span>
+   <span class="nc">:align:</span> center
+   <span class="nc">:class:</span> fig-table
+
+   +------------+------------+------------+
+   <span class="o">|</span>  |image1|  |  |image2|  |  |image3|  |
+   +------------+------------+------------+
+   <span class="o">|</span> This caption spans all the images.   |
+   <span class="o">|</span> It describes the first image (left), |
+   <span class="o">|</span> the second image (center), and the   |
+   <span class="o">|</span> third image (right).                 |
+   +--------------------------------------+
+</pre></div>
+</div>
+<table class="fig-table docutils align-center">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="https://via.placeholder.com/300x500"><img alt="image1" class="align-middle" src="https://via.placeholder.com/300x500" style="width: 100%;" /></a></p></td>
+<td><p><a class="reference internal" href="https://via.placeholder.com/300x500"><img alt="image2" class="align-middle" src="https://via.placeholder.com/300x500" style="width: 100%;" /></a></p></td>
+<td><p><a class="reference internal" href="https://via.placeholder.com/300x500"><img alt="image3" class="align-middle" src="https://via.placeholder.com/300x500" style="width: 100%;" /></a></p></td>
+</tr>
+<tr class="row-even"><td colspan="3"><p>This caption spans all the images.
+It describes the first image (left),
+the second image (center), and the
+third image (right).</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="section" id="namelists">
+<h2>Namelists<a class="headerlink" href="#namelists" title="Permalink to this headline">¶</a></h2>
+<p>When describing a namelist and its parameters, use the following format. The exact heading level is
+not important, as long as the parameters are sub-headings of the namelist.</p>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="gh">EXAMPLE Namelist</span>
+<span class="gh">----------------</span>
+
+<span class="gh">PARAMETER_1</span>
+<span class="gh">+++++++++++</span>
+Short description of parameter 1.
+
+<span class="p">..</span> <span class="ow">namelist_parameter</span><span class="p">::</span>
+   <span class="nc">:type:</span> INTEGER
+   <span class="nc">:domain:</span> parameter_1 &gt;= 0
+   <span class="nc">:default:</span> parameter_1 = 1
+
+A more in-depth description of parameter 1. This can include any content
+(e.g. images, math, code blocks) and is left to the author&#39;s discretion.
+</pre></div>
+</div>
+<p>For examples of how namelists are described using this format, see the <a class="reference internal" href="tools/RadE/patches/patches_namelist.html"><span class="doc">PATCHES namelist
+documentation</span></a>.</p>
+<div class="section" id="namelist-parameter-directive">
+<h3>Namelist Parameter Directive<a class="headerlink" href="#namelist-parameter-directive" title="Permalink to this headline">¶</a></h3>
+<p>When describing a namelist parameter, the ‘namelist_parameter’ directive should be used after the
+short description. This custom directive is provided by the Truchas Sphinx build.</p>
+<p>The directive inserts an element of the <em>nml-param</em> class, ensuring that all namelist
+parameters are styled consistently throughout the documentation.</p>
+<p>The directive takes three mandatory options:</p>
+<ol class="arabic simple">
+<li><p><strong>:type:</strong> the Fortran type of the namelist parameter</p></li>
+<li><p><strong>:domain:</strong> the set of valid values for the parameter</p></li>
+<li><p><strong>:default:</strong> the default value if the parameter is not specified</p></li>
+</ol>
+<p>The following code block produces the namelist parameter element below it.</p>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">namelist_parameter</span><span class="p">::</span>
+   <span class="nc">:type:</span> INTEGER
+   <span class="nc">:domain:</span> parameter_1 &gt;= 0
+   <span class="nc">:default:</span> parameter_1 = 1
+</pre></div>
+</div>
+<blockquote class="nml-param">
+<div><p><strong>Type:</strong> <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code></p>
+<p><strong>Domain:</strong> parameter_1 &gt;= 0</p>
+<p><strong>Default:</strong> parameter_1 = 1</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="inline-fortran-code">
+<h2>Inline Fortran Code<a class="headerlink" href="#inline-fortran-code" title="Permalink to this headline">¶</a></h2>
+<p>The Truchas Sphinx build provides a special ‘fortran’ role for writing inline Fortran code. For
+example, the following RST code</p>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="na">:fortran:</span><span class="nv">`integer :: x`</span>
+</pre></div>
+</div>
+<p>produces the inline Fortran code <code class="code fortran docutils literal notranslate"><span class="keyword type"><span class="pre">integer</span></span> <span class="keyword declaration"><span class="pre">::</span></span> <span class="name"><span class="pre">x</span></span></code>.</p>
+</div>
+<div class="section" id="other-tips">
+<h2>Other Tips<a class="headerlink" href="#other-tips" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="math-default-role">
+<h3>Math default role<a class="headerlink" href="#math-default-role" title="Permalink to this headline">¶</a></h3>
+<p>For documents with a lot of inline math, you can set the default role to math by adding the
+line</p>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">default-role</span><span class="p">::</span> math
+</pre></div>
+</div>
+<p>to the top of the document. Inline math can then be delimited by backticks (`) without explicitly
+specifying the <em>:math:</em> role. For example, the line</p>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>The sum of the first <span class="na">:math:</span><span class="nv">`n`</span> natural numbers is given by <span class="na">:math:</span><span class="nv">`n(n+1)/2`</span>.
+</pre></div>
+</div>
+<p>simplifies to</p>
+<div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>The sum of the first <span class="nv">`n`</span> natural numbers is given by <span class="nv">`n(n+1)/2`</span>.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019, Los Alamos National Laboratory.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.1.2.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
