@@ -172,6 +172,8 @@ Based on localtoc.html from the Guzzle Sphinx theme: https://github.com/guzzle/g
 <li><a class="reference internal" href="#vsa-max-iter">VSA_MAX_ITER</a></li>
 <li><a class="reference internal" href="#vsa-min-delta">VSA_MIN_DELTA</a></li>
 <li><a class="reference internal" href="#vsa-avg-faces-per-patch">VSA_AVG_FACES_PER_PATCH</a></li>
+<li><a class="reference internal" href="#vsa-max-patch-radius">VSA_MAX_PATCH_RADIUS</a></li>
+<li><a class="reference internal" href="#vsa-normalize-dist">VSA_NORMALIZE_DIST</a></li>
 <li><a class="reference internal" href="#vsa-random-seed">VSA_RANDOM_SEED</a></li>
 </ul>
 </li>
@@ -229,7 +231,9 @@ particular algorithm are prefixed with the algorithm’s name.</p>
 <li><p><a class="reference internal" href="#vsa-max-iter" id="id14">VSA_MAX_ITER</a></p></li>
 <li><p><a class="reference internal" href="#vsa-min-delta" id="id15">VSA_MIN_DELTA</a></p></li>
 <li><p><a class="reference internal" href="#vsa-avg-faces-per-patch" id="id16">VSA_AVG_FACES_PER_PATCH</a></p></li>
-<li><p><a class="reference internal" href="#vsa-random-seed" id="id17">VSA_RANDOM_SEED</a></p></li>
+<li><p><a class="reference internal" href="#vsa-max-patch-radius" id="id17">VSA_MAX_PATCH_RADIUS</a></p></li>
+<li><p><a class="reference internal" href="#vsa-normalize-dist" id="id18">VSA_NORMALIZE_DIST</a></p></li>
+<li><p><a class="reference internal" href="#vsa-random-seed" id="id19">VSA_RANDOM_SEED</a></p></li>
 </ul>
 </li>
 </ul>
@@ -520,6 +524,38 @@ final configuration:</p>
 \text{vsa_avg_faces_per_patch}\]</div>
 <p>Rather than set the number of patches explicitly, which is mesh dependent, expressing this parameter
 as an average allows the same value to apply to a variety of meshes.</p>
+</div>
+<div class="section" id="vsa-max-patch-radius">
+<h3>VSA_MAX_PATCH_RADIUS<a class="headerlink" href="#vsa-max-patch-radius" title="Permalink to this headline">¶</a></h3>
+<p>Defines the desired maximum radius for a patch for the <a class="reference internal" href="vsa.html"><span class="doc">VSA algorithm</span></a>.</p>
+<blockquote class="nml-param">
+<div><p><strong>Type:</strong> <code class="docutils literal notranslate"><span class="pre">REAL</span></code></p>
+<p><strong>Domain:</strong> vsa_max_patch_radius &gt; 0.0</p>
+<p><strong>Default:</strong> vsa_max_patch_radius = sqrt(huge(0.0_r8))</p>
+</div></blockquote>
+<p>This parameter is used to compute the <em>size bias</em> term of the weight of a face relative to
+a patch proxy. Refer to the <a class="reference internal" href="vsa.html#size-bias"><span class="std std-ref">size bias section</span></a> of the
+VSA documentation for more information on how the parameter affects the face weight computation.</p>
+<p>Note that the default value of this parameter is <code class="code fortran docutils literal notranslate"><span class="name builtin"><span class="pre">sqrt</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name builtin"><span class="pre">huge</span></span><span class="punctuation"><span class="pre">(</span></span><span class="literal number float"><span class="pre">0.0_r8</span></span><span class="punctuation"><span class="pre">))</span></span></code> because it is squared
+in the face weight computation. By taking the root of <code class="code fortran docutils literal notranslate"><span class="name builtin"><span class="pre">huge</span></span><span class="punctuation"><span class="pre">(</span></span><span class="literal number float"><span class="pre">0.0_r8</span></span><span class="punctuation"><span class="pre">)</span></span></code> we prevent floating
+point overflow errors. Numerically, the default value on the order of <cite>1.34*10^{154}</cite>.</p>
+</div>
+<div class="section" id="vsa-normalize-dist">
+<h3>VSA_NORMALIZE_DIST<a class="headerlink" href="#vsa-normalize-dist" title="Permalink to this headline">¶</a></h3>
+<p>Determines whether to normalize the distance bias for the <a class="reference internal" href="vsa.html"><span class="doc">VSA algorithm</span></a>.</p>
+<blockquote class="nml-param">
+<div><p><strong>Type:</strong> <code class="docutils literal notranslate"><span class="pre">LOGICAL</span></code></p>
+<p><strong>Domain:</strong> Must be <code class="docutils literal notranslate"><span class="pre">.true.</span></code> or <code class="docutils literal notranslate"><span class="pre">.false.</span></code></p>
+<p><strong>Default:</strong> vsa_normalize_dist = <code class="docutils literal notranslate"><span class="pre">.true.</span></code></p>
+</div></blockquote>
+<p>This parameter affects the computation of the <em>distance bias</em> term of the weight of a face relative
+to a patch proxy. Broadly speaking, enabling normalization tends to produce patches with a similar
+number of faces, regardless of the physical size of each patch. Conversely, disabling normalization
+tends to make all patches about the same physical size, regardless of the number of faces in each
+patch.</p>
+<p>Refer to the <a class="reference internal" href="vsa.html#distance-bias"><span class="std std-ref">distance bias section</span></a>
+of the VSA documentation for more information on how the parameter affects the face weight
+computation.</p>
 </div>
 <div class="section" id="vsa-random-seed">
 <h3>VSA_RANDOM_SEED<a class="headerlink" href="#vsa-random-seed" title="Permalink to this headline">¶</a></h3>
