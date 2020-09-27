@@ -157,6 +157,10 @@ Based on localtoc.html from the Guzzle Sphinx theme: https://github.com/guzzle/g
 <li><a class="reference internal" href="#max-angle">MAX_ANGLE</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#file-parameters">FILE Parameters</a><ul>
+<li><a class="reference internal" href="#patch-file">PATCH_FILE</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#pave-parameters">PAVE Parameters</a><ul>
 <li><a class="reference internal" href="#pave-merge-level">PAVE_MERGE_LEVEL</a></li>
 <li><a class="reference internal" href="#pave-split-patch-size">PAVE_SPLIT_PATCH_SIZE</a></li>
@@ -213,27 +217,32 @@ particular algorithm are prefixed with the algorithm’s name.</p>
 <li><p><a class="reference internal" href="#max-angle" id="id5">MAX_ANGLE</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#pave-parameters" id="id6">PAVE Parameters</a></p>
+<li><p><a class="reference internal" href="#file-parameters" id="id6">FILE Parameters</a></p>
 <ul>
-<li><p><a class="reference internal" href="#pave-merge-level" id="id7">PAVE_MERGE_LEVEL</a></p></li>
-<li><p><a class="reference internal" href="#pave-split-patch-size" id="id8">PAVE_SPLIT_PATCH_SIZE</a></p></li>
-<li><p><a class="reference internal" href="#pave-random-seed" id="id9">PAVE_RANDOM_SEED</a></p></li>
+<li><p><a class="reference internal" href="#patch-file" id="id7">PATCH_FILE</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#vac-parameters" id="id10">VAC Parameters</a></p>
+<li><p><a class="reference internal" href="#pave-parameters" id="id8">PAVE Parameters</a></p>
 <ul>
-<li><p><a class="reference internal" href="#vac-merge-level" id="id11">VAC_MERGE_LEVEL</a></p></li>
-<li><p><a class="reference internal" href="#vac-split-patch-size" id="id12">VAC_SPLIT_PATCH_SIZE</a></p></li>
+<li><p><a class="reference internal" href="#pave-merge-level" id="id9">PAVE_MERGE_LEVEL</a></p></li>
+<li><p><a class="reference internal" href="#pave-split-patch-size" id="id10">PAVE_SPLIT_PATCH_SIZE</a></p></li>
+<li><p><a class="reference internal" href="#pave-random-seed" id="id11">PAVE_RANDOM_SEED</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#vsa-parameters" id="id13">VSA Parameters</a></p>
+<li><p><a class="reference internal" href="#vac-parameters" id="id12">VAC Parameters</a></p>
 <ul>
-<li><p><a class="reference internal" href="#vsa-max-iter" id="id14">VSA_MAX_ITER</a></p></li>
-<li><p><a class="reference internal" href="#vsa-min-delta" id="id15">VSA_MIN_DELTA</a></p></li>
-<li><p><a class="reference internal" href="#vsa-avg-faces-per-patch" id="id16">VSA_AVG_FACES_PER_PATCH</a></p></li>
-<li><p><a class="reference internal" href="#vsa-max-patch-radius" id="id17">VSA_MAX_PATCH_RADIUS</a></p></li>
-<li><p><a class="reference internal" href="#vsa-normalize-dist" id="id18">VSA_NORMALIZE_DIST</a></p></li>
-<li><p><a class="reference internal" href="#vsa-random-seed" id="id19">VSA_RANDOM_SEED</a></p></li>
+<li><p><a class="reference internal" href="#vac-merge-level" id="id13">VAC_MERGE_LEVEL</a></p></li>
+<li><p><a class="reference internal" href="#vac-split-patch-size" id="id14">VAC_SPLIT_PATCH_SIZE</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#vsa-parameters" id="id15">VSA Parameters</a></p>
+<ul>
+<li><p><a class="reference internal" href="#vsa-max-iter" id="id16">VSA_MAX_ITER</a></p></li>
+<li><p><a class="reference internal" href="#vsa-min-delta" id="id17">VSA_MIN_DELTA</a></p></li>
+<li><p><a class="reference internal" href="#vsa-avg-faces-per-patch" id="id18">VSA_AVG_FACES_PER_PATCH</a></p></li>
+<li><p><a class="reference internal" href="#vsa-max-patch-radius" id="id19">VSA_MAX_PATCH_RADIUS</a></p></li>
+<li><p><a class="reference internal" href="#vsa-normalize-dist" id="id20">VSA_NORMALIZE_DIST</a></p></li>
+<li><p><a class="reference internal" href="#vsa-random-seed" id="id21">VSA_RANDOM_SEED</a></p></li>
 </ul>
 </li>
 </ul>
@@ -245,7 +254,7 @@ particular algorithm are prefixed with the algorithm’s name.</p>
 <p>Selects one of the three available algorithms, or disables patching.</p>
 <blockquote class="nml-param">
 <div><p><strong>Type:</strong> <code class="docutils literal notranslate"><span class="pre">STRING</span></code></p>
-<p><strong>Domain:</strong> Must be one of <code class="docutils literal notranslate"><span class="pre">'NONE'</span></code>, <code class="docutils literal notranslate"><span class="pre">'PAVE'</span></code>, <code class="docutils literal notranslate"><span class="pre">'VAC'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'VSA'</span></code></p>
+<p><strong>Domain:</strong> Must be one of <code class="docutils literal notranslate"><span class="pre">'NONE'</span></code>, <code class="docutils literal notranslate"><span class="pre">'PAVE'</span></code>, <code class="docutils literal notranslate"><span class="pre">'VAC'</span></code>, <code class="docutils literal notranslate"><span class="pre">'VSA'</span></code>, or <code class="docutils literal notranslate"><span class="pre">'FILE'</span></code></p>
 <p><strong>Default:</strong> patch_algorithm = <code class="docutils literal notranslate"><span class="pre">'PAVE'</span></code></p>
 </div></blockquote>
 <p>Each option selects a different patch algorithm:</p>
@@ -255,6 +264,10 @@ an absent <cite>PATCHES</cite> namelist.</p></li>
 <li><p><strong>PAVE:</strong> Generate patches with the <a class="reference internal" href="pave.html"><span class="doc">PAVE algorithm</span></a>.</p></li>
 <li><p><strong>VAC:</strong> Generate patches with the <a class="reference internal" href="vac.html"><span class="doc">VAC algorithm</span></a>.</p></li>
 <li><p><strong>VSA:</strong> Generate patches with the <a class="reference internal" href="vsa.html"><span class="doc">VSA algorithm</span></a>.</p></li>
+<li><p><strong>FILE:</strong> Patches will be read from a file. Because the cost of computing
+patches can be quite substantial for very large enclosure meshes, this
+pseudo-algorithm is provided to enable the use of previously computed
+patches.</p></li>
 </ol>
 </div>
 <div class="section" id="verbosity-level">
@@ -318,6 +331,16 @@ is unlikely in practice, given a reasonably smooth enclosure and small <code cla
 <p class="admonition-title">See also</p>
 <p>The effects of <code class="docutils literal notranslate"><span class="pre">max_angle</span></code> vary by algorithm. Refer to the documentation of the <a class="reference internal" href="pave.html"><span class="doc">PAVE</span></a>, <a class="reference internal" href="vac.html"><span class="doc">VAC</span></a>, and <a class="reference internal" href="vsa.html"><span class="doc">VSA</span></a> algorithms for more details.</p>
 </div>
+</div>
+</div>
+<div class="section" id="file-parameters">
+<h2>FILE Parameters<a class="headerlink" href="#file-parameters" title="Permalink to this headline">¶</a></h2>
+<p>The following namelist parameter applies only to the FILE algorithm.</p>
+<div class="section" id="patch-file">
+<h3>PATCH_FILE<a class="headerlink" href="#patch-file" title="Permalink to this headline">¶</a></h3>
+<p>The path to an existing radiation enclosure file containing patch information.
+The enclosure defined by the file must be identical to current enclosure.
+This may be an absolute path or a relative path.</p>
 </div>
 </div>
 <div class="section" id="pave-parameters">
