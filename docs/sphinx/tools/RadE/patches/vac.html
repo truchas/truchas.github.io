@@ -14,7 +14,6 @@
     <script src="../../../_static/jquery.js"></script>
     <script src="../../../_static/underscore.js"></script>
     <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/language_data.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
@@ -371,7 +370,7 @@ patch <span class="math notranslate nohighlight">\((P_i, V_j)\)</span> is given 
 <p>We want patches to be roughly planar so that all their faces have similar views of the rest of the
 enclosure. This ensures that the patch view factor is a reasonable approximation of the view factors
 of its faces.</p>
-<p>We use the <span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric defined by Cohen-Steiner et al. <a class="bibtex reference internal" href="#vac-cohen-steiner-2004-vsa" id="id1">[1]</a> to
+<p>We use the <span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric defined by Cohen-Steiner et al. <span class="bibtex" id="id1">[vac-Cohen-Steiner:2004:VSA]</span> to
 measure the planarity of a patch. The <span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric is based on an <span class="math notranslate nohighlight">\(\mathcal{L}^2\)</span> measure of the normal field
 over the patch. Given a patch <span class="math notranslate nohighlight">\(P_i\)</span> with normal <span class="math notranslate nohighlight">\(\vec{n}_i\)</span> we define</p>
 <div class="math notranslate nohighlight">
@@ -406,7 +405,7 @@ it follows that <span class="math notranslate nohighlight">\(0 \le E_{normal}(P_
 <p>We want to prioritize patches that are as circular as possible to ensure that all their faces have
 similar views of the rest of the enclosure. In particular, long skinny patches are more likely to
 have shadow discontinuities fall across them.</p>
-<p>We use the <em>irregularity metric</em> defined by Garland et al. <a class="bibtex reference internal" href="#vac-garland-2001-hfc" id="id2">[2]</a> to measure
+<p>We use the <em>irregularity metric</em> defined by Garland et al. <span class="bibtex" id="id2">[vac-Garland:2001:HFC]</span> to measure
 the compactness of a patch. Given a patch <span class="math notranslate nohighlight">\(P_i\)</span> with area <span class="math notranslate nohighlight">\(w\)</span> and perimeter <span class="math notranslate nohighlight">\(\rho\)</span>, the
 <em>irregularity</em> <span class="math notranslate nohighlight">\(\gamma\)</span> of the patch is defined as</p>
 <div class="math notranslate nohighlight">
@@ -667,15 +666,7 @@ of the faces of that vertex.</p>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<p id="bibtex-bibliography-tools/RadE/patches/vac-0"><dl class="citation">
-<dt class="bibtex label" id="vac-cohen-steiner-2004-vsa"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
-<dd><p>David Cohen-Steiner, Pierre Alliez, and Mathieu Desbrun. Variational Shape Approximation. In <em>ACM SIGGRAPH 2004 Papers</em>, SIGGRAPH ‘04, 905–914. New York, NY, USA, 2004. ACM. <a class="reference external" href="https://doi.org/10.1145/1186562.1015817">doi:10.1145/1186562.1015817</a>.</p>
-</dd>
-<dt class="bibtex label" id="vac-garland-2001-hfc"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
-<dd><p>Michael Garland, Andrew Willmott, and Paul S. Heckbert. Hierarchical Face Clustering on Polygonal Surfaces. In <em>Proceedings of the 2001 Symposium on Interactive 3D Graphics</em>, I3D ‘01, 49–58. New York, NY, USA, 2001. ACM. <a class="reference external" href="https://doi.org/10.1145/364338.364345">doi:10.1145/364338.364345</a>.</p>
-</dd>
-</dl>
-</p>
+<p id="bibtex-bibliography-tools/RadE/patches/vac-1"></p>
 </div>
 </div>
 
@@ -692,7 +683,7 @@ of the faces of that vertex.</p>
     </p>
     <p>
         &copy; Copyright 2019, Los Alamos National Laboratory.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.3.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.1.<br/>
     </p>
   </div>
 </footer>
