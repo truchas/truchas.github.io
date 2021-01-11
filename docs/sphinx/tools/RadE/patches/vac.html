@@ -196,9 +196,9 @@ Based on localtoc.html from the Guzzle Sphinx theme: https://github.com/guzzle/g
 <p>The VAC algorithm is experimental and not recommended for regular users. For best results, use
 the <a class="reference internal" href="pave.html"><span class="doc">PAVE patching algorithm</span></a>.</p>
 </div>
-<div class="figure align-right" id="id3" style="width: 35%">
+<div class="figure align-right" id="id6" style="width: 35%">
 <a class="reference internal image-reference" href="../../../_images/basic_hemi_vac_2.png"><img alt="../../../_images/basic_hemi_vac_2.png" src="../../../_images/basic_hemi_vac_2.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">Result of VAC on a quarter cyclinder.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Result of VAC on a quarter cyclinder.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
 </div>
 <p>The Vertex Anchor Cluster (VAC) patching algorithm is based on the observation that the set of all
 faces sharing a particular vertex (the faces of a vertex) tend to form patches with desirable
@@ -211,38 +211,38 @@ of full patches generated.</p>
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#algorithm" id="id5">Algorithm</a></p>
+<li><p><a class="reference internal" href="#algorithm" id="id8">Algorithm</a></p>
 <ul>
-<li><p><a class="reference internal" href="#outline" id="id6">Outline</a></p></li>
-<li><p><a class="reference internal" href="#connected-components" id="id7">Connected Components</a></p></li>
-<li><p><a class="reference internal" href="#patch-weight" id="id8">Patch Weight</a></p>
+<li><p><a class="reference internal" href="#outline" id="id9">Outline</a></p></li>
+<li><p><a class="reference internal" href="#connected-components" id="id10">Connected Components</a></p></li>
+<li><p><a class="reference internal" href="#patch-weight" id="id11">Patch Weight</a></p>
 <ul>
-<li><p><a class="reference internal" href="#normal-bias" id="id9">Normal Bias</a></p></li>
-<li><p><a class="reference internal" href="#shape-bias" id="id10">Shape Bias</a></p></li>
-<li><p><a class="reference internal" href="#size-bias" id="id11">Size Bias</a></p></li>
-<li><p><a class="reference internal" href="#full-patch-bias" id="id12">Full Patch Bias</a></p></li>
-<li><p><a class="reference internal" href="#position-bias" id="id13">Position Bias</a></p></li>
+<li><p><a class="reference internal" href="#normal-bias" id="id12">Normal Bias</a></p></li>
+<li><p><a class="reference internal" href="#shape-bias" id="id13">Shape Bias</a></p></li>
+<li><p><a class="reference internal" href="#size-bias" id="id14">Size Bias</a></p></li>
+<li><p><a class="reference internal" href="#full-patch-bias" id="id15">Full Patch Bias</a></p></li>
+<li><p><a class="reference internal" href="#position-bias" id="id16">Position Bias</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#patch-merging" id="id14">Patch Merging</a></p>
+<li><p><a class="reference internal" href="#patch-merging" id="id17">Patch Merging</a></p>
 <ul>
-<li><p><a class="reference internal" href="#patch-splitting" id="id15">Patch Splitting</a></p></li>
-<li><p><a class="reference internal" href="#merge-level-0" id="id16">Merge Level 0</a></p></li>
-<li><p><a class="reference internal" href="#merge-level-1" id="id17">Merge Level 1</a></p></li>
-<li><p><a class="reference internal" href="#merge-level-2" id="id18">Merge Level 2</a></p></li>
-<li><p><a class="reference internal" href="#merge-level-3" id="id19">Merge Level 3</a></p></li>
+<li><p><a class="reference internal" href="#patch-splitting" id="id18">Patch Splitting</a></p></li>
+<li><p><a class="reference internal" href="#merge-level-0" id="id19">Merge Level 0</a></p></li>
+<li><p><a class="reference internal" href="#merge-level-1" id="id20">Merge Level 1</a></p></li>
+<li><p><a class="reference internal" href="#merge-level-2" id="id21">Merge Level 2</a></p></li>
+<li><p><a class="reference internal" href="#merge-level-3" id="id22">Merge Level 3</a></p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#namelist-parameters" id="id20">Namelist Parameters</a></p>
+<li><p><a class="reference internal" href="#namelist-parameters" id="id23">Namelist Parameters</a></p>
 <ul>
-<li><p><a class="reference internal" href="#vac-merge-level" id="id21">VAC_MERGE_LEVEL</a></p></li>
-<li><p><a class="reference internal" href="#vac-split-patch-size" id="id22">VAC_SPLIT_PATCH_SIZE</a></p></li>
+<li><p><a class="reference internal" href="#vac-merge-level" id="id24">VAC_MERGE_LEVEL</a></p></li>
+<li><p><a class="reference internal" href="#vac-split-patch-size" id="id25">VAC_SPLIT_PATCH_SIZE</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#glossary" id="id23">Glossary</a></p></li>
-<li><p><a class="reference internal" href="#references" id="id24">References</a></p></li>
+<li><p><a class="reference internal" href="#glossary" id="id26">Glossary</a></p></li>
+<li><p><a class="reference internal" href="#references" id="id27">References</a></p></li>
 </ul>
 </div>
 <div class="section" id="algorithm">
@@ -370,7 +370,7 @@ patch <span class="math notranslate nohighlight">\((P_i, V_j)\)</span> is given 
 <p>We want patches to be roughly planar so that all their faces have similar views of the rest of the
 enclosure. This ensures that the patch view factor is a reasonable approximation of the view factors
 of its faces.</p>
-<p>We use the <span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric defined by Cohen-Steiner et al. <span class="bibtex" id="id1">[vac-Cohen-Steiner:2004:VSA]</span> to
+<p>We use the <span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric defined by Cohen-Steiner et al. <span id="id1">[<a class="reference internal" href="#id4"><span>1</span></a>]</span> to
 measure the planarity of a patch. The <span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric is based on an <span class="math notranslate nohighlight">\(\mathcal{L}^2\)</span> measure of the normal field
 over the patch. Given a patch <span class="math notranslate nohighlight">\(P_i\)</span> with normal <span class="math notranslate nohighlight">\(\vec{n}_i\)</span> we define</p>
 <div class="math notranslate nohighlight">
@@ -405,7 +405,7 @@ it follows that <span class="math notranslate nohighlight">\(0 \le E_{normal}(P_
 <p>We want to prioritize patches that are as circular as possible to ensure that all their faces have
 similar views of the rest of the enclosure. In particular, long skinny patches are more likely to
 have shadow discontinuities fall across them.</p>
-<p>We use the <em>irregularity metric</em> defined by Garland et al. <span class="bibtex" id="id2">[vac-Garland:2001:HFC]</span> to measure
+<p>We use the <em>irregularity metric</em> defined by Garland et al. <span id="id2">[<a class="reference internal" href="#id5"><span>2</span></a>]</span> to measure
 the compactness of a patch. Given a patch <span class="math notranslate nohighlight">\(P_i\)</span> with area <span class="math notranslate nohighlight">\(w\)</span> and perimeter <span class="math notranslate nohighlight">\(\rho\)</span>, the
 <em>irregularity</em> <span class="math notranslate nohighlight">\(\gamma\)</span> of the patch is defined as</p>
 <div class="math notranslate nohighlight">
@@ -456,7 +456,7 @@ components will form two patches, one in each component, and these patches will 
 suboptimal shape, since they are essentially <a class="reference internal" href="#term-partial-patch"><span class="xref std std-term">partial patches</span></a> relative to a
 vertex in the component interior. Moreover, the faces of a vertex on the mesh boundary form a
 <a class="reference internal" href="#term-full-patch"><span class="xref std std-term">full patch</span></a> with <span class="math notranslate nohighlight">\(E_{size} = 0\)</span>, despite their suboptimal shape.</p>
-<div class="figure align-center" id="id4" style="width: 90%">
+<div class="figure align-center" id="id7" style="width: 90%">
 <img alt="../../../_images/vertex_anchor_edges.svg" src="../../../_images/vertex_anchor_edges.svg" /><p class="caption"><span class="caption-text"><strong>Top:</strong> Two enclosure components meet at a boundary. A vertex on that boundary is labeled in
 red. The faces of the red vertex form two patches, colored grey and numbered. These grey patches
 are poorly shaped. Conversely, the blue patches formed by the blue vertices in the interior of
@@ -464,7 +464,7 @@ each component are full patches with a desirable shape.
 <strong>Bottom:</strong> The red vertex is on the mesh boundary, and its faces are colored gray. These faces
 form a poorly shaped patch, despite it being a full patch (it includes all the faces of its
 vertex anchor). Note that the grey patch is a partial patch relative to the yellow vertex. The
-blue vertices in the interior of the component form full patches with a desirable shape.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+blue vertices in the interior of the component form full patches with a desirable shape.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>Therefore, we want to heavily bias against patches with a boundary vertex as their anchor. We define
 a <em>position bias</em> for a patch <span class="math notranslate nohighlight">\(P_i\)</span> with vertex anchor <span class="math notranslate nohighlight">\(V_j\)</span> as follows:</p>
@@ -666,7 +666,15 @@ of the faces of that vertex.</p>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<p id="bibtex-bibliography-tools/RadE/patches/vac-1"></p>
+<p id="id3"><dl class="citation">
+<dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>David Cohen-Steiner, Pierre Alliez, and Mathieu Desbrun. Variational Shape Approximation. In <em>ACM SIGGRAPH 2004 Papers</em>, SIGGRAPH '04, 905–914. New York, NY, USA, 2004. ACM. <a class="reference external" href="https://doi.org/10.1145/1186562.1015817">doi:10.1145/1186562.1015817</a>.</p>
+</dd>
+<dt class="label" id="id5"><span class="brackets"><a class="fn-backref" href="#id2">2</a></span></dt>
+<dd><p>Michael Garland, Andrew Willmott, and Paul S. Heckbert. Hierarchical Face Clustering on Polygonal Surfaces. In <em>Proceedings of the 2001 Symposium on Interactive 3D Graphics</em>, I3D '01, 49–58. New York, NY, USA, 2001. ACM. <a class="reference external" href="https://doi.org/10.1145/364338.364345">doi:10.1145/364338.364345</a>.</p>
+</dd>
+</dl>
+</p>
 </div>
 </div>
 
@@ -683,7 +691,7 @@ of the faces of that vertex.</p>
     </p>
     <p>
         &copy; Copyright 2019, Los Alamos National Laboratory.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
     </p>
   </div>
 </footer>

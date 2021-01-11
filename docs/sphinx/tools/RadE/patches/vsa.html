@@ -197,13 +197,13 @@ Based on localtoc.html from the Guzzle Sphinx theme: https://github.com/guzzle/g
 <p>The VSA algorithm is experimental and not recommended for regular users. For best results, use
 the <a class="reference internal" href="pave.html"><span class="doc">PAVE patching algorithm</span></a>.</p>
 </div>
-<div class="figure align-right" id="id5" style="width: 28%">
+<div class="figure align-right" id="id8" style="width: 28%">
 <a class="reference internal image-reference" href="../../../_images/basic_hemi_vsa_2.png"><img alt="../../../_images/basic_hemi_vsa_2.png" src="../../../_images/basic_hemi_vsa_2.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">Result of VSA on a quarter cylinder.</span><a class="headerlink" href="#id5" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Result of VSA on a quarter cylinder.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>The Variational Shape Approximation (VSA) patching algorithm is based on the face clustering
 algorithm presented by Cohen-Steiner et al. in their paper by the same name
-<span class="bibtex" id="id1">[vsa-Cohen-Steiner:2004:VSA]</span>. VSA is a modification of <a class="reference external" href="https://en.wikipedia.org/wiki/Lloyd%27s_algorithm">Lloyd’s algorithm</a> for approximating <a class="reference external" href="https://en.wikipedia.org/wiki/Centroidal_Voronoi_tessellation">centroidal Voronoi
+<span id="id1">[<a class="reference internal" href="#id6"><span>1</span></a>]</span>. VSA is a modification of <a class="reference external" href="https://en.wikipedia.org/wiki/Lloyd%27s_algorithm">Lloyd’s algorithm</a> for approximating <a class="reference external" href="https://en.wikipedia.org/wiki/Centroidal_Voronoi_tessellation">centroidal Voronoi
 tessellations</a>. Instead of
 approximating compact regions of the plane, VSA attempts to minimize the total distortion or error
 of all patches in the enclosure. VSA alternates between two phases of <em>geometry partitioning</em> and
@@ -212,40 +212,40 @@ convergence criterion is met.</p>
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#algorithm" id="id6">Algorithm</a></p>
+<li><p><a class="reference internal" href="#algorithm" id="id9">Algorithm</a></p>
 <ul>
-<li><p><a class="reference internal" href="#outline" id="id7">Outline</a></p></li>
-<li><p><a class="reference internal" href="#error-minimization" id="id8">Error Minimization</a></p>
+<li><p><a class="reference internal" href="#outline" id="id10">Outline</a></p></li>
+<li><p><a class="reference internal" href="#error-minimization" id="id11">Error Minimization</a></p>
 <ul>
-<li><p><a class="reference internal" href="#l21-metric" id="id9"><span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric</a></p></li>
-<li><p><a class="reference internal" href="#l2-metric" id="id10"><span class="math notranslate nohighlight">\(\mathcal{L}^2\)</span> metric</a></p></li>
+<li><p><a class="reference internal" href="#l21-metric" id="id12"><span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric</a></p></li>
+<li><p><a class="reference internal" href="#l2-metric" id="id13"><span class="math notranslate nohighlight">\(\mathcal{L}^2\)</span> metric</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#geometry-partitioning" id="id11">Geometry Partitioning</a></p>
+<li><p><a class="reference internal" href="#geometry-partitioning" id="id14">Geometry Partitioning</a></p>
 <ul>
-<li><p><a class="reference internal" href="#face-weight" id="id12">Face Weight</a></p>
+<li><p><a class="reference internal" href="#face-weight" id="id15">Face Weight</a></p>
 <ul>
-<li><p><a class="reference internal" href="#normal-bias" id="id13">Normal Bias</a></p></li>
-<li><p><a class="reference internal" href="#distance-bias" id="id14">Distance Bias</a></p></li>
-<li><p><a class="reference internal" href="#size-bias" id="id15">Size Bias</a></p></li>
+<li><p><a class="reference internal" href="#normal-bias" id="id16">Normal Bias</a></p></li>
+<li><p><a class="reference internal" href="#distance-bias" id="id17">Distance Bias</a></p></li>
+<li><p><a class="reference internal" href="#size-bias" id="id18">Size Bias</a></p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#proxy-fitting" id="id16">Proxy Fitting</a></p></li>
+<li><p><a class="reference internal" href="#proxy-fitting" id="id19">Proxy Fitting</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#namelist-parameters" id="id17">Namelist Parameters</a></p>
+<li><p><a class="reference internal" href="#namelist-parameters" id="id20">Namelist Parameters</a></p>
 <ul>
-<li><p><a class="reference internal" href="#vsa-max-iter" id="id18">VSA_MAX_ITER</a></p></li>
-<li><p><a class="reference internal" href="#vsa-min-delta" id="id19">VSA_MIN_DELTA</a></p></li>
-<li><p><a class="reference internal" href="#vsa-avg-faces-per-patch" id="id20">VSA_AVG_FACES_PER_PATCH</a></p></li>
-<li><p><a class="reference internal" href="#vsa-max-patch-radius" id="id21">VSA_MAX_PATCH_RADIUS</a></p></li>
-<li><p><a class="reference internal" href="#vsa-normalize-dist" id="id22">VSA_NORMALIZE_DIST</a></p></li>
-<li><p><a class="reference internal" href="#vsa-random-seed" id="id23">VSA_RANDOM_SEED</a></p></li>
+<li><p><a class="reference internal" href="#vsa-max-iter" id="id21">VSA_MAX_ITER</a></p></li>
+<li><p><a class="reference internal" href="#vsa-min-delta" id="id22">VSA_MIN_DELTA</a></p></li>
+<li><p><a class="reference internal" href="#vsa-avg-faces-per-patch" id="id23">VSA_AVG_FACES_PER_PATCH</a></p></li>
+<li><p><a class="reference internal" href="#vsa-max-patch-radius" id="id24">VSA_MAX_PATCH_RADIUS</a></p></li>
+<li><p><a class="reference internal" href="#vsa-normalize-dist" id="id25">VSA_NORMALIZE_DIST</a></p></li>
+<li><p><a class="reference internal" href="#vsa-random-seed" id="id26">VSA_RANDOM_SEED</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#references" id="id24">References</a></p></li>
+<li><p><a class="reference internal" href="#references" id="id27">References</a></p></li>
 </ul>
 </div>
 <div class="section" id="algorithm">
@@ -260,7 +260,7 @@ every face is assigned to a patch, so the enclosure has been partitioned into <s
 connected regions (the patches).</p>
 <p>Once a partition is found, the <em>proxy fitting</em> phase computes an ‘optimal representative’ of each
 patch, called the patch proxy. These patch proxies correspond to the centroids of Lloyd’s algorithm
-<span class="bibtex" id="id2">[vsa-Cohen-Steiner:2004:VSA]</span>. In the partition phase, the face distortion is measured relative
+<span id="id2">[<a class="reference internal" href="#id6"><span>1</span></a>]</span>. In the partition phase, the face distortion is measured relative
 to these proxies. At the end of the proxy fitting phase, the face with least distortion relative to
 the new proxy is selected as a seed patch for the next iteration.</p>
 <p>The seed patches for the first iteration are chosen with a ‘farthest-point’ initialization method.
@@ -409,7 +409,7 @@ stages, VSA drives down the total distortion error <span class="math notranslate
 <p>The terms of <span class="math notranslate nohighlight">\(E(P_i, \rho_i)\)</span> are defined below.</p>
 <div class="section" id="l21-metric">
 <h4><span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric<a class="headerlink" href="#l21-metric" title="Permalink to this headline">¶</a></h4>
-<p>Cohen-Steiner et al. <span class="bibtex" id="id3">[vsa-Cohen-Steiner:2004:VSA]</span> define the so-called <span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric to measure
+<p>Cohen-Steiner et al. <span id="id3">[<a class="reference internal" href="#id6"><span>1</span></a>]</span> define the so-called <span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric to measure
 the planarity of a patch. The <span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric is based on an <span class="math notranslate nohighlight">\(\mathcal{L}^2\)</span> measure of the normal field over the
 patch. Given a patch <span class="math notranslate nohighlight">\(P_i\)</span> and proxy <span class="math notranslate nohighlight">\(\rho_i = (X_i, \vec{n}_i)\)</span> we define</p>
 <div class="math notranslate nohighlight">
@@ -444,7 +444,7 @@ Once the queue is emptied, every face has been assigned to a patch and we have a
 assumed to be a manifold, each face can only as many neighbors as its number of edges. Thus, since
 we are only working with triangular or quadrilateral meshes, each face can be queued at most 4
 times. Note also that the partitioning phase runs in time <span class="math notranslate nohighlight">\(N\log(N)\)</span>
-<span class="bibtex" id="id4">[vsa-Cohen-Steiner:2004:VSA]</span>. Therefore, VSA is able to perform partitions very quickly,
+<span id="id4">[<a class="reference internal" href="#id6"><span>1</span></a>]</span>. Therefore, VSA is able to perform partitions very quickly,
 reducing overall computation time.</p>
 <div class="section" id="face-weight">
 <h4>Face Weight<a class="headerlink" href="#face-weight" title="Permalink to this headline">¶</a></h4>
@@ -647,7 +647,12 @@ and results will likely vary from run to run.</p>
 </div>
 <div class="section" id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<p id="bibtex-bibliography-tools/RadE/patches/vsa-1"></p>
+<p id="id5"><dl class="citation">
+<dt class="label" id="id6"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>,<a href="#id3">3</a>,<a href="#id4">4</a>)</span></dt>
+<dd><p>David Cohen-Steiner, Pierre Alliez, and Mathieu Desbrun. Variational Shape Approximation. In <em>ACM SIGGRAPH 2004 Papers</em>, SIGGRAPH '04, 905–914. New York, NY, USA, 2004. ACM. <a class="reference external" href="https://doi.org/10.1145/1186562.1015817">doi:10.1145/1186562.1015817</a>.</p>
+</dd>
+</dl>
+</p>
 </div>
 </div>
 
@@ -664,7 +669,7 @@ and results will likely vary from run to run.</p>
     </p>
     <p>
         &copy; Copyright 2019, Los Alamos National Laboratory.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.1.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.4.3.<br/>
     </p>
   </div>
 </footer>
