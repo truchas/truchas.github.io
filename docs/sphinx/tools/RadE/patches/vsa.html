@@ -172,7 +172,7 @@ Based on localtoc.html from the Guzzle Sphinx theme: https://github.com/guzzle/g
 <li><a class="reference internal" href="#namelist-parameters">Namelist Parameters</a><ul>
 <li><a class="reference internal" href="#vsa-max-iter">VSA_MAX_ITER</a></li>
 <li><a class="reference internal" href="#vsa-min-delta">VSA_MIN_DELTA</a></li>
-<li><a class="reference internal" href="#vsa-avg-faces-per-patch">VSA_AVG_FACES_PER_PATCH</a></li>
+<li><a class="reference internal" href="#vsa-face-patch-ratio">VSA_FACE_PATCH_RATIO</a></li>
 <li><a class="reference internal" href="#vsa-max-patch-radius">VSA_MAX_PATCH_RADIUS</a></li>
 <li><a class="reference internal" href="#vsa-normalize-dist">VSA_NORMALIZE_DIST</a></li>
 <li><a class="reference internal" href="#vsa-random-seed">VSA_RANDOM_SEED</a></li>
@@ -239,7 +239,7 @@ convergence criterion is met.</p>
 <ul>
 <li><p><a class="reference internal" href="#vsa-max-iter" id="id21">VSA_MAX_ITER</a></p></li>
 <li><p><a class="reference internal" href="#vsa-min-delta" id="id22">VSA_MIN_DELTA</a></p></li>
-<li><p><a class="reference internal" href="#vsa-avg-faces-per-patch" id="id23">VSA_AVG_FACES_PER_PATCH</a></p></li>
+<li><p><a class="reference internal" href="#vsa-face-patch-ratio" id="id23">VSA_FACE_PATCH_RATIO</a></p></li>
 <li><p><a class="reference internal" href="#vsa-max-patch-radius" id="id24">VSA_MAX_PATCH_RADIUS</a></p></li>
 <li><p><a class="reference internal" href="#vsa-normalize-dist" id="id25">VSA_NORMALIZE_DIST</a></p></li>
 <li><p><a class="reference internal" href="#vsa-random-seed" id="id26">VSA_RANDOM_SEED</a></p></li>
@@ -284,7 +284,7 @@ and any of the face vertices.</p></li>
 </li>
 <li><p>Generate the face adjacency matrix. Faces at angles greater than
 <a class="reference internal" href="patches_namelist.html#max-angle"><span class="std std-ref">MAX_ANGLE</span></a> are not adjacent.</p></li>
-<li><p>Let NPATCH_MIN = NFACE / VSA_AVG_FACES_PER_PATCH, where NFACE is the total number of faces
+<li><p>Let NPATCH_MIN = NFACE / VSA_FACE_PATCH_RATIO, where NFACE is the total number of faces
 in the enclosure.</p></li>
 <li><p>Let NPATCH=0. This variable tracks the current number of patches.</p></li>
 <li><p>If provided, use <a class="reference internal" href="#vsa-random-seed"><span class="std std-ref">VSA_RANDOM_SEED</span></a> to initialize the
@@ -548,7 +548,7 @@ only three of those are unique to VSA.</p>
 namelist documentation</span></a> for more
 information on those parameters.</p>
 <p>The three parameters unique to VSA are aptly named VSA_MAX_ITER, VSA_MIN_DELTA, and
-VSA_AVG_FACES_PER_PATCH. We discuss these parameters briefly below.</p>
+VSA_FACE_PATCH_RATIO. We discuss these parameters briefly below.</p>
 <div class="section" id="vsa-max-iter">
 <h3>VSA_MAX_ITER<a class="headerlink" href="#vsa-max-iter" title="Permalink to this headline">¶</a></h3>
 <p>Defines the maximum number of iterations for the <a class="reference internal" href="#outline"><span class="std std-ref">error minimization</span></a> step of the algorithm.</p>
@@ -576,24 +576,20 @@ said to converge and will terminate at that iteration.</p>
 <p>For more details on how the change between old and new proxies is computed, refer to step 3.2.4 of
 the <a class="reference internal" href="#outline"><span class="std std-ref">algorithm outline</span></a>.</p>
 </div>
-<div class="section" id="vsa-avg-faces-per-patch">
-<h3>VSA_AVG_FACES_PER_PATCH<a class="headerlink" href="#vsa-avg-faces-per-patch" title="Permalink to this headline">¶</a></h3>
-<p>Defines the average faces per patch, and by extension the total number of patches.</p>
+<div class="section" id="vsa-face-patch-ratio">
+<h3>VSA_FACE_PATCH_RATIO<a class="headerlink" href="#vsa-face-patch-ratio" title="Permalink to this headline">¶</a></h3>
+<p>Defines the ratio of total faces to total patches, and by extension the total number of patches.</p>
 <blockquote class="nml-param">
 <div><p><strong>Type:</strong> <code class="docutils literal notranslate"><span class="pre">REAL</span></code></p>
-<p><strong>Domain:</strong> vsa_avg_faces_per_patch &gt;= 1.0</p>
-<p><strong>Default:</strong> vsa_avg_faces_per_patch = 4.0</p>
+<p><strong>Domain:</strong> vsa_face_patch_ratio &gt;= 1.0</p>
+<p><strong>Default:</strong> vsa_face_patch_ratio = 4.0</p>
 </div></blockquote>
-<p>The average faces per patch is given by</p>
-<div class="math notranslate nohighlight">
-\[\text{(Total Faces)}/\text{(Total Patches)}\]</div>
 <p>Since the number of faces is fixed, this parameter determines the total number of patches in the
 final configuration:</p>
 <div class="math notranslate nohighlight">
-\[\text{(Total Patches)} = \text{(Total Faces)} *
-\text{vsa_avg_faces_per_patch}\]</div>
+\[\text{(Total Patches)} = \text{(Total Faces)}\ /\ \text{vsa_face_patch_ratio}\]</div>
 <p>Rather than set the number of patches explicitly, which is mesh dependent, expressing this
-parameter as an average allows the same value to apply to a variety of meshes.</p>
+parameter as a ratio allows the same value to apply to a variety of meshes.</p>
 </div>
 <div class="section" id="vsa-max-patch-radius">
 <h3>VSA_MAX_PATCH_RADIUS<a class="headerlink" href="#vsa-max-patch-radius" title="Permalink to this headline">¶</a></h3>
