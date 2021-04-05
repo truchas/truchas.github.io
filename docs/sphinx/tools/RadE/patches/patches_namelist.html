@@ -3,7 +3,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
     <title>PATCHES Namelist &#8212; Truchas 1.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
@@ -191,7 +192,7 @@ Based on localtoc.html from the Guzzle Sphinx theme: https://github.com/guzzle/g
       </div>
     <div class="body col-md-9 content" role="main">
       
-  <div class="section" id="patches-namelist">
+  <section id="patches-namelist">
 <h1>PATCHES Namelist<a class="headerlink" href="#patches-namelist" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&amp;PATCHES</span>
 <span class="go">  patch_algorithm = &#39;PAVE&#39;</span>
@@ -246,9 +247,9 @@ particular algorithm are prefixed with the algorithm’s name.</p>
 </li>
 </ul>
 </div>
-<div class="section" id="general-parameters">
+<section id="general-parameters">
 <h2>General Parameters<a class="headerlink" href="#general-parameters" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="patch-algorithm">
+<section id="patch-algorithm">
 <h3>PATCH_ALGORITHM<a class="headerlink" href="#patch-algorithm" title="Permalink to this headline">¶</a></h3>
 <p>Selects one of the three available algorithms, or disables patching.</p>
 <blockquote class="nml-param">
@@ -268,8 +269,8 @@ patches can be quite substantial for very large enclosure meshes, this
 pseudo-algorithm is provided to enable the use of previously computed
 patches.</p></li>
 </ol>
-</div>
-<div class="section" id="verbosity-level">
+</section>
+<section id="verbosity-level">
 <h3>VERBOSITY_LEVEL<a class="headerlink" href="#verbosity-level" title="Permalink to this headline">¶</a></h3>
 <p>Defines the verbosity level for all console output of the patch algorithm.</p>
 <blockquote class="nml-param">
@@ -300,8 +301,8 @@ patches.</p></li>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="max-angle">
+</section>
+<section id="max-angle">
 <h3>MAX_ANGLE<a class="headerlink" href="#max-angle" title="Permalink to this headline">¶</a></h3>
 <p>Defines the maximum allowable angle (in degrees) between adjacent faces.</p>
 <blockquote class="nml-param">
@@ -312,11 +313,13 @@ patches.</p></li>
 <p>All the patch algorithms construct the <a class="reference external" href="http://mathworld.wolfram.com/AdjacencyMatrix.html">adjacency matrix</a> of the enclosure faces to efficiently
 determine which faces are adjacent to others. If the normals of two ‘topologically adjacent’ faces
 exceed <em>max_angle</em>, then the faces will not be neighbors in the internal adjacency matrix.</p>
-<div class="figure align-center" id="id1" style="width: 45%">
+<figure class="align-center" id="id1" style="width: 45%">
 <img alt="../../../_images/connected_components.png" src="../../../_images/connected_components.png" />
-<p class="caption"><span class="caption-text">The connected components of the outer surface of a furnace funnel. MAX_ANGLE is set to 20
+<figcaption>
+<p><span class="caption-text">The connected components of the outer surface of a furnace funnel. MAX_ANGLE is set to 20
 degrees. Each component is a different color. The face edges are omitted for clarity.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
+</figcaption>
+</figure>
 <p>The patch algorithms guarantee that patches will be <em>connected sets</em> of faces. Therefore,
 <code class="docutils literal notranslate"><span class="pre">max_angle</span></code> divides the enclosure into connected components of faces wherever there are ‘sharp’
 edges whose angle exceeds the parameter. Patches will never span more than one component.</p>
@@ -330,23 +333,23 @@ is unlikely in practice, given a reasonably smooth enclosure and small <code cla
 <p class="admonition-title">See also</p>
 <p>The effects of <code class="docutils literal notranslate"><span class="pre">max_angle</span></code> vary by algorithm. Refer to the documentation of the <a class="reference internal" href="pave.html"><span class="doc">PAVE</span></a>, <a class="reference internal" href="vac.html"><span class="doc">VAC</span></a>, and <a class="reference internal" href="vsa.html"><span class="doc">VSA</span></a> algorithms for more details.</p>
 </div>
-</div>
-</div>
-<div class="section" id="file-parameters">
+</section>
+</section>
+<section id="file-parameters">
 <h2>FILE Parameters<a class="headerlink" href="#file-parameters" title="Permalink to this headline">¶</a></h2>
 <p>The following namelist parameter applies only to the FILE algorithm.</p>
-<div class="section" id="patch-file">
+<section id="patch-file">
 <h3>PATCH_FILE<a class="headerlink" href="#patch-file" title="Permalink to this headline">¶</a></h3>
 <p>The path to an existing radiation enclosure file containing patch information.
 The enclosure defined by the file must be identical to current enclosure.
 This may be an absolute path or a relative path.</p>
-</div>
-</div>
-<div class="section" id="pave-parameters">
+</section>
+</section>
+<section id="pave-parameters">
 <h2>PAVE Parameters<a class="headerlink" href="#pave-parameters" title="Permalink to this headline">¶</a></h2>
 <p>The following namelist parameters apply only to the PAVE algorithm. For more
 information, refer to the <a class="reference internal" href="pave.html"><span class="doc">PAVE algorithm documentation</span></a>.</p>
-<div class="section" id="pave-merge-level">
+<section id="pave-merge-level">
 <h3>PAVE_MERGE_LEVEL<a class="headerlink" href="#pave-merge-level" title="Permalink to this headline">¶</a></h3>
 <p>Controls the aggressiveness of patch merging for the <a class="reference internal" href="pave.html"><span class="doc">PAVE algorithm</span></a>.</p>
 <blockquote class="nml-param">
@@ -387,8 +390,8 @@ This ensures that the merge is always performed.</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="pave-split-patch-size">
+</section>
+<section id="pave-split-patch-size">
 <h3>PAVE_SPLIT_PATCH_SIZE<a class="headerlink" href="#pave-split-patch-size" title="Permalink to this headline">¶</a></h3>
 <p>Defines the maximum size of patches to be split during patch merging for the <a class="reference internal" href="pave.html"><span class="doc">PAVE algorithm</span></a>.</p>
 <blockquote class="nml-param">
@@ -408,8 +411,8 @@ possible due to a merge.</p>
 <p>For best results, set <code class="docutils literal notranslate"><span class="pre">pave_split_patch_size</span></code> to 3 for quadrilateral meshes
 and to 5 for triangular meshes. This avoids splitting too many patches.</p>
 </div>
-</div>
-<div class="section" id="pave-random-seed">
+</section>
+<section id="pave-random-seed">
 <h3>PAVE_RANDOM_SEED<a class="headerlink" href="#pave-random-seed" title="Permalink to this headline">¶</a></h3>
 <p>Defines the seed for the random number generator used to pick the initial seed patches for the
 <a class="reference internal" href="pave.html"><span class="doc">PAVE algorithm</span></a>.</p>
@@ -427,13 +430,13 @@ documentation for more information on how the seed patches are selected.</p>
 Therefore, runs with the same value for this parameter will produce identical results. If this
 parameter is not specified, then the seed is taken from the system clock and results will likely
 vary from run to run.</p>
-</div>
-</div>
-<div class="section" id="vac-parameters">
+</section>
+</section>
+<section id="vac-parameters">
 <h2>VAC Parameters<a class="headerlink" href="#vac-parameters" title="Permalink to this headline">¶</a></h2>
 <p>The following namelist parameters apply only to the VAC algorithm. For more
 information, refer to the <a class="reference internal" href="vac.html"><span class="doc">VAC algorithm documentation</span></a>.</p>
-<div class="section" id="vac-merge-level">
+<section id="vac-merge-level">
 <h3>VAC_MERGE_LEVEL<a class="headerlink" href="#vac-merge-level" title="Permalink to this headline">¶</a></h3>
 <p>Controls the aggressiveness of patch merging for the <a class="reference internal" href="vac.html"><span class="doc">VAC algorithm</span></a>.</p>
 <blockquote class="nml-param">
@@ -474,8 +477,8 @@ This ensures that the merge is always performed.</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="vac-split-patch-size">
+</section>
+<section id="vac-split-patch-size">
 <h3>VAC_SPLIT_PATCH_SIZE<a class="headerlink" href="#vac-split-patch-size" title="Permalink to this headline">¶</a></h3>
 <p>Defines the maximum size of patches to be split during patch merging for the <a class="reference internal" href="vac.html"><span class="doc">VAC algorithm</span></a>.</p>
 <blockquote class="nml-param">
@@ -495,13 +498,13 @@ possible due to a merge.</p>
 <p>For best results, set <code class="docutils literal notranslate"><span class="pre">vac_split_patch_size</span></code> to 3 for quadrilateral meshes
 and to 5 for triangular meshes. This avoids splitting too many patches.</p>
 </div>
-</div>
-</div>
-<div class="section" id="vsa-parameters">
+</section>
+</section>
+<section id="vsa-parameters">
 <h2>VSA Parameters<a class="headerlink" href="#vsa-parameters" title="Permalink to this headline">¶</a></h2>
 <p>The following namelist parameters apply only to the VSA algorithm. For more
 information, refer to the <a class="reference internal" href="vsa.html"><span class="doc">VSA algorithm documentation</span></a>.</p>
-<div class="section" id="vsa-max-iter">
+<section id="vsa-max-iter">
 <h3>VSA_MAX_ITER<a class="headerlink" href="#vsa-max-iter" title="Permalink to this headline">¶</a></h3>
 <p>Defines the maximum number of iterations for the <a class="reference internal" href="vsa.html"><span class="doc">VSA algorithm</span></a>.</p>
 <blockquote class="nml-param">
@@ -511,8 +514,8 @@ information, refer to the <a class="reference internal" href="vsa.html"><span cl
 </div></blockquote>
 <p>The algorithm stops when <code class="docutils literal notranslate"><span class="pre">vsa_max_iter</span></code> is reached, regardless of other
 terminating conditions.</p>
-</div>
-<div class="section" id="vsa-min-delta">
+</section>
+<section id="vsa-min-delta">
 <h3>VSA_MIN_DELTA<a class="headerlink" href="#vsa-min-delta" title="Permalink to this headline">¶</a></h3>
 <p>Defines the minimum allowable change in patch proxies between successive iterations of the
 <a class="reference internal" href="vsa.html"><span class="doc">VSA algorithm</span></a>.</p>
@@ -526,8 +529,8 @@ against the old proxies. The algorithm keeps track of the <em>minimum</em> chang
 proxies. This change is computed as the sum of the squares of the difference between the old and new
 proxy vectors. If the minimum change in patch proxies is less than <code class="docutils literal notranslate"><span class="pre">vsa_min_delta</span></code>, the algorithm
 stops at that iteration.</p>
-</div>
-<div class="section" id="vsa-face-patch-ratio">
+</section>
+<section id="vsa-face-patch-ratio">
 <h3>VSA_FACE_PATCH_RATIO<a class="headerlink" href="#vsa-face-patch-ratio" title="Permalink to this headline">¶</a></h3>
 <p>Defines the ratio of total faces to total patches, and by extension the total number of patches, of
 the <a class="reference internal" href="vsa.html"><span class="doc">VSA algorithm</span></a>.</p>
@@ -542,8 +545,8 @@ final configuration:</p>
 \[\text{(Total Patches)} = \text{(Total Faces)}\ /\ \text{vsa_face_patch_ratio}\]</div>
 <p>Rather than set the number of patches explicitly, which is mesh dependent, expressing this
 parameter as a ratio allows the same value to apply to a variety of meshes.</p>
-</div>
-<div class="section" id="vsa-max-patch-radius">
+</section>
+<section id="vsa-max-patch-radius">
 <h3>VSA_MAX_PATCH_RADIUS<a class="headerlink" href="#vsa-max-patch-radius" title="Permalink to this headline">¶</a></h3>
 <p>Defines the desired maximum radius for a patch for the <a class="reference internal" href="vsa.html"><span class="doc">VSA algorithm</span></a>.</p>
 <blockquote class="nml-param">
@@ -557,8 +560,8 @@ VSA documentation for more information on how the parameter affects the face wei
 <p>Note that the default value of this parameter is <code class="code fortran docutils literal notranslate"><span class="name builtin"><span class="pre">sqrt</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name builtin"><span class="pre">huge</span></span><span class="punctuation"><span class="pre">(</span></span><span class="literal number float"><span class="pre">0.0_r8</span></span><span class="punctuation"><span class="pre">))</span></span></code> because it is squared
 in the face weight computation. By taking the root of <code class="code fortran docutils literal notranslate"><span class="name builtin"><span class="pre">huge</span></span><span class="punctuation"><span class="pre">(</span></span><span class="literal number float"><span class="pre">0.0_r8</span></span><span class="punctuation"><span class="pre">)</span></span></code> we prevent floating
 point overflow errors. Numerically, the default value on the order of <cite>1.34*10^{154}</cite>.</p>
-</div>
-<div class="section" id="vsa-normalize-dist">
+</section>
+<section id="vsa-normalize-dist">
 <h3>VSA_NORMALIZE_DIST<a class="headerlink" href="#vsa-normalize-dist" title="Permalink to this headline">¶</a></h3>
 <p>Determines whether to normalize the distance bias for the <a class="reference internal" href="vsa.html"><span class="doc">VSA algorithm</span></a>.</p>
 <blockquote class="nml-param">
@@ -574,8 +577,8 @@ patch.</p>
 <p>Refer to the <a class="reference internal" href="vsa.html#distance-bias"><span class="std std-ref">distance bias section</span></a>
 of the VSA documentation for more information on how the parameter affects the face weight
 computation.</p>
-</div>
-<div class="section" id="vsa-random-seed">
+</section>
+<section id="vsa-random-seed">
 <h3>VSA_RANDOM_SEED<a class="headerlink" href="#vsa-random-seed" title="Permalink to this headline">¶</a></h3>
 <p>Defines the seed for the random number generator used to pick the initial seed patches for the
 <a class="reference internal" href="vsa.html"><span class="doc">VSA algorithm</span></a>.</p>
@@ -592,9 +595,9 @@ distortion as the new seed patch.</p>
 each connected component. Therefore, runs with the same value for this parameter will produce
 identical results. If this parameter is not specified, then the seed is taken from the system clock
 and results will likely vary from run to run.</p>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
     </div>
