@@ -1,0 +1,337 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>16. MATERIAL and PHASE Namelists &mdash; Truchas Reference Manual 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="17. MESH Namelist" href="../MESH_Namelist/index.html" />
+    <link rel="prev" title="15. INDUCTION_COIL Namelist" href="../INDUCTION_COIL_Namelist/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Truchas Reference Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ALTMESH_Namelist/index.html">2. ALTMESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BC_Namelist/index.html">3. BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BODY_Namelist/index.html">4. BODY Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DIFFUSION_Solver_Namelist/index.html">5. DIFFUSION Solver Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DS_SOURCE_Namelist/index.html">6. DS_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html">7. ELECTROMAGNETICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_RADIATION_Namelist/index.html">8. ENCLOSURE_RADIATION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_SURFACE_Namelist/index.html">9. ENCLOSURE_SURFACE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../EVAPORATION_Namelist/index.html">10. EVAPORATION Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_Namelist/index.html">11. FLOW Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_BC_Namelist/index.html">12. FLOW_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html">13. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FUNCTION_Namelist/index.html">14. FUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../INDUCTION_COIL_Namelist/index.html">15. INDUCTION_COIL Namelist</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">16. MATERIAL and PHASE Namelists</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">16.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-material-namelist">16.2. The MATERIAL Namelist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-phase-namelist">16.3. The PHASE Namelist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#property-and-attribute-variables">16.4. Property and Attribute Variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#thermodynamic-properties">16.4.1. Thermodynamic Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fluid-flow-properties">16.4.2. Fluid Flow Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#electromagentic-properties">16.4.3. Electromagentic Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#thermomechanical-properties">16.4.4. Thermomechanical Properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#species-transport-properties">16.4.5. Species Transport Properties</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">17. MESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">18. NUMERICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">19. OUTPUTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">20. PHASE_CHANGE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">21. PHYSICAL_CONSTANTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">22. PHYSICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">23. PROBE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">24. RESTART Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">25. SIMULATION_CONTROL Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">26. SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">27. SPECIES_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">28. THERMAL_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">29. THERMAL_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">30. TOOLPATH Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">31. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">32. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">33. VISCOPLASTIC_MODEL Namelist</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Truchas Reference Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">16. </span>MATERIAL and PHASE Namelists</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/MATERIAL_and_PHASE_Namelists/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="toctree-wrapper compound" id="material-and-phase-namelists">
+</div>
+<section id="id1">
+<h1><span class="section-number">16. </span>MATERIAL and PHASE Namelists<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<section id="overview">
+<h2><span class="section-number">16.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>A database of materials, their properties and attributes are defined using the <a class="reference internal" href="#material-and-phase-namelists"><span class="std std-ref">MATERIAL</span></a>, <a class="reference internal" href="#material-and-phase-namelists"><span class="std std-ref">PHASE</span></a>, and <a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html#phase-change-namelist"><span class="std std-ref">PHASE_CHANGE</span></a> namelists. Not all materials are necessarily included in the simulation, but only those specified by the <a class="reference internal" href="../PHYSICS_Namelist/index.html#physics-namelist"><span class="std std-ref">PHYSICS</span></a> namelist variable <a class="reference internal" href="../PHYSICS_Namelist/index.html#physics-m"><span class="std std-ref">materials</span></a>. This allows one to reuse material input blocks without needing to prune out unused materials which would otherwise negatively impact performance. In Truchas usage, one or more phases comprise a material. A single-phase material is defined by a <a class="reference internal" href="#material-and-phase-namelists"><span class="std std-ref">MATERIAL</span></a> namelist, and the namelist specifies all properties and attributes of the material. A multi-phase material is defined by a <a class="reference internal" href="#material-and-phase-namelists"><span class="std std-ref">MATERIAL</span></a> namelist and an optional <a class="reference internal" href="#material-and-phase-namelists"><span class="std std-ref">PHASE</span></a> namelist for each of the material phases. Properties and attributes that apply to all phases can be defined in the <a class="reference internal" href="#material-and-phase-namelists"><span class="std std-ref">MATERIAL</span></a> namelist. Properties and attributes specific to a given phase are defined in the <a class="reference internal" href="#material-and-phase-namelists"><span class="std std-ref">PHASE</span></a> namelist for the phase, and these superced eany that might be defined in the <a class="reference internal" href="#material-and-phase-namelists"><span class="std std-ref">MATERIAL</span></a> namelist for the phase. Additional information that defines the transformation between phases is specified using the <a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html#phase-change-namelist"><span class="std std-ref">PHASE_CHANGE</span></a> namelist.</p>
+</section>
+<section id="the-material-namelist">
+<h2><span class="section-number">16.2. </span>The MATERIAL Namelist<a class="headerlink" href="#the-material-namelist" title="Permalink to this headline">¶</a></h2>
+<p>The MATERIAL namelist defines a material, either single-phase or multi-phase, that is available to be used in a simulation. In addition to the property and attribute variables described below, the namelist has the following variables.</p>
+<p><strong>name</strong> A unique name for the material used to reference it.</p>
+<p><strong>phases</strong> A multi-phase material is defined by assigning a value to phases. This is a list of two or more unique phase names that comprise the material. The phases must be listed in order from low to high temperature phases. The phase names will be referenced by <a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html#phase-change-namelist"><span class="std std-ref">PHASE_CHANGE</span></a> namelists and by optional PHASE namelists. Consecutive pairs of phases must be accompanied by a corresponding <a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html#phase-change-namelist"><span class="std std-ref">PHASE_CHANGE</span></a> namelist.</p>
+</section>
+<section id="the-phase-namelist">
+<span id="mp-phase-pm"></span><h2><span class="section-number">16.3. </span>The PHASE Namelist<a class="headerlink" href="#the-phase-namelist" title="Permalink to this headline">¶</a></h2>
+<p>The PHASE namelist defines properties and attributes specific to one phase of a multi-phase material. It is optional. Any properties or attributes defined here supersede those defined in the parent MATERIAL namelist. In addition to the property and attribute variables described below, the PHASE namelist has the following variable.</p>
+<p><strong>name</strong> The name of the phase. This is one of the names assigned to the phases variable of the MATERIAL namelist for the parent material.</p>
+</section>
+<section id="property-and-attribute-variables">
+<h2><span class="section-number">16.4. </span>Property and Attribute Variables<a class="headerlink" href="#property-and-attribute-variables" title="Permalink to this headline">¶</a></h2>
+<p>The following variables specify the values of material properties and attributes. Unless otherwise noted, they may appear in both the <a class="reference internal" href="#material-and-phase-namelists"><span class="std std-ref">MATERIAL and PHASE</span></a> namelists. Many properties can be either constant-valued or a function. Variables ending with the suffix <code class="docutils literal notranslate"><span class="pre">_func</span></code> specify the name of a <a class="reference internal" href="../FUNCTION_Namelist/index.html#function-namelist"><span class="std std-ref">FUNCTION</span></a> namelist that defines a function that computes the value of the property.</p>
+<section id="thermodynamic-properties">
+<h3><span class="section-number">16.4.1. </span>Thermodynamic Properties<a class="headerlink" href="#thermodynamic-properties" title="Permalink to this headline">¶</a></h3>
+<p>The following property variables are used by the heat transport model:</p>
+<ul class="simple">
+<li><p><strong>density</strong></p></li>
+<li><p><strong>specific_heat</strong>, <strong>specific_heat_func</strong>, <strong>ref_temp</strong>, and <strong>ref_enthalpy</strong></p></li>
+<li><p><strong>specific_enthalpy_func</strong></p></li>
+<li><p><strong>conductivity</strong>, <strong>conductivity_func</strong></p></li>
+</ul>
+<p>The material mass density (mass per volume) is specified by density. It is limited to constant values and all phases in a multi-phase material are currently constrained to have the same density (but see <strong>density_delta_func</strong> for flow and <strong>tm_linear_cte</strong> for solid mechanics.) Consequently this variable may only appear in the MATERIAL namelist.</p>
+<p>There are two options for defining the temperature-dependent specific enthalpy function <span class="math notranslate nohighlight">\(h(T)\)</span> of a material or phase. The first specifies the specific heat <span class="math notranslate nohighlight">\(C_p(T)\)</span> (energy per unit mass per degree temperature) using <strong>specific_heat</strong> for a constant or <strong>specific_heat_func</strong> for a function of temperature. In the latter case it must either be a tabular function or a polynomial without a <span class="math notranslate nohighlight">\(T^{−1}\)</span> term. An analytic antiderivative of the specific heat will be generated by Truchas and used for <span class="math notranslate nohighlight">\(h(T)\)</span>. For a single-phase material or the lowest-temperature phase of a multi-phase material, there is an arbitrary constant of integration. By default it is chosen such that <span class="math notranslate nohighlight">\(h(0) = 0\)</span>. It can be chosen instead such that <span class="math notranslate nohighlight">\(h(T_{ref}) =h_{ref}\)</span> by specifying values for the optional variables <strong>ref_temp</strong> and <strong>ref_enthalpy</strong>, which default to 0. These latter two variables may only appear in the MATERIAL namelist.</p>
+<p>The second option is to specify the specific enthalpy function <span class="math notranslate nohighlight">\(h(T)\)</span> (energy per unit mass) directly using <strong>specific_enthalpy_func</strong>. The function must be strictly increasing, and when used for a phase of a multi-phase material, it must incorporate the latent heat associated with the transformation from the adjacent lower-temperature phase (when there is one).</p>
+<p>The thermal conductivity (power per unit length per degree temperature) of a material or phase is specified by <strong>conductivity</strong> for a constant or <strong>conductivity_func</strong> for a function. The function is assumed to be a function of temperature <span class="math notranslate nohighlight">\(T\)</span>, or <span class="math notranslate nohighlight">\((T,\phi_1,...,\phi_n)\)</span> when coupled with solutal species transport.</p>
+</section>
+<section id="fluid-flow-properties">
+<h3><span class="section-number">16.4.2. </span>Fluid Flow Properties<a class="headerlink" href="#fluid-flow-properties" title="Permalink to this headline">¶</a></h3>
+<p>The following attribute and property variables are used by the fluid flow model:</p>
+<ul class="simple">
+<li><p><strong>is_fluid</strong></p></li>
+<li><p><strong>density</strong></p></li>
+<li><p><strong>density_delta_func</strong></p></li>
+<li><p><strong>viscosity</strong>, <strong>viscosity_func</strong></p></li>
+</ul>
+<p>The boolean attribute <strong>is_fluid</strong> is used to indicate whether or not the material or phase is a fluid. Its default value is <span class="math notranslate nohighlight">\(F\)</span> (or <span class="math notranslate nohighlight">\(.false.\)</span>) Materials and phases marked as fluid are included in the fluid flow model. The constant reference density <span class="math notranslate nohighlight">\(\rho_o\)</span> of a fluid material or phase is specified by <strong>density</strong>. This is the same density value used for heat transport. A temperature-dependent fluid density <span class="math notranslate nohighlight">\(\rho(T)\)</span> can be defined by giving its deviation from the reference density, <span class="math notranslate nohighlight">\(\delta\rho(T) = \rho(T)−\rho_0\)</span> using the variable <strong>density_delta_func</strong>. This is used only to compute the buoyancy body force of the Boussinesq approximation in the flow model. If not specified, no deviation from the reference density is assumed.</p>
+<p>The dynamic viscosity (mass per length per time) of a material or phase is specified by <strong>viscosity</strong> for a constant or <strong>viscosity_func</strong> for a function of temperature. This is required for viscous flow problems (<a class="reference internal" href="../FLOW_Namelist/index.html#flow-namelist"><span class="std std-ref">FLOW</span></a> namelist variable <strong>inviscid = F</strong>).</p>
+</section>
+<section id="electromagentic-properties">
+<h3><span class="section-number">16.4.3. </span>Electromagentic Properties<a class="headerlink" href="#electromagentic-properties" title="Permalink to this headline">¶</a></h3>
+<p>The following property variables are used by the induction heating model:</p>
+<ul class="simple">
+<li><p><strong>electrical_conductivity</strong>, <strong>electrical_conductivity_func</strong></p></li>
+<li><p><strong>electric_susceptibility</strong>, <strong>electric_susceptibility_func</strong></p></li>
+<li><p><strong>magnetic_susceptibility</strong>, <strong>magnetic_susceptibility_func</strong></p></li>
+</ul>
+<p>The electrical conductivity of a material or phase is specified using either <strong>electrical_conductivity</strong> for aconstant, or <strong>electrical_conductivity_func</strong> for a function of temperature. The default value is <span class="math notranslate nohighlight">\(0\)</span>. The electromagnetics solver assumes SI units by default and the units of electrical conductivity are <span class="math notranslate nohighlight">\(Siemens\:per\:meter\)</span>. To use different units, the values for the <a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html#physical-constants-namelist"><span class="std std-ref">PHYSICAL_CONSTANTS</span></a> namelist variables <strong>vacuum_permeability</strong> and <strong>vacuum_permittivity</strong> must be redefined appropriately.</p>
+<p>The electric susceptibility <span class="math notranslate nohighlight">\(\chi_e\)</span> of a material or phase is specified using either <strong>electric_susceptibility</strong> fora constant, or <strong>electric_susceptibility_func</strong> for a function of temperature. The relative permittivity is <span class="math notranslate nohighlight">\(1 +\chi_e\)</span>. This property has a default value of zero, which is appropriate in most cases.</p>
+</section>
+<section id="thermomechanical-properties">
+<h3><span class="section-number">16.4.4. </span>Thermomechanical Properties<a class="headerlink" href="#thermomechanical-properties" title="Permalink to this headline">¶</a></h3>
+<p>The following properties are used by the solid mechanics model, and are only relevant to non-fluid materials and phases. Additional viscoplasticity parameters may be defined using the <a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html#viscoplastic-model-namelist"><span class="std std-ref">VISCOPLASTIC_MODEL</span></a> namelist.</p>
+<ul class="simple">
+<li><p><strong>tm_ref_density</strong></p></li>
+<li><p><strong>tm_ref_temp</strong></p></li>
+<li><p><strong>tm_linear_cte</strong>, <strong>tm_linear_cte_func</strong></p></li>
+<li><p><strong>tm_lame1</strong>, <strong>tm_lame1_func</strong></p></li>
+<li><p><strong>tm_lame2</strong>, <strong>tm_lame2_func</strong></p></li>
+</ul>
+<p>The temperature at which a material or phase is stress-free is specified by <strong>tm_ref_temp</strong> and its density (mass per volume) at that temperature specified by <strong>tm_ref_density</strong>. Its linear coefficient of thermal expansion (inverse time) is specified by <strong>tm_linear_cte</strong> for a constant or <strong>tm_linear_cte_func</strong> for a function of temperature.
+The first and second Lamé constants <span class="math notranslate nohighlight">\(\lambda\)</span> and <span class="math notranslate nohighlight">\(G\)</span> (force per area) for a material or phase is specified by <strong>tm_lame1</strong> and <strong>tm_lame2</strong> for constants or <strong>tm_lame1_func</strong> and <strong>tm_lame2_func</strong> for functions of temperature.</p>
+</section>
+<section id="species-transport-properties">
+<h3><span class="section-number">16.4.5. </span>Species Transport Properties<a class="headerlink" href="#species-transport-properties" title="Permalink to this headline">¶</a></h3>
+<p>The following property variables are relevant to the solutal species transport model. The model allows for an arbitrary number of species with concentrations <span class="math notranslate nohighlight">\(\{ \phi_i \}^n_{i=1}\)</span>, and the variables are arrays of length <span class="math notranslate nohighlight">\(n\)</span> with each element being the property for the corresponding species.</p>
+<ul class="simple">
+<li><p><strong>diffusivity</strong>, <strong>diffusivity_func</strong></p></li>
+<li><p><strong>soret</strong>, <strong>soret_func</strong></p></li>
+</ul>
+<p>The diffusivity (area per time) of a species component in a material or phase is specified by the corresponding element of <strong>diffusivity</strong> for a constant or <strong>diffusivity_func</strong> for a function. A function is expected to be a function of all the species concentrations <span class="math notranslate nohighlight">\((\phi_1,...,\phi_n)\)</span>, or when coupled with heat transfer, a function of temperature and concentrations <span class="math notranslate nohighlight">\((T,\phi_1,...,\phi_n)\)</span>.</p>
+<p>When coupled with heat transfer, the Soret coefficient (inverse temperature) of the thermodiffusion term for a species component in a material or phase is specified by the corresponding element of <strong>soret</strong> for a constant or <strong>soret_func</strong> for a function. A function is expected to be a function of temperature and concentrations <span class="math notranslate nohighlight">\((T,\phi_1,...,\phi_n)\)</span>. This is optional. If not specified, thermodiffusion of the species component is not included in the model, but if defined for one phase of a multi-phase material, it must be defined for all its phases.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../MESH_Namelist/index.html" class="btn btn-neutral float-right" title="17. MESH Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../INDUCTION_COIL_Namelist/index.html" class="btn btn-neutral float-left" title="15. INDUCTION_COIL Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, LANL.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

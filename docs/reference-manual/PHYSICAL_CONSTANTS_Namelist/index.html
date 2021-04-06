@@ -1,0 +1,316 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>21. PHYSICAL_CONSTANTS Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="22. PHYSICS Namelist" href="../PHYSICS_Namelist/index.html" />
+    <link rel="prev" title="20. PHASE_CHANGE Namelist" href="../PHASE_CHANGE_Namelist/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Truchas Reference Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ALTMESH_Namelist/index.html">2. ALTMESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BC_Namelist/index.html">3. BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BODY_Namelist/index.html">4. BODY Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DIFFUSION_Solver_Namelist/index.html">5. DIFFUSION Solver Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DS_SOURCE_Namelist/index.html">6. DS_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html">7. ELECTROMAGNETICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_RADIATION_Namelist/index.html">8. ENCLOSURE_RADIATION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_SURFACE_Namelist/index.html">9. ENCLOSURE_SURFACE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../EVAPORATION_Namelist/index.html">10. EVAPORATION Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_Namelist/index.html">11. FLOW Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_BC_Namelist/index.html">12. FLOW_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html">13. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FUNCTION_Namelist/index.html">14. FUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../INDUCTION_COIL_Namelist/index.html">15. INDUCTION_COIL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">16. MATERIAL and PHASE Namelists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">17. MESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">18. NUMERICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">19. OUTPUTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">20. PHASE_CHANGE Namelist</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">21. PHYSICAL_CONSTANTS Namelist</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">21.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#physical-constants-namelist-features">21.2. PHYSICAL_CONSTANTS Namelist Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#components">21.3. Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#absolute-zero">21.3.1. Absolute_Zero</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stefan-boltzmann">21.3.2. Stefan_Boltzmann</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vacuum-permeability">21.3.3. Vacuum_Permeability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vacuum-permittivity">21.3.4. Vacuum_Permittivity</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">22. PHYSICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">23. PROBE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">24. RESTART Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">25. SIMULATION_CONTROL Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">26. SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">27. SPECIES_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">28. THERMAL_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">29. THERMAL_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">30. TOOLPATH Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">31. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">32. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">33. VISCOPLASTIC_MODEL Namelist</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Truchas Reference Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">21. </span>PHYSICAL_CONSTANTS Namelist</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/PHYSICAL_CONSTANTS_Namelist/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="toctree-wrapper compound" id="physical-constants-namelist">
+</div>
+<section id="id1">
+<h1><span class="section-number">21. </span>PHYSICAL_CONSTANTS Namelist<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<section id="overview">
+<h2><span class="section-number">21.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The values of physical constants used in Truchas’ physics models are set through this namelist. The default for all these constants is their value in SI units. If a different system of units is used, these may need to be assigned the appropriate values.</p>
+</section>
+<section id="physical-constants-namelist-features">
+<h2><span class="section-number">21.2. </span>PHYSICAL_CONSTANTS Namelist Features<a class="headerlink" href="#physical-constants-namelist-features" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><strong>Required/Optional        :</strong> Optional</div>
+<div class="line"><strong>Single/Multiple Instances:</strong> Single</div>
+</div>
+</section>
+<section id="components">
+<h2><span class="section-number">21.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#phyco-az"><span class="std std-ref">Absolute_Zero</span></a></p></li>
+<li><p><a class="reference internal" href="#phyco-sb"><span class="std std-ref">Stefan_Boltzmann</span></a></p></li>
+<li><p><a class="reference internal" href="#phyco-vpm"><span class="std std-ref">Vacuum_Permeability</span></a></p></li>
+<li><p><a class="reference internal" href="#phyco-vpt"><span class="std std-ref">Vacuum_Permittivity</span></a></p></li>
+</ul>
+<section id="absolute-zero">
+<span id="phyco-az"></span><h3><span class="section-number">21.3.1. </span>Absolute_Zero<a class="headerlink" href="#absolute-zero" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : The value of absolute-zero in the temperature scale used. The default value is 0 for Kelvin. Centigrade would use the value −273.15, for example. This constant is used by thermal radiation boundary conditions and enclosure (view factor) radiation.</div>
+<div class="line"><strong>Physical dimension</strong> <span class="math notranslate nohighlight">\(\Theta\)</span></div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : 0 K</div>
+<div class="line"><strong>Valid Values</strong>: any value</div>
+</div>
+</section>
+<section id="stefan-boltzmann">
+<span id="phyco-sb"></span><h3><span class="section-number">21.3.2. </span>Stefan_Boltzmann<a class="headerlink" href="#stefan-boltzmann" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Stefan-Boltzmann constant for thermal radiation. The default is its value in SI units. This constant is used by thermal radiation boundary condititions and enclosure (view factor) radiation.</div>
+<div class="line"><strong>Physical dimension</strong> <span class="math notranslate nohighlight">\(E/{T.L^2.\Theta^4}\)</span></div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     :<span class="math notranslate nohighlight">\(5.67 . 10^{-8} W/{m^2.K}\)</span></div>
+<div class="line"><strong>Valid Values</strong>: any positive value</div>
+</div>
+</section>
+<section id="vacuum-permeability">
+<span id="phyco-vpm"></span><h3><span class="section-number">21.3.3. </span>Vacuum_Permeability<a class="headerlink" href="#vacuum-permeability" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : The magnetic permeability of free space. The default is its value in SI units. This parameter is used by the electromagnetics solver.</div>
+<div class="line"><strong>Physical dimension</strong> <span class="math notranslate nohighlight">\(M.L.T^{-2}.I^{-2}\)</span></div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     :<span class="math notranslate nohighlight">\(4\pi . 10^{-7} H/m\)</span></div>
+<div class="line"><strong>Valid Values</strong>: any positive value</div>
+</div>
+</section>
+<section id="vacuum-permittivity">
+<span id="phyco-vpt"></span><h3><span class="section-number">21.3.4. </span>Vacuum_Permittivity<a class="headerlink" href="#vacuum-permittivity" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : The electric permittivity of free space. The default is its value in SI units. This parameter is used by the electromagnetics solver.</div>
+<div class="line"><strong>Physical dimension</strong> <span class="math notranslate nohighlight">\(M^{-1}.L^{-3}.T^{4}.I^{2}\)</span></div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     :<span class="math notranslate nohighlight">\(8.854188 x 10^{-12} F/m\)</span></div>
+<div class="line"><strong>Valid Values</strong>: any positive value</div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../PHYSICS_Namelist/index.html" class="btn btn-neutral float-right" title="22. PHYSICS Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../PHASE_CHANGE_Namelist/index.html" class="btn btn-neutral float-left" title="20. PHASE_CHANGE Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, LANL.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,475 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>33. VISCOPLASTIC_MODEL Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="32. VFUNCTION Namelist" href="../VFUNCTION_Namelist/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Truchas Reference Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ALTMESH_Namelist/index.html">2. ALTMESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BC_Namelist/index.html">3. BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BODY_Namelist/index.html">4. BODY Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DIFFUSION_Solver_Namelist/index.html">5. DIFFUSION Solver Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DS_SOURCE_Namelist/index.html">6. DS_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html">7. ELECTROMAGNETICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_RADIATION_Namelist/index.html">8. ENCLOSURE_RADIATION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_SURFACE_Namelist/index.html">9. ENCLOSURE_SURFACE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../EVAPORATION_Namelist/index.html">10. EVAPORATION Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_Namelist/index.html">11. FLOW Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_BC_Namelist/index.html">12. FLOW_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html">13. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FUNCTION_Namelist/index.html">14. FUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../INDUCTION_COIL_Namelist/index.html">15. INDUCTION_COIL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">16. MATERIAL and PHASE Namelists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">17. MESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">18. NUMERICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">19. OUTPUTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">20. PHASE_CHANGE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">21. PHYSICAL_CONSTANTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">22. PHYSICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">23. PROBE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">24. RESTART Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">25. SIMULATION_CONTROL Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">26. SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">27. SPECIES_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">28. THERMAL_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">29. THERMAL_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">30. TOOLPATH Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">31. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">32. VFUNCTION Namelist</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">33. VISCOPLASTIC_MODEL Namelist</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">33.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#viscoplastic-model-namelist-features">33.2. VISCOPLASTIC_MODEL Namelist Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#components">33.3. Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#phase">33.3.1. Phase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#model">33.3.2. Model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mts-b">33.3.3. MTS_b</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mts-d">33.3.4. MTS_d</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mts-edot-0i">33.3.5. MTS_edot_0i</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mts-g-0i">33.3.6. MTS_g_0i</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mts-k">33.3.7. MTS_k</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mts-mu-0">33.3.8. MTS_mu_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mts-p-i">33.3.9. MTS_p_i</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mts-q-i">33.3.10. MTS_q_i</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mts-sig-a">33.3.11. MTS_sig_a</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mts-sig-i">33.3.12. MTS_sig_i</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mts-temp-0">33.3.13. MTS_temp_0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pwr-law-a">33.3.14. Pwr_Law_A</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pwr-law-n">33.3.15. Pwr_Law_N</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pwr-law-q">33.3.16. Pwr_Law_Q</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pwr-law-r">33.3.17. Pwr_Law_R</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Truchas Reference Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">33. </span>VISCOPLASTIC_MODEL Namelist</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/VISCOPLASTIC_MODEL_Namelist/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="toctree-wrapper compound" id="viscoplastic-model-namelist">
+</div>
+<section id="id1">
+<h1><span class="section-number">33. </span>VISCOPLASTIC_MODEL Namelist<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<section id="overview">
+<h2><span class="section-number">33.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The VISCOPLASTIC_MODEL namelist defines the viscoplastic model to be used for a particular solid material phase in material stress-strain calculations. Two viscoplastic models are available: a mechanical threshold stress (MTS) model and a power law model. When no model is given for a solid material phase, it is modeled as a purely elastic material. The models specify a relation for the effective plastic strain rate ̇as a function of temperature <span class="math notranslate nohighlight">\(T\)</span> and von Mises stress <span class="math notranslate nohighlight">\(\sigma\)</span>. For more details on the models see the Truchas Physics and Algorithms manual. Briefly:</p>
+<p><strong>Power Law Model</strong>. In the simple power law model, the strain rate relation is</p>
+<div class="math notranslate nohighlight" id="equation-vpm-eq1">
+<span class="eqno">(33.1.1)<a class="headerlink" href="#equation-vpm-eq1" title="Permalink to this equation">¶</a></span>\[\dot{\epsilon} = A*exp(-Q/RT)*\sigma^n\]</div>
+<p>where A, n, Q, and R are parameters given by this namelist.</p>
+<p><strong>MTS Model</strong>. The MTS model uses the strain rate relation</p>
+<div class="math notranslate nohighlight" id="equation-vpm-eq">
+<span class="eqno">(33.1.2)<a class="headerlink" href="#equation-vpm-eq" title="Permalink to this equation">¶</a></span>\[\dot{\epsilon} = \dot{\epsilon_{0i}} exp[-\frac{\mu b^3 g_{0i}}{kT}(1-(\frac{\mu_0}{\mu\sigma_i}(\sigma - \sigma_a))^{p_i})^{q_i}],  \mu = \mu_0 - \frac{D}{exp(T_0/T) - 1}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\dot{\epsilon_{0i}}\)</span>, <span class="math notranslate nohighlight">\(\dot{g_{0i}}\)</span>, b, k, D, <span class="math notranslate nohighlight">\(\mu_0\)</span>, <span class="math notranslate nohighlight">\(T_0\)</span>, <span class="math notranslate nohighlight">\(\sigma_i\)</span>, <span class="math notranslate nohighlight">\(\sigma_a\)</span>, <span class="math notranslate nohighlight">\(p_i\)</span>, and <span class="math notranslate nohighlight">\(q_i\)</span> are parameters given by this namelist. When <span class="math notranslate nohighlight">\(\sigma \lt \sigma_a\)</span> we instead use <span class="math notranslate nohighlight">\(\dot{\epsilon} = K\sigma^5\)</span>, where K is chosen to give continuity with the previous relation at <span class="math notranslate nohighlight">\(\sigma = \sigma_a\)</span>. And when <span class="math notranslate nohighlight">\(\sigma - \sigma_a \gt \mu\sigma_i/\mu_0\)</span> we take <span class="math notranslate nohighlight">\(\dot{\epsilon} = \dot{\epsilon_{0i}}\)</span>.</p>
+</section>
+<section id="viscoplastic-model-namelist-features">
+<h2><span class="section-number">33.2. </span>VISCOPLASTIC_MODEL Namelist Features<a class="headerlink" href="#viscoplastic-model-namelist-features" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><strong>Required/Optional        :</strong> Optional; only relevant when <a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html#solid-mechanics-namelist"><span class="std std-ref">Solid_Mechanics</span></a> is true.</div>
+<div class="line"><strong>Single/Multiple Instances:</strong> Multiple; at most one per solid material phase.</div>
+</div>
+</section>
+<section id="components">
+<h2><span class="section-number">33.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#vpm-phase"><span class="std std-ref">Phase</span></a></p></li>
+<li><p><a class="reference internal" href="#vpm-model"><span class="std std-ref">Model</span></a></p></li>
+<li><p><a class="reference internal" href="#vpm-mtsb"><span class="std std-ref">MTS_b</span></a></p></li>
+<li><p><a class="reference internal" href="#vpm-mtsd"><span class="std std-ref">MTS_d</span></a></p></li>
+<li><p><a class="reference internal" href="#vpm-mtse"><span class="std std-ref">MTS_edot_0i</span></a></p></li>
+<li><p><a class="reference internal" href="#vpm-mtsg"><span class="std std-ref">MTS_g_0i</span></a></p></li>
+<li><p><a class="reference internal" href="#vpm-mtsk"><span class="std std-ref">MTS_k</span></a></p></li>
+<li><p><a class="reference internal" href="#vpm-mtsm"><span class="std std-ref">MTS_mu_0</span></a></p></li>
+<li><p><a class="reference internal" href="#vpm-mtsp"><span class="std std-ref">MTS_p_i</span></a></p></li>
+<li><p><a class="reference internal" href="#vpm-mtsq"><span class="std std-ref">MTS_q_i</span></a></p></li>
+<li><p><a class="reference internal" href="#vpm-mtssiga"><span class="std std-ref">MTS_sig_a</span></a></p></li>
+<li><p><a class="reference internal" href="#vpm-mtssigi"><span class="std std-ref">MTS_sig_i</span></a></p></li>
+<li><p><a class="reference internal" href="#vpm-mtst"><span class="std std-ref">MTS_temp_0</span></a></p></li>
+<li><p><a class="reference internal" href="#vpm-pla"><span class="std std-ref">Pwr_Law_A</span></a></p></li>
+<li><p><a class="reference internal" href="#vpm-pln"><span class="std std-ref">Pwr_Law_N</span></a></p></li>
+<li><p><a class="reference internal" href="#vpm-plq"><span class="std std-ref">Pwr_Law_Q</span></a></p></li>
+<li><p><a class="reference internal" href="#vpm-plr"><span class="std std-ref">Pwr_Law_R</span></a></p></li>
+</ul>
+<section id="phase">
+<span id="vpm-phase"></span><h3><span class="section-number">33.3.1. </span>Phase<a class="headerlink" href="#phase" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : The name of the material <a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html#material-and-phase-namelists"><span class="std std-ref">PHASE</span></a> to which this viscoplastic model applies.</div>
+<div class="line"><strong>Type</strong>        : case-sensitive string</div>
+<div class="line"><strong>Default</strong>     : none</div>
+</div>
+</section>
+<section id="model">
+<span id="vpm-model"></span><h3><span class="section-number">33.3.2. </span>Model<a class="headerlink" href="#model" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : The type of viscoplastic strain rate model.</div>
+<div class="line"><strong>Type</strong>        : case-insensitive string</div>
+<div class="line"><strong>Default</strong>     : none</div>
+<div class="line"><strong>Valid Values</strong>: “MTS”, “power law”, “elastic”</div>
+<div class="line"><strong>Notes</strong>       : The effect of the “elastic” option is equivalent to not specifying a viscoplastic model at all; it is provided as a convenience.</div>
+</div>
+</section>
+<section id="mts-b">
+<span id="vpm-mtsb"></span><h3><span class="section-number">33.3.3. </span>MTS_b<a class="headerlink" href="#mts-b" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Burgers vector length <span class="math notranslate nohighlight">\(b\)</span> in <a class="reference internal" href="#equation-vpm-eq">Eq.33.1.2</a></div>
+<div class="line"><strong>Physical Dimension</strong>: <span class="math notranslate nohighlight">\(L\)</span></div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : none</div>
+<div class="line"><strong>Valid Values</strong>: <span class="math notranslate nohighlight">\(\gt 0\)</span></div>
+</div>
+</section>
+<section id="mts-d">
+<span id="vpm-mtsd"></span><h3><span class="section-number">33.3.4. </span>MTS_d<a class="headerlink" href="#mts-d" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Constant <span class="math notranslate nohighlight">\(D\)</span> used in <a class="reference internal" href="#equation-vpm-eq">Eq.33.1.2</a></div>
+<div class="line"><strong>Physical Dimension</strong>: <span class="math notranslate nohighlight">\(F/L^2\)</span></div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : none</div>
+</div>
+</section>
+<section id="mts-edot-0i">
+<span id="vpm-mtse"></span><h3><span class="section-number">33.3.5. </span>MTS_edot_0i<a class="headerlink" href="#mts-edot-0i" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Reference strain rate <span class="math notranslate nohighlight">\(\dot{\epsilon_{0i}}\)</span> used in <a class="reference internal" href="#equation-vpm-eq">Eq.33.1.2</a></div>
+<div class="line"><strong>Physical Dimension</strong>: <span class="math notranslate nohighlight">\(T^{-1}\)</span></div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : none</div>
+<div class="line"><strong>Valid Values</strong>: <span class="math notranslate nohighlight">\(\gt 0\)</span></div>
+</div>
+</section>
+<section id="mts-g-0i">
+<span id="vpm-mtsg"></span><h3><span class="section-number">33.3.6. </span>MTS_g_0i<a class="headerlink" href="#mts-g-0i" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Material constant <span class="math notranslate nohighlight">\(g_{0i}\)</span> used in <a class="reference internal" href="#equation-vpm-eq">Eq.33.1.2</a></div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : none</div>
+<div class="line"><strong>Valid Values</strong>: <span class="math notranslate nohighlight">\(\gt 0\)</span></div>
+</div>
+</section>
+<section id="mts-k">
+<span id="vpm-mtsk"></span><h3><span class="section-number">33.3.7. </span>MTS_k<a class="headerlink" href="#mts-k" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Boltzmanns constant <span class="math notranslate nohighlight">\(k\)</span> used in <a class="reference internal" href="#equation-vpm-eq">Eq.33.1.2</a></div>
+<div class="line"><strong>Physical Dimension</strong>: <span class="math notranslate nohighlight">\(E/\Theta\)</span></div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : none</div>
+<div class="line"><strong>Valid Values</strong>: <span class="math notranslate nohighlight">\(\gt 0\)</span></div>
+<div class="line"><strong>Note</strong>        : Temperature should be expressed in Kelvin, or other temperature scale where 0 corresponds to absolute zero. If SI units are being used, <span class="math notranslate nohighlight">\(k\)</span> should be <span class="math notranslate nohighlight">\(1.38×10^{−23}\)</span>. Use a value appropriate to the units used in <a class="reference internal" href="#equation-vpm-eq">Eq.33.1.2</a></div>
+</div>
+</section>
+<section id="mts-mu-0">
+<span id="vpm-mtsm"></span><h3><span class="section-number">33.3.8. </span>MTS_mu_0<a class="headerlink" href="#mts-mu-0" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Reference value <span class="math notranslate nohighlight">\(\mu_0\)</span> for the temperature dependent shear modulus used in <a class="reference internal" href="#equation-vpm-eq">Eq.33.1.2</a></div>
+<div class="line"><strong>Physical Dimension</strong>: <span class="math notranslate nohighlight">\(F/L^2\)</span></div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : none</div>
+<div class="line"><strong>Valid Values</strong>: <span class="math notranslate nohighlight">\(\gt 0\)</span></div>
+</div>
+</section>
+<section id="mts-p-i">
+<span id="vpm-mtsp"></span><h3><span class="section-number">33.3.9. </span>MTS_p_i<a class="headerlink" href="#mts-p-i" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Exponent term <span class="math notranslate nohighlight">\(p_i\)</span> used in <a class="reference internal" href="#equation-vpm-eq">Eq.33.1.2</a></div>
+<div class="line"><strong>Physical Dimension</strong>: <span class="math notranslate nohighlight">\(F/L^2\)</span></div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : none</div>
+<div class="line"><strong>Valid Values</strong>: <span class="math notranslate nohighlight">\(\gt 0\)</span></div>
+</div>
+</section>
+<section id="mts-q-i">
+<span id="vpm-mtsq"></span><h3><span class="section-number">33.3.10. </span>MTS_q_i<a class="headerlink" href="#mts-q-i" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Exponent term <span class="math notranslate nohighlight">\(q_i\)</span> used in <a class="reference internal" href="#equation-vpm-eq">Eq.33.1.2</a></div>
+<div class="line"><strong>Physical Dimension</strong>: <span class="math notranslate nohighlight">\(F/L^2\)</span></div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : none</div>
+<div class="line"><strong>Valid Values</strong>: <span class="math notranslate nohighlight">\(\gt 0\)</span></div>
+</div>
+</section>
+<section id="mts-sig-a">
+<span id="vpm-mtssiga"></span><h3><span class="section-number">33.3.11. </span>MTS_sig_a<a class="headerlink" href="#mts-sig-a" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : The athermal stress term <span class="math notranslate nohighlight">\(\sigma_a\)</span> used in <a class="reference internal" href="#equation-vpm-eq">Eq.33.1.2</a></div>
+<div class="line"><strong>Physical Dimension</strong>: <span class="math notranslate nohighlight">\(F/L^2\)</span></div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : none</div>
+<div class="line"><strong>Valid Values</strong>: <span class="math notranslate nohighlight">\(\geq 0\)</span></div>
+</div>
+</section>
+<section id="mts-sig-i">
+<span id="vpm-mtssigi"></span><h3><span class="section-number">33.3.12. </span>MTS_sig_i<a class="headerlink" href="#mts-sig-i" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : A stress term <span class="math notranslate nohighlight">\(\sigma_i\)</span> related to obstacles to dislocation motion in <a class="reference internal" href="#equation-vpm-eq">Eq.33.1.2</a></div>
+<div class="line"><strong>Physical Dimension</strong>: <span class="math notranslate nohighlight">\(F/L^2\)</span></div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : none</div>
+<div class="line"><strong>Valid Values</strong>: <span class="math notranslate nohighlight">\(\gt 0\)</span></div>
+</div>
+</section>
+<section id="mts-temp-0">
+<span id="vpm-mtst"></span><h3><span class="section-number">33.3.13. </span>MTS_temp_0<a class="headerlink" href="#mts-temp-0" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Constant <span class="math notranslate nohighlight">\(T_0\)</span> used in the temperature dependent shear modulus in <a class="reference internal" href="#equation-vpm-eq">Eq.33.1.2</a></div>
+<div class="line"><strong>Physical Dimension</strong>: <span class="math notranslate nohighlight">\(\Theta\)</span></div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : none</div>
+<div class="line"><strong>Valid Values</strong>: <span class="math notranslate nohighlight">\(\gt 0\)</span></div>
+</div>
+</section>
+<section id="pwr-law-a">
+<span id="vpm-pla"></span><h3><span class="section-number">33.3.14. </span>Pwr_Law_A<a class="headerlink" href="#pwr-law-a" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Constant term <span class="math notranslate nohighlight">\(A\)</span> in <a class="reference internal" href="#equation-vpm-eq1">Eq.33.1.1</a></div>
+<div class="line"><strong>Physical Dimension</strong>: <span class="math notranslate nohighlight">\(F/L^2\)</span></div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : none</div>
+<div class="line"><strong>Valid Values</strong>: <span class="math notranslate nohighlight">\(\geq 0\)</span></div>
+</div>
+</section>
+<section id="pwr-law-n">
+<span id="vpm-pln"></span><h3><span class="section-number">33.3.15. </span>Pwr_Law_N<a class="headerlink" href="#pwr-law-n" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Stress exponent term <span class="math notranslate nohighlight">\(n\)</span> in <a class="reference internal" href="#equation-vpm-eq1">Eq.33.1.1</a></div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : none</div>
+<div class="line"><strong>Valid Values</strong>: <span class="math notranslate nohighlight">\(\gt 0\)</span></div>
+</div>
+</section>
+<section id="pwr-law-q">
+<span id="vpm-plq"></span><h3><span class="section-number">33.3.16. </span>Pwr_Law_Q<a class="headerlink" href="#pwr-law-q" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Activation energy <span class="math notranslate nohighlight">\(Q\)</span> in <a class="reference internal" href="#equation-vpm-eq1">Eq.33.1.1</a></div>
+<div class="line"><strong>Physical Dimension</strong>: <span class="math notranslate nohighlight">\(E/mol\)</span></div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : none</div>
+<div class="line"><strong>Valid Values</strong>: <span class="math notranslate nohighlight">\(\geq 0\)</span></div>
+</div>
+</section>
+<section id="pwr-law-r">
+<span id="vpm-plr"></span><h3><span class="section-number">33.3.17. </span>Pwr_Law_R<a class="headerlink" href="#pwr-law-r" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Gas constant <span class="math notranslate nohighlight">\(R\)</span> in <a class="reference internal" href="#equation-vpm-eq1">Eq.33.1.1</a></div>
+<div class="line"><strong>Physical Dimension</strong>: <span class="math notranslate nohighlight">\(E/(\Theta mol)\)</span></div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : none</div>
+<div class="line"><strong>Valid Values</strong>: <span class="math notranslate nohighlight">\(\gt 0\)</span></div>
+<div class="line"><strong>Note</strong>        : Temperature should be expressed in Kelvin, or other temperature scale where <span class="math notranslate nohighlight">\(0\)</span> corresponds to absolute zero. Use the value for <span class="math notranslate nohighlight">\(R\)</span> appropriate to the units used in <a class="reference internal" href="#equation-vpm-eq1">Eq.33.1.1</a></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../VFUNCTION_Namelist/index.html" class="btn btn-neutral float-left" title="32. VFUNCTION Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, LANL.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

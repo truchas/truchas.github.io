@@ -1,0 +1,580 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>3. BC Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="4. BODY Namelist" href="../BODY_Namelist/index.html" />
+    <link rel="prev" title="2. ALTMESH Namelist" href="../ALTMESH_Namelist/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Truchas Reference Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ALTMESH_Namelist/index.html">2. ALTMESH Namelist</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. BC Namelist</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">3.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bc-namelist-features">3.2. BC Namelist Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#components">3.3. Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bc-name">3.3.1. BC_Name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bc-type">3.3.2. BC_Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bc-value">3.3.3. BC_Value</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bc-variable">3.3.4. BC_Variable</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bounding-box">3.3.5. Bounding_Box</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conic-constant">3.3.6. Conic_Constant</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conic-tolerance">3.3.7. Conic_Tolerance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conic-x">3.3.8. Conic_X</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conic-y">3.3.9. Conic_Y</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conic-z">3.3.10. Conic_Z</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conic-xx">3.3.11. Conic_XX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conic-yy">3.3.12. Conic_YY</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conic-zz">3.3.13. Conic_ZZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conic-xy">3.3.14. Conic_XY</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conic-xz">3.3.15. Conic_XZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conic-yz">3.3.16. Conic_YZ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mesh-surface">3.3.17. Mesh_Surface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#node-disp-coords">3.3.18. Node_Disp_Coords</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#surface-name">3.3.19. Surface_Name</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../BODY_Namelist/index.html">4. BODY Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DIFFUSION_Solver_Namelist/index.html">5. DIFFUSION Solver Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DS_SOURCE_Namelist/index.html">6. DS_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html">7. ELECTROMAGNETICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_RADIATION_Namelist/index.html">8. ENCLOSURE_RADIATION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_SURFACE_Namelist/index.html">9. ENCLOSURE_SURFACE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../EVAPORATION_Namelist/index.html">10. EVAPORATION Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_Namelist/index.html">11. FLOW Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_BC_Namelist/index.html">12. FLOW_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html">13. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FUNCTION_Namelist/index.html">14. FUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../INDUCTION_COIL_Namelist/index.html">15. INDUCTION_COIL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">16. MATERIAL and PHASE Namelists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">17. MESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">18. NUMERICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">19. OUTPUTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">20. PHASE_CHANGE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">21. PHYSICAL_CONSTANTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">22. PHYSICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">23. PROBE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">24. RESTART Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">25. SIMULATION_CONTROL Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">26. SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">27. SPECIES_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">28. THERMAL_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">29. THERMAL_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">30. TOOLPATH Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">31. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">32. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">33. VISCOPLASTIC_MODEL Namelist</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Truchas Reference Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">3. </span>BC Namelist</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/BC_Namelist/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="toctree-wrapper compound" id="bc-namelist">
+</div>
+<section id="id1">
+<h1><span class="section-number">3. </span>BC Namelist<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<section id="overview">
+<h2><span class="section-number">3.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>BC</strong> namelist is used to define boundary conditions for the solid mechanics model at external boundaries and internal material interfaces. The preferred method for specifying the mesh surface where a boundary condition applies is to reference a side set from the <strong>ExodusII</strong>-format mesh. Alternatively, the mesh surface can specified using a conic surface:</p>
+<div class="math notranslate nohighlight" id="equation-eq-3">
+<span class="eqno">(3.1.1)<a class="headerlink" href="#equation-eq-3" title="Permalink to this equation">¶</a></span>\[\begin{split}\color{blue} 0 = p(x,y,z) &amp;= \color{blue}c_0 + c_x*{x} + c_y*y + c_z*z + c_{xx}*x^2 + c_{yy}*y^2 \\
+&amp;\color{blue}+ c_{zz}*z^2 + c_{xy}*xy + c_{xz}*xz + c_{yz}*yz\end{split}\]</div>
+<p>A face belongs to the mesh surface whenever its centroid lies on this surface (see <a class="reference internal" href="#bc-ct"><span class="std std-ref">Conic_Tolerance</span></a>). The coefficients are specified using the <strong>Conic_*</strong> variables. Another method for solid mechanics is to specify nodes. The method is selected using <a class="reference internal" href="#bc-sn"><span class="std std-ref">Surface_Name</span></a>. The specified surface may also be restricted to lie within a bounding box.</p>
+</section>
+<section id="bc-namelist-features">
+<h2><span class="section-number">3.2. </span>BC Namelist Features<a class="headerlink" href="#bc-namelist-features" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><strong>Required/Optional        :</strong> Optional</div>
+<div class="line"><strong>Single/Multiple Instances:</strong> Multiple</div>
+</div>
+</section>
+<section id="components">
+<h2><span class="section-number">3.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="#bc-bcn"><span class="std std-ref">BC_Name</span></a></p></li>
+<li><p><span class="xref std std-ref">BC_Table</span> missing link in the latex manual</p></li>
+<li><p><a class="reference internal" href="#bc-bctype"><span class="std std-ref">BC_Type</span></a></p></li>
+<li><p><a class="reference internal" href="#bc-bcv"><span class="std std-ref">BC_Value</span></a></p></li>
+<li><p><a class="reference internal" href="#bc-bcvar"><span class="std std-ref">BC_Variable</span></a></p></li>
+<li><p><a class="reference internal" href="#bc-bb"><span class="std std-ref">Bounding_Box</span></a></p></li>
+<li><p><a class="reference internal" href="#bc-cc"><span class="std std-ref">Conic_Constant</span></a></p></li>
+<li><p><a class="reference internal" href="#bc-ct"><span class="std std-ref">Conic_Tolerance</span></a></p></li>
+<li><p><a class="reference internal" href="#bc-cx"><span class="std std-ref">Conic_X</span></a></p></li>
+<li><p><a class="reference internal" href="#bc-cxx"><span class="std std-ref">Conic_XX</span></a></p></li>
+<li><p><a class="reference internal" href="#bc-cxy"><span class="std std-ref">Conic_XY</span></a></p></li>
+<li><p><a class="reference internal" href="#bc-cxz"><span class="std std-ref">Conic_XZ</span></a></p></li>
+<li><p><a class="reference internal" href="#bc-cy"><span class="std std-ref">Conic_Y</span></a></p></li>
+<li><p><a class="reference internal" href="#bc-cyy"><span class="std std-ref">Conic_YY</span></a></p></li>
+<li><p><a class="reference internal" href="#bc-cyz"><span class="std std-ref">Conic_YZ</span></a></p></li>
+<li><p><a class="reference internal" href="#bc-cz"><span class="std std-ref">Conic_Z</span></a></p></li>
+<li><p><a class="reference internal" href="#bc-czz"><span class="std std-ref">Conic_ZZ</span></a></p></li>
+<li><p><a class="reference internal" href="#bc-ms"><span class="std std-ref">Mesh_Surface</span></a></p></li>
+<li><p><a class="reference internal" href="#bc-ndc"><span class="std std-ref">Node_Disp_Coords</span></a></p></li>
+<li><p><a class="reference internal" href="#bc-sn"><span class="std std-ref">Surface_Name</span></a></p></li>
+</ul>
+<section id="bc-name">
+<span id="bc-bcn"></span><h3><span class="section-number">3.3.1. </span>BC_Name<a class="headerlink" href="#bc-name" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : A name used to identify a particular instance of this namelist.</div>
+<div class="line"><strong>Type</strong>        : case-sensitive string</div>
+<div class="line"><strong>Default</strong>     : none</div>
+<div class="line"><strong>Notes</strong>       : This is optional and used for logging purposes only.</div>
+</div>
+</section>
+<section id="bc-type">
+<span id="bc-bctype"></span><h3><span class="section-number">3.3.2. </span>BC_Type<a class="headerlink" href="#bc-type" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : The type of boundary condition.</div>
+<div class="line"><strong>Type</strong>        : string</div>
+<div class="line"><strong>Default</strong>     : Depends on <a class="reference internal" href="#bc-bcvar"><span class="std std-ref">BC_Variable</span></a>:</div>
+<div class="line-block">
+<div class="line">’displacement’: ’x-traction’, ’y-traction’, ’z-traction’</div>
+</div>
+<div class="line"><strong>Valid Values</strong>: Depends on <a class="reference internal" href="#bc-bcvar"><span class="std std-ref">BC_Variable</span></a>:</div>
+<div class="line-block">
+<div class="line">’displacement’:’x-traction’, ’y-traction’, ’z-traction’,’x-displacement’, ’y-displacement’, ’z-displacement’, ’normal-displacement’, ’normal-traction’, ’free-interface’, ’normal-constraint’, ’contact’</div>
+</div>
+<div class="line"><strong>Notes</strong>       :</div>
+<div class="line">* The solid mechanics displacement solution defaults to a traction-free surface with no displacement constraints (’x-traction’, ’y-traction’, and ’z-traction’ set to zero.)</div>
+<div class="line">* The ’free-interface’, ’normal-constraint’ and ’contact’ types can only be specified for interfaces with gap elements.</div>
+</div>
+</section>
+<section id="bc-value">
+<span id="bc-bcv"></span><h3><span class="section-number">3.3.3. </span>BC_Value<a class="headerlink" href="#bc-value" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Value(s) for the constant(s) used in this BC definition. See also <span class="xref std std-ref">BC_Table</span></div>
+<div class="line"><strong>Physcial Dimension</strong> : Varies</div>
+<div class="line"><strong>Type</strong>        : real (up to 24 values depending on <a class="reference internal" href="#bc-bctype"><span class="std std-ref">BC_Type</span></a>)</div>
+<div class="line"><strong>Default</strong>     : 0.0</div>
+<div class="line"><strong>Notes</strong>       : The meaning of the items in the BC_Value list depends on the particular boundary condition.</div>
+</div>
+<table class="colwidths-auto longtable docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>BC_Variable</p></th>
+<th class="head"><p>BC_Type</p></th>
+<th class="head"><p>Value Description</p></th>
+<th class="head"><p>Physcial Dimension</p></th>
+<th class="head"><p>Number of Values</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>displacement</p></td>
+<td><p>x-displacement</p></td>
+<td><p>displacement</p></td>
+<td><p><span class="math notranslate nohighlight">\(L\)</span></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>displacement</p></td>
+<td><p>y-displacement</p></td>
+<td><p>displacement</p></td>
+<td><p><span class="math notranslate nohighlight">\(L\)</span></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>displacement</p></td>
+<td><p>z-displacement</p></td>
+<td><p>displacement</p></td>
+<td><p><span class="math notranslate nohighlight">\(L\)</span></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>displacement</p></td>
+<td><p>x-traction</p></td>
+<td><p>traction (force/area)</p></td>
+<td><p><span class="math notranslate nohighlight">\(F/L^2\)</span></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>displacement</p></td>
+<td><p>y-traction</p></td>
+<td><p>traction (force/area)</p></td>
+<td><p><span class="math notranslate nohighlight">\(F/L^2\)</span></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>displacement</p></td>
+<td><p>z-traction</p></td>
+<td><p>traction (force/area)</p></td>
+<td><p><span class="math notranslate nohighlight">\(F/L^2\)</span></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-even"><td><p>displacement</p></td>
+<td><p>normal-displacement</p></td>
+<td><p>displacement</p></td>
+<td><p><span class="math notranslate nohighlight">\(L\)</span></p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>displacement</p></td>
+<td><p>free-interface</p></td>
+<td><p>not used</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-even"><td><p>displacement</p></td>
+<td><p>normal-constraint</p></td>
+<td><p>not used</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>0</p></td>
+</tr>
+<tr class="row-odd"><td><p>displacement</p></td>
+<td><p>contact</p></td>
+<td><p>not used</p></td>
+<td><ul class="simple">
+<li></li>
+</ul>
+</td>
+<td><p>0</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="bc-variable">
+<span id="bc-bcvar"></span><h3><span class="section-number">3.3.4. </span>BC_Variable<a class="headerlink" href="#bc-variable" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : The name of the variable to which this boundary condition applies.</div>
+<div class="line"><strong>Type</strong>        : case-insensitive string</div>
+<div class="line"><strong>Default</strong>     : none</div>
+<div class="line"><strong>Valid Values</strong>: “displacement”</div>
+</div>
+</section>
+<section id="bounding-box">
+<span id="bc-bb"></span><h3><span class="section-number">3.3.5. </span>Bounding_Box<a class="headerlink" href="#bounding-box" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : The extents in each dimension of a bounding box that restricts the extent of the mesh surface where the boundary condition is applied. This does not apply in the case <a class="reference internal" href="#bc-sn"><span class="std std-ref">Surface_Name</span></a> is <strong>“node set”</strong>.</div>
+<div class="line"><strong>Physical Dimension</strong>: L</div>
+<div class="line"><strong>Type</strong>        : A real array (<span class="math notranslate nohighlight">\(x_{min}, x_{max}, y_{min}, y_{max}, z_{min}, z_{max}\)</span>)</div>
+<div class="line"><strong>Default</strong>     : Unlimited in each dimension.</div>
+</div>
+</section>
+<section id="conic-constant">
+<span id="bc-cc"></span><h3><span class="section-number">3.3.6. </span>Conic_Constant<a class="headerlink" href="#conic-constant" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Value of the coefficient <span class="math notranslate nohighlight">\(c_0\)</span> in the conic polynomial (<a class="reference internal" href="#equation-eq-3">Eq.3.1.1</a>)</div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : 0.0</div>
+</div>
+</section>
+<section id="conic-tolerance">
+<span id="bc-ct"></span><h3><span class="section-number">3.3.7. </span>Conic_Tolerance<a class="headerlink" href="#conic-tolerance" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : A mesh face is considered to lie on the conic surface when the absolute value of the conic polynomial (Equation <a class="reference internal" href="#equation-eq-3">Eq.3.1.1</a>) at the face centroid is less than the value of this parameter. Only relevant when using a conic polynomial to define the boundary condition surface.</div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : <span class="math notranslate nohighlight">\(10^{-6}\)</span></div>
+<div class="line"><strong>Valid Values</strong>:  &gt; 0</div>
+<div class="line"><strong>Notes</strong>       : It is important to note that this is not a tolerance on the distance of a centroid from the conic surface, but merely a tolerance on the value of the conic polynomial. Its dimension depends on that of the coefficients in the polynomial. Most mesh generators place nodes on a bounding surface. For non-planar surfaces, this has the consequence that face centroids will not lie exactly on the surface, making the choice of this tolerance rather significant.</div>
+</div>
+</section>
+<section id="conic-x">
+<span id="bc-cx"></span><h3><span class="section-number">3.3.8. </span>Conic_X<a class="headerlink" href="#conic-x" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Value of the coefficient <span class="math notranslate nohighlight">\(c_x\)</span> in the conic polynomial (<a class="reference internal" href="#equation-eq-3">Eq.3.1.1</a>)</div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : 0.0</div>
+</div>
+</section>
+<section id="conic-y">
+<span id="bc-cy"></span><h3><span class="section-number">3.3.9. </span>Conic_Y<a class="headerlink" href="#conic-y" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Value of the coefficient <span class="math notranslate nohighlight">\(c_y\)</span> in the conic polynomial (<a class="reference internal" href="#equation-eq-3">Eq.3.1.1</a>)</div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : 0.0</div>
+</div>
+</section>
+<section id="conic-z">
+<span id="bc-cz"></span><h3><span class="section-number">3.3.10. </span>Conic_Z<a class="headerlink" href="#conic-z" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Value of the coefficient <span class="math notranslate nohighlight">\(c_z\)</span> in the conic polynomial (<a class="reference internal" href="#equation-eq-3">Eq.3.1.1</a>)</div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : 0.0</div>
+</div>
+</section>
+<section id="conic-xx">
+<span id="bc-cxx"></span><h3><span class="section-number">3.3.11. </span>Conic_XX<a class="headerlink" href="#conic-xx" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Value of the coefficient <span class="math notranslate nohighlight">\(c_{xx}\)</span> in the conic polynomial (<a class="reference internal" href="#equation-eq-3">Eq.3.1.1</a>)</div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : 0.0</div>
+</div>
+</section>
+<section id="conic-yy">
+<span id="bc-cyy"></span><h3><span class="section-number">3.3.12. </span>Conic_YY<a class="headerlink" href="#conic-yy" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Value of the coefficient <span class="math notranslate nohighlight">\(c_{yy}\)</span> in the conic polynomial (<a class="reference internal" href="#equation-eq-3">Eq.3.1.1</a>)</div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : 0.0</div>
+</div>
+</section>
+<section id="conic-zz">
+<span id="bc-czz"></span><h3><span class="section-number">3.3.13. </span>Conic_ZZ<a class="headerlink" href="#conic-zz" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Value of the coefficient <span class="math notranslate nohighlight">\(c_{zz}\)</span> in the conic polynomial (<a class="reference internal" href="#equation-eq-3">Eq.3.1.1</a>)</div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : 0.0</div>
+</div>
+</section>
+<section id="conic-xy">
+<span id="bc-cxy"></span><h3><span class="section-number">3.3.14. </span>Conic_XY<a class="headerlink" href="#conic-xy" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Value of the coefficient <span class="math notranslate nohighlight">\(c_{xy}\)</span> in the conic polynomial (<a class="reference internal" href="#equation-eq-3">Eq.3.1.1</a>)</div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : 0.0</div>
+</div>
+</section>
+<section id="conic-xz">
+<span id="bc-cxz"></span><h3><span class="section-number">3.3.15. </span>Conic_XZ<a class="headerlink" href="#conic-xz" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Value of the coefficient <span class="math notranslate nohighlight">\(c_{xz}\)</span> in the conic polynomial (<a class="reference internal" href="#equation-eq-3">Eq.3.1.1</a>)</div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : 0.0</div>
+</div>
+</section>
+<section id="conic-yz">
+<span id="bc-cyz"></span><h3><span class="section-number">3.3.16. </span>Conic_YZ<a class="headerlink" href="#conic-yz" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Value of the coefficient <span class="math notranslate nohighlight">\(c_{yz}\)</span> in the conic polynomial (<a class="reference internal" href="#equation-eq-3">Eq.3.1.1</a>)</div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : 0.0</div>
+</div>
+</section>
+<section id="mesh-surface">
+<span id="bc-ms"></span><h3><span class="section-number">3.3.17. </span>Mesh_Surface<a class="headerlink" href="#mesh-surface" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Identifier of a side set defined in the <strong>ExodusII</strong>-format mesh. Only relevant when <a class="reference internal" href="#bc-sn"><span class="std std-ref">Surface_Name</span></a> is <strong>“from mesh file”</strong>.</div>
+<div class="line"><strong>Type</strong>        : integer</div>
+<div class="line"><strong>Default</strong>     : none</div>
+</div>
+</section>
+<section id="node-disp-coords">
+<span id="bc-ndc"></span><h3><span class="section-number">3.3.18. </span>Node_Disp_Coords<a class="headerlink" href="#node-disp-coords" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : List of points that identify mesh nodes where a displacement boundary condition is applied. Up to 50 points can be specified as a list of (x,y,z) coordinates. Only relevant when <a class="reference internal" href="#bc-sn"><span class="std std-ref">Surface_Name</span></a> is <strong>“node set”</strong>.</div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Physcial Dimension</strong>     : <span class="math notranslate nohighlight">\(L\)</span></div>
+</div>
+</section>
+<section id="surface-name">
+<span id="bc-sn"></span><h3><span class="section-number">3.3.19. </span>Surface_Name<a class="headerlink" href="#surface-name" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Selects the method of specifying the mesh surface where the boundary condition will be applied.</div>
+<div class="line"><strong>Type</strong>        : case-insensitive string</div>
+<div class="line"><strong>Default</strong>     : none</div>
+<div class="line"><strong>Valid Values</strong>:</div>
+</div>
+<table class="colwidths-auto tight-table docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Value</p></th>
+<th class="head"><p>Associated Variables</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>from mesh file</p></td>
+<td><p><a class="reference internal" href="#bc-ms"><span class="std std-ref">Mesh_Surface</span></a>. Requires that the mesh is imported from an ExodusII-formatmesh file.</p></td>
+</tr>
+<tr class="row-odd"><td><p>conic</p></td>
+<td><p><a class="reference internal" href="#bc-ct"><span class="std std-ref">Conic_Tolerance</span></a>, <a class="reference internal" href="#bc-cc"><span class="std std-ref">Conic_Constant</span></a>, <a class="reference internal" href="#bc-cx"><span class="std std-ref">Conic_X</span></a>, <a class="reference internal" href="#bc-cy"><span class="std std-ref">Conic_Y</span></a>, <a class="reference internal" href="#bc-cz"><span class="std std-ref">Conic_Z</span></a>, <a class="reference internal" href="#bc-cxx"><span class="std std-ref">Conic_XX</span></a>, <a class="reference internal" href="#bc-cyy"><span class="std std-ref">Conic_YY</span></a>, <a class="reference internal" href="#bc-czz"><span class="std std-ref">Conic_ZZ</span></a>, <a class="reference internal" href="#bc-cxy"><span class="std std-ref">Conic_XY</span></a>, <a class="reference internal" href="#bc-cxz"><span class="std std-ref">Conic_XZ</span></a>, <a class="reference internal" href="#bc-cyz"><span class="std std-ref">Conic_YZ</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>node set</p></td>
+<td><p><a class="reference internal" href="#bc-ndc"><span class="std std-ref">Node_Disp_Coords</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../BODY_Namelist/index.html" class="btn btn-neutral float-right" title="4. BODY Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../ALTMESH_Namelist/index.html" class="btn btn-neutral float-left" title="2. ALTMESH Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, LANL.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
