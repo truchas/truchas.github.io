@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>4. BODY Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
@@ -212,20 +211,20 @@
             
   <div class="toctree-wrapper compound" id="body-namelist">
 </div>
-<section id="id1">
+<div class="section" id="id1">
 <h1><span class="section-number">4. </span>BODY Namelist<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<section id="overview">
+<div class="section" id="overview">
 <h2><span class="section-number">4.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>The BODY namelists define initial material distributions and conditions. The BODY namelists are processed in the order they appear, and identify the specified part of the computational domain not claimed by any preceding BODY namelist. Any “background” type BODY must be listed last. Each namelist is used to specify a geometry and initial state. The geometry is specified via the variables using an acceptable combination of <a class="reference internal" href="#b-sn"><span class="std std-ref">surface_name</span></a>, <a class="reference internal" href="#b-axis"><span class="std std-ref">axis</span></a>, <a class="reference internal" href="#b-fill"><span class="std std-ref">fill</span></a>, <a class="reference internal" href="#b-height"><span class="std std-ref">height</span></a>, <a class="reference internal" href="#b-length"><span class="std std-ref">length</span></a>, <a class="reference internal" href="#b-mmn"><span class="std std-ref">mesh_material_number</span></a>, <a class="reference internal" href="#b-radius"><span class="std std-ref">radius</span></a>, <a class="reference internal" href="#b-ra"><span class="std std-ref">rotation_angle</span></a>, <a class="reference internal" href="#b-rp"><span class="std std-ref">rotation_pt</span></a>, and <a class="reference internal" href="#b-tp"><span class="std std-ref">translation_pt</span></a>, hereafter referred to as geometry-type parameters. The initial state is specified using <a class="reference internal" href="#b-mn"><span class="std std-ref">material_number</span></a>, <a class="reference internal" href="#b-velocity"><span class="std std-ref">velocity</span></a>, <a class="reference internal" href="#b-phi"><span class="std std-ref">phi</span></a>, and <a class="reference internal" href="#b-t"><span class="std std-ref">temperature</span></a> or  <a class="reference internal" href="#b-tf"><span class="std std-ref">temperature_function</span></a>.</p>
-</section>
-<section id="body-namelist-features">
+</div>
+<div class="section" id="body-namelist-features">
 <h2><span class="section-number">4.2. </span>BODY Namelist Features<a class="headerlink" href="#body-namelist-features" title="Permalink to this headline">¶</a></h2>
 <div class="line-block">
 <div class="line"><strong>Required/Optional        :</strong> Required</div>
 <div class="line"><strong>Single/Multiple Instances:</strong> Multiple</div>
 </div>
-</section>
-<section id="components">
+</div>
+<div class="section" id="components">
 <h2><span class="section-number">4.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="#b-axis"><span class="std std-ref">axis</span></a></p></li>
@@ -244,7 +243,7 @@
 <li><p><a class="reference internal" href="#b-tp"><span class="std std-ref">translation_pt</span></a></p></li>
 <li><p><a class="reference internal" href="#b-velocity"><span class="std std-ref">velocity</span></a></p></li>
 </ul>
-<section id="axis">
+<div class="section" id="axis">
 <span id="b-axis"></span><h3><span class="section-number">4.3.1. </span>axis<a class="headerlink" href="#axis" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The axis to be used for defining a cylinder or plane.</div>
@@ -252,8 +251,8 @@
 <div class="line"><strong>Default</strong>     : (none)</div>
 <div class="line"><strong>Valid Values</strong>: <cite>x</cite>, <cite>y</cite>, <cite>z</cite></div>
 </div>
-</section>
-<section id="fill">
+</div>
+<div class="section" id="fill">
 <span id="b-fill"></span><h3><span class="section-number">4.3.2. </span>fill<a class="headerlink" href="#fill" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The side of the surface to which material is to be inserted for this body.</div>
@@ -261,8 +260,8 @@
 <div class="line"><strong>Default</strong>     : <cite>inside</cite></div>
 <div class="line"><strong>Valid Values</strong>: <cite>inside</cite>, <cite>outside</cite></div>
 </div>
-</section>
-<section id="height">
+</div>
+<div class="section" id="height">
 <span id="b-height"></span><h3><span class="section-number">4.3.3. </span>height<a class="headerlink" href="#height" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Height of a cylinder body.</div>
@@ -271,8 +270,8 @@
 <div class="line"><strong>Default</strong>     : (none)</div>
 <div class="line"><strong>Valid Values</strong>: (0.0, <span class="math notranslate nohighlight">\(\infty\)</span>)</div>
 </div>
-</section>
-<section id="length">
+</div>
+<div class="section" id="length">
 <span id="b-length"></span><h3><span class="section-number">4.3.4. </span>length<a class="headerlink" href="#length" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Length of each side of the box body, or the coefficients of an ellipse or ellipsoid body.</div>
@@ -281,16 +280,16 @@
 <div class="line"><strong>Default</strong>     : (none)</div>
 <div class="line"><strong>Valid Values</strong>: (0.0, <span class="math notranslate nohighlight">\(\infty\)</span>)</div>
 </div>
-</section>
-<section id="material-name">
+</div>
+<div class="section" id="material-name">
 <span id="b-mn"></span><h3><span class="section-number">4.3.5. </span>material_name<a class="headerlink" href="#material-name" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Name of the material, or material phase in the case of a multi-phase material, that occupies the volume of this body.</div>
 <div class="line"><strong>Type</strong>        : string</div>
 <div class="line"><strong>Default</strong>     : (none)</div>
 </div>
-</section>
-<section id="mesh-material-number">
+</div>
+<div class="section" id="mesh-material-number">
 <span id="b-mmn"></span><h3><span class="section-number">4.3.6. </span>mesh_material_number<a class="headerlink" href="#mesh-material-number" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> :  List of material numbers (element block IDs) associated with the cells as defined in the mesh file. This parameter is only meaningful when surface_name = ’from mesh file’.</div>
@@ -298,8 +297,8 @@
 <div class="line"><strong>Default</strong>     : (none)</div>
 <div class="line"><strong>Valid Values</strong>: Existing material numbers in mesh file (if the mesh file is in Exodus/Genesis format, this is the mesh block number).</div>
 </div>
-</section>
-<section id="phi">
+</div>
+<div class="section" id="phi">
 <span id="b-phi"></span><h3><span class="section-number">4.3.7. </span>phi<a class="headerlink" href="#phi" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Initial value of the diffusion solver’s multi-component scalar field in the material body.</div>
@@ -308,8 +307,8 @@
 <div class="line"><strong>Default</strong>     : 0.0</div>
 <div class="line"><strong>Valid Values</strong>: (-<span class="math notranslate nohighlight">\(\infty\)</span>, <span class="math notranslate nohighlight">\(\infty\)</span>)</div>
 </div>
-</section>
-<section id="radius">
+</div>
+<div class="section" id="radius">
 <span id="b-radius"></span><h3><span class="section-number">4.3.8. </span>radius<a class="headerlink" href="#radius" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Radius of the geometric body (cylinder, sphere, ellipsoid).</div>
@@ -318,8 +317,8 @@
 <div class="line"><strong>Default</strong>     : none</div>
 <div class="line"><strong>Valid Values</strong>: (0.0, <span class="math notranslate nohighlight">\(\infty\)</span>)</div>
 </div>
-</section>
-<section id="rotation-angle">
+</div>
+<div class="section" id="rotation-angle">
 <span id="b-ra"></span><h3><span class="section-number">4.3.9. </span>rotation_angle<a class="headerlink" href="#rotation-angle" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Angle (degrees) about the (x,y,z) axes this body is to be rotated. This variable is only supported for ’plane’ and ’cylinder’ body types.</div>
@@ -327,8 +326,8 @@
 <div class="line"><strong>Default</strong>     : 0.0, 0.0, 0.0</div>
 <div class="line"><strong>Valid Values</strong>: (-<span class="math notranslate nohighlight">\(\infty\)</span>, <span class="math notranslate nohighlight">\(\infty\)</span>)</div>
 </div>
-</section>
-<section id="rotation-pt">
+</div>
+<div class="section" id="rotation-pt">
 <span id="b-rp"></span><h3><span class="section-number">4.3.10. </span>rotation_pt<a class="headerlink" href="#rotation-pt" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Location of the point about which this body is to be rotated. This variable is only supported for ’plane’ and ’cylinder’ body types.</div>
@@ -337,8 +336,8 @@
 <div class="line"><strong>Default</strong>     : 0.0, 0.0, 0.0</div>
 <div class="line"><strong>Valid Values</strong>: (-<span class="math notranslate nohighlight">\(\infty\)</span>, <span class="math notranslate nohighlight">\(\infty\)</span>)</div>
 </div>
-</section>
-<section id="surface-name">
+</div>
+<div class="section" id="surface-name">
 <span id="b-sn"></span><h3><span class="section-number">4.3.11. </span>surface_name<a class="headerlink" href="#surface-name" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Type of surface characterizing the interface topology for this body. The available options are:</div>
@@ -381,8 +380,8 @@
 <div class="line"><strong>Type</strong>        : string</div>
 <div class="line"><strong>Default</strong>     : none</div>
 </div>
-</section>
-<section id="temperature">
+</div>
+<div class="section" id="temperature">
 <span id="b-t"></span><h3><span class="section-number">4.3.12. </span>temperature<a class="headerlink" href="#temperature" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Initial constant temperature of the material body.</div>
@@ -391,8 +390,8 @@
 <div class="line"><strong>Default</strong>     : none</div>
 <div class="line"><strong>Notes</strong>: Either <a class="reference internal" href="#b-t"><span class="std std-ref">temperature</span></a> or <a class="reference internal" href="#b-tf"><span class="std std-ref">temperature_function</span></a> must specified, but not both.</div>
 </div>
-</section>
-<section id="temperature-function">
+</div>
+<div class="section" id="temperature-function">
 <span id="b-tf"></span><h3><span class="section-number">4.3.13. </span>temperature_function<a class="headerlink" href="#temperature-function" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The name of a <a class="reference internal" href="../FUNCTION_Namelist/index.html#function-namelist"><span class="std std-ref">FUNCTION</span></a> namelist that defines the initial temperature function for the material body. That function is expected to be a function of (x,y, z).</div>
@@ -400,8 +399,8 @@
 <div class="line"><strong>Default</strong>     : none</div>
 <div class="line"><strong>Notes</strong>: Either <a class="reference internal" href="#b-t"><span class="std std-ref">temperature</span></a> or <a class="reference internal" href="#b-tf"><span class="std std-ref">temperature_function</span></a> must specified, but not both.</div>
 </div>
-</section>
-<section id="translation-pt">
+</div>
+<div class="section" id="translation-pt">
 <span id="b-tp"></span><h3><span class="section-number">4.3.14. </span>translation_pt<a class="headerlink" href="#translation-pt" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Location to which each surface origin of this body is translated.</div>
@@ -410,8 +409,8 @@
 <div class="line"><strong>Default</strong>     : 0.0, 0.0, 0.0</div>
 <div class="line"><strong>Valid Values</strong>: (-<span class="math notranslate nohighlight">\(\infty\)</span>, <span class="math notranslate nohighlight">\(\infty\)</span>)</div>
 </div>
-</section>
-<section id="velocity">
+</div>
+<div class="section" id="velocity">
 <span id="b-velocity"></span><h3><span class="section-number">4.3.15. </span>velocity<a class="headerlink" href="#velocity" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Initial velocity of the material body.</div>
@@ -420,9 +419,9 @@
 <div class="line"><strong>Default</strong>     : 0.0, 0.0, 0.0</div>
 <div class="line"><strong>Valid Values</strong>: (-<span class="math notranslate nohighlight">\(\infty\)</span>, <span class="math notranslate nohighlight">\(\infty\)</span>)</div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>

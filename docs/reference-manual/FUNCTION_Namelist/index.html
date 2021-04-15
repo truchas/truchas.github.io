@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>14. FUNCTION Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
@@ -213,9 +212,9 @@
             
   <div class="toctree-wrapper compound" id="function-namelist">
 </div>
-<section id="id1">
+<div class="section" id="id1">
 <h1><span class="section-number">14. </span>FUNCTION Namelist<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<section id="overview">
+<div class="section" id="overview">
 <h2><span class="section-number">14.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>There is often a need to specify phase properties, boundary condition data, source data, etc., as functions rather than constants. The <a class="reference internal" href="#function-namelist"><span class="std std-ref">FUNCTION</span></a> namelist provides a means for defining functions that can be used in many situations.</p>
 <p>The namelist can define several types of functions: a multi-variable polynomial, a continuous piecewise linear function defined by a table of values, a smooth step function, and with certain Truchas build configurations, a general user-provided function from a shared object library that is dynamically loaded at runtime. The functions are functions of <span class="math notranslate nohighlight">\(m\)</span> variables. The expected number of variables and what unknowns they represent (i.e., temperature, time, x-coordinate, etc.) depends on the context in which the function is used, and this will be detailed by the documentation of those namelists where these functions can be used.</p>
@@ -248,15 +247,15 @@ f(x) =
 <p>where <strong>myfunc</strong> can, of course, be any name. The equivalent C interface is</p>
 <p><code class="docutils literal notranslate"><span class="pre">double</span> <span class="pre">myfun</span> <span class="pre">(double</span> <span class="pre">v[],</span> <span class="pre">double</span> <span class="pre">p[]);</span></code></p>
 <p>The vector of variables <span class="math notranslate nohighlight">\(v= (v_1,...,v_m)\)</span> is passed in the argument <span class="math notranslate nohighlight">\(v\)</span> and a vector of parameter values specified by <a class="reference internal" href="#func-param"><span class="std std-ref">Parameters</span></a> is passed in the argument <span class="math notranslate nohighlight">\(p\)</span>. Instructions for compiling the code and creating a shared object library can be found in the Truchas Installation Guide. The path to the library is given by <a class="reference internal" href="#func-lp"><span class="std std-ref">Library_Path</span></a> and the name of the function (myfun, e.g.) is given by <a class="reference internal" href="#func-ls"><span class="std std-ref">Library_Symbol</span></a>. Note that the bind(c) attribute on the function declaration inhibits the Fortran compiler from mangling the function name (by appending an underscore, for example) as it normally would.</p>
-</section>
-<section id="function-namelist-features">
+</div>
+<div class="section" id="function-namelist-features">
 <h2><span class="section-number">14.2. </span>FUNCTION Namelist Features<a class="headerlink" href="#function-namelist-features" title="Permalink to this headline">¶</a></h2>
 <div class="line-block">
 <div class="line"><strong>Required/Optional        :</strong> Optional</div>
 <div class="line"><strong>Single/Multiple Instances:</strong> Multiple</div>
 </div>
-</section>
-<section id="components">
+</div>
+<div class="section" id="components">
 <h2><span class="section-number">14.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="#func-name"><span class="std std-ref">Name</span></a></p></li>
@@ -276,15 +275,15 @@ f(x) =
 <li><p><a class="reference internal" href="#func-te"><span class="std std-ref">Tabular_Extrap</span></a></p></li>
 <li><p><a class="reference internal" href="#func-ti"><span class="std std-ref">Tabular_Interp</span></a></p></li>
 </ul>
-<section id="name">
+<div class="section" id="name">
 <span id="func-name"></span><h3><span class="section-number">14.3.1. </span>Name<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A unique name by which this function can be referenced by other namelists.</div>
 <div class="line"><strong>Type</strong>        : A case-sensitive string of up to 31 characters.</div>
 <div class="line"><strong>Default</strong>     : None</div>
 </div>
-</section>
-<section id="type">
+</div>
+<div class="section" id="type">
 <span id="func-type"></span><h3><span class="section-number">14.3.2. </span>Type<a class="headerlink" href="#type" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The type of function defined by the namelist.</div>
@@ -292,16 +291,16 @@ f(x) =
 <div class="line"><strong>Default</strong>     : None</div>
 <div class="line"><strong>Valid Values</strong>: “polynomial” for a polynomial function,”tabular” for a tabular function,”smooth step” for a smooth step function, or “library” for a function from a shared object library. The “library” value is not available with a Truchas executable built with the “dynamic loading” option disabled.</div>
 </div>
-</section>
-<section id="library-path">
+</div>
+<div class="section" id="library-path">
 <span id="func-lp"></span><h3><span class="section-number">14.3.3. </span>Library_Path<a class="headerlink" href="#library-path" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The path to the shared object library that contains the function.</div>
 <div class="line"><strong>Type</strong>        : A string of up to 128 characters.</div>
 <div class="line"><strong>Default</strong>     : None</div>
 </div>
-</section>
-<section id="library-symbol">
+</div>
+<div class="section" id="library-symbol">
 <span id="func-ls"></span><h3><span class="section-number">14.3.4. </span>Library_Symbol<a class="headerlink" href="#library-symbol" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The symbol name of the function within the shared object file.</div>
@@ -309,24 +308,24 @@ f(x) =
 <div class="line"><strong>Default</strong>     : None</div>
 <div class="line"><strong>Notes</strong>       : Unless the Fortran function is declared with the BIND(C) attribute, which is the recommended practice, a Fortran compiler will almost always mangle the name of the function so that the symbol name is not quite the same as the name in the source code. Use the UNIX/Linux command-line utility <strong>nm</strong> to list the symbol names in the library file to determine the correct name to use here.</div>
 </div>
-</section>
-<section id="parameters">
+</div>
+<div class="section" id="parameters">
 <span id="func-param"></span><h3><span class="section-number">14.3.5. </span>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Optional parameter values to pass to the shared library function.</div>
 <div class="line"><strong>Type</strong>        : real vector of up to 16 values</div>
 <div class="line"><strong>Default</strong>     : None</div>
 </div>
-</section>
-<section id="poly-coefficients">
+</div>
+<div class="section" id="poly-coefficients">
 <span id="func-pc"></span><h3><span class="section-number">14.3.6. </span>Poly_Coefficients<a class="headerlink" href="#poly-coefficients" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The coefficients <span class="math notranslate nohighlight">\(c_j\)</span> of the polynomial <a class="reference internal" href="#equation-poly-func">Eq.14.1.1</a></div>
 <div class="line"><strong>Type</strong>        : real vector of up to 64 values</div>
 <div class="line"><strong>Default</strong>     : None</div>
 </div>
-</section>
-<section id="poly-exponents">
+</div>
+<div class="section" id="poly-exponents">
 <span id="func-pe"></span><h3><span class="section-number">14.3.7. </span>Poly_Exponents<a class="headerlink" href="#poly-exponents" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The exponents <span class="math notranslate nohighlight">\(e_{ij}\)</span> of the polynomial <a class="reference internal" href="#equation-poly-func">Eq.14.1.1</a></div>
@@ -338,16 +337,16 @@ f(x) =
 <p>defines the value for exponent <span class="math notranslate nohighlight">\(e_{ij}\)</span>. All the variable exponents for coefficient <span class="math notranslate nohighlight">\(j\)</span> can be defined at once by listing their values with the syntax</p>
 <p><code class="docutils literal notranslate"><span class="pre">Poly_Exponents(:,j)</span> <span class="pre">=</span> <span class="pre">.....</span></code></p>
 <p>In some circumstances it is possible to omit providing 0-exponents for variables that are unused. For example, if the function is expected to be a function of (t,x,y,z), but a polynomial in only t is desired, one can just define a 1-variable polynomial and entirely ignore the remaining variables. On the other hand, if a polynomial in z is desired, one must specify 0-valued exponents for all the preceding variables.</p>
-</section>
-<section id="poly-refvars">
+</div>
+<div class="section" id="poly-refvars">
 <span id="func-pr"></span><h3><span class="section-number">14.3.8. </span>Poly_Refvars<a class="headerlink" href="#poly-refvars" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The optional reference point a of the polynomial <a class="reference internal" href="#equation-poly-func">Eq.14.1.1</a></div>
 <div class="line"><strong>Type</strong>        : real vector</div>
 <div class="line"><strong>Default</strong>     : 0.0</div>
 </div>
-</section>
-<section id="tabular-data">
+</div>
+<div class="section" id="tabular-data">
 <span id="func-td"></span><h3><span class="section-number">14.3.9. </span>Tabular_Data<a class="headerlink" href="#tabular-data" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The table of values <span class="math notranslate nohighlight">\((x_i,y_i)\)</span> defining a tabular function <span class="math notranslate nohighlight">\(y=f(x)\)</span>. See also <a class="reference internal" href="#func-tdim"><span class="std std-ref">Tabular_Dim</span></a>, <a class="reference internal" href="#func-ti"><span class="std std-ref">Tabular_Interp</span></a>, and <a class="reference internal" href="#func-te"><span class="std std-ref">Tabular_Extrap</span></a> for additional variables that define the function.</div>
@@ -367,8 +366,8 @@ f(x) =
 </dd>
 </dl>
 <p>The line breaks are unnecessary, of course, and are there only for readability as a table.</p>
-</section>
-<section id="tabular-dim">
+</div>
+<div class="section" id="tabular-dim">
 <span id="func-tdim"></span><h3><span class="section-number">14.3.10. </span>Tabular_Dim<a class="headerlink" href="#tabular-dim" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The dimension in the m-vector of independent variables that serves as the independent variable for the single-variable tabular function.</div>
@@ -376,8 +375,8 @@ f(x) =
 <div class="line"><strong>Default</strong>     : 1</div>
 <div class="line"><strong>Notes</strong>       : Functions defined by this namelist are generally functions of m variables <span class="math notranslate nohighlight">\((v_1,v_2,...,v_m)\)</span>. The number of variables and the unknowns to which they correspond depend on the context where the function is used. One of these variables needs to be selected to be the independent variable used for the tabular function. In typical use cases the desired tabular function will depend on time or temperature. Those unknowns are often the first variable, and the default value of <a class="reference internal" href="#func-tdim"><span class="std std-ref">Tabular_Dim</span></a> is appropriate.</div>
 </div>
-</section>
-<section id="tabular-extrap">
+</div>
+<div class="section" id="tabular-extrap">
 <span id="func-te"></span><h3><span class="section-number">14.3.11. </span>Tabular_Extrap<a class="headerlink" href="#tabular-extrap" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Specifies the method used for extrapolating outside the range of tabular function data points.</div>
@@ -386,8 +385,8 @@ f(x) =
 <div class="line"><strong>Valid values</strong>: “nearest”, “linear”</div>
 <div class="line"><strong>Notes</strong>       : Nearest extrapolation continues the <span class="math notranslate nohighlight">\(y\)</span> value at the first or last data point. Linear extrapolation uses the slope of the first or last data interval, or if Akima smoothing is used (see <a class="reference internal" href="#func-ti"><span class="std std-ref">Tabular_Interp</span></a>) the computed slope at the first or last data point.</div>
 </div>
-</section>
-<section id="tabular-interp">
+</div>
+<div class="section" id="tabular-interp">
 <span id="func-ti"></span><h3><span class="section-number">14.3.12. </span>Tabular_Interp<a class="headerlink" href="#tabular-interp" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Specifies the method used for interpolating between tabular function data points.</div>
@@ -396,14 +395,12 @@ f(x) =
 <div class="line"><strong>Valid values</strong>: “linear”, “akima”</div>
 <div class="line"><strong>Notes</strong>       : Akima interpolation <a class="footnote-reference brackets" href="#akima1970new" id="id2">1</a> uses Hermit cubic interpolation on each data interval, with the slope at each data point computed from the linear slopes on the neighboring four intervals. The resulting function is <span class="math notranslate nohighlight">\(C^1\)</span> smooth. To determine the slope at the first two and last two data points, two virtual data intervals are generated at the beginning and at the end using quadratic extrapolation. The algorithm seeks to avoid undulations in the interpolated function where the data suggests a flat region though its choice of slopes at data points. <a class="reference internal" href="#fig-akima"><span class="std std-numref">Figure 14.3.1 A</span></a> shows the typical smooth Akima interpolation. If the first interval was expected to be flat, the exhibited undulation would likely be unacceptable. By inserting an additional data point to create successive intervals with the same slope, as in <a class="reference internal" href="#fig-akima"><span class="std std-numref">Figure 14.3.1 BC</span></a>, the algorithm identifies it as a flat region and preserves it in the interpolation. Where two flat regions with differing slopes meet, it is impossible to simultaneously retain smoothness and preserve flatness. In this case a modification to the Akima algorithm used by Matlab’s tablelookup function is adopted, which gives preference to the region with smaller slope as shown in <a class="reference internal" href="#fig-akima"><span class="std std-numref">Figure 14.3.1 D</span></a></div>
 </div>
-<figure class="align-center" id="id3">
+<div class="figure align-center" id="id3">
 <span id="fig-akima"></span><a class="reference internal image-reference" href="../_images/akima.png"><img alt="../_images/akima.png" src="../_images/akima.png" style="width: 550px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figure 14.3.1 </span><span class="caption-text">Examples of smooth Akima interpolation.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-<section id="smooth-step-x0">
+<p class="caption"><span class="caption-number">Figure 14.3.1 </span><span class="caption-text">Examples of smooth Akima interpolation.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="smooth-step-x0">
 <span id="func-ssx0"></span><h3><span class="section-number">14.3.13. </span>Smooth_Step_X0<a class="headerlink" href="#smooth-step-x0" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The parameter <span class="math notranslate nohighlight">\(x_0\)</span> of the function <a class="reference internal" href="#equation-poly-multi">Eq.14.1.2</a></div>
@@ -411,8 +408,8 @@ f(x) =
 <div class="line"><strong>Default</strong>     : none</div>
 <div class="line"><strong>Valid values</strong>: Require only <span class="math notranslate nohighlight">\(x_0 \leq x_1\)</span>.</div>
 </div>
-</section>
-<section id="smooth-step-x1">
+</div>
+<div class="section" id="smooth-step-x1">
 <span id="func-ssx1"></span><h3><span class="section-number">14.3.14. </span>Smooth_Step_X1<a class="headerlink" href="#smooth-step-x1" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The parameter <span class="math notranslate nohighlight">\(x_1\)</span> of the function <a class="reference internal" href="#equation-poly-multi">Eq.14.1.2</a></div>
@@ -420,16 +417,16 @@ f(x) =
 <div class="line"><strong>Default</strong>     : none</div>
 <div class="line"><strong>Valid values</strong>: Require only <span class="math notranslate nohighlight">\(x_0 \leq x_1\)</span>.</div>
 </div>
-</section>
-<section id="smooth-step-y0">
+</div>
+<div class="section" id="smooth-step-y0">
 <span id="func-ssy0"></span><h3><span class="section-number">14.3.15. </span>Smooth_Step_Y0<a class="headerlink" href="#smooth-step-y0" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The parameter <span class="math notranslate nohighlight">\(y_0\)</span> of the function <a class="reference internal" href="#equation-poly-multi">Eq.14.1.2</a></div>
 <div class="line"><strong>Type</strong>        : real</div>
 <div class="line"><strong>Default</strong>     : none</div>
 </div>
-</section>
-<section id="smooth-step-y1">
+</div>
+<div class="section" id="smooth-step-y1">
 <span id="func-ssy1"></span><h3><span class="section-number">14.3.16. </span>Smooth_Step_Y1<a class="headerlink" href="#smooth-step-y1" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The parameter <span class="math notranslate nohighlight">\(y_1\)</span> of the function <a class="reference internal" href="#equation-poly-multi">Eq.14.1.2</a></div>
@@ -442,9 +439,9 @@ f(x) =
 </dd>
 </dl>
 </p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>

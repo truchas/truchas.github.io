@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>22. PHYSICS Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
@@ -205,9 +204,9 @@
             
   <div class="toctree-wrapper compound" id="physics-namelist">
 </div>
-<section id="id1">
+<div class="section" id="id1">
 <h1><span class="section-number">22. </span>PHYSICS Namelist<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<section id="overview">
+<div class="section" id="overview">
 <h2><span class="section-number">22.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>The PHYSICS namelist specifies which physics models are active in the simulation. The models are implemented by the four primary physics kernels — fluid flow, heat/species transport, induction heating, and solid mechanics — which are weakly coupled using time splitting. A brief overview of the physics kernels follows; see Truchas Physics and Algorithms for more details.</p>
 <p><strong>Fluid Flow</strong>. The fluid flow physics model simulates multi-material, incompressible flow with interface tracking. A gravitational body force is defined using the <a class="reference internal" href="#physics-bfd"><span class="std std-ref">Body_Force_Density</span></a> variable. See the <a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html#material-and-phase-namelists"><span class="std std-ref">MATERIAL</span></a> namelist for a description of the material properties required by the fluid flow model.</p>
@@ -220,15 +219,15 @@
 <p>for species concentrations <span class="math notranslate nohighlight">\(\phi_i\)</span>. The number of components <span class="math notranslate nohighlight">\(n\)</span> is defined by <a class="reference internal" href="#physics-nos"><span class="std std-ref">Number_of_Species</span></a>. The thermodiffusion term in [·] is only included when coupled with heat transport. See the <a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html#material-and-phase-namelists"><span class="std std-ref">MATERIAL</span></a> namelist for defining the diffusivities <span class="math notranslate nohighlight">\(D_i\)</span> and Soret coefficients <span class="math notranslate nohighlight">\(S_i\)</span>. The optional volumetric source <span class="math notranslate nohighlight">\(Q_i\)</span> is defined through the <a class="reference internal" href="../DS_SOURCE_Namelist/index.html#ds-source-namelist"><span class="std std-ref">DS_SOURCE</span></a> namelist using “concentration i” as the equation name. The advected species source <span class="math notranslate nohighlight">\(Q_{i,adv}\)</span> is computed by the flow kernel. Boundary conditions on <span class="math notranslate nohighlight">\(\phi_i\)</span> are defined through the <a class="reference internal" href="../SPECIES_BC_Namelist/index.html#species-bc-namelist"><span class="std std-ref">SPECIES_BC</span></a> namelists. The initial value of the <span class="math notranslate nohighlight">\(\phi_i\)</span> are defined through the <a class="reference internal" href="../BODY_Namelist/index.html#b-phi"><span class="std std-ref">Phi</span></a> variable of the <a class="reference internal" href="../BODY_Namelist/index.html#body-namelist"><span class="std std-ref">BODY</span></a> namelists.</p>
 <p><strong>Induction Heating</strong>.  The induction heating physics kernel solves for the Joule heat that is used as a source in heat transport. It is enabled using the <a class="reference internal" href="#physics-em"><span class="std std-ref">Electromagnetics</span></a> flag. See the <a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html#material-and-phase-namelists"><span class="std std-ref">MATERIAL</span></a> namelist for a description of the material properties required by the electromagnetics solver. The <a class="reference internal" href="#physics-em"><span class="std std-ref">Electromagnetics</span></a> namelist is used to describe the induction heating problem.</p>
 <p><strong>Solid Mechanics</strong>.  The solid mechanics physics kernel models small strain elastic and plastic deformation of solid material phases, including deformations induced by temperature changes and solid state phase changes. It is enabled using the <a class="reference internal" href="#physics-sm"><span class="std std-ref">Solid_Mechanics</span></a> flag. See the <a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html#material-and-phase-namelists"><span class="std std-ref">MATERIAL</span></a> namelist for a description of the material properties required by the solid mechanics kernel. Parameters which define the plasticity model are defined using the <a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html#viscoplastic-model-namelist"><span class="std std-ref">VISCOPLASTIC_MODEL</span></a> namelist. Displacement and traction boundary conditions are defined using the <a class="reference internal" href="../BC_Namelist/index.html#bc-namelist"><span class="std std-ref">BC</span></a> namelist. The effect of the gravitational body force defined by <a class="reference internal" href="#physics-bfd"><span class="std std-ref">Body_Force_Density</span></a> can be included by enabling the <a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html#sm-smbf"><span class="std std-ref">Solid_Mechanics_Body_Force</span></a> flag in the <a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html#solid-mechanics-namelist"><span class="std std-ref">SOLID_MECHANICS</span></a> namelist.</p>
-</section>
-<section id="physics-namelist-features">
+</div>
+<div class="section" id="physics-namelist-features">
 <h2><span class="section-number">22.2. </span>PHYSICS Namelist Features<a class="headerlink" href="#physics-namelist-features" title="Permalink to this headline">¶</a></h2>
 <div class="line-block">
 <div class="line"><strong>Required/Optional        :</strong> Required</div>
 <div class="line"><strong>Single/Multiple Instances:</strong> Single</div>
 </div>
-</section>
-<section id="components">
+</div>
+<div class="section" id="components">
 <h2><span class="section-number">22.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="#physics-bfd"><span class="std std-ref">Body_Force_Density</span></a></p></li>
@@ -240,7 +239,7 @@
 <li><p><a class="reference internal" href="#physics-sm"><span class="std std-ref">Solid_Mechanics</span></a></p></li>
 <li><p><a class="reference internal" href="#physics-st"><span class="std std-ref">Species_Transport</span></a></p></li>
 </ul>
-<section id="body-force-density">
+<div class="section" id="body-force-density">
 <span id="physics-bfd"></span><h3><span class="section-number">22.3.1. </span>Body_Force_Density<a class="headerlink" href="#body-force-density" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A constant force per unit mass, <strong>g</strong>, that acts throughout material volumes. The net force ona volume is the integral of its density times <strong>g</strong> over the volume. Typically <strong>g</strong> is the gravitational acceleration.</div>
@@ -249,39 +248,39 @@
 <div class="line"><strong>Default</strong>     : (0.0, 0.0, 0.0)</div>
 <div class="line"><strong>Note</strong>: The fluid flow model always includes this body force. The solid mechanics model has the option of including this body force or not; see <a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html#sm-smbf"><span class="std std-ref">Solid_Mechanics_Body_Force</span></a>.</div>
 </div>
-</section>
-<section id="electromagentics">
+</div>
+<div class="section" id="electromagentics">
 <span id="physics-em"></span><h3><span class="section-number">22.3.2. </span>Electromagentics<a class="headerlink" href="#electromagentics" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Enables the calculation of Joule heating.</div>
 <div class="line"><strong>Type</strong>        : logical</div>
 <div class="line"><strong>Default</strong>     : false</div>
 </div>
-</section>
-<section id="heat-transport">
+</div>
+<div class="section" id="heat-transport">
 <span id="physics-ht"></span><h3><span class="section-number">22.3.3. </span>Heat_Transport<a class="headerlink" href="#heat-transport" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Enables the calculation of heat conduction, advection, and radiation using the heat/species transport physics kernel.</div>
 <div class="line"><strong>Type</strong>        : logical</div>
 <div class="line"><strong>Default</strong>     : false</div>
 </div>
-</section>
-<section id="flow">
+</div>
+<div class="section" id="flow">
 <span id="physics-f"></span><h3><span class="section-number">22.3.4. </span>Flow<a class="headerlink" href="#flow" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Enables the simulation of fluid flow.</div>
 <div class="line"><strong>Type</strong>        : logical</div>
 <div class="line"><strong>Default</strong>     : false</div>
 </div>
-</section>
-<section id="materials">
+</div>
+<div class="section" id="materials">
 <span id="physics-m"></span><h3><span class="section-number">22.3.5. </span>Materials<a class="headerlink" href="#materials" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A list of materials to include in the simulation. These are material names defined in <a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html#material-and-phase-namelists"><span class="std std-ref">MATERIAL</span></a> namelists. The list must include all materials assigned to a region in a <a class="reference internal" href="../BODY_Namelist/index.html#body-namelist"><span class="std std-ref">BODY</span></a> namelist, or specified as an <a class="reference internal" href="../FLOW_BC_Namelist/index.html#flow-bc-im"><span class="std std-ref">inflow_material</span></a> in a fluid flow boundary condition, but it need not include all materials defined in the input file. Use the reserved name “VOID” to refer to the built-in void pseudo-material.</div>
 <div class="line"><strong>Type</strong>        : string list</div>
 </div>
-</section>
-<section id="number-of-species">
+</div>
+<div class="section" id="number-of-species">
 <span id="physics-nos"></span><h3><span class="section-number">22.3.6. </span>Number_of_Species<a class="headerlink" href="#number-of-species" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The number of species components. Required when <a class="reference internal" href="#physics-st"><span class="std std-ref">Species_Transport</span></a> is enabled.</div>
@@ -289,25 +288,25 @@
 <div class="line"><strong>Default</strong>     : 0</div>
 <div class="line"><strong>Valid Values</strong>: &gt; 0</div>
 </div>
-</section>
-<section id="solid-mechanics">
+</div>
+<div class="section" id="solid-mechanics">
 <span id="physics-sm"></span><h3><span class="section-number">22.3.7. </span>Solid_Mechanics<a class="headerlink" href="#solid-mechanics" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Enables the calculation of solid material stresses and strains.</div>
 <div class="line"><strong>Type</strong>        : logical</div>
 <div class="line"><strong>Default</strong>     : false</div>
 </div>
-</section>
-<section id="species-transport">
+</div>
+<div class="section" id="species-transport">
 <span id="physics-st"></span><h3><span class="section-number">22.3.8. </span>Species_Transport<a class="headerlink" href="#species-transport" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Enables the calculation of species diffusion and advection using the heat/species transport physics kernel. The number of species components must be specified using <a class="reference internal" href="#physics-nos"><span class="std std-ref">Number_of_Species</span></a>.</div>
 <div class="line"><strong>Type</strong>        : logical</div>
 <div class="line"><strong>Default</strong>     : false</div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>

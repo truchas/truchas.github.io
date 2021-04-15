@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>31. TURBULENCE Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
@@ -200,9 +199,9 @@
             
   <div class="toctree-wrapper compound" id="turbulence-namelist">
 </div>
-<section id="id1">
+<div class="section" id="id1">
 <h1><span class="section-number">31. </span>TURBULENCE Namelist<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<section id="overview">
+<div class="section" id="overview">
 <h2><span class="section-number">31.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>The presence of the TURBULENCE namelist enables a simple algebraic turbulence model for viscous flow problems. The turbulent kinetic viscosity <span class="math notranslate nohighlight">\(\nu_t = (\mu_t/\rho)\)</span> is taken to be</p>
 <div class="math notranslate nohighlight" id="equation-turb-eq-1">
@@ -211,22 +210,22 @@
 <div class="math notranslate nohighlight" id="equation-turb-eq-2">
 <span class="eqno">(31.1.2)<a class="headerlink" href="#equation-turb-eq-2" title="Permalink to this equation">¶</a></span>\[k = f.\frac{1}{2}.u^2\]</div>
 <p>is the local turbulent kinetic energy per unit mass, modeled as a fraction <span class="math notranslate nohighlight">\(f\)</span> of the mean kinetic energy. The namelist variables give values for the model parameters. See Truchas Physics and Algorithms for more details.</p>
-</section>
-<section id="turbulence-namelist-features">
+</div>
+<div class="section" id="turbulence-namelist-features">
 <h2><span class="section-number">31.2. </span>TURBULENCE Namelist Features<a class="headerlink" href="#turbulence-namelist-features" title="Permalink to this headline">¶</a></h2>
 <div class="line-block">
 <div class="line"><strong>Required/Optional        :</strong> Optional</div>
 <div class="line"><strong>Single/Multiple Instances:</strong> Single</div>
 </div>
-</section>
-<section id="components">
+</div>
+<div class="section" id="components">
 <h2><span class="section-number">31.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="#turb-cmu"><span class="std std-ref">CMU</span></a></p></li>
 <li><p><a class="reference internal" href="#turb-kef"><span class="std std-ref">KE_fraction</span></a></p></li>
 <li><p><a class="reference internal" href="#turb-length"><span class="std std-ref">Length</span></a></p></li>
 </ul>
-<section id="cmu">
+<div class="section" id="cmu">
 <span id="turb-cmu"></span><h3><span class="section-number">31.3.1. </span>CMU<a class="headerlink" href="#cmu" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Value of the parameter <span class="math notranslate nohighlight">\(c_{\mu}\)</span> in <a class="reference internal" href="#equation-turb-eq-1">Eq.31.1.1</a>.</div>
@@ -235,8 +234,8 @@
 <div class="line"><strong>Valid Values</strong>: <span class="math notranslate nohighlight">\(\gt 0\)</span></div>
 <div class="line"><strong>Notes</strong>       : The default value is appropriate in most situations.</div>
 </div>
-</section>
-<section id="ke-fraction">
+</div>
+<div class="section" id="ke-fraction">
 <span id="turb-kef"></span><h3><span class="section-number">31.3.2. </span>KE_fraction<a class="headerlink" href="#ke-fraction" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Value of the parameter <span class="math notranslate nohighlight">\(f\)</span> in <a class="reference internal" href="#equation-turb-eq-2">Eq.31.1.2</a>.</div>
@@ -245,8 +244,8 @@
 <div class="line"><strong>Valid Values</strong>: (0,1)</div>
 <div class="line"><strong>Notes</strong>       : The default value is appropriate in most situations.</div>
 </div>
-</section>
-<section id="length">
+</div>
+<div class="section" id="length">
 <span id="turb-length"></span><h3><span class="section-number">31.3.3. </span>Length<a class="headerlink" href="#length" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Value of the parameter <span class="math notranslate nohighlight">\(l\)</span> in <a class="reference internal" href="#equation-turb-eq-1">Eq.31.1.1</a>.</div>
@@ -256,9 +255,9 @@
 <div class="line"><strong>Valid Values</strong>: <span class="math notranslate nohighlight">\(\gt 0\)</span></div>
 <div class="line"><strong>Notes</strong>       : The value should correspond to the size of the turbulent eddies. In turbulent pipe flow, for example, this would be one third the pipe radius.</div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>

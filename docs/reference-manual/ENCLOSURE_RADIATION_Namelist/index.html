@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>8. ENCLOSURE_RADIATION Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
@@ -208,19 +207,19 @@
             
   <div class="toctree-wrapper compound" id="enclosure-radiation-namelist">
 </div>
-<section id="id1">
+<div class="section" id="id1">
 <h1><span class="section-number">8. </span>ENCLOSURE_RADIATION Namelist<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<section id="overview">
+<div class="section" id="overview">
 <h2><span class="section-number">8.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
-</section>
-<section id="enclosure-radiation-namelist-features">
+</div>
+<div class="section" id="enclosure-radiation-namelist-features">
 <h2><span class="section-number">8.2. </span>ENCLOSURE_RADIATION Namelist Features<a class="headerlink" href="#enclosure-radiation-namelist-features" title="Permalink to this headline">¶</a></h2>
 <div class="line-block">
 <div class="line"><strong>Required/Optional        :</strong> Optional</div>
 <div class="line"><strong>Single/Multiple Instances:</strong> Multiple, one for each enclosure.</div>
 </div>
-</section>
-<section id="components">
+</div>
+<div class="section" id="components">
 <h2><span class="section-number">8.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="#er-n"><span class="std std-ref">Name</span></a></p></li>
@@ -235,15 +234,15 @@
 <li><p><a class="reference internal" href="#er-pcm"><span class="std std-ref">Precon_Coupling_Method</span></a></p></li>
 <li><p><a class="reference internal" href="#er-t"><span class="std std-ref">toolpath</span></a></p></li>
 </ul>
-<section id="name">
+<div class="section" id="name">
 <span id="er-n"></span><h3><span class="section-number">8.3.1. </span>Name<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A unique name for this enclosure radiation system.</div>
 <div class="line"><strong>Type</strong>        : string (31 characters max)</div>
 <div class="line"><strong>Default</strong>     : none</div>
 </div>
-</section>
-<section id="enclosure-file">
+</div>
+<div class="section" id="enclosure-file">
 <span id="er-ef"></span><h3><span class="section-number">8.3.2. </span>Enclosure_File<a class="headerlink" href="#enclosure-file" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The path to the enclosure file. This is interpreted relative to the Truchas input file unless this is an absolute path. If operating in moving enclosure mode (see <a class="reference internal" href="#er-t"><span class="std std-ref">toolpath</span></a>) the file name is the base name for a collection of enclosure files.</div>
@@ -252,8 +251,8 @@
 <div class="line"><strong>Valid Values</strong>: (0, 0.1)</div>
 <div class="line"><strong>Notes</strong>       : The genre program from the RadE tool suite can be used to generate this file.</div>
 </div>
-</section>
-<section id="coord-scale-factor">
+</div>
+<div class="section" id="coord-scale-factor">
 <span id="er-csf"></span><h3><span class="section-number">8.3.3. </span>Coord_Scale_Factor<a class="headerlink" href="#coord-scale-factor" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : An optional factor with which to scale the node coordinates of the enclosure surface.</div>
@@ -262,8 +261,8 @@
 <div class="line"><strong>Valid Values</strong>: <span class="math notranslate nohighlight">\(\gt 0.0\)</span></div>
 <div class="line"><strong>Notes</strong>       : The faces of the enclosure surface must match faces from the Truchas mesh. If the coordinates of the mesh are being scaled, it is likely that the same scaling needs to be applied to the enclosure surface.</div>
 </div>
-</section>
-<section id="ambient-constant">
+</div>
+<div class="section" id="ambient-constant">
 <span id="er-ac"></span><h3><span class="section-number">8.3.4. </span>Ambient_Constant<a class="headerlink" href="#ambient-constant" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The constant value of the ambient environment temperature.</div>
@@ -273,8 +272,8 @@
 <div class="line"><strong>Valid Values</strong>: <span class="math notranslate nohighlight">\(\gt\)</span> <a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html#phyco-az"><span class="std std-ref">Absolute_Zero</span></a></div>
 <div class="line"><strong>Notes</strong>       : Either <a class="reference internal" href="#er-ac"><span class="std std-ref">Ambient_Constant</span></a> or <a class="reference internal" href="#er-af"><span class="std std-ref">Ambient_Function</span></a> must be specified, but not both. Currently this is necessary even for full enclosures, although in that case the value will not be used and any value is acceptable.</div>
 </div>
-</section>
-<section id="ambient-function">
+</div>
+<div class="section" id="ambient-function">
 <span id="er-af"></span><h3><span class="section-number">8.3.5. </span>Ambient_Function<a class="headerlink" href="#ambient-function" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The name of a <a class="reference internal" href="../FUNCTION_Namelist/index.html#function-namelist"><span class="std std-ref">FUNCTION</span></a> namelist that defines the ambient environment temperature function. That function is expected to be a function of <span class="math notranslate nohighlight">\(t\)</span> alone.</div>
@@ -282,8 +281,8 @@
 <div class="line"><strong>Default</strong>     : none</div>
 <div class="line"><strong>Notes</strong>       : Either <a class="reference internal" href="#er-af"><span class="std std-ref">Ambient_Function</span></a> or <a class="reference internal" href="#er-ac"><span class="std std-ref">Ambient_Constant</span></a> must be specified, but not both. Currently this is necessary even for full enclosures, although in that case the value will not be used and any value is acceptable.</div>
 </div>
-</section>
-<section id="error-tolerance">
+</div>
+<div class="section" id="error-tolerance">
 <span id="er-et"></span><h3><span class="section-number">8.3.6. </span>Error_Tolerance<a class="headerlink" href="#error-tolerance" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The error tolerance for the iterative solution of the linear radiosity system <span class="math notranslate nohighlight">\(Aq=b\)</span>. Iteration stops when the approximate radiosity <span class="math notranslate nohighlight">\(q\)</span> satisfies</div>
@@ -295,14 +294,14 @@
 <div class="line"><strong>Valid values</strong>: <span class="math notranslate nohighlight">\(\gt 0\)</span></div>
 <div class="line"><strong>Notes</strong>       : The Chebyshev iterative method is used when solving the radiosity system in isolation with given surface temperatures. However the usual case has the radiosity system as just one component of a larger nonlinear system that is solved by a Newton-like iteration, and this condition on the radiosity component is one necessary condition of the complete stopping criterion of the iteration.</div>
 </div>
-</section>
-<section id="toolpath">
+</div>
+<div class="section" id="toolpath">
 <span id="er-t"></span><h3><span class="section-number">8.3.7. </span>toolpath<a class="headerlink" href="#toolpath" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The name of a <a class="reference internal" href="../TOOLPATH_Namelist/index.html#toolpath-namelist"><span class="std std-ref">TOOLPATH</span></a> namelist that defines a time-dependent motion that has been suitably partitioned. If this variable is specified it enables the moving enclosure mode of operation. This works in concert with the genre program.</div>
 </div>
-</section>
-<section id="precon-method-expert-parameter">
+</div>
+<div class="section" id="precon-method-expert-parameter">
 <span id="er-pm"></span><h3><span class="section-number">8.3.8. </span>Precon_Method (Expert Parameter)<a class="headerlink" href="#precon-method-expert-parameter" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Preconditioning method for the radiosity system.Use the default.</div>
@@ -311,8 +310,8 @@
 <div class="line"><strong>Valid values</strong>: “jacobi”, “chebyshev”</div>
 <div class="line"><strong>Notes</strong>       : The preconditioner for the fully-coupled heat transfer/enclosure radiation system NLK solver is built from smaller preconditioning pieces, one of which is a preconditioner for the radiosity system alone. The least costly and seemingly most effective is <span class="math notranslate nohighlight">\(Jacobi\)</span>.</div>
 </div>
-</section>
-<section id="precon-iter-expert-parameter">
+</div>
+<div class="section" id="precon-iter-expert-parameter">
 <span id="er-pi"></span><h3><span class="section-number">8.3.9. </span>Precon_Iter (Expert Parameter)<a class="headerlink" href="#precon-iter-expert-parameter" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The number of iterations of the <a class="reference internal" href="#er-pm"><span class="std std-ref">Precon_Method</span></a> method to apply as the radiosity system preconditioner. Use the default.</div>
@@ -320,8 +319,8 @@
 <div class="line"><strong>Default</strong>     : <span class="math notranslate nohighlight">\(1\)</span></div>
 <div class="line"><strong>Valid values</strong>: <span class="math notranslate nohighlight">\(\geq 1\)</span></div>
 </div>
-</section>
-<section id="precon-coupling-method-expert-parameter">
+</div>
+<div class="section" id="precon-coupling-method-expert-parameter">
 <span id="er-pcm"></span><h3><span class="section-number">8.3.10. </span>Precon_Coupling_Method (Expert Parameter)<a class="headerlink" href="#precon-coupling-method-expert-parameter" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Method for coupling the radiosity and heat transfer system preconditioners. Use the default.</div>
@@ -330,17 +329,17 @@
 <div class="line"><strong>Valid values</strong>: “jacobi”, “forward GS”, “backward GS”, “factorization”</div>
 <div class="line"><strong>Notes</strong>       : There are several methods for combining the independent preconditionings of the radiosity system and heat transfer system to obtain a preconditioner for the fully-coupled system. If we view it as a block system with the the radiosity system coming first, the first three methods correspond to block Jacobi, forward block Gauss-Seidel, and backward Gauss-Seidel updates. The factorization method is an approximate Schur complement update, that looks like block forward Gauss-Seidel followed by the second half of block backward Gauss-Seidel.</div>
 </div>
-</section>
-<section id="skip-geometry-check-expert-parameter">
+</div>
+<div class="section" id="skip-geometry-check-expert-parameter">
 <span id="er-sgc"></span><h3><span class="section-number">8.3.11. </span>Skip_Geometry_Check (Expert Parameter)<a class="headerlink" href="#skip-geometry-check-expert-parameter" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Normally the geometry of the enclosure surface faces are compared with boundary faces of the heat conduction mesh to ensure they actually match. Setting this variable to false will disable this check, which may be necessary in some unusual use cases.</div>
 <div class="line"><strong>Type</strong>        : logical</div>
 <div class="line"><strong>Default</strong>     : false</div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>

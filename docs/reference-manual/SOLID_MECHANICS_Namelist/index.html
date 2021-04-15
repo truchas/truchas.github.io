@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>26. SOLID_MECHANICS Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
@@ -207,20 +206,20 @@
             
   <div class="toctree-wrapper compound" id="solid-mechanics-namelist">
 </div>
-<section id="id1">
+<div class="section" id="id1">
 <h1><span class="section-number">26. </span>SOLID_MECHANICS Namelist<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<section id="overview">
+<div class="section" id="overview">
 <h2><span class="section-number">26.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="#solid-mechanics-namelist"><span class="std std-ref">SOLID_MECHANICS</span></a> namelist sets parameters that are specific to the solid mechanics model and algorithm. This namelist is read whenever the <a class="reference internal" href="../PHYSICS_Namelist/index.html#physics-namelist"><span class="std std-ref">PHYSICS</span></a> namelist option <a class="reference internal" href="../PHYSICS_Namelist/index.html#physics-sm"><span class="std std-ref">Solid_Mechanics</span></a> is enabled. Parameters for the nonlinear solver used by the algorithm and its preconditioner are specified in <span class="xref std std-ref">NONLINEAR_SOLVER</span> and <span class="xref std std-ref">LINEAR_SOLVER</span> namelists. Optional material viscoplasticity models are defined in <a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html#viscoplastic-model-namelist"><span class="std std-ref">VISCOPLASTIC_MODEL</span></a> namelists.</p>
-</section>
-<section id="solid-mechanics-namelist-features">
+</div>
+<div class="section" id="solid-mechanics-namelist-features">
 <h2><span class="section-number">26.2. </span>SOLID_MECHANICS Namelist Features<a class="headerlink" href="#solid-mechanics-namelist-features" title="Permalink to this headline">¶</a></h2>
 <div class="line-block">
 <div class="line"><strong>Required/Optional        :</strong> Required when solid mechanics physics is enabled.</div>
 <div class="line"><strong>Single/Multiple Instances:</strong> Single</div>
 </div>
-</section>
-<section id="components">
+</div>
+<div class="section" id="components">
 <h2><span class="section-number">26.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="#sm-cd"><span class="std std-ref">Contact_Distance</span></a></p></li>
@@ -235,7 +234,7 @@
 <li><p><a class="reference internal" href="#sm-nvt"><span class="std std-ref">NLK_Vector_Tolerance</span></a></p></li>
 <li><p><a class="reference internal" href="#sm-nmv"><span class="std std-ref">NLK_Max_Vectors</span></a></p></li>
 </ul>
-<section id="contact-distance">
+<div class="section" id="contact-distance">
 <span id="sm-cd"></span><h3><span class="section-number">26.3.1. </span>Contact_Distance<a class="headerlink" href="#contact-distance" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A length scale parameter <span class="math notranslate nohighlight">\(\beta\)</span> for the contact function</div>
@@ -281,8 +280,8 @@
 <div class="line"><strong>Valid Values</strong>: (0, <span class="math notranslate nohighlight">\(\infty\)</span>]</div>
 <div class="line"><strong>Notes</strong>       : The default value is usually a good value for mesh cell sizes in the 1 - 10 mm size range.</div>
 </div>
-</section>
-<section id="contact-norm-trac">
+</div>
+<div class="section" id="contact-norm-trac">
 <span id="sm-cnt"></span><h3><span class="section-number">26.3.2. </span>Contact_Norm_Trac<a class="headerlink" href="#contact-norm-trac" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A parameter <span class="math notranslate nohighlight">\(\tau^{*}\)</span> for the contact function</div>
@@ -330,8 +329,8 @@
 <div class="line"><strong>Valid Values</strong>: [0, <span class="math notranslate nohighlight">\(\infty\)</span>]</div>
 <div class="line"><strong>Notes</strong>       : The default value is probably appropriate for materials with elastic constants in the range <span class="math notranslate nohighlight">\(10^9 - 10^{11}\)</span>. This parameter should probably be scaled proportionately for elastic constants that differ from this range.</div>
 </div>
-</section>
-<section id="contact-penalty">
+</div>
+<div class="section" id="contact-penalty">
 <span id="sm-cp"></span><h3><span class="section-number">26.3.3. </span>Contact_Penalty<a class="headerlink" href="#contact-penalty" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A penalty factor for the penetration constraint in the contact algorithm. Changing this is probably not a good idea in the current version.</div>
@@ -340,8 +339,8 @@
 <div class="line"><strong>Default</strong>      : <span class="math notranslate nohighlight">\(1.0e3\)</span></div>
 <div class="line"><strong>Valid Values</strong> : [0, <span class="math notranslate nohighlight">\(\infty\)</span>]</div>
 </div>
-</section>
-<section id="displacement-nonlinear-solution">
+</div>
+<div class="section" id="displacement-nonlinear-solution">
 <span id="sm-dns"></span><h3><span class="section-number">26.3.4. </span>Displacement_Nonlinear_Solution<a class="headerlink" href="#displacement-nonlinear-solution" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A character string pointer to the nonlinear solution algorithm parameters to be used in a Newton-Krylov solution of the nonlinear thermo-elastic viscoplastic equations. This string “points” to a particular <span class="xref std std-ref">NONLINEAR_SOLVER</span> namelist if it matches the <span class="xref std std-ref">Name</span> input variable string in the <span class="xref std std-ref">NONLINEAR_SOLVER</span> namelist.</div>
@@ -350,16 +349,16 @@
 <div class="line"><strong>Valid Values</strong> : arbitrary string</div>
 <div class="line"><strong>Notes</strong>        : If this string does not match a <span class="xref std std-ref">Name</span> input variable string specified in a <span class="xref std std-ref">NONLINEAR_SOLVER</span> namelist, then the default set of nonlinear solution algorithm parameters is used for the thermo-elastic viscoplastic equations.</div>
 </div>
-</section>
-<section id="solid-mechanics-body-force">
+</div>
+<div class="section" id="solid-mechanics-body-force">
 <span id="sm-smbf"></span><h3><span class="section-number">26.3.5. </span>Solid_Mechanics_Body_Force<a class="headerlink" href="#solid-mechanics-body-force" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Body forces will be included in the solid mechanics calculation.</div>
 <div class="line"><strong>Type</strong>         : logical</div>
 <div class="line"><strong>Default</strong>      : .false.</div>
 </div>
-</section>
-<section id="strain-limit">
+</div>
+<div class="section" id="strain-limit">
 <span id="sm-sl"></span><h3><span class="section-number">26.3.6. </span>Strain_Limit<a class="headerlink" href="#strain-limit" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : This parameter controls the use of the ODE integrator in the plastic strain calculation. It should be set to the minimum significant value of the plastic strain increment for a time step. If convergence seems poor when a viscoplastic material model is used, it may help to reduce the value.</div>
@@ -368,8 +367,8 @@
 <div class="line"><strong>Valid Values</strong> : <span class="math notranslate nohighlight">\(\geq 0\)</span></div>
 <div class="line"><strong>Notes</strong>        : This parameter can not be currently used to control the time step. It may be used for such purposes in future releases.</div>
 </div>
-</section>
-<section id="convergence-criterion">
+</div>
+<div class="section" id="convergence-criterion">
 <span id="sm-cc"></span><h3><span class="section-number">26.3.7. </span>Convergence_Criterion<a class="headerlink" href="#convergence-criterion" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Tolerance used to determine when nonlinear convergence has been reached.</div>
@@ -392,8 +391,8 @@
 <p>and:</p>
 <p><span class="math notranslate nohighlight">\(\frac{||x_{k+1} - x_k||_{\infty} / ||x_{k+1}||_{\infty}}{||x_{k} - x_{k-1}||_{\infty} / ||x_{k}||_{\infty}}\)</span></p>
 <p>This is an attempt to prevent false convergence if the solution stagnates, but allow iteration to stop if the solution is acceptable.</p>
-</section>
-<section id="maximum-iteration">
+</div>
+<div class="section" id="maximum-iteration">
 <span id="sm-mi"></span><h3><span class="section-number">26.3.8. </span>Maximum_Iteration<a class="headerlink" href="#maximum-iteration" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Maximum allowed number of iterations of the nonlinear solver.</div>
@@ -401,8 +400,8 @@
 <div class="line"><strong>Default</strong>      : <span class="math notranslate nohighlight">\(100\)</span></div>
 <div class="line"><strong>Valid Values</strong> : <span class="math notranslate nohighlight">\([0,\infty)\)</span></div>
 </div>
-</section>
-<section id="nlk-vector-tolerance">
+</div>
+<div class="section" id="nlk-vector-tolerance">
 <span id="sm-nvt"></span><h3><span class="section-number">26.3.9. </span>NLK_Vector_Tolerance<a class="headerlink" href="#nlk-vector-tolerance" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The vector drop tolerance for the NLK method. When assembling the acceleration subspace vector by vector, a vector is dropped when the sine of the angle between the vector and the subspace less than this value.</div>
@@ -410,8 +409,8 @@
 <div class="line"><strong>Default</strong>      : <span class="math notranslate nohighlight">\(0.01\)</span></div>
 <div class="line"><strong>Valid Values</strong> : <span class="math notranslate nohighlight">\((0,1)\)</span></div>
 </div>
-</section>
-<section id="sm-nmv">
+</div>
+<div class="section" id="sm-nmv">
 <span id="id2"></span><h3><span class="section-number">26.3.10. </span>NLK_Vector_Tolerance<a class="headerlink" href="#sm-nmv" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : For the NLK method, the maximum number of acceleration vectors to be used.</div>
@@ -419,9 +418,9 @@
 <div class="line"><strong>Default</strong>      : <span class="math notranslate nohighlight">\(20\)</span></div>
 <div class="line"><strong>Valid Values</strong> : <span class="math notranslate nohighlight">\([0,\infty)\)</span></div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>

@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>28. THERMAL_BC Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
@@ -214,12 +213,12 @@
             
   <div class="toctree-wrapper compound" id="thermal-bc-namelist">
 </div>
-<section id="id1">
+<div class="section" id="id1">
 <h1><span class="section-number">28. </span>THERMAL_BC Namelist<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<section id="overview">
+<div class="section" id="overview">
 <h2><span class="section-number">28.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>The THERMAL_BC namelist is used to define boundary conditions for the heat transfer model at external boundaries and internal interfaces. Each instance of the namelist defines a particular condition to impose over a subset of the domain boundary. The boundary subset <span class="math notranslate nohighlight">\(\Gamma\)</span> is specified using mesh face sets. The namelist variable <a class="reference internal" href="#tb-fsi"><span class="std std-ref">face_set_ids</span></a> takes a list of face set IDs, and the boundary condition is imposed on all faces belonging to those face sets. Note that ExodusII mesh side sets are imported into Truchas as face sets with the same IDs.</p>
-<section id="external-boundaries">
+<div class="section" id="external-boundaries">
 <h3><span class="section-number">28.1.1. </span>External boundaries<a class="headerlink" href="#external-boundaries" title="Permalink to this headline">¶</a></h3>
 <p>The following types of external boundary conditions can be defined. The outward unit normal to the boundary <span class="math notranslate nohighlight">\(\Gamma\)</span> is denoted <span class="math notranslate nohighlight">\(\hat{n}\)</span>.</p>
 <span id="boundary-conditions-option"></span><table class="colwidths-given tight-table docutils align-default" id="id2">
@@ -267,8 +266,8 @@
 </table>
 <p>The specified boundary conditions are not generally allowed to overlap. It is not permitted, for example, to imposed both a temperature and a flux condition on the same part of boundary. The one exception is that heat transfer and ambient radiation conditions can be superimposed; the net flux in this case will be the sum of the heat transfer and radiation fluxes.</p>
 <p>It is also generally required that the specified boundary conditions completely cover the computational boundary. However, when enclosure radiation systems are present no boundary condition need be imposed on any part of the boundary that belongs to an enclosure. Either temperature or heat transfer conditions may still be imposed there, and in the latter case the net heat flux is the sum of the heat transfer and radiative (from enclosure radiation) fluxes.</p>
-</section>
-<section id="internal-interfaces">
+</div>
+<div class="section" id="internal-interfaces">
 <h3><span class="section-number">28.1.2. </span>Internal interfaces<a class="headerlink" href="#internal-interfaces" title="Permalink to this headline">¶</a></h3>
 <p>Internal interfaces are merely coincident pairs of conforming external mesh boundaries. These are modifications to the mesh created by Truchas and are defined using the <a class="reference internal" href="../MESH_Namelist/index.html#m-iss"><span class="std std-ref">Interface_Side_Sets</span></a> parameter from the <a class="reference internal" href="../MESH_Namelist/index.html#mesh-namelist"><span class="std std-ref">MESH</span></a> namelist. Only the face set IDs referenced there can be used in the definition of the following interface conditions. The following types of internal interface conditions can be defined.</p>
 <ul class="simple">
@@ -283,16 +282,16 @@
 <p>where <span class="math notranslate nohighlight">\(T_{-}\)</span> and <span class="math notranslate nohighlight">\(T_{+}\)</span> denote the values of <span class="math notranslate nohighlight">\(T\)</span> on the inside and outside gap surfaces with respect to the normal <span class="math notranslate nohighlight">\(\hat{n}\)</span> to <span class="math notranslate nohighlight">\(\Gamma\)</span>. It is defined by setting <a class="reference internal" href="#tb-type"><span class="std std-ref">type</span></a> to <strong>gap_radiation</strong>. The gap emissivity <span class="math notranslate nohighlight">\(\epsilon_{\Gamma}\)</span> is specified using either <a class="reference internal" href="#tb-emis"><span class="std std-ref">emissivity</span></a> for a constant value, or <a class="reference internal" href="#tb-emisfunc"><span class="std std-ref">emissivity_func</span></a> fir a function. The effective gap emissivity <span class="math notranslate nohighlight">\(\epsilon_{\Gamma}\)</span> depends on the emissivities <span class="math notranslate nohighlight">\(\epsilon_{-}\)</span> and <span class="math notranslate nohighlight">\(\epsilon_{+}\)</span> of the surfaces on either side of the gap and is given by</p>
 <p><span class="math notranslate nohighlight">\(\epsilon_{\Gamma} = \frac{\epsilon_{-}\epsilon_{+}}{\epsilon_{-} + \epsilon_{+} - \epsilon_{-}\epsilon_{+}}\)</span></p>
 <p>The value of the Stefan-Boltzmann constant <span class="math notranslate nohighlight">\(\sigma\)</span> and the absolute-zero temperature <span class="math notranslate nohighlight">\(T_0\)</span> can be redefined if the problem units differ from the default SI units using the <a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html#phyco-sb"><span class="std std-ref">Stefan_Boltzmann</span></a> and <a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html#phyco-az"><span class="std std-ref">Absolute_Zero</span></a> components of the <a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html#physical-constants-namelist"><span class="std std-ref">PHYSICAL_CONSTANTS</span></a> namelist.</p>
-</section>
-</section>
-<section id="thermal-bc-namelist-features">
+</div>
+</div>
+<div class="section" id="thermal-bc-namelist-features">
 <h2><span class="section-number">28.2. </span>THERMAL_BC Namelist Features<a class="headerlink" href="#thermal-bc-namelist-features" title="Permalink to this headline">¶</a></h2>
 <div class="line-block">
 <div class="line"><strong>Required/Optional        :</strong> Required</div>
 <div class="line"><strong>Single/Multiple Instances:</strong> Multiple</div>
 </div>
-</section>
-<section id="components">
+</div>
+<div class="section" id="components">
 <h2><span class="section-number">28.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="#tb-n"><span class="std std-ref">name</span></a></p></li>
@@ -309,23 +308,23 @@
 <li><p><a class="reference internal" href="#tb-emis"><span class="std std-ref">emissivity</span></a></p></li>
 <li><p><a class="reference internal" href="#tb-emisfunc"><span class="std std-ref">emissivity_func</span></a></p></li>
 </ul>
-<section id="name">
+<div class="section" id="name">
 <span id="tb-n"></span><h3><span class="section-number">28.3.1. </span>name<a class="headerlink" href="#name" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A unique name used to identify a particular instance of this namelist.</div>
 <div class="line"><strong>Type</strong>        : string (31 characters max)</div>
 <div class="line"><strong>Default</strong>     : none</div>
 </div>
-</section>
-<section id="face-set-ids">
+</div>
+<div class="section" id="face-set-ids">
 <span id="tb-fsi"></span><h3><span class="section-number">28.3.2. </span>face_set_ids<a class="headerlink" href="#face-set-ids" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A list of face set IDs that define the portion of the boundary where the boundary condition will be imposed.</div>
 <div class="line"><strong>Type</strong>        : integer list (32 max)</div>
 <div class="line"><strong>Default</strong>     : none</div>
 </div>
-</section>
-<section id="type">
+</div>
+<div class="section" id="type">
 <span id="tb-type"></span><h3><span class="section-number">28.3.3. </span>type<a class="headerlink" href="#type" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The type of boundary condition. The available options are:</div>
@@ -366,89 +365,89 @@
 <div class="line"><strong>Type</strong>        : string</div>
 <div class="line"><strong>Default</strong>     : none</div>
 </div>
-</section>
-<section id="temp">
+</div>
+<div class="section" id="temp">
 <span id="tb-temp"></span><h3><span class="section-number">28.3.4. </span>temp<a class="headerlink" href="#temp" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The constant value of boundary temperature for a temperature-type boundary condition. To specify a function, use <a class="reference internal" href="#tb-tempfunc"><span class="std std-ref">temp_func</span></a> instead.</div>
 <div class="line"><strong>Type</strong>        : real</div>
 <div class="line"><strong>Default</strong>     : none</div>
 </div>
-</section>
-<section id="temp-func">
+</div>
+<div class="section" id="temp-func">
 <span id="tb-tempfunc"></span><h3><span class="section-number">28.3.5. </span>temp_func<a class="headerlink" href="#temp-func" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The name of a <a class="reference internal" href="../FUNCTION_Namelist/index.html#function-namelist"><span class="std std-ref">FUNCTION</span></a> namelist defining a function that gives the boundary temperature for a temperature-type boundary condition. The function is expected to be a function of(t,x,y,z).</div>
 <div class="line"><strong>Type</strong>        : string</div>
 <div class="line"><strong>Default</strong>     : none</div>
 </div>
-</section>
-<section id="flux">
+</div>
+<div class="section" id="flux">
 <span id="tb-flux"></span><h3><span class="section-number">28.3.6. </span>flux<a class="headerlink" href="#flux" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The constant value of the outward boundary heat flux for a flux-type boundary condition. To specify a function, use <a class="reference internal" href="#tb-fluxfunc"><span class="std std-ref">flux_func</span></a> instead.</div>
 <div class="line"><strong>Type</strong>        : real</div>
 <div class="line"><strong>Default</strong>     : none</div>
 </div>
-</section>
-<section id="flux-func">
+</div>
+<div class="section" id="flux-func">
 <span id="tb-fluxfunc"></span><h3><span class="section-number">28.3.7. </span>flux_func<a class="headerlink" href="#flux-func" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The name of a <a class="reference internal" href="../FUNCTION_Namelist/index.html#function-namelist"><span class="std std-ref">FUNCTION</span></a> namelist defining a function that gives the outward boundary heatflux for a flux-type boundary condition. The function is expected to be a function of (t,x,y,z).</div>
 <div class="line"><strong>Type</strong>        : string</div>
 <div class="line"><strong>Default</strong>     : none</div>
 </div>
-</section>
-<section id="htc">
+</div>
+<div class="section" id="htc">
 <span id="tb-htc"></span><h3><span class="section-number">28.3.8. </span>htc<a class="headerlink" href="#htc" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The constant value of the heat transfer coefficient for either an external or interface heat transfer-type boundary condition. To specify a function, use <a class="reference internal" href="#tb-htcfunc"><span class="std std-ref">htc_func</span></a> instead.</div>
 <div class="line"><strong>Type</strong>        : real</div>
 <div class="line"><strong>Default</strong>     : none</div>
 </div>
-</section>
-<section id="htc-func">
+</div>
+<div class="section" id="htc-func">
 <span id="tb-htcfunc"></span><h3><span class="section-number">28.3.9. </span>htc_func<a class="headerlink" href="#htc-func" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The name of a <a class="reference internal" href="../FUNCTION_Namelist/index.html#function-namelist"><span class="std std-ref">FUNCTION</span></a> namelist defining a function that gives the heat transfer coefficient for either an external or interface heat transfer-type boundary condition. The function is expected to be a function of (t,x,y,z) for an external heat transfer-type boundary condition, and a function of (T,t,x,y,z) for an interface heat transfer-type boundary condition. In the latter case T is taken to be the maximum of the two temperatures on either side of the interface.</div>
 <div class="line"><strong>Type</strong>        : string</div>
 <div class="line"><strong>Default</strong>     : none</div>
 </div>
-</section>
-<section id="ambient-temp">
+</div>
+<div class="section" id="ambient-temp">
 <span id="tb-at"></span><h3><span class="section-number">28.3.10. </span>ambient_temp<a class="headerlink" href="#ambient-temp" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The constant value of the ambient temperature for external heat transfer or radiation-type boundary condition. To specify a function, use <a class="reference internal" href="#tb-atf"><span class="std std-ref">ambient_temp_func</span></a> instead.</div>
 <div class="line"><strong>Type</strong>        : real</div>
 <div class="line"><strong>Default</strong>     : none</div>
 </div>
-</section>
-<section id="ambient-temp-func">
+</div>
+<div class="section" id="ambient-temp-func">
 <span id="tb-atf"></span><h3><span class="section-number">28.3.11. </span>ambient_temp_func<a class="headerlink" href="#ambient-temp-func" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The name of a <a class="reference internal" href="../FUNCTION_Namelist/index.html#function-namelist"><span class="std std-ref">FUNCTION</span></a> namelist defining a function that gives the ambient temperature for external heat transfer or radiation-type boundary condition. The function is expected to be a function of (t,x,y,z).</div>
 <div class="line"><strong>Type</strong>        : string</div>
 <div class="line"><strong>Default</strong>     : none</div>
 </div>
-</section>
-<section id="emissivity">
+</div>
+<div class="section" id="emissivity">
 <span id="tb-emis"></span><h3><span class="section-number">28.3.12. </span>emissivity<a class="headerlink" href="#emissivity" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The constant value of emissivity for a radiation-type boundary condition. To specify a function, use <a class="reference internal" href="#tb-atf"><span class="std std-ref">ambient_temp_func</span></a> instead.</div>
 <div class="line"><strong>Type</strong>        : real</div>
 <div class="line"><strong>Default</strong>     : none</div>
 </div>
-</section>
-<section id="emissivity-func">
+</div>
+<div class="section" id="emissivity-func">
 <span id="tb-emisfunc"></span><h3><span class="section-number">28.3.13. </span>emissivity_func<a class="headerlink" href="#emissivity-func" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The name of a <a class="reference internal" href="../FUNCTION_Namelist/index.html#function-namelist"><span class="std std-ref">FUNCTION</span></a> namelist defining a function that gives the emissivity for a radiation-type boundary condition. The function is expected to be a function of (t,x,y,z).</div>
 <div class="line"><strong>Type</strong>        : string</div>
 <div class="line"><strong>Default</strong>     : none</div>
 </div>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
            </div>

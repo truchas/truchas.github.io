@@ -3,8 +3,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vertex Anchor Cluster Paving (PAVE) &#8212; Truchas 1.0 documentation</title>
     <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" href="../../../_static/bootstrap-sphinx.css" type="text/css" />
@@ -181,14 +180,12 @@ Based on localtoc.html from the Guzzle Sphinx theme: https://github.com/guzzle/g
       </div>
     <div class="body col-md-9 content" role="main">
       
-  <section id="vertex-anchor-cluster-paving-pave">
+  <div class="section" id="vertex-anchor-cluster-paving-pave">
 <h1>Vertex Anchor Cluster Paving (PAVE)<a class="headerlink" href="#vertex-anchor-cluster-paving-pave" title="Permalink to this headline">¶</a></h1>
-<figure class="align-right" id="inline-fig" style="width: 32%">
+<div class="figure align-right" id="inline-fig" style="width: 32%">
 <a class="reference internal image-reference" href="../../../_images/basic_hemi_pave_2.png"><img alt="../../../_images/basic_hemi_pave_2.png" src="../../../_images/basic_hemi_pave_2.png" style="width: 100%;" /></a>
-<figcaption>
-<p><span class="caption-text">Result of PAVE on a quarter cyclinder.</span><a class="headerlink" href="#inline-fig" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-text">Result of PAVE on a quarter cyclinder.</span><a class="headerlink" href="#inline-fig" title="Permalink to this image">¶</a></p>
+</div>
 <p>The Vertex Anchor Cluster Paving (PAVE) patching algorithm, as it name suggests, is based on the
 <a class="reference internal" href="vac.html"><span class="doc">Vertex Anchor Clustering (VAC) algorithm</span></a>. Like VAC, this algorithm is based on the
 observation that the set of all faces sharing a particular vertex (the faces of a vertex) tend to
@@ -228,7 +225,7 @@ edges or corners, a random vertex is chosen as the anchor for its first patch.</
 </li>
 </ul>
 </div>
-<section id="algorithm">
+<div class="section" id="algorithm">
 <h2>Algorithm<a class="headerlink" href="#algorithm" title="Permalink to this headline">¶</a></h2>
 <p>The PAVE algorithm begins by finding the connected components of the <em>vertex graph</em> of the
 enclosure, that is, the graph defined by the mesh vertices and the edges between them. For each
@@ -247,7 +244,7 @@ of its vertices is chosen at random as the vertex anchor for the seed patch. The
 number generator used to select the seed patches can be set with the <a class="reference internal" href="#pave-random-seed"><span class="std std-ref">PAVE_RANDOM_SEED</span></a> namelist parameter.</p>
 <p>Once the queue is empty, all faces are assigned and we have a valid patching of the enclosure.
 Finally, PAVE merges patches where possible, in accordance with the <a class="reference internal" href="#pave-merge-level"><span class="std std-ref">PAVE_MERGE_LEVEL</span></a> namelist parameter.</p>
-<section id="outline">
+<div class="section" id="outline">
 <h3>Outline<a class="headerlink" href="#outline" title="Permalink to this headline">¶</a></h3>
 <p>The following is a high-level outline of the PAVE algorithm.</p>
 <ol class="arabic simple">
@@ -364,8 +361,8 @@ new tuple <span class="math notranslate nohighlight">\((P_k, V_j)\)</span> and a
 </ul>
 </li>
 </ul>
-</section>
-<section id="connected-components">
+</div>
+<div class="section" id="connected-components">
 <h3>Connected Components<a class="headerlink" href="#connected-components" title="Permalink to this headline">¶</a></h3>
 <p>The PAVE algorithm constructs two graphs from the enclosure data: the face adjacency graph and the
 vertex adjacency graph. PAVE then utilizes the connected components of each of these graphs during
@@ -378,7 +375,7 @@ components of the vertex adjacency graph are only used when <a class="reference 
 as a short-hand for refering to the connected components of the face adjacency graph. We’ll be
 explicit when referring to the components of the vertex adjacency graph.</p>
 </div>
-<section id="face-adjacency-graph">
+<div class="section" id="face-adjacency-graph">
 <h4>Face Adjacency Graph<a class="headerlink" href="#face-adjacency-graph" title="Permalink to this headline">¶</a></h4>
 <p>The face adjacency graph is defined by the topology of the mesh and the <a class="reference internal" href="patches_namelist.html#max-angle"><span class="std std-ref">MAX_ANGLE</span></a> namelist parameter which controls the maximum
 allowable angle between the (normals of) adjacent faces. Specifically, two topologically adjacent
@@ -389,8 +386,8 @@ bounded by ‘sharp’ edges (angles greater than MAX_ANGLE) or the mesh boundar
 vertices incident on edges along the boundary of a component. These boundary vertices play a role in
 both computing the <a class="reference internal" href="vac.html#position-bias"><span class="std std-ref">weight of queue entries</span></a> as well as
 in determining the connected components of the vertex adjacency graph.</p>
-</section>
-<section id="vertex-adjacency-graph">
+</div>
+<div class="section" id="vertex-adjacency-graph">
 <h4>Vertex Adjacency Graph<a class="headerlink" href="#vertex-adjacency-graph" title="Permalink to this headline">¶</a></h4>
 <p>The vertex adjacency graph is defined by the topology of the mesh. The vertices and edges of the
 vertex graph correspond to the vertices and edges of the mesh. The vertex graph allows PAVE to
@@ -402,9 +399,9 @@ vertex</span></a> since such vertices are a <a class="reference internal" href="
 interior (non-boundary) vertices of <span class="math notranslate nohighlight">\(G\)</span>. The connected components of <span class="math notranslate nohighlight">\(C\)</span> correspond to the interior
 vertices of the connected components of the face adjacency graph. In fact, <span class="math notranslate nohighlight">\(C\)</span> is the <a class="reference external" href="https://en.wikipedia.org/wiki/Dual_graph">dual</a>  of the face adjacency graph. <span class="math notranslate nohighlight">\(C\)</span> is only used during
 seed patch selection, which is discussed in the following section.</p>
-</section>
-</section>
-<section id="choosing-seed-patches">
+</div>
+</div>
+<div class="section" id="choosing-seed-patches">
 <h3>Choosing Seed Patches<a class="headerlink" href="#choosing-seed-patches" title="Permalink to this headline">¶</a></h3>
 <p>The paving process creates new patches from the faces of vertices neighboring the <a class="reference internal" href="vac.html#term-vertex-anchor"><span class="xref std std-term">vertex
 anchors</span></a> of existing patches. Therefore, each connected component (of the face
@@ -424,25 +421,21 @@ component has no boundary, there is no evidently good choice, so we select a ver
 <col style="width: 50%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><figure class="align-center" id="id1">
+<tr class="row-odd"><td><div class="figure align-center" id="id1">
 <a class="reference internal image-reference" href="../../../_images/seed_patch_tri.svg"><img alt="../../../_images/seed_patch_tri.svg" src="../../../_images/seed_patch_tri.svg" width="100%" /></a>
-<figcaption>
-<p><span class="caption-text">Effect of seed patch placement on a <em>triangular</em> mesh. The seed patch is highlighted in
+<p class="caption"><span class="caption-text">Effect of seed patch placement on a <em>triangular</em> mesh. The seed patch is highlighted in
 red. Full patches are blue. Partial patches are gray.
 A seed on the corner produces six full patches, while a seed ‘one face from the corner’
 only produces five full patches.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+</div>
 </td>
-<td><figure class="align-center" id="id2">
+<td><div class="figure align-center" id="id2">
 <a class="reference internal image-reference" href="../../../_images/seed_patch_quad.svg"><img alt="../../../_images/seed_patch_quad.svg" src="../../../_images/seed_patch_quad.svg" width="100%" /></a>
-<figcaption>
-<p><span class="caption-text">Effect of seed patch placement on a <em>quadrilateral</em> mesh. The seed patch is highlighted in
+<p class="caption"><span class="caption-text">Effect of seed patch placement on a <em>quadrilateral</em> mesh. The seed patch is highlighted in
 red. Full patches are blue. Partial patches are gray.
 A seed on the corner produces nine full patches, while a seed ‘one face from the corner’
 only creates six full patches.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+</div>
 </td>
 </tr>
 </tbody>
@@ -460,24 +453,22 @@ This vertex becomes the vertex anchor for the seed patch of that component. The 
 the global priority queue, and will be the first patch placed in that component. Note that since the
 vertex anchor is an interior vertex, the seed patch must be a full patch. The seed patch initializes
 the paving process on that component.</p>
-</section>
-<section id="component-paving">
+</div>
+<div class="section" id="component-paving">
 <h3>Component Paving<a class="headerlink" href="#component-paving" title="Permalink to this headline">¶</a></h3>
 <p>Starting from the seed patches, each connected component of the enclosure is iteratively ‘paved’
 with patches that neighbor existing patches. When a patch is assigned, PAVE finds the first and
 second degree vertex neighbors of the patch’s vertex anchor. For each of the neighbors, PAVE forms a
 new queue entry for each connected subset of the neighbor’s faces that are still unassigned. This
 process continues until the queue is empty, at which point all faces are assigned to a patch.</p>
-<figure class="align-center" id="id3" style="width: 90%">
-<img alt="../../../_images/patch_neighbors.svg" src="../../../_images/patch_neighbors.svg" /><figcaption>
-<p><span class="caption-text"><strong>Top:</strong> The red patch has just been assigned. The first and second degree neighbors of
+<div class="figure align-center" id="id3" style="width: 90%">
+<img alt="../../../_images/patch_neighbors.svg" src="../../../_images/patch_neighbors.svg" /><p class="caption"><span class="caption-text"><strong>Top:</strong> The red patch has just been assigned. The first and second degree neighbors of
 its vertex anchor are labeled.
 <strong>Bottom left:</strong> The patches formed by the first degree neighbors are colored gray. These
 are all partial patches.
 <strong>Bottom right:</strong> The patches formed by the second degree neighbors are colored blue and
 gray. Some are full patches (blue), and some are partial patches (gray).</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+</div>
 <p>Note that the vertex anchors of two adjacent <a class="reference internal" href="vac.html#term-full-patch"><span class="xref std std-term">full patches</span></a> must be second degree
 neighbors, since these vertices share no faces. This is the motivation for forming new patches from
 the second degree neighbors of the vertex anchors of current patches.</p>
@@ -496,8 +487,8 @@ that such patches have a large constant added to their weight. Thus, these patch
 back of the queue, and will not be used until all other patches have been considered. As discussed
 in the <a class="reference internal" href="vac.html#position-bias"><span class="std std-ref">position bias</span></a> section, these queue entries must
 be included to handle a corner case where a component is only one face wide.</p>
-</section>
-<section id="patch-weight">
+</div>
+<div class="section" id="patch-weight">
 <h3>Patch Weight<a class="headerlink" href="#patch-weight" title="Permalink to this headline">¶</a></h3>
 <p>Each entry of the global priority queue has an associated weight which determines their order in
 the queue. The PAVE queue prioritizes entries with a lower weight, so the lowest weight patches are
@@ -509,8 +500,8 @@ patch <span class="math notranslate nohighlight">\((P_i, V_j)\)</span> is given 
 <p>Note that this error metric is identical to that of the VAC algorithm. For details on the terms of
 <span class="math notranslate nohighlight">\(E(P_i,V_j)\)</span>, refer to the <a class="reference internal" href="vac.html#patch-weight"><span class="std std-ref">patch weight section</span></a> of the
 VAC documentation.</p>
-</section>
-<section id="patch-merging">
+</div>
+<div class="section" id="patch-merging">
 <h3>Patch Merging<a class="headerlink" href="#patch-merging" title="Permalink to this headline">¶</a></h3>
 <p>After the paving step of the PAVE algorithm, all faces are assigned to a patch. However, we may
 still reduce the patch count by <em>merging</em> patches together. Therefore, PAVE implements several patch
@@ -524,9 +515,9 @@ splitting.</p>
 the aggressiveness of patch merging. PAVE currently support four merge levels. Again, refer to the
 <a class="reference internal" href="vac.html#merge-level-0"><span class="std std-ref">VAC documentation</span></a> for more information on each merge
 level.</p>
-</section>
-</section>
-<section id="namelist-parameters">
+</div>
+</div>
+<div class="section" id="namelist-parameters">
 <h2>Namelist Parameters<a class="headerlink" href="#namelist-parameters" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="patches_namelist.html"><span class="doc">PATCHES namelist</span></a> allows a user to configure the PAVE algorithm
 parameters. Although the PATCHES namelist supports nine parameters, only four are used by PAVE, and
@@ -537,7 +528,7 @@ information on those parameters.</p>
 <p>The two parameters unique to PAVE are aptly named PAVE_MERGE_LEVEL and PAVE_SPLIT_PATCH_SIZE. These
 have already been discussed, so we’ll only touch on them briefly here and link to the previous
 discussion.</p>
-<section id="pave-merge-level">
+<div class="section" id="pave-merge-level">
 <h3>PAVE_MERGE_LEVEL<a class="headerlink" href="#pave-merge-level" title="Permalink to this headline">¶</a></h3>
 <p>Controls the aggressiveness of patch merging.</p>
 <blockquote class="nml-param">
@@ -579,8 +570,8 @@ This ensures that the merge is always performed.</p></td>
 </tbody>
 </table>
 <p>For more details on each merge level, refer to the section on <a class="reference internal" href="vac.html#patch-merging"><span class="std std-ref">patch merging</span></a> of the VAC documentation.</p>
-</section>
-<section id="pave-split-patch-size">
+</div>
+<div class="section" id="pave-split-patch-size">
 <h3>PAVE_SPLIT_PATCH_SIZE<a class="headerlink" href="#pave-split-patch-size" title="Permalink to this headline">¶</a></h3>
 <p>Defines the maximum size of patches to be split during patch merging.</p>
 <blockquote class="nml-param">
@@ -602,8 +593,8 @@ this is not possible due to a merge.</p>
 <p>For best results, set <code class="docutils literal notranslate"><span class="pre">pave_split_patch_size</span></code> to 3 for quadrilateral meshes and to 5 for
 triangular meshes. This avoids splitting too many patches.</p>
 </div>
-</section>
-<section id="pave-random-seed">
+</div>
+<div class="section" id="pave-random-seed">
 <h3>PAVE_RANDOM_SEED<a class="headerlink" href="#pave-random-seed" title="Permalink to this headline">¶</a></h3>
 <p>Defines the seed for the random number generator used to pick the initial seed patches.</p>
 <blockquote class="nml-param">
@@ -620,9 +611,9 @@ documentation for more information on how the seed patches are selected.</p>
 Therefore, runs with the same value for this parameter will produce identical results. If this
 parameter is not specified, then the seed is taken from the system clock and results will likely
 vary from run to run.</p>
-</section>
-</section>
-</section>
+</div>
+</div>
+</div>
 
 
     </div>
@@ -637,7 +628,7 @@ vary from run to run.</p>
     </p>
     <p>
         &copy; Copyright 2019, Los Alamos National Laboratory.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.3.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 3.5.4.<br/>
     </p>
   </div>
 </footer>

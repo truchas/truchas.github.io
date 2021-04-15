@@ -4,8 +4,7 @@
 <html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
-
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>20. PHASE_CHANGE Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
@@ -194,16 +193,16 @@
             
   <div class="toctree-wrapper compound" id="phase-change-namelist">
 </div>
-<section id="id1">
+<div class="section" id="id1">
 <h1><span class="section-number">20. </span>PHASE_CHANGE Namelist<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-<section id="overview">
+<div class="section" id="overview">
 <h2><span class="section-number">20.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="#phase-change-namelist"><span class="std std-ref">PHASE_CHANGE</span></a> namelist defines the phase change model used for the transformation between two phases of a multi-phase material. An instance of this namelist is required for each consecutive pair of phases specified by the <a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html#mp-phase-pm"><span class="std std-ref">phases</span></a> variable of a <a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html#material-and-phase-namelists"><span class="std std-ref">MATERIAL</span></a> namelist.</p>
 <p>Truchas models the transformation from low temperature phase (“solid”) to high temperature phase (“liquid”) using a “solid fraction” function <span class="math notranslate nohighlight">\(f_{sol}(T)\)</span> that gives the fraction of low temperature phase as a function of temperature. There are two temperatures <span class="math notranslate nohighlight">\(T_{sol} \lt T_{liq}\)</span> such that <span class="math notranslate nohighlight">\(f_{sol} = 1\)</span> for <span class="math notranslate nohighlight">\(T \leq T_{sol},f_{sol} = 0\)</span> for <span class="math notranslate nohighlight">\(T \geq T_{liq}\)</span>, and <span class="math notranslate nohighlight">\(0 \lt f_{sol}  \lt 1\)</span> for <span class="math notranslate nohighlight">\(T_{sol} \lt T \lt T_{liq}\)</span>. There are two alternative methods for specifying this function.</p>
 <p>The first simple, but non-physical, method uses a smooth Hermite cubic polynomial to interpolate <span class="math notranslate nohighlight">\(f_{sol}\)</span> between <span class="math notranslate nohighlight">\(T_{sol}\)</span> and <span class="math notranslate nohighlight">\(T_{liq}\)</span>. This is pictured below. The second method uses a table of <span class="math notranslate nohighlight">\((T,f_{sol})\)</span> values to define <span class="math notranslate nohighlight">\(f_{sol}(T)\)</span>. This allows physics-based phase change models like lever and Scheil to be defined, and data from <span class="math notranslate nohighlight">\(CALPHAD\)</span>-type tools to be used directly.</p>
 <p>Note that while described in terms of solid and liquid, these phase change models also apply to solid-solid transformations with the obvious reinterpretation of notation.</p>
-</section>
-<section id="namelist-variables">
+</div>
+<div class="section" id="namelist-variables">
 <h2><span class="section-number">20.2. </span>Namelist Variables<a class="headerlink" href="#namelist-variables" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
 <dt><strong>low_temp_phase</strong>, <strong>high_temp_phase</strong></dt><dd><p>These are the names of the two material phases.</p>
@@ -211,12 +210,10 @@
 </dl>
 <p><strong>solidus_temp</strong>, <strong>liquidus_temp</strong>
 The solidus and liquidus temperatures, <span class="math notranslate nohighlight">\(T_{sol}\)</span> and <span class="math notranslate nohighlight">\(T_{liq}\)</span>. If these variables are defined, the simple solid fraction model is used, which interpolates the solid fraction over the interval <span class="math notranslate nohighlight">\([T_{sol}, T_{liq}]\)</span> using a smooth Hermite cubic polynomial. These variables are incompatible with <strong>solid_frac_table</strong>.</p>
-<figure class="align-center" id="id2">
+<div class="figure align-center" id="id2">
 <span id="fig-phase-change"></span><a class="reference internal image-reference" href="../_images/fs-smooth.jpg"><img alt="../_images/fs-smooth.jpg" src="../_images/fs-smooth.jpg" style="width: 450px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figure 20.2.1 </span><span class="caption-text">Phase Change Schematic</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
+<p class="caption"><span class="caption-number">Figure 20.2.1 </span><span class="caption-text">Phase Change Schematic</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
 <p><strong>solid_frac_table</strong>
 A table of temperature-solid fraction values. The format is the same as described for the <a class="reference internal" href="../FUNCTION_Namelist/index.html#function-namelist"><span class="std std-ref">FUNCTION</span></a> namelist <a class="reference internal" href="../FUNCTION_Namelist/index.html#func-td"><span class="std std-ref">Tabular_Data</span></a> variable. However the table may be given in either increasing or decreasing temperature order, and the solid fraction values must be strictly monotone. The table endpoints must specify the 1 and 0 solid fractions, and the corresponding temperatures are taken to be <span class="math notranslate nohighlight">\(T_{sol}\)</span> and <span class="math notranslate nohighlight">\(T_{liq}\)</span>, respectively. The solid fraction function is interpolated from this table using Akima smoothing; see the <a class="reference internal" href="../FUNCTION_Namelist/index.html#function-namelist"><span class="std std-ref">FUNCTION</span></a> namelist <a class="reference internal" href="../FUNCTION_Namelist/index.html#func-ti"><span class="std std-ref">Tabular_Interp</span></a>. Additional data points outside the interval <span class="math notranslate nohighlight">\([T_{sol}, T_{liq}]\)</span> are automatically added to ensure that the solid fraction is constant outside the transformation interval. This variable is incompatible with <strong>solidus_temp</strong> and <strong>liquidus_temp</strong>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">solid_frac_table</span> <span class="o">=</span> <span class="mf">930.0</span> <span class="mf">1.00</span>
@@ -227,14 +224,12 @@ A table of temperature-solid fraction values. The format is the same as describe
 </div>
 <p><strong>latent_heat</strong>
 The energy per unit mass <span class="math notranslate nohighlight">\(L\)</span> absorbed during the transformation of the material from the low temperature phase to the high temperature phase at the liquidus temperature <span class="math notranslate nohighlight">\(T_{liq}\)</span>. This property is required when the specific enthalpy of the high temperature phase is defined from its specific heat. Otherwise it is ignored.</p>
-<figure class="align-center" id="id3">
+<div class="figure align-center" id="id3">
 <span id="fig-latent-heat"></span><a class="reference internal image-reference" href="../_images/latent-heat.jpg"><img alt="../_images/latent-heat.jpg" src="../_images/latent-heat.jpg" style="width: 450px;" /></a>
-<figcaption>
-<p><span class="caption-number">Figure 20.2.2 </span><span class="caption-text">Latent Heat Schematic</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</figcaption>
-</figure>
-</section>
-</section>
+<p class="caption"><span class="caption-number">Figure 20.2.2 </span><span class="caption-text">Latent Heat Schematic</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+</div>
 
 
            </div>
