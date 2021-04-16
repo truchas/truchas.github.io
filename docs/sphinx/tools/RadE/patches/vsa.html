@@ -18,8 +18,8 @@
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="PATCHES Namelist" href="patches_namelist.html" />
-    <link rel="prev" title="Vertex Anchor Cluster (VAC)" href="vac.html" />
+    <link rel="next" title="METIS patching (METIS)" href="metis.html" />
+    <link rel="prev" title="Vertex Anchor Cluster Paving (PAVE)" href="pave.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -61,8 +61,9 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Radiation Enclosure Tools</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Enclosure Patches</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="pave.html">Vertex Anchor Cluster Paving (PAVE)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="vac.html">Vertex Anchor Cluster (VAC)</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Variational Shape Approximation (VSA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metis.html">METIS patching (METIS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vac.html">Vertex Anchor Cluster (VAC)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="patches_namelist.html">PATCHES Namelist</a></li>
 </ul>
 </li>
@@ -78,11 +79,11 @@
               
                 
   <li>
-    <a href="vac.html" title="Previous Chapter: Vertex Anchor Cluster (VAC)"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Vertex Anchor...</span>
+    <a href="pave.html" title="Previous Chapter: Vertex Anchor Cluster Paving (PAVE)"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Vertex Anchor...</span>
     </a>
   </li>
   <li>
-    <a href="patches_namelist.html" title="Next Chapter: PATCHES Namelist"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">PATCHES Namelist &raquo;</span>
+    <a href="metis.html" title="Next Chapter: METIS patching (METIS)"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">METIS patchin... &raquo;</span>
     </a>
   </li>
               
@@ -128,8 +129,9 @@ Based on globaltoc.html from the Guzzle Sphinx theme: https://github.com/guzzle/
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Radiation Enclosure Tools</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Enclosure Patches</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="pave.html">Vertex Anchor Cluster Paving (PAVE)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="vac.html">Vertex Anchor Cluster (VAC)</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Variational Shape Approximation (VSA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metis.html">METIS patching (METIS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vac.html">Vertex Anchor Cluster (VAC)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="patches_namelist.html">PATCHES Namelist</a></li>
 </ul>
 </li>
@@ -192,14 +194,9 @@ Based on localtoc.html from the Guzzle Sphinx theme: https://github.com/guzzle/g
       
   <div class="section" id="variational-shape-approximation-vsa">
 <h1>Variational Shape Approximation (VSA)<a class="headerlink" href="#variational-shape-approximation-vsa" title="Permalink to this headline">¶</a></h1>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The VSA algorithm is experimental and not recommended for regular users. For best results, use
-the <a class="reference internal" href="pave.html"><span class="doc">PAVE patching algorithm</span></a>.</p>
-</div>
-<div class="figure align-right" id="id8" style="width: 28%">
+<div class="figure align-right" id="id9" style="width: 28%">
 <a class="reference internal image-reference" href="../../../_images/basic_hemi_vsa_2.png"><img alt="../../../_images/basic_hemi_vsa_2.png" src="../../../_images/basic_hemi_vsa_2.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">Result of VSA on a quarter cylinder.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Result of VSA on a quarter cylinder.</span><a class="headerlink" href="#id9" title="Permalink to this image">¶</a></p>
 </div>
 <p>The Variational Shape Approximation (VSA) patching algorithm is based on the face clustering
 algorithm presented by Cohen-Steiner et al. in their paper by the same name
@@ -212,40 +209,40 @@ convergence criterion is met.</p>
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#algorithm" id="id9">Algorithm</a></p>
+<li><p><a class="reference internal" href="#algorithm" id="id10">Algorithm</a></p>
 <ul>
-<li><p><a class="reference internal" href="#outline" id="id10">Outline</a></p></li>
-<li><p><a class="reference internal" href="#error-minimization" id="id11">Error Minimization</a></p>
+<li><p><a class="reference internal" href="#outline" id="id11">Outline</a></p></li>
+<li><p><a class="reference internal" href="#error-minimization" id="id12">Error Minimization</a></p>
 <ul>
-<li><p><a class="reference internal" href="#l21-metric" id="id12"><span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric</a></p></li>
-<li><p><a class="reference internal" href="#l2-metric" id="id13"><span class="math notranslate nohighlight">\(\mathcal{L}^2\)</span> metric</a></p></li>
+<li><p><a class="reference internal" href="#l21-metric" id="id13"><span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric</a></p></li>
+<li><p><a class="reference internal" href="#l2-metric" id="id14"><span class="math notranslate nohighlight">\(\mathcal{L}^2\)</span> metric</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#geometry-partitioning" id="id14">Geometry Partitioning</a></p>
+<li><p><a class="reference internal" href="#geometry-partitioning" id="id15">Geometry Partitioning</a></p>
 <ul>
-<li><p><a class="reference internal" href="#face-weight" id="id15">Face Weight</a></p>
+<li><p><a class="reference internal" href="#face-weight" id="id16">Face Weight</a></p>
 <ul>
-<li><p><a class="reference internal" href="#normal-bias" id="id16">Normal Bias</a></p></li>
-<li><p><a class="reference internal" href="#distance-bias" id="id17">Distance Bias</a></p></li>
-<li><p><a class="reference internal" href="#size-bias" id="id18">Size Bias</a></p></li>
+<li><p><a class="reference internal" href="#normal-bias" id="id17">Normal Bias</a></p></li>
+<li><p><a class="reference internal" href="#distance-bias" id="id18">Distance Bias</a></p></li>
+<li><p><a class="reference internal" href="#size-bias" id="id19">Size Bias</a></p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#proxy-fitting" id="id19">Proxy Fitting</a></p></li>
+<li><p><a class="reference internal" href="#proxy-fitting" id="id20">Proxy Fitting</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#namelist-parameters" id="id20">Namelist Parameters</a></p>
+<li><p><a class="reference internal" href="#namelist-parameters" id="id21">Namelist Parameters</a></p>
 <ul>
-<li><p><a class="reference internal" href="#vsa-max-iter" id="id21">VSA_MAX_ITER</a></p></li>
-<li><p><a class="reference internal" href="#vsa-min-delta" id="id22">VSA_MIN_DELTA</a></p></li>
-<li><p><a class="reference internal" href="#vsa-face-patch-ratio" id="id23">VSA_FACE_PATCH_RATIO</a></p></li>
-<li><p><a class="reference internal" href="#vsa-max-patch-radius" id="id24">VSA_MAX_PATCH_RADIUS</a></p></li>
-<li><p><a class="reference internal" href="#vsa-normalize-dist" id="id25">VSA_NORMALIZE_DIST</a></p></li>
-<li><p><a class="reference internal" href="#vsa-random-seed" id="id26">VSA_RANDOM_SEED</a></p></li>
+<li><p><a class="reference internal" href="#vsa-max-iter" id="id22">VSA_MAX_ITER</a></p></li>
+<li><p><a class="reference internal" href="#vsa-min-delta" id="id23">VSA_MIN_DELTA</a></p></li>
+<li><p><a class="reference internal" href="#vsa-face-patch-ratio" id="id24">VSA_FACE_PATCH_RATIO</a></p></li>
+<li><p><a class="reference internal" href="#vsa-max-patch-radius" id="id25">VSA_MAX_PATCH_RADIUS</a></p></li>
+<li><p><a class="reference internal" href="#vsa-normalize-dist" id="id26">VSA_NORMALIZE_DIST</a></p></li>
+<li><p><a class="reference internal" href="#vsa-random-seed" id="id27">VSA_RANDOM_SEED</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#references" id="id27">References</a></p></li>
+<li><p><a class="reference internal" href="#references" id="id28">References</a></p></li>
 </ul>
 </div>
 <div class="section" id="algorithm">
@@ -542,13 +539,13 @@ and <span class="math notranslate nohighlight">\(W_i = \sum_{F_k \in P_i} w_k\)<
 <div class="section" id="namelist-parameters">
 <h2>Namelist Parameters<a class="headerlink" href="#namelist-parameters" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="patches_namelist.html"><span class="doc">PATCHES namelist</span></a> allows a user to configure the VSA algorithm
-parameters. Although the PATCHES namelist supports nine parameters, only five are used by VSA, and
-only three of those are unique to VSA.</p>
+parameters. Although the PATCHES namelist supports many parameters, only eight are used by VSA, and
+only six of those are unique to VSA.</p>
 <p>The general parameters used by VSA are VERBOSITY_LEVEL and MAX_ANGLE. Refer to the <a class="reference internal" href="patches_namelist.html#general-parameters"><span class="std std-ref">PATCHES
 namelist documentation</span></a> for more
 information on those parameters.</p>
-<p>The three parameters unique to VSA are aptly named VSA_MAX_ITER, VSA_MIN_DELTA, and
-VSA_FACE_PATCH_RATIO. We discuss these parameters briefly below.</p>
+<p>The six parameters unique to VSA are all prefixed with <em>VSA</em>. We discuss these parameters
+briefly below.</p>
 <div class="section" id="vsa-max-iter">
 <h3>VSA_MAX_ITER<a class="headerlink" href="#vsa-max-iter" title="Permalink to this headline">¶</a></h3>
 <p>Defines the maximum number of iterations for the <a class="reference internal" href="#outline"><span class="std std-ref">error minimization</span></a> step of the algorithm.</p>

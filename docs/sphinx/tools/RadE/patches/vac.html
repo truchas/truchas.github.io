@@ -18,8 +18,8 @@
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Variational Shape Approximation (VSA)" href="vsa.html" />
-    <link rel="prev" title="Vertex Anchor Cluster Paving (PAVE)" href="pave.html" />
+    <link rel="next" title="PATCHES Namelist" href="patches_namelist.html" />
+    <link rel="prev" title="METIS patching (METIS)" href="metis.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
@@ -61,8 +61,9 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Radiation Enclosure Tools</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Enclosure Patches</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="pave.html">Vertex Anchor Cluster Paving (PAVE)</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Vertex Anchor Cluster (VAC)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="vsa.html">Variational Shape Approximation (VSA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metis.html">METIS patching (METIS)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Vertex Anchor Cluster (VAC)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="patches_namelist.html">PATCHES Namelist</a></li>
 </ul>
 </li>
@@ -78,11 +79,11 @@
               
                 
   <li>
-    <a href="pave.html" title="Previous Chapter: Vertex Anchor Cluster Paving (PAVE)"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; Vertex Anchor...</span>
+    <a href="metis.html" title="Previous Chapter: METIS patching (METIS)"><span class="glyphicon glyphicon-chevron-left visible-sm"></span><span class="hidden-sm hidden-tablet">&laquo; METIS patchin...</span>
     </a>
   </li>
   <li>
-    <a href="vsa.html" title="Next Chapter: Variational Shape Approximation (VSA)"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Variational S... &raquo;</span>
+    <a href="patches_namelist.html" title="Next Chapter: PATCHES Namelist"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">PATCHES Namelist &raquo;</span>
     </a>
   </li>
               
@@ -128,8 +129,9 @@ Based on globaltoc.html from the Guzzle Sphinx theme: https://github.com/guzzle/
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Radiation Enclosure Tools</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Enclosure Patches</a><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="pave.html">Vertex Anchor Cluster Paving (PAVE)</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">Vertex Anchor Cluster (VAC)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="vsa.html">Variational Shape Approximation (VSA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metis.html">METIS patching (METIS)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Vertex Anchor Cluster (VAC)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="patches_namelist.html">PATCHES Namelist</a></li>
 </ul>
 </li>
@@ -193,12 +195,12 @@ Based on localtoc.html from the Guzzle Sphinx theme: https://github.com/guzzle/g
 <h1>Vertex Anchor Cluster (VAC)<a class="headerlink" href="#vertex-anchor-cluster-vac" title="Permalink to this headline">¶</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>The VAC algorithm is experimental and not recommended for regular users. For best results, use
-the <a class="reference internal" href="pave.html"><span class="doc">PAVE patching algorithm</span></a>.</p>
+<p>The VAC algorithm is intended for development and not recommended for regular users. For best
+results, use one of the <a class="reference internal" href="index.html#patch-algorithms"><span class="std std-ref">other algorithms</span></a>.</p>
 </div>
-<div class="figure align-right" id="id6" style="width: 35%">
+<div class="figure align-right" id="id7" style="width: 35%">
 <a class="reference internal image-reference" href="../../../_images/basic_hemi_vac_2.png"><img alt="../../../_images/basic_hemi_vac_2.png" src="../../../_images/basic_hemi_vac_2.png" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">Result of VAC on a quarter cyclinder.</span><a class="headerlink" href="#id6" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-text">Result of VAC on a quarter cyclinder.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
 </div>
 <p>The Vertex Anchor Cluster (VAC) patching algorithm is based on the observation that the set of all
 faces sharing a particular vertex (the faces of a vertex) tend to form patches with desirable
@@ -211,38 +213,38 @@ of full patches generated.</p>
 <div class="contents local topic" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#algorithm" id="id8">Algorithm</a></p>
+<li><p><a class="reference internal" href="#algorithm" id="id9">Algorithm</a></p>
 <ul>
-<li><p><a class="reference internal" href="#outline" id="id9">Outline</a></p></li>
-<li><p><a class="reference internal" href="#connected-components" id="id10">Connected Components</a></p></li>
-<li><p><a class="reference internal" href="#patch-weight" id="id11">Patch Weight</a></p>
+<li><p><a class="reference internal" href="#outline" id="id10">Outline</a></p></li>
+<li><p><a class="reference internal" href="#connected-components" id="id11">Connected Components</a></p></li>
+<li><p><a class="reference internal" href="#patch-weight" id="id12">Patch Weight</a></p>
 <ul>
-<li><p><a class="reference internal" href="#normal-bias" id="id12">Normal Bias</a></p></li>
-<li><p><a class="reference internal" href="#shape-bias" id="id13">Shape Bias</a></p></li>
-<li><p><a class="reference internal" href="#size-bias" id="id14">Size Bias</a></p></li>
-<li><p><a class="reference internal" href="#full-patch-bias" id="id15">Full Patch Bias</a></p></li>
-<li><p><a class="reference internal" href="#position-bias" id="id16">Position Bias</a></p></li>
+<li><p><a class="reference internal" href="#normal-bias" id="id13">Normal Bias</a></p></li>
+<li><p><a class="reference internal" href="#shape-bias" id="id14">Shape Bias</a></p></li>
+<li><p><a class="reference internal" href="#size-bias" id="id15">Size Bias</a></p></li>
+<li><p><a class="reference internal" href="#full-patch-bias" id="id16">Full Patch Bias</a></p></li>
+<li><p><a class="reference internal" href="#position-bias" id="id17">Position Bias</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#patch-merging" id="id17">Patch Merging</a></p>
+<li><p><a class="reference internal" href="#patch-merging" id="id18">Patch Merging</a></p>
 <ul>
-<li><p><a class="reference internal" href="#patch-splitting" id="id18">Patch Splitting</a></p></li>
-<li><p><a class="reference internal" href="#merge-level-0" id="id19">Merge Level 0</a></p></li>
-<li><p><a class="reference internal" href="#merge-level-1" id="id20">Merge Level 1</a></p></li>
-<li><p><a class="reference internal" href="#merge-level-2" id="id21">Merge Level 2</a></p></li>
-<li><p><a class="reference internal" href="#merge-level-3" id="id22">Merge Level 3</a></p></li>
+<li><p><a class="reference internal" href="#patch-splitting" id="id19">Patch Splitting</a></p></li>
+<li><p><a class="reference internal" href="#merge-level-0" id="id20">Merge Level 0</a></p></li>
+<li><p><a class="reference internal" href="#merge-level-1" id="id21">Merge Level 1</a></p></li>
+<li><p><a class="reference internal" href="#merge-level-2" id="id22">Merge Level 2</a></p></li>
+<li><p><a class="reference internal" href="#merge-level-3" id="id23">Merge Level 3</a></p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#namelist-parameters" id="id23">Namelist Parameters</a></p>
+<li><p><a class="reference internal" href="#namelist-parameters" id="id24">Namelist Parameters</a></p>
 <ul>
-<li><p><a class="reference internal" href="#vac-merge-level" id="id24">VAC_MERGE_LEVEL</a></p></li>
-<li><p><a class="reference internal" href="#vac-split-patch-size" id="id25">VAC_SPLIT_PATCH_SIZE</a></p></li>
+<li><p><a class="reference internal" href="#vac-merge-level" id="id25">VAC_MERGE_LEVEL</a></p></li>
+<li><p><a class="reference internal" href="#vac-split-patch-size" id="id26">VAC_SPLIT_PATCH_SIZE</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#glossary" id="id26">Glossary</a></p></li>
-<li><p><a class="reference internal" href="#references" id="id27">References</a></p></li>
+<li><p><a class="reference internal" href="#glossary" id="id27">Glossary</a></p></li>
+<li><p><a class="reference internal" href="#references" id="id28">References</a></p></li>
 </ul>
 </div>
 <div class="section" id="algorithm">
@@ -456,7 +458,7 @@ components will form two patches, one in each component, and these patches will 
 suboptimal shape, since they are essentially <a class="reference internal" href="#term-partial-patch"><span class="xref std std-term">partial patches</span></a> relative to a
 vertex in the component interior. Moreover, the faces of a vertex on the mesh boundary form a
 <a class="reference internal" href="#term-full-patch"><span class="xref std std-term">full patch</span></a> with <span class="math notranslate nohighlight">\(E_{size} = 0\)</span>, despite their suboptimal shape.</p>
-<div class="figure align-center" id="id7" style="width: 90%">
+<div class="figure align-center" id="id8" style="width: 90%">
 <img alt="../../../_images/vertex_anchor_edges.svg" src="../../../_images/vertex_anchor_edges.svg" /><p class="caption"><span class="caption-text"><strong>Top:</strong> Two enclosure components meet at a boundary. A vertex on that boundary is labeled in
 red. The faces of the red vertex form two patches, colored grey and numbered. These grey patches
 are poorly shaped. Conversely, the blue patches formed by the blue vertices in the interior of
@@ -464,7 +466,7 @@ each component are full patches with a desirable shape.
 <strong>Bottom:</strong> The red vertex is on the mesh boundary, and its faces are colored gray. These faces
 form a poorly shaped patch, despite it being a full patch (it includes all the faces of its
 vertex anchor). Note that the grey patch is a partial patch relative to the yellow vertex. The
-blue vertices in the interior of the component form full patches with a desirable shape.</span><a class="headerlink" href="#id7" title="Permalink to this image">¶</a></p>
+blue vertices in the interior of the component form full patches with a desirable shape.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
 </div>
 <p>Therefore, we want to heavily bias against patches with a boundary vertex as their anchor. We define
 a <em>position bias</em> for a patch <span class="math notranslate nohighlight">\(P_i\)</span> with vertex anchor <span class="math notranslate nohighlight">\(V_j\)</span> as follows:</p>
@@ -568,14 +570,13 @@ before all other candidates.</p>
 <div class="section" id="namelist-parameters">
 <h2>Namelist Parameters<a class="headerlink" href="#namelist-parameters" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="patches_namelist.html"><span class="doc">PATCHES namelist</span></a> allows a user to configure the VAC algorithm
-parameters. Although the PATCHES namelist supports nine parameters, only four are used by VAC, and
+parameters. Although the PATCHES namelist supports many parameters, only four are used by VAC, and
 only two of those are unique to VAC.</p>
 <p>The general parameters used by VAC are VERBOSITY_LEVEL and MAX_ANGLE. Refer to the <a class="reference internal" href="patches_namelist.html#general-parameters"><span class="std std-ref">PATCHES
 namelist documentation</span></a> for more
 information on those parameters.</p>
-<p>The two parameters unique to VAC are aptly named VAC_MERGE_LEVEL and VAC_SPLIT_PATCH_SIZE. These
-have already been discussed, so we’ll only touch on them briefly here and link to the previous
-discussion.</p>
+<p>The four parameters unique to VAC are all prefixed with <em>VAC</em>. These have already been discussed, so
+we’ll only touch on them briefly here and link to the previous discussion.</p>
 <div class="section" id="vac-merge-level">
 <h3>VAC_MERGE_LEVEL<a class="headerlink" href="#vac-merge-level" title="Permalink to this headline">¶</a></h3>
 <p>Controls the aggressiveness of patch merging.</p>

@@ -60,8 +60,9 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Radiation Enclosure Tools</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Enclosure Patches</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="pave.html">Vertex Anchor Cluster Paving (PAVE)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="vac.html">Vertex Anchor Cluster (VAC)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="vsa.html">Variational Shape Approximation (VSA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metis.html">METIS patching (METIS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vac.html">Vertex Anchor Cluster (VAC)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="patches_namelist.html">PATCHES Namelist</a></li>
 </ul>
 </li>
@@ -127,8 +128,9 @@ Based on globaltoc.html from the Guzzle Sphinx theme: https://github.com/guzzle/
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Radiation Enclosure Tools</a><ul class="current">
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Enclosure Patches</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="pave.html">Vertex Anchor Cluster Paving (PAVE)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="vac.html">Vertex Anchor Cluster (VAC)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="vsa.html">Variational Shape Approximation (VSA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metis.html">METIS patching (METIS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vac.html">Vertex Anchor Cluster (VAC)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="patches_namelist.html">PATCHES Namelist</a></li>
 </ul>
 </li>
@@ -149,8 +151,12 @@ Based on localtoc.html from the Guzzle Sphinx theme: https://github.com/guzzle/g
     <div class="sidebar-localtoc">
       <ul>
 <li><a class="reference internal" href="#">Enclosure Patches</a><ul>
-<li><a class="reference internal" href="#patch-algorithms">Patch Algorithms</a></li>
+<li><a class="reference internal" href="#patch-algorithms">Patch Algorithms</a><ul>
+<li><a class="reference internal" href="#general-guidance">General guidance</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#patches-namelist">PATCHES Namelist</a></li>
+<li><a class="reference internal" href="#references">References</a></li>
 </ul>
 </li>
 </ul>
@@ -170,20 +176,16 @@ Based on localtoc.html from the Guzzle Sphinx theme: https://github.com/guzzle/g
 </div>
 <div class="section" id="patch-algorithms">
 <h2>Patch Algorithms<a class="headerlink" href="#patch-algorithms" title="Permalink to this headline">¶</a></h2>
-<p><strong class="program">genre</strong> includes three patching algorithms.</p>
+<p>The <strong class="program">genre</strong> program supports the following patching algorithms.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="pave.html">Vertex Anchor Cluster Paving (PAVE)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="vac.html">Vertex Anchor Cluster (VAC)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="vsa.html">Variational Shape Approximation (VSA)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="metis.html">METIS patching (METIS)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vac.html">Vertex Anchor Cluster (VAC)</a></li>
 </ul>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The <a class="reference internal" href="vac.html"><span class="doc">VAC</span></a> and <a class="reference internal" href="vsa.html"><span class="doc">VSA</span></a> algorithms are experimental and not recommended for
-regular users. For best results, use the <a class="reference internal" href="pave.html"><span class="doc">PAVE</span></a> algorithm.</p>
-</div>
-<table class="fig-table docutils align-center">
+<table class="fig-table docutils align-center" style="width: 100%">
 <colgroup>
 <col style="width: 33%" />
 <col style="width: 33%" />
@@ -191,23 +193,65 @@ regular users. For best results, use the <a class="reference internal" href="pav
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="../../../_images/basic_hemi_pave_1.png"><img alt="pave_patches" class="align-middle" src="../../../_images/basic_hemi_pave_1.png" style="width: 100%;" /></a></p></td>
-<td><p><a class="reference internal" href="../../../_images/basic_hemi_vac_1.png"><img alt="vac_patches" class="align-middle" src="../../../_images/basic_hemi_vac_1.png" style="width: 100%;" /></a></p></td>
 <td><p><a class="reference internal" href="../../../_images/basic_hemi_vsa_1.png"><img alt="vsa_patches" class="align-middle" src="../../../_images/basic_hemi_vsa_1.png" style="width: 100%;" /></a></p></td>
+<td><p><a class="reference internal" href="../../../_images/basic_hemi_metis_1.png"><img alt="metis_patches" class="align-middle" src="../../../_images/basic_hemi_metis_1.png" style="width: 100%;" /></a></p></td>
 </tr>
-<tr class="row-even"><td colspan="3"><p>Result of running <strong>PAVE</strong> (left), <strong>VAC</strong>
-(center),and <strong>VSA</strong> (right) on the ‘basic hemi’
-enclosure.</p></td>
+<tr class="row-even"><td colspan="3"><p>Result of running <strong>PAVE</strong> (left), <strong>VSA</strong>
+(middle), and <strong>METIS</strong> (right) on
+the ‘basic hemi’ enclosure.</p></td>
 </tr>
 </tbody>
 </table>
+<div class="section" id="general-guidance">
+<h3>General guidance<a class="headerlink" href="#general-guidance" title="Permalink to this headline">¶</a></h3>
+<p>We provide general guidance for choosing an algorithm given performance constraints and desired
+properties for the resulting patches.</p>
+<ul class="simple">
+<li><p>PAVE</p>
+<ul>
+<li><p><strong>Pros:</strong> produces neat tilings that account for patch planarity and irregularity. The algorithm
+is fast (linear in the number of faces).</p></li>
+<li><p><strong>Cons:</strong> uniform coarsening of the mesh. Only supports faces-per-patch ratios of roughly 4 or
+6, depending on whether the mesh is hexahedral or tetrahedral.</p></li>
+</ul>
+</li>
+<li><p>VSA</p>
+<ul>
+<li><p><strong>Pros:</strong> works well for arbitrary faces-per-patch ratios. Provides flexible control of the
+geometric patch diameters. Maximizes patch planarity. Provides choice between patches with
+roughly the same number of faces, or roughly the same surface area.</p></li>
+<li><p><strong>Cons:</strong> can be extremely slow for large meshes (scales badly), due to a quadratic dependence on
+the number of faces. However, once computed, the result can be reused with the <a class="reference internal" href="patches_namelist.html#patch-algorithm"><span class="std std-ref">FILE method</span></a> allowing experimentation with Chaparral
+parameters without rerunning the algorithm.</p></li>
+</ul>
+</li>
+<li><p>METIS</p>
+<ul>
+<li><p><strong>Pros:</strong> works well for arbitrary faces-per-patch ratios. The algorithm is fast by leveraging
+the METIS library <span id="id2">[<a class="reference internal" href="#id6">1</a>]</span>. Provides choice between patches with
+roughly the same number of faces, or roughly the same surface area. In the second case, the
+constraint is tight, so the faces-per-patch ratio is largely ignored and need only be
+approximate.</p></li>
+<li><p><strong>Cons:</strong> New and not extensively tested. Patch planarity is not explicitly maximized, but at
+least patches will not straddle “sharp edges” (see <a class="reference internal" href="metis.html#dual-graph"><span class="std std-ref">here</span></a> for more details). Note that it is not clear whether patch planarity, or lack thereof,
+affects the quality of the thermal radiation model.</p></li>
+</ul>
+</li>
+<li><p>VAC</p>
+<ul>
+<li><p>Retained for developer use and not recommended for regular users. It has similar limitations to
+PAVE, but produces lower quality patches.</p></li>
+</ul>
+</li>
+</ul>
+<p>Refer to each algorithm’s documentation for extensive details on its properties, limitations, and
+supported inputs.</p>
+</div>
 </div>
 <div class="section" id="patches-namelist">
 <h2>PATCHES Namelist<a class="headerlink" href="#patches-namelist" title="Permalink to this headline">¶</a></h2>
 <div class="toctree-wrapper compound">
 </div>
-<p>The <cite>PATCHES</cite> namelist defines the parameters used by the patching algorithms. The namelist supports
-many parameters, but not all parameters are used by all algorithms. Parameters only used by a
-particular algorithm are prefixed with the algorithm’s name.</p>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&amp;PATCHES</span>
 <span class="go">  patch_algorithm = &#39;PAVE&#39;</span>
 <span class="go">  verbosity_level = 3</span>
@@ -217,28 +261,20 @@ particular algorithm are prefixed with the algorithm’s name.</p>
 </pre></div>
 </div>
 <p><sup>Example PATCHES namelist</sup></p>
-<p>The <cite>PATCHES</cite> namelist parameters include:</p>
-<ol class="arabic simple">
-<li><p><a class="reference internal" href="patches_namelist.html#patch-algorithm"><span class="std std-ref">PATCH_ALGORITHM</span></a>: Patch algorithm to execute.</p></li>
-<li><p><a class="reference internal" href="patches_namelist.html#verbosity-level"><span class="std std-ref">VERBOSITY_LEVEL</span></a>: Verbosity level of the patch algorithm.</p></li>
-<li><p><a class="reference internal" href="patches_namelist.html#max-angle"><span class="std std-ref">MAX_ANGLE</span></a>: Maximum angle between adjacent faces</p></li>
-<li><p><a class="reference internal" href="patches_namelist.html#pave-merge-level"><span class="std std-ref">PAVE_MERGE_LEVEL</span></a>: Controls the aggressiveness of patch merging</p></li>
-<li><p><a class="reference internal" href="patches_namelist.html#pave-split-patch-size"><span class="std std-ref">PAVE_SPLIT_PATCH_SIZE</span></a>: Split patches with up to this number of faces</p></li>
-<li><p><a class="reference internal" href="patches_namelist.html#pave-random-seed"><span class="std std-ref">PAVE_RANDOM_SEED</span></a>: Sets random number generator seed.</p></li>
-<li><p><a class="reference internal" href="patches_namelist.html#vac-merge-level"><span class="std std-ref">VAC_MERGE_LEVEL</span></a>: Controls the aggressiveness of patch merging</p></li>
-<li><p><a class="reference internal" href="patches_namelist.html#vac-split-patch-size"><span class="std std-ref">VAC_SPLIT_PATCH_SIZE</span></a>: Split patches with up to this number of faces</p></li>
-<li><p><a class="reference internal" href="patches_namelist.html#vsa-max-iter"><span class="std std-ref">VSA_MAX_ITER</span></a>: Maximum iterations for the VSA algorithm</p></li>
-<li><p><a class="reference internal" href="patches_namelist.html#vsa-min-delta"><span class="std std-ref">VSA_MIN_DELTA</span></a>: Minimum change in patch proxies for the VSA algorithm</p></li>
-<li><p><a class="reference internal" href="patches_namelist.html#vsa-face-patch-ratio"><span class="std std-ref">VSA_FACE_PATCH_RATIO</span></a>: Face to patch ratio for the VSA algorithm</p></li>
-<li><p><a class="reference internal" href="patches_namelist.html#vsa-max-patch-radius"><span class="std std-ref">VSA_MAX_PATCH_RADIUS</span></a>: Desired maximum patch radius for the VSA algorithm</p></li>
-<li><p><a class="reference internal" href="patches_namelist.html#vsa-normalize-dist"><span class="std std-ref">VSA_NORMALIZE_DIST</span></a>: Whether to normalize the distance bias in the VSA algorithm</p></li>
-<li><p><a class="reference internal" href="patches_namelist.html#vsa-random-seed"><span class="std std-ref">VSA_RANDOM_SEED</span></a>: Sets random number generator seed.</p></li>
-</ol>
-<div class="admonition seealso">
-<p class="admonition-title">See also</p>
-<p>For detailed information on these parameters, refer to the <a class="reference internal" href="patches_namelist.html"><span class="doc">PATCES namelist
-documentation</span></a>.</p>
+<p>The <cite>PATCHES</cite> namelist defines the parameters used by the patching algorithms. The namelist supports
+many parameters, but not all parameters are used by all algorithms. Parameters only used by a
+particular algorithm are prefixed with the algorithm’s name.</p>
+<p>Refer to the <a class="reference internal" href="patches_namelist.html"><span class="doc">PATCES namelist documentation</span></a> for detailed information on
+these parameters.</p>
 </div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p id="id3"><dl class="citation">
+<dt class="label" id="id6"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p>George Karypis and Vipin Kumar. A fast and high quality multilevel scheme for partitioning irregular graphs. <em>SIAM J. Sci. Comput.</em>, 20(1):359–392, December 1998.</p>
+</dd>
+</dl>
+</p>
 </div>
 </div>
 

@@ -18,7 +18,7 @@
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Vertex Anchor Cluster (VAC)" href="vac.html" />
+    <link rel="next" title="Variational Shape Approximation (VSA)" href="vsa.html" />
     <link rel="prev" title="Enclosure Patches" href="index.html" />
 <meta charset='utf-8'>
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
@@ -61,8 +61,9 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Radiation Enclosure Tools</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Enclosure Patches</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Vertex Anchor Cluster Paving (PAVE)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="vac.html">Vertex Anchor Cluster (VAC)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="vsa.html">Variational Shape Approximation (VSA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metis.html">METIS patching (METIS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vac.html">Vertex Anchor Cluster (VAC)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="patches_namelist.html">PATCHES Namelist</a></li>
 </ul>
 </li>
@@ -82,7 +83,7 @@
     </a>
   </li>
   <li>
-    <a href="vac.html" title="Next Chapter: Vertex Anchor Cluster (VAC)"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Vertex Anchor... &raquo;</span>
+    <a href="vsa.html" title="Next Chapter: Variational Shape Approximation (VSA)"><span class="glyphicon glyphicon-chevron-right visible-sm"></span><span class="hidden-sm hidden-tablet">Variational S... &raquo;</span>
     </a>
   </li>
               
@@ -128,8 +129,9 @@ Based on globaltoc.html from the Guzzle Sphinx theme: https://github.com/guzzle/
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Radiation Enclosure Tools</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="index.html">Enclosure Patches</a><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">Vertex Anchor Cluster Paving (PAVE)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="vac.html">Vertex Anchor Cluster (VAC)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="vsa.html">Variational Shape Approximation (VSA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="metis.html">METIS patching (METIS)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vac.html">Vertex Anchor Cluster (VAC)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="patches_namelist.html">PATCHES Namelist</a></li>
 </ul>
 </li>
@@ -520,14 +522,13 @@ level.</p>
 <div class="section" id="namelist-parameters">
 <h2>Namelist Parameters<a class="headerlink" href="#namelist-parameters" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference internal" href="patches_namelist.html"><span class="doc">PATCHES namelist</span></a> allows a user to configure the PAVE algorithm
-parameters. Although the PATCHES namelist supports nine parameters, only four are used by PAVE, and
-only two of those are unique to PAVE.</p>
+parameters. Although the PATCHES namelist supports many parameters, only five are used by PAVE, and
+only three of those are unique to PAVE.</p>
 <p>The general parameters used by PAVE are VERBOSITY_LEVEL and MAX_ANGLE. Refer to the <a class="reference internal" href="patches_namelist.html#general-parameters"><span class="std std-ref">PATCHES
 namelist documentation</span></a> for more
 information on those parameters.</p>
-<p>The two parameters unique to PAVE are aptly named PAVE_MERGE_LEVEL and PAVE_SPLIT_PATCH_SIZE. These
-have already been discussed, so we’ll only touch on them briefly here and link to the previous
-discussion.</p>
+<p>The three parameters unique to PAVE are all prefixed with <em>PAVE</em>. These have already been discussed,
+so we’ll only touch on them briefly here and link to the previous discussion.</p>
 <div class="section" id="pave-merge-level">
 <h3>PAVE_MERGE_LEVEL<a class="headerlink" href="#pave-merge-level" title="Permalink to this headline">¶</a></h3>
 <p>Controls the aggressiveness of patch merging.</p>
