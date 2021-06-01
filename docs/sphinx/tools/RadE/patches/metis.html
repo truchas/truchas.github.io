@@ -210,7 +210,7 @@ Based on localtoc.html from the Guzzle Sphinx theme: https://github.com/guzzle/g
 <p>The METIS patching algorithm is based on the observation that clustering the enclosure faces is
 equivalent to partitioning the enclosure’s dual graph. This is the graph whose nodes are the
 enclosure faces and edges are the enclosure edges shared by faces. The METIS patching algorithm
-leverages the well-known METIS library <span id="id1">[<a class="reference internal" href="#id8">1</a>]</span> to partition the dual graph.</p>
+leverages the well-known METIS library <span id="id1">[<a class="reference internal" href="#id8" title="George Karypis and Vipin Kumar. A fast and high quality multilevel scheme for partitioning irregular graphs. SIAM J. Sci. Comput., 20(1):359–392, December 1998.">1</a>]</span> to partition the dual graph.</p>
 <p>Since the METIS graph partitioner minimizes the number of edges between partitions, the resulting
 partitions naturally correspond to connected patches with roughly circular shapes. Moreover, by
 appropriately weighting the vertices and edges of the dual graph, the generated patches can have
@@ -334,7 +334,7 @@ across the partitions.</p>
 <p>The <em>communication volume</em> partitioning objective can also be used, but it is intended for
 partitioning meshes among parallel processes. As such, the communication volume objective will not
 be discussed in this document but is left as an option for interested users. See the METIS
-documentation <span id="id2">[<a class="reference internal" href="#id8">1</a>]</span> for more details on this objective type.</p>
+documentation <span id="id2">[<a class="reference internal" href="#id8" title="George Karypis and Vipin Kumar. A fast and high quality multilevel scheme for partitioning irregular graphs. SIAM J. Sci. Comput., 20(1):359–392, December 1998.">1</a>]</span> for more details on this objective type.</p>
 <p>The <a class="reference internal" href="#metis-edge-weight"><span class="std std-ref">METIS_EDGE_WEIGHT</span></a> and
 <a class="reference internal" href="#metis-face-weight"><span class="std std-ref">METIS_FACE_WEIGHT</span></a> parameters affect the weights
 assigned to the edges and vertices of the dual graph, and thus affect the final patch configuration.
@@ -469,7 +469,7 @@ configuration.</p>
 <h3>METIS library parameters<a class="headerlink" href="#metis-library-parameters" title="Permalink to this headline">¶</a></h3>
 <p>The METIS graph partitioning routine admits the following integer-valued options that may be
 specified, though all have reasonable defaults so that none must be specified. See the METIS
-documentation <span id="id3">[<a class="reference internal" href="#id8">1</a>]</span> for more details on these options.</p>
+documentation <span id="id3">[<a class="reference internal" href="#id8" title="George Karypis and Vipin Kumar. A fast and high quality multilevel scheme for partitioning irregular graphs. SIAM J. Sci. Comput., 20(1):359–392, December 1998.">1</a>]</span> for more details on these options.</p>
 <div class="section" id="metis-ptype">
 <h4>METIS_PTYPE<a class="headerlink" href="#metis-ptype" title="Permalink to this headline">¶</a></h4>
 <p>Specifies the partitioning method.</p>
@@ -735,7 +735,7 @@ partitioning procedure.</p>
 <p><strong>Default:</strong> metis_dbglvl = 0</p>
 </div></blockquote>
 <p>The default <span class="math notranslate nohighlight">\(0\)</span> means no output. Use <span class="math notranslate nohighlight">\(1\)</span> to write some basic information. Refer to the METIS
-documentation <span id="id4">[<a class="reference internal" href="#id8">1</a>]</span> for the many other possible values and the output
+documentation <span id="id4">[<a class="reference internal" href="#id8" title="George Karypis and Vipin Kumar. A fast and high quality multilevel scheme for partitioning irregular graphs. SIAM J. Sci. Comput., 20(1):359–392, December 1998.">1</a>]</span> for the many other possible values and the output
 they generate.</p>
 </div>
 </div>

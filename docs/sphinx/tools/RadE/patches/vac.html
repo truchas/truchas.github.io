@@ -372,7 +372,7 @@ patch <span class="math notranslate nohighlight">\((P_i, V_j)\)</span> is given 
 <p>We want patches to be roughly planar so that all their faces have similar views of the rest of the
 enclosure. This ensures that the patch view factor is a reasonable approximation of the view factors
 of its faces.</p>
-<p>We use the <span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric defined by Cohen-Steiner et al. <span id="id1">[<a class="reference internal" href="#id4">1</a>]</span> to
+<p>We use the <span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric defined by Cohen-Steiner et al. <span id="id1">[<a class="reference internal" href="#id4" title="David Cohen-Steiner, Pierre Alliez, and Mathieu Desbrun. Variational Shape Approximation. In ACM SIGGRAPH 2004 Papers, SIGGRAPH '04, 905–914. New York, NY, USA, 2004. ACM. doi:10.1145/1186562.1015817.">1</a>]</span> to
 measure the planarity of a patch. The <span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric is based on an <span class="math notranslate nohighlight">\(\mathcal{L}^2\)</span> measure of the normal field
 over the patch. Given a patch <span class="math notranslate nohighlight">\(P_i\)</span> with normal <span class="math notranslate nohighlight">\(\vec{n}_i\)</span> we define</p>
 <div class="math notranslate nohighlight">
@@ -407,7 +407,7 @@ it follows that <span class="math notranslate nohighlight">\(0 \le E_{normal}(P_
 <p>We want to prioritize patches that are as circular as possible to ensure that all their faces have
 similar views of the rest of the enclosure. In particular, long skinny patches are more likely to
 have shadow discontinuities fall across them.</p>
-<p>We use the <em>irregularity metric</em> defined by Garland et al. <span id="id2">[<a class="reference internal" href="#id5">2</a>]</span> to measure
+<p>We use the <em>irregularity metric</em> defined by Garland et al. <span id="id2">[<a class="reference internal" href="#id5" title="Michael Garland, Andrew Willmott, and Paul S. Heckbert. Hierarchical Face Clustering on Polygonal Surfaces. In Proceedings of the 2001 Symposium on Interactive 3D Graphics, I3D '01, 49–58. New York, NY, USA, 2001. ACM. doi:10.1145/364338.364345.">2</a>]</span> to measure
 the compactness of a patch. Given a patch <span class="math notranslate nohighlight">\(P_i\)</span> with area <span class="math notranslate nohighlight">\(w\)</span> and perimeter <span class="math notranslate nohighlight">\(\rho\)</span>, the
 <em>irregularity</em> <span class="math notranslate nohighlight">\(\gamma\)</span> of the patch is defined as</p>
 <div class="math notranslate nohighlight">

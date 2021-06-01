@@ -200,7 +200,7 @@ Based on localtoc.html from the Guzzle Sphinx theme: https://github.com/guzzle/g
 </div>
 <p>The Variational Shape Approximation (VSA) patching algorithm is based on the face clustering
 algorithm presented by Cohen-Steiner et al. in their paper by the same name
-<span id="id1">[<a class="reference internal" href="#id6">1</a>]</span>. VSA is a modification of <a class="reference external" href="https://en.wikipedia.org/wiki/Lloyd%27s_algorithm">Lloyd’s algorithm</a> for approximating <a class="reference external" href="https://en.wikipedia.org/wiki/Centroidal_Voronoi_tessellation">centroidal Voronoi
+<span id="id1">[<a class="reference internal" href="#id6" title="David Cohen-Steiner, Pierre Alliez, and Mathieu Desbrun. Variational Shape Approximation. In ACM SIGGRAPH 2004 Papers, SIGGRAPH '04, 905–914. New York, NY, USA, 2004. ACM. doi:10.1145/1186562.1015817.">1</a>]</span>. VSA is a modification of <a class="reference external" href="https://en.wikipedia.org/wiki/Lloyd%27s_algorithm">Lloyd’s algorithm</a> for approximating <a class="reference external" href="https://en.wikipedia.org/wiki/Centroidal_Voronoi_tessellation">centroidal Voronoi
 tessellations</a>. Instead of
 approximating compact regions of the plane, VSA attempts to minimize the total distortion or error
 of all patches in the enclosure. VSA alternates between two phases of <em>geometry partitioning</em> and
@@ -257,7 +257,7 @@ every face is assigned to a patch, so the enclosure has been partitioned into <s
 connected regions (the patches).</p>
 <p>Once a partition is found, the <em>proxy fitting</em> phase computes an ‘optimal representative’ of each
 patch, called the patch proxy. These patch proxies correspond to the centroids of Lloyd’s algorithm
-<span id="id2">[<a class="reference internal" href="#id6">1</a>]</span>. In the partition phase, the face distortion is measured relative
+<span id="id2">[<a class="reference internal" href="#id6" title="David Cohen-Steiner, Pierre Alliez, and Mathieu Desbrun. Variational Shape Approximation. In ACM SIGGRAPH 2004 Papers, SIGGRAPH '04, 905–914. New York, NY, USA, 2004. ACM. doi:10.1145/1186562.1015817.">1</a>]</span>. In the partition phase, the face distortion is measured relative
 to these proxies. At the end of the proxy fitting phase, the face with least distortion relative to
 the new proxy is selected as a seed patch for the next iteration.</p>
 <p>The seed patches for the first iteration are chosen with a ‘farthest-point’ initialization method.
@@ -406,7 +406,7 @@ stages, VSA drives down the total distortion error <span class="math notranslate
 <p>The terms of <span class="math notranslate nohighlight">\(E(P_i, \rho_i)\)</span> are defined below.</p>
 <div class="section" id="l21-metric">
 <h4><span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric<a class="headerlink" href="#l21-metric" title="Permalink to this headline">¶</a></h4>
-<p>Cohen-Steiner et al. <span id="id3">[<a class="reference internal" href="#id6">1</a>]</span> define the so-called <span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric to measure
+<p>Cohen-Steiner et al. <span id="id3">[<a class="reference internal" href="#id6" title="David Cohen-Steiner, Pierre Alliez, and Mathieu Desbrun. Variational Shape Approximation. In ACM SIGGRAPH 2004 Papers, SIGGRAPH '04, 905–914. New York, NY, USA, 2004. ACM. doi:10.1145/1186562.1015817.">1</a>]</span> define the so-called <span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric to measure
 the planarity of a patch. The <span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric is based on an <span class="math notranslate nohighlight">\(\mathcal{L}^2\)</span> measure of the normal field over the
 patch. Given a patch <span class="math notranslate nohighlight">\(P_i\)</span> and proxy <span class="math notranslate nohighlight">\(\rho_i = (X_i, \vec{n}_i)\)</span> we define</p>
 <div class="math notranslate nohighlight">
@@ -441,7 +441,7 @@ Once the queue is emptied, every face has been assigned to a patch and we have a
 assumed to be a manifold, each face can only as many neighbors as its number of edges. Thus, since
 we are only working with triangular or quadrilateral meshes, each face can be queued at most 4
 times. Note also that the partitioning phase runs in time <span class="math notranslate nohighlight">\(N\log(N)\)</span>
-<span id="id4">[<a class="reference internal" href="#id6">1</a>]</span>. Therefore, VSA is able to perform partitions very quickly,
+<span id="id4">[<a class="reference internal" href="#id6" title="David Cohen-Steiner, Pierre Alliez, and Mathieu Desbrun. Variational Shape Approximation. In ACM SIGGRAPH 2004 Papers, SIGGRAPH '04, 905–914. New York, NY, USA, 2004. ACM. doi:10.1145/1186562.1015817.">1</a>]</span>. Therefore, VSA is able to perform partitions very quickly,
 reducing overall computation time.</p>
 <div class="section" id="face-weight">
 <h4>Face Weight<a class="headerlink" href="#face-weight" title="Permalink to this headline">¶</a></h4>
