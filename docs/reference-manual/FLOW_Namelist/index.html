@@ -114,15 +114,16 @@
 <li class="toctree-l3"><a class="reference internal" href="#material-priority">11.3.8. material_priority</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#vol-track-subcycles">11.3.9. vol_track_subcycles</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#nested-dissection-expert-parameter">11.3.10. nested_dissection (Expert Parameter)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#vol-frac-cutoff-expert-parameter">11.3.11. vol_frac_cutoff (Expert Parameter)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fischer-dim-expert-parameter">11.3.12. fischer_dim (Expert Parameter)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#fluid-frac-threshold-expert-parameter">11.3.13. fluid_frac_threshold (Expert Parameter)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#min-face-fraction-expert-parameter">11.3.14. min_face_fraction (Expert Parameter)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#void-collapse-experimental">11.3.15. void_collapse (Experimental)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#void-collapse-relaxation-experimental">11.3.16. void_collapse_relaxation (Experimental)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#wisp-redistribution-experimental">11.3.17. wisp_redistribution (Experimental)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#wisp-cutoff-experimental">11.3.18. wisp_cutoff (Experimental)</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#wisp-neighbor-cutoff-experimental">11.3.19. wisp_neighbor_cutoff (Experimental)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#location-iter-max-expert-parameter">11.3.11. location_iter_max (Expert Parameter)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vol-frac-cutoff-expert-parameter">11.3.12. vol_frac_cutoff (Expert Parameter)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fischer-dim-expert-parameter">11.3.13. fischer_dim (Expert Parameter)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fluid-frac-threshold-expert-parameter">11.3.14. fluid_frac_threshold (Expert Parameter)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#min-face-fraction-expert-parameter">11.3.15. min_face_fraction (Expert Parameter)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#void-collapse-experimental">11.3.16. void_collapse (Experimental)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#void-collapse-relaxation-experimental">11.3.17. void_collapse_relaxation (Experimental)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wisp-redistribution-experimental">11.3.18. wisp_redistribution (Experimental)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wisp-cutoff-experimental">11.3.19. wisp_cutoff (Experimental)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wisp-neighbor-cutoff-experimental">11.3.20. wisp_neighbor_cutoff (Experimental)</a></li>
 </ul>
 </li>
 </ul>
@@ -249,6 +250,7 @@
 <li><p><a class="reference internal" href="#flow-mp"><span class="std std-ref">material_priority</span></a></p></li>
 <li><p><a class="reference internal" href="#flow-vts"><span class="std std-ref">vol_track_subcycles</span></a></p></li>
 <li><p><a class="reference internal" href="#flow-nd"><span class="std std-ref">nested_dissection</span></a> (expert)</p></li>
+<li><p><a class="reference internal" href="#flow-lim"><span class="std std-ref">location_iter_max</span></a> (expert)</p></li>
 <li><p><a class="reference internal" href="#flow-vfc"><span class="std std-ref">vol_frac_cutoff</span></a> (expert)</p></li>
 <li><p><a class="reference internal" href="#flow-fd"><span class="std std-ref">fischer_dim</span></a> (expert)</p></li>
 <li><p><a class="reference internal" href="#flow-fft"><span class="std std-ref">fluid_frac_threshold</span></a> (expert)</p></li>
@@ -331,8 +333,17 @@
 <div class="line"><strong>Default</strong>: True</div>
 </div>
 </div>
+<div class="section" id="location-iter-max-expert-parameter">
+<span id="flow-lim"></span><h3><span class="section-number">11.3.11. </span>location_iter_max (Expert Parameter)<a class="headerlink" href="#location-iter-max-expert-parameter" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : The number of iterations allowed to locate the interface.</div>
+<div class="line"><strong>Type</strong>   : integer</div>
+<div class="line"><strong>Default</strong>: 40</div>
+<div class="line"><strong>Valid Values</strong>  : <span class="math notranslate nohighlight">\(\geq 1\)</span></div>
+</div>
+</div>
 <div class="section" id="vol-frac-cutoff-expert-parameter">
-<span id="flow-vfc"></span><h3><span class="section-number">11.3.11. </span>vol_frac_cutoff (Expert Parameter)<a class="headerlink" href="#vol-frac-cutoff-expert-parameter" title="Permalink to this headline">¶</a></h3>
+<span id="flow-vfc"></span><h3><span class="section-number">11.3.12. </span>vol_frac_cutoff (Expert Parameter)<a class="headerlink" href="#vol-frac-cutoff-expert-parameter" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The smallest material volume fraction allowed. If a material volume fraction drops below this cutoff, the material is removed entirely from the cell, and its volume fraction replaced by proportional increases to the volume fractions of the remaining materials, or if the cell contains void, by increasing the void volume fraction alone.</div>
 <div class="line"><strong>Type</strong>   : real</div>
@@ -341,7 +352,7 @@
 </div>
 </div>
 <div class="section" id="fischer-dim-expert-parameter">
-<span id="flow-fd"></span><h3><span class="section-number">11.3.12. </span>fischer_dim (Expert Parameter)<a class="headerlink" href="#fischer-dim-expert-parameter" title="Permalink to this headline">¶</a></h3>
+<span id="flow-fd"></span><h3><span class="section-number">11.3.13. </span>fischer_dim (Expert Parameter)<a class="headerlink" href="#fischer-dim-expert-parameter" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The dimension <span class="math notranslate nohighlight">\(d\)</span> of the subspace used in Fischer’s projection method <a class="footnote-reference brackets" href="#fischer1998projection" id="id3">2</a> for computing aninitial guess for pressure projection system based on previous solutions. Memory requirements for the method are <span class="math notranslate nohighlight">\(2(d+ 1)\)</span> cell-based vectors. Set this variable to 0 to disable use of this method.</div>
 <div class="line"><strong>Type</strong>   : integer</div>
@@ -349,7 +360,7 @@
 </div>
 </div>
 <div class="section" id="fluid-frac-threshold-expert-parameter">
-<span id="flow-fft"></span><h3><span class="section-number">11.3.13. </span>fluid_frac_threshold (Expert Parameter)<a class="headerlink" href="#fluid-frac-threshold-expert-parameter" title="Permalink to this headline">¶</a></h3>
+<span id="flow-fft"></span><h3><span class="section-number">11.3.14. </span>fluid_frac_threshold (Expert Parameter)<a class="headerlink" href="#fluid-frac-threshold-expert-parameter" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Cells with a total fluid volume fraction less than this threshold are ignored by the flow solver, being regarded as ‘solid’ cells.</div>
 <div class="line"><strong>Type</strong>   : real</div>
@@ -358,7 +369,7 @@
 </div>
 </div>
 <div class="section" id="min-face-fraction-expert-parameter">
-<span id="flow-mff"></span><h3><span class="section-number">11.3.14. </span>min_face_fraction (Expert Parameter)<a class="headerlink" href="#min-face-fraction-expert-parameter" title="Permalink to this headline">¶</a></h3>
+<span id="flow-mff"></span><h3><span class="section-number">11.3.15. </span>min_face_fraction (Expert Parameter)<a class="headerlink" href="#min-face-fraction-expert-parameter" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The variable sets the minimum value of the fluid density associated with a face for the pressure projection system. It is specified as a fraction of the minimum fluid density (excluding void) of any fluid in the problem.</div>
 <div class="line"><strong>Type</strong>   : real</div>
@@ -366,7 +377,7 @@
 </div>
 </div>
 <div class="section" id="void-collapse-experimental">
-<span id="flow-vc"></span><h3><span class="section-number">11.3.15. </span>void_collapse (Experimental)<a class="headerlink" href="#void-collapse-experimental" title="Permalink to this headline">¶</a></h3>
+<span id="flow-vc"></span><h3><span class="section-number">11.3.16. </span>void_collapse (Experimental)<a class="headerlink" href="#void-collapse-experimental" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The volume-of-fluid algorithm effectively treats small fragments of void entrained in fluid as incompressible, resulting in unphysical void “bubbles” that persist in the flow. A model that drives the collapse of these void fragments will be enabled when this variable is set to true. See <a class="reference internal" href="#flow-vcr"><span class="std std-ref">void_collapse_relaxation</span></a> for a model parameter.</div>
 <div class="line"><strong>Type</strong>   : logical</div>
@@ -374,7 +385,7 @@
 </div>
 </div>
 <div class="section" id="void-collapse-relaxation-experimental">
-<span id="flow-vcr"></span><h3><span class="section-number">11.3.16. </span>void_collapse_relaxation (Experimental)<a class="headerlink" href="#void-collapse-relaxation-experimental" title="Permalink to this headline">¶</a></h3>
+<span id="flow-vcr"></span><h3><span class="section-number">11.3.17. </span>void_collapse_relaxation (Experimental)<a class="headerlink" href="#void-collapse-relaxation-experimental" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The relaxation parameter in the void collapse model. See <a class="reference internal" href="#flow-vc"><span class="std std-ref">void_collapse</span></a>.</div>
 <div class="line"><strong>Type</strong>   : real</div>
@@ -384,7 +395,7 @@
 </div>
 </div>
 <div class="section" id="wisp-redistribution-experimental">
-<span id="flow-wr"></span><h3><span class="section-number">11.3.17. </span>wisp_redistribution (Experimental)<a class="headerlink" href="#wisp-redistribution-experimental" title="Permalink to this headline">¶</a></h3>
+<span id="flow-wr"></span><h3><span class="section-number">11.3.18. </span>wisp_redistribution (Experimental)<a class="headerlink" href="#wisp-redistribution-experimental" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A cell containing a small amount of fluid (wisps) can sometimes trigger pathological behavior, manifesting as a perpetual acceleration that drives the timestep to 0. A model that redistributes these wisps to other other fluid cells will be enabled when this variable is set to true. See <a class="reference internal" href="#flow-wc"><span class="std std-ref">wisp_cutoff</span></a> and <a class="reference internal" href="#flow-wnc"><span class="std std-ref">wisp_neighbor_cutoff</span></a> model parameters.</div>
 <div class="line"><strong>Type</strong>   : logical</div>
@@ -392,7 +403,7 @@
 </div>
 </div>
 <div class="section" id="wisp-cutoff-experimental">
-<span id="flow-wc"></span><h3><span class="section-number">11.3.18. </span>wisp_cutoff (Experimental)<a class="headerlink" href="#wisp-cutoff-experimental" title="Permalink to this headline">¶</a></h3>
+<span id="flow-wc"></span><h3><span class="section-number">11.3.19. </span>wisp_cutoff (Experimental)<a class="headerlink" href="#wisp-cutoff-experimental" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Fluid cells with a fluid volume fraction below this value may be treated as wisps and havetheir fluid material moved around to other fluid cells. Generally, moving fluid around the domain can have an undesirable effect on the flow physics. It is therefore advisable to keep this value as small as possible. Based on numerical experimentation, the recommended value is 0.05. Smaller values, such as, 0.01 did not result in robust simulations. See <a class="reference internal" href="#flow-wr"><span class="std std-ref">wisp_redistribution</span></a>.</div>
 <div class="line"><strong>Type</strong>   : real</div>
@@ -400,7 +411,7 @@
 </div>
 </div>
 <div class="section" id="wisp-neighbor-cutoff-experimental">
-<span id="flow-wnc"></span><h3><span class="section-number">11.3.19. </span>wisp_neighbor_cutoff (Experimental)<a class="headerlink" href="#wisp-neighbor-cutoff-experimental" title="Permalink to this headline">¶</a></h3>
+<span id="flow-wnc"></span><h3><span class="section-number">11.3.20. </span>wisp_neighbor_cutoff (Experimental)<a class="headerlink" href="#wisp-neighbor-cutoff-experimental" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Fluid cells with a fluid volume fraction below wisp_cutoff can only be considered a wisp if the amount of fluid in the neighboring cells is also “small”. This definition of “small” is controlled by wisp_neighbor_cutoff. In addition, for a a cell to receive wisp material, the fluid volume fraction of it and its neighbors must be larger than wisp_neighbor_cutoff. See <a class="reference internal" href="#flow-wr"><span class="std std-ref">wisp_redistribution</span></a>.</div>
 <div class="line"><strong>Type</strong>   : real</div>
