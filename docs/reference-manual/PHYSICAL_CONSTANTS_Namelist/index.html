@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>21. PHYSICAL_CONSTANTS Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
+  <title>22. PHYSICAL_CONSTANTS Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
   
 
   
@@ -43,8 +43,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="22. PHYSICS Namelist" href="../PHYSICS_Namelist/index.html" />
-    <link rel="prev" title="20. PHASE_CHANGE Namelist" href="../PHASE_CHANGE_Namelist/index.html" /> 
+    <link rel="next" title="23. PHYSICS Namelist" href="../PHYSICS_Namelist/index.html" />
+    <link rel="prev" title="21. PHASE_CHANGE Namelist" href="../PHASE_CHANGE_Namelist/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -105,35 +105,37 @@
 <li class="toctree-l1"><a class="reference internal" href="../FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html">13. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../FUNCTION_Namelist/index.html">14. FUNCTION Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../INDUCTION_COIL_Namelist/index.html">15. INDUCTION_COIL Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">16. MATERIAL and PHASE Namelists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">17. MESH Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">18. NUMERICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">19. OUTPUTS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">20. PHASE_CHANGE Namelist</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">21. PHYSICAL_CONSTANTS Namelist</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#overview">21.1. Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#physical-constants-namelist-features">21.2. PHYSICAL_CONSTANTS Namelist Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#components">21.3. Components</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#absolute-zero">21.3.1. Absolute_Zero</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#stefan-boltzmann">21.3.2. Stefan_Boltzmann</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#vacuum-permeability">21.3.3. Vacuum_Permeability</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#vacuum-permittivity">21.3.4. Vacuum_Permittivity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LEGACY_SOLID_MECHANICS_Namelist/index.html">16. LEGACY_SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">17. MATERIAL and PHASE Namelists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">18. MESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">19. NUMERICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">20. OUTPUTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">21. PHASE_CHANGE Namelist</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">22. PHYSICAL_CONSTANTS Namelist</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">22.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#physical-constants-namelist-features">22.2. PHYSICAL_CONSTANTS Namelist Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#components">22.3. Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#absolute-zero">22.3.1. Absolute_Zero</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stefan-boltzmann">22.3.2. Stefan_Boltzmann</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vacuum-permeability">22.3.3. Vacuum_Permeability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vacuum-permittivity">22.3.4. Vacuum_Permittivity</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">22. PHYSICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">23. PROBE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">24. RESTART Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">25. SIMULATION_CONTROL Namelist (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">26. SOLID_MECHANICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">27. SPECIES_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">28. THERMAL_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">29. THERMAL_SOURCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">30. TOOLPATH Namelist (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">31. TURBULENCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">32. VFUNCTION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">33. VISCOPLASTIC_MODEL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">23. PHYSICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">24. PROBE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">25. RESTART Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">26. SIMULATION_CONTROL Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">27. SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">28. SOLID_MECHANICS_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">29. SPECIES_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">30. THERMAL_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">31. THERMAL_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">32. TOOLPATH Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">33. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">34. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">35. VISCOPLASTIC_MODEL Namelist</a></li>
 </ul>
 
             
@@ -182,7 +184,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li><span class="section-number">21. </span>PHYSICAL_CONSTANTS Namelist</li>
+      <li><span class="section-number">22. </span>PHYSICAL_CONSTANTS Namelist</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -204,20 +206,20 @@
   <div class="toctree-wrapper compound" id="physical-constants-namelist">
 </div>
 <div class="section" id="id1">
-<h1><span class="section-number">21. </span>PHYSICAL_CONSTANTS Namelist<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">22. </span>PHYSICAL_CONSTANTS Namelist<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
-<h2><span class="section-number">21.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">22.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>The values of physical constants used in Truchas’ physics models are set through this namelist. The default for all these constants is their value in SI units. If a different system of units is used, these may need to be assigned the appropriate values.</p>
 </div>
 <div class="section" id="physical-constants-namelist-features">
-<h2><span class="section-number">21.2. </span>PHYSICAL_CONSTANTS Namelist Features<a class="headerlink" href="#physical-constants-namelist-features" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">22.2. </span>PHYSICAL_CONSTANTS Namelist Features<a class="headerlink" href="#physical-constants-namelist-features" title="Permalink to this headline">¶</a></h2>
 <div class="line-block">
 <div class="line"><strong>Required/Optional        :</strong> Optional</div>
 <div class="line"><strong>Single/Multiple Instances:</strong> Single</div>
 </div>
 </div>
 <div class="section" id="components">
-<h2><span class="section-number">21.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">22.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="#phyco-az"><span class="std std-ref">Absolute_Zero</span></a></p></li>
 <li><p><a class="reference internal" href="#phyco-sb"><span class="std std-ref">Stefan_Boltzmann</span></a></p></li>
@@ -225,7 +227,7 @@
 <li><p><a class="reference internal" href="#phyco-vpt"><span class="std std-ref">Vacuum_Permittivity</span></a></p></li>
 </ul>
 <div class="section" id="absolute-zero">
-<span id="phyco-az"></span><h3><span class="section-number">21.3.1. </span>Absolute_Zero<a class="headerlink" href="#absolute-zero" title="Permalink to this headline">¶</a></h3>
+<span id="phyco-az"></span><h3><span class="section-number">22.3.1. </span>Absolute_Zero<a class="headerlink" href="#absolute-zero" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The value of absolute-zero in the temperature scale used. The default value is 0 for Kelvin. Centigrade would use the value −273.15, for example. This constant is used by thermal radiation boundary conditions and enclosure (view factor) radiation.</div>
 <div class="line"><strong>Physical dimension</strong> <span class="math notranslate nohighlight">\(\Theta\)</span></div>
@@ -235,7 +237,7 @@
 </div>
 </div>
 <div class="section" id="stefan-boltzmann">
-<span id="phyco-sb"></span><h3><span class="section-number">21.3.2. </span>Stefan_Boltzmann<a class="headerlink" href="#stefan-boltzmann" title="Permalink to this headline">¶</a></h3>
+<span id="phyco-sb"></span><h3><span class="section-number">22.3.2. </span>Stefan_Boltzmann<a class="headerlink" href="#stefan-boltzmann" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Stefan-Boltzmann constant for thermal radiation. The default is its value in SI units. This constant is used by thermal radiation boundary condititions and enclosure (view factor) radiation.</div>
 <div class="line"><strong>Physical dimension</strong> <span class="math notranslate nohighlight">\(E/{T.L^2.\Theta^4}\)</span></div>
@@ -245,7 +247,7 @@
 </div>
 </div>
 <div class="section" id="vacuum-permeability">
-<span id="phyco-vpm"></span><h3><span class="section-number">21.3.3. </span>Vacuum_Permeability<a class="headerlink" href="#vacuum-permeability" title="Permalink to this headline">¶</a></h3>
+<span id="phyco-vpm"></span><h3><span class="section-number">22.3.3. </span>Vacuum_Permeability<a class="headerlink" href="#vacuum-permeability" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The magnetic permeability of free space. The default is its value in SI units. This parameter is used by the electromagnetics solver.</div>
 <div class="line"><strong>Physical dimension</strong> <span class="math notranslate nohighlight">\(M.L.T^{-2}.I^{-2}\)</span></div>
@@ -255,7 +257,7 @@
 </div>
 </div>
 <div class="section" id="vacuum-permittivity">
-<span id="phyco-vpt"></span><h3><span class="section-number">21.3.4. </span>Vacuum_Permittivity<a class="headerlink" href="#vacuum-permittivity" title="Permalink to this headline">¶</a></h3>
+<span id="phyco-vpt"></span><h3><span class="section-number">22.3.4. </span>Vacuum_Permittivity<a class="headerlink" href="#vacuum-permittivity" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The electric permittivity of free space. The default is its value in SI units. This parameter is used by the electromagnetics solver.</div>
 <div class="line"><strong>Physical dimension</strong> <span class="math notranslate nohighlight">\(M^{-1}.L^{-3}.T^{4}.I^{2}\)</span></div>
@@ -273,8 +275,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../PHYSICS_Namelist/index.html" class="btn btn-neutral float-right" title="22. PHYSICS Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="../PHASE_CHANGE_Namelist/index.html" class="btn btn-neutral float-left" title="20. PHASE_CHANGE Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../PHYSICS_Namelist/index.html" class="btn btn-neutral float-right" title="23. PHYSICS Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../PHASE_CHANGE_Namelist/index.html" class="btn btn-neutral float-left" title="21. PHASE_CHANGE Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

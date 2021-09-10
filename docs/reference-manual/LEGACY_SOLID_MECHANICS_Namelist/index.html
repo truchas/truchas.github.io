@@ -1,0 +1,478 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>16. LEGACY_SOLID_MECHANICS Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="17. MATERIAL and PHASE Namelists" href="../MATERIAL_and_PHASE_Namelists/index.html" />
+    <link rel="prev" title="15. INDUCTION_COIL Namelist" href="../INDUCTION_COIL_Namelist/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Truchas Reference Manual
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ALTMESH_Namelist/index.html">2. ALTMESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BC_Namelist/index.html">3. BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BODY_Namelist/index.html">4. BODY Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DIFFUSION_Solver_Namelist/index.html">5. DIFFUSION Solver Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DS_SOURCE_Namelist/index.html">6. DS_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html">7. ELECTROMAGNETICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_RADIATION_Namelist/index.html">8. ENCLOSURE_RADIATION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_SURFACE_Namelist/index.html">9. ENCLOSURE_SURFACE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../EVAPORATION_Namelist/index.html">10. EVAPORATION Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_Namelist/index.html">11. FLOW Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_BC_Namelist/index.html">12. FLOW_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html">13. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FUNCTION_Namelist/index.html">14. FUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../INDUCTION_COIL_Namelist/index.html">15. INDUCTION_COIL Namelist</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">16. LEGACY_SOLID_MECHANICS Namelist</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">16.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#legacy-solid-mechanics-namelist-features">16.2. LEGACY_SOLID_MECHANICS Namelist Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#components">16.3. Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#contact-distance">16.3.1. Contact_Distance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#contact-norm-trac">16.3.2. Contact_Norm_Trac</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#contact-penalty">16.3.3. Contact_Penalty</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#displacement-nonlinear-solution">16.3.4. Displacement_Nonlinear_Solution</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#solid-mechanics-body-force">16.3.5. Solid_Mechanics_Body_Force</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#strain-limit">16.3.6. Strain_Limit</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#convergence-criterion">16.3.7. Convergence_Criterion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#maximum-iteration">16.3.8. Maximum_Iteration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nlk-vector-tolerance">16.3.9. NLK_Vector_Tolerance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nlk-max-vectors">16.3.10. NLK_Max_Vectors</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">17. MATERIAL and PHASE Namelists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">18. MESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">19. NUMERICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">20. OUTPUTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">21. PHASE_CHANGE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">22. PHYSICAL_CONSTANTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">23. PHYSICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">24. PROBE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">25. RESTART Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">26. SIMULATION_CONTROL Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">27. SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">28. SOLID_MECHANICS_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">29. SPECIES_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">30. THERMAL_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">31. THERMAL_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">32. TOOLPATH Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">33. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">34. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">35. VISCOPLASTIC_MODEL Namelist</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Truchas Reference Manual</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">16. </span>LEGACY_SOLID_MECHANICS Namelist</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/LEGACY_SOLID_MECHANICS_Namelist/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="toctree-wrapper compound" id="legacy-solid-mechanics-namelist">
+</div>
+<div class="section" id="id1">
+<h1><span class="section-number">16. </span>LEGACY_SOLID_MECHANICS Namelist<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2><span class="section-number">16.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference internal" href="#legacy-solid-mechanics-namelist"><span class="std std-ref">LEGACY_SOLID_MECHANICS</span></a> namelist sets parameters that are specific to the legacy solid mechanics model and algorithm. This namelist is read whenever the <a class="reference internal" href="../PHYSICS_Namelist/index.html#physics-namelist"><span class="std std-ref">PHYSICS</span></a> namelist option <a class="reference internal" href="../PHYSICS_Namelist/index.html#physics-lsm"><span class="std std-ref">Legacy_Solid_Mechanics</span></a> is enabled. Parameters for the nonlinear solver used by the algorithm and its preconditioner are specified in <span class="xref std std-ref">NONLINEAR_SOLVER</span> and <span class="xref std std-ref">LINEAR_SOLVER</span> namelists. Optional material viscoplasticity models are defined in <a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html#viscoplastic-model-namelist"><span class="std std-ref">VISCOPLASTIC_MODEL</span></a> namelists.</p>
+</div>
+<div class="section" id="legacy-solid-mechanics-namelist-features">
+<h2><span class="section-number">16.2. </span>LEGACY_SOLID_MECHANICS Namelist Features<a class="headerlink" href="#legacy-solid-mechanics-namelist-features" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line"><strong>Required/Optional        :</strong> Required when solid mechanics physics is enabled.</div>
+<div class="line"><strong>Single/Multiple Instances:</strong> Single</div>
+</div>
+</div>
+<div class="section" id="components">
+<h2><span class="section-number">16.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html#sm-cd"><span class="std std-ref">Contact_Distance</span></a></p></li>
+<li><p><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html#sm-cnt"><span class="std std-ref">Contact_Norm_Trac</span></a></p></li>
+<li><p><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html#sm-cp"><span class="std std-ref">Contact_Penalty</span></a></p></li>
+<li><p><a class="reference internal" href="#sm-dns"><span class="std std-ref">Displacement_Nonlinear_Solution</span></a></p></li>
+<li><p><a class="reference internal" href="#sm-smbf"><span class="std std-ref">Solid_Mechanics_Body_Force</span></a></p></li>
+<li><p><span class="xref std std-ref">Stress_Reduced_Integration</span></p></li>
+<li><p><a class="reference internal" href="#sm-sl"><span class="std std-ref">Strain_Limit</span></a></p></li>
+<li><p><a class="reference internal" href="#sm-cc"><span class="std std-ref">Convergence_Criterion</span></a></p></li>
+<li><p><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html#sm-mi"><span class="std std-ref">Maximum_Iteration</span></a></p></li>
+<li><p><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html#sm-nvt"><span class="std std-ref">NLK_Vector_Tolerance</span></a></p></li>
+<li><p><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html#sm-nmv"><span class="std std-ref">NLK_Max_Vectors</span></a></p></li>
+</ul>
+<div class="section" id="contact-distance">
+<span id="sm-cd"></span><h3><span class="section-number">16.3.1. </span>Contact_Distance<a class="headerlink" href="#contact-distance" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : A length scale parameter <span class="math notranslate nohighlight">\(\beta\)</span> for the contact function</div>
+</div>
+<p><span class="math notranslate nohighlight">\(\lambda = \lambda_s * \lambda_{\tau}\)</span></p>
+<div class="math notranslate nohighlight" id="equation-legacy-poly-lambda-s">
+\[
+\lambda_s =
+\left\{
+\begin{array}{
+  &#64;{}% no padding
+  l&#64;{\quad}% some padding
+  r&#64;{}% no padding
+  &gt;{{}}r&#64;{}% no padding
+  &gt;{{}}l&#64;{}% no padding
+}
+  1 &amp; if &amp;s \le 0 \\
+  0 &amp; if &amp;s \ge \beta \\
+  2*(\frac{s}{\beta} - 1)^3 + 3(\frac{s}{\beta} - 1)^2 ,&amp; if &amp; 0 \le s \le \beta
+\end{array}
+\right.
+\]</div><p>and</p>
+<div class="math notranslate nohighlight" id="equation-legacy-poly-lambda-tau">
+\[
+\lambda_{\tau} =
+\left\{
+\begin{array}{
+  &#64;{}% no padding
+  l&#64;{\quad}% some padding
+  r&#64;{}% no padding
+  &gt;{{}}r&#64;{}% no padding
+  &gt;{{}}l&#64;{}% no padding
+}
+  1 &amp; if &amp;\tau_n \le 0 \\
+  0 &amp; if &amp;\tau_n \ge \tau^{*} \\
+  2*(\frac{\tau_n}{\tau^{*}} - 1)^3 + 3(\frac{\tau_n}{\tau^{*}} - 1)^2 &amp; if &amp; 0 \le \tau_n \le \tau^{*}
+\end{array}
+\right.
+\]</div><div class="line-block">
+<div class="line"><strong>Physical dimension</strong>: <span class="math notranslate nohighlight">\(L\)</span></div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : 1.0e-7</div>
+<div class="line"><strong>Valid Values</strong>: (0, <span class="math notranslate nohighlight">\(\infty\)</span>]</div>
+<div class="line"><strong>Notes</strong>       : The default value is usually a good value for mesh cell sizes in the 1 - 10 mm size range.</div>
+</div>
+</div>
+<div class="section" id="contact-norm-trac">
+<span id="sm-cnt"></span><h3><span class="section-number">16.3.2. </span>Contact_Norm_Trac<a class="headerlink" href="#contact-norm-trac" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : A parameter <span class="math notranslate nohighlight">\(\tau^{*}\)</span> for the contact function</div>
+</div>
+<p><span class="math notranslate nohighlight">\(\lambda = \lambda_s * \lambda_{\tau}\)</span></p>
+<p>where</p>
+<div class="math notranslate nohighlight" id="equation-legacy-poly-lambda-s1">
+\[
+\lambda_s =
+\left\{
+\begin{array}{
+  &#64;{}% no padding
+  l&#64;{\quad}% some padding
+  r&#64;{}% no padding
+  &gt;{{}}r&#64;{}% no padding
+  &gt;{{}}l&#64;{}% no padding
+}
+  1 &amp; if &amp;s \le 0 \\
+  0 &amp; if &amp;s \ge \beta \\
+  2*(\frac{s}{\beta} - 1)^3 + 3(\frac{s}{\beta} - 1)^2 ,&amp; if &amp; 0 \le s \le \beta
+\end{array}
+\right.
+\]</div><p>and</p>
+<div class="math notranslate nohighlight" id="equation-legacy-poly-lambda-tau1">
+\[
+\lambda_{\tau} =
+\left\{
+\begin{array}{
+  &#64;{}% no padding
+  l&#64;{\quad}% some padding
+  r&#64;{}% no padding
+  &gt;{{}}r&#64;{}% no padding
+  &gt;{{}}l&#64;{}% no padding
+}
+  1 &amp; if &amp;\tau_n \le 0 \\
+  0 &amp; if &amp;\tau_n \ge \tau^{*} \\
+  2*(\frac{\tau_n}{\tau^{*}} - 1)^3 + 3(\frac{\tau_n}{\tau^{*}} - 1)^2 &amp; if &amp; 0 \le \tau_n \le \tau^{*}
+\end{array}
+\right.
+\]</div><p><span class="math notranslate nohighlight">\(\tau_n\)</span> is the normal traction at the interface where a positive value corresponds to a tensile force normal to the surface.</p>
+<div class="line-block">
+<div class="line"><strong>Physical dimension</strong>: <span class="math notranslate nohighlight">\(F/L^2\)</span></div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : 1.0e4</div>
+<div class="line"><strong>Valid Values</strong>: [0, <span class="math notranslate nohighlight">\(\infty\)</span>]</div>
+<div class="line"><strong>Notes</strong>       : The default value is probably appropriate for materials with elastic constants in the range <span class="math notranslate nohighlight">\(10^9 - 10^{11}\)</span>. This parameter should probably be scaled proportionately for elastic constants that differ from this range.</div>
+</div>
+</div>
+<div class="section" id="contact-penalty">
+<span id="sm-cp"></span><h3><span class="section-number">16.3.3. </span>Contact_Penalty<a class="headerlink" href="#contact-penalty" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : A penalty factor for the penetration constraint in the contact algorithm. Changing this is probably not a good idea in the current version.</div>
+<div class="line"><strong>Physical Dimension</strong>: dimensionless</div>
+<div class="line"><strong>Type</strong>         : real</div>
+<div class="line"><strong>Default</strong>      : <span class="math notranslate nohighlight">\(1.0e3\)</span></div>
+<div class="line"><strong>Valid Values</strong> : [0, <span class="math notranslate nohighlight">\(\infty\)</span>]</div>
+</div>
+</div>
+<div class="section" id="displacement-nonlinear-solution">
+<span id="sm-dns"></span><h3><span class="section-number">16.3.4. </span>Displacement_Nonlinear_Solution<a class="headerlink" href="#displacement-nonlinear-solution" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : A character string pointer to the nonlinear solution algorithm parameters to be used in a Newton-Krylov solution of the nonlinear thermo-elastic viscoplastic equations. This string “points” to a particular <span class="xref std std-ref">NONLINEAR_SOLVER</span> namelist if it matches the <span class="xref std std-ref">Name</span> input variable string in the <span class="xref std std-ref">NONLINEAR_SOLVER</span> namelist.</div>
+<div class="line"><strong>Type</strong>         : string</div>
+<div class="line"><strong>Default</strong>      : “default”</div>
+<div class="line"><strong>Valid Values</strong> : arbitrary string</div>
+<div class="line"><strong>Notes</strong>        : If this string does not match a <span class="xref std std-ref">Name</span> input variable string specified in a <span class="xref std std-ref">NONLINEAR_SOLVER</span> namelist, then the default set of nonlinear solution algorithm parameters is used for the thermo-elastic viscoplastic equations.</div>
+</div>
+</div>
+<div class="section" id="solid-mechanics-body-force">
+<span id="sm-smbf"></span><h3><span class="section-number">16.3.5. </span>Solid_Mechanics_Body_Force<a class="headerlink" href="#solid-mechanics-body-force" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Body forces will be included in the solid mechanics calculation.</div>
+<div class="line"><strong>Type</strong>         : logical</div>
+<div class="line"><strong>Default</strong>      : .false.</div>
+</div>
+</div>
+<div class="section" id="strain-limit">
+<span id="sm-sl"></span><h3><span class="section-number">16.3.6. </span>Strain_Limit<a class="headerlink" href="#strain-limit" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : This parameter controls the use of the ODE integrator in the plastic strain calculation. It should be set to the minimum significant value of the plastic strain increment for a time step. If convergence seems poor when a viscoplastic material model is used, it may help to reduce the value.</div>
+<div class="line"><strong>Type</strong>         : real</div>
+<div class="line"><strong>Default</strong>      : <span class="math notranslate nohighlight">\(1.0e-10\)</span></div>
+<div class="line"><strong>Valid Values</strong> : <span class="math notranslate nohighlight">\(\geq 0\)</span></div>
+<div class="line"><strong>Notes</strong>        : This parameter can not be currently used to control the time step. It may be used for such purposes in future releases.</div>
+</div>
+</div>
+<div class="section" id="convergence-criterion">
+<span id="sm-cc"></span><h3><span class="section-number">16.3.7. </span>Convergence_Criterion<a class="headerlink" href="#convergence-criterion" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Tolerance used to determine when nonlinear convergence has been reached.</div>
+<div class="line"><strong>Type</strong>         : real</div>
+<div class="line"><strong>Default</strong>      : <span class="math notranslate nohighlight">\(1.0e-12\)</span></div>
+<div class="line"><strong>Valid Values</strong> : (0,0.1)</div>
+<div class="line"><strong>Note</strong>         : We refer to the input value of Convergence_Criterion as:math:<cite>epsilon</cite>. <span class="math notranslate nohighlight">\(F(x) = 0\)</span> is the nonlinear system being solved.</div>
+</div>
+<p>The nonlinear iteration is stopped when either of the following two conditions are met:</p>
+<ul class="simple">
+<li><p>reduction in the 2-norm of the nonlinear residual meets the criterion, i.e.:</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\frac{||F(x_{k+1})||_2}{||F(x_0)||_2} \lt \gamma\)</span></p>
+<ul class="simple">
+<li><p>The relative change in the max-norm of the solution meets the criterion, i.e.:</p></li>
+</ul>
+<p><span class="math notranslate nohighlight">\(\frac{||\gamma_x||_{\infty}}{||x_{k+1}||_{\infty}} \lt \gamma\)</span></p>
+<p>where <span class="math notranslate nohighlight">\(\gamma\)</span> is the input desired tolerance, modified using an estimate of the convergence rate, i.e.:</p>
+<p><span class="math notranslate nohighlight">\(\gamma = (1-\rho)\epsilon\)</span></p>
+<p>and:</p>
+<p><span class="math notranslate nohighlight">\(\frac{||x_{k+1} - x_k||_{\infty} / ||x_{k+1}||_{\infty}}{||x_{k} - x_{k-1}||_{\infty} / ||x_{k}||_{\infty}}\)</span></p>
+<p>This is an attempt to prevent false convergence if the solution stagnates, but allow iteration to stop if the solution is acceptable.</p>
+</div>
+<div class="section" id="maximum-iteration">
+<span id="sm-mi"></span><h3><span class="section-number">16.3.8. </span>Maximum_Iteration<a class="headerlink" href="#maximum-iteration" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Maximum allowed number of iterations of the nonlinear solver.</div>
+<div class="line"><strong>Type</strong>         : integer</div>
+<div class="line"><strong>Default</strong>      : <span class="math notranslate nohighlight">\(100\)</span></div>
+<div class="line"><strong>Valid Values</strong> : <span class="math notranslate nohighlight">\([0,\infty)\)</span></div>
+</div>
+</div>
+<div class="section" id="nlk-vector-tolerance">
+<span id="sm-nvt"></span><h3><span class="section-number">16.3.9. </span>NLK_Vector_Tolerance<a class="headerlink" href="#nlk-vector-tolerance" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : The vector drop tolerance for the NLK method. When assembling the acceleration subspace vector by vector, a vector is dropped when the sine of the angle between the vector and the subspace less than this value.</div>
+<div class="line"><strong>Type</strong>         : real</div>
+<div class="line"><strong>Default</strong>      : <span class="math notranslate nohighlight">\(0.01\)</span></div>
+<div class="line"><strong>Valid Values</strong> : <span class="math notranslate nohighlight">\((0,1)\)</span></div>
+</div>
+</div>
+<div class="section" id="nlk-max-vectors">
+<span id="sm-nmv"></span><h3><span class="section-number">16.3.10. </span>NLK_Max_Vectors<a class="headerlink" href="#nlk-max-vectors" title="Permalink to this headline">¶</a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : For the NLK method, the maximum number of acceleration vectors to be used.</div>
+<div class="line"><strong>Type</strong>         : integer</div>
+<div class="line"><strong>Default</strong>      : <span class="math notranslate nohighlight">\(20\)</span></div>
+<div class="line"><strong>Valid Values</strong> : <span class="math notranslate nohighlight">\([0,\infty)\)</span></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../MATERIAL_and_PHASE_Namelists/index.html" class="btn btn-neutral float-right" title="17. MATERIAL and PHASE Namelists" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../INDUCTION_COIL_Namelist/index.html" class="btn btn-neutral float-left" title="15. INDUCTION_COIL Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, LANL.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

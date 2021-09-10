@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>18. NUMERICS Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
+  <title>19. NUMERICS Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
   
 
   
@@ -43,8 +43,8 @@
     
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="19. OUTPUTS Namelist" href="../OUTPUTS_Namelist/index.html" />
-    <link rel="prev" title="17. MESH Namelist" href="../MESH_Namelist/index.html" /> 
+    <link rel="next" title="20. OUTPUTS Namelist" href="../OUTPUTS_Namelist/index.html" />
+    <link rel="prev" title="18. MESH Namelist" href="../MESH_Namelist/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -105,42 +105,44 @@
 <li class="toctree-l1"><a class="reference internal" href="../FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html">13. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../FUNCTION_Namelist/index.html">14. FUNCTION Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../INDUCTION_COIL_Namelist/index.html">15. INDUCTION_COIL Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">16. MATERIAL and PHASE Namelists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">17. MESH Namelist</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">18. NUMERICS Namelist</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#overview">18.1. Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ds-source-namelist-features">18.2. DS_SOURCE Namelist Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#components">18.3. Components</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#alittle">18.3.1. Alittle</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cutvof">18.3.2. Cutvof</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cycle-max">18.3.3. Cycle_Max</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cycle-number">18.3.4. Cycle_Number</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#discrete-ops-type">18.3.5. Discrete_Ops_Type</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dt-constant">18.3.6. Dt_Constant</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dt-grow">18.3.7. Dt_Grow</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dt-init">18.3.8. Dt_Init</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dt-max">18.3.9. Dt_Max</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#dt-min">18.3.10. Dt_Min</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#t">18.3.11. t</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LEGACY_SOLID_MECHANICS_Namelist/index.html">16. LEGACY_SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">17. MATERIAL and PHASE Namelists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">18. MESH Namelist</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">19. NUMERICS Namelist</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">19.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ds-source-namelist-features">19.2. DS_SOURCE Namelist Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#components">19.3. Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#alittle">19.3.1. Alittle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cutvof">19.3.2. Cutvof</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cycle-max">19.3.3. Cycle_Max</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cycle-number">19.3.4. Cycle_Number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#discrete-ops-type">19.3.5. Discrete_Ops_Type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dt-constant">19.3.6. Dt_Constant</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dt-grow">19.3.7. Dt_Grow</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dt-init">19.3.8. Dt_Init</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dt-max">19.3.9. Dt_Max</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dt-min">19.3.10. Dt_Min</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#t">19.3.11. t</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">19. OUTPUTS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">20. PHASE_CHANGE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">21. PHYSICAL_CONSTANTS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">22. PHYSICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">23. PROBE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">24. RESTART Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">25. SIMULATION_CONTROL Namelist (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">26. SOLID_MECHANICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">27. SPECIES_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">28. THERMAL_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">29. THERMAL_SOURCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">30. TOOLPATH Namelist (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">31. TURBULENCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">32. VFUNCTION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">33. VISCOPLASTIC_MODEL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">20. OUTPUTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">21. PHASE_CHANGE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">22. PHYSICAL_CONSTANTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">23. PHYSICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">24. PROBE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">25. RESTART Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">26. SIMULATION_CONTROL Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">27. SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">28. SOLID_MECHANICS_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">29. SPECIES_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">30. THERMAL_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">31. THERMAL_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">32. TOOLPATH Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">33. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">34. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">35. VISCOPLASTIC_MODEL Namelist</a></li>
 </ul>
 
             
@@ -189,7 +191,7 @@
     
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li><span class="section-number">18. </span>NUMERICS Namelist</li>
+      <li><span class="section-number">19. </span>NUMERICS Namelist</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -211,20 +213,20 @@
   <div class="toctree-wrapper compound" id="numerics-namelist">
 </div>
 <div class="section" id="id1">
-<h1><span class="section-number">18. </span>NUMERICS Namelist<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1><span class="section-number">19. </span>NUMERICS Namelist<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="overview">
-<h2><span class="section-number">18.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
 <p>The NUMERICS namelist specifies general numerical parameters not specific to any particular physics, especially those controlling the overall time stepping of the Truchas model.</p>
 </div>
 <div class="section" id="ds-source-namelist-features">
-<h2><span class="section-number">18.2. </span>DS_SOURCE Namelist Features<a class="headerlink" href="#ds-source-namelist-features" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.2. </span>DS_SOURCE Namelist Features<a class="headerlink" href="#ds-source-namelist-features" title="Permalink to this headline">¶</a></h2>
 <div class="line-block">
 <div class="line"><strong>Required/Optional        :</strong> Required</div>
 <div class="line"><strong>Single/Multiple Instances:</strong> Single</div>
 </div>
 </div>
 <div class="section" id="components">
-<h2><span class="section-number">18.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
+<h2><span class="section-number">19.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="#numerics-a"><span class="std std-ref">Alittle</span></a></p></li>
 <li><p><a class="reference internal" href="#numerics-c"><span class="std std-ref">Cutvof</span></a></p></li>
@@ -239,7 +241,7 @@
 <li><p><a class="reference internal" href="#numerics-t"><span class="std std-ref">t</span></a></p></li>
 </ul>
 <div class="section" id="alittle">
-<span id="numerics-a"></span><h3><span class="section-number">18.3.1. </span>Alittle<a class="headerlink" href="#alittle" title="Permalink to this headline">¶</a></h3>
+<span id="numerics-a"></span><h3><span class="section-number">19.3.1. </span>Alittle<a class="headerlink" href="#alittle" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong>       : A small, positive real number (relative to unity) used to avoid division by zero or to compare against other numbers to deduce relative significance.</div>
 <div class="line"><strong>Physical dimension</strong>: dimensionless</div>
@@ -249,7 +251,7 @@
 </div>
 </div>
 <div class="section" id="cutvof">
-<span id="numerics-c"></span><h3><span class="section-number">18.3.2. </span>Cutvof<a class="headerlink" href="#cutvof" title="Permalink to this headline">¶</a></h3>
+<span id="numerics-c"></span><h3><span class="section-number">19.3.2. </span>Cutvof<a class="headerlink" href="#cutvof" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong>       : The value of a material cell volume fraction below which that material is ignored. If any material has a cell volume fraction less than Cutvof, then that material is deleted from that cell, with all other materials present receiving a proportional increase in volume fraction. The only exception is the “background” material, which if present receives the entire allocation (equal to the volume fraction deleted).</div>
 <div class="line"><strong>Physical dimension</strong>: dimensionless</div>
@@ -260,7 +262,7 @@
 </div>
 </div>
 <div class="section" id="cycle-max">
-<span id="numerics-cm"></span><h3><span class="section-number">18.3.3. </span>Cycle_Max<a class="headerlink" href="#cycle-max" title="Permalink to this headline">¶</a></h3>
+<span id="numerics-cm"></span><h3><span class="section-number">19.3.3. </span>Cycle_Max<a class="headerlink" href="#cycle-max" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong>       : The maximum cycle number allowed in the given simulation, where one “cycle” corresponds to one integration time step over all physical model equations. The simulation will terminate gracefully when the cycle number reaches Cycle_Max.</div>
 <div class="line"><strong>Type</strong>              : integer</div>
@@ -270,7 +272,7 @@
 </div>
 </div>
 <div class="section" id="cycle-number">
-<span id="numerics-cn"></span><h3><span class="section-number">18.3.4. </span>Cycle_Number<a class="headerlink" href="#cycle-number" title="Permalink to this headline">¶</a></h3>
+<span id="numerics-cn"></span><h3><span class="section-number">19.3.4. </span>Cycle_Number<a class="headerlink" href="#cycle-number" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong>       : The cycle number to be used just prior to the first actual cycle (time step) taken in the given simulation. The first simulation cycle number is then taken to be cycle_number+ 1.</div>
 <div class="line"><strong>Type</strong>              : integer</div>
@@ -280,7 +282,7 @@
 </div>
 </div>
 <div class="section" id="discrete-ops-type">
-<span id="numerics-dot"></span><h3><span class="section-number">18.3.5. </span>Discrete_Ops_Type<a class="headerlink" href="#discrete-ops-type" title="Permalink to this headline">¶</a></h3>
+<span id="numerics-dot"></span><h3><span class="section-number">19.3.5. </span>Discrete_Ops_Type<a class="headerlink" href="#discrete-ops-type" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong>       : Flag for choosing the numerical reconstruction method used in estimating face-centered (located at cell face centroids) spatial gradients and values of discrete cell-centered data. Specifically, face pressure gradients, face velocity values, and face velocity gradients are all controlled by this flag.</div>
 <div class="line"><strong>Type</strong>              : string</div>
@@ -291,7 +293,7 @@
 <p>The user can set an overall discrete operator type as above and choose an alternative discrete operator type for the projection step in fluid flow (FF). To override the overall default or explicit overall setting, set the variable <code class="docutils literal notranslate"><span class="pre">FF_Discrete_Ops_Type</span> <span class="pre">link</span> <span class="pre">broken</span> <span class="pre">-</span> <span class="pre">needs</span> <span class="pre">to</span> <span class="pre">be</span> <span class="pre">checked</span></code> to the desired value. Setting this variable leaves the overall setting <a class="reference internal" href="#numerics-dot"><span class="std std-ref">Discrete_Ops_Type</span></a> unmodified for all remaining parts of the code.</p>
 </div>
 <div class="section" id="dt-constant">
-<span id="numerics-dtc"></span><h3><span class="section-number">18.3.6. </span>Dt_Constant<a class="headerlink" href="#dt-constant" title="Permalink to this headline">¶</a></h3>
+<span id="numerics-dtc"></span><h3><span class="section-number">19.3.6. </span>Dt_Constant<a class="headerlink" href="#dt-constant" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong>       : A constant integration time step value to be used for all time steps in the simulation.</div>
 <div class="line"><strong>Physical dimension</strong>: T</div>
@@ -302,7 +304,7 @@
 </div>
 </div>
 <div class="section" id="dt-grow">
-<span id="numerics-dtg"></span><h3><span class="section-number">18.3.7. </span>Dt_Grow<a class="headerlink" href="#dt-grow" title="Permalink to this headline">¶</a></h3>
+<span id="numerics-dtg"></span><h3><span class="section-number">19.3.7. </span>Dt_Grow<a class="headerlink" href="#dt-grow" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong>       : A factor to multiply the current integration time step <span class="math notranslate nohighlight">\((\delta t)\)</span> for the purpose of estimating the time step used during the next cycle <span class="math notranslate nohighlight">\((\delta t_g =\)</span> Dt_Grow <span class="math notranslate nohighlight">\(∗\delta t)\)</span>. This candidate time step <span class="math notranslate nohighlight">\((\delta t_g)\)</span> is chosen only if all other currently active time step restrictions have not already limited its value below <span class="math notranslate nohighlight">\((\delta t_g)\)</span>.</div>
 <div class="line"><strong>Physical dimension</strong>: dimensionless</div>
@@ -313,7 +315,7 @@
 </div>
 </div>
 <div class="section" id="dt-init">
-<span id="numerics-dti"></span><h3><span class="section-number">18.3.8. </span>Dt_Init<a class="headerlink" href="#dt-init" title="Permalink to this headline">¶</a></h3>
+<span id="numerics-dti"></span><h3><span class="section-number">19.3.8. </span>Dt_Init<a class="headerlink" href="#dt-init" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong>       : A Integration time step value used for the first computational cycle.</div>
 <div class="line"><strong>Physical dimension</strong>: T</div>
@@ -325,7 +327,7 @@
 <p>For restart calculations, the initial time step size is extracted from the restart file and used instead of <a class="reference internal" href="#numerics-dti"><span class="std std-ref">Dt_Init</span></a>, unless <a class="reference internal" href="../RESTART_Namelist/index.html#r-id"><span class="std std-ref">Ignore_Dt</span></a> in the <a class="reference internal" href="../RESTART_Namelist/index.html#restart-namelist"><span class="std std-ref">RESTART</span></a> namelist has been set to true. <a class="reference internal" href="#numerics-dti"><span class="std std-ref">Dt_Init</span></a> is ignored if <a class="reference internal" href="#numerics-dtc"><span class="std std-ref">Dt_Constant</span></a> is specified.</p>
 </div>
 <div class="section" id="dt-max">
-<span id="numerics-dtmax"></span><h3><span class="section-number">18.3.9. </span>Dt_Max<a class="headerlink" href="#dt-max" title="Permalink to this headline">¶</a></h3>
+<span id="numerics-dtmax"></span><h3><span class="section-number">19.3.9. </span>Dt_Max<a class="headerlink" href="#dt-max" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong>       : Maximum allowable value for the time step</div>
 <div class="line"><strong>Physical dimension</strong>: T</div>
@@ -337,7 +339,7 @@
 <p><a class="reference internal" href="#numerics-dtmax"><span class="std std-ref">Dt_Max</span></a> is ignored if <a class="reference internal" href="#numerics-dtc"><span class="std std-ref">Dt_Constant</span></a> is specified.</p>
 </div>
 <div class="section" id="dt-min">
-<span id="numerics-dtmin"></span><h3><span class="section-number">18.3.10. </span>Dt_Min<a class="headerlink" href="#dt-min" title="Permalink to this headline">¶</a></h3>
+<span id="numerics-dtmin"></span><h3><span class="section-number">19.3.10. </span>Dt_Min<a class="headerlink" href="#dt-min" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong>       : Minimum allowable value for the time step</div>
 <div class="line"><strong>Physical dimension</strong>: T</div>
@@ -349,7 +351,7 @@
 <p><a class="reference internal" href="#numerics-dtmin"><span class="std std-ref">Dt_Min</span></a> is ignored if <a class="reference internal" href="#numerics-dtc"><span class="std std-ref">Dt_Constant</span></a> is specified.</p>
 </div>
 <div class="section" id="t">
-<span id="numerics-t"></span><h3><span class="section-number">18.3.11. </span>t<a class="headerlink" href="#t" title="Permalink to this headline">¶</a></h3>
+<span id="numerics-t"></span><h3><span class="section-number">19.3.11. </span>t<a class="headerlink" href="#t" title="Permalink to this headline">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong>       : The simulation time to be used at the beginning of the first computational cycle.</div>
 <div class="line"><strong>Physical dimension</strong>: T</div>
@@ -366,8 +368,8 @@
           </div>
           <footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="../OUTPUTS_Namelist/index.html" class="btn btn-neutral float-right" title="19. OUTPUTS Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-        <a href="../MESH_Namelist/index.html" class="btn btn-neutral float-left" title="17. MESH Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../OUTPUTS_Namelist/index.html" class="btn btn-neutral float-right" title="20. OUTPUTS Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../MESH_Namelist/index.html" class="btn btn-neutral float-left" title="18. MESH Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
