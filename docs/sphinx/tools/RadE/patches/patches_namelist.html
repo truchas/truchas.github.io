@@ -3,7 +3,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>PATCHES Namelist &#8212; Truchas 1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/bootstrap-sphinx.css" />
@@ -24,9 +25,9 @@
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="../../../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../../../_static/js/jquery-1.12.4.min.js "></script>
 <script type="text/javascript" src="../../../_static/js/jquery-fix.js "></script>
-<script type="text/javascript" src="../../../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../../../_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
 <script type="text/javascript" src="../../../_static/bootstrap-sphinx.js "></script>
 
   </head><body>
@@ -218,7 +219,7 @@ Based on localtoc.html from the Guzzle Sphinx theme: https://github.com/guzzle/g
       </div>
     <div class="body col-md-9 content" role="main">
       
-  <div class="section" id="patches-namelist">
+  <section id="patches-namelist">
 <h1>PATCHES Namelist<a class="headerlink" href="#patches-namelist" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">&amp;PATCHES</span>
 <span class="go">  patch_algorithm = &#39;PAVE&#39;</span>
@@ -301,9 +302,9 @@ particular algorithm are prefixed with the algorithm’s name.</p>
 <li><p><a class="reference internal" href="#references" id="id47">References</a></p></li>
 </ul>
 </div>
-<div class="section" id="general-parameters">
+<section id="general-parameters">
 <h2>General Parameters<a class="headerlink" href="#general-parameters" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="patch-algorithm">
+<section id="patch-algorithm">
 <h3>PATCH_ALGORITHM<a class="headerlink" href="#patch-algorithm" title="Permalink to this headline">¶</a></h3>
 <p>Selects one of the available algorithms, or disables patching.</p>
 <blockquote class="nml-param">
@@ -324,8 +325,8 @@ patches can be quite substantial for very large enclosure meshes, this
 pseudo-algorithm is provided to enable the use of previously computed
 patches.</p></li>
 </ol>
-</div>
-<div class="section" id="verbosity-level">
+</section>
+<section id="verbosity-level">
 <h3>VERBOSITY_LEVEL<a class="headerlink" href="#verbosity-level" title="Permalink to this headline">¶</a></h3>
 <p>Defines the verbosity level for all console output of the patch algorithm.</p>
 <blockquote class="nml-param">
@@ -356,8 +357,8 @@ patches.</p></li>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="max-angle">
+</section>
+<section id="max-angle">
 <h3>MAX_ANGLE<a class="headerlink" href="#max-angle" title="Permalink to this headline">¶</a></h3>
 <p>Defines the maximum allowable angle (in degrees) between adjacent faces.</p>
 <blockquote class="nml-param">
@@ -368,11 +369,13 @@ patches.</p></li>
 <p>All the patch algorithms construct the <a class="reference external" href="http://mathworld.wolfram.com/AdjacencyMatrix.html">adjacency matrix</a> of the enclosure faces to efficiently
 determine which faces are adjacent to others. If the normals of two ‘topologically adjacent’ faces
 exceed <em>max_angle</em>, then the faces will not be neighbors in the internal adjacency matrix.</p>
-<div class="figure align-center" id="id8" style="width: 45%">
+<figure class="align-center" id="id8" style="width: 45%">
 <img alt="../../../_images/connected_components.png" src="../../../_images/connected_components.png" />
-<p class="caption"><span class="caption-text">The connected components of the outer surface of a furnace funnel. MAX_ANGLE is set to 20
+<figcaption>
+<p><span class="caption-text">The connected components of the outer surface of a furnace funnel. MAX_ANGLE is set to 20
 degrees. Each component is a different color. The face edges are omitted for clarity.</span><a class="headerlink" href="#id8" title="Permalink to this image">¶</a></p>
-</div>
+</figcaption>
+</figure>
 <p>The patch algorithms guarantee that patches will be <em>connected sets</em> of faces. Therefore,
 <code class="docutils literal notranslate"><span class="pre">max_angle</span></code> divides the enclosure into connected components of faces wherever there are ‘sharp’
 edges whose angle exceeds the parameter. Patches will never span more than one component.</p>
@@ -386,12 +389,12 @@ is unlikely in practice, given a reasonably smooth enclosure and small <code cla
 <p class="admonition-title">See also</p>
 <p>The effects of <code class="docutils literal notranslate"><span class="pre">max_angle</span></code> vary by algorithm. Refer to the documentation of the <a class="reference internal" href="pave.html"><span class="doc">PAVE</span></a>, <a class="reference internal" href="vac.html"><span class="doc">VAC</span></a>, and <a class="reference internal" href="vsa.html"><span class="doc">VSA</span></a> algorithms for more details.</p>
 </div>
-</div>
-</div>
-<div class="section" id="file-parameters">
+</section>
+</section>
+<section id="file-parameters">
 <h2>FILE Parameters<a class="headerlink" href="#file-parameters" title="Permalink to this headline">¶</a></h2>
 <p>The following namelist parameter applies only to the FILE algorithm.</p>
-<div class="section" id="patch-file">
+<section id="patch-file">
 <h3>PATCH_FILE<a class="headerlink" href="#patch-file" title="Permalink to this headline">¶</a></h3>
 <p>The path to an existing radiation enclosure file containing patch information.</p>
 <blockquote class="nml-param">
@@ -401,13 +404,13 @@ is unlikely in practice, given a reasonably smooth enclosure and small <code cla
 </div></blockquote>
 <p>The enclosure defined by the file must be identical to the current enclosure. This may be an
 absolute path or a relative path.</p>
-</div>
-</div>
-<div class="section" id="pave-parameters">
+</section>
+</section>
+<section id="pave-parameters">
 <h2>PAVE Parameters<a class="headerlink" href="#pave-parameters" title="Permalink to this headline">¶</a></h2>
 <p>The following namelist parameters apply only to the PAVE algorithm. For more
 information, refer to the <a class="reference internal" href="pave.html"><span class="doc">PAVE algorithm documentation</span></a>.</p>
-<div class="section" id="pave-merge-level">
+<section id="pave-merge-level">
 <h3>PAVE_MERGE_LEVEL<a class="headerlink" href="#pave-merge-level" title="Permalink to this headline">¶</a></h3>
 <p>Controls the aggressiveness of patch merging.</p>
 <blockquote class="nml-param">
@@ -448,8 +451,8 @@ This ensures that the merge is always performed.</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="pave-split-patch-size">
+</section>
+<section id="pave-split-patch-size">
 <h3>PAVE_SPLIT_PATCH_SIZE<a class="headerlink" href="#pave-split-patch-size" title="Permalink to this headline">¶</a></h3>
 <p>Defines the maximum size of patches to be split during patch merging.</p>
 <blockquote class="nml-param">
@@ -469,8 +472,8 @@ possible due to a merge.</p>
 <p>For best results, set <code class="docutils literal notranslate"><span class="pre">pave_split_patch_size</span></code> to 3 for quadrilateral meshes
 and to 5 for triangular meshes. This avoids splitting too many patches.</p>
 </div>
-</div>
-<div class="section" id="pave-random-seed">
+</section>
+<section id="pave-random-seed">
 <h3>PAVE_RANDOM_SEED<a class="headerlink" href="#pave-random-seed" title="Permalink to this headline">¶</a></h3>
 <p>Defines the seed for the random number generator used to pick the initial seed patches.</p>
 <blockquote class="nml-param">
@@ -487,13 +490,13 @@ documentation for more information on how the seed patches are selected.</p>
 Therefore, runs with the same value for this parameter will produce identical results. If this
 parameter is not specified, then the seed is taken from the system clock and results will likely
 vary from run to run.</p>
-</div>
-</div>
-<div class="section" id="vac-parameters">
+</section>
+</section>
+<section id="vac-parameters">
 <h2>VAC Parameters<a class="headerlink" href="#vac-parameters" title="Permalink to this headline">¶</a></h2>
 <p>The following namelist parameters apply only to the VAC algorithm. For more
 information, refer to the <a class="reference internal" href="vac.html"><span class="doc">VAC algorithm documentation</span></a>.</p>
-<div class="section" id="vac-merge-level">
+<section id="vac-merge-level">
 <h3>VAC_MERGE_LEVEL<a class="headerlink" href="#vac-merge-level" title="Permalink to this headline">¶</a></h3>
 <p>Controls the aggressiveness of patch merging.</p>
 <blockquote class="nml-param">
@@ -534,8 +537,8 @@ This ensures that the merge is always performed.</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="vac-split-patch-size">
+</section>
+<section id="vac-split-patch-size">
 <h3>VAC_SPLIT_PATCH_SIZE<a class="headerlink" href="#vac-split-patch-size" title="Permalink to this headline">¶</a></h3>
 <p>Defines the maximum size of patches to be split during patch merging.</p>
 <blockquote class="nml-param">
@@ -555,13 +558,13 @@ possible due to a merge.</p>
 <p>For best results, set <code class="docutils literal notranslate"><span class="pre">vac_split_patch_size</span></code> to 3 for quadrilateral meshes
 and to 5 for triangular meshes. This avoids splitting too many patches.</p>
 </div>
-</div>
-</div>
-<div class="section" id="vsa-parameters">
+</section>
+</section>
+<section id="vsa-parameters">
 <h2>VSA Parameters<a class="headerlink" href="#vsa-parameters" title="Permalink to this headline">¶</a></h2>
 <p>The following namelist parameters apply only to the VSA algorithm. For more
 information, refer to the <a class="reference internal" href="vsa.html"><span class="doc">VSA algorithm documentation</span></a>.</p>
-<div class="section" id="vsa-max-iter">
+<section id="vsa-max-iter">
 <h3>VSA_MAX_ITER<a class="headerlink" href="#vsa-max-iter" title="Permalink to this headline">¶</a></h3>
 <p>Defines the maximum number of iterations.</p>
 <blockquote class="nml-param">
@@ -571,8 +574,8 @@ information, refer to the <a class="reference internal" href="vsa.html"><span cl
 </div></blockquote>
 <p>The algorithm stops when <code class="docutils literal notranslate"><span class="pre">vsa_max_iter</span></code> is reached, regardless of other
 terminating conditions.</p>
-</div>
-<div class="section" id="vsa-min-delta">
+</section>
+<section id="vsa-min-delta">
 <h3>VSA_MIN_DELTA<a class="headerlink" href="#vsa-min-delta" title="Permalink to this headline">¶</a></h3>
 <p>Defines the minimum allowable change in patch proxies between successive iterations.</p>
 <blockquote class="nml-param">
@@ -585,8 +588,8 @@ against the old proxies. The algorithm keeps track of the <em>minimum</em> chang
 proxies. This change is computed as the sum of the squares of the difference between the old and new
 proxy vectors. If the minimum change in patch proxies is less than <code class="docutils literal notranslate"><span class="pre">vsa_min_delta</span></code>, the algorithm
 stops at that iteration.</p>
-</div>
-<div class="section" id="vsa-face-patch-ratio">
+</section>
+<section id="vsa-face-patch-ratio">
 <h3>VSA_FACE_PATCH_RATIO<a class="headerlink" href="#vsa-face-patch-ratio" title="Permalink to this headline">¶</a></h3>
 <p>Defines the ratio of total faces to total patches, and by extension the total number of patches.</p>
 <blockquote class="nml-param">
@@ -600,8 +603,8 @@ final configuration:</p>
 \[\text{(Total Patches)} = \text{(Total Faces)}\ /\ \text{vsa_face_patch_ratio}\]</div>
 <p>Rather than set the number of patches explicitly, which is mesh dependent, expressing this
 parameter as a ratio allows the same value to apply to a variety of meshes.</p>
-</div>
-<div class="section" id="vsa-max-patch-radius">
+</section>
+<section id="vsa-max-patch-radius">
 <h3>VSA_MAX_PATCH_RADIUS<a class="headerlink" href="#vsa-max-patch-radius" title="Permalink to this headline">¶</a></h3>
 <p>Defines the desired maximum radius for a patch.</p>
 <blockquote class="nml-param">
@@ -615,8 +618,8 @@ VSA documentation for more information on how the parameter affects the face wei
 <p>Note that the default value of this parameter is <code class="code fortran docutils literal notranslate"><span class="name builtin"><span class="pre">sqrt</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name builtin"><span class="pre">huge</span></span><span class="punctuation"><span class="pre">(</span></span><span class="literal number float"><span class="pre">0.0_r8</span></span><span class="punctuation"><span class="pre">))</span></span></code> because it is squared
 in the face weight computation. By taking the root of <code class="code fortran docutils literal notranslate"><span class="name builtin"><span class="pre">huge</span></span><span class="punctuation"><span class="pre">(</span></span><span class="literal number float"><span class="pre">0.0_r8</span></span><span class="punctuation"><span class="pre">)</span></span></code> we prevent floating
 point overflow errors. Numerically, the default value on the order of <cite>1.34*10^{154}</cite>.</p>
-</div>
-<div class="section" id="vsa-normalize-dist">
+</section>
+<section id="vsa-normalize-dist">
 <h3>VSA_NORMALIZE_DIST<a class="headerlink" href="#vsa-normalize-dist" title="Permalink to this headline">¶</a></h3>
 <p>Determines whether to normalize the distance bias.</p>
 <blockquote class="nml-param">
@@ -632,8 +635,8 @@ patch.</p>
 <p>Refer to the <a class="reference internal" href="vsa.html#distance-bias"><span class="std std-ref">distance bias section</span></a>
 of the VSA documentation for more information on how the parameter affects the face weight
 computation.</p>
-</div>
-<div class="section" id="vsa-random-seed">
+</section>
+<section id="vsa-random-seed">
 <h3>VSA_RANDOM_SEED<a class="headerlink" href="#vsa-random-seed" title="Permalink to this headline">¶</a></h3>
 <p>Defines the seed for the random number generator used to pick the initial seed patches.</p>
 <blockquote class="nml-param">
@@ -649,9 +652,9 @@ distortion as the new seed patch.</p>
 each connected component. Therefore, runs with the same value for this parameter will produce
 identical results. If this parameter is not specified, then the seed is taken from the system clock
 and results will likely vary from run to run.</p>
-</div>
-</div>
-<div class="section" id="metis-parameters">
+</section>
+</section>
+<section id="metis-parameters">
 <h2>METIS Parameters<a class="headerlink" href="#metis-parameters" title="Permalink to this headline">¶</a></h2>
 <p>The following namelist parameters apply only to the METIS algorithm. For more
 information, refer to the <a class="reference internal" href="metis.html"><span class="doc">METIS algorithm documentation</span></a>.</p>
@@ -661,9 +664,9 @@ parameters are thus divided into two: those that are used to construct the dual 
 that are passed directly to the METIS graph partitioner.</p>
 <p>We first discuss the three parameters used during initialization, and then briefly present the 12
 METIS library parameters passed to the graph partitioner.</p>
-<div class="section" id="initialization-parameters">
+<section id="initialization-parameters">
 <h3>Initialization Parameters<a class="headerlink" href="#initialization-parameters" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="metis-face-patch-ratio">
+<section id="metis-face-patch-ratio">
 <h4>METIS_FACE_PATCH_RATIO<a class="headerlink" href="#metis-face-patch-ratio" title="Permalink to this headline">¶</a></h4>
 <p>Defines the ratio of total faces to total desired patches, and by extension the final number of
 patches generated.</p>
@@ -686,8 +689,8 @@ area among the patches might produce significantly fewer partitions than request
 <p>Moreover, after the METIS library partitions the dual graph the patch splitting step breaks up
 disconnected patches which may increase the final patch count. In short, NPART is only a suggestion
 for the final patch count. Consider tweaking other parameters if an exact patch count is desired.</p>
-</div>
-<div class="section" id="metis-edge-weight">
+</section>
+<section id="metis-edge-weight">
 <h4>METIS_EDGE_WEIGHT<a class="headerlink" href="#metis-edge-weight" title="Permalink to this headline">¶</a></h4>
 <p>Determines whether to weight the edges of the dual graph by the corresponding enclosure edge lengths.</p>
 <blockquote class="nml-param">
@@ -701,8 +704,8 @@ graph edges are assigned a weight of 1.</p>
 <p>Refer to the <a class="reference internal" href="metis.html#edge-weight"><span class="std std-ref">edge weight section</span></a> of the METIS
 algorithm documentation for more information on how the parameter affects the final patch
 configuration.</p>
-</div>
-<div class="section" id="metis-face-weight">
+</section>
+<section id="metis-face-weight">
 <h4>METIS_FACE_WEIGHT<a class="headerlink" href="#metis-face-weight" title="Permalink to this headline">¶</a></h4>
 <p>Determines whether to weight the vertices of the dual graph by the corresponding enclosure face
 areas.</p>
@@ -717,14 +720,14 @@ are assigned a weight of 1.</p>
 <p>Refer to the <a class="reference internal" href="metis.html#face-weight"><span class="std std-ref">face weight section</span></a> of the METIS
 algorithm documentation for more information on how the parameter affects the final patch
 configuration.</p>
-</div>
-</div>
-<div class="section" id="metis-library-parameters">
+</section>
+</section>
+<section id="metis-library-parameters">
 <h3>METIS library parameters<a class="headerlink" href="#metis-library-parameters" title="Permalink to this headline">¶</a></h3>
 <p>The METIS graph partitioning routine admits the following integer-valued options that may be
 specified, though all have reasonable defaults so that none must be specified. See the METIS
 documentation <span id="id2">[<a class="reference internal" href="#id7" title="George Karypis and Vipin Kumar. A fast and high quality multilevel scheme for partitioning irregular graphs. SIAM J. Sci. Comput., 20(1):359–392, December 1998.">1</a>]</span> for more details on these options.</p>
-<div class="section" id="metis-ptype">
+<section id="metis-ptype">
 <h4>METIS_PTYPE<a class="headerlink" href="#metis-ptype" title="Permalink to this headline">¶</a></h4>
 <p>Specifies the partitioning method.</p>
 <blockquote class="nml-param">
@@ -752,8 +755,8 @@ documentation <span id="id2">[<a class="reference internal" href="#id7" title="G
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="metis-objtype">
+</section>
+<section id="metis-objtype">
 <h4>METIS_OBJTYPE<a class="headerlink" href="#metis-objtype" title="Permalink to this headline">¶</a></h4>
 <p>Specifies the type of objective.</p>
 <blockquote class="nml-param">
@@ -781,8 +784,8 @@ documentation <span id="id2">[<a class="reference internal" href="#id7" title="G
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="metis-ctype">
+</section>
+<section id="metis-ctype">
 <h4>METIS_CTYPE<a class="headerlink" href="#metis-ctype" title="Permalink to this headline">¶</a></h4>
 <p>Specifies the matching scheme to be used during coarsening.</p>
 <blockquote class="nml-param">
@@ -810,8 +813,8 @@ documentation <span id="id2">[<a class="reference internal" href="#id7" title="G
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="metis-iptype">
+</section>
+<section id="metis-iptype">
 <h4>METIS_IPTYPE<a class="headerlink" href="#metis-iptype" title="Permalink to this headline">¶</a></h4>
 <p>Specifies the algorithm used during initial partitioning (recursive bisection only).</p>
 <blockquote class="nml-param">
@@ -845,8 +848,8 @@ documentation <span id="id2">[<a class="reference internal" href="#id7" title="G
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="metis-ncuts">
+</section>
+<section id="metis-ncuts">
 <h4>METIS_NCUTS<a class="headerlink" href="#metis-ncuts" title="Permalink to this headline">¶</a></h4>
 <p>Specifies the number of different partitionings that will be computed. The final partitioning will
 be the one that achieves the best edge-cut or communication volume.</p>
@@ -855,8 +858,8 @@ be the one that achieves the best edge-cut or communication volume.</p>
 <p><strong>Domain:</strong> metis_ncuts &gt;= 1</p>
 <p><strong>Default:</strong> metis_ncuts = 1</p>
 </div></blockquote>
-</div>
-<div class="section" id="metis-niter">
+</section>
+<section id="metis-niter">
 <h4>METIS_NITER<a class="headerlink" href="#metis-niter" title="Permalink to this headline">¶</a></h4>
 <p>Specifies the number of iterations of the refinement algorithm at each stage of the uncoarsening
 process.</p>
@@ -865,8 +868,8 @@ process.</p>
 <p><strong>Domain:</strong> metis_niter &gt;= 1</p>
 <p><strong>Default:</strong> metis_niter = 10</p>
 </div></blockquote>
-</div>
-<div class="section" id="metis-seed">
+</section>
+<section id="metis-seed">
 <h4>METIS_SEED<a class="headerlink" href="#metis-seed" title="Permalink to this headline">¶</a></h4>
 <p>Specifies the seed for the random number generator.</p>
 <blockquote class="nml-param">
@@ -874,8 +877,8 @@ process.</p>
 <p><strong>Domain:</strong> metis_seed <cite>in mathbb{Z}</cite></p>
 <p><strong>Default:</strong> metis_seed = -1</p>
 </div></blockquote>
-</div>
-<div class="section" id="metis-minconn">
+</section>
+<section id="metis-minconn">
 <h4>METIS_MINCONN<a class="headerlink" href="#metis-minconn" title="Permalink to this headline">¶</a></h4>
 <p>Specifies whether the partitioning procedure should seek to minimize the maximum degree of the
 subdomain graph.</p>
@@ -905,8 +908,8 @@ with a shared interface. This parameter is encoded as follows:</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="metis-no2hop">
+</section>
+<section id="metis-no2hop">
 <h4>METIS_NO2HOP<a class="headerlink" href="#metis-no2hop" title="Permalink to this headline">¶</a></h4>
 <p>Specifies that the coarsening will not perform any 2–hop matchings when the standard matching
 approach fails to sufficiently coarsen the graph.</p>
@@ -936,8 +939,8 @@ is encoded as follows:</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="metis-contig">
+</section>
+<section id="metis-contig">
 <h4>METIS_CONTIG<a class="headerlink" href="#metis-contig" title="Permalink to this headline">¶</a></h4>
 <p>Specifies whether the partitioning procedure should produce partitions that are contiguous.</p>
 <blockquote class="nml-param">
@@ -966,8 +969,8 @@ follows:</p>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="metis-ufactor">
+</section>
+<section id="metis-ufactor">
 <h4>METIS_UFACTOR<a class="headerlink" href="#metis-ufactor" title="Permalink to this headline">¶</a></h4>
 <p>Specifies the maximum allowed load imbalance among the partitions.</p>
 <blockquote class="nml-param">
@@ -978,8 +981,8 @@ follows:</p>
 <p>A value of <cite>n</cite> indicates that the allowed load imbalance is <cite>(1+n)/1000</cite>. The default is <cite>1</cite> for
 recursive bisection (i.e., an imbalance of <cite>1.001</cite>) and the default value is <cite>30</cite> for <cite>k</cite>-way
 partitioning (i.e., an imbalance of <cite>1.03</cite>).</p>
-</div>
-<div class="section" id="metis-dbglvl">
+</section>
+<section id="metis-dbglvl">
 <h4>METIS_DBGLVL<a class="headerlink" href="#metis-dbglvl" title="Permalink to this headline">¶</a></h4>
 <p>Specifies the amount and type of diagnostic information that will be written to <strong>stderr</strong> by the
 partitioning procedure.</p>
@@ -991,10 +994,10 @@ partitioning procedure.</p>
 <p>The default <cite>0</cite> means no output. Use <cite>1</cite> to write some basic information. Refer to the METIS
 documentation <span id="id3">[<a class="reference internal" href="#id7" title="George Karypis and Vipin Kumar. A fast and high quality multilevel scheme for partitioning irregular graphs. SIAM J. Sci. Comput., 20(1):359–392, December 1998.">1</a>]</span> for the many other possible values and the
 output they generate.</p>
-</div>
-</div>
-</div>
-<div class="section" id="references">
+</section>
+</section>
+</section>
+<section id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
 <p id="id4"><dl class="citation">
 <dt class="label" id="id7"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>,<a href="#id3">3</a>)</span></dt>
@@ -1002,8 +1005,8 @@ output they generate.</p>
 </dd>
 </dl>
 </p>
-</div>
-</div>
+</section>
+</section>
 
 
     </div>
@@ -1018,7 +1021,7 @@ output they generate.</p>
     </p>
     <p>
         &copy; Copyright 2019, Los Alamos National Laboratory.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br/>
     </p>
   </div>
 </footer>

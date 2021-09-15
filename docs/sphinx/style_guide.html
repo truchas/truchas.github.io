@@ -3,7 +3,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Sphinx Documentation Style Guide &#8212; Truchas 1.0 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/bootstrap-sphinx.css" />
@@ -22,9 +23,9 @@
 <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
 <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
 <meta name="apple-mobile-web-app-capable" content="yes">
-<script type="text/javascript" src="_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="_static/js/jquery-1.12.4.min.js "></script>
 <script type="text/javascript" src="_static/js/jquery-fix.js "></script>
-<script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="_static/bootstrap-3.4.1/js/bootstrap.min.js "></script>
 <script type="text/javascript" src="_static/bootstrap-sphinx.js "></script>
 
   </head><body>
@@ -167,7 +168,7 @@ Based on localtoc.html from the Guzzle Sphinx theme: https://github.com/guzzle/g
       </div>
     <div class="body col-md-9 content" role="main">
       
-  <div class="section" id="sphinx-documentation-style-guide">
+  <section id="sphinx-documentation-style-guide">
 <h1>Sphinx Documentation Style Guide<a class="headerlink" href="#sphinx-documentation-style-guide" title="Permalink to this headline">¶</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -205,15 +206,15 @@ documentation.</p>
 </li>
 </ul>
 </div>
-<div class="section" id="authors">
+<section id="authors">
 <h2>Authors<a class="headerlink" href="#authors" title="Permalink to this headline">¶</a></h2>
 <p>Every RST document should include the author near the top of the document. This is done with the
 <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-sectionauthor">sectionauthor directive</a>.</p>
 <div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">sectionauthor</span><span class="p">::</span> name &lt;email&gt;
 </pre></div>
 </div>
-</div>
-<div class="section" id="headings">
+</section>
+<section id="headings">
 <h2>Headings<a class="headerlink" href="#headings" title="Permalink to this headline">¶</a></h2>
 <p>reStructuredText does not assign heading levels to particular characters. Instead, heading levels
 are determined by the order in which they appear. For example, the first heading style creates a top
@@ -235,10 +236,10 @@ level heading, and any further instances of that heading style also creates top 
 <span class="gh">~~~~~~~~~</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="figures">
+</section>
+<section id="figures">
 <h2>Figures<a class="headerlink" href="#figures" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="single-figure">
+<section id="single-figure">
 <h3>Single Figure<a class="headerlink" href="#single-figure" title="Permalink to this headline">¶</a></h3>
 <p>When placing a single centered figure with no text wrapping around it, use a <code class="code rst RST docutils literal notranslate"><span class="pre">figwidth</span></code> of at
 most 90%. This provides a visual distinction between the text and the figure. The following code
@@ -250,15 +251,17 @@ block produces the figure below it.</p>
    This is a caption for the figure.
 </pre></div>
 </div>
-<div class="figure align-center" id="id1" style="width: 90%">
+<figure class="align-center" id="id1" style="width: 90%">
 <img alt="https://via.placeholder.com/800x600" src="https://via.placeholder.com/800x600" />
-<p class="caption"><span class="caption-text">This is a caption for the figure.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">This is a caption for the figure.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 <p>Notice how the figure has some padding to its right and left that distinguishes it from the text
 before and after it. This padding is not part of the CSS to prevent excessive white space
 around figures that have text wrapping around them.</p>
-</div>
-<div class="section" id="side-by-side-figures">
+</section>
+<section id="side-by-side-figures">
 <h3>Side-by-Side Figures<a class="headerlink" href="#side-by-side-figures" title="Permalink to this headline">¶</a></h3>
 <p>Placing figures side-by-side in reStructuredText can be tricky. The best method we’ve found so far
 is to put the figures in a table. We use the <code class="code rst RST docutils literal notranslate"><span class="pre">list-table</span></code> directive when each figure has its
@@ -268,7 +271,7 @@ own caption, and the generic <code class="code rst RST docutils literal notransl
 <p>All figure tables <strong>must</strong> be of the <code class="code rst RST docutils literal notranslate"><span class="pre">fig-table</span></code> class. This makes sure that all figure
 tables are styled consistently, and that styling changes apply across the entire documentation.</p>
 </div>
-<div class="section" id="individual-captions">
+<section id="individual-captions">
 <h4>Individual Captions<a class="headerlink" href="#individual-captions" title="Permalink to this headline">¶</a></h4>
 <p>The <code class="code rst RST docutils literal notranslate"><span class="pre">list-table</span></code> directive is useful when each figure has its own caption. For example, the
 following code produces the figures below it.</p>
@@ -295,21 +298,25 @@ following code produces the figures below it.</p>
 <col style="width: 50%" />
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><div class="figure align-center" id="id2">
+<tr class="row-odd"><td><figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="https://via.placeholder.com/400x300"><img alt="https://via.placeholder.com/400x300" src="https://via.placeholder.com/400x300" style="width: 100%;" /></a>
-<p class="caption"><span class="caption-text">This is the caption.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">This is the caption.</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 </td>
-<td><div class="figure align-center" id="id3" style="width: 100%">
+<td><figure class="align-center" id="id3" style="width: 100%">
 <img alt="https://via.placeholder.com/400x300" src="https://via.placeholder.com/400x300" />
-<p class="caption"><span class="caption-text">This is the caption.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
-</div>
+<figcaption>
+<p><span class="caption-text">This is the caption.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
 </td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section" id="shared-captions">
+</section>
+<section id="shared-captions">
 <h4>Shared Captions<a class="headerlink" href="#shared-captions" title="Permalink to this headline">¶</a></h4>
 <p>The <code class="code rst RST docutils literal notranslate"><span class="pre">list-table</span></code> syntax does not allow multi-column cells, so we instead use the more general
 <code class="code rst RST docutils literal notranslate"><span class="pre">table</span></code> directive. Due to how tables are parsed, however, this means that images must be
@@ -359,10 +366,10 @@ third image (right).</p></td>
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-</div>
-<div class="section" id="namelists">
+</section>
+</section>
+</section>
+<section id="namelists">
 <h2>Namelists<a class="headerlink" href="#namelists" title="Permalink to this headline">¶</a></h2>
 <p>When describing a namelist and its parameters, use the following format. The exact heading level is
 not important, as long as the parameters are sub-headings of the namelist.</p>
@@ -384,7 +391,7 @@ A more in-depth description of parameter 1. This can include any content
 </div>
 <p>For examples of how namelists are described using this format, see the <a class="reference internal" href="tools/RadE/patches/patches_namelist.html"><span class="doc">PATCHES namelist
 documentation</span></a>.</p>
-<div class="section" id="namelist-parameter-directive">
+<section id="namelist-parameter-directive">
 <h3>Namelist Parameter Directive<a class="headerlink" href="#namelist-parameter-directive" title="Permalink to this headline">¶</a></h3>
 <p>When describing a namelist parameter, the ‘namelist_parameter’ directive should be used after the
 short description. This custom directive is provided by the Truchas Sphinx build.</p>
@@ -408,9 +415,9 @@ parameters are styled consistently throughout the documentation.</p>
 <p><strong>Domain:</strong> parameter_1 &gt;= 0</p>
 <p><strong>Default:</strong> parameter_1 = 1</p>
 </div></blockquote>
-</div>
-</div>
-<div class="section" id="inline-fortran-code">
+</section>
+</section>
+<section id="inline-fortran-code">
 <h2>Inline Fortran Code<a class="headerlink" href="#inline-fortran-code" title="Permalink to this headline">¶</a></h2>
 <p>The Truchas Sphinx build provides a special ‘fortran’ role for writing inline Fortran code. For
 example, the following RST code</p>
@@ -418,10 +425,10 @@ example, the following RST code</p>
 </pre></div>
 </div>
 <p>produces the inline Fortran code <code class="code fortran docutils literal notranslate"><span class="keyword type"><span class="pre">integer</span></span> <span class="keyword declaration"><span class="pre">::</span></span> <span class="name"><span class="pre">x</span></span></code>.</p>
-</div>
-<div class="section" id="other-tips">
+</section>
+<section id="other-tips">
 <h2>Other Tips<a class="headerlink" href="#other-tips" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="math-default-role">
+<section id="math-default-role">
 <h3>Math default role<a class="headerlink" href="#math-default-role" title="Permalink to this headline">¶</a></h3>
 <p>For documents with a lot of inline math, you can set the default role to math by adding the
 line</p>
@@ -437,9 +444,9 @@ specifying the <em>:math:</em> role. For example, the line</p>
 <div class="highlight-RST notranslate"><div class="highlight"><pre><span></span>The sum of the first <span class="nv">`n`</span> natural numbers is given by <span class="nv">`n(n+1)/2`</span>.
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
     </div>
@@ -454,7 +461,7 @@ specifying the <em>:math:</em> role. For example, the line</p>
     </p>
     <p>
         &copy; Copyright 2019, Los Alamos National Laboratory.<br/>
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.1.2.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 4.2.0.<br/>
     </p>
   </div>
 </footer>
