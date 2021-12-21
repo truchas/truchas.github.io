@@ -338,12 +338,21 @@
 <section id="nlk-preconditioner">
 <span id="diff-sol-np"></span><h3><span class="section-number">5.3.11. </span>NLK_Preconditioner<a class="headerlink" href="#nlk-preconditioner" title="Permalink to this headline"></a></h3>
 <div class="line-block">
-<div class="line"><strong>Description</strong> : The choice of preconditioner for the NLK iteration. There are currently two preconditioners to choose from: <strong>SSOR</strong> and <strong>HYPRE_AMG</strong>. The former is symmetric over relaxation, and the later is an algebraic multigrid preconditioner from the <strong>hypre</strong> library</div>
+<div class="line"><strong>Description</strong> : The choice of preconditioner for the NLK iteration. There are currently two preconditioners to choose from: symmetric successive over-relaxation (SSOR) and the BoomerAMG implementation of algebraic multigrid (AMG) from the HYPRE library. AMG is the default preconditioning method and should normally be used; SSOR is intended mainly for developer use.</div>
 <div class="line"><strong>Type</strong>        : string</div>
-<div class="line"><strong>Default</strong>     : <cite>SSOR</cite></div>
-<div class="line"><strong>Valid Values</strong>: <cite>SSOR</cite> or <cite>Hypre_AMG</cite></div>
-<div class="line"><strong>Notes</strong> : If <strong>SSOR</strong> is the chosen as the preconditioner, the user can set <a class="reference internal" href="#diff-sol-psr"><span class="std std-ref">PC_SSOR_Relax</span></a> to the overrelaxation parameter and <a class="reference internal" href="#diff-sol-pss"><span class="std std-ref">PC_SSOR_Sweeps</span></a> to the number of SSOR sweeps. If Hypre_AMG is chosen as the preconditioner, the user can set <a class="reference internal" href="#diff-sol-pac"><span class="std std-ref">PC_AMG_Cycles</span></a> to the number of AMG cycles per preconditioning step.</div>
+<div class="line"><strong>Default</strong>     : <cite>“hypre_amg”</cite></div>
+<div class="line"><strong>Valid Values</strong>: <cite>“ssor”</cite> or <cite>“hypre_amg”</cite></div>
+<div class="line"><strong>Notes</strong> : When <cite>“hypre_amg”</cite> is selected, use the variable <a class="reference internal" href="#diff-sol-pac"><span class="std std-ref">PC_AMG_Cycles</span></a> to specify the number of AMG V-cycles per preconditioning step. The BoomerAMG implementation supports a great many configuration options, some which may be set using this namelist. The default configuration is generally suitable, but may be modified using the following variables. Refer to the <a class="reference external" href="https://hypre.readthedocs.io/en/latest/solvers-boomeramg.html">HYPRE documentation</a> on BoomerAMG for details.</div>
 </div>
+<ul class="simple">
+<li><p><strong>hypre_amg_strong_threshold</strong> (real, default 0.5)</p></li>
+<li><p><strong>hypre_amg_coarsen_type</strong> (integer, default 10)</p></li>
+<li><p><strong>hypre_amg_interp_type</strong> (integer, default 6)</p></li>
+<li><p><strong>hypre_amg_relax_down_type</strong> (integer, default 13)</p></li>
+<li><p><strong>hypre_amg_relax_up_type</strong> (integer, default 14)</p></li>
+</ul>
+<p>Note that the variables correspond to similarly named <a class="reference external" href="https://hypre.readthedocs.io/en/latest/api-sol-parcsr.html#">HYPRE library functions</a> and not actual HYPRE variables.</p>
+<p>When <cite>“ssor”</cite> is selected, use the variable <a class="reference internal" href="#diff-sol-psr"><span class="std std-ref">PC_SSOR_Relax</span></a> to specify the overrelaxation parameter and <a class="reference internal" href="#diff-sol-pss"><span class="std std-ref">PC_SSOR_Sweeps</span></a> to specify the number of SSOR sweeps per preconditioning step.</p>
 </section>
 <section id="nlk-tol">
 <span id="diff-sol-nt"></span><h3><span class="section-number">5.3.12. </span>NLK_Tol<a class="headerlink" href="#nlk-tol" title="Permalink to this headline"></a></h3>
