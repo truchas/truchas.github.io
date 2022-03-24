@@ -46,9 +46,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#input-file-format">1.3. Input File Format</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#physical-units">1.4. Physical Units</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#working-with-output-files">1.5. Working With Output Files</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#write-restart">1.5.1. write_restart</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#write-probes">1.5.2. write_probes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#truchas-gmv-parser-py">1.5.3. truchas-gmv-parser.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#write-restart-py">1.5.1. write-restart.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#write-gmv-py">1.5.2. write-gmv.py</a></li>
 </ul>
 </li>
 </ul>
@@ -87,6 +86,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">33. TURBULENCE Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">34. VFUNCTION Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">35. VISCOPLASTIC_MODEL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">36. Radiation Enclosure Tools</a></li>
 </ul>
 
         </div>
@@ -125,8 +125,8 @@
 <span id="truchas-command-line-option"></span><table class="colwidths-given tight-table docutils align-default" id="id1">
 <caption><span class="caption-number">Table 1.1.1 </span><span class="caption-text">Truchas Command Line Options</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
 <colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
+<col style="width: 25%" />
+<col style="width: 75%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Option</p></th>
@@ -176,6 +176,7 @@ Newlines in a namelist are optional.
 /
 </pre></div>
 </div>
+<p><sup>Example input file</sup></p>
 </section>
 <section id="stopping-truchas">
 <h2><span class="section-number">1.2. </span>Stopping Truchas<a class="headerlink" href="#stopping-truchas" title="Permalink to this headline"></a></h2>
@@ -204,78 +205,40 @@ commas or newlines, that assign values to namelist variables. Namelist input is 
 </section>
 <section id="working-with-output-files">
 <span id="um-work-with-output"></span><h2><span class="section-number">1.5. </span>Working With Output Files<a class="headerlink" href="#working-with-output-files" title="Permalink to this headline"></a></h2>
-<p>As described earlier, Truchas writes its output files to the directory named in the <strong>-o</strong> option, or if omitted, to a directory whose name is generated from the base name of the input file: <strong>myprob_output</strong> if <strong>myprob.inp</strong> is the input file, for example. Two primary files are written, a <code class="docutils literal notranslate"><span class="pre">.log</span></code> file that is a copy of the terminal output, and a <code class="docutils literal notranslate"><span class="pre">.h5</span></code> HDF5 file that contains all the simulation results. HDF5 is a widely-used format for storing and managing data, and thereare a great many freely-available tools for working with these files. In this release, which is the first to feature HDF5 output, we provide only a few essential tools, described below, for processing the <code class="docutils literal notranslate"><span class="pre">.h5</span></code> file. We expect to provide additional tools in future releases.</p>
-<section id="write-restart">
-<h3><span class="section-number">1.5.1. </span>write_restart<a class="headerlink" href="#write-restart" title="Permalink to this headline"></a></h3>
-<p>The program <code class="docutils literal notranslate"><span class="pre">write_restart</span></code> is used to create Truchas restart files using data from an <code class="docutils literal notranslate"><span class="pre">.h5</span></code> output file. The command syntax is</p>
-<p><code class="docutils literal notranslate"><span class="pre">write_restart</span> <span class="pre">[options]</span> <span class="pre">H5FILE</span></code></p>
-<p>where <strong>H5FILE</strong> is the <strong>.h5</strong> output file and the possible options are</p>
-<span id="write-restart-options"></span><table class="colwidths-given tight-table docutils align-default" id="id2">
-<caption><span class="caption-number">Table 1.5.1 </span><span class="caption-text">write_restart Options</span><a class="headerlink" href="#id2" title="Permalink to this table"></a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Option</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><strong>-h</strong></p></td>
-<td><p>Display usage help and exit.</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>-l</strong></p></td>
-<td><p>Print a list of the available cycles from which the restart file can becreated. No restart file is written.</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>-n N</strong></p></td>
-<td><p>Data from cycle <strong>N</strong> is used to create the restart file; if not specified, the last cycle is used.</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>-o FILE</strong></p></td>
-<td><p>Write restart data to <strong>FILE</strong>. If not specified, <strong>FILE</strong> is taken to be the H5FILE name with the.h5 suffix replaced by .restart.N where N is the cycle number.</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>-m FILE</strong></p></td>
-<td><p>Create a mapped restart file using the specified ExodusII mesh <strong>FILE</strong> as the target mesh.</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>-s FLOAT</strong></p></td>
-<td><p>Scale the mapped restart mesh by the factor FLOAT.</p></td>
-</tr>
-</tbody>
-</table>
+<p>As described earlier, Truchas writes its output files to the directory named in the <strong>-o</strong> option, or if omitted, to a directory whose name is generated from the base name of the input file: <strong>myprob_output</strong> if <strong>myprob.inp</strong> is the input file, for example. Two primary files are written, a <code class="docutils literal notranslate"><span class="pre">.log</span></code> file that is a copy of the terminal output, and a <code class="docutils literal notranslate"><span class="pre">.h5</span></code> HDF5 file that contains all the simulation results. HDF5 is a widely-used format for storing and managing data, and thereare a great many freely-available tools for working with these files. In this release, which is the first to feature HDF5 output, we provide only a few essential tools, described below, for processing the <code class="docutils literal notranslate"><span class="pre">.h5</span></code> file. We expect to provide additional tools in future releases. Probe data is written to multi-column text files in the output directory.</p>
+<section id="write-restart-py">
+<h3><span class="section-number">1.5.1. </span>write-restart.py<a class="headerlink" href="#write-restart-py" title="Permalink to this headline"></a></h3>
+<p>The program <code class="docutils literal notranslate"><span class="pre">write-restart.py</span></code> is used to create Truchas restart files using data from an <code class="docutils literal notranslate"><span class="pre">.h5</span></code> output file. The command syntax is</p>
+<p><code class="docutils literal notranslate"><span class="pre">write-restart.py</span> <span class="pre">[options]</span> <span class="pre">H5FILE</span></code></p>
+<p>where <strong>H5FILE</strong> is the <strong>.h5</strong> output file and the possible options are:</p>
+<dl class="option-list">
+<dt><kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></dt>
+<dd><p>Display usage help and exit.</p>
+</dd>
+<dt><kbd><span class="option">-l</span></kbd></dt>
+<dd><p>Print a list of the available cycles from which the restart file can be created. No restart file is written.</p>
+</dd>
+<dt><kbd><span class="option">-n <var>N</var></span></kbd></dt>
+<dd><p>Data from cycle <em>N</em> is used to create the restart file; if not specified, the last cycle is used.</p>
+</dd>
+<dt><kbd><span class="option">-o <var>FILE</var></span></kbd></dt>
+<dd><p>Write restart data to <em>FILE</em>. If not specified, <em>FILE</em> is taken to be the <em>H5FILE</em> name with the .h5 suffix replaced by .restart.N where N is the cycle number.</p>
+</dd>
+<dt><kbd><span class="option">-m <var>FILE</var></span></kbd></dt>
+<dd><p>Create a mapped restart file using the specified ExodusII mesh <em>FILE</em> as the target mesh.</p>
+</dd>
+<dt><kbd><span class="option">-s <var>FLOAT</var></span></kbd></dt>
+<dd><p>Scale the mapped restart mesh by the factor <em>FLOAT</em>.</p>
+</dd>
+<dt><kbd><span class="option">--use-portage</span></kbd></dt>
+<dd><p>Use the Portage grid mapper backend. Truchas must be built with Portage support. The default is Truchas’s built-in Kuprat mapper.</p>
+</dd>
+</dl>
 </section>
-<section id="write-probes">
-<h3><span class="section-number">1.5.2. </span>write_probes<a class="headerlink" href="#write-probes" title="Permalink to this headline"></a></h3>
-<p>The <code class="docutils literal notranslate"><span class="pre">write_probes</span></code> utility extracts probe data (see the <a class="reference internal" href="../PROBE_Namelist/index.html#probe-namelist"><span class="std std-ref">PROBE</span></a> namelist) from an <strong>.h5</strong> output file and writes it to the terminal (where it can be redirected as needed) in a multicolumn format suitable for many line plotting programs. The command syntax is</p>
-<p><code class="docutils literal notranslate"><span class="pre">write_probes</span> <span class="pre">{</span> <span class="pre">-h</span> <span class="pre">|</span> <span class="pre">-l</span> <span class="pre">|</span> <span class="pre">-n</span> <span class="pre">N}</span> <span class="pre">H5FILE</span></code></p>
-<p>where <strong>H5FILE</strong> is the <strong>.h5</strong> output file and the available options are</p>
-<span id="write-probes-options"></span><table class="colwidths-given longtable docutils align-default" id="id3">
-<caption><span class="caption-number">Table 1.5.2 </span><span class="caption-text">write_probes Options</span><a class="headerlink" href="#id3" title="Permalink to this table"></a></caption>
-<colgroup>
-<col style="width: 50%" />
-<col style="width: 50%" />
-</colgroup>
-<thead>
-<tr class="row-odd"><th class="head"><p>Option</p></th>
-<th class="head"><p>Description</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p><strong>-h</strong></p></td>
-<td><p>Display usage help and exit.</p></td>
-</tr>
-<tr class="row-odd"><td><p><strong>-l</strong></p></td>
-<td><p>Print a list of the available probes.</p></td>
-</tr>
-<tr class="row-even"><td><p><strong>-n N</strong></p></td>
-<td><p>Data for probe index N is written.</p></td>
-</tr>
-</tbody>
-</table>
-</section>
-<section id="truchas-gmv-parser-py">
-<h3><span class="section-number">1.5.3. </span>truchas-gmv-parser.py<a class="headerlink" href="#truchas-gmv-parser-py" title="Permalink to this headline"></a></h3>
-<p>The python scriptt <code class="docutils literal notranslate"><span class="pre">ruchas-gmv-parser.py</span></code> is used to create input files for the GMV visualization tool. Formerly distributed gratis, GMV has been commercialized (<a class="reference external" href="http://www.generalmeshviewer.com">http://www.generalmeshviewer.com</a>). Earlier free versions of the tool can still be found on the internet, however, and it remains available within LANL. The command syntax is</p>
-<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">truchas-gmv-parser.py</span> <span class="pre">[options]</span> <span class="pre">H5FILE</span></code></p>
+<section id="write-gmv-py">
+<h3><span class="section-number">1.5.2. </span>write-gmv.py<a class="headerlink" href="#write-gmv-py" title="Permalink to this headline"></a></h3>
+<p>The python script <code class="docutils literal notranslate"><span class="pre">write-gmv.py</span></code> is used to create input files for the GMV visualization tool. Formerly distributed gratis, GMV has been commercialized (<a class="reference external" href="http://www.generalmeshviewer.com">http://www.generalmeshviewer.com</a>). Earlier free versions of the tool can still be found on the internet, however, and it remains available within LANL. The command syntax is</p>
+<p><code class="docutils literal notranslate"><span class="pre">write-gmv.py</span> <span class="pre">[options]</span> <span class="pre">H5FILE</span></code></p>
 <p>where <strong>H5FILE</strong> is the <strong>.h5</strong> output file. Use the option <strong>-h</strong> to get a full list of the available options.</p>
 </section>
 </section>

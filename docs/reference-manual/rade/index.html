@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>36. Radiation Enclosure Tools &mdash; Truchas Reference Manual 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="36.2.1. ENCLOSURE Namelist" href="ENCLOSURE_Namelist.html" />
+    <link rel="prev" title="35. VISCOPLASTIC_MODEL Namelist" href="../VISCOPLASTIC_MODEL_Namelist/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Truchas Reference Manual
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ALTMESH_Namelist/index.html">2. ALTMESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BC_Namelist/index.html">3. BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BODY_Namelist/index.html">4. BODY Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DIFFUSION_Solver_Namelist/index.html">5. DIFFUSION Solver Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DS_SOURCE_Namelist/index.html">6. DS_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html">7. ELECTROMAGNETICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_RADIATION_Namelist/index.html">8. ENCLOSURE_RADIATION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_SURFACE_Namelist/index.html">9. ENCLOSURE_SURFACE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../EVAPORATION_Namelist/index.html">10. EVAPORATION Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_Namelist/index.html">11. FLOW Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_BC_Namelist/index.html">12. FLOW_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html">13. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FUNCTION_Namelist/index.html">14. FUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../INDUCTION_COIL_Namelist/index.html">15. INDUCTION_COIL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LEGACY_SOLID_MECHANICS_Namelist/index.html">16. LEGACY_SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">17. MATERIAL and PHASE Namelists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">18. MESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">19. NUMERICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">20. OUTPUTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">21. PHASE_CHANGE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">22. PHYSICAL_CONSTANTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">23. PHYSICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">24. PROBE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">25. RESTART Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">26. SIMULATION_CONTROL Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">27. SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">28. SOLID_MECHANICS_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">29. SPECIES_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">30. THERMAL_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">31. THERMAL_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">32. TOOLPATH Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">33. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">34. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">35. VISCOPLASTIC_MODEL Namelist</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">36. Radiation Enclosure Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">36.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#invoking-genre">36.2. Invoking GENRE</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ENCLOSURE_Namelist.html">36.2.1. ENCLOSURE Namelist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CHAPARRAL_Namelist.html">36.2.2. CHAPARRAL Namelist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PATCHES_Namelist.html">36.2.3. PATCHES Namelist</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#invoking-vizre">36.3. Invoking VIZRE</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#viewing-vizre-s-gmv-output">36.3.1. Viewing VIZRE’s GMV Output</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#invoking-cmpre">36.4. Invoking CMPRE</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Truchas Reference Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li><span class="section-number">36. </span>Radiation Enclosure Tools</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/rade/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="radiation-enclosure-tools">
+<h1><span class="section-number">36. </span>Radiation Enclosure Tools<a class="headerlink" href="#radiation-enclosure-tools" title="Permalink to this headline"></a></h1>
+<section id="introduction">
+<h2><span class="section-number">36.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
+<p>Truchas includes several tools for working with radiation enclosure datasets.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">genre</span></code>: Used to compute view factors and generate radiation enclosure
+files.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">vizre</span></code>: Used to generate visualization files for a given enclosure.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cmpre</span></code>: Used to compare two radiation enclosure files.</p></li>
+</ul>
+</section>
+<section id="invoking-genre">
+<h2><span class="section-number">36.2. </span>Invoking GENRE<a class="headerlink" href="#invoking-genre" title="Permalink to this headline"></a></h2>
+<p>Genre generates a radiation enclosure dataset.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Serial</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">genre</span> <span class="pre">[-f]</span> <span class="pre">input_file</span> <span class="pre">encl_file</span></code></p>
+</dd>
+<dt class="field-even">Parallel</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">mpirun</span> <span class="pre">-np</span> <span class="pre">N</span> <span class="pre">genre</span> <span class="pre">[-f]</span> <span class="pre">input_file</span> <span class="pre">encl_file</span></code></p>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">encl_file</span></code> is the name of the output view factor radiation enclosure file to
+be written. If a file with this name already exists, it will not be overwritten
+unless the <code class="docutils literal notranslate"><span class="pre">-f</span></code> flag is provided. The input file is a <a class="reference internal" href="../introduction/index.html#input-file-format"><span class="std std-ref">Fortran namelist
+file</span></a> containing the following namelists:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ENCLOSURE_Namelist.html">36.2.1. ENCLOSURE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="CHAPARRAL_Namelist.html">36.2.2. CHAPARRAL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PATCHES_Namelist.html">36.2.3. PATCHES Namelist</a></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>The order of the namelists does not matter, and there may be other stuff in
+the input file; behavior is similar to Truchas input files.</p></li>
+<li><p>There must be a single ENCLOSURE namelist, at most one CHAPARRAL namelist,
+and at most one PATCHES namelist. If there is a CHAPARRAL namelist, the
+specified enclosure surface is generated and written to the enclosure file
+along with the calculated view factors. If there is <em>no</em> CHAPARRAL
+namelist, just the enclosure surface is written; this is useful for
+examining the surface for correctness prior to performing the expensive
+view factor calculation.</p></li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>See the <a class="reference internal" href="CHAPARRAL_Namelist.html#general-guidance"><span class="std std-ref">General Guidance section</span></a> for help setting namelist parameters.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Namelists may be easily disabled by placing a character before the <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>. For
+example, the following namelist is ignored by Genre due to the leading <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">&amp;</span><span class="n">PATCHES</span>
+  <span class="n">metis_face_patch_ratio</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="o">/</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="invoking-vizre">
+<h2><span class="section-number">36.3. </span>Invoking VIZRE<a class="headerlink" href="#invoking-vizre" title="Permalink to this headline"></a></h2>
+<p>Writes a GMV-format visualization file for the specified enclosure. If the
+enclosure includes view factor data, the ambient view factor and view factor
+matrix row sums are written as face variables.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Serial</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">vizre</span> <span class="pre">[options]</span> <span class="pre">enclosure_file</span> <span class="pre">gmv_file</span></code></p>
+</dd>
+<dt class="field-even">Parallel</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">mpirun</span> <span class="pre">-np</span> <span class="pre">N</span> <span class="pre">vizre</span> <span class="pre">[options]</span> <span class="pre">enclosure_file</span> <span class="pre">gmv_file</span></code> (only useful
+if the matrix is too large to be held on a single process.)</p>
+</dd>
+</dl>
+<p>Vizre Command Line Options:</p>
+<dl class="option-list">
+<dt><kbd><span class="option">-r <var>list</var></span></kbd></dt>
+<dd><p>Write the specified <em>rows</em> of the view factor matrix as face
+variables. List is a comma-separated list of ranges; a range is
+index, first:last, or first:last:stride.</p>
+</dd>
+<dt><kbd><span class="option">-c <var>list</var></span></kbd></dt>
+<dd><p>Write the specified <em>columns</em> of the view factor matrix as face
+variables. List is a comma-separated list of ranges; a range is
+index, first:last, or first:last:stride.</p>
+</dd>
+<dt><kbd><span class="option">-s</span></kbd></dt>
+<dd><p>Write the fully-developed enclosure surface defined by the
+enclosure’s symmetries. The default is to write just the generating
+surface.</p>
+</dd>
+<dt><kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></dt>
+<dd><p>Display this help and exit.</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Only surface faces are written.</p></li>
+<li><p>Paraview can optionally cull backfaces (Search “backface” in Properties,
+change “Backface Representation” to “Cull Backface”).</p></li>
+<li><p>Surface side set info is written as a scalar field named “material id”.</p></li>
+<li><p>When using the <code class="docutils literal notranslate"><span class="pre">-s</span></code> option, info about the copies of the generating
+surface are written as scalar fields, named with the prefix “flag”.</p></li>
+<li><p>May need a parallel version simply because the VF matrix is too large to be
+held on a single process.</p></li>
+</ul>
+</div>
+<section id="viewing-vizre-s-gmv-output">
+<h3><span class="section-number">36.3.1. </span>Viewing VIZRE’s GMV Output<a class="headerlink" href="#viewing-vizre-s-gmv-output" title="Permalink to this headline"></a></h3>
+<p><a class="reference external" href="https://www.paraview.org/">Paraview</a> can be used to view the GMV output file
+produced by VIZRE. However, it is necessary to enable a plugin following these
+steps:</p>
+<ol class="arabic simple">
+<li><p>After installing and starting Paraview, navigate to <em>Tools -&gt; Manage
+Plugins…</em></p></li>
+<li><p>Double-click the <em>GMVReader</em> option, and enable the <em>Auto Load</em> check mark.</p></li>
+<li><p>Click the <em>Load Selected</em> button while selecting <em>GMVReader</em>.</p></li>
+</ol>
+<a class="reference internal image-reference" href="../_images/gmvreader-plugin.png"><img alt="../_images/gmvreader-plugin.png" src="../_images/gmvreader-plugin.png" style="width: 100%;" /></a>
+</section>
+</section>
+<section id="invoking-cmpre">
+<h2><span class="section-number">36.4. </span>Invoking CMPRE<a class="headerlink" href="#invoking-cmpre" title="Permalink to this headline"></a></h2>
+<p>If you’ve generated multiple datasets for the same enclosure using different
+sets of Chaparral parameters, it is useful to compare the calculated view factor
+matrices. You can do this with cmpre:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Serial</dt>
+<dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">cmpre</span> <span class="pre">encl_file1</span> <span class="pre">encl_file2</span></code></p>
+</dd>
+<dt class="field-even">Parallel</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">mpirun</span> <span class="pre">-np</span> <span class="pre">N</span> <span class="pre">cmpre</span> <span class="pre">encl_file1</span> <span class="pre">encl_file2</span></code> (only useful if the
+matrix is too large to be held on a single process.)</p>
+</dd>
+</dl>
+<p>The program simply prints out several VF operator norms of the difference of the
+two view factor matrices to the screen. It also prints the largest single
+difference in matrix and its row and column location. Naturally both files must
+contain VF data, and the enclosure surfaces must be the same.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../VISCOPLASTIC_MODEL_Namelist/index.html" class="btn btn-neutral float-left" title="35. VISCOPLASTIC_MODEL Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ENCLOSURE_Namelist.html" class="btn btn-neutral float-right" title="36.2.1. ENCLOSURE Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, LANL.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

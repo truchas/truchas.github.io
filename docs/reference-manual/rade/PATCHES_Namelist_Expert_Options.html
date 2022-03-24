@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PATCHES Namelist (Expert Options) &mdash; Truchas Reference Manual 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="36.2.3. PATCHES Namelist" href="PATCHES_Namelist.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Truchas Reference Manual
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ALTMESH_Namelist/index.html">2. ALTMESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BC_Namelist/index.html">3. BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BODY_Namelist/index.html">4. BODY Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DIFFUSION_Solver_Namelist/index.html">5. DIFFUSION Solver Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DS_SOURCE_Namelist/index.html">6. DS_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html">7. ELECTROMAGNETICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_RADIATION_Namelist/index.html">8. ENCLOSURE_RADIATION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_SURFACE_Namelist/index.html">9. ENCLOSURE_SURFACE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../EVAPORATION_Namelist/index.html">10. EVAPORATION Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_Namelist/index.html">11. FLOW Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_BC_Namelist/index.html">12. FLOW_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html">13. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FUNCTION_Namelist/index.html">14. FUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../INDUCTION_COIL_Namelist/index.html">15. INDUCTION_COIL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LEGACY_SOLID_MECHANICS_Namelist/index.html">16. LEGACY_SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">17. MATERIAL and PHASE Namelists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">18. MESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">19. NUMERICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">20. OUTPUTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">21. PHASE_CHANGE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">22. PHYSICAL_CONSTANTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">23. PHYSICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">24. PROBE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">25. RESTART Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">26. SIMULATION_CONTROL Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">27. SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">28. SOLID_MECHANICS_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">29. SPECIES_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">30. THERMAL_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">31. THERMAL_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">32. TOOLPATH Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">33. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">34. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">35. VISCOPLASTIC_MODEL Namelist</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">36. Radiation Enclosure Tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#introduction">36.1. Introduction</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#invoking-genre">36.2. Invoking GENRE</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ENCLOSURE_Namelist.html">36.2.1. ENCLOSURE Namelist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CHAPARRAL_Namelist.html">36.2.2. CHAPARRAL Namelist</a></li>
+<li class="toctree-l3 current"><a class="reference internal" href="PATCHES_Namelist.html">36.2.3. PATCHES Namelist</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="PATCHES_Namelist.html#general-guidance">General Guidance</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="PATCHES_Namelist.html#components">Components</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#invoking-vizre">36.3. Invoking VIZRE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#invoking-cmpre">36.4. Invoking CMPRE</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Truchas Reference Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">36. </span>Radiation Enclosure Tools</a> &raquo;</li>
+          <li><a href="PATCHES_Namelist.html"><span class="section-number">36.2.3. </span>PATCHES Namelist</a> &raquo;</li>
+      <li>PATCHES Namelist (Expert Options)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/rade/PATCHES_Namelist_Expert_Options.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="patches-namelist-expert-options">
+<h1>PATCHES Namelist (Expert Options)<a class="headerlink" href="#patches-namelist-expert-options" title="Permalink to this headline"></a></h1>
+<table class="docutils align-center" style="width: 100%">
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="../_images/basic_hemi_pave_1.png"><img alt="pave_patches" class="align-middle" src="../_images/basic_hemi_pave_1.png" style="width: 100%;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/basic_hemi_vsa_1.png"><img alt="vsa_patches" class="align-middle" src="../_images/basic_hemi_vsa_1.png" style="width: 100%;" /></a></p></td>
+<td><p><a class="reference internal" href="../_images/basic_hemi_metis_1.png"><img alt="metis_patches" class="align-middle" src="../_images/basic_hemi_metis_1.png" style="width: 100%;" /></a></p></td>
+</tr>
+<tr class="row-even"><td colspan="3"><p>Result of running <strong>PAVE</strong> (left), <strong>VSA</strong>
+(middle), and <strong>METIS</strong> (right) on
+the ‘basic hemi’ enclosure.</p></td>
+</tr>
+</tbody>
+</table>
+<p>Genre supports multiple algorithms for patching, with different tradeoffs for
+performance and quality. <strong>These are expert parameters. Most users should not
+need more than the</strong> <a class="reference internal" href="PATCHES_Namelist.html#patches-namelist"><span class="std std-ref">standard parameters</span></a>.</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.truchas.org/docs/sphinx/tools/RadE/patches/pave.html">PAVE</a></p>
+<ul>
+<li><p><strong>Pros:</strong> produces neat tilings that account for patch planarity and
+irregularity. The algorithm is fast (linear in the number of faces).</p></li>
+<li><p><strong>Cons:</strong> uniform coarsening of the mesh. Only supports faces-per-patch
+ratios of roughly 4 or 6, depending on whether the mesh is hexahedral or
+tetrahedral.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://www.truchas.org/docs/sphinx/tools/RadE/patches/vsa.html">VSA</a>
+<a class="footnote-reference brackets" href="#footcite-cohen-steiner-2004-vsa" id="id1">1</a></p>
+<ul>
+<li><p><strong>Pros:</strong> works well for arbitrary faces-per-patch ratios. Provides flexible
+control of the geometric patch diameters. Maximizes patch planarity.
+Provides choice between patches with roughly the same number of faces, or
+roughly the same surface area.</p></li>
+<li><p><strong>Cons:</strong> can be extremely slow for large meshes (scales badly), due to a
+quadratic dependence on the number of faces. However, once computed, the
+result can be reused with the <a class="reference internal" href="#patch-algorithm"><span class="std std-ref">FILE method</span></a> allowing
+experimentation with Chaparral parameters without rerunning the algorithm.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://www.truchas.org/docs/sphinx/tools/RadE/patches/metis.html">METIS</a>
+<a class="footnote-reference brackets" href="#footcite-karypis-1998-metis" id="id2">2</a></p>
+<ul>
+<li><p><strong>Pros:</strong> works well for arbitrary faces-per-patch ratios. The algorithm is
+fast by leveraging the METIS library. Provides choice between patches with
+roughly the same number of faces, or roughly the same surface area. In the
+second case, the constraint is tight, so the faces-per-patch ratio is
+largely ignored and need only be approximate.</p></li>
+<li><p><strong>Cons:</strong> New and not extensively tested. Patch planarity is not explicitly
+maximized, but at least patches will not straddle “sharp edges” (see <a class="reference external" href="https://www.truchas.org/docs/sphinx/tools/RadE/patches/metis.html#dual-graph">here</a>
+for more details). Note that it is not clear whether patch planarity, or
+lack thereof, affects the quality of the thermal radiation model.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://www.truchas.org/docs/sphinx/tools/RadE/patches/vac.html">VAC</a></p>
+<ul>
+<li><p>Retained for developer use and not recommended for regular users. It has
+similar limitations to PAVE, but produces lower quality patches.</p></li>
+</ul>
+</li>
+</ul>
+<p>Refer to each algorithm’s documentation for extensive details on its properties,
+limitations, and supported inputs.</p>
+<div class="contents local topic" id="components">
+<p class="topic-title">Components</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#general-parameters" id="id10">General Parameters</a></p>
+<ul>
+<li><p><a class="reference internal" href="#patch-algorithm" id="id11">patch_algorithm</a></p></li>
+<li><p><a class="reference internal" href="#verbosity-level" id="id12">verbosity_level</a></p></li>
+<li><p><a class="reference internal" href="#max-angle" id="id13">max_angle</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#file-parameters" id="id14">FILE Parameters</a></p>
+<ul>
+<li><p><a class="reference internal" href="#patch-file" id="id15">patch_file</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#pave-parameters" id="id16">PAVE Parameters</a></p>
+<ul>
+<li><p><a class="reference internal" href="#pave-merge-level" id="id17">pave_merge_level</a></p></li>
+<li><p><a class="reference internal" href="#pave-split-patch-size" id="id18">pave_split_patch_size</a></p></li>
+<li><p><a class="reference internal" href="#pave-random-seed" id="id19">pave_random_seed</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#vac-parameters" id="id20">VAC Parameters</a></p>
+<ul>
+<li><p><a class="reference internal" href="#vac-merge-level" id="id21">vac_merge_level</a></p></li>
+<li><p><a class="reference internal" href="#vac-split-patch-size" id="id22">vac_split_patch_size</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#vsa-parameters" id="id23">VSA Parameters</a></p>
+<ul>
+<li><p><a class="reference internal" href="#vsa-max-iter" id="id24">vsa_max_iter</a></p></li>
+<li><p><a class="reference internal" href="#vsa-min-delta" id="id25">vsa_min_delta</a></p></li>
+<li><p><a class="reference internal" href="#vsa-face-patch-ratio" id="id26">vsa_face_patch_ratio</a></p></li>
+<li><p><a class="reference internal" href="#vsa-max-patch-radius" id="id27">vsa_max_patch_radius</a></p></li>
+<li><p><a class="reference internal" href="#vsa-normalize-dist" id="id28">vsa_normalize_dist</a></p></li>
+<li><p><a class="reference internal" href="#vsa-random-seed" id="id29">vsa_random_seed</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#metis-parameters-advanced" id="id30">METIS Parameters (Advanced)</a></p>
+<ul>
+<li><p><a class="reference internal" href="#metis-ptype" id="id31">metis_ptype</a></p></li>
+<li><p><a class="reference internal" href="#metis-objtype" id="id32">metis_objtype</a></p></li>
+<li><p><a class="reference internal" href="#metis-ctype" id="id33">metis_ctype</a></p></li>
+<li><p><a class="reference internal" href="#metis-iptype" id="id34">metis_iptype</a></p></li>
+<li><p><a class="reference internal" href="#metis-niter" id="id35">metis_niter</a></p></li>
+<li><p><a class="reference internal" href="#metis-minconn" id="id36">metis_minconn</a></p></li>
+<li><p><a class="reference internal" href="#metis-no2hop" id="id37">metis_no2hop</a></p></li>
+<li><p><a class="reference internal" href="#metis-contig" id="id38">metis_contig</a></p></li>
+<li><p><a class="reference internal" href="#metis-dbglvl" id="id39">metis_dbglvl</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="general-parameters">
+<h2><a class="toc-backref" href="#id10">General Parameters</a><a class="headerlink" href="#general-parameters" title="Permalink to this headline"></a></h2>
+<section id="patch-algorithm">
+<h3><a class="toc-backref" href="#id11">patch_algorithm</a><a class="headerlink" href="#patch-algorithm" title="Permalink to this headline"></a></h3>
+<p>Selects one of the available algorithms, or disables patching.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">'METIS'</span></code></p>
+</dd>
+<dt class="field-odd">Valid Values</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">'NONE'</span></code>: No patches will be generated. All other parameters are ignored.
+This is equivalent to an absent <strong>PATCHES</strong> namelist.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'PAVE'</span></code>: Generate patches with the <a class="reference external" href="https://www.truchas.org/docs/sphinx/tools/RadE/patches/pave.html">PAVE algorithm</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'VAC'</span></code>: Generate patches with the <a class="reference external" href="https://www.truchas.org/docs/sphinx/tools/RadE/patches/vac.html">VAC algorithm</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'VSA'</span></code>: Generate patches with the <a class="reference external" href="https://www.truchas.org/docs/sphinx/tools/RadE/patches/vsa.html">VSA algorithm</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'METIS'</span></code>: Generate patches with the <a class="reference external" href="https://www.truchas.org/docs/sphinx/tools/RadE/patches/metis.html">METIS algorithm</a>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">'FILE'</span></code>: Patches will be read from a file. Because the cost of computing
+patches can be quite substantial for very large enclosure meshes, this
+pseudo-algorithm is provided to enable the use of previously computed
+patches.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="verbosity-level">
+<h3><a class="toc-backref" href="#id12">verbosity_level</a><a class="headerlink" href="#verbosity-level" title="Permalink to this headline"></a></h3>
+<p>Defines the verbosity level for all console output of the patch algorithm.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>1</p>
+</dd>
+<dt class="field-odd">Valid Values</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>0: Suppress all output.</p></li>
+<li><p>1: Print a summary of the run when algorithm finishes.</p></li>
+<li><p>&gt;1: Print detailed run information, used for debugging.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="max-angle">
+<h3><a class="toc-backref" href="#id13">max_angle</a><a class="headerlink" href="#max-angle" title="Permalink to this headline"></a></h3>
+<p>Defines the maximum allowable angle (in degrees) between adjacent faces.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>real</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>20.0</p>
+</dd>
+<dt class="field-odd">Valid Values</dt>
+<dd class="field-odd"><p>[0, 180]</p>
+</dd>
+</dl>
+<p>All the patch algorithms construct the <a class="reference external" href="http://mathworld.wolfram.com/AdjacencyMatrix.html">adjacency matrix</a> of the enclosure faces to
+efficiently determine which faces are adjacent to others. If the normals of two
+‘topologically adjacent’ faces exceed <em>max_angle</em>, then the faces will not be
+neighbors in the internal adjacency matrix.</p>
+<figure class="align-center" id="id9" style="width: 45%">
+<img alt="../_images/connected_components.png" src="../_images/connected_components.png" />
+<figcaption>
+<p><span class="caption-number">Figure 36.2.1 </span><span class="caption-text">The connected components of the outer surface of a furnace funnel. MAX_ANGLE
+is set to 20 degrees. Each component is a different color. The face edges are
+omitted for clarity.</span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+</figcaption>
+</figure>
+<p>The patch algorithms guarantee that patches will be <em>connected sets</em> of faces.
+Therefore, <code class="docutils literal notranslate"><span class="pre">max_angle</span></code> divides the enclosure into connected components of
+faces wherever there are ‘sharp’ edges whose angle exceeds the parameter.
+Patches will never span more than one component.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code class="docutils literal notranslate"><span class="pre">max_angle</span></code> only applies to <em>pairs of adjacent faces</em>, so two faces within a
+patch may be at an angle greater than <code class="docutils literal notranslate"><span class="pre">max_angle</span></code> if the faces between them
+are at sufficiently large angles. This is unlikely in practice, given a
+reasonably smooth enclosure and small <code class="docutils literal notranslate"><span class="pre">max_angle</span></code>.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>The effects of <code class="docutils literal notranslate"><span class="pre">max_angle</span></code> vary by algorithm. Refer to the documentation of
+the <a class="reference external" href="https://www.truchas.org/docs/sphinx/tools/RadE/patches/pave.html">PAVE</a>, <a class="reference external" href="https://www.truchas.org/docs/sphinx/tools/RadE/patches/vac.html">VAC</a>, and <a class="reference external" href="https://www.truchas.org/docs/sphinx/tools/RadE/patches/vsa.html">VSA</a>
+algorithms for more details.</p>
+</div>
+</section>
+</section>
+<section id="file-parameters">
+<h2><a class="toc-backref" href="#id14">FILE Parameters</a><a class="headerlink" href="#file-parameters" title="Permalink to this headline"></a></h2>
+<p>The following namelist parameter applies only to the FILE algorithm.</p>
+<section id="patch-file">
+<h3><a class="toc-backref" href="#id15">patch_file</a><a class="headerlink" href="#patch-file" title="Permalink to this headline"></a></h3>
+<p>The path to an existing radiation enclosure file containing patch information.
+The enclosure defined by the file must be identical to the current enclosure.
+This may be an absolute path or a relative path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>case-sensitive string</p>
+</dd>
+<dt class="field-even">Valid Values</dt>
+<dd class="field-even"><p>must be a valid path</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="pave-parameters">
+<h2><a class="toc-backref" href="#id16">PAVE Parameters</a><a class="headerlink" href="#pave-parameters" title="Permalink to this headline"></a></h2>
+<p>The following namelist parameters apply only to the PAVE algorithm. For more
+information, refer to the <a class="reference external" href="https://www.truchas.org/docs/sphinx/tools/RadE/patches/pave.html">PAVE algorithm documentation</a>.</p>
+<section id="pave-merge-level">
+<h3><a class="toc-backref" href="#id17">pave_merge_level</a><a class="headerlink" href="#pave-merge-level" title="Permalink to this headline"></a></h3>
+<p>Controls the aggressiveness of patch merging. After paving is complete, there
+will be a valid patching of the enclosure. The algorithm then attempts to merge
+patches in order to reduce the patch count.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>3</p>
+</dd>
+<dt class="field-odd">Valid Values</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>0: No merging.</p></li>
+<li><p>1: Merge patches that are within the faces of a vertex.</p></li>
+<li><p>2: Same as 1. Additionally, merge patches that are within the
+faces of pairs of adjacent vertices. The old patches are
+requeued with their original weight so that a merge is only
+performed if the merge candidate has a lower weight than any of
+its consituent patches.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\geq 3\)</span>: Same as 2. Additionally, merge patches within
+the faces of pairs of adjacent vertices, but add a large weight
+to the requeued old patches. This ensures that the merge is
+always performed.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="pave-split-patch-size">
+<h3><a class="toc-backref" href="#id18">pave_split_patch_size</a><a class="headerlink" href="#pave-split-patch-size" title="Permalink to this headline"></a></h3>
+<p>Defines the maximum size of patches to be split during patch merging.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>3</p>
+</dd>
+<dt class="field-odd">Valid Values</dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\(\gt 1\)</span></p>
+</dd>
+</dl>
+<p>Before merging patches, all <a class="reference internal" href="#pave-merge-level"><span class="std std-ref">merge methods</span></a> find patches with less
+than <code class="docutils literal notranslate"><span class="pre">pave_split_patch_size</span></code> faces and ‘split’ them into 1-face patches. The
+original patches aren’t actually modified, rather they are re-queued along with
+their constituent faces. This allows the algorithm to find more merge candidates
+and then ‘fill in the gaps’ with the 1-face patches.</p>
+<p>The 1-face patches have a large weight, so they will only be used after all
+other patches are set. Therefore, the enclosure will tend retain the same
+patches as before the split, unless this is not possible due to a merge.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For best results, set <code class="docutils literal notranslate"><span class="pre">pave_split_patch_size</span></code> to 3 for quadrilateral meshes
+and to 5 for triangular meshes. This avoids splitting too many patches.</p>
+</div>
+</section>
+<section id="pave-random-seed">
+<h3><a class="toc-backref" href="#id19">pave_random_seed</a><a class="headerlink" href="#pave-random-seed" title="Permalink to this headline"></a></h3>
+<p>Defines the seed for the random number generator used to pick the initial seed
+patches.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>The seed is taken from the system clock.</p>
+</dd>
+<dt class="field-odd">Valid Values</dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\(\gt 0\)</span></p>
+</dd>
+</dl>
+<p>The PAVE algorithm begins by creating a ‘seed patch’ in each connected component
+of the enclosure. Each component is then ‘paved’ or ‘tiled’ with patches,
+starting from the seed patch. The seed patches are chosen randomly from a set of
+patches determined to produce optimal results. Refer to the <a class="reference external" href="https://www.truchas.org/docs/sphinx/tools/RadE/patches/pave.html#choosing-seed-patches">seed patches
+section</a>
+of the PAVE documentation for more information on how the seed patches are
+selected.</p>
+<p>This parameter sets the seed for the random number generator used to pick the
+seed patches. Therefore, runs with the same value for this parameter will
+produce identical results. If this parameter is not specified, then the seed is
+taken from the system clock and results will likely vary from run to run.</p>
+</section>
+</section>
+<section id="vac-parameters">
+<h2><a class="toc-backref" href="#id20">VAC Parameters</a><a class="headerlink" href="#vac-parameters" title="Permalink to this headline"></a></h2>
+<p>The following namelist parameters apply only to the VAC algorithm. For more
+information, refer to the <a class="reference external" href="https://www.truchas.org/docs/sphinx/tools/RadE/patches/vac.html">VAC algorithm documentation</a>.</p>
+<section id="vac-merge-level">
+<h3><a class="toc-backref" href="#id21">vac_merge_level</a><a class="headerlink" href="#vac-merge-level" title="Permalink to this headline"></a></h3>
+<p>Controls the aggressiveness of patch merging. After the main stage of the VAC
+algorithm, there will be a valid patching of the enclosure. The algorithm then
+attempts to merge patches in order to reduce the patch count.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>3</p>
+</dd>
+<dt class="field-odd">Valid Values</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>0: No merging.</p></li>
+<li><p>1: Merge patches that are within the faces of a vertex.</p></li>
+<li><p>2: Same as 1. Additionally, merge patches that are within the
+faces of pairs of adjacent vertices. The old patches are
+requeued with their original weight so that a merge is only
+performed if the merge candidate has a lower weight than any of
+its consituent patches.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\geq 3\)</span>: Same as 2. Additionally, merge patches within
+the faces of pairs of adjacent vertices, but add a large weight
+to the requeued old patches. This ensures that the merge is
+always performed.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="vac-split-patch-size">
+<h3><a class="toc-backref" href="#id22">vac_split_patch_size</a><a class="headerlink" href="#vac-split-patch-size" title="Permalink to this headline"></a></h3>
+<p>Defines the maximum size of patches to be split during patch merging.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>3</p>
+</dd>
+<dt class="field-odd">Valid Values</dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\(\gt 1\)</span></p>
+</dd>
+</dl>
+<p>Before merging patches, all <a class="reference internal" href="#vac-merge-level"><span class="std std-ref">merge methods</span></a> find patches with less
+than <code class="docutils literal notranslate"><span class="pre">vac_split_patch_size</span></code> faces and ‘split’ them into 1-face patches. The
+original patches aren’t actually modified, rather they are re-queued along with
+their constituent faces. This allows the algorithm to find more merge candidates
+and then ‘fill in the gaps’ with the 1-face patches.</p>
+<p>The 1-face patches have a large weight, so they will only be used after all
+other patches are set. Therefore, the enclosure will tend retain the same
+patches as before the split, unless this is not possible due to a merge.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For best results, set <code class="docutils literal notranslate"><span class="pre">vac_split_patch_size</span></code> to 3 for quadrilateral meshes
+and to 5 for triangular meshes. This avoids splitting too many patches.</p>
+</div>
+</section>
+</section>
+<section id="vsa-parameters">
+<h2><a class="toc-backref" href="#id23">VSA Parameters</a><a class="headerlink" href="#vsa-parameters" title="Permalink to this headline"></a></h2>
+<p>The following namelist parameters apply only to the VSA algorithm. For more
+information, refer to the <a class="reference external" href="https://www.truchas.org/docs/sphinx/tools/RadE/patches/vsa.html">VSA algorithm documentation</a>.</p>
+<section id="vsa-max-iter">
+<h3><a class="toc-backref" href="#id24">vsa_max_iter</a><a class="headerlink" href="#vsa-max-iter" title="Permalink to this headline"></a></h3>
+<p>Defines the maximum number of iterations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>1000</p>
+</dd>
+<dt class="field-odd">Valid Values</dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\(\geq 1\)</span></p>
+</dd>
+</dl>
+<p>The algorithm stops when <code class="docutils literal notranslate"><span class="pre">vsa_max_iter</span></code> is reached, regardless of other
+terminating conditions.</p>
+</section>
+<section id="vsa-min-delta">
+<h3><a class="toc-backref" href="#id25">vsa_min_delta</a><a class="headerlink" href="#vsa-min-delta" title="Permalink to this headline"></a></h3>
+<p>Defines the minimum allowable change in patch proxies between successive
+iterations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>real</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>1.0E-6</p>
+</dd>
+<dt class="field-odd">Valid Values</dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\(\geq 0.0\)</span></p>
+</dd>
+</dl>
+<p>At the end of each iteration, the new patch proxies for the next iteration are
+computed and compared against the old proxies. The algorithm keeps track of the
+<em>minimum</em> change between the old and new proxies. This change is computed as the
+sum of the squares of the difference between the old and new proxy vectors. If
+the minimum change in patch proxies is less than <code class="docutils literal notranslate"><span class="pre">vsa_min_delta</span></code>, the
+algorithm stops at that iteration.</p>
+</section>
+<section id="vsa-face-patch-ratio">
+<h3><a class="toc-backref" href="#id26">vsa_face_patch_ratio</a><a class="headerlink" href="#vsa-face-patch-ratio" title="Permalink to this headline"></a></h3>
+<p>Defines the ratio of total faces to total patches, and by extension the total
+number of patches.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>real</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>4.0</p>
+</dd>
+<dt class="field-odd">Valid Values</dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\(\geq 1.0\)</span></p>
+</dd>
+</dl>
+<p>Since the number of faces is fixed, this parameter determines the total number
+of patches in the final configuration:</p>
+<div class="math notranslate nohighlight">
+\[\text{(Total Patches)} = \text{(Total Faces)}\ /\ \text{vsa_face_patch_ratio}\]</div>
+<p>Rather than set the number of patches explicitly, which is mesh dependent,
+expressing this parameter as a ratio allows the same value to apply to a variety
+of meshes.</p>
+</section>
+<section id="vsa-max-patch-radius">
+<h3><a class="toc-backref" href="#id27">vsa_max_patch_radius</a><a class="headerlink" href="#vsa-max-patch-radius" title="Permalink to this headline"></a></h3>
+<p>Defines the desired maximum radius for a patch.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>real</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">sqrt(huge(0.0_r8))</span></code></p>
+</dd>
+<dt class="field-odd">Valid Values</dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\(\gt 0.0\)</span></p>
+</dd>
+</dl>
+<p>This parameter is used to compute the <em>size bias</em> term of the weight of a face
+relative to a patch proxy. Refer to the <a class="reference external" href="https://www.truchas.org/docs/sphinx/tools/RadE/patches/vsa.html#size-bias">size bias section</a> of
+the VSA documentation for more information on how the parameter affects the face
+weight computation.</p>
+<p>Note that the default value of this parameter is <code class="docutils literal notranslate"><span class="pre">sqrt(huge(0.0_r8))</span></code>
+because it is squared in the face weight computation. By taking the root of
+<code class="docutils literal notranslate"><span class="pre">huge(0.0_r8)</span></code> we prevent floating point overflow errors. Numerically,
+the default value on the order of <span class="math notranslate nohighlight">\(1.34\times 10^{154}\)</span>.</p>
+</section>
+<section id="vsa-normalize-dist">
+<h3><a class="toc-backref" href="#id28">vsa_normalize_dist</a><a class="headerlink" href="#vsa-normalize-dist" title="Permalink to this headline"></a></h3>
+<p>Determines whether to normalize the distance bias.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>logical</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>True</p>
+</dd>
+</dl>
+<p>This parameter affects the computation of the <em>distance bias</em> term of the weight
+of a face relative to a patch proxy. Broadly speaking, enabling normalization
+tends to produce patches with a similar number of faces, regardless of the
+physical size of each patch. Conversely, disabling normalization tends to make
+all patches about the same physical size, regardless of the number of faces in
+each patch.</p>
+<p>Refer to the <a class="reference external" href="https://www.truchas.org/docs/sphinx/tools/RadE/patches/vsa.html#distance-bias">distance bias section</a>
+of the VSA documentation for more information on how the parameter affects the
+face weight computation.</p>
+</section>
+<section id="vsa-random-seed">
+<h3><a class="toc-backref" href="#id29">vsa_random_seed</a><a class="headerlink" href="#vsa-random-seed" title="Permalink to this headline"></a></h3>
+<p>Defines the seed for the random number generator used to pick the initial seed
+patches.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>The seed is taken from the system clock.</p>
+</dd>
+<dt class="field-odd">Valid Values</dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\(\gt 0\)</span></p>
+</dd>
+</dl>
+<p>The VSA algorithm uses a ‘farthest-point’ initialization method to choose the
+seed patches for the first iteration. To start, a random face in each connected
+component of the enclosure is chosen as a seed patch. Then, seed patches are
+added one at a time by performing a <a class="reference external" href="https://www.truchas.org/docs/sphinx/tools/RadE/patches/vsa.html#geometry-partitioning">partitioning</a>
+and then choosing the face with highest total distortion as the new seed patch.</p>
+<p>This parameter sets the seed for the random number generator used to pick the
+first seed patch in each connected component. Therefore, runs with the same
+value for this parameter will produce identical results. If this parameter is
+not specified, then the seed is taken from the system clock and results will
+likely vary from run to run.</p>
+</section>
+</section>
+<section id="metis-parameters-advanced">
+<h2><a class="toc-backref" href="#id30">METIS Parameters (Advanced)</a><a class="headerlink" href="#metis-parameters-advanced" title="Permalink to this headline"></a></h2>
+<p>The METIS graph partitioning routine admits the following integer-valued options
+that may be specified, though all have reasonable defaults so that none must be
+specified. See the METIS documentation <a class="footnote-reference brackets" href="#footcite-karypis-1998-metis" id="id6">2</a>
+for more details on these options.</p>
+<section id="metis-ptype">
+<h3><a class="toc-backref" href="#id31">metis_ptype</a><a class="headerlink" href="#metis-ptype" title="Permalink to this headline"></a></h3>
+<p>Specifies the partitioning method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>0</p>
+</dd>
+<dt class="field-odd">Valid Values</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>0: Multilevel recursive bisection</p></li>
+<li><p>1: Multilevel <span class="math notranslate nohighlight">\(k\)</span>-way partitioning</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="metis-objtype">
+<h3><a class="toc-backref" href="#id32">metis_objtype</a><a class="headerlink" href="#metis-objtype" title="Permalink to this headline"></a></h3>
+<p>Specifies the type of objective.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>0</p>
+</dd>
+<dt class="field-odd">Valid Values</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>0: Edge-cut minimization.</p></li>
+<li><p>1: Total communication volume minimization.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="metis-ctype">
+<h3><a class="toc-backref" href="#id33">metis_ctype</a><a class="headerlink" href="#metis-ctype" title="Permalink to this headline"></a></h3>
+<p>Specifies the matching scheme to be used during coarsening.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>1</p>
+</dd>
+<dt class="field-odd">Valid Values</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>0: Random matching</p></li>
+<li><p>1: Sorted heavy-edge matching</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="metis-iptype">
+<h3><a class="toc-backref" href="#id34">metis_iptype</a><a class="headerlink" href="#metis-iptype" title="Permalink to this headline"></a></h3>
+<p>Specifies the algorithm used during initial partitioning (recursive bisection
+only).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>0</p>
+</dd>
+<dt class="field-odd">Valid Values</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>0: Grows a bisection using a greedy strategy</p></li>
+<li><p>1: Computes a bisection at random followed by a refinement</p></li>
+<li><p>2: Derives a separator from an edge cut.</p></li>
+<li><p>3: Grow a bisection using a greedy node-based strategy</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="metis-niter">
+<h3><a class="toc-backref" href="#id35">metis_niter</a><a class="headerlink" href="#metis-niter" title="Permalink to this headline"></a></h3>
+<p>Specifies the number of iterations of the refinement algorithm at each stage of
+the uncoarsening process.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>10</p>
+</dd>
+<dt class="field-odd">Valid Values</dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\(\geq 1\)</span></p>
+</dd>
+</dl>
+</section>
+<section id="metis-minconn">
+<h3><a class="toc-backref" href="#id36">metis_minconn</a><a class="headerlink" href="#metis-minconn" title="Permalink to this headline"></a></h3>
+<p>Specifies whether the partitioning procedure should seek to minimize the maximum
+degree of the subdomain graph. The subdomain graph is the graph in which each
+partition is a node, and edges connect subdomains with a shared interface.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>0</p>
+</dd>
+<dt class="field-odd">Valid Values</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>0: Does not explicitly minimize the maximum connectivity.</p></li>
+<li><p>1: Explicitly minimize the maximum connectivity.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="metis-no2hop">
+<h3><a class="toc-backref" href="#id37">metis_no2hop</a><a class="headerlink" href="#metis-no2hop" title="Permalink to this headline"></a></h3>
+<p>Specifies that the coarsening will not perform any 2–hop matchings when the
+standard matching approach fails to sufficiently coarsen the graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>1</p>
+</dd>
+<dt class="field-odd">Valid Values</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>0: Performs a 2–hop matching.</p></li>
+<li><p>1: Does not perform a 2–hop matching.</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The 2–hop matching is very effective for graphs with power-law degree
+distributions.</p>
+</div>
+</section>
+<section id="metis-contig">
+<h3><a class="toc-backref" href="#id38">metis_contig</a><a class="headerlink" href="#metis-contig" title="Permalink to this headline"></a></h3>
+<p>Specifies whether the partitioning procedure should produce partitions that are
+contiguous. If the dual graph of the mesh is not connected this option is
+ignored.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>0</p>
+</dd>
+<dt class="field-odd">Valid Values</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p>0: Does not force contiguous partitions.</p></li>
+<li><p>1: Forces contiguous partitions.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+<section id="metis-dbglvl">
+<h3><a class="toc-backref" href="#id39">metis_dbglvl</a><a class="headerlink" href="#metis-dbglvl" title="Permalink to this headline"></a></h3>
+<p>Specifies the amount and type of diagnostic information that will be written to
+<strong>stderr</strong> by the partitioning procedure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>0</p>
+</dd>
+<dt class="field-odd">Valid Values</dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\(\geq 1\)</span></p>
+</dd>
+</dl>
+<p>The default <cite>0</cite> means no output. Use <cite>1</cite> to write some basic information. Refer
+to the METIS documentation <a class="footnote-reference brackets" href="#footcite-karypis-1998-metis" id="id7">2</a> for the many
+other possible values and the output they generate.</p>
+<p id="id8"><dl class="footnote brackets">
+<dt class="label" id="footcite-cohen-steiner-2004-vsa"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>David Cohen-Steiner, Pierre Alliez, and Mathieu Desbrun. Variational Shape Approximation. In <em>ACM SIGGRAPH 2004 Papers</em>, SIGGRAPH ‘04, 905–914. New York, NY, USA, 2004. ACM. <a class="reference external" href="https://doi.org/10.1145/1186562.1015817">doi:10.1145/1186562.1015817</a>.</p>
+</dd>
+<dt class="label" id="footcite-karypis-1998-metis"><span class="brackets">2</span><span class="fn-backref">(<a href="#id2">1</a>,<a href="#id6">2</a>,<a href="#id7">3</a>)</span></dt>
+<dd><p>George Karypis and Vipin Kumar. A fast and high quality multilevel scheme for partitioning irregular graphs. <em>SIAM J. Sci. Comput.</em>, 20(1):359–392, December 1998.</p>
+</dd>
+</dl>
+</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="PATCHES_Namelist.html" class="btn btn-neutral float-left" title="36.2.3. PATCHES Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, LANL.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

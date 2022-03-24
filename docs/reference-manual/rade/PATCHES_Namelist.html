@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>36.2.3. PATCHES Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PATCHES Namelist (Expert Options)" href="PATCHES_Namelist_Expert_Options.html" />
+    <link rel="prev" title="36.2.2. CHAPARRAL Namelist" href="CHAPARRAL_Namelist.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Truchas Reference Manual
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ALTMESH_Namelist/index.html">2. ALTMESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BC_Namelist/index.html">3. BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BODY_Namelist/index.html">4. BODY Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DIFFUSION_Solver_Namelist/index.html">5. DIFFUSION Solver Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DS_SOURCE_Namelist/index.html">6. DS_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html">7. ELECTROMAGNETICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_RADIATION_Namelist/index.html">8. ENCLOSURE_RADIATION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_SURFACE_Namelist/index.html">9. ENCLOSURE_SURFACE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../EVAPORATION_Namelist/index.html">10. EVAPORATION Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_Namelist/index.html">11. FLOW Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_BC_Namelist/index.html">12. FLOW_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html">13. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FUNCTION_Namelist/index.html">14. FUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../INDUCTION_COIL_Namelist/index.html">15. INDUCTION_COIL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../LEGACY_SOLID_MECHANICS_Namelist/index.html">16. LEGACY_SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">17. MATERIAL and PHASE Namelists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">18. MESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">19. NUMERICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">20. OUTPUTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">21. PHASE_CHANGE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">22. PHYSICAL_CONSTANTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">23. PHYSICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">24. PROBE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">25. RESTART Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">26. SIMULATION_CONTROL Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">27. SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">28. SOLID_MECHANICS_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">29. SPECIES_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">30. THERMAL_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">31. THERMAL_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">32. TOOLPATH Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">33. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">34. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">35. VISCOPLASTIC_MODEL Namelist</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">36. Radiation Enclosure Tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#introduction">36.1. Introduction</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#invoking-genre">36.2. Invoking GENRE</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ENCLOSURE_Namelist.html">36.2.1. ENCLOSURE Namelist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CHAPARRAL_Namelist.html">36.2.2. CHAPARRAL Namelist</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">36.2.3. PATCHES Namelist</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#general-guidance">General Guidance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#components">Components</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#invoking-vizre">36.3. Invoking VIZRE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#invoking-cmpre">36.4. Invoking CMPRE</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Truchas Reference Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html"><span class="section-number">36. </span>Radiation Enclosure Tools</a> &raquo;</li>
+      <li><span class="section-number">36.2.3. </span>PATCHES Namelist</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/rade/PATCHES_Namelist.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="patches-namelist">
+<h1><span class="section-number">36.2.3. </span>PATCHES Namelist<a class="headerlink" href="#patches-namelist" title="Permalink to this headline"></a></h1>
+<p>The <strong>PATCHES</strong> namelist defines the parameters used by the patching algorithms.
+The namelist supports many parameters, but not all parameters are used by all
+algorithms. Parameters only used by a particular algorithm are prefixed with the
+algorithm’s name. These parameters are described in detail below.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Required/Optional</dt>
+<dd class="field-odd"><p>Optional</p>
+</dd>
+<dt class="field-even">Single/Multiple Instances</dt>
+<dd class="field-even"><p>Single</p>
+</dd>
+</dl>
+<section id="general-guidance">
+<h2>General Guidance<a class="headerlink" href="#general-guidance" title="Permalink to this headline"></a></h2>
+<p>Genre’s patching allows the Chaparral library to group faces together into
+patches. This has two main purposes, both especially useful in large problems:</p>
+<ol class="arabic simple">
+<li><p>To reduce the output file size. In many scenarios, the radiation enclosure
+output produced by Genre is prohibitively large (on the order of 100s of GB).
+It can take a very long time to write these files to disk, or it may be
+impossible for Truchas to fit into memory.</p></li>
+<li><p>To reduce the need for very high <a class="reference internal" href="CHAPARRAL_Namelist.html#hemicube-resolution"><span class="std std-ref">hemicube_resolution</span></a> on fine meshes. As face mesh
+resolution increases, increasingly fine <code class="docutils literal notranslate"><span class="pre">hemicube_resolution</span></code> is needed to
+resolve view factors. This quadratically increases the genre runtime. By
+grouping faces into patches, the need for high <code class="docutils literal notranslate"><span class="pre">hemicube_resolution</span></code> is
+less.</p></li>
+</ol>
+<p>Genre offers several patching algorithms, but for most situations, the
+<code class="docutils literal notranslate"><span class="pre">'METIS'</span></code> algorithm (default) is the best choice for speed, accuracy, and
+simplicity. The <a class="reference internal" href="#metis-face-patch-ratio">metis_face_patch_ratio</a> can be tuned as needed. A sample input
+is given below, and is considered a good starting point for most problems. One
+should always view the patches using <a class="reference internal" href="index.html#invoking-vizre"><span class="std std-ref">Vizre</span></a> to
+assess their quality.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&amp;</span><span class="n">PATCHES</span>
+  <span class="n">metis_face_patch_ratio</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="o">/</span>
+</pre></div>
+</div>
+<p><sup>Example PATCHES namelist</sup></p>
+<a class="reference internal image-reference" href="../_images/basic_hemi_metis_1.png"><img alt="../_images/basic_hemi_metis_1.png" class="align-center" src="../_images/basic_hemi_metis_1.png" style="width: 40%;" /></a>
+<p><sup>Result of patching on the ‘basic hemi’ enclosure.</sup></p>
+</section>
+<section id="components">
+<h2>Components<a class="headerlink" href="#components" title="Permalink to this headline"></a></h2>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#metis-parameters" id="id3">METIS Parameters</a></p>
+<ul>
+<li><p><a class="reference internal" href="#metis-face-patch-ratio" id="id4">metis_face_patch_ratio</a></p></li>
+<li><p><a class="reference internal" href="#metis-edge-weight" id="id5">metis_edge_weight</a></p></li>
+<li><p><a class="reference internal" href="#metis-face-weight" id="id6">metis_face_weight</a></p></li>
+<li><p><a class="reference internal" href="#metis-ncuts" id="id7">metis_ncuts</a></p></li>
+<li><p><a class="reference internal" href="#metis-seed" id="id8">metis_seed</a></p></li>
+<li><p><a class="reference internal" href="#metis-ufactor" id="id9">metis_ufactor</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="PATCHES_Namelist_Expert_Options.html">Expert Options</a></li>
+</ul>
+</div>
+<section id="metis-parameters">
+<h3><a class="toc-backref" href="#id3">METIS Parameters</a><a class="headerlink" href="#metis-parameters" title="Permalink to this headline"></a></h3>
+<p>The following namelist parameters apply only to the METIS algorithm. For more
+information, refer to the <a class="reference external" href="https://www.truchas.org/docs/sphinx/tools/RadE/patches/metis.html">METIS algorithm documentation</a>.</p>
+<p>The METIS algorithm constructs the weighted dual graph of the enclosure and
+passes it to the METIS library <a class="footnote-reference brackets" href="#footcite-karypis-1998-metis" id="id1">1</a> to
+partition the dual graph. The METIS namelist parameters are thus divided into
+two: those that are used to construct the dual graph, and those that are passed
+directly to the METIS graph partitioner.</p>
+<p>We first discuss the three parameters used during initialization, and then
+briefly present the 12 METIS library parameters passed to the graph partitioner.</p>
+<section id="metis-face-patch-ratio">
+<h4><a class="toc-backref" href="#id4">metis_face_patch_ratio</a><a class="headerlink" href="#metis-face-patch-ratio" title="Permalink to this headline"></a></h4>
+<p>Defines the ratio of total faces to total desired patches, and by extension the
+final number of patches generated.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>real</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>4.0</p>
+</dd>
+<dt class="field-odd">Valid Values</dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\(\geq 1.0\)</span></p>
+</dd>
+</dl>
+<p>This parameter determines the number of partitions <span class="math notranslate nohighlight">\(N_p\)</span> passed to the METIS
+graph partitioner:</p>
+<div class="math notranslate nohighlight">
+\[N_p = \frac{N_f}{R}\]</div>
+<p>where <span class="math notranslate nohighlight">\(N_f\)</span> is the total number of faces and <span class="math notranslate nohighlight">\(R\)</span> is the
+<code class="docutils literal notranslate"><span class="pre">metis_face_patch_ratio</span></code>. Since the METIS library is free to produce less
+partitions than requested, <span class="math notranslate nohighlight">\(N_p\)</span> is not necessarily the final number of
+patches.</p>
+<p>The METIS library must ensure that the constraints on the objective function are
+satisfied (see <a class="reference external" href="https://www.truchas.org/docs/sphinx/tools/RadE/patches/metis.html#partitioning-objective">partitioning objective</a>),
+and can thus produce a drastically different number of partitions than
+requested. In particular, when <a class="reference internal" href="#metis-face-weight">metis_face_weight</a> is enabled for an enclosure
+with faces of vastly different sizes, the requirement to evenly divide the total
+enclosure surface area among the patches might produce significantly fewer
+partitions than requested.</p>
+<p>Moreover, after the METIS library partitions the dual graph the patch splitting
+step breaks up disconnected patches which may increase the final patch count. In
+short, <span class="math notranslate nohighlight">\(N_p\)</span> is only a suggestion for the final patch count. Consider tweaking
+other parameters if an exact patch count is desired.</p>
+</section>
+<section id="metis-edge-weight">
+<h4><a class="toc-backref" href="#id5">metis_edge_weight</a><a class="headerlink" href="#metis-edge-weight" title="Permalink to this headline"></a></h4>
+<p>Determines whether to weight the edges of the dual graph by the corresponding
+enclosure edge lengths.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>logical</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>True</p>
+</dd>
+</dl>
+<p>This parameter determines whether the Euclidean length of the enclosure edges
+are assigned as edge weights in the dual graph passed to the METIS library. If
+the parameter is false, then the dual graph edges are assigned a weight of 1.</p>
+<p>Refer to the <a class="reference external" href="https://www.truchas.org/docs/sphinx/tools/RadE/patches/metis.html#edge-weight">edge weight section</a>
+of the METIS algorithm documentation for more information on how the parameter
+affects the final patch configuration.</p>
+</section>
+<section id="metis-face-weight">
+<h4><a class="toc-backref" href="#id6">metis_face_weight</a><a class="headerlink" href="#metis-face-weight" title="Permalink to this headline"></a></h4>
+<p>Determines whether to weight the vertices of the dual graph by the corresponding
+enclosure face areas.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>logical</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>True</p>
+</dd>
+</dl>
+<p>This parameter determines whether the area of the enclosure faces are assigned
+as vertex weights in the dual graph passed to the METIS library. If the
+parameter is false, then the dual graph vertices are assigned a weight of 1.</p>
+<p>Refer to the <a class="reference external" href="https://www.truchas.org/docs/sphinx/tools/RadE/patches/metis.html#face-weight">face weight section</a>
+of the METIS algorithm documentation for more information on how the parameter
+affects the final patch configuration.</p>
+</section>
+<section id="metis-ncuts">
+<h4><a class="toc-backref" href="#id7">metis_ncuts</a><a class="headerlink" href="#metis-ncuts" title="Permalink to this headline"></a></h4>
+<p>Specifies the number of different partitionings that will be computed. The final
+partitioning will be the one that achieves the best edge-cut or communication
+volume.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>1</p>
+</dd>
+<dt class="field-odd">Valid Values</dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\(\geq 1\)</span></p>
+</dd>
+</dl>
+</section>
+<section id="metis-seed">
+<h4><a class="toc-backref" href="#id8">metis_seed</a><a class="headerlink" href="#metis-seed" title="Permalink to this headline"></a></h4>
+<p>Specifies the seed for the random number generator.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>-1</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>With the default option, patches are not deterministic (depending on the
+platform). If it is necessary for two runs with identical input to produce
+identical output, set this parameter.</p>
+</div>
+</section>
+<section id="metis-ufactor">
+<h4><a class="toc-backref" href="#id9">metis_ufactor</a><a class="headerlink" href="#metis-ufactor" title="Permalink to this headline"></a></h4>
+<p>Specifies the maximum allowed load imbalance among the partitions. A value of
+<span class="math notranslate nohighlight">\(n\)</span> indicates that the allowed load imbalance is <span class="math notranslate nohighlight">\((1+n)/1000\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>1 for recursive bisection (i.e., an imbalance of 1.001); 30 for
+<span class="math notranslate nohighlight">\(k\)</span>-way partitioning (i.e., an imbalance of 1.03).</p>
+</dd>
+<dt class="field-odd">Valid Values</dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\(\geq 1\)</span></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For large enclosures, this parameter can be useful to give METIS more leeway
+in optimizing the patches.</p>
+</div>
+<p id="id2"><dl class="footnote brackets">
+<dt class="label" id="footcite-karypis-1998-metis"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>
+<dd><p>George Karypis and Vipin Kumar. A fast and high quality multilevel scheme for partitioning irregular graphs. <em>SIAM J. Sci. Comput.</em>, 20(1):359–392, December 1998.</p>
+</dd>
+</dl>
+</p>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="CHAPARRAL_Namelist.html" class="btn btn-neutral float-left" title="36.2.2. CHAPARRAL Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="PATCHES_Namelist_Expert_Options.html" class="btn btn-neutral float-right" title="PATCHES Namelist (Expert Options)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021, LANL.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
