@@ -87,6 +87,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">34. VFUNCTION Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">35. VISCOPLASTIC_MODEL Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../rade/index.html">36. Radiation Enclosure Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">37. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
 </ul>
 
         </div>
@@ -120,7 +121,7 @@
 <section id="invoking-truchas">
 <h2><span class="section-number">1.1. </span>Invoking TRUCHAS<a class="headerlink" href="#invoking-truchas" title="Permalink to this headline"></a></h2>
 <p>Truchas is executed in serial using a command of the form</p>
-<p><code class="docutils literal notranslate"><span class="pre">truchas</span> <span class="pre">[-h]</span> <span class="pre">[-d[:n]]</span> <span class="pre">[-o:outdir]</span> <span class="pre">[-r:rstfile]</span> <span class="pre">infile</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">truchas</span> <span class="pre">[-h]</span> <span class="pre">[-f]</span> <span class="pre">[-m]</span> <span class="pre">[-d[:n]]</span> <span class="pre">[-o:outdir]</span> <span class="pre">[-r:rstfile]</span> <span class="pre">infile</span></code></p>
 <p>assuming <code class="docutils literal notranslate"><span class="pre">truchas</span></code> is the name of the executable. The brackets denote optional arguments that are described in <a class="reference internal" href="#truchas-command-line-option"><span class="std std-numref">Table 1.1.1</span></a></p>
 <span id="truchas-command-line-option"></span><table class="colwidths-given tight-table docutils align-default" id="id1">
 <caption><span class="caption-number">Table 1.1.1 </span><span class="caption-text">Truchas Command Line Options</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
@@ -136,6 +137,12 @@
 <tbody>
 <tr class="row-even"><td><p>-h</p></td>
 <td><p>Print a usage summary of the command line options and exit.</p></td>
+</tr>
+<tr class="row-odd"><td><p>-f</p></td>
+<td><p>Force overwrite of output directory contents.</p></td>
+</tr>
+<tr class="row-even"><td><p>-m</p></td>
+<td><p>Turn on memory diagnostics. Writes to a .mem file in the output directory.</p></td>
 </tr>
 <tr class="row-odd"><td><p>-d[:n]</p></td>
 <td><p>Sets the debug output level <strong>n</strong>. The default level is 0, which produces no debug output, with levels 1 and 2 producing progressively more debug output. <strong>-d</strong> is equivalent to <strong>-d:1</strong>.</p></td>
