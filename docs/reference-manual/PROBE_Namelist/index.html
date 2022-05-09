@@ -66,12 +66,12 @@
 <li class="toctree-l2"><a class="reference internal" href="#overview">24.1. Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#probe-namelist-features">24.2. PROBE Namelist Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#components">24.3. Components</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#coord">24.3.1. coord</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#coord-scale-factor">24.3.2. coord_scale_factor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#data">24.3.3. data</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#data-file">24.3.4. data_file</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#description">24.3.5. description</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#digits">24.3.6. digits</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#coord">coord</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#coord-scale-factor">coord_scale_factor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data">data</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-file">data_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#description">description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#digits">digits</a></li>
 </ul>
 </li>
 </ul>
@@ -83,12 +83,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">29. SPECIES_BC Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">30. THERMAL_BC Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">31. THERMAL_SOURCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">32. TOOLPATH Namelist (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">33. TURBULENCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">34. VFUNCTION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">35. VISCOPLASTIC_MODEL Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">36. Radiation Enclosure Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/index.html">37. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">32. TOOLHEAD Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">33. TOOLPATH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">34. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">35. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">36. VISCOPLASTIC_MODEL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">37. Radiation Enclosure Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">38. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
 </ul>
 
         </div>
@@ -141,7 +142,7 @@
 <li><p><a class="reference internal" href="#prb-dgts"><span class="std std-ref">digits</span></a></p></li>
 </ul>
 <section id="coord">
-<span id="prb-c"></span><h3><span class="section-number">24.3.1. </span>coord<a class="headerlink" href="#coord" title="Permalink to this headline"></a></h3>
+<span id="prb-c"></span><h3>coord<a class="headerlink" href="#coord" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The spatial coordinates of the location of the probe. These coordinates may be further scaled by an optional scaling factor; see <a class="reference internal" href="#prb-csf"><span class="std std-ref">coord_scale_factor</span></a></div>
 <div class="line"><strong>Type</strong>        : real 3-vector</div>
@@ -150,7 +151,7 @@
 </div>
 </section>
 <section id="coord-scale-factor">
-<span id="prb-csf"></span><h3><span class="section-number">24.3.2. </span>coord_scale_factor<a class="headerlink" href="#coord-scale-factor" title="Permalink to this headline"></a></h3>
+<span id="prb-csf"></span><h3>coord_scale_factor<a class="headerlink" href="#coord-scale-factor" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A multiplicative scaling factor applied to the coordinates of the probe.</div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -158,7 +159,7 @@
 </div>
 </section>
 <section id="data">
-<span id="prb-d"></span><h3><span class="section-number">24.3.3. </span>data<a class="headerlink" href="#data" title="Permalink to this headline"></a></h3>
+<span id="prb-d"></span><h3>data<a class="headerlink" href="#data" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The data quantity whose value will be recorded. The available options are:</div>
 </div>
@@ -175,7 +176,7 @@
 </div>
 </section>
 <section id="data-file">
-<span id="prb-df"></span><h3><span class="section-number">24.3.4. </span>data_file<a class="headerlink" href="#data-file" title="Permalink to this headline"></a></h3>
+<span id="prb-df"></span><h3>data_file<a class="headerlink" href="#data-file" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The name of the probe output file. The file will be created in the output directory, and any existing file will be overwritten. Each probe must write to a different output file.</div>
 <div class="line"><strong>Type</strong>        : string</div>
@@ -183,7 +184,7 @@
 </div>
 </section>
 <section id="description">
-<span id="prb-desc"></span><h3><span class="section-number">24.3.5. </span>description<a class="headerlink" href="#description" title="Permalink to this headline"></a></h3>
+<span id="prb-desc"></span><h3>description<a class="headerlink" href="#description" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : An optional text string that will be written to the header of the output file.</div>
 <div class="line"><strong>Type</strong>        : string</div>
@@ -191,7 +192,7 @@
 </div>
 </section>
 <section id="digits">
-<span id="prb-dgts"></span><h3><span class="section-number">24.3.6. </span>digits<a class="headerlink" href="#digits" title="Permalink to this headline"></a></h3>
+<span id="prb-dgts"></span><h3>digits<a class="headerlink" href="#digits" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The number of significant digits in the output data.</div>
 <div class="line"><strong>Type</strong>        : integer</div>

@@ -58,11 +58,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#overview">15.1. Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#induction-coil-namelist-features">15.2. INDUCTION_COIL Namelist Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#components">15.3. Components</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#center">15.3.1. Center</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#current">15.3.2. Current</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#length">15.3.3. Length</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#nturns">15.3.4. NTurns</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#radius">15.3.5. Radius</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#center">Center</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#current">Current</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#length">Length</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nturns">NTurns</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#radius">Radius</a></li>
 </ul>
 </li>
 </ul>
@@ -83,12 +83,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">29. SPECIES_BC Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">30. THERMAL_BC Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">31. THERMAL_SOURCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">32. TOOLPATH Namelist (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">33. TURBULENCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">34. VFUNCTION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">35. VISCOPLASTIC_MODEL Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">36. Radiation Enclosure Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/index.html">37. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">32. TOOLHEAD Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">33. TOOLPATH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">34. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">35. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">36. VISCOPLASTIC_MODEL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">37. Radiation Enclosure Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">38. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
 </ul>
 
         </div>
@@ -146,7 +147,7 @@
 <li><p><a class="reference internal" href="#ic-rad"><span class="std std-ref">Radius</span></a></p></li>
 </ul>
 <section id="center">
-<span id="ic-cen"></span><h3><span class="section-number">15.3.1. </span>Center<a class="headerlink" href="#center" title="Permalink to this headline"></a></h3>
+<span id="ic-cen"></span><h3>Center<a class="headerlink" href="#center" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A 3-vector <span class="math notranslate nohighlight">\(x_0\)</span> giving the position of the center of the coil; cf. <a class="reference internal" href="#fig-induc-coil-schematic"><span class="std std-numref">Figure 15.1.1</span></a>.</div>
 <div class="line"><strong>Physical dimension</strong>: L</div>
@@ -156,7 +157,7 @@
 </div>
 </section>
 <section id="current">
-<span id="ic-cur"></span><h3><span class="section-number">15.3.2. </span>Current<a class="headerlink" href="#current" title="Permalink to this headline"></a></h3>
+<span id="ic-cur"></span><h3>Current<a class="headerlink" href="#current" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Amplitude of the sinusoidally-varying current in the coil.</div>
 <div class="line"><strong>Physical dimension</strong>: I</div>
@@ -167,7 +168,7 @@
 </div>
 </section>
 <section id="length">
-<span id="ic-len"></span><h3><span class="section-number">15.3.3. </span>Length<a class="headerlink" href="#length" title="Permalink to this headline"></a></h3>
+<span id="ic-len"></span><h3>Length<a class="headerlink" href="#length" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Length <span class="math notranslate nohighlight">\(l\)</span> of the coil; cf. <a class="reference internal" href="#fig-induc-coil-schematic"><span class="std std-numref">Figure 15.1.1</span></a></div>
 <div class="line"><strong>Physical dimension</strong>: L</div>
@@ -178,7 +179,7 @@
 </div>
 </section>
 <section id="nturns">
-<span id="ic-nt"></span><h3><span class="section-number">15.3.4. </span>NTurns<a class="headerlink" href="#nturns" title="Permalink to this headline"></a></h3>
+<span id="ic-nt"></span><h3>NTurns<a class="headerlink" href="#nturns" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Number of turns of the coil; cf. <a class="reference internal" href="#fig-induc-coil-schematic"><span class="std std-numref">Figure 15.1.1</span></a></div>
 <div class="line"><strong>Type</strong>        : integer</div>
@@ -187,7 +188,7 @@
 </div>
 </section>
 <section id="radius">
-<span id="ic-rad"></span><h3><span class="section-number">15.3.5. </span>Radius<a class="headerlink" href="#radius" title="Permalink to this headline"></a></h3>
+<span id="ic-rad"></span><h3>Radius<a class="headerlink" href="#radius" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Radius <span class="math notranslate nohighlight">\(r\)</span> of the coil; cf. <a class="reference internal" href="#fig-induc-coil-schematic"><span class="std std-numref">Figure 15.1.1</span></a></div>
 <div class="line"><strong>Physical dimension</strong>: L</div>

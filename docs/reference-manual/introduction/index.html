@@ -46,8 +46,8 @@
 <li class="toctree-l2"><a class="reference internal" href="#input-file-format">1.3. Input File Format</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#physical-units">1.4. Physical Units</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#working-with-output-files">1.5. Working With Output Files</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#write-restart-py">1.5.1. write-restart.py</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#write-gmv-py">1.5.2. write-gmv.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#write-restart-py">write-restart.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#write-gmv-py">write-gmv.py</a></li>
 </ul>
 </li>
 </ul>
@@ -82,12 +82,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">29. SPECIES_BC Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">30. THERMAL_BC Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">31. THERMAL_SOURCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">32. TOOLPATH Namelist (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">33. TURBULENCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">34. VFUNCTION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">35. VISCOPLASTIC_MODEL Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">36. Radiation Enclosure Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/index.html">37. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">32. TOOLHEAD Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">33. TOOLPATH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">34. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">35. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">36. VISCOPLASTIC_MODEL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">37. Radiation Enclosure Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">38. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
 </ul>
 
         </div>
@@ -214,7 +215,7 @@ commas or newlines, that assign values to namelist variables. Namelist input is 
 <span id="um-work-with-output"></span><h2><span class="section-number">1.5. </span>Working With Output Files<a class="headerlink" href="#working-with-output-files" title="Permalink to this headline"></a></h2>
 <p>As described earlier, Truchas writes its output files to the directory named in the <strong>-o</strong> option, or if omitted, to a directory whose name is generated from the base name of the input file: <strong>myprob_output</strong> if <strong>myprob.inp</strong> is the input file, for example. Two primary files are written, a <code class="docutils literal notranslate"><span class="pre">.log</span></code> file that is a copy of the terminal output, and a <code class="docutils literal notranslate"><span class="pre">.h5</span></code> HDF5 file that contains all the simulation results. HDF5 is a widely-used format for storing and managing data, and thereare a great many freely-available tools for working with these files. In this release, which is the first to feature HDF5 output, we provide only a few essential tools, described below, for processing the <code class="docutils literal notranslate"><span class="pre">.h5</span></code> file. We expect to provide additional tools in future releases. Probe data is written to multi-column text files in the output directory.</p>
 <section id="write-restart-py">
-<h3><span class="section-number">1.5.1. </span>write-restart.py<a class="headerlink" href="#write-restart-py" title="Permalink to this headline"></a></h3>
+<h3>write-restart.py<a class="headerlink" href="#write-restart-py" title="Permalink to this headline"></a></h3>
 <p>The program <code class="docutils literal notranslate"><span class="pre">write-restart.py</span></code> is used to create Truchas restart files using data from an <code class="docutils literal notranslate"><span class="pre">.h5</span></code> output file. The command syntax is</p>
 <p><code class="docutils literal notranslate"><span class="pre">write-restart.py</span> <span class="pre">[options]</span> <span class="pre">H5FILE</span></code></p>
 <p>where <strong>H5FILE</strong> is the <strong>.h5</strong> output file and the possible options are:</p>
@@ -243,7 +244,7 @@ commas or newlines, that assign values to namelist variables. Namelist input is 
 </dl>
 </section>
 <section id="write-gmv-py">
-<h3><span class="section-number">1.5.2. </span>write-gmv.py<a class="headerlink" href="#write-gmv-py" title="Permalink to this headline"></a></h3>
+<h3>write-gmv.py<a class="headerlink" href="#write-gmv-py" title="Permalink to this headline"></a></h3>
 <p>The python script <code class="docutils literal notranslate"><span class="pre">write-gmv.py</span></code> is used to create input files for the GMV visualization tool. Formerly distributed gratis, GMV has been commercialized (<a class="reference external" href="http://www.generalmeshviewer.com">http://www.generalmeshviewer.com</a>). Earlier free versions of the tool can still be found on the internet, however, and it remains available within LANL. The command syntax is</p>
 <p><code class="docutils literal notranslate"><span class="pre">write-gmv.py</span> <span class="pre">[options]</span> <span class="pre">H5FILE</span></code></p>
 <p>where <strong>H5FILE</strong> is the <strong>.h5</strong> output file. Use the option <strong>-h</strong> to get a full list of the available options.</p>

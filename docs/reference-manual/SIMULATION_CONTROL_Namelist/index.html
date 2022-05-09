@@ -69,10 +69,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#overview">26.1. Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#simulation-control-namelist-features">26.2. SIMULATION_CONTROL Namelist Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#components">26.3. Components</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#equation">26.3.1. Equation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#phase-init-dt">26.3.2. Phase_Init_Dt</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#phase-init-dt-factor">26.3.3. Phase_Init_Dt_Factor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#phase-start-times">26.3.4. Phase_Start_Times</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#equation">Equation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#phase-init-dt">Phase_Init_Dt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#phase-init-dt-factor">Phase_Init_Dt_Factor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#phase-start-times">Phase_Start_Times</a></li>
 </ul>
 </li>
 </ul>
@@ -82,12 +82,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">29. SPECIES_BC Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">30. THERMAL_BC Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">31. THERMAL_SOURCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">32. TOOLPATH Namelist (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">33. TURBULENCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">34. VFUNCTION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">35. VISCOPLASTIC_MODEL Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">36. Radiation Enclosure Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/index.html">37. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">32. TOOLHEAD Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">33. TOOLPATH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">34. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">35. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">36. VISCOPLASTIC_MODEL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">37. Radiation Enclosure Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">38. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
 </ul>
 
         </div>
@@ -138,7 +139,7 @@
 <li><p><a class="reference internal" href="#sc-pst"><span class="std std-ref">Phase_Start_Times</span></a></p></li>
 </ul>
 <section id="equation">
-<span id="sc-el"></span><h3><span class="section-number">26.3.1. </span>Equation<a class="headerlink" href="#equation" title="Permalink to this headline"></a></h3>
+<span id="sc-el"></span><h3>Equation<a class="headerlink" href="#equation" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : When approaching an event time, such as an output time, the time step sizes are gradually adjusted to hit the time precisely. This variable specifies the number of steps over which this occurs.</div>
 <div class="line"><strong>Type</strong>        : integer</div>
@@ -148,7 +149,7 @@
 </div>
 </section>
 <section id="phase-init-dt">
-<span id="sc-pid"></span><h3><span class="section-number">26.3.2. </span>Phase_Init_Dt<a class="headerlink" href="#phase-init-dt" title="Permalink to this headline"></a></h3>
+<span id="sc-pid"></span><h3>Phase_Init_Dt<a class="headerlink" href="#phase-init-dt" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The initial time step size to use for each of the simulation phases. This is the analog of <a class="reference internal" href="../NUMERICS_Namelist/index.html#numerics-dti"><span class="std std-ref">Dt_Init</span></a>, which is used for the initial (and default) phase of the simulation. Either <a class="reference internal" href="#sc-pid"><span class="std std-ref">Phase_Init_Dt</span></a> or <a class="reference internal" href="#sc-pidf"><span class="std std-ref">Phase_Init_Dt_Factor</span></a> must be specified, but not both.</div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -156,7 +157,7 @@
 </div>
 </section>
 <section id="phase-init-dt-factor">
-<span id="sc-pidf"></span><h3><span class="section-number">26.3.3. </span>Phase_Init_Dt_Factor<a class="headerlink" href="#phase-init-dt-factor" title="Permalink to this headline"></a></h3>
+<span id="sc-pidf"></span><h3>Phase_Init_Dt_Factor<a class="headerlink" href="#phase-init-dt-factor" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The initial time step size used for each of the simulation phases is this factor times the last step size of the preceding phase. Either <a class="reference internal" href="#sc-pid"><span class="std std-ref">Phase_Init_Dt</span></a> or <a class="reference internal" href="#sc-pidf"><span class="std std-ref">Phase_Init_Dt_Factor</span></a> must be specified, but not both.</div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -164,7 +165,7 @@
 </div>
 </section>
 <section id="phase-start-times">
-<span id="sc-pst"></span><h3><span class="section-number">26.3.4. </span>Phase_Start_Times<a class="headerlink" href="#phase-start-times" title="Permalink to this headline"></a></h3>
+<span id="sc-pst"></span><h3>Phase_Start_Times<a class="headerlink" href="#phase-start-times" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The list of starting times of each of the phases.</div>
 <div class="line"><strong>Type</strong>        : real array</div>

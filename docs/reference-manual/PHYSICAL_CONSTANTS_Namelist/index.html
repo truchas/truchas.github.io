@@ -65,10 +65,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#overview">22.1. Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#physical-constants-namelist-features">22.2. PHYSICAL_CONSTANTS Namelist Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#components">22.3. Components</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#absolute-zero">22.3.1. Absolute_Zero</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#stefan-boltzmann">22.3.2. Stefan_Boltzmann</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#vacuum-permeability">22.3.3. Vacuum_Permeability</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#vacuum-permittivity">22.3.4. Vacuum_Permittivity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#absolute-zero">Absolute_Zero</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stefan-boltzmann">Stefan_Boltzmann</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vacuum-permeability">Vacuum_Permeability</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vacuum-permittivity">Vacuum_Permittivity</a></li>
 </ul>
 </li>
 </ul>
@@ -82,12 +82,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">29. SPECIES_BC Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">30. THERMAL_BC Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">31. THERMAL_SOURCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">32. TOOLPATH Namelist (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">33. TURBULENCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">34. VFUNCTION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">35. VISCOPLASTIC_MODEL Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">36. Radiation Enclosure Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/index.html">37. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">32. TOOLHEAD Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">33. TOOLPATH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">34. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">35. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">36. VISCOPLASTIC_MODEL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">37. Radiation Enclosure Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">38. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
 </ul>
 
         </div>
@@ -138,7 +139,7 @@
 <li><p><a class="reference internal" href="#phyco-vpt"><span class="std std-ref">Vacuum_Permittivity</span></a></p></li>
 </ul>
 <section id="absolute-zero">
-<span id="phyco-az"></span><h3><span class="section-number">22.3.1. </span>Absolute_Zero<a class="headerlink" href="#absolute-zero" title="Permalink to this headline"></a></h3>
+<span id="phyco-az"></span><h3>Absolute_Zero<a class="headerlink" href="#absolute-zero" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The value of absolute-zero in the temperature scale used. The default value is 0 for Kelvin. Centigrade would use the value −273.15, for example. This constant is used by thermal radiation boundary conditions and enclosure (view factor) radiation.</div>
 <div class="line"><strong>Physical dimension</strong> <span class="math notranslate nohighlight">\(\Theta\)</span></div>
@@ -148,7 +149,7 @@
 </div>
 </section>
 <section id="stefan-boltzmann">
-<span id="phyco-sb"></span><h3><span class="section-number">22.3.2. </span>Stefan_Boltzmann<a class="headerlink" href="#stefan-boltzmann" title="Permalink to this headline"></a></h3>
+<span id="phyco-sb"></span><h3>Stefan_Boltzmann<a class="headerlink" href="#stefan-boltzmann" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Stefan-Boltzmann constant for thermal radiation. The default is its value in SI units. This constant is used by thermal radiation boundary condititions and enclosure (view factor) radiation.</div>
 <div class="line"><strong>Physical dimension</strong> <span class="math notranslate nohighlight">\(E/{T.L^2.\Theta^4}\)</span></div>
@@ -158,7 +159,7 @@
 </div>
 </section>
 <section id="vacuum-permeability">
-<span id="phyco-vpm"></span><h3><span class="section-number">22.3.3. </span>Vacuum_Permeability<a class="headerlink" href="#vacuum-permeability" title="Permalink to this headline"></a></h3>
+<span id="phyco-vpm"></span><h3>Vacuum_Permeability<a class="headerlink" href="#vacuum-permeability" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The magnetic permeability of free space. The default is its value in SI units. This parameter is used by the electromagnetics solver.</div>
 <div class="line"><strong>Physical dimension</strong> <span class="math notranslate nohighlight">\(M.L.T^{-2}.I^{-2}\)</span></div>
@@ -168,7 +169,7 @@
 </div>
 </section>
 <section id="vacuum-permittivity">
-<span id="phyco-vpt"></span><h3><span class="section-number">22.3.4. </span>Vacuum_Permittivity<a class="headerlink" href="#vacuum-permittivity" title="Permalink to this headline"></a></h3>
+<span id="phyco-vpt"></span><h3>Vacuum_Permittivity<a class="headerlink" href="#vacuum-permittivity" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The electric permittivity of free space. The default is its value in SI units. This parameter is used by the electromagnetics solver.</div>
 <div class="line"><strong>Physical dimension</strong> <span class="math notranslate nohighlight">\(M^{-1}.L^{-3}.T^{4}.I^{2}\)</span></div>

@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>32. TOOLPATH Namelist (Experimental) &mdash; Truchas Reference Manual 1.0.0 documentation</title>
+  <title>33. TOOLPATH Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
@@ -20,8 +20,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="33. TURBULENCE Namelist" href="../TURBULENCE_Namelist/index.html" />
-    <link rel="prev" title="31. THERMAL_SOURCE Namelist" href="../THERMAL_SOURCE_Namelist/index.html" /> 
+    <link rel="next" title="34. TURBULENCE Namelist" href="../TURBULENCE_Namelist/index.html" />
+    <link rel="prev" title="32. TOOLHEAD Namelist" href="../TOOLHEAD_Namelist/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -71,30 +71,29 @@
 <li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">29. SPECIES_BC Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">30. THERMAL_BC Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">31. THERMAL_SOURCE Namelist</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">32. TOOLPATH Namelist (Experimental)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#overview">32.1. Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#toolpath-namelist-features">32.2. TOOLPATH Namelist Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#components">32.3. Components</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#name">32.3.1. Name</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#command-string">32.3.2. Command_String</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#command-file">32.3.3. Command_File</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#start-time">32.3.4. Start_Time</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#start-coord">32.3.5. Start_Coord</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#time-scale-factor">32.3.6. Time_Scale_Factor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#coord-scale-factor">32.3.7. Coord_Scale_Factor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#write-plotfile">32.3.8. Write_Plotfile</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#plotfile-dt">32.3.9. Plotfile_Dt</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#partition-ds">32.3.10. Partition_Ds</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#the-toolpath-command-language">32.3.11. The Toolpath Command language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">32. TOOLHEAD Namelist</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">33. TOOLPATH Namelist</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#namelist-variables">33.1. Namelist Variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#name">name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#command-string">command_string</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#command-file">command_file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#start-time">start_time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#start-coord">start_coord</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#time-scale-factor">time_scale_factor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#coord-scale-factor">coord_scale_factor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#write-plotfile">write_plotfile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#plotfile-dt">plotfile_dt</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#partition-ds">partition_ds</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#the-toolpath-command-language">33.2. The Toolpath Command Language</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">33. TURBULENCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">34. VFUNCTION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">35. VISCOPLASTIC_MODEL Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">36. Radiation Enclosure Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/index.html">37. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">34. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">35. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">36. VISCOPLASTIC_MODEL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">37. Radiation Enclosure Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">38. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
 </ul>
 
         </div>
@@ -111,7 +110,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li><span class="section-number">32. </span>TOOLPATH Namelist (Experimental)</li>
+      <li><span class="section-number">33. </span>TOOLPATH Namelist</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/TOOLPATH_Namelist/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -121,137 +120,261 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="toctree-wrapper compound" id="toolpath-namelist">
+  <section id="toolpath-namelist">
+<span id="id1"></span><h1><span class="section-number">33. </span>TOOLPATH Namelist<a class="headerlink" href="#toolpath-namelist" title="Permalink to this headline"></a></h1>
+<p>The TOOLPATH namelist defines a path through space, especially that taken
+by a machine tool, such as a laser or build platform, in the course of a
+manufacturing process. Its use is not limited to such cases, however. The
+path is specified using a simple command language that is adapted to common
+CNC machine languages. The current implementation is limited to a path
+through Cartesian 3-space (3-axis). The command language is described at
+the end of the section.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="field-list simple">
+<dt class="field-odd">Required/Optional</dt>
+<dd class="field-odd"><p>Optional</p>
+</dd>
+<dt class="field-even">Single/Multiple Instances</dt>
+<dd class="field-even"><p>Multiple</p>
+</dd>
+</dl>
 </div>
-<section id="toolpath-namelist-experimental">
-<h1><span class="section-number">32. </span>TOOLPATH Namelist (Experimental)<a class="headerlink" href="#toolpath-namelist-experimental" title="Permalink to this headline"></a></h1>
-<section id="overview">
-<h2><span class="section-number">32.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
-<p>The <a class="reference internal" href="#toolpath-namelist"><span class="std std-ref">TOOLPATH</span></a> namelist defines a path through space, especially that taken by a machine tool, such as a laser or build platform, in the course of a manufacturing process. Its use is not limited to such cases, however. The path is specified using a simple command language that is adapted to common CNC machine languages. The current implementation is limited to a path through Cartesian 3-space (3-axis). The command language is described at the end of the chapter.</p>
-</section>
-<section id="toolpath-namelist-features">
-<h2><span class="section-number">32.2. </span>TOOLPATH Namelist Features<a class="headerlink" href="#toolpath-namelist-features" title="Permalink to this headline"></a></h2>
-<div class="line-block">
-<div class="line"><strong>Required/Optional        :</strong> Optional</div>
-<div class="line"><strong>Single/Multiple Instances:</strong> Multiple</div>
-</div>
-</section>
-<section id="components">
-<h2><span class="section-number">32.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this headline"></a></h2>
+<section id="namelist-variables">
+<h2><span class="section-number">33.1. </span>Namelist Variables<a class="headerlink" href="#namelist-variables" title="Permalink to this headline"></a></h2>
+<div class="contents local topic" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#tp-name"><span class="std std-ref">Name</span></a></p></li>
-<li><p><a class="reference internal" href="#tp-cs"><span class="std std-ref">Command_String</span></a></p></li>
-<li><p><a class="reference internal" href="#tp-cf"><span class="std std-ref">Command_File</span></a></p></li>
-<li><p><a class="reference internal" href="#tp-st"><span class="std std-ref">Start_Time</span></a></p></li>
-<li><p><a class="reference internal" href="#tp-sc"><span class="std std-ref">Start_Coord</span></a></p></li>
-<li><p><a class="reference internal" href="#tp-tsf"><span class="std std-ref">Time_Scale_Factor</span></a></p></li>
-<li><p><a class="reference internal" href="#tp-csf"><span class="std std-ref">Coord_Scale_Factor</span></a></p></li>
-<li><p><a class="reference internal" href="#tp-wp"><span class="std std-ref">Write_Plotfile</span></a></p></li>
-<li><p><a class="reference internal" href="#tp-pd"><span class="std std-ref">Plotfile_Dt</span></a></p></li>
-<li><p><a class="reference internal" href="#tp-pds"><span class="std std-ref">Partition_Ds</span></a></p></li>
+<li><p><a class="reference internal" href="#name" id="id2">name</a></p></li>
+<li><p><a class="reference internal" href="#command-string" id="id3">command_string</a></p></li>
+<li><p><a class="reference internal" href="#command-file" id="id4">command_file</a></p></li>
+<li><p><a class="reference internal" href="#start-time" id="id5">start_time</a></p></li>
+<li><p><a class="reference internal" href="#start-coord" id="id6">start_coord</a></p></li>
+<li><p><a class="reference internal" href="#time-scale-factor" id="id7">time_scale_factor</a></p></li>
+<li><p><a class="reference internal" href="#coord-scale-factor" id="id8">coord_scale_factor</a></p></li>
+<li><p><a class="reference internal" href="#write-plotfile" id="id9">write_plotfile</a></p></li>
+<li><p><a class="reference internal" href="#plotfile-dt" id="id10">plotfile_dt</a></p></li>
+<li><p><a class="reference internal" href="#partition-ds" id="id11">partition_ds</a></p></li>
 </ul>
-<section id="name">
-<span id="tp-name"></span><h3><span class="section-number">32.3.1. </span>Name<a class="headerlink" href="#name" title="Permalink to this headline"></a></h3>
-<div class="line-block">
-<div class="line"><strong>Description</strong> : A unique name used to identify a particular instance of this namelist. Clients will reference the toolpath using this name.</div>
-<div class="line"><strong>Type</strong>        : case sensitive string (31 characters max)</div>
-<div class="line"><strong>Default</strong>     : none</div>
 </div>
+<section id="name">
+<h3><a class="toc-backref" href="#id2">name</a><a class="headerlink" href="#name" title="Permalink to this headline"></a></h3>
+<p>A unique name used to identify a particular instance of this namelist.
+Clients will reference the toolpath using this name.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>case sensitive string (31 characters max)</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>none</p>
+</dd>
+</dl>
 </section>
 <section id="command-string">
-<span id="tp-cs"></span><h3><span class="section-number">32.3.2. </span>Command_String<a class="headerlink" href="#command-string" title="Permalink to this headline"></a></h3>
-<div class="line-block">
-<div class="line"><strong>Description</strong> : A string from which to read the commands that define the toolpath. This is only suitable for relatively simple paths; use <a class="reference internal" href="#tp-cf"><span class="std std-ref">Command_File</span></a> instead for more complex paths.</div>
-<div class="line"><strong>Type</strong>        : string (1000 characters max)</div>
-<div class="line"><strong>Default</strong>     : none</div>
-<div class="line"><strong>Notes</strong>       : Use single quotes to delimit the string to avoid conflicts with double quotes used within the commands.</div>
+<h3><a class="toc-backref" href="#id3">command_string</a><a class="headerlink" href="#command-string" title="Permalink to this headline"></a></h3>
+<p>A string from which to read the commands that define the toolpath. This is
+only suitable for very simple paths; use <a class="reference internal" href="#command-file">command_file</a> instead for more
+complex paths.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>string (1000 characters max)</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>none</p>
+</dd>
+</dl>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Use single quotes to delimit the string to avoid conflicts with double
+quotes used within the commands.</p>
 </div>
 </section>
 <section id="command-file">
-<span id="tp-cf"></span><h3><span class="section-number">32.3.3. </span>Command_File<a class="headerlink" href="#command-file" title="Permalink to this headline"></a></h3>
-<div class="line-block">
-<div class="line"><strong>Description</strong> : The path to a file from which to read the commands that define the toolpath. If not an absolute path, it will be interpreted as a path relative to the Truchas input file directory.</div>
-<div class="line"><strong>Type</strong>        : string</div>
-<div class="line"><strong>Default</strong>     : none</div>
-<div class="line"><strong>Notes</strong>       : C++ style comments may used in the file; all text from the ‘//’ to the end of the line is ignored.</div>
+<h3><a class="toc-backref" href="#id4">command_file</a><a class="headerlink" href="#command-file" title="Permalink to this headline"></a></h3>
+<p>The path to a file from which to read the commands that define the toolpath.
+If not an absolute path, it will be interpreted as a path relative to the
+Truchas input file directory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>none</p>
+</dd>
+</dl>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>C++ style comments may used in the file; all text from the “//”
+to the end of the line is ignored.</p>
 </div>
 </section>
 <section id="start-time">
-<span id="tp-st"></span><h3><span class="section-number">32.3.4. </span>Start_Time<a class="headerlink" href="#start-time" title="Permalink to this headline"></a></h3>
-<div class="line-block">
-<div class="line"><strong>Description</strong> : The starting time of the toolpath.</div>
-<div class="line"><strong>Type</strong>        : real</div>
-<div class="line"><strong>Default</strong>     : 0</div>
-</div>
+<h3><a class="toc-backref" href="#id5">start_time</a><a class="headerlink" href="#start-time" title="Permalink to this headline"></a></h3>
+<p>The starting time of the toolpath.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>real</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>0</p>
+</dd>
+</dl>
 </section>
 <section id="start-coord">
-<span id="tp-sc"></span><h3><span class="section-number">32.3.5. </span>Start_Coord<a class="headerlink" href="#start-coord" title="Permalink to this headline"></a></h3>
-<div class="line-block">
-<div class="line"><strong>Description</strong> : The starting coordinates of the toolpath.</div>
-<div class="line"><strong>Type</strong>        : real 3-vector</div>
-<div class="line"><strong>Default</strong>     : (0,0,0)</div>
-</div>
+<h3><a class="toc-backref" href="#id6">start_coord</a><a class="headerlink" href="#start-coord" title="Permalink to this headline"></a></h3>
+<p>The starting coordinates of the toolpath.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>real 3-vector</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>(0,0,0)</p>
+</dd>
+</dl>
 </section>
 <section id="time-scale-factor">
-<span id="tp-tsf"></span><h3><span class="section-number">32.3.6. </span>Time_Scale_Factor<a class="headerlink" href="#time-scale-factor" title="Permalink to this headline"></a></h3>
-<div class="line-block">
-<div class="line"><strong>Description</strong> : An optional multiplicative factor by which to scale all time values. This applies to all namelist variables as well as toolpath commands.</div>
-<div class="line"><strong>Type</strong>        : real</div>
-<div class="line"><strong>Default</strong>     : 1</div>
-<div class="line"><strong>Valid values</strong>: <span class="math notranslate nohighlight">\(\gt 0\)</span></div>
-<div class="line"><strong>Notes</strong>       : This is applied appropriately to speeds and accelerations in the toolpath commands.</div>
-</div>
+<h3><a class="toc-backref" href="#id7">time_scale_factor</a><a class="headerlink" href="#time-scale-factor" title="Permalink to this headline"></a></h3>
+<p>An optional multiplicative factor by which to scale all time values. This
+is applied to all relevant namelist variables as well as toolpath commands,
+including their speeds and accelerations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>real</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>1</p>
+</dd>
+<dt class="field-odd">Valid values</dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\(\gt 0\)</span></p>
+</dd>
+</dl>
 </section>
 <section id="coord-scale-factor">
-<span id="tp-csf"></span><h3><span class="section-number">32.3.7. </span>Coord_Scale_Factor<a class="headerlink" href="#coord-scale-factor" title="Permalink to this headline"></a></h3>
-<div class="line-block">
-<div class="line"><strong>Description</strong> : An optional multiplicative factor by which to scale all time values. This applies to all namelist variables as well as toolpath commands.</div>
-<div class="line"><strong>Type</strong>        : real</div>
-<div class="line"><strong>Default</strong>     : 1</div>
-<div class="line"><strong>Valid values</strong>: &gt; 0</div>
-<div class="line"><strong>Notes</strong>       : This is applied appropriately to speeds and accelerations in the toolpath commands.</div>
-</div>
+<h3><a class="toc-backref" href="#id8">coord_scale_factor</a><a class="headerlink" href="#coord-scale-factor" title="Permalink to this headline"></a></h3>
+<p>An optional multiplicative factor by which to scale all time values. This
+is applied to all relevant namelist variables as well as toolpath commands,
+including their speeds and accelerations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>real</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>1</p>
+</dd>
+<dt class="field-odd">Valid values</dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\(&gt; 0\)</span></p>
+</dd>
+</dl>
 </section>
 <section id="write-plotfile">
-<span id="tp-wp"></span><h3><span class="section-number">32.3.8. </span>Write_Plotfile<a class="headerlink" href="#write-plotfile" title="Permalink to this headline"></a></h3>
-<div class="line-block">
-<div class="line"><strong>Description</strong> : Enable this flag to have a discrete version of the toolpath written to a disk file. The file will be located in the Truchas output directory and be named <code class="docutils literal notranslate"><span class="pre">toolpath-name.dat</span></code>, where <strong>name</strong> is the name assigned to the namelist. If enabled, <a class="reference internal" href="#tp-pd"><span class="std std-ref">Plotfile_Dt</span></a> must be specified.</div>
-<div class="line"><strong>Type</strong>        : logical</div>
-<div class="line"><strong>Default</strong>     : False</div>
-<div class="line"><strong>Notes</strong>       : The file is a multi-column text file where each line gives the toolpath data at a specific time. The columns are, in order, the segment index, the time, the three position coordinates, and the flag settings (0 for clear and 1 for set). Not all flags are written, only those that were set at some point. The initial comment line starting with a ‘#’ labels the columns. Data is written at the end point times of each path segment, and at zero or more equally spaced times within each segment interval. The latter frequency is determined by <a class="reference internal" href="#tp-pd"><span class="std std-ref">Plotfile_Dt</span></a>.</div>
+<h3><a class="toc-backref" href="#id9">write_plotfile</a><a class="headerlink" href="#write-plotfile" title="Permalink to this headline"></a></h3>
+<p>Enable this flag to have a discrete version of the toolpath written to a
+disk file. The file will be located in the Truchas output directory and
+be named <cite>toolpath-&lt;name&gt;.dat</cite>, where <cite>&lt;name&gt;</cite> is the name assigned to the
+namelist. If enabled, <a class="reference internal" href="#plotfile-dt">plotfile_dt</a> must be specified.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>logical</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>false</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The file is a multi-column text file where each line gives the
+toolpath data at a specific time. The columns are, in order, the segment
+index, the time, the three position coordinates, and the flag settings
+(0 for clear and 1 for set). Not all flags are written, only those that
+were set at some point. The initial comment line starting with a “#”
+labels the columns. Data is written at the end point times of each path
+segment, and at zero or more equally spaced times within each segment
+interval. The latter frequency is determined by <a class="reference internal" href="#plotfile-dt">plotfile_dt</a>.</p>
 </div>
 </section>
 <section id="plotfile-dt">
-<span id="tp-pd"></span><h3><span class="section-number">32.3.9. </span>Plotfile_Dt<a class="headerlink" href="#plotfile-dt" title="Permalink to this headline"></a></h3>
-<div class="line-block">
-<div class="line"><strong>Description</strong> : Output time frequency used when writing the toolpath to a disk file. See <a class="reference internal" href="#tp-wp"><span class="std std-ref">Write_Plotfile</span></a>.</div>
-<div class="line"><strong>Type</strong>        : real</div>
-<div class="line"><strong>Default</strong>     : none</div>
-<div class="line"><strong>Valid values</strong>: <span class="math notranslate nohighlight">\(&gt; 0\)</span></div>
-</div>
+<h3><a class="toc-backref" href="#id10">plotfile_dt</a><a class="headerlink" href="#plotfile-dt" title="Permalink to this headline"></a></h3>
+<p>Output time frequency used when writing the toolpath to a disk file.
+See <a class="reference internal" href="#write-plotfile">write_plotfile</a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>real</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>none</p>
+</dd>
+<dt class="field-odd">Valid values</dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\(&gt; 0\)</span></p>
+</dd>
+</dl>
 </section>
 <section id="partition-ds">
-<span id="tp-pds"></span><h3><span class="section-number">32.3.10. </span>Partition_Ds<a class="headerlink" href="#partition-ds" title="Permalink to this headline"></a></h3>
-<div class="line-block">
-<div class="line"><strong>Description</strong> : Assign a value to this parameter to generate an additional discrete version of the toolpath that is required by some clients. The value specifies the desired spacing in path length. Refer to the client’s documentation on whether this is needed and for further information.</div>
-<div class="line"><strong>Type</strong>        : real</div>
-<div class="line"><strong>Default</strong>     : none</div>
-<div class="line"><strong>Valid values</strong>: <span class="math notranslate nohighlight">\(&gt; 0\)</span></div>
-<div class="line"><strong>Note</strong>        : Some clients require a discete version of the toolpath that consists of a time-ordered sequence of (time, coordinate) pairs. The sequence includes the end points of the segments. In addition each segment is partitioned into one or more parts of equal path length approximately equal to, but no greater than <a class="reference internal" href="#tp-pds"><span class="std std-ref">Partition_Ds</span></a>.</div>
+<h3><a class="toc-backref" href="#id11">partition_ds</a><a class="headerlink" href="#partition-ds" title="Permalink to this headline"></a></h3>
+<p>Assign a value to this parameter to generate an additional discrete version
+of the toolpath that is required by some clients. The value specifies the
+desired spacing in path length. Refer to the client’s documentation on
+whether this is needed and for further details.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>real</p>
+</dd>
+<dt class="field-even">Default</dt>
+<dd class="field-even"><p>none</p>
+</dd>
+<dt class="field-odd">Valid values</dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\(&gt; 0\)</span></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Some clients require a discete version of the toolpath that consists
+of a time-ordered sequence of (time, coordinate) pairs. The sequence
+includes the end points of the segments. In addition each segment is
+partitioned into one or more parts of equal path length approximately
+equal to, but no greater than <a class="reference internal" href="#partition-ds">partition_ds</a>.</p>
 </div>
 </section>
-<section id="the-toolpath-command-language">
-<h3><span class="section-number">32.3.11. </span>The Toolpath Command language<a class="headerlink" href="#the-toolpath-command-language" title="Permalink to this headline"></a></h3>
-<p>A toolpath is represented as a sequence of <span class="math notranslate nohighlight">\(n + 2\)</span> continuous path segments defined on time intervals <span class="math notranslate nohighlight">\((-\infty,t_0], [t_0,t_1], [t_1,t_2], . . . ,[t_n,\infty).\)</span> The individual segments are simple paths (e.g., no motion or linear motion) that are defined by path commands. A set of flags (0 through 31) is associated with each path segment. Clients of a toolpath can use the setting of a flag (set or clear) for a variety of purposes; for example, to indicate that a device is on or off for the duration of the segment.
-The toolpath command language is expressed using JSON text. The specification of a toolpath takes the form</p>
-<p><span class="math notranslate nohighlight">\([command, command, ......]\)</span></p>
-<p>where <span class="math notranslate nohighlight">\(command\)</span> is one of the following:</p>
-<p><strong>[“dwell”, dt]</strong> - Remain at the current position for the time interval <span class="math notranslate nohighlight">\(dt\)</span>.</p>
-<p><strong>[“moverel”, [dx,dy,dz], s, a, d]</strong> - Linear displacement from the current position. Motion accelerates from rest to a constant speed, and then decelerates to rest at the position (dx,dy,dz) relative to the current position. The linear speed, accleration, and deceleration are <strong>s</strong>,**a**, and <strong>d</strong>, respectively. If <strong>d</strong> is omitted, its value is taken to be <strong>a</strong>. If both <strong>a</strong> and <strong>d</strong> are omitted then instantaneous acceleration/deceleration to speed <strong>s</strong> is assumed.</p>
-<p><strong>[“setflag”,n1,n2,…]</strong>
-<strong>[“clrflag”,n1,n2,…]</strong> - Sets or clears the listed flags. 32 flags (0 through 31) are available. The setting of a flag holds for all subsequent motions (above) until changed.</p>
-<p>Except for the integer flag numbers, the real numeric values may be entered as integer or floating point numbers; that is, “1” is an acceptable alternative to “1.0”. The initial and final unbounded path segments are automatically generated and are not specified. The initial segment is a dwell at the position given by <a class="reference internal" href="#tp-sc"><span class="std std-ref">Start_Coord</span></a> that ends at time <span class="math notranslate nohighlight">\(t_0\)</span> given by <a class="reference internal" href="#tp-st"><span class="std std-ref">Start_Time</span></a>. Likewise the final segment is a dwell starting at a time and at a position determined by the preceding sequence of path segments. All flags start clear in the initial segment.</p>
 </section>
+<section id="the-toolpath-command-language">
+<h2><span class="section-number">33.2. </span>The Toolpath Command Language<a class="headerlink" href="#the-toolpath-command-language" title="Permalink to this headline"></a></h2>
+<p>A toolpath is represented as a continuous sequence of <span class="math notranslate nohighlight">\(2+n\)</span> path
+segments defined on time intervals <span class="math notranslate nohighlight">\((-\infty,t_0]\)</span>, <span class="math notranslate nohighlight">\([t_0,t_1]\)</span>,
+<span class="math notranslate nohighlight">\([t_1,t_2]\)</span>, …, <span class="math notranslate nohighlight">\([t_n,\infty)\)</span>. The initial and final unbounded
+path segments are automatically generated and are not specified. The
+individual segments are simple paths (e.g., no motion or linear motion) that
+are defined by path commands. The initial segment is a dwell at the position
+given by <a class="reference internal" href="#start-coord">start_coord</a> that ends at time <span class="math notranslate nohighlight">\(t_0\)</span> given by <a class="reference internal" href="#start-time">start_time</a>.
+Likewise the final segment is a dwell starting at a time and at a position
+determined by the preceding sequence of path segments. A set of flags
+(0 through 31) is associated with each path segment. Clients of a toolpath
+can use the setting of a flag (set or clear) for a variety of purposes; for
+example, to indicate that a device is on or off for the duration of the
+segment. All flags start clear in the initial segment. The toolpath command
+language is expressed using JSON text. Except for the integer flag numbers,
+the real numeric values may be entered as integer or floating point numbers;
+that is, “1” is an acceptable alternative to “1.0”. The specification of a
+toolpath takes the form</p>
+<blockquote>
+<div><p>[ <cite>command</cite>, <cite>command</cite>, … ]</p>
+</div></blockquote>
+<p>where <cite>command</cite> is one of the following:</p>
+<dl class="simple">
+<dt>[“dwell”, <span class="math notranslate nohighlight">\(dt\)</span> ]</dt><dd><p>Remain at the current position for the time interval <span class="math notranslate nohighlight">\(dt\)</span>.</p>
+</dd>
+<dt>[“moverel”, [ <span class="math notranslate nohighlight">\(dx,dy,dz\)</span> ], <span class="math notranslate nohighlight">\(s, a, d\)</span> ]</dt><dd><p>Linear displacement from the current position. Motion accelerates from
+rest to a constant speed, and then decelerates to rest at the position
+<span class="math notranslate nohighlight">\((dx,dy,dz)\)</span> relative to the current position. The linear speed,
+acceleration, and deceleration are <span class="math notranslate nohighlight">\(s\)</span>, <span class="math notranslate nohighlight">\(a\)</span>, and <span class="math notranslate nohighlight">\(d\)</span>,
+respectively. If <span class="math notranslate nohighlight">\(d\)</span> is omitted, its value is taken to be <span class="math notranslate nohighlight">\(a\)</span>.
+If both <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(d\)</span> are omitted then instantaneous acceleration
+(deceleration) to (from) speed <span class="math notranslate nohighlight">\(s\)</span> is assumed.</p>
+</dd>
+<dt>[“setflag”, <span class="math notranslate nohighlight">\(n_1, n_2,\ldots\)</span> ]</dt><dd><p>Sets the listed flags. The setting of a flag holds for all subsequent
+motions (above) until changed.</p>
+</dd>
+<dt>[“clrflag”, <span class="math notranslate nohighlight">\(n_1, n_2,\ldots\)</span> ]</dt><dd><p>Clears the listed flags. The setting of a flag holds for all subsequent
+motions (above) until changed.</p>
+</dd>
+</dl>
 </section>
 </section>
 
@@ -259,8 +382,8 @@ The toolpath command language is expressed using JSON text. The specification of
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../THERMAL_SOURCE_Namelist/index.html" class="btn btn-neutral float-left" title="31. THERMAL_SOURCE Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../TURBULENCE_Namelist/index.html" class="btn btn-neutral float-right" title="33. TURBULENCE Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../TOOLHEAD_Namelist/index.html" class="btn btn-neutral float-left" title="32. TOOLHEAD Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../TURBULENCE_Namelist/index.html" class="btn btn-neutral float-right" title="34. TURBULENCE Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

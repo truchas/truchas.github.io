@@ -57,13 +57,13 @@
 <li class="toctree-l2"><a class="reference internal" href="#flow-viscous-solver-namelist-features">13.2. FLOW_VISCOUS_SOLVER Namelist Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#flow-pressure-solver-namelist-features">13.3. FLOW_PRESSURE_SOLVER Namelist Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#components">13.4. Components</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#krylov-method">13.4.1. krylov_method</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#krylov-dim">13.4.2. krylov_dim</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#conv-rate-tol">13.4.3. conv_rate_tol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#abs-tol-rel-tol">13.4.4. abs_tol, rel_tol</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#max-ds-iter">13.4.5. max_ds_iter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#max-amg-iter">13.4.6. max_amg_iter</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#print-level">13.4.7. print_level</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#krylov-method">krylov_method</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#krylov-dim">krylov_dim</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#conv-rate-tol">conv_rate_tol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#abs-tol-rel-tol">abs_tol, rel_tol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#max-ds-iter">max_ds_iter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#max-amg-iter">max_amg_iter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#print-level">print_level</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#additional-hypre-parameters-expert">13.5. Additional HYPRE parameters (Expert)</a></li>
@@ -87,12 +87,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">29. SPECIES_BC Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">30. THERMAL_BC Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">31. THERMAL_SOURCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">32. TOOLPATH Namelist (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">33. TURBULENCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">34. VFUNCTION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">35. VISCOPLASTIC_MODEL Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">36. Radiation Enclosure Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/index.html">37. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">32. TOOLHEAD Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">33. TOOLPATH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">34. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">35. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">36. VISCOPLASTIC_MODEL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">37. Radiation Enclosure Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">38. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
 </ul>
 
         </div>
@@ -156,7 +157,7 @@
 <li><p><a class="reference internal" href="#fps-fvs-pl"><span class="std std-ref">print_level</span></a></p></li>
 </ul>
 <section id="krylov-method">
-<span id="fps-fvs-km"></span><h3><span class="section-number">13.4.1. </span>krylov_method<a class="headerlink" href="#krylov-method" title="Permalink to this headline"></a></h3>
+<span id="fps-fvs-km"></span><h3>krylov_method<a class="headerlink" href="#krylov-method" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Selects the Krylov method used by the HYPRE hybrid solver.</div>
 <div class="line"><strong>Type</strong>        : string</div>
@@ -165,7 +166,7 @@
 </div>
 </section>
 <section id="krylov-dim">
-<span id="fps-fvs-kd"></span><h3><span class="section-number">13.4.2. </span>krylov_dim<a class="headerlink" href="#krylov-dim" title="Permalink to this headline"></a></h3>
+<span id="fps-fvs-kd"></span><h3>krylov_dim<a class="headerlink" href="#krylov-dim" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The Krylov subspace dimension for the restarted GMRES method.</div>
 <div class="line"><strong>Type</strong>        : integer</div>
@@ -174,7 +175,7 @@
 </div>
 </section>
 <section id="conv-rate-tol">
-<span id="fps-fvs-crt"></span><h3><span class="section-number">13.4.3. </span>conv_rate_tol<a class="headerlink" href="#conv-rate-tol" title="Permalink to this headline"></a></h3>
+<span id="fps-fvs-crt"></span><h3>conv_rate_tol<a class="headerlink" href="#conv-rate-tol" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The convergence rate tolerance <span class="math notranslate nohighlight">\(\theta\)</span> where the hybrid solver switches to the more expensive <strong>AMG</strong> preconditioned <strong>Krylov</strong> solver. The average convergence rate after <span class="math notranslate nohighlight">\(n\)</span> iterations of the diagonally-scaled Krylov solver is <span class="math notranslate nohighlight">\(\rho_n = (‖r_n‖/‖r_0‖)^{1/n}\)</span>, where <span class="math notranslate nohighlight">\(r_n = Ax_n − b\)</span> is the residual of the linear system, and its convergence is considered too slow when</div>
 </div>
@@ -186,7 +187,7 @@
 </div>
 </section>
 <section id="abs-tol-rel-tol">
-<span id="fps-fvs-at"></span><h3><span class="section-number">13.4.4. </span>abs_tol, rel_tol<a class="headerlink" href="#abs-tol-rel-tol" title="Permalink to this headline"></a></h3>
+<span id="fps-fvs-at"></span><h3>abs_tol, rel_tol<a class="headerlink" href="#abs-tol-rel-tol" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The absolute and relative error tolerances <span class="math notranslate nohighlight">\(\epsilon_1\)</span> and <span class="math notranslate nohighlight">\(\epsilon_2\)</span> for the solution of the linear system. The test for convergence is <span class="math notranslate nohighlight">\(‖r‖ \leq max\{\epsilon_1,\epsilon_2‖b‖\}\)</span>, where <span class="math notranslate nohighlight">\(r = Ax − b\)</span> is the residual of the linear system.</div>
 </div>
@@ -196,21 +197,21 @@
 </div>
 </section>
 <section id="max-ds-iter">
-<span id="fps-fvs-mdi"></span><h3><span class="section-number">13.4.5. </span>max_ds_iter<a class="headerlink" href="#max-ds-iter" title="Permalink to this headline"></a></h3>
+<span id="fps-fvs-mdi"></span><h3>max_ds_iter<a class="headerlink" href="#max-ds-iter" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The maximum number of diagonally scaled Krylov iterations allowed. If convergence is not achieved within this number of iterations the hybrid solver will switch to the preconditioned Krylov solver.</div>
 <div class="line"><strong>Type</strong>        : integer</div>
 </div>
 </section>
 <section id="max-amg-iter">
-<span id="fps-fvs-mai"></span><h3><span class="section-number">13.4.6. </span>max_amg_iter<a class="headerlink" href="#max-amg-iter" title="Permalink to this headline"></a></h3>
+<span id="fps-fvs-mai"></span><h3>max_amg_iter<a class="headerlink" href="#max-amg-iter" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The maximum number of preconditioned Krylov iterations allowed.</div>
 <div class="line"><strong>Type</strong>        : integer</div>
 </div>
 </section>
 <section id="print-level">
-<span id="fps-fvs-pl"></span><h3><span class="section-number">13.4.7. </span>print_level<a class="headerlink" href="#print-level" title="Permalink to this headline"></a></h3>
+<span id="fps-fvs-pl"></span><h3>print_level<a class="headerlink" href="#print-level" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Set this parameter to 2 to have HYPRE write diagnostic data to the terminal for each solver iteration. This is only useful in debugging situations.</div>
 <div class="line"><strong>Default</strong>        : 0 (no output)</div>

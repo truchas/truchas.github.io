@@ -59,23 +59,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">17. MATERIAL and PHASE Namelists</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">18. MESH Namelist</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#overview">18.1. Overview</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#mesh-namelist-features">18.1.1. MESH Namelist Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mesh-namelist-features">MESH Namelist Features</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#components">18.2. Components</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#external-mesh-file">18.2.1. External Mesh file</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#external-mesh-file">External Mesh file</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#mesh-file">mesh_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#interface-side-sets">Interface_Side_Sets</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#gap-element-blocks-deprecated">gap_element_blocks (deprecated)</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#exodus-block-modulus">exodus_block_modulus</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#internally-generated-mesh">18.2.2. Internally Generated Mesh</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#internally-generated-mesh">Internally Generated Mesh</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#x-axis-y-axis-z-axis">x_axis, y_axis, z_axis</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#noise-factor-expert">noise_factor (expert)</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#common-variables">18.2.3. Common variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#common-variables">Common variables</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#coordinate-scale-factor">coordinate_scale_factor</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#rotation-angles">rotation_angles</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#partitioner">partitioner</a></li>
@@ -83,7 +83,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#first-partition">first_partition</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#metis-mesh-partitioning">18.2.4. METIS Mesh Partitioning</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#metis-mesh-partitioning">METIS Mesh Partitioning</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#metis-ptype">metis_ptype</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#metis-iptype">metis_iptype</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#metis-ctype">metis_ctype</a></li>
@@ -113,12 +113,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">29. SPECIES_BC Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">30. THERMAL_BC Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">31. THERMAL_SOURCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">32. TOOLPATH Namelist (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">33. TURBULENCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">34. VFUNCTION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">35. VISCOPLASTIC_MODEL Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">36. Radiation Enclosure Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/index.html">37. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">32. TOOLHEAD Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">33. TOOLPATH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">34. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">35. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">36. VISCOPLASTIC_MODEL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">37. Radiation Enclosure Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">38. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
 </ul>
 
         </div>
@@ -153,7 +154,7 @@
 <h2><span class="section-number">18.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
 <p>The <a class="reference internal" href="#mesh-namelist"><span class="std std-ref">MESH</span></a> namelist specifies the common mesh used by all physics models other than the induction heating model, which uses a separate tetrahedral mesh specified by the <a class="reference internal" href="../ALTMESH_Namelist/index.html#altmesh-namelist"><span class="std std-ref">ALTMESH</span></a> namelist. For simple demonstration problems, a rectilinear hexahedral mesh of a brick domain can be defined, but for most applications the mesh will need to be generated beforehand by some third party tool or tools and saved asa file that Truchas will read. At this time Exodus II <a class="footnote-reference brackets" href="#footcite-sjaardema2006exodus" id="id2">1</a> is the only supported mesh format (also sometimes known as Genesis). This well-known format is used by some mesh generation tools (<a class="reference external" href="https://cubit.sandia.gov/">Cubit</a>, for example) and utilities exist for translating from other formats to Exodus II. The unstructured 3D mesh may be a general mixed-element mesh consisting of non-degenerate hexehedral, tetrahedral, pyramid, and wedge/prism elements. The Exodus II format supports a partitioning of the elements into element blocks. It also supports the definition of side sets, which are collections of oriented element faces that describe mesh surfaces, either internal or boundary, and node sets which are collections of mesh nodes. Extensive use is made of this additional mesh metadata in assigning materials, initial conditions, boundary conditions, etc., to the mesh.</p>
 <section id="mesh-namelist-features">
-<h3><span class="section-number">18.1.1. </span>MESH Namelist Features<a class="headerlink" href="#mesh-namelist-features" title="Permalink to this headline"></a></h3>
+<h3>MESH Namelist Features<a class="headerlink" href="#mesh-namelist-features" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Required/Optional        :</strong> Required</div>
 <div class="line"><strong>Single/Multiple Instances:</strong> Single</div>
@@ -204,7 +205,7 @@
 </ul>
 </div>
 <section id="external-mesh-file">
-<h3><a class="toc-backref" href="#id8"><span class="section-number">18.2.1. </span>External Mesh file</a><a class="headerlink" href="#external-mesh-file" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id8">External Mesh file</a><a class="headerlink" href="#external-mesh-file" title="Permalink to this headline"></a></h3>
 <p>In typical usage, the mesh will be read from a specified Exodus II mesh file. Other input variables that follow specify optional modifications that can be made to the mesh after it is read.</p>
 <section id="mesh-file">
 <span id="m-mf"></span><h4><a class="toc-backref" href="#id9">mesh_file</a><a class="headerlink" href="#mesh-file" title="Permalink to this headline"></a></h4>
@@ -247,7 +248,7 @@
 </section>
 </section>
 <section id="internally-generated-mesh">
-<h3><a class="toc-backref" href="#id13"><span class="section-number">18.2.2. </span>Internally Generated Mesh</a><a class="headerlink" href="#internally-generated-mesh" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id13">Internally Generated Mesh</a><a class="headerlink" href="#internally-generated-mesh" title="Permalink to this headline"></a></h3>
 <p>A rectilinear hexahedral mesh for a brick domain <span class="math notranslate nohighlight">\([x_{min},x_{max}] × [y_{min},y_{max}] × [z_{min},z_{max}]\)</span> can be generated internally as part of a Truchas simulation using the following input variables. The mesh is the tensor product of 1D grids in each of the coordinate directions. Each coordinate grid is defined by a coarse grid whose intervals are subdivided into subintervals, optionally with biased sizes. The generated Exodus II mesh consists of a single element block with ID 1, and a side set is defined for each of the six sides of the domain with IDs 1 through 6 for the <span class="math notranslate nohighlight">\(x=x_{min}, x=x_{max}, y=y_{min}, y=y_{max}, z=z_{min},\)</span> and <span class="math notranslate nohighlight">\(z=z_{max}\)</span> sides, respectively. In addition, a different node set is defined for each of the 8 nodes at the corners of the domain, with IDs 1 through 8. The first node set is the <span class="math notranslate nohighlight">\((x_{min},y_{min},z_{min})\)</span> corner. It is followed by the remaining corners on the <span class="math notranslate nohighlight">\(z=z_{min}\)</span> side in a counter-clockwise order with respect to the <span class="math notranslate nohighlight">\(z\)</span> axis, and then the corners on the <span class="math notranslate nohighlight">\(z=z_{max}\)</span> side in the analogous manner. Note that while the mesh is formally structured, it is represented internally as a general unstructured mesh.</p>
 <section id="x-axis-y-axis-z-axis">
 <span id="m-xyza"></span><h4><a class="toc-backref" href="#id14">x_axis, y_axis, z_axis</a><a class="headerlink" href="#x-axis-y-axis-z-axis" title="Permalink to this headline"></a></h4>
@@ -302,7 +303,7 @@
 </section>
 </section>
 <section id="common-variables">
-<h3><a class="toc-backref" href="#id16"><span class="section-number">18.2.3. </span>Common variables</a><a class="headerlink" href="#common-variables" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id16">Common variables</a><a class="headerlink" href="#common-variables" title="Permalink to this headline"></a></h3>
 <p>The following variables apply to both types of meshes.</p>
 <section id="coordinate-scale-factor">
 <span id="m-csf"></span><h4><a class="toc-backref" href="#id17">coordinate_scale_factor</a><a class="headerlink" href="#coordinate-scale-factor" title="Permalink to this headline"></a></h4>
@@ -376,7 +377,7 @@
 </section>
 </section>
 <section id="metis-mesh-partitioning">
-<h3><a class="toc-backref" href="#id22"><span class="section-number">18.2.4. </span>METIS Mesh Partitioning</a><a class="headerlink" href="#metis-mesh-partitioning" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id22">METIS Mesh Partitioning</a><a class="headerlink" href="#metis-mesh-partitioning" title="Permalink to this headline"></a></h3>
 <p>When <strong>metis</strong> is specified for <strong>partitioner</strong>, a graph partitioning procedure from the METIS library isused to partition the dual graph of the mesh. This is the graph whose nodes are the mesh cells and edges are the faces shared by cells. The partitioning procedures have the following integer-valued options that may be specified, though all have reasonable defaults so that none must be specified. See the METIS documentation <a class="footnote-reference brackets" href="#footcite-karypis1998fast" id="id5">3</a> for more details on these options.</p>
 <section id="metis-ptype">
 <h4><a class="toc-backref" href="#id23">metis_ptype</a><a class="headerlink" href="#metis-ptype" title="Permalink to this headline"></a></h4>

@@ -69,20 +69,20 @@
 <li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">27. SOLID_MECHANICS Namelist</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">28. SOLID_MECHANICS_BC Namelist</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#overview">28.1. Overview</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#external-boundaries">28.1.1. External boundaries</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#internal-interfaces">28.1.2. Internal interfaces</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#external-boundaries">External boundaries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#internal-interfaces">Internal interfaces</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#solid-mechanics-bc-namelist-features">28.2. SOLID_MECHANICS_BC Namelist Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#components">28.3. Components</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#name">28.3.1. name</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#face-set-ids">28.3.2. face_set_ids</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#node-set-ids">28.3.3. node_set_ids</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#type">28.3.4. type</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#displacement">28.3.5. displacement</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#displacement-func">28.3.6. displacement_func</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#traction">28.3.7. traction</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#traction-func">28.3.8. traction_func</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#name">name</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#face-set-ids">face_set_ids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#node-set-ids">node_set_ids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#type">type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#displacement">displacement</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#displacement-func">displacement_func</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traction">traction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#traction-func">traction_func</a></li>
 </ul>
 </li>
 </ul>
@@ -90,12 +90,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">29. SPECIES_BC Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">30. THERMAL_BC Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">31. THERMAL_SOURCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">32. TOOLPATH Namelist (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">33. TURBULENCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">34. VFUNCTION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">35. VISCOPLASTIC_MODEL Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">36. Radiation Enclosure Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/index.html">37. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">32. TOOLHEAD Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">33. TOOLPATH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">34. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">35. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">36. VISCOPLASTIC_MODEL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">37. Radiation Enclosure Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">38. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
 </ul>
 
         </div>
@@ -130,7 +131,7 @@
 <h2><span class="section-number">28.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
 <p>The <a class="reference internal" href="#sm-bc-namelist"><span class="std std-ref">SOLID_MECHANICS_BC</span></a> namelist is used to define boundary conditions for the solid mechanics model at external and internal boundaries. Each instance of the namelist defines a particular condition to impose over a subset <span class="math notranslate nohighlight">\(\Gamma\)</span> of the domain boundary. The boundary subset <span class="math notranslate nohighlight">\(\Gamma\)</span> is specified using mesh face sets. The namelist variable <a class="reference internal" href="#sm-bc-fsi"><span class="std std-ref">face_set_ids</span></a> takes a list of face set IDs, and the boundary condition is imposed on all faces belonging to those face sets. Note that ExodusII mesh sides sets are imported into Truchas as face sets with the same IDs. Displacement x/y/z boundary conditions may alternatively be applied to node sets with the namelist variable <a class="reference internal" href="#sm-bc-nsi"><span class="std std-ref">node_set_ids</span></a>.</p>
 <section id="external-boundaries">
-<h3><span class="section-number">28.1.1. </span>External boundaries<a class="headerlink" href="#external-boundaries" title="Permalink to this headline"></a></h3>
+<h3>External boundaries<a class="headerlink" href="#external-boundaries" title="Permalink to this headline"></a></h3>
 <p>The following types of external boundary conditions can be defined. The outward unit normal to the boundary <span class="math notranslate nohighlight">\(\Gamma\)</span> is denoted <span class="math notranslate nohighlight">\(\hat{n}\)</span>. Note the solid mechanics package defaults to a traction-free surface with no displacement constraints at external boundaries.</p>
 <ul class="simple">
 <li><p><strong>Traction</strong> An applied traction condition <span class="math notranslate nohighlight">\((\sigma \cdot \hat{n}) \cdot \hat{m}=\tau_b\)</span> for a given vector <span class="math notranslate nohighlight">\(\hat{m}\)</span> on <span class="math notranslate nohighlight">\(\Gamma\)</span> is defined by setting <a class="reference internal" href="#sm-bc-type"><span class="std std-ref">type</span></a> to <strong>traction-n</strong>, <strong>traction-x</strong>, <strong>traction-y</strong>, or <strong>traction-z</strong>. The boundary value <span class="math notranslate nohighlight">\(\tau_b\)</span> is specified using either <a class="reference internal" href="#sm-bc-t"><span class="std std-ref">traction</span></a> for a constant value, or <a class="reference internal" href="#sm-bc-tf"><span class="std std-ref">traction_func</span></a> for a function.</p></li>
@@ -138,7 +139,7 @@
 </ul>
 </section>
 <section id="internal-interfaces">
-<h3><span class="section-number">28.1.2. </span>Internal interfaces<a class="headerlink" href="#internal-interfaces" title="Permalink to this headline"></a></h3>
+<h3>Internal interfaces<a class="headerlink" href="#internal-interfaces" title="Permalink to this headline"></a></h3>
 <p>Internal interfaces are merely coincident pairs of conforming external mesh boundaries. These are modifications to the mesh created by Truchas and are defined using the <a class="reference internal" href="../MESH_Namelist/index.html#m-iss"><span class="std std-ref">Interface_Side_Sets</span></a> parameter from the <a class="reference internal" href="../MESH_Namelist/index.html#mesh-namelist"><span class="std std-ref">MESH</span></a> namelist. Only the face set IDs referenced there can be used in the definition of the following interface conditions. The following types of internal interface conditions can be defined.</p>
 <ul class="simple">
 <li><p><strong>Gap Contact</strong>. A gap contact condition models no-penetration sliding contact along internal surfaces <span class="math notranslate nohighlight">\(\Gamma\)</span>. It is defined by setting <a class="reference internal" href="#sm-bc-type"><span class="std std-ref">type</span></a> to <strong>gap-contact</strong>.</p></li>
@@ -165,7 +166,7 @@
 <li><p><a class="reference internal" href="#sm-bc-tf"><span class="std std-ref">traction_func</span></a></p></li>
 </ul>
 <section id="name">
-<span id="sm-bc-n"></span><h3><span class="section-number">28.3.1. </span>name<a class="headerlink" href="#name" title="Permalink to this headline"></a></h3>
+<span id="sm-bc-n"></span><h3>name<a class="headerlink" href="#name" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A unique name used to identify a particular instance of this namelist</div>
 <div class="line"><strong>Type</strong>        : string (31 characters max)</div>
@@ -173,7 +174,7 @@
 </div>
 </section>
 <section id="face-set-ids">
-<span id="sm-bc-fsi"></span><h3><span class="section-number">28.3.2. </span>face_set_ids<a class="headerlink" href="#face-set-ids" title="Permalink to this headline"></a></h3>
+<span id="sm-bc-fsi"></span><h3>face_set_ids<a class="headerlink" href="#face-set-ids" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A list of face set IDs that define the portion of the boundary where the boundary condition will be imposed.</div>
 <div class="line"><strong>Type</strong>        : integer list (32 max)</div>
@@ -181,7 +182,7 @@
 </div>
 </section>
 <section id="node-set-ids">
-<span id="sm-bc-nsi"></span><h3><span class="section-number">28.3.3. </span>node_set_ids<a class="headerlink" href="#node-set-ids" title="Permalink to this headline"></a></h3>
+<span id="sm-bc-nsi"></span><h3>node_set_ids<a class="headerlink" href="#node-set-ids" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A list of node set IDs that define the portion of the boundary where the boundary condition will be imposed. It is used to remove the null-space from the solution which is present when a solid part is otherwise free to move or rotate uniformly through space. This option is only valid if <a class="reference internal" href="#sm-bc-type"><span class="std std-ref">type</span></a> is set to “<strong>displacement-x</strong>”, “<strong>displacement-y</strong>”, “<strong>displacement-z</strong>”.</div>
 <div class="line"><strong>Type</strong>        : integer list (32 max)</div>
@@ -189,7 +190,7 @@
 </div>
 </section>
 <section id="type">
-<span id="sm-bc-type"></span><h3><span class="section-number">28.3.4. </span>type<a class="headerlink" href="#type" title="Permalink to this headline"></a></h3>
+<span id="sm-bc-type"></span><h3>type<a class="headerlink" href="#type" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The type of boundary condition. The available options are:</div>
 </div>
@@ -240,7 +241,7 @@
 </div>
 </section>
 <section id="displacement">
-<span id="sm-bc-d"></span><h3><span class="section-number">28.3.5. </span>displacement<a class="headerlink" href="#displacement" title="Permalink to this headline"></a></h3>
+<span id="sm-bc-d"></span><h3>displacement<a class="headerlink" href="#displacement" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The constant value of boundary displacement for a displacement-type boundary condition. To specify a function, use <a class="reference internal" href="#sm-bc-df"><span class="std std-ref">displacement_func</span></a> instead.</div>
 <div class="line"><strong>Default</strong>     : none</div>
@@ -248,7 +249,7 @@
 </div>
 </section>
 <section id="displacement-func">
-<span id="sm-bc-df"></span><h3><span class="section-number">28.3.6. </span>displacement_func<a class="headerlink" href="#displacement-func" title="Permalink to this headline"></a></h3>
+<span id="sm-bc-df"></span><h3>displacement_func<a class="headerlink" href="#displacement-func" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The name of a <a class="reference internal" href="../FUNCTION_Namelist/index.html#function-namelist"><span class="std std-ref">FUNCTION</span></a> namelist defining a function that gives the boundary displacement for a displacement-type boundary condition. The function is expected to be a function of <span class="math notranslate nohighlight">\((t,x,y,z)\)</span>.</div>
 <div class="line"><strong>Default</strong>     : none</div>
@@ -256,7 +257,7 @@
 </div>
 </section>
 <section id="traction">
-<span id="sm-bc-t"></span><h3><span class="section-number">28.3.7. </span>traction<a class="headerlink" href="#traction" title="Permalink to this headline"></a></h3>
+<span id="sm-bc-t"></span><h3>traction<a class="headerlink" href="#traction" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The constant value of boundary traction for a traction-type boundary condition. To specify a function, use <a class="reference internal" href="#sm-bc-tf"><span class="std std-ref">traction_func</span></a> instead.</div>
 <div class="line"><strong>Default</strong>     : none</div>
@@ -264,7 +265,7 @@
 </div>
 </section>
 <section id="traction-func">
-<span id="sm-bc-tf"></span><h3><span class="section-number">28.3.8. </span>traction_func<a class="headerlink" href="#traction-func" title="Permalink to this headline"></a></h3>
+<span id="sm-bc-tf"></span><h3>traction_func<a class="headerlink" href="#traction-func" title="Permalink to this headline"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The name of a <a class="reference internal" href="../FUNCTION_Namelist/index.html#function-namelist"><span class="std std-ref">FUNCTION</span></a> namelist defining a function that gives the boundary traction for a traction-type boundary condition. The function is expected to be a function of <span class="math notranslate nohighlight">\((t,x,y,z)\)</span>.</div>
 <div class="line"><strong>Default</strong>     : none</div>

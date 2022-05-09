@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>36.2.2. CHAPARRAL Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
+  <title>CHAPARRAL Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
@@ -20,8 +20,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="36.2.3. PATCHES Namelist" href="PATCHES_Namelist.html" />
-    <link rel="prev" title="36.2.1. ENCLOSURE Namelist" href="ENCLOSURE_Namelist.html" /> 
+    <link rel="next" title="PATCHES Namelist" href="PATCHES_Namelist.html" />
+    <link rel="prev" title="ENCLOSURE Namelist" href="ENCLOSURE_Namelist.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -71,26 +71,27 @@
 <li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">29. SPECIES_BC Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">30. THERMAL_BC Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">31. THERMAL_SOURCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">32. TOOLPATH Namelist (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">33. TURBULENCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">34. VFUNCTION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">35. VISCOPLASTIC_MODEL Namelist</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="index.html">36. Radiation Enclosure Tools</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="index.html#introduction">36.1. Introduction</a></li>
-<li class="toctree-l2 current"><a class="reference internal" href="index.html#invoking-genre">36.2. Invoking GENRE</a><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="ENCLOSURE_Namelist.html">36.2.1. ENCLOSURE Namelist</a></li>
-<li class="toctree-l3 current"><a class="current reference internal" href="#">36.2.2. CHAPARRAL Namelist</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">32. TOOLHEAD Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">33. TOOLPATH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">34. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">35. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">36. VISCOPLASTIC_MODEL Namelist</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">37. Radiation Enclosure Tools</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#introduction">37.1. Introduction</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#invoking-genre">37.2. Invoking GENRE</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ENCLOSURE_Namelist.html">ENCLOSURE Namelist</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">CHAPARRAL Namelist</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#general-guidance">General Guidance</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="PATCHES_Namelist.html">36.2.3. PATCHES Namelist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PATCHES_Namelist.html">PATCHES Namelist</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#invoking-vizre">36.3. Invoking VIZRE</a></li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#invoking-cmpre">36.4. Invoking CMPRE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#invoking-vizre">37.3. Invoking VIZRE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#invoking-cmpre">37.4. Invoking CMPRE</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../python/index.html">37. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">38. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
 </ul>
 
         </div>
@@ -107,8 +108,8 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="index.html"><span class="section-number">36. </span>Radiation Enclosure Tools</a> &raquo;</li>
-      <li><span class="section-number">36.2.2. </span>CHAPARRAL Namelist</li>
+          <li><a href="index.html"><span class="section-number">37. </span>Radiation Enclosure Tools</a> &raquo;</li>
+      <li>CHAPARRAL Namelist</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/rade/CHAPARRAL_Namelist.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -119,7 +120,7 @@
            <div itemprop="articleBody">
              
   <section id="chaparral-namelist">
-<h1><span class="section-number">36.2.2. </span>CHAPARRAL Namelist<a class="headerlink" href="#chaparral-namelist" title="Permalink to this headline"></a></h1>
+<h1>CHAPARRAL Namelist<a class="headerlink" href="#chaparral-namelist" title="Permalink to this headline"></a></h1>
 <p>The <strong>CHAPARRAL</strong> namelist specifies solver parameters for the Chaparral view
 factor library <a class="footnote-reference brackets" href="#footcite-glass-chaparral-1995" id="id1">1</a>.</p>
 <dl class="field-list simple">
@@ -563,8 +564,8 @@ message will appear:</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="ENCLOSURE_Namelist.html" class="btn btn-neutral float-left" title="36.2.1. ENCLOSURE Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="PATCHES_Namelist.html" class="btn btn-neutral float-right" title="36.2.3. PATCHES Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="ENCLOSURE_Namelist.html" class="btn btn-neutral float-left" title="ENCLOSURE Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="PATCHES_Namelist.html" class="btn btn-neutral float-right" title="PATCHES Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
