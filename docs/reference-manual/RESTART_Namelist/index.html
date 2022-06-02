@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -117,20 +118,20 @@
   <div class="toctree-wrapper compound" id="restart-namelist">
 </div>
 <section id="id1">
-<h1><span class="section-number">25. </span>RESTART Namelist<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1><span class="section-number">25. </span>RESTART Namelist<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="overview">
-<h2><span class="section-number">25.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">25.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
 <p>Truchas is able to use data from a previous calculation to initialize a new calculation. Such a restart calculation is invoked by using the <code class="docutils literal notranslate"><span class="pre">-r</span></code> command line argument (<a class="reference internal" href="../introduction/index.html#truchas-command-line-option"><span class="std std-numref">Table 1.1.1</span></a>) to the executable with the path name of the restart data file. By default, all appropriate data from the restart file is used. This optional namelist provides variables to limit the restart data that will be used.</p>
 </section>
 <section id="restart-namelist-features">
-<h2><span class="section-number">25.2. </span>RESTART Namelist Features<a class="headerlink" href="#restart-namelist-features" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">25.2. </span>RESTART Namelist Features<a class="headerlink" href="#restart-namelist-features" title="Permalink to this heading"></a></h2>
 <div class="line-block">
 <div class="line"><strong>Required/Optional        :</strong> Optional</div>
 <div class="line"><strong>Single/Multiple Instances:</strong> Single</div>
 </div>
 </section>
 <section id="components">
-<h2><span class="section-number">25.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">25.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="#r-it"><span class="std std-ref">Ignore_T</span></a></p></li>
 <li><p><a class="reference internal" href="#r-id"><span class="std std-ref">Ignore_Dt</span></a></p></li>
@@ -138,7 +139,7 @@
 <li><p><a class="reference internal" href="#r-ism"><span class="std std-ref">Ignore_Solid_Mechanics</span></a></p></li>
 </ul>
 <section id="ignore-t">
-<span id="r-it"></span><h3>Ignore_T<a class="headerlink" href="#ignore-t" title="Permalink to this headline"></a></h3>
+<span id="r-it"></span><h3>Ignore_T<a class="headerlink" href="#ignore-t" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : When restarting, the initial time and starting cycle count are normally extracted from the restart file. If this flag is true, then those values are ignored and the first value of the <a class="reference internal" href="../OUTPUTS_Namelist/index.html#o-ot"><span class="std std-ref">Output_T</span></a> array is used as the initial time and the cycle count starts at 0, as happens with a non-restart run.</div>
 <div class="line"><strong>Type</strong>        : logical</div>
@@ -146,7 +147,7 @@
 </div>
 </section>
 <section id="ignore-dt">
-<span id="r-id"></span><h3>Ignore_Dt<a class="headerlink" href="#ignore-dt" title="Permalink to this headline"></a></h3>
+<span id="r-id"></span><h3>Ignore_Dt<a class="headerlink" href="#ignore-dt" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : When restarting, the initial time step size is normally extracted from the restart file. If this flag is true, then that value is ignored and the value specified by <a class="reference internal" href="../NUMERICS_Namelist/index.html#numerics-dti"><span class="std std-ref">Dt_Init</span></a> from the <a class="reference internal" href="../NUMERICS_Namelist/index.html#numerics-namelist"><span class="std std-ref">NUMERICS</span></a> namelist is used instead. Note that if <a class="reference internal" href="../NUMERICS_Namelist/index.html#numerics-dtc"><span class="std std-ref">Dt_Constant</span></a> in the <a class="reference internal" href="../NUMERICS_Namelist/index.html#numerics-namelist"><span class="std std-ref">NUMERICS</span></a> namelist is specified then its value is used regardless.</div>
 <div class="line"><strong>Type</strong>        : logical</div>
@@ -154,7 +155,7 @@
 </div>
 </section>
 <section id="ignore-joule-heat">
-<span id="r-ijh"></span><h3>Ignore_Joule_Heat<a class="headerlink" href="#ignore-joule-heat" title="Permalink to this headline"></a></h3>
+<span id="r-ijh"></span><h3>Ignore_Joule_Heat<a class="headerlink" href="#ignore-joule-heat" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : If this flag is true, the Joule heat data in the restart file (if any) will be ignored when initializing the code. This variable is only relevant for restart calculations with <a class="reference internal" href="../PHYSICS_Namelist/index.html#physics-em"><span class="std std-ref">Electromagnetics</span></a> enabled in the <a class="reference internal" href="../PHYSICS_Namelist/index.html#physics-namelist"><span class="std std-ref">PHYSICS</span></a> namelist.</div>
 <div class="line"><strong>Type</strong>        : logical</div>
@@ -162,7 +163,7 @@
 </div>
 </section>
 <section id="ignore-solid-mechanics">
-<span id="r-ism"></span><h3>Ignore_Solid_Mechanics<a class="headerlink" href="#ignore-solid-mechanics" title="Permalink to this headline"></a></h3>
+<span id="r-ism"></span><h3>Ignore_Solid_Mechanics<a class="headerlink" href="#ignore-solid-mechanics" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : If this flag is true, the solid mechanics data in the restart file (if any) will be ignored when initializing the code. This variable is only relevant for restart calculations with <a class="reference internal" href="../PHYSICS_Namelist/index.html#physics-sm"><span class="std std-ref">Solid_Mechanics</span></a> enabled in the <a class="reference internal" href="../PHYSICS_Namelist/index.html#physics-namelist"><span class="std std-ref">PHYSICS</span></a> namelist.</div>
 <div class="line"><strong>Type</strong>        : logical</div>

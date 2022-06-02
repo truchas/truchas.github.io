@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -130,9 +131,9 @@
   <div class="toctree-wrapper compound" id="function-namelist">
 </div>
 <section id="id1">
-<h1><span class="section-number">14. </span>FUNCTION Namelist<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1><span class="section-number">14. </span>FUNCTION Namelist<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="overview">
-<h2><span class="section-number">14.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">14.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
 <p>There is often a need to specify phase properties, boundary condition data, source data, etc., as functions rather than constants. The <a class="reference internal" href="#function-namelist"><span class="std std-ref">FUNCTION</span></a> namelist provides a means for defining functions that can be used in many situations.</p>
 <p>The namelist can define several types of functions: a multi-variable polynomial, a continuous piecewise linear function defined by a table of values, a smooth step function, and with certain Truchas build configurations, a general user-provided function from a shared object library that is dynamically loaded at runtime. The functions are functions of <span class="math notranslate nohighlight">\(m\)</span> variables. The expected number of variables and what unknowns they represent (i.e., temperature, time, x-coordinate, etc.) depends on the context in which the function is used, and this will be detailed by the documentation of those namelists where these functions can be used.</p>
 <p><strong>Polynomial Function</strong> This function is a polynomial in the variables <span class="math notranslate nohighlight">\(v = (v_1,.....,v_m)\)</span> of the form</p>
@@ -166,14 +167,14 @@ f(x) =
 <p>The vector of variables <span class="math notranslate nohighlight">\(v= (v_1,...,v_m)\)</span> is passed in the argument <span class="math notranslate nohighlight">\(v\)</span> and a vector of parameter values specified by <a class="reference internal" href="#func-param"><span class="std std-ref">Parameters</span></a> is passed in the argument <span class="math notranslate nohighlight">\(p\)</span>. Instructions for compiling the code and creating a shared object library can be found in the Truchas Installation Guide. The path to the library is given by <a class="reference internal" href="#func-lp"><span class="std std-ref">Library_Path</span></a> and the name of the function (myfun, e.g.) is given by <a class="reference internal" href="#func-ls"><span class="std std-ref">Library_Symbol</span></a>. Note that the bind(c) attribute on the function declaration inhibits the Fortran compiler from mangling the function name (by appending an underscore, for example) as it normally would.</p>
 </section>
 <section id="function-namelist-features">
-<h2><span class="section-number">14.2. </span>FUNCTION Namelist Features<a class="headerlink" href="#function-namelist-features" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">14.2. </span>FUNCTION Namelist Features<a class="headerlink" href="#function-namelist-features" title="Permalink to this heading"></a></h2>
 <div class="line-block">
 <div class="line"><strong>Required/Optional        :</strong> Optional</div>
 <div class="line"><strong>Single/Multiple Instances:</strong> Multiple</div>
 </div>
 </section>
 <section id="components">
-<h2><span class="section-number">14.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">14.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="#func-name"><span class="std std-ref">Name</span></a></p></li>
 <li><p><a class="reference internal" href="#func-type"><span class="std std-ref">Type</span></a></p></li>
@@ -193,7 +194,7 @@ f(x) =
 <li><p><a class="reference internal" href="#func-ti"><span class="std std-ref">Tabular_Interp</span></a></p></li>
 </ul>
 <section id="name">
-<span id="func-name"></span><h3>Name<a class="headerlink" href="#name" title="Permalink to this headline"></a></h3>
+<span id="func-name"></span><h3>Name<a class="headerlink" href="#name" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A unique name by which this function can be referenced by other namelists.</div>
 <div class="line"><strong>Type</strong>        : A case-sensitive string of up to 31 characters.</div>
@@ -201,7 +202,7 @@ f(x) =
 </div>
 </section>
 <section id="type">
-<span id="func-type"></span><h3>Type<a class="headerlink" href="#type" title="Permalink to this headline"></a></h3>
+<span id="func-type"></span><h3>Type<a class="headerlink" href="#type" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The type of function defined by the namelist.</div>
 <div class="line"><strong>Type</strong>        : A case-sensitive string</div>
@@ -210,7 +211,7 @@ f(x) =
 </div>
 </section>
 <section id="library-path">
-<span id="func-lp"></span><h3>Library_Path<a class="headerlink" href="#library-path" title="Permalink to this headline"></a></h3>
+<span id="func-lp"></span><h3>Library_Path<a class="headerlink" href="#library-path" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The path to the shared object library that contains the function.</div>
 <div class="line"><strong>Type</strong>        : A string of up to 128 characters.</div>
@@ -218,7 +219,7 @@ f(x) =
 </div>
 </section>
 <section id="library-symbol">
-<span id="func-ls"></span><h3>Library_Symbol<a class="headerlink" href="#library-symbol" title="Permalink to this headline"></a></h3>
+<span id="func-ls"></span><h3>Library_Symbol<a class="headerlink" href="#library-symbol" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The symbol name of the function within the shared object file.</div>
 <div class="line"><strong>Type</strong>        : A string of up to 128 characters.</div>
@@ -227,7 +228,7 @@ f(x) =
 </div>
 </section>
 <section id="parameters">
-<span id="func-param"></span><h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline"></a></h3>
+<span id="func-param"></span><h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Optional parameter values to pass to the shared library function.</div>
 <div class="line"><strong>Type</strong>        : real vector of up to 16 values</div>
@@ -235,7 +236,7 @@ f(x) =
 </div>
 </section>
 <section id="poly-coefficients">
-<span id="func-pc"></span><h3>Poly_Coefficients<a class="headerlink" href="#poly-coefficients" title="Permalink to this headline"></a></h3>
+<span id="func-pc"></span><h3>Poly_Coefficients<a class="headerlink" href="#poly-coefficients" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The coefficients <span class="math notranslate nohighlight">\(c_j\)</span> of the polynomial <a class="reference internal" href="#equation-poly-func">Eq.14.1.1</a></div>
 <div class="line"><strong>Type</strong>        : real vector of up to 64 values</div>
@@ -243,7 +244,7 @@ f(x) =
 </div>
 </section>
 <section id="poly-exponents">
-<span id="func-pe"></span><h3>Poly_Exponents<a class="headerlink" href="#poly-exponents" title="Permalink to this headline"></a></h3>
+<span id="func-pe"></span><h3>Poly_Exponents<a class="headerlink" href="#poly-exponents" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The exponents <span class="math notranslate nohighlight">\(e_{ij}\)</span> of the polynomial <a class="reference internal" href="#equation-poly-func">Eq.14.1.1</a></div>
 <div class="line"><strong>Type</strong>        : integer array</div>
@@ -256,7 +257,7 @@ f(x) =
 <p>In some circumstances it is possible to omit providing 0-exponents for variables that are unused. For example, if the function is expected to be a function of (t,x,y,z), but a polynomial in only t is desired, one can just define a 1-variable polynomial and entirely ignore the remaining variables. On the other hand, if a polynomial in z is desired, one must specify 0-valued exponents for all the preceding variables.</p>
 </section>
 <section id="poly-refvars">
-<span id="func-pr"></span><h3>Poly_Refvars<a class="headerlink" href="#poly-refvars" title="Permalink to this headline"></a></h3>
+<span id="func-pr"></span><h3>Poly_Refvars<a class="headerlink" href="#poly-refvars" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The optional reference point a of the polynomial <a class="reference internal" href="#equation-poly-func">Eq.14.1.1</a></div>
 <div class="line"><strong>Type</strong>        : real vector</div>
@@ -264,7 +265,7 @@ f(x) =
 </div>
 </section>
 <section id="tabular-data">
-<span id="func-td"></span><h3>Tabular_Data<a class="headerlink" href="#tabular-data" title="Permalink to this headline"></a></h3>
+<span id="func-td"></span><h3>Tabular_Data<a class="headerlink" href="#tabular-data" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The table of values <span class="math notranslate nohighlight">\((x_i,y_i)\)</span> defining a tabular function <span class="math notranslate nohighlight">\(y=f(x)\)</span>. See also <a class="reference internal" href="#func-tdim"><span class="std std-ref">Tabular_Dim</span></a>, <a class="reference internal" href="#func-ti"><span class="std std-ref">Tabular_Interp</span></a>, and <a class="reference internal" href="#func-te"><span class="std std-ref">Tabular_Extrap</span></a> for additional variables that define the function.</div>
 <div class="line"><strong>Type</strong>        : real array</div>
@@ -285,7 +286,7 @@ f(x) =
 <p>The line breaks are unnecessary, of course, and are there only for readability as a table.</p>
 </section>
 <section id="tabular-dim">
-<span id="func-tdim"></span><h3>Tabular_Dim<a class="headerlink" href="#tabular-dim" title="Permalink to this headline"></a></h3>
+<span id="func-tdim"></span><h3>Tabular_Dim<a class="headerlink" href="#tabular-dim" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The dimension in the m-vector of independent variables that serves as the independent variable for the single-variable tabular function.</div>
 <div class="line"><strong>Type</strong>        : integer</div>
@@ -294,7 +295,7 @@ f(x) =
 </div>
 </section>
 <section id="tabular-extrap">
-<span id="func-te"></span><h3>Tabular_Extrap<a class="headerlink" href="#tabular-extrap" title="Permalink to this headline"></a></h3>
+<span id="func-te"></span><h3>Tabular_Extrap<a class="headerlink" href="#tabular-extrap" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Specifies the method used for extrapolating outside the range of tabular function data points.</div>
 <div class="line"><strong>Type</strong>        : case-insensitive string</div>
@@ -304,7 +305,7 @@ f(x) =
 </div>
 </section>
 <section id="tabular-interp">
-<span id="func-ti"></span><h3>Tabular_Interp<a class="headerlink" href="#tabular-interp" title="Permalink to this headline"></a></h3>
+<span id="func-ti"></span><h3>Tabular_Interp<a class="headerlink" href="#tabular-interp" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Specifies the method used for interpolating between tabular function data points.</div>
 <div class="line"><strong>Type</strong>        : case-insensitive string</div>
@@ -320,7 +321,7 @@ f(x) =
 </figure>
 </section>
 <section id="smooth-step-x0">
-<span id="func-ssx0"></span><h3>Smooth_Step_X0<a class="headerlink" href="#smooth-step-x0" title="Permalink to this headline"></a></h3>
+<span id="func-ssx0"></span><h3>Smooth_Step_X0<a class="headerlink" href="#smooth-step-x0" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The parameter <span class="math notranslate nohighlight">\(x_0\)</span> of the function <a class="reference internal" href="#equation-poly-multi">Eq.14.1.2</a></div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -329,7 +330,7 @@ f(x) =
 </div>
 </section>
 <section id="smooth-step-x1">
-<span id="func-ssx1"></span><h3>Smooth_Step_X1<a class="headerlink" href="#smooth-step-x1" title="Permalink to this headline"></a></h3>
+<span id="func-ssx1"></span><h3>Smooth_Step_X1<a class="headerlink" href="#smooth-step-x1" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The parameter <span class="math notranslate nohighlight">\(x_1\)</span> of the function <a class="reference internal" href="#equation-poly-multi">Eq.14.1.2</a></div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -338,7 +339,7 @@ f(x) =
 </div>
 </section>
 <section id="smooth-step-y0">
-<span id="func-ssy0"></span><h3>Smooth_Step_Y0<a class="headerlink" href="#smooth-step-y0" title="Permalink to this headline"></a></h3>
+<span id="func-ssy0"></span><h3>Smooth_Step_Y0<a class="headerlink" href="#smooth-step-y0" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The parameter <span class="math notranslate nohighlight">\(y_0\)</span> of the function <a class="reference internal" href="#equation-poly-multi">Eq.14.1.2</a></div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -346,7 +347,7 @@ f(x) =
 </div>
 </section>
 <section id="smooth-step-y1">
-<span id="func-ssy1"></span><h3>Smooth_Step_Y1<a class="headerlink" href="#smooth-step-y1" title="Permalink to this headline"></a></h3>
+<span id="func-ssy1"></span><h3>Smooth_Step_Y1<a class="headerlink" href="#smooth-step-y1" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The parameter <span class="math notranslate nohighlight">\(y_1\)</span> of the function <a class="reference internal" href="#equation-poly-multi">Eq.14.1.2</a></div>
 <div class="line"><strong>Type</strong>        : real</div>

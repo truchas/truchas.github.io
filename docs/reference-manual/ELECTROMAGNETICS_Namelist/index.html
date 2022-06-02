@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -128,21 +129,21 @@
   <div class="toctree-wrapper compound" id="electromagnetics-namelist">
 </div>
 <section id="id1">
-<h1><span class="section-number">7. </span>ELECTROMAGNETICS Namelist<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1><span class="section-number">7. </span>ELECTROMAGNETICS Namelist<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="overview">
-<h2><span class="section-number">7.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">7.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
 <p>The ELECTROMAGNETICS namelist sets most of the parameters used by the electromagnetic (EM) solver to calculate the Joule heat used in induction heating simulations. Exceptions are the electrical conductivity, electric susceptibility, and magnetic susceptibility which are defined for each material phase using the <a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html#material-and-phase-namelists"><span class="std std-ref">MATERIAL</span></a> namelist, and the induction coils hat produce an external magnetic source field, which are specified in <a class="reference internal" href="../INDUCTION_COIL_Namelist/index.html#induction-coil-namelist"><span class="std std-ref">INDUCTION_COIL</span></a> namelists. The EM calculations are performed on a tetrahedral mesh specified by the <a class="reference internal" href="../ALTMESH_Namelist/index.html#altmesh-namelist"><span class="std std-ref">ALTMESH</span></a> namelist, which is generally different than the main mesh used throughout the rest of Truchas.</p>
 <p><strong>A Remark on Units:</strong> The EM solver assumes SI units by default. In particular, the result of the Joule heat calculation is a power density <span class="math notranslate nohighlight">\(W/m^3\)</span> in SI units. To use a different system of units, the user must supply appropriate values for the free-space constants <a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html#phyco-vpm"><span class="std std-ref">Vacuum_Permittivity</span></a> and <a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html#phyco-vpt"><span class="std std-ref">Vacuum_Permeability</span></a> in the <a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html#physical-constants-namelist"><span class="std std-ref">PHYSICAL_CONSTANTS</span></a>. In any case, the user must ensure that a consistent set of units is used throughout Truchas.</p>
 </section>
 <section id="electromagnetics-namelist-features">
-<h2><span class="section-number">7.2. </span>ELECTROMAGNETICS Namelist Features<a class="headerlink" href="#electromagnetics-namelist-features" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">7.2. </span>ELECTROMAGNETICS Namelist Features<a class="headerlink" href="#electromagnetics-namelist-features" title="Permalink to this heading"></a></h2>
 <div class="line-block">
 <div class="line"><strong>Required/Optional        :</strong> Optional</div>
 <div class="line"><strong>Single/Multiple Instances:</strong> Single</div>
 </div>
 </section>
 <section id="components">
-<h2><span class="section-number">7.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">7.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="#em-cst"><span class="std std-ref">CG_Stopping_Tolerance</span></a></p></li>
 <li><p><a class="reference internal" href="#em-edt"><span class="std std-ref">EM_Domain_Type</span></a></p></li>
@@ -159,7 +160,7 @@
 <li><p><a class="reference internal" href="#em-us"><span class="std std-ref">Uniform_Source</span></a></p></li>
 </ul>
 <section id="cg-stopping-tolerance">
-<span id="em-cst"></span><h3>CG_Stopping_Tolerance<a class="headerlink" href="#cg-stopping-tolerance" title="Permalink to this headline"></a></h3>
+<span id="em-cst"></span><h3>CG_Stopping_Tolerance<a class="headerlink" href="#cg-stopping-tolerance" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Tolerance used to determine when the conjugate gradient (CG) iteration has converged. The criterion used is that</div>
 </div>
@@ -173,7 +174,7 @@
 </div>
 </section>
 <section id="em-domain-type">
-<span id="em-edt"></span><h3>EM_Domain_Type<a class="headerlink" href="#em-domain-type" title="Permalink to this headline"></a></h3>
+<span id="em-edt"></span><h3>EM_Domain_Type<a class="headerlink" href="#em-domain-type" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A flag specifying the type of domain geometry that is discretized by the computational mesh.</div>
 <div class="line"><strong>Type</strong>        : string</div>
@@ -206,7 +207,7 @@
 <p>or an angular wedge of a frustum. As with the other domain types the values <span class="math notranslate nohighlight">\(m \gt 0\)</span> , <span class="math notranslate nohighlight">\(z_0\)</span> and <span class="math notranslate nohighlight">\(z_1 \lt z_2\)</span> are inferred from the mesh and are not specified directly. For wedges of a frustum, the wedge sidescan lie on any plane from the family of 30 degree increment planes that includes the <span class="math notranslate nohighlight">\(x = 0\)</span> plane. The preceding description is for the z-axis symmetry case, but the analogous functionality for the other symmetry axes is also provided.</p>
 </section>
 <section id="graphics-output">
-<span id="em-go"></span><h3>Graphics_Output<a class="headerlink" href="#graphics-output" title="Permalink to this headline"></a></h3>
+<span id="em-go"></span><h3>Graphics_Output<a class="headerlink" href="#graphics-output" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Controls the graphics output of the electromagnetic solver</div>
 <div class="line"><strong>Type</strong>        : logical</div>
@@ -216,7 +217,7 @@
 </div>
 </section>
 <section id="material-change-threshold">
-<span id="em-mct"></span><h3>Material_Change_Threshold<a class="headerlink" href="#material-change-threshold" title="Permalink to this headline"></a></h3>
+<span id="em-mct"></span><h3>Material_Change_Threshold<a class="headerlink" href="#material-change-threshold" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Controls, at each step, whether the Joule heat is recalculated in response to temperature-induced changes in the EM material parameter values. The Joule heat is recalculated whenever the difference between the current parameter values and those when the Joule heat was last computed exceeds this threshold value. Otherwise the previously calculated Joule heat is used. The maximum relative change is used as the difference measure.</div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -227,7 +228,7 @@
 <p>For electric conductivity, only the conducting region (where the value is positive) is considered when computing the difference. An underlying assumption is that this region remains fixed throughout the simulation.</p>
 </section>
 <section id="maximum-cg-iterations">
-<span id="em-mci"></span><h3>Maximum_CG_Iterations<a class="headerlink" href="#maximum-cg-iterations" title="Permalink to this headline"></a></h3>
+<span id="em-mci"></span><h3>Maximum_CG_Iterations<a class="headerlink" href="#maximum-cg-iterations" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Maximum number of conjugate gradient (CG) iterations allowed. The electromagnetics solver uses its own special preconditioned CG linear solver.</div>
 <div class="line"><strong>Type</strong>        : integer</div>
@@ -236,7 +237,7 @@
 </div>
 </section>
 <section id="maximum-source-cycles">
-<span id="em-msc"></span><h3>Maximum_Source_Cycles<a class="headerlink" href="#maximum-source-cycles" title="Permalink to this headline"></a></h3>
+<span id="em-msc"></span><h3>Maximum_Source_Cycles<a class="headerlink" href="#maximum-source-cycles" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The electromagnetic field equations are integrated in time toward a periodic steady state. This input variable specifies the time limit, measured in cycles of the sinusoidal source field, for the Joule heat calculation.</div>
 <div class="line"><strong>Type</strong>        : integer</div>
@@ -247,7 +248,7 @@
 <p>The electromagnetic field equations are solved on an innertime distinct from that of the rest of the physics; see <a class="reference internal" href="#em-sst"><span class="std std-ref">SS_Stopping_Tolerance</span></a>.</p>
 </section>
 <section id="num-etasq">
-<span id="em-ne"></span><h3>Num_Etasq<a class="headerlink" href="#num-etasq" title="Permalink to this headline"></a></h3>
+<span id="em-ne"></span><h3>Num_Etasq<a class="headerlink" href="#num-etasq" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : This value is used for the displacement current coefficient <span class="math notranslate nohighlight">\(\eta^2\)</span>, in the low-frequency, nondimensional scaling of Maxwell’s equations, when its value exceeds the physical value.</div>
 <div class="line"><strong>Physical dimension</strong> : dimensionless</div>
@@ -258,7 +259,7 @@
 </div>
 </section>
 <section id="output-level">
-<span id="em-ol"></span><h3>Output_Level<a class="headerlink" href="#output-level" title="Permalink to this headline"></a></h3>
+<span id="em-ol"></span><h3>Output_Level<a class="headerlink" href="#output-level" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Controls the verbosity of the electromagnetic solver.</div>
 <div class="line"><strong>Type</strong>        : integer</div>
@@ -268,7 +269,7 @@
 </div>
 </section>
 <section id="source-frequency">
-<span id="em-sf"></span><h3>Source_Frequency<a class="headerlink" href="#source-frequency" title="Permalink to this headline"></a></h3>
+<span id="em-sf"></span><h3>Source_Frequency<a class="headerlink" href="#source-frequency" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Frequency <span class="math notranslate nohighlight">\(f\)</span> (cycles per unit time) of the sinusoidally-varying magnetic source fields that drive the Joule heat calculation.</div>
 <div class="line"><strong>Physical dimension</strong> : <span class="math notranslate nohighlight">\(T^{-1}\)</span></div>
@@ -285,7 +286,7 @@
 </figure>
 </section>
 <section id="source-times">
-<span id="em-st"></span><h3>Source_Times<a class="headerlink" href="#source-times" title="Permalink to this headline"></a></h3>
+<span id="em-st"></span><h3>Source_Times<a class="headerlink" href="#source-times" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A sequence of times that define the time partition of the piecewise-constant functional form used in the case of time-dependent source field parameters.</div>
 <div class="line"><strong>Physical dimension</strong> : <span class="math notranslate nohighlight">\(T\)</span></div>
@@ -297,7 +298,7 @@
 <p>At most 31 values may be specified for this variable.</p>
 </section>
 <section id="ss-stopping-tolerance">
-<span id="em-sst"></span><h3>SS_Stopping_Tolerance<a class="headerlink" href="#ss-stopping-tolerance" title="Permalink to this headline"></a></h3>
+<span id="em-sst"></span><h3>SS_Stopping_Tolerance<a class="headerlink" href="#ss-stopping-tolerance" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The electromagnetic field equations are integrated in time toward a periodic steady state. Convergence to this steady state is measured by comparing the computed Joule heat field averaged over the last source field cycle, <span class="math notranslate nohighlight">\(q_{last}\)</span>, with the result from the previous cycle, <span class="math notranslate nohighlight">\(q_{prev}\)</span>. When <span class="math notranslate nohighlight">\(‖q_{last}−q_{prev}‖max/‖q_{last}‖max\)</span> &lt; SS_Stopping_Tolerance, the Joule heat calculation is considered converged and <span class="math notranslate nohighlight">\(q_{last}\)</span> returned.</div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -307,7 +308,7 @@
 </div>
 </section>
 <section id="steps-per-cycle">
-<span id="em-spc"></span><h3>Steps_Per_Cycle<a class="headerlink" href="#steps-per-cycle" title="Permalink to this headline"></a></h3>
+<span id="em-spc"></span><h3>Steps_Per_Cycle<a class="headerlink" href="#steps-per-cycle" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The number of time steps per cycle of the external source field used to integrate the electromagnetic field equations.</div>
 <div class="line"><strong>Type</strong>        : integer</div>
@@ -317,7 +318,7 @@
 </div>
 </section>
 <section id="symmetry-axis">
-<span id="em-sa"></span><h3>Symmetry_Axis<a class="headerlink" href="#symmetry-axis" title="Permalink to this headline"></a></h3>
+<span id="em-sa"></span><h3>Symmetry_Axis<a class="headerlink" href="#symmetry-axis" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A flag that specifies which axis is to be used as the problem symmetry axis for the Joule heat simulation.</div>
 <div class="line"><strong>Type</strong>        : string</div>
@@ -327,7 +328,7 @@
 </div>
 </section>
 <section id="uniform-source">
-<span id="em-us"></span><h3>Uniform_Source<a class="headerlink" href="#uniform-source" title="Permalink to this headline"></a></h3>
+<span id="em-us"></span><h3>Uniform_Source<a class="headerlink" href="#uniform-source" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Amplitude of a sinusoidally-varying, uniform magnetic source field that drives the Joule heat computation. The field is directed along the problem symmetry axis as specified by <a class="reference internal" href="#em-sa"><span class="std std-ref">Symmetry_Axis</span></a>.</div>
 <div class="line"><strong>Physical dimension</strong> :<span class="math notranslate nohighlight">\(I/L\)</span></div>

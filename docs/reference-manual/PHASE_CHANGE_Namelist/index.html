@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -111,16 +112,16 @@
   <div class="toctree-wrapper compound" id="phase-change-namelist">
 </div>
 <section id="id1">
-<h1><span class="section-number">21. </span>PHASE_CHANGE Namelist<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1><span class="section-number">21. </span>PHASE_CHANGE Namelist<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="overview">
-<h2><span class="section-number">21.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">21.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
 <p>The <a class="reference internal" href="#phase-change-namelist"><span class="std std-ref">PHASE_CHANGE</span></a> namelist defines the phase change model used for the transformation between two phases of a multi-phase material. An instance of this namelist is required for each consecutive pair of phases specified by the <a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html#mp-phase-pm"><span class="std std-ref">phases</span></a> variable of a <a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html#material-and-phase-namelists"><span class="std std-ref">MATERIAL</span></a> namelist.</p>
 <p>Truchas models the transformation from low temperature phase (“solid”) to high temperature phase (“liquid”) using a “solid fraction” function <span class="math notranslate nohighlight">\(f_{\text{sol}}(T)\)</span> that gives the fraction of low temperature phase as a function of temperature. There are two temperatures <span class="math notranslate nohighlight">\(T_{\text{sol}} \lt T_{\text{liq}}\)</span> such that <span class="math notranslate nohighlight">\(f_{\text{sol}} = 1\)</span> for <span class="math notranslate nohighlight">\(T \leq T_{\text{sol}},f_{\text{sol}} = 0\)</span> for <span class="math notranslate nohighlight">\(T \geq T_{\text{liq}}\)</span>, and <span class="math notranslate nohighlight">\(0 \lt f_{\text{sol}}  \lt 1\)</span> for <span class="math notranslate nohighlight">\(T_{\text{sol}} \lt T \lt T_{\text{liq}}\)</span>. There are two alternative methods for specifying this function.</p>
 <p>The first simple, but non-physical, method uses a smooth Hermite cubic polynomial to interpolate <span class="math notranslate nohighlight">\(f_{\text{sol}}\)</span> between <span class="math notranslate nohighlight">\(T_{\text{sol}}\)</span> and <span class="math notranslate nohighlight">\(T_{\text{liq}}\)</span>. This is pictured below. The second method uses a table of <span class="math notranslate nohighlight">\((T,f_{\text{sol}})\)</span> values to define <span class="math notranslate nohighlight">\(f_{\text{sol}}(T)\)</span>. This allows physics-based phase change models like lever and Scheil to be defined, and data from CALPHAD-type tools to be used directly.</p>
 <p>Note that while described in terms of solid and liquid, these phase change models also apply to solid-solid transformations with the obvious reinterpretation of notation.</p>
 </section>
 <section id="namelist-variables">
-<h2><span class="section-number">21.2. </span>Namelist Variables<a class="headerlink" href="#namelist-variables" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">21.2. </span>Namelist Variables<a class="headerlink" href="#namelist-variables" title="Permalink to this heading"></a></h2>
 <dl>
 <dt><strong>low_temp_phase</strong>, <strong>high_temp_phase</strong></dt><dd><p>These are the names of the two material phases.</p>
 </dd>

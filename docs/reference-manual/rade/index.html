@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -118,9 +119,9 @@
            <div itemprop="articleBody">
              
   <section id="radiation-enclosure-tools">
-<h1><span class="section-number">37. </span>Radiation Enclosure Tools<a class="headerlink" href="#radiation-enclosure-tools" title="Permalink to this headline"></a></h1>
+<h1><span class="section-number">37. </span>Radiation Enclosure Tools<a class="headerlink" href="#radiation-enclosure-tools" title="Permalink to this heading"></a></h1>
 <section id="introduction">
-<h2><span class="section-number">37.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">37.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
 <p>Truchas includes several tools for working with radiation enclosure datasets.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">genre</span></code>: Used to compute view factors and generate radiation enclosure
@@ -130,7 +131,7 @@ files.</p></li>
 </ul>
 </section>
 <section id="invoking-genre">
-<h2><span class="section-number">37.2. </span>Invoking GENRE<a class="headerlink" href="#invoking-genre" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">37.2. </span>Invoking GENRE<a class="headerlink" href="#invoking-genre" title="Permalink to this heading"></a></h2>
 <p>Genre generates a radiation enclosure dataset.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Serial</dt>
@@ -181,7 +182,7 @@ example, the following namelist is ignored by Genre due to the leading <code cla
 </div>
 </section>
 <section id="invoking-vizre">
-<h2><span class="section-number">37.3. </span>Invoking VIZRE<a class="headerlink" href="#invoking-vizre" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">37.3. </span>Invoking VIZRE<a class="headerlink" href="#invoking-vizre" title="Permalink to this heading"></a></h2>
 <p>Writes a GMV-format visualization file for the specified enclosure. If the
 enclosure includes view factor data, the ambient view factor and view factor
 matrix row sums are written as face variables.</p>
@@ -229,7 +230,7 @@ held on a single process.</p></li>
 </ul>
 </div>
 <section id="viewing-vizre-s-gmv-output">
-<h3>Viewing VIZRE’s GMV Output<a class="headerlink" href="#viewing-vizre-s-gmv-output" title="Permalink to this headline"></a></h3>
+<h3>Viewing VIZRE’s GMV Output<a class="headerlink" href="#viewing-vizre-s-gmv-output" title="Permalink to this heading"></a></h3>
 <p><a class="reference external" href="https://www.paraview.org/">Paraview</a> can be used to view the GMV output file
 produced by VIZRE. However, it is necessary to enable a plugin following these
 steps:</p>
@@ -243,7 +244,7 @@ Plugins…</em></p></li>
 </section>
 </section>
 <section id="invoking-cmpre">
-<h2><span class="section-number">37.4. </span>Invoking CMPRE<a class="headerlink" href="#invoking-cmpre" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">37.4. </span>Invoking CMPRE<a class="headerlink" href="#invoking-cmpre" title="Permalink to this heading"></a></h2>
 <p>If you’ve generated multiple datasets for the same enclosure using different
 sets of Chaparral parameters, it is useful to compare the calculated view factor
 matrices. You can do this with cmpre:</p>

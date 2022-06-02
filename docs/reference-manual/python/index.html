@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -121,7 +122,7 @@
            <div itemprop="articleBody">
              
   <section id="truchas-python-module">
-<h1><span class="section-number">38. </span><code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module<a class="headerlink" href="#truchas-python-module" title="Permalink to this headline"></a></h1>
+<h1><span class="section-number">38. </span><code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module<a class="headerlink" href="#truchas-python-module" title="Permalink to this heading"></a></h1>
 <p>Truchas provides a Python package for scripting. This is useful for generating
 custom restarts, performing automated optimization, and performing automated
 parameter studies, or computing custom metrics.</p>
@@ -148,9 +149,9 @@ parameter studies, or computing custom metrics.</p>
 </ul>
 </div>
 <section id="examples">
-<h2><a class="toc-backref" href="#id1"><span class="section-number">38.1. </span>Examples</a><a class="headerlink" href="#examples" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id1"><span class="section-number">38.1. </span>Examples</a><a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
 <section id="custom-restart">
-<h3><a class="toc-backref" href="#id2">Custom Restart</a><a class="headerlink" href="#custom-restart" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id2">Custom Restart</a><a class="headerlink" href="#custom-restart" title="Permalink to this heading"></a></h3>
 <p>Frequently it is necessary to generate custom mapped restarts. For example, if
 we need to map data to a new mesh, where there is a new block which needs to be
 initialized. Generally, we will need to initialize this block with a material
@@ -197,7 +198,7 @@ it to a new mesh, and modify some field data before generating a restart file.</
 <p><sup>Example Truchas Python script. This script reads a Truchas output file, generates a mapped restart onto a new mesh, and overwrites data for some variables on a specific block on that new mesh.</sup></p>
 </section>
 <section id="optimization">
-<h3><a class="toc-backref" href="#id3">Optimization</a><a class="headerlink" href="#optimization" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id3">Optimization</a><a class="headerlink" href="#optimization" title="Permalink to this heading"></a></h3>
 <p>Python scripting can be used to execute Truchas in a loop, for example to modify
 some heat flux boundary condition until the temperature at some point in the
 mesh fits an expected value. We can wrap this entire process into a Python
@@ -268,7 +269,7 @@ solve <span class="math notranslate nohighlight">\(T(F) = 500\)</span> for the t
 </div>
 </section>
 <section id="parameter-study">
-<h3><a class="toc-backref" href="#id4">Parameter Study</a><a class="headerlink" href="#parameter-study" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id4">Parameter Study</a><a class="headerlink" href="#parameter-study" title="Permalink to this heading"></a></h3>
 <p>Suppose we wish to perform the following parameter study: Vary the heat flux on
 one boundary condition, and measure the maximum and average temperature in block
 1. The following script will define the custom output metrics (max and avg
@@ -335,9 +336,9 @@ to re-run entire simulations which have already been computed.</p>
 </section>
 </section>
 <section id="components">
-<h2><a class="toc-backref" href="#id5"><span class="section-number">38.2. </span>Components</a><a class="headerlink" href="#components" title="Permalink to this headline"></a></h2>
+<h2><a class="toc-backref" href="#id5"><span class="section-number">38.2. </span>Components</a><a class="headerlink" href="#components" title="Permalink to this heading"></a></h2>
 <section id="module-truchas.TruchasEnvironment">
-<span id="truchasenvironment"></span><h3><a class="toc-backref" href="#id6">TruchasEnvironment</a><a class="headerlink" href="#module-truchas.TruchasEnvironment" title="Permalink to this headline"></a></h3>
+<span id="truchasenvironment"></span><h3><a class="toc-backref" href="#id6">TruchasEnvironment</a><a class="headerlink" href="#module-truchas.TruchasEnvironment" title="Permalink to this heading"></a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="truchas.TruchasEnvironment.TruchasEnvironment">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TruchasEnvironment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mpiexec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">truchas_executable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_restart_executable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">working_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite_output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasEnvironment.TruchasEnvironment" title="Permalink to this definition"></a></dt>
@@ -532,7 +533,7 @@ the working directory.</p></li>
 
 </section>
 <section id="module-truchas.TruchasData">
-<span id="truchasdata"></span><h3><a class="toc-backref" href="#id7">TruchasData</a><a class="headerlink" href="#module-truchas.TruchasData" title="Permalink to this headline"></a></h3>
+<span id="truchasdata"></span><h3><a class="toc-backref" href="#id7">TruchasData</a><a class="headerlink" href="#module-truchas.TruchasData" title="Permalink to this heading"></a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="truchas.TruchasData.TruchasData">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TruchasData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData" title="Permalink to this definition"></a></dt>
@@ -965,11 +966,11 @@ values are in the range <code class="docutils literal notranslate"><span class="
 
 </section>
 <section id="module-truchas.TruchasMappedData">
-<span id="truchasmappeddata"></span><h3><a class="toc-backref" href="#id8">TruchasMappedData</a><a class="headerlink" href="#module-truchas.TruchasMappedData" title="Permalink to this headline"></a></h3>
+<span id="truchasmappeddata"></span><h3><a class="toc-backref" href="#id8">TruchasMappedData</a><a class="headerlink" href="#module-truchas.TruchasMappedData" title="Permalink to this heading"></a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="truchas.TruchasMappedData.TruchasMappedData">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TruchasMappedData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exodus_filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_portage</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasMappedData.TruchasMappedData" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <a class="reference internal" href="#truchas.TruchasData.TruchasData" title="truchas.TruchasData.TruchasData"><code class="xref py py-class docutils literal notranslate"><span class="pre">truchas.TruchasData.TruchasData</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="#truchas.TruchasData.TruchasData" title="truchas.TruchasData.TruchasData"><code class="xref py py-class docutils literal notranslate"><span class="pre">TruchasData</span></code></a></p>
 <p>Interface for mapping Truchas Data to new exodus mesh. This class
 inherits all of the methods from the <code class="xref py py-class docutils literal notranslate"><span class="pre">TruchasData</span></code> class, and
 invisibly maps fields to the new mesh prior to returning them.
@@ -998,7 +999,7 @@ wait for Python garbage collection to clean it up.</p>
 
 </section>
 <section id="module-truchas.TruchasStudy">
-<span id="truchasstudy"></span><h3><a class="toc-backref" href="#id9">TruchasStudy</a><a class="headerlink" href="#module-truchas.TruchasStudy" title="Permalink to this headline"></a></h3>
+<span id="truchasstudy"></span><h3><a class="toc-backref" href="#id9">TruchasStudy</a><a class="headerlink" href="#module-truchas.TruchasStudy" title="Permalink to this heading"></a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="truchas.TruchasStudy.TruchasStudy">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TruchasStudy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tenv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tdb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nprocs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasStudy.TruchasStudy" title="Permalink to this definition"></a></dt>
@@ -1144,7 +1145,7 @@ function is used to register those outputs to a
 
 </section>
 <section id="module-truchas.TruchasDatabase">
-<span id="truchasdatabase"></span><h3><a class="toc-backref" href="#id10">TruchasDatabase</a><a class="headerlink" href="#module-truchas.TruchasDatabase" title="Permalink to this headline"></a></h3>
+<span id="truchasdatabase"></span><h3><a class="toc-backref" href="#id10">TruchasDatabase</a><a class="headerlink" href="#module-truchas.TruchasDatabase" title="Permalink to this heading"></a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="truchas.TruchasDatabase.TruchasDatabase">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TruchasDatabase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasDatabase.TruchasDatabase" title="Permalink to this definition"></a></dt>
@@ -1282,7 +1283,7 @@ evaluated). This is so that a unique identifier can be produced.</p>
 
 </section>
 <section id="module-truchas.TruchasTest">
-<span id="truchastest"></span><h3><a class="toc-backref" href="#id11">TruchasTest</a><a class="headerlink" href="#module-truchas.TruchasTest" title="Permalink to this headline"></a></h3>
+<span id="truchastest"></span><h3><a class="toc-backref" href="#id11">TruchasTest</a><a class="headerlink" href="#module-truchas.TruchasTest" title="Permalink to this heading"></a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="truchas.TruchasTest.compare_l2">
 <span class="sig-name descname"><span class="pre">compare_l2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasTest.compare_l2" title="Permalink to this definition"></a></dt>

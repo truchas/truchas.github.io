@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -123,29 +124,29 @@
   <div class="toctree-wrapper compound" id="flow-pressure-solver-and-flow-viscous-solver-namelists">
 </div>
 <section id="flow-pressure-solver-and-flow-viscous-solver-namelist">
-<h1><span class="section-number">13. </span>FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist<a class="headerlink" href="#flow-pressure-solver-and-flow-viscous-solver-namelist" title="Permalink to this headline"></a></h1>
+<h1><span class="section-number">13. </span>FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist<a class="headerlink" href="#flow-pressure-solver-and-flow-viscous-solver-namelist" title="Permalink to this heading"></a></h1>
 <section id="overview">
-<h2><span class="section-number">13.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">13.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
 <p>The flow algorithm requires the solution of two linear systems at each time step: the implicit viscous velocity update system and the pressure Poisson system. Truchas uses the hybrid solver from the <a class="reference external" href="https://computing.llnl.gov/projects/hypre-scalable-linear-solvers-multigrid-methods">HYPRE software library</a> to solve these systems.</p>
 <p>The hybrid solver first uses a diagonally-scaled iterative Krylov solver. If it determines that convergence is too slow, the solver switches to a more expensive but more effective preconditioned Krylov solver that uses an algebraic multigrid (AMG) preconditioner (BoomerAMG).</p>
 <p>The <strong>FLOW_VISCOUS_SOLVER</strong> namelist sets the HYPRE hybrid solver parameters for the solution of the implicit viscous velocity update system, and the <strong>FLOW_PRESSURE_SOLVER</strong> namelist sets the solver parameters for the solution of the pressure Poisson system. The same variables are used in both namelists.</p>
 </section>
 <section id="flow-viscous-solver-namelist-features">
-<h2><span class="section-number">13.2. </span>FLOW_VISCOUS_SOLVER Namelist Features<a class="headerlink" href="#flow-viscous-solver-namelist-features" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">13.2. </span>FLOW_VISCOUS_SOLVER Namelist Features<a class="headerlink" href="#flow-viscous-solver-namelist-features" title="Permalink to this heading"></a></h2>
 <div class="line-block">
 <div class="line"><strong>Required/Optional        :</strong> Required only for viscous flow with <a class="reference internal" href="../FLOW_Namelist/index.html#flow-vi"><span class="std std-ref">viscous_implicitness</span></a> &gt; 0.</div>
 <div class="line"><strong>Single/Multiple Instances:</strong> Single</div>
 </div>
 </section>
 <section id="flow-pressure-solver-namelist-features">
-<h2><span class="section-number">13.3. </span>FLOW_PRESSURE_SOLVER Namelist Features<a class="headerlink" href="#flow-pressure-solver-namelist-features" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">13.3. </span>FLOW_PRESSURE_SOLVER Namelist Features<a class="headerlink" href="#flow-pressure-solver-namelist-features" title="Permalink to this heading"></a></h2>
 <div class="line-block">
 <div class="line"><strong>Required/Optional        :</strong> Required</div>
 <div class="line"><strong>Single/Multiple Instances:</strong> Single</div>
 </div>
 </section>
 <section id="components">
-<h2><span class="section-number">13.4. </span>Components<a class="headerlink" href="#components" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">13.4. </span>Components<a class="headerlink" href="#components" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="#fps-fvs-km"><span class="std std-ref">krylov_method</span></a></p></li>
 <li><p><a class="reference internal" href="#fps-fvs-kd"><span class="std std-ref">krylov_dim</span></a></p></li>
@@ -157,7 +158,7 @@
 <li><p><a class="reference internal" href="#fps-fvs-pl"><span class="std std-ref">print_level</span></a></p></li>
 </ul>
 <section id="krylov-method">
-<span id="fps-fvs-km"></span><h3>krylov_method<a class="headerlink" href="#krylov-method" title="Permalink to this headline"></a></h3>
+<span id="fps-fvs-km"></span><h3>krylov_method<a class="headerlink" href="#krylov-method" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Selects the Krylov method used by the HYPRE hybrid solver.</div>
 <div class="line"><strong>Type</strong>        : string</div>
@@ -166,7 +167,7 @@
 </div>
 </section>
 <section id="krylov-dim">
-<span id="fps-fvs-kd"></span><h3>krylov_dim<a class="headerlink" href="#krylov-dim" title="Permalink to this headline"></a></h3>
+<span id="fps-fvs-kd"></span><h3>krylov_dim<a class="headerlink" href="#krylov-dim" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The Krylov subspace dimension for the restarted GMRES method.</div>
 <div class="line"><strong>Type</strong>        : integer</div>
@@ -175,7 +176,7 @@
 </div>
 </section>
 <section id="conv-rate-tol">
-<span id="fps-fvs-crt"></span><h3>conv_rate_tol<a class="headerlink" href="#conv-rate-tol" title="Permalink to this headline"></a></h3>
+<span id="fps-fvs-crt"></span><h3>conv_rate_tol<a class="headerlink" href="#conv-rate-tol" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The convergence rate tolerance <span class="math notranslate nohighlight">\(\theta\)</span> where the hybrid solver switches to the more expensive <strong>AMG</strong> preconditioned <strong>Krylov</strong> solver. The average convergence rate after <span class="math notranslate nohighlight">\(n\)</span> iterations of the diagonally-scaled Krylov solver is <span class="math notranslate nohighlight">\(\rho_n = (‖r_n‖/‖r_0‖)^{1/n}\)</span>, where <span class="math notranslate nohighlight">\(r_n = Ax_n − b\)</span> is the residual of the linear system, and its convergence is considered too slow when</div>
 </div>
@@ -187,7 +188,7 @@
 </div>
 </section>
 <section id="abs-tol-rel-tol">
-<span id="fps-fvs-at"></span><h3>abs_tol, rel_tol<a class="headerlink" href="#abs-tol-rel-tol" title="Permalink to this headline"></a></h3>
+<span id="fps-fvs-at"></span><h3>abs_tol, rel_tol<a class="headerlink" href="#abs-tol-rel-tol" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The absolute and relative error tolerances <span class="math notranslate nohighlight">\(\epsilon_1\)</span> and <span class="math notranslate nohighlight">\(\epsilon_2\)</span> for the solution of the linear system. The test for convergence is <span class="math notranslate nohighlight">\(‖r‖ \leq max\{\epsilon_1,\epsilon_2‖b‖\}\)</span>, where <span class="math notranslate nohighlight">\(r = Ax − b\)</span> is the residual of the linear system.</div>
 </div>
@@ -197,21 +198,21 @@
 </div>
 </section>
 <section id="max-ds-iter">
-<span id="fps-fvs-mdi"></span><h3>max_ds_iter<a class="headerlink" href="#max-ds-iter" title="Permalink to this headline"></a></h3>
+<span id="fps-fvs-mdi"></span><h3>max_ds_iter<a class="headerlink" href="#max-ds-iter" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The maximum number of diagonally scaled Krylov iterations allowed. If convergence is not achieved within this number of iterations the hybrid solver will switch to the preconditioned Krylov solver.</div>
 <div class="line"><strong>Type</strong>        : integer</div>
 </div>
 </section>
 <section id="max-amg-iter">
-<span id="fps-fvs-mai"></span><h3>max_amg_iter<a class="headerlink" href="#max-amg-iter" title="Permalink to this headline"></a></h3>
+<span id="fps-fvs-mai"></span><h3>max_amg_iter<a class="headerlink" href="#max-amg-iter" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The maximum number of preconditioned Krylov iterations allowed.</div>
 <div class="line"><strong>Type</strong>        : integer</div>
 </div>
 </section>
 <section id="print-level">
-<span id="fps-fvs-pl"></span><h3>print_level<a class="headerlink" href="#print-level" title="Permalink to this headline"></a></h3>
+<span id="fps-fvs-pl"></span><h3>print_level<a class="headerlink" href="#print-level" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Set this parameter to 2 to have HYPRE write diagnostic data to the terminal for each solver iteration. This is only useful in debugging situations.</div>
 <div class="line"><strong>Default</strong>        : 0 (no output)</div>
@@ -219,7 +220,7 @@
 </section>
 </section>
 <section id="additional-hypre-parameters-expert">
-<h2><span class="section-number">13.5. </span>Additional HYPRE parameters (Expert)<a class="headerlink" href="#additional-hypre-parameters-expert" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">13.5. </span>Additional HYPRE parameters (Expert)<a class="headerlink" href="#additional-hypre-parameters-expert" title="Permalink to this heading"></a></h2>
 <p>Some additional HYPRE solver parameters and options can be set using these namelists. Nearly all of these are associated with the BoomerAMG preconditioner, and all have reasonable defaults set by HYPRE. See the ParCSR Hybrid Solver section in the <a class="reference external" href="https://computing.llnl.gov/sites/default/files/public/hypre-2.11.1_ref_manual.pdf">HYPRE reference manual</a>  for details. The <a class="reference external" href="https://hypre.readthedocs.io/en/latest/ch-intro.html">HYPRE documentation</a> has some additional information. The variables that can be set are listed below. Note that the variables correspond to similarly-named HYPRE library functions and not actual HYPRE variables. Also note that there are many parameters and options that cannot currently be set by the namelists.</p>
 <ul class="simple">
 <li><p>cg_use_two_norm(logical)</p></li>

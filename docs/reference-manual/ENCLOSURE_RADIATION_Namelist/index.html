@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -125,19 +126,19 @@
   <div class="toctree-wrapper compound" id="enclosure-radiation-namelist">
 </div>
 <section id="id1">
-<h1><span class="section-number">8. </span>ENCLOSURE_RADIATION Namelist<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1><span class="section-number">8. </span>ENCLOSURE_RADIATION Namelist<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="overview">
-<h2><span class="section-number">8.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">8.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
 </section>
 <section id="enclosure-radiation-namelist-features">
-<h2><span class="section-number">8.2. </span>ENCLOSURE_RADIATION Namelist Features<a class="headerlink" href="#enclosure-radiation-namelist-features" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">8.2. </span>ENCLOSURE_RADIATION Namelist Features<a class="headerlink" href="#enclosure-radiation-namelist-features" title="Permalink to this heading"></a></h2>
 <div class="line-block">
 <div class="line"><strong>Required/Optional        :</strong> Optional</div>
 <div class="line"><strong>Single/Multiple Instances:</strong> Multiple, one for each enclosure.</div>
 </div>
 </section>
 <section id="components">
-<h2><span class="section-number">8.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">8.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="#er-n"><span class="std std-ref">Name</span></a></p></li>
 <li><p><a class="reference internal" href="#er-ef"><span class="std std-ref">Enclosure_File</span></a></p></li>
@@ -152,7 +153,7 @@
 <li><p><a class="reference internal" href="#er-t"><span class="std std-ref">toolpath</span></a></p></li>
 </ul>
 <section id="name">
-<span id="er-n"></span><h3>Name<a class="headerlink" href="#name" title="Permalink to this headline"></a></h3>
+<span id="er-n"></span><h3>Name<a class="headerlink" href="#name" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A unique name for this enclosure radiation system.</div>
 <div class="line"><strong>Type</strong>        : string (31 characters max)</div>
@@ -160,7 +161,7 @@
 </div>
 </section>
 <section id="enclosure-file">
-<span id="er-ef"></span><h3>Enclosure_File<a class="headerlink" href="#enclosure-file" title="Permalink to this headline"></a></h3>
+<span id="er-ef"></span><h3>Enclosure_File<a class="headerlink" href="#enclosure-file" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The path to the enclosure file. This is interpreted relative to the Truchas input file unless this is an absolute path. If operating in moving enclosure mode (see <a class="reference internal" href="#er-t"><span class="std std-ref">toolpath</span></a>) the file name is the base name for a collection of enclosure files.</div>
 <div class="line"><strong>Type</strong>        : string (255 characters max)</div>
@@ -170,7 +171,7 @@
 </div>
 </section>
 <section id="coord-scale-factor">
-<span id="er-csf"></span><h3>Coord_Scale_Factor<a class="headerlink" href="#coord-scale-factor" title="Permalink to this headline"></a></h3>
+<span id="er-csf"></span><h3>Coord_Scale_Factor<a class="headerlink" href="#coord-scale-factor" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : An optional factor with which to scale the node coordinates of the enclosure surface.</div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -180,7 +181,7 @@
 </div>
 </section>
 <section id="ambient-constant">
-<span id="er-ac"></span><h3>Ambient_Constant<a class="headerlink" href="#ambient-constant" title="Permalink to this headline"></a></h3>
+<span id="er-ac"></span><h3>Ambient_Constant<a class="headerlink" href="#ambient-constant" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The constant value of the ambient environment temperature.</div>
 <div class="line"><strong>Physical dimension</strong>: <span class="math notranslate nohighlight">\(\Theta\)</span></div>
@@ -191,7 +192,7 @@
 </div>
 </section>
 <section id="ambient-function">
-<span id="er-af"></span><h3>Ambient_Function<a class="headerlink" href="#ambient-function" title="Permalink to this headline"></a></h3>
+<span id="er-af"></span><h3>Ambient_Function<a class="headerlink" href="#ambient-function" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The name of a <a class="reference internal" href="../FUNCTION_Namelist/index.html#function-namelist"><span class="std std-ref">FUNCTION</span></a> namelist that defines the ambient environment temperature function. That function is expected to be a function of <span class="math notranslate nohighlight">\(t\)</span> alone.</div>
 <div class="line"><strong>Type</strong>        : string</div>
@@ -200,7 +201,7 @@
 </div>
 </section>
 <section id="error-tolerance">
-<span id="er-et"></span><h3>Error_Tolerance<a class="headerlink" href="#error-tolerance" title="Permalink to this headline"></a></h3>
+<span id="er-et"></span><h3>Error_Tolerance<a class="headerlink" href="#error-tolerance" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The error tolerance for the iterative solution of the linear radiosity system <span class="math notranslate nohighlight">\(Aq=b\)</span>. Iteration stops when the approximate radiosity <span class="math notranslate nohighlight">\(q\)</span> satisfies</div>
 </div>
@@ -213,13 +214,13 @@
 </div>
 </section>
 <section id="toolpath">
-<span id="er-t"></span><h3>toolpath<a class="headerlink" href="#toolpath" title="Permalink to this headline"></a></h3>
+<span id="er-t"></span><h3>toolpath<a class="headerlink" href="#toolpath" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The name of a <a class="reference internal" href="../TOOLPATH_Namelist/index.html#toolpath-namelist"><span class="std std-ref">TOOLPATH</span></a> namelist that defines a time-dependent motion that has been suitably partitioned. If this variable is specified it enables the moving enclosure mode of operation. This works in concert with the genre program.</div>
 </div>
 </section>
 <section id="precon-method-expert-parameter">
-<span id="er-pm"></span><h3>Precon_Method (Expert Parameter)<a class="headerlink" href="#precon-method-expert-parameter" title="Permalink to this headline"></a></h3>
+<span id="er-pm"></span><h3>Precon_Method (Expert Parameter)<a class="headerlink" href="#precon-method-expert-parameter" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Preconditioning method for the radiosity system.Use the default.</div>
 <div class="line"><strong>Type</strong>        : string</div>
@@ -229,7 +230,7 @@
 </div>
 </section>
 <section id="precon-iter-expert-parameter">
-<span id="er-pi"></span><h3>Precon_Iter (Expert Parameter)<a class="headerlink" href="#precon-iter-expert-parameter" title="Permalink to this headline"></a></h3>
+<span id="er-pi"></span><h3>Precon_Iter (Expert Parameter)<a class="headerlink" href="#precon-iter-expert-parameter" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The number of iterations of the <a class="reference internal" href="#er-pm"><span class="std std-ref">Precon_Method</span></a> method to apply as the radiosity system preconditioner. Use the default.</div>
 <div class="line"><strong>Type</strong>        : integer</div>
@@ -238,7 +239,7 @@
 </div>
 </section>
 <section id="precon-coupling-method-expert-parameter">
-<span id="er-pcm"></span><h3>Precon_Coupling_Method (Expert Parameter)<a class="headerlink" href="#precon-coupling-method-expert-parameter" title="Permalink to this headline"></a></h3>
+<span id="er-pcm"></span><h3>Precon_Coupling_Method (Expert Parameter)<a class="headerlink" href="#precon-coupling-method-expert-parameter" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Method for coupling the radiosity and heat transfer system preconditioners. Use the default.</div>
 <div class="line"><strong>Type</strong>        : string</div>
@@ -248,7 +249,7 @@
 </div>
 </section>
 <section id="skip-geometry-check-expert-parameter">
-<span id="er-sgc"></span><h3>Skip_Geometry_Check (Expert Parameter)<a class="headerlink" href="#skip-geometry-check-expert-parameter" title="Permalink to this headline"></a></h3>
+<span id="er-sgc"></span><h3>Skip_Geometry_Check (Expert Parameter)<a class="headerlink" href="#skip-geometry-check-expert-parameter" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Normally the geometry of the enclosure surface faces are compared with boundary faces of the heat conduction mesh to ensure they actually match. Setting this variable to false will disable this check, which may be necessary in some unusual use cases.</div>
 <div class="line"><strong>Type</strong>        : logical</div>

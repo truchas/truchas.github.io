@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -118,9 +119,9 @@
   <div class="toctree-wrapper compound" id="um-introduction">
 </div>
 <section id="introduction">
-<h1><span class="section-number">1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline"></a></h1>
+<h1><span class="section-number">1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h1>
 <section id="invoking-truchas">
-<h2><span class="section-number">1.1. </span>Invoking Truchas<a class="headerlink" href="#invoking-truchas" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">1.1. </span>Invoking Truchas<a class="headerlink" href="#invoking-truchas" title="Permalink to this heading"></a></h2>
 <p>Truchas is executed in serial using a command of the form</p>
 <blockquote>
 <div><p>truchas [-h] [-v:<cite>n</cite>] [-o:<cite>outdir</cite>] [-r:<cite>rstfile</cite>] [-g:<cite>m</cite>] <cite>infile</cite></p>
@@ -178,7 +179,7 @@ between serial and parallel, however.</p>
 </table>
 </section>
 <section id="stopping-truchas">
-<h2><span class="section-number">1.2. </span>Stopping Truchas<a class="headerlink" href="#stopping-truchas" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">1.2. </span>Stopping Truchas<a class="headerlink" href="#stopping-truchas" title="Permalink to this heading"></a></h2>
 <p>There are occasions where one would like to gracefully terminate a running
 Truchas simulation before it has reached the final simulation time given in
 the input file. This is easily done by sending the running process the
@@ -191,7 +192,7 @@ continues until it reaches the end of the current time step, where it writes
 the final solution and then exits normally.</p>
 </section>
 <section id="input-file-format">
-<h2><span class="section-number">1.3. </span>Input File Format<a class="headerlink" href="#input-file-format" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">1.3. </span>Input File Format<a class="headerlink" href="#input-file-format" title="Permalink to this heading"></a></h2>
 <p>The Truchas input file is composed of a sequence of Fortran namelist inputs.
 Each namelist input has the form</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&amp;</span><span class="n">namelist</span><span class="o">-</span><span class="n">group</span><span class="o">-</span><span class="n">name</span>
@@ -251,7 +252,7 @@ Common syntax errors are misspelt variable names, variables that don’t
 belong to the namelist, a blank written in place of an underscore, etc.</p>
 </section>
 <section id="physical-units">
-<span id="physcial-units"></span><h2><span class="section-number">1.4. </span>Physical Units<a class="headerlink" href="#physical-units" title="Permalink to this headline"></a></h2>
+<span id="physcial-units"></span><h2><span class="section-number">1.4. </span>Physical Units<a class="headerlink" href="#physical-units" title="Permalink to this heading"></a></h2>
 <p>Truchas does not require the use any particular system of physical units, nor
 does it provide a means for the user to specify the dimension of a numerical
 value. The user is simply expected to ensure that all input values are given
@@ -269,7 +270,7 @@ noted. Use the <a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelis
 namelist to redefine the value of these constants where necessary.</p>
 </section>
 <section id="working-with-output-files">
-<span id="um-work-with-output"></span><h2><span class="section-number">1.5. </span>Working With Output Files<a class="headerlink" href="#working-with-output-files" title="Permalink to this headline"></a></h2>
+<span id="um-work-with-output"></span><h2><span class="section-number">1.5. </span>Working With Output Files<a class="headerlink" href="#working-with-output-files" title="Permalink to this heading"></a></h2>
 <p>As described earlier, Truchas writes its output files to the directory named
 in the -o option, or if omitted, to a directory whose name is generated
 from the base name of the input file: “myprob_output” if “myprob.inp” is
@@ -280,7 +281,7 @@ managing data, and thereare a great many freely-available tools for working
 with these files. Various additional human-readable text files may also be
 written when requested by the input.</p>
 <section id="visualization">
-<h3>Visualization<a class="headerlink" href="#visualization" title="Permalink to this headline"></a></h3>
+<h3>Visualization<a class="headerlink" href="#visualization" title="Permalink to this heading"></a></h3>
 <p><a class="reference external" href="https://www.paraview.org">Paraview</a> is the recommended tool for visualizing
 the simulation results written to the .h5 file. After opening the file with
 paraview, a pop-up window will appear prompting the user to select a reader;
@@ -302,7 +303,7 @@ mesh and a numbered sequence of files for the solution fields at the output
 times.</p>
 </section>
 <section id="restarts">
-<h3>Restarts<a class="headerlink" href="#restarts" title="Permalink to this headline"></a></h3>
+<h3>Restarts<a class="headerlink" href="#restarts" title="Permalink to this heading"></a></h3>
 <p>The program write-restart.py is used to create Truchas restart files using
 data from an .h5 output file. The command syntax is</p>
 <blockquote>

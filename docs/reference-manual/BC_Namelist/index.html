@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -134,9 +135,9 @@
   <div class="toctree-wrapper compound" id="bc-namelist">
 </div>
 <section id="id1">
-<h1><span class="section-number">3. </span>BC Namelist<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1><span class="section-number">3. </span>BC Namelist<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="overview">
-<h2><span class="section-number">3.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">3.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
 <p>The <strong>BC</strong> namelist is used to define boundary conditions for the solid mechanics model at external boundaries and internal material interfaces. The preferred method for specifying the mesh surface where a boundary condition applies is to reference a side set from the <strong>ExodusII</strong>-format mesh. Alternatively, the mesh surface can specified using a conic surface:</p>
 <div class="math notranslate nohighlight" id="equation-eq-3">
 <span class="eqno">(3.1.1)<a class="headerlink" href="#equation-eq-3" title="Permalink to this equation"></a></span>\[\begin{split}\color{blue} 0 = p(x,y,z) &amp;= \color{blue}c_0 + c_x*{x} + c_y*y + c_z*z + c_{xx}*x^2 + c_{yy}*y^2 \\
@@ -144,14 +145,14 @@
 <p>A face belongs to the mesh surface whenever its centroid lies on this surface (see <a class="reference internal" href="#bc-ct"><span class="std std-ref">Conic_Tolerance</span></a>). The coefficients are specified using the <strong>Conic_*</strong> variables. Another method for solid mechanics is to specify nodes. The method is selected using <a class="reference internal" href="#bc-sn"><span class="std std-ref">Surface_Name</span></a>. The specified surface may also be restricted to lie within a bounding box.</p>
 </section>
 <section id="bc-namelist-features">
-<h2><span class="section-number">3.2. </span>BC Namelist Features<a class="headerlink" href="#bc-namelist-features" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">3.2. </span>BC Namelist Features<a class="headerlink" href="#bc-namelist-features" title="Permalink to this heading"></a></h2>
 <div class="line-block">
 <div class="line"><strong>Required/Optional        :</strong> Optional</div>
 <div class="line"><strong>Single/Multiple Instances:</strong> Multiple</div>
 </div>
 </section>
 <section id="components">
-<h2><span class="section-number">3.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">3.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="#bc-bcn"><span class="std std-ref">BC_Name</span></a></p></li>
 <li><p><a class="reference internal" href="#bc-bct"><span class="std std-ref">BC_Table</span></a></p></li>
@@ -175,7 +176,7 @@
 <li><p><a class="reference internal" href="#bc-sn"><span class="std std-ref">Surface_Name</span></a></p></li>
 </ul>
 <section id="bc-name">
-<span id="bc-bcn"></span><h3>BC_Name<a class="headerlink" href="#bc-name" title="Permalink to this headline"></a></h3>
+<span id="bc-bcn"></span><h3>BC_Name<a class="headerlink" href="#bc-name" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A name used to identify a particular instance of this namelist.</div>
 <div class="line"><strong>Type</strong>        : case-sensitive string</div>
@@ -184,7 +185,7 @@
 </div>
 </section>
 <section id="bc-type">
-<span id="bc-bctype"></span><h3>BC_Type<a class="headerlink" href="#bc-type" title="Permalink to this headline"></a></h3>
+<span id="bc-bctype"></span><h3>BC_Type<a class="headerlink" href="#bc-type" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The type of boundary condition.</div>
 <div class="line"><strong>Type</strong>        : string</div>
@@ -202,7 +203,7 @@
 </div>
 </section>
 <section id="bc-value">
-<span id="bc-bcv"></span><h3>BC_Value<a class="headerlink" href="#bc-value" title="Permalink to this headline"></a></h3>
+<span id="bc-bcv"></span><h3>BC_Value<a class="headerlink" href="#bc-value" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Value(s) for the constant(s) used in this BC definition. See also <a class="reference internal" href="#bc-bct"><span class="std std-ref">BC_Table</span></a></div>
 <div class="line"><strong>Physcial Dimension</strong> : Varies</div>
@@ -293,7 +294,7 @@
 </table>
 </section>
 <section id="bc-table">
-<span id="bc-bct"></span><h3>BC_Table<a class="headerlink" href="#bc-table" title="Permalink to this headline"></a></h3>
+<span id="bc-bct"></span><h3>BC_Table<a class="headerlink" href="#bc-table" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Table of values that describes time-dependent velocity boundary data. This is an alternative to <a class="reference internal" href="#bc-bcv"><span class="std std-ref">BC_Value</span></a>, but it can only be used for Dirichlet velocity boundary conditions at present.</div>
 <div class="line"><strong>Type</strong>        : list of real values</div>
@@ -309,7 +310,7 @@
 <p>which specifies the velocity <span class="math notranslate nohighlight">\((u_j,v_j,w_j)\)</span> at time <span class="math notranslate nohighlight">\(t_j, j = 1,2,...,n\)</span>. The times must be in ascending order, and linear interpolation is used between points. For <span class="math notranslate nohighlight">\(t &lt; t_1\)</span>, <span class="math notranslate nohighlight">\((u, v, w)\)</span> is taken equal to <span class="math notranslate nohighlight">\((u_1, v_1, w_1)\)</span>, and for <span class="math notranslate nohighlight">\(t &gt; t_n\)</span>, <span class="math notranslate nohighlight">\((u, v, w)\)</span> is taken equal to <span class="math notranslate nohighlight">\((u_n, v_n, w_n)\)</span>; that is, the velocity is continued as a constant outside the interval <span class="math notranslate nohighlight">\([t_1,t_n]\)</span>. As many as 16 points may be specified. Note that it is not necessary to arrange the values one point per line, as illustrated.</p>
 </section>
 <section id="bc-variable">
-<span id="bc-bcvar"></span><h3>BC_Variable<a class="headerlink" href="#bc-variable" title="Permalink to this headline"></a></h3>
+<span id="bc-bcvar"></span><h3>BC_Variable<a class="headerlink" href="#bc-variable" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The name of the variable to which this boundary condition applies.</div>
 <div class="line"><strong>Type</strong>        : case-insensitive string</div>
@@ -318,7 +319,7 @@
 </div>
 </section>
 <section id="bounding-box">
-<span id="bc-bb"></span><h3>Bounding_Box<a class="headerlink" href="#bounding-box" title="Permalink to this headline"></a></h3>
+<span id="bc-bb"></span><h3>Bounding_Box<a class="headerlink" href="#bounding-box" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The extents in each dimension of a bounding box that restricts the extent of the mesh surface where the boundary condition is applied. This does not apply in the case <a class="reference internal" href="#bc-sn"><span class="std std-ref">Surface_Name</span></a> is <strong>“node set”</strong>.</div>
 <div class="line"><strong>Physical Dimension</strong>: L</div>
@@ -327,7 +328,7 @@
 </div>
 </section>
 <section id="conic-constant">
-<span id="bc-cc"></span><h3>Conic_Constant<a class="headerlink" href="#conic-constant" title="Permalink to this headline"></a></h3>
+<span id="bc-cc"></span><h3>Conic_Constant<a class="headerlink" href="#conic-constant" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Value of the coefficient <span class="math notranslate nohighlight">\(c_0\)</span> in the conic polynomial (<a class="reference internal" href="#equation-eq-3">Eq.3.1.1</a>)</div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -335,7 +336,7 @@
 </div>
 </section>
 <section id="conic-tolerance">
-<span id="bc-ct"></span><h3>Conic_Tolerance<a class="headerlink" href="#conic-tolerance" title="Permalink to this headline"></a></h3>
+<span id="bc-ct"></span><h3>Conic_Tolerance<a class="headerlink" href="#conic-tolerance" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A mesh face is considered to lie on the conic surface when the absolute value of the conic polynomial (Equation <a class="reference internal" href="#equation-eq-3">Eq.3.1.1</a>) at the face centroid is less than the value of this parameter. Only relevant when using a conic polynomial to define the boundary condition surface.</div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -345,7 +346,7 @@
 </div>
 </section>
 <section id="conic-x">
-<span id="bc-cx"></span><h3>Conic_X<a class="headerlink" href="#conic-x" title="Permalink to this headline"></a></h3>
+<span id="bc-cx"></span><h3>Conic_X<a class="headerlink" href="#conic-x" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Value of the coefficient <span class="math notranslate nohighlight">\(c_x\)</span> in the conic polynomial (<a class="reference internal" href="#equation-eq-3">Eq.3.1.1</a>)</div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -353,7 +354,7 @@
 </div>
 </section>
 <section id="conic-y">
-<span id="bc-cy"></span><h3>Conic_Y<a class="headerlink" href="#conic-y" title="Permalink to this headline"></a></h3>
+<span id="bc-cy"></span><h3>Conic_Y<a class="headerlink" href="#conic-y" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Value of the coefficient <span class="math notranslate nohighlight">\(c_y\)</span> in the conic polynomial (<a class="reference internal" href="#equation-eq-3">Eq.3.1.1</a>)</div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -361,7 +362,7 @@
 </div>
 </section>
 <section id="conic-z">
-<span id="bc-cz"></span><h3>Conic_Z<a class="headerlink" href="#conic-z" title="Permalink to this headline"></a></h3>
+<span id="bc-cz"></span><h3>Conic_Z<a class="headerlink" href="#conic-z" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Value of the coefficient <span class="math notranslate nohighlight">\(c_z\)</span> in the conic polynomial (<a class="reference internal" href="#equation-eq-3">Eq.3.1.1</a>)</div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -369,7 +370,7 @@
 </div>
 </section>
 <section id="conic-xx">
-<span id="bc-cxx"></span><h3>Conic_XX<a class="headerlink" href="#conic-xx" title="Permalink to this headline"></a></h3>
+<span id="bc-cxx"></span><h3>Conic_XX<a class="headerlink" href="#conic-xx" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Value of the coefficient <span class="math notranslate nohighlight">\(c_{xx}\)</span> in the conic polynomial (<a class="reference internal" href="#equation-eq-3">Eq.3.1.1</a>)</div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -377,7 +378,7 @@
 </div>
 </section>
 <section id="conic-yy">
-<span id="bc-cyy"></span><h3>Conic_YY<a class="headerlink" href="#conic-yy" title="Permalink to this headline"></a></h3>
+<span id="bc-cyy"></span><h3>Conic_YY<a class="headerlink" href="#conic-yy" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Value of the coefficient <span class="math notranslate nohighlight">\(c_{yy}\)</span> in the conic polynomial (<a class="reference internal" href="#equation-eq-3">Eq.3.1.1</a>)</div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -385,7 +386,7 @@
 </div>
 </section>
 <section id="conic-zz">
-<span id="bc-czz"></span><h3>Conic_ZZ<a class="headerlink" href="#conic-zz" title="Permalink to this headline"></a></h3>
+<span id="bc-czz"></span><h3>Conic_ZZ<a class="headerlink" href="#conic-zz" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Value of the coefficient <span class="math notranslate nohighlight">\(c_{zz}\)</span> in the conic polynomial (<a class="reference internal" href="#equation-eq-3">Eq.3.1.1</a>)</div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -393,7 +394,7 @@
 </div>
 </section>
 <section id="conic-xy">
-<span id="bc-cxy"></span><h3>Conic_XY<a class="headerlink" href="#conic-xy" title="Permalink to this headline"></a></h3>
+<span id="bc-cxy"></span><h3>Conic_XY<a class="headerlink" href="#conic-xy" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Value of the coefficient <span class="math notranslate nohighlight">\(c_{xy}\)</span> in the conic polynomial (<a class="reference internal" href="#equation-eq-3">Eq.3.1.1</a>)</div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -401,7 +402,7 @@
 </div>
 </section>
 <section id="conic-xz">
-<span id="bc-cxz"></span><h3>Conic_XZ<a class="headerlink" href="#conic-xz" title="Permalink to this headline"></a></h3>
+<span id="bc-cxz"></span><h3>Conic_XZ<a class="headerlink" href="#conic-xz" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Value of the coefficient <span class="math notranslate nohighlight">\(c_{xz}\)</span> in the conic polynomial (<a class="reference internal" href="#equation-eq-3">Eq.3.1.1</a>)</div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -409,7 +410,7 @@
 </div>
 </section>
 <section id="conic-yz">
-<span id="bc-cyz"></span><h3>Conic_YZ<a class="headerlink" href="#conic-yz" title="Permalink to this headline"></a></h3>
+<span id="bc-cyz"></span><h3>Conic_YZ<a class="headerlink" href="#conic-yz" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Value of the coefficient <span class="math notranslate nohighlight">\(c_{yz}\)</span> in the conic polynomial (<a class="reference internal" href="#equation-eq-3">Eq.3.1.1</a>)</div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -417,7 +418,7 @@
 </div>
 </section>
 <section id="mesh-surface">
-<span id="bc-ms"></span><h3>Mesh_Surface<a class="headerlink" href="#mesh-surface" title="Permalink to this headline"></a></h3>
+<span id="bc-ms"></span><h3>Mesh_Surface<a class="headerlink" href="#mesh-surface" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Identifier of a side set defined in the <strong>ExodusII</strong>-format mesh. Only relevant when <a class="reference internal" href="#bc-sn"><span class="std std-ref">Surface_Name</span></a> is <strong>“from mesh file”</strong>.</div>
 <div class="line"><strong>Type</strong>        : integer</div>
@@ -425,7 +426,7 @@
 </div>
 </section>
 <section id="node-disp-coords">
-<span id="bc-ndc"></span><h3>Node_Disp_Coords<a class="headerlink" href="#node-disp-coords" title="Permalink to this headline"></a></h3>
+<span id="bc-ndc"></span><h3>Node_Disp_Coords<a class="headerlink" href="#node-disp-coords" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : List of points that identify mesh nodes where a displacement boundary condition is applied. Up to 50 points can be specified as a list of (x,y,z) coordinates. Only relevant when <a class="reference internal" href="#bc-sn"><span class="std std-ref">Surface_Name</span></a> is <strong>“node set”</strong>.</div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -433,7 +434,7 @@
 </div>
 </section>
 <section id="surface-name">
-<span id="bc-sn"></span><h3>Surface_Name<a class="headerlink" href="#surface-name" title="Permalink to this headline"></a></h3>
+<span id="bc-sn"></span><h3>Surface_Name<a class="headerlink" href="#surface-name" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Selects the method of specifying the mesh surface where the boundary condition will be applied.</div>
 <div class="line"><strong>Type</strong>        : case-insensitive string</div>

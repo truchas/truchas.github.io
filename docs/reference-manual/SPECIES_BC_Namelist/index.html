@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -123,9 +124,9 @@
            <div itemprop="articleBody">
              
   <section id="species-bc-namelist">
-<h1><span class="section-number">29. </span>SPECIES_BC Namelist<a class="headerlink" href="#species-bc-namelist" title="Permalink to this headline"></a></h1>
+<h1><span class="section-number">29. </span>SPECIES_BC Namelist<a class="headerlink" href="#species-bc-namelist" title="Permalink to this heading"></a></h1>
 <section id="overview">
-<h2><span class="section-number">29.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">29.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
 <p>The SPECIES_BC namelist is used to define boundary conditions for the species
 diffusion model at external boundaries. Each instance of the namelist defines a
 particular condition to impose on a species component over a subset of the
@@ -175,7 +176,7 @@ component <span class="math notranslate nohighlight">\(j\)</span></p>
 overlap, and they must completely cover the computational boundary.</p>
 </section>
 <section id="components">
-<h2><span class="section-number">29.2. </span>Components<a class="headerlink" href="#components" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">29.2. </span>Components<a class="headerlink" href="#components" title="Permalink to this heading"></a></h2>
 <div class="contents local topic" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#name" id="id1">name</a></p></li>
@@ -193,7 +194,7 @@ overlap, and they must completely cover the computational boundary.</p>
 </ul>
 </div>
 <section id="name">
-<h3><a class="toc-backref" href="#id1">name</a><a class="headerlink" href="#name" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id1">name</a><a class="headerlink" href="#name" title="Permalink to this heading"></a></h3>
 <dl class="field-list simple">
 <dt class="field-odd">Description</dt>
 <dd class="field-odd"><p>A unique name used to identify a particular instance of this
@@ -208,7 +209,7 @@ namelist.</p>
 </dl>
 </section>
 <section id="comp">
-<h3><a class="toc-backref" href="#id2">comp</a><a class="headerlink" href="#comp" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id2">comp</a><a class="headerlink" href="#comp" title="Permalink to this heading"></a></h3>
 <dl class="field-list simple">
 <dt class="field-odd">Description</dt>
 <dd class="field-odd"><p>The species component this boundary condition applies to.</p>
@@ -222,7 +223,7 @@ namelist.</p>
 </dl>
 </section>
 <section id="face-set-ids">
-<h3><a class="toc-backref" href="#id3">face_set_ids</a><a class="headerlink" href="#face-set-ids" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id3">face_set_ids</a><a class="headerlink" href="#face-set-ids" title="Permalink to this heading"></a></h3>
 <dl class="field-list simple">
 <dt class="field-odd">Description</dt>
 <dd class="field-odd"><p>A list of face set IDs that define the portion of the boundary
@@ -237,7 +238,7 @@ where the boundary condition will be imposed.</p>
 </dl>
 </section>
 <section id="type">
-<h3><a class="toc-backref" href="#id4">type</a><a class="headerlink" href="#type" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id4">type</a><a class="headerlink" href="#type" title="Permalink to this heading"></a></h3>
 <dl class="field-list simple">
 <dt class="field-odd">Description</dt>
 <dd class="field-odd"><p>The type of boundary condition. The available options are:</p>
@@ -261,7 +262,7 @@ concentration.</p></li>
 </dl>
 </section>
 <section id="conc">
-<h3><a class="toc-backref" href="#id5">conc</a><a class="headerlink" href="#conc" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id5">conc</a><a class="headerlink" href="#conc" title="Permalink to this heading"></a></h3>
 <dl class="field-list simple">
 <dt class="field-odd">Description</dt>
 <dd class="field-odd"><p>The constant value of boundary concentration for a
@@ -277,7 +278,7 @@ concentration-type boundary condition. To specify a function, use
 </dl>
 </section>
 <section id="conc-func">
-<h3><a class="toc-backref" href="#id6">conc_func</a><a class="headerlink" href="#conc-func" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id6">conc_func</a><a class="headerlink" href="#conc-func" title="Permalink to this heading"></a></h3>
 <dl class="field-list simple">
 <dt class="field-odd">Description</dt>
 <dd class="field-odd"><p>The name of a <a class="reference internal" href="../FUNCTION_Namelist/index.html#id1"><span class="std std-ref">FUNCTION namelist</span></a> namelist defining a
@@ -294,7 +295,7 @@ be a function of <span class="math notranslate nohighlight">\((t,x,y,z)\)</span>
 </dl>
 </section>
 <section id="flux">
-<h3><a class="toc-backref" href="#id7">flux</a><a class="headerlink" href="#flux" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id7">flux</a><a class="headerlink" href="#flux" title="Permalink to this heading"></a></h3>
 <dl class="field-list simple">
 <dt class="field-odd">Description</dt>
 <dd class="field-odd"><p>The constant value of the total outward boundary concentration
@@ -310,7 +311,7 @@ use <a class="reference internal" href="#flux-func">flux_func</a> instead.</p>
 </dl>
 </section>
 <section id="flux-func">
-<h3><a class="toc-backref" href="#id8">flux_func</a><a class="headerlink" href="#flux-func" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id8">flux_func</a><a class="headerlink" href="#flux-func" title="Permalink to this heading"></a></h3>
 <dl class="field-list simple">
 <dt class="field-odd">Description</dt>
 <dd class="field-odd"><p>The name of a <a class="reference internal" href="../FUNCTION_Namelist/index.html#id1"><span class="std std-ref">FUNCTION namelist</span></a> namelist defining a
@@ -327,7 +328,7 @@ a function of <span class="math notranslate nohighlight">\((t,x,y,z)\)</span>.</
 </dl>
 </section>
 <section id="mtc">
-<h3><a class="toc-backref" href="#id9">mtc</a><a class="headerlink" href="#mtc" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id9">mtc</a><a class="headerlink" href="#mtc" title="Permalink to this heading"></a></h3>
 <dl class="field-list simple">
 <dt class="field-odd">Description</dt>
 <dd class="field-odd"><p>The constant value of the mass transfer coefficient for a mass
@@ -343,7 +344,7 @@ transfer-type boundary condition. To specify a function, use
 </dl>
 </section>
 <section id="mtc-func">
-<h3><a class="toc-backref" href="#id10">mtc_func</a><a class="headerlink" href="#mtc-func" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id10">mtc_func</a><a class="headerlink" href="#mtc-func" title="Permalink to this heading"></a></h3>
 <dl class="field-list simple">
 <dt class="field-odd">Description</dt>
 <dd class="field-odd"><p>The name of a <a class="reference internal" href="../FUNCTION_Namelist/index.html#id1"><span class="std std-ref">FUNCTION namelist</span></a> namelist defining a
@@ -360,7 +361,7 @@ function of <span class="math notranslate nohighlight">\((t,x,y,z)\)</span>.</p>
 </dl>
 </section>
 <section id="ambient-conc">
-<h3><a class="toc-backref" href="#id11">ambient_conc</a><a class="headerlink" href="#ambient-conc" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id11">ambient_conc</a><a class="headerlink" href="#ambient-conc" title="Permalink to this heading"></a></h3>
 <dl class="field-list simple">
 <dt class="field-odd">Description</dt>
 <dd class="field-odd"><p>The constant value of the ambient concentration for species
@@ -376,7 +377,7 @@ To specify a function, use <a class="reference internal" href="#ambient-conc-fun
 </dl>
 </section>
 <section id="ambient-conc-func">
-<h3><a class="toc-backref" href="#id12">ambient_conc_func</a><a class="headerlink" href="#ambient-conc-func" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id12">ambient_conc_func</a><a class="headerlink" href="#ambient-conc-func" title="Permalink to this heading"></a></h3>
 <dl class="field-list simple">
 <dt class="field-odd">Description</dt>
 <dd class="field-odd"><p>The name of a <a class="reference internal" href="../FUNCTION_Namelist/index.html#id1"><span class="std std-ref">FUNCTION namelist</span></a> namelist defining a

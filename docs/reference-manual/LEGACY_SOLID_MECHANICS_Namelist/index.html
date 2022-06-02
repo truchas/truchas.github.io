@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -124,20 +125,20 @@
   <div class="toctree-wrapper compound" id="legacy-solid-mechanics-namelist">
 </div>
 <section id="id1">
-<h1><span class="section-number">16. </span>LEGACY_SOLID_MECHANICS Namelist<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1><span class="section-number">16. </span>LEGACY_SOLID_MECHANICS Namelist<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="overview">
-<h2><span class="section-number">16.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">16.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
 <p>The <a class="reference internal" href="#legacy-solid-mechanics-namelist"><span class="std std-ref">LEGACY_SOLID_MECHANICS</span></a> namelist sets parameters that are specific to the legacy solid mechanics model and algorithm. This namelist is read whenever the <a class="reference internal" href="../PHYSICS_Namelist/index.html#physics-namelist"><span class="std std-ref">PHYSICS</span></a> namelist option <a class="reference internal" href="../PHYSICS_Namelist/index.html#physics-lsm"><span class="std std-ref">Legacy_Solid_Mechanics</span></a> is enabled. Parameters for the nonlinear solver used by the algorithm and its preconditioner are specified in <span class="xref std std-ref">NONLINEAR_SOLVER</span> and <span class="xref std std-ref">LINEAR_SOLVER</span> namelists. Optional material viscoplasticity models are defined in <a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html#viscoplastic-model-namelist"><span class="std std-ref">VISCOPLASTIC_MODEL</span></a> namelists.</p>
 </section>
 <section id="legacy-solid-mechanics-namelist-features">
-<h2><span class="section-number">16.2. </span>LEGACY_SOLID_MECHANICS Namelist Features<a class="headerlink" href="#legacy-solid-mechanics-namelist-features" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">16.2. </span>LEGACY_SOLID_MECHANICS Namelist Features<a class="headerlink" href="#legacy-solid-mechanics-namelist-features" title="Permalink to this heading"></a></h2>
 <div class="line-block">
 <div class="line"><strong>Required/Optional        :</strong> Required when solid mechanics physics is enabled.</div>
 <div class="line"><strong>Single/Multiple Instances:</strong> Single</div>
 </div>
 </section>
 <section id="components">
-<h2><span class="section-number">16.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">16.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="#lsm-cd"><span class="std std-ref">Contact_Distance</span></a></p></li>
 <li><p><a class="reference internal" href="#lsm-cnt"><span class="std std-ref">Contact_Norm_Trac</span></a></p></li>
@@ -152,7 +153,7 @@
 <li><p><a class="reference internal" href="#lsm-nmv"><span class="std std-ref">NLK_Max_Vectors</span></a></p></li>
 </ul>
 <section id="contact-distance">
-<span id="lsm-cd"></span><h3>Contact_Distance<a class="headerlink" href="#contact-distance" title="Permalink to this headline"></a></h3>
+<span id="lsm-cd"></span><h3>Contact_Distance<a class="headerlink" href="#contact-distance" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A length scale parameter <span class="math notranslate nohighlight">\(\beta\)</span> for the contact function</div>
 </div>
@@ -199,7 +200,7 @@
 </div>
 </section>
 <section id="contact-norm-trac">
-<span id="lsm-cnt"></span><h3>Contact_Norm_Trac<a class="headerlink" href="#contact-norm-trac" title="Permalink to this headline"></a></h3>
+<span id="lsm-cnt"></span><h3>Contact_Norm_Trac<a class="headerlink" href="#contact-norm-trac" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A parameter <span class="math notranslate nohighlight">\(\tau^{*}\)</span> for the contact function</div>
 </div>
@@ -248,7 +249,7 @@
 </div>
 </section>
 <section id="contact-penalty">
-<span id="lsm-cp"></span><h3>Contact_Penalty<a class="headerlink" href="#contact-penalty" title="Permalink to this headline"></a></h3>
+<span id="lsm-cp"></span><h3>Contact_Penalty<a class="headerlink" href="#contact-penalty" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A penalty factor for the penetration constraint in the contact algorithm. Changing this is probably not a good idea in the current version.</div>
 <div class="line"><strong>Physical Dimension</strong>: dimensionless</div>
@@ -258,7 +259,7 @@
 </div>
 </section>
 <section id="displacement-nonlinear-solution">
-<span id="lsm-dns"></span><h3>Displacement_Nonlinear_Solution<a class="headerlink" href="#displacement-nonlinear-solution" title="Permalink to this headline"></a></h3>
+<span id="lsm-dns"></span><h3>Displacement_Nonlinear_Solution<a class="headerlink" href="#displacement-nonlinear-solution" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A character string pointer to the nonlinear solution algorithm parameters to be used in a Newton-Krylov solution of the nonlinear thermo-elastic viscoplastic equations. This string “points” to a particular <span class="xref std std-ref">NONLINEAR_SOLVER</span> namelist if it matches the <span class="xref std std-ref">Name</span> input variable string in the <span class="xref std std-ref">NONLINEAR_SOLVER</span> namelist.</div>
 <div class="line"><strong>Type</strong>         : string</div>
@@ -268,7 +269,7 @@
 </div>
 </section>
 <section id="solid-mechanics-body-force">
-<span id="lsm-smbf"></span><h3>Solid_Mechanics_Body_Force<a class="headerlink" href="#solid-mechanics-body-force" title="Permalink to this headline"></a></h3>
+<span id="lsm-smbf"></span><h3>Solid_Mechanics_Body_Force<a class="headerlink" href="#solid-mechanics-body-force" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Body forces will be included in the solid mechanics calculation.</div>
 <div class="line"><strong>Type</strong>         : logical</div>
@@ -276,7 +277,7 @@
 </div>
 </section>
 <section id="strain-limit">
-<span id="lsm-sl"></span><h3>Strain_Limit<a class="headerlink" href="#strain-limit" title="Permalink to this headline"></a></h3>
+<span id="lsm-sl"></span><h3>Strain_Limit<a class="headerlink" href="#strain-limit" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : This parameter controls the use of the ODE integrator in the plastic strain calculation. It should be set to the minimum significant value of the plastic strain increment for a time step. If convergence seems poor when a viscoplastic material model is used, it may help to reduce the value.</div>
 <div class="line"><strong>Type</strong>         : real</div>
@@ -286,7 +287,7 @@
 </div>
 </section>
 <section id="convergence-criterion">
-<span id="lsm-cc"></span><h3>Convergence_Criterion<a class="headerlink" href="#convergence-criterion" title="Permalink to this headline"></a></h3>
+<span id="lsm-cc"></span><h3>Convergence_Criterion<a class="headerlink" href="#convergence-criterion" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Tolerance used to determine when nonlinear convergence has been reached.</div>
 <div class="line"><strong>Type</strong>         : real</div>
@@ -310,7 +311,7 @@
 <p>This is an attempt to prevent false convergence if the solution stagnates, but allow iteration to stop if the solution is acceptable.</p>
 </section>
 <section id="maximum-iteration">
-<span id="lsm-mi"></span><h3>Maximum_Iteration<a class="headerlink" href="#maximum-iteration" title="Permalink to this headline"></a></h3>
+<span id="lsm-mi"></span><h3>Maximum_Iteration<a class="headerlink" href="#maximum-iteration" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Maximum allowed number of iterations of the nonlinear solver.</div>
 <div class="line"><strong>Type</strong>         : integer</div>
@@ -319,7 +320,7 @@
 </div>
 </section>
 <section id="nlk-vector-tolerance">
-<span id="lsm-nvt"></span><h3>NLK_Vector_Tolerance<a class="headerlink" href="#nlk-vector-tolerance" title="Permalink to this headline"></a></h3>
+<span id="lsm-nvt"></span><h3>NLK_Vector_Tolerance<a class="headerlink" href="#nlk-vector-tolerance" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The vector drop tolerance for the NLK method. When assembling the acceleration subspace vector by vector, a vector is dropped when the sine of the angle between the vector and the subspace less than this value.</div>
 <div class="line"><strong>Type</strong>         : real</div>
@@ -328,7 +329,7 @@
 </div>
 </section>
 <section id="nlk-max-vectors">
-<span id="lsm-nmv"></span><h3>NLK_Max_Vectors<a class="headerlink" href="#nlk-max-vectors" title="Permalink to this headline"></a></h3>
+<span id="lsm-nmv"></span><h3>NLK_Max_Vectors<a class="headerlink" href="#nlk-max-vectors" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : For the NLK method, the maximum number of acceleration vectors to be used.</div>
 <div class="line"><strong>Type</strong>         : integer</div>

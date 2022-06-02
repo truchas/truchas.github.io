@@ -18,6 +18,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../../_static/js/theme.js"></script>
@@ -132,7 +133,7 @@
            <div itemprop="articleBody">
              
   <section id="metis-patching-metis">
-<h1>METIS patching (METIS)<a class="headerlink" href="#metis-patching-metis" title="Permalink to this headline"></a></h1>
+<h1>METIS patching (METIS)<a class="headerlink" href="#metis-patching-metis" title="Permalink to this heading"></a></h1>
 <figure class="align-center" id="id9" style="width: 50%">
 <img alt="../../../_images/basic_hemi_metis_2.png" src="../../../_images/basic_hemi_metis_2.png" />
 <figcaption>
@@ -203,7 +204,7 @@ to the patching algorithm described in this document.</p>
 </ul>
 </div>
 <section id="algorithm">
-<h2>Algorithm<a class="headerlink" href="#algorithm" title="Permalink to this headline"></a></h2>
+<h2>Algorithm<a class="headerlink" href="#algorithm" title="Permalink to this heading"></a></h2>
 <p>The METIS algorithm begins by constructing the dual graph of the enclosure. By default, the face
 areas and edge lengths of the enclosure are computed and assigned as weights to the corresponding
 elements of the dual graph, respectively the vertices and edges. This weighted graph is passed to
@@ -211,7 +212,7 @@ the METIS library, which partitions the dual graph vertices and hence produces a
 enclosure. Finally, a fix-up routine breaks up disconnected patches, ensuring that the final output
 consists only of connected patches.</p>
 <section id="outline">
-<h3>Outline<a class="headerlink" href="#outline" title="Permalink to this headline"></a></h3>
+<h3>Outline<a class="headerlink" href="#outline" title="Permalink to this heading"></a></h3>
 <p>The following is a high-level outline of the METIS algorithm.</p>
 <ol class="arabic simple">
 <li><p><strong>Initialization</strong></p>
@@ -248,7 +249,7 @@ create disconnected partitions with the recommended default parameters.</p></li>
 </ol>
 </section>
 <section id="dual-graph">
-<h3>Dual Graph<a class="headerlink" href="#dual-graph" title="Permalink to this headline"></a></h3>
+<h3>Dual Graph<a class="headerlink" href="#dual-graph" title="Permalink to this heading"></a></h3>
 <p>During initialization, the METIS algorithm constructs the face adjacency graph (i.e. dual graph) of
 the enclosure. This graph is then partitioned by the METIS library to produce enclosure patches.</p>
 <p>The face adjacency graph is defined by the topology of the mesh and the <a class="reference internal" href="patches_namelist.html#max-angle"><span class="std std-ref">MAX_ANGLE</span></a> namelist parameter which controls the maximum
@@ -258,7 +259,7 @@ faces at a angle greater than MAX_ANGLE will not share an edge in the adjacency 
 bounded by ‘sharp’ edges (angles greater than MAX_ANGLE) or the mesh boundary itself.</p>
 </section>
 <section id="partitioning-objective">
-<h3>Partitioning objective<a class="headerlink" href="#partitioning-objective" title="Permalink to this headline"></a></h3>
+<h3>Partitioning objective<a class="headerlink" href="#partitioning-objective" title="Permalink to this heading"></a></h3>
 <p>By default, the METIS algorithm uses the <em>edge-cut</em> partitioning objective (see <a class="reference internal" href="#metis-objtype"><span class="std std-ref">METIS_OBJTYPE</span></a>). With this objective, the number of edges (or the sum of
 their weights) that straddle the different partitions is minimized. Also, the number of vertices (or
 the sum of their weights) assigned to each partition is constrained to be approximately the same
@@ -272,7 +273,7 @@ documentation <span id="id2">[<a class="reference internal" href="#id8" title="G
 assigned to the edges and vertices of the dual graph, and thus affect the final patch configuration.
 These parameters are discussed in detail below.</p>
 <section id="edge-weight">
-<h4>Edge Weight<a class="headerlink" href="#edge-weight" title="Permalink to this headline"></a></h4>
+<h4>Edge Weight<a class="headerlink" href="#edge-weight" title="Permalink to this heading"></a></h4>
 <p>When the <a class="reference internal" href="#metis-edge-weight"><span class="std std-ref">METIS_EDGE_WEIGHT</span></a> parameter is false,
 the dual graph edges are assigned a weight of 1. In this case, the number of edges that straddle
 different partitions is minimized. In other words, the resulting patches will tend have “smooth”
@@ -284,7 +285,7 @@ as patches that are roughly circular since circles minimize perimeter for a fixe
 (see the <a class="reference external" href="https://en.wikipedia.org/wiki/Isoperimetric_inequality">isoperimetric inequality</a>).</p>
 </section>
 <section id="face-weight">
-<h4>Face Weight<a class="headerlink" href="#face-weight" title="Permalink to this headline"></a></h4>
+<h4>Face Weight<a class="headerlink" href="#face-weight" title="Permalink to this heading"></a></h4>
 <p>When the <a class="reference internal" href="#metis-face-weight"><span class="std std-ref">METIS_FACE_WEIGHT</span></a> parameter is false,
 the dual graph vertices are assigned a weight of 1. In this case, the objective is constrained to
 ensure the number of vertices in each partition is approximately the same across the partitions. In
@@ -294,7 +295,7 @@ corresponding faces of the enclosure. In this case, the objective is constrained
 of the weights of the vertices assigned to each partition is the same across the partitions. In
 other words, all patches will have roughly the same total area.</p>
 <section id="load-imbalance">
-<h5>Load Imbalance<a class="headerlink" href="#load-imbalance" title="Permalink to this headline"></a></h5>
+<h5>Load Imbalance<a class="headerlink" href="#load-imbalance" title="Permalink to this heading"></a></h5>
 <p>The maximum allowed imbalance in the vertex weight constraint is controlled by the
 <a class="reference internal" href="#metis-ufactor"><span class="std std-ref">METIS_UFACTOR</span></a> parameter. The load imbalance for this
 constraint is defined to be <span class="math notranslate nohighlight">\(\max_i (w[i]/t[i])\)</span>, where <span class="math notranslate nohighlight">\(w[i]\)</span> is the fraction of the overall weight
@@ -328,7 +329,7 @@ patches is not required.</p>
 </section>
 </section>
 <section id="namelist-parameters">
-<h2>Namelist Parameters<a class="headerlink" href="#namelist-parameters" title="Permalink to this headline"></a></h2>
+<h2>Namelist Parameters<a class="headerlink" href="#namelist-parameters" title="Permalink to this heading"></a></h2>
 <p>The <a class="reference internal" href="patches_namelist.html"><span class="doc">PATCHES namelist</span></a> allows a user to configure the METIS algorithm
 parameters. Although the PATCHES namelist supports many parameters, not all are used by METIS.
 Specifically, METIS admits two general parameters, and three parameters used during initialization,
@@ -340,9 +341,9 @@ information on those parameters.</p>
 parameters used during initialization, and then briefly present the 12 METIS library parameters
 passed to the graph partitioner.</p>
 <section id="initialization-parameters">
-<h3>Initialization Parameters<a class="headerlink" href="#initialization-parameters" title="Permalink to this headline"></a></h3>
+<h3>Initialization Parameters<a class="headerlink" href="#initialization-parameters" title="Permalink to this heading"></a></h3>
 <section id="metis-face-patch-ratio">
-<h4>METIS_FACE_PATCH_RATIO<a class="headerlink" href="#metis-face-patch-ratio" title="Permalink to this headline"></a></h4>
+<h4>METIS_FACE_PATCH_RATIO<a class="headerlink" href="#metis-face-patch-ratio" title="Permalink to this heading"></a></h4>
 <p>Defines the ratio of total faces to total desired patches, and by extension the final number of
 patches generated.</p>
 <blockquote class="nml-param">
@@ -366,7 +367,7 @@ disconnected patches which may increase the final patch count. In short, NPART i
 for the final patch count. Consider tweaking other parameters if an exact patch count is desired.</p>
 </section>
 <section id="metis-edge-weight">
-<h4>METIS_EDGE_WEIGHT<a class="headerlink" href="#metis-edge-weight" title="Permalink to this headline"></a></h4>
+<h4>METIS_EDGE_WEIGHT<a class="headerlink" href="#metis-edge-weight" title="Permalink to this heading"></a></h4>
 <p>Determines whether to weight the edges of the dual graph by the corresponding enclosure edge lengths.</p>
 <blockquote class="nml-param">
 <div><p><strong>Type:</strong> <code class="docutils literal notranslate"><span class="pre">LOGICAL</span></code></p>
@@ -381,7 +382,7 @@ algorithm documentation for more information on how the parameter affects the fi
 configuration.</p>
 </section>
 <section id="metis-face-weight">
-<h4>METIS_FACE_WEIGHT<a class="headerlink" href="#metis-face-weight" title="Permalink to this headline"></a></h4>
+<h4>METIS_FACE_WEIGHT<a class="headerlink" href="#metis-face-weight" title="Permalink to this heading"></a></h4>
 <p>Determines whether to weight the vertices of the dual graph by the corresponding enclosure face
 areas.</p>
 <blockquote class="nml-param">
@@ -398,12 +399,12 @@ configuration.</p>
 </section>
 </section>
 <section id="metis-library-parameters">
-<h3>METIS library parameters<a class="headerlink" href="#metis-library-parameters" title="Permalink to this headline"></a></h3>
+<h3>METIS library parameters<a class="headerlink" href="#metis-library-parameters" title="Permalink to this heading"></a></h3>
 <p>The METIS graph partitioning routine admits the following integer-valued options that may be
 specified, though all have reasonable defaults so that none must be specified. See the METIS
 documentation <span id="id3">[<a class="reference internal" href="#id8" title="George Karypis and Vipin Kumar. A fast and high quality multilevel scheme for partitioning irregular graphs. SIAM J. Sci. Comput., 20(1):359–392, December 1998.">1</a>]</span> for more details on these options.</p>
 <section id="metis-ptype">
-<h4>METIS_PTYPE<a class="headerlink" href="#metis-ptype" title="Permalink to this headline"></a></h4>
+<h4>METIS_PTYPE<a class="headerlink" href="#metis-ptype" title="Permalink to this heading"></a></h4>
 <p>Specifies the partitioning method.</p>
 <blockquote class="nml-param">
 <div><p><strong>Type:</strong> <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code></p>
@@ -432,7 +433,7 @@ documentation <span id="id3">[<a class="reference internal" href="#id8" title="G
 </table>
 </section>
 <section id="metis-objtype">
-<h4>METIS_OBJTYPE<a class="headerlink" href="#metis-objtype" title="Permalink to this headline"></a></h4>
+<h4>METIS_OBJTYPE<a class="headerlink" href="#metis-objtype" title="Permalink to this heading"></a></h4>
 <p>Specifies the type of objective.</p>
 <blockquote class="nml-param">
 <div><p><strong>Type:</strong> <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code></p>
@@ -461,7 +462,7 @@ documentation <span id="id3">[<a class="reference internal" href="#id8" title="G
 </table>
 </section>
 <section id="metis-ctype">
-<h4>METIS_CTYPE<a class="headerlink" href="#metis-ctype" title="Permalink to this headline"></a></h4>
+<h4>METIS_CTYPE<a class="headerlink" href="#metis-ctype" title="Permalink to this heading"></a></h4>
 <p>Specifies the matching scheme to be used during coarsening.</p>
 <blockquote class="nml-param">
 <div><p><strong>Type:</strong> <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code></p>
@@ -490,7 +491,7 @@ documentation <span id="id3">[<a class="reference internal" href="#id8" title="G
 </table>
 </section>
 <section id="metis-iptype">
-<h4>METIS_IPTYPE<a class="headerlink" href="#metis-iptype" title="Permalink to this headline"></a></h4>
+<h4>METIS_IPTYPE<a class="headerlink" href="#metis-iptype" title="Permalink to this heading"></a></h4>
 <p>Specifies the algorithm used during initial partitioning (recursive bisection only).</p>
 <blockquote class="nml-param">
 <div><p><strong>Type:</strong> <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code></p>
@@ -525,7 +526,7 @@ documentation <span id="id3">[<a class="reference internal" href="#id8" title="G
 </table>
 </section>
 <section id="metis-ncuts">
-<h4>METIS_NCUTS<a class="headerlink" href="#metis-ncuts" title="Permalink to this headline"></a></h4>
+<h4>METIS_NCUTS<a class="headerlink" href="#metis-ncuts" title="Permalink to this heading"></a></h4>
 <p>Specifies the number of different partitionings that will be computed. The final partitioning will
 be the one that achieves the best edgecut or communication volume.</p>
 <blockquote class="nml-param">
@@ -535,7 +536,7 @@ be the one that achieves the best edgecut or communication volume.</p>
 </div></blockquote>
 </section>
 <section id="metis-niter">
-<h4>METIS_NITER<a class="headerlink" href="#metis-niter" title="Permalink to this headline"></a></h4>
+<h4>METIS_NITER<a class="headerlink" href="#metis-niter" title="Permalink to this heading"></a></h4>
 <p>Specifies the number of iterations of the refinement algorithm at each stage of the uncoarsening
 process.</p>
 <blockquote class="nml-param">
@@ -545,7 +546,7 @@ process.</p>
 </div></blockquote>
 </section>
 <section id="metis-seed">
-<h4>METIS_SEED<a class="headerlink" href="#metis-seed" title="Permalink to this headline"></a></h4>
+<h4>METIS_SEED<a class="headerlink" href="#metis-seed" title="Permalink to this heading"></a></h4>
 <p>Specifies the seed for the random number generator.</p>
 <blockquote class="nml-param">
 <div><p><strong>Type:</strong> <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code></p>
@@ -554,7 +555,7 @@ process.</p>
 </div></blockquote>
 </section>
 <section id="metis-minconn">
-<h4>METIS_MINCONN<a class="headerlink" href="#metis-minconn" title="Permalink to this headline"></a></h4>
+<h4>METIS_MINCONN<a class="headerlink" href="#metis-minconn" title="Permalink to this heading"></a></h4>
 <p>Specifies whether the partitioning procedure should seek to minimize the maximum degree of the
 subdomain graph.</p>
 <blockquote class="nml-param">
@@ -585,7 +586,7 @@ with a shared interface. This parameter is encoded as follows:</p>
 </table>
 </section>
 <section id="metis-no2hop">
-<h4>METIS_NO2HOP<a class="headerlink" href="#metis-no2hop" title="Permalink to this headline"></a></h4>
+<h4>METIS_NO2HOP<a class="headerlink" href="#metis-no2hop" title="Permalink to this heading"></a></h4>
 <p>Specifies that the coarsening will not perform any 2–hop matchings when the standard matching
 approach fails to sufficiently coarsen the graph.</p>
 <blockquote class="nml-param">
@@ -616,7 +617,7 @@ is encoded as follows:</p>
 </table>
 </section>
 <section id="metis-contig">
-<h4>METIS_CONTIG<a class="headerlink" href="#metis-contig" title="Permalink to this headline"></a></h4>
+<h4>METIS_CONTIG<a class="headerlink" href="#metis-contig" title="Permalink to this heading"></a></h4>
 <p>Specifies whether the partitioning procedure should produce partitions that are contiguous.</p>
 <blockquote class="nml-param">
 <div><p><strong>Type:</strong> <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code></p>
@@ -646,7 +647,7 @@ follows:</p>
 </table>
 </section>
 <section id="metis-ufactor">
-<h4>METIS_UFACTOR<a class="headerlink" href="#metis-ufactor" title="Permalink to this headline"></a></h4>
+<h4>METIS_UFACTOR<a class="headerlink" href="#metis-ufactor" title="Permalink to this heading"></a></h4>
 <p>Specifies the maximum allowed load imbalance among the partitions.</p>
 <blockquote class="nml-param">
 <div><p><strong>Type:</strong> <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code></p>
@@ -658,7 +659,7 @@ recursive bisection (i.e., an imbalance of <span class="math notranslate nohighl
 partitioning (i.e., an imbalance of <span class="math notranslate nohighlight">\(1.03\)</span>).</p>
 </section>
 <section id="metis-dbglvl">
-<h4>METIS_DBGLVL<a class="headerlink" href="#metis-dbglvl" title="Permalink to this headline"></a></h4>
+<h4>METIS_DBGLVL<a class="headerlink" href="#metis-dbglvl" title="Permalink to this heading"></a></h4>
 <p>Specifies the amount and type of diagnostic information that will be written to <strong>stderr</strong> by the
 partitioning procedure.</p>
 <blockquote class="nml-param">
@@ -673,7 +674,7 @@ they generate.</p>
 </section>
 </section>
 <section id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline"></a></h2>
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading"></a></h2>
 <div class="docutils container" id="id5">
 <dl class="citation">
 <dt class="label" id="id8"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>,<a href="#id3">3</a>,<a href="#id4">4</a>)</span></dt>

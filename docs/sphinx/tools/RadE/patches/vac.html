@@ -18,6 +18,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../../_static/js/theme.js"></script>
@@ -122,7 +123,7 @@
            <div itemprop="articleBody">
              
   <section id="vertex-anchor-cluster-vac">
-<h1>Vertex Anchor Cluster (VAC)<a class="headerlink" href="#vertex-anchor-cluster-vac" title="Permalink to this headline"></a></h1>
+<h1>Vertex Anchor Cluster (VAC)<a class="headerlink" href="#vertex-anchor-cluster-vac" title="Permalink to this heading"></a></h1>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The VAC algorithm is intended for development and not recommended for regular users. For best
@@ -180,7 +181,7 @@ of full patches generated.</p>
 </ul>
 </div>
 <section id="algorithm">
-<h2>Algorithm<a class="headerlink" href="#algorithm" title="Permalink to this headline"></a></h2>
+<h2>Algorithm<a class="headerlink" href="#algorithm" title="Permalink to this heading"></a></h2>
 <p>The VAC algorithm begins by iterating through each vertex and adding its corresponding <a class="reference internal" href="#term-full-patch"><span class="xref std std-term">full
 patch</span></a> to a global priority queue. The queue entries are then popped one by one until the queue is
 empty. If all the faces of a queue entry are unassigned, a new patch is created from the entry.
@@ -189,7 +190,7 @@ unassigned, and adds that entry to the queue. Once the queue is empty, we have a
 the enclosure. Finally, VAC merges patches where possible, in accordance with the
 <a class="reference internal" href="#vac-merge-level"><span class="std std-ref">VAC_MERGE_LEVEL</span></a> namelist parameter.</p>
 <section id="outline">
-<h3>Outline<a class="headerlink" href="#outline" title="Permalink to this headline"></a></h3>
+<h3>Outline<a class="headerlink" href="#outline" title="Permalink to this heading"></a></h3>
 <p>The following is a high-level outline of the VAC algorithm.</p>
 <ol class="arabic simple">
 <li><p><strong>Initialization</strong></p>
@@ -271,7 +272,7 @@ before queueing them.</p></li>
 </ul>
 </section>
 <section id="connected-components">
-<h3>Connected Components<a class="headerlink" href="#connected-components" title="Permalink to this headline"></a></h3>
+<h3>Connected Components<a class="headerlink" href="#connected-components" title="Permalink to this heading"></a></h3>
 <p>During initialization, the VAC algorithm constructs the face adjacency graph of the enclosure. This
 graph defines the connected components of the enclosure, and is used to quickly determine connected
 subsets of queue entry faces.</p>
@@ -290,7 +291,7 @@ short-hand for refering to the connected components of the face adjacency graph.
 </div>
 </section>
 <section id="patch-weight">
-<h3>Patch Weight<a class="headerlink" href="#patch-weight" title="Permalink to this headline"></a></h3>
+<h3>Patch Weight<a class="headerlink" href="#patch-weight" title="Permalink to this heading"></a></h3>
 <p>Each entry of the global priority queue has an associated weight which determines their order in
 the queue. The VAC queue prioritizes entries with a lower weight, so the lowest weight patches are
 assigned first.</p>
@@ -300,7 +301,7 @@ patch <span class="math notranslate nohighlight">\((P_i, V_j)\)</span> is given 
 \[E(P_i, V_j) = E_{normal}(P_i) + E_{shape}(P_i) + E_{size}(P_i) + E_{full}(P_i, V_j) + E_{pos}(V_j)\]</div>
 <p>The terms of <span class="math notranslate nohighlight">\(E(P_i,V_j)\)</span> are discussed in detail below.</p>
 <section id="normal-bias">
-<h4>Normal Bias<a class="headerlink" href="#normal-bias" title="Permalink to this headline"></a></h4>
+<h4>Normal Bias<a class="headerlink" href="#normal-bias" title="Permalink to this heading"></a></h4>
 <p>We want patches to be roughly planar so that all their faces have similar views of the rest of the
 enclosure. This ensures that the patch view factor is a reasonable approximation of the view factors
 of its faces.</p>
@@ -335,7 +336,7 @@ when these vectors are
 it follows that <span class="math notranslate nohighlight">\(0 \le E_{normal}(P_i) \le 4\)</span> for any patch <span class="math notranslate nohighlight">\(P_i\)</span>.</p>
 </section>
 <section id="shape-bias">
-<h4>Shape Bias<a class="headerlink" href="#shape-bias" title="Permalink to this headline"></a></h4>
+<h4>Shape Bias<a class="headerlink" href="#shape-bias" title="Permalink to this heading"></a></h4>
 <p>We want to prioritize patches that are as circular as possible to ensure that all their faces have
 similar views of the rest of the enclosure. In particular, long skinny patches are more likely to
 have shadow discontinuities fall across them.</p>
@@ -354,7 +355,7 @@ avoids disconnected patches and the maximum angle between connected faces tends 
 \[E_{shape}(P_i) = \frac{\rho^2}{4\pi w}\]</div>
 </section>
 <section id="size-bias">
-<h4>Size Bias<a class="headerlink" href="#size-bias" title="Permalink to this headline"></a></h4>
+<h4>Size Bias<a class="headerlink" href="#size-bias" title="Permalink to this heading"></a></h4>
 <p>We want to maximize the number of patches generated, and therefore must discourage 1-face patches as
 much as possible. However, 1-face patches tend to have a low weight in the above metrics, since
 individual faces are fairly compact (low <span class="math notranslate nohighlight">\(E_{shape}\)</span>) and their <span class="math notranslate nohighlight">\(E_{normal}\)</span> bias is 0.</p>
@@ -369,7 +370,7 @@ individual faces are fairly compact (low <span class="math notranslate nohighlig
 that VAC considers a 1-face patch to be as bad as a highly distorted patch.</p>
 </section>
 <section id="full-patch-bias">
-<h4>Full Patch Bias<a class="headerlink" href="#full-patch-bias" title="Permalink to this headline"></a></h4>
+<h4>Full Patch Bias<a class="headerlink" href="#full-patch-bias" title="Permalink to this heading"></a></h4>
 <p>We want to maximize the number of <a class="reference internal" href="#term-full-patch"><span class="xref std std-term">full patches</span></a> generated, because such patches
 tend to have desirable properties. Moreover, we want to discourage <a class="reference internal" href="#term-partial-patch"><span class="xref std std-term">partial patches</span></a>, as they can have arbitrarily bad shapes and prevent full patches from being formed
 elsewhere.</p>
@@ -382,7 +383,7 @@ elsewhere.</p>
 \end{cases} \\\end{split}\]</div>
 </section>
 <section id="position-bias">
-<h4>Position Bias<a class="headerlink" href="#position-bias" title="Permalink to this headline"></a></h4>
+<h4>Position Bias<a class="headerlink" href="#position-bias" title="Permalink to this heading"></a></h4>
 <p>Vertices on the boundary of enclosure components are poor vertex anchor candidates. The faces of
 boundary vertices can span more than one component, and connected subsets of such faces tend to form
 badly shaped patches. For example, the faces of a vertex on the boundary between two enclosure
@@ -420,7 +421,7 @@ absolutely necessary.</p>
 </section>
 </section>
 <section id="patch-merging">
-<h3>Patch Merging<a class="headerlink" href="#patch-merging" title="Permalink to this headline"></a></h3>
+<h3>Patch Merging<a class="headerlink" href="#patch-merging" title="Permalink to this heading"></a></h3>
 <p>After the patch assignment step of the VAC algorithm, all faces are assigned to a patch. However, we
 may still reduce the patch count by <em>merging</em> patches together. Therefore, VAC implements several
 patch merging subroutines of increasing aggressiveness. To ensure the resulting merged patches are
@@ -431,7 +432,7 @@ small patches. The effects of patch splitting are discussed briefly below.</p>
 aggressiveness of patch merging. VAC currently support four merge levels. They are described in
 detail below.</p>
 <section id="patch-splitting">
-<h4>Patch Splitting<a class="headerlink" href="#patch-splitting" title="Permalink to this headline"></a></h4>
+<h4>Patch Splitting<a class="headerlink" href="#patch-splitting" title="Permalink to this heading"></a></h4>
 <p>All the merge subroutines begin by ‘splitting’ small patches. The idea here is to increase the
 number of merge candidates by providing more 1-face patches. The small patches aren’t technically
 split, rather they are deleted and added back to the queue with their original weight. Each patch’s
@@ -448,11 +449,11 @@ determines the maximum size of patches to be split. Patches with up to VAC_SPLIT
 are split.</p>
 </section>
 <section id="merge-level-0">
-<h4>Merge Level 0<a class="headerlink" href="#merge-level-0" title="Permalink to this headline"></a></h4>
+<h4>Merge Level 0<a class="headerlink" href="#merge-level-0" title="Permalink to this heading"></a></h4>
 <p>No merging is performed. The algorithm terminates immediately after the patch assignment stage.</p>
 </section>
 <section id="merge-level-1">
-<h4>Merge Level 1<a class="headerlink" href="#merge-level-1" title="Permalink to this headline"></a></h4>
+<h4>Merge Level 1<a class="headerlink" href="#merge-level-1" title="Permalink to this heading"></a></h4>
 <p>Merge patches that are within the faces of a vertex.</p>
 <p>For each vertex <span class="math notranslate nohighlight">\(V_j\)</span>, let <span class="math notranslate nohighlight">\(F_j\)</span> be the faces of <span class="math notranslate nohighlight">\(V_j\)</span> and check whether <span class="math notranslate nohighlight">\(F_j\)</span> fully encloses two or
 more patches. If so, then the enclosed patches can be safely merged into a new <a class="reference internal" href="#term-full-patch"><span class="xref std std-term">full patch</span></a>
@@ -463,7 +464,7 @@ queue with weight <span class="math notranslate nohighlight">\(E(F_j, V_j)\)</sp
 will only happen if <span class="math notranslate nohighlight">\(F_j\)</span> has a lower weight than all of the enclosed patches.</p>
 </section>
 <section id="merge-level-2">
-<h4>Merge Level 2<a class="headerlink" href="#merge-level-2" title="Permalink to this headline"></a></h4>
+<h4>Merge Level 2<a class="headerlink" href="#merge-level-2" title="Permalink to this heading"></a></h4>
 <p>Same as Merge Level 1. Additionally, merge patches that are within the faces of pairs of adjacent
 vertices.</p>
 <p>For each vertex <span class="math notranslate nohighlight">\(V_j\)</span>, find all its vertex neighbors, i.e. those vertices connected to <span class="math notranslate nohighlight">\(V_j\)</span> by an
@@ -484,7 +485,7 @@ replace full patches that are fairly planar and compact, but will tend to replac
 patches and irregular full patches.</p>
 </section>
 <section id="merge-level-3">
-<h4>Merge Level 3<a class="headerlink" href="#merge-level-3" title="Permalink to this headline"></a></h4>
+<h4>Merge Level 3<a class="headerlink" href="#merge-level-3" title="Permalink to this heading"></a></h4>
 <p>Same as Merge Level 2. Additionally, merge patches that are within the faces of pairs of adjacent
 vertices, but add a large constant to the weight of the enclosed patches.</p>
 <p>We repeat the same procedure as for Merge Level 2, but in this case we add a large constant <span class="math notranslate nohighlight">\(c=100\)</span>
@@ -502,7 +503,7 @@ before all other candidates.</p>
 </section>
 </section>
 <section id="namelist-parameters">
-<h2>Namelist Parameters<a class="headerlink" href="#namelist-parameters" title="Permalink to this headline"></a></h2>
+<h2>Namelist Parameters<a class="headerlink" href="#namelist-parameters" title="Permalink to this heading"></a></h2>
 <p>The <a class="reference internal" href="patches_namelist.html"><span class="doc">PATCHES namelist</span></a> allows a user to configure the VAC algorithm
 parameters. Although the PATCHES namelist supports many parameters, only four are used by VAC, and
 only two of those are unique to VAC.</p>
@@ -512,7 +513,7 @@ information on those parameters.</p>
 <p>The four parameters unique to VAC are all prefixed with <em>VAC</em>. These have already been discussed, so
 we’ll only touch on them briefly here and link to the previous discussion.</p>
 <section id="vac-merge-level">
-<h3>VAC_MERGE_LEVEL<a class="headerlink" href="#vac-merge-level" title="Permalink to this headline"></a></h3>
+<h3>VAC_MERGE_LEVEL<a class="headerlink" href="#vac-merge-level" title="Permalink to this heading"></a></h3>
 <p>Controls the aggressiveness of patch merging.</p>
 <blockquote class="nml-param">
 <div><p><strong>Type:</strong> <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code></p>
@@ -555,7 +556,7 @@ This ensures that the merge is always performed.</p></td>
 <p>For a more details on each merge level, refer to the section on <a class="reference internal" href="#patch-merging"><span class="std std-ref">patch merging</span></a>.</p>
 </section>
 <section id="vac-split-patch-size">
-<h3>VAC_SPLIT_PATCH_SIZE<a class="headerlink" href="#vac-split-patch-size" title="Permalink to this headline"></a></h3>
+<h3>VAC_SPLIT_PATCH_SIZE<a class="headerlink" href="#vac-split-patch-size" title="Permalink to this heading"></a></h3>
 <p>Defines the maximum size of patches to be split during patch merging.</p>
 <blockquote class="nml-param">
 <div><p><strong>Type:</strong> <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code></p>
@@ -579,7 +580,7 @@ triangular meshes. This avoids splitting too many patches.</p>
 </section>
 </section>
 <section id="glossary">
-<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline"></a></h2>
+<h2>Glossary<a class="headerlink" href="#glossary" title="Permalink to this heading"></a></h2>
 <dl class="glossary simple">
 <dt id="term-boundary-vertex">boundary vertex<a class="headerlink" href="#term-boundary-vertex" title="Permalink to this term"></a></dt><dd><p>A vertex incident on an edge located along the boundary of a connected component of the face
 adjacency graph. Such an edge is either on the mesh boundary, or between two faces at an angle
@@ -600,7 +601,7 @@ of the faces of that vertex.</p>
 </dl>
 </section>
 <section id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline"></a></h2>
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading"></a></h2>
 <div class="docutils container" id="id3">
 <dl class="citation">
 <dt class="label" id="id4"><span class="brackets"><a class="fn-backref" href="#id1">1</a></span></dt>

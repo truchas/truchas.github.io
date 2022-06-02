@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -119,9 +120,9 @@
   <div class="toctree-wrapper compound" id="induction-coil-namelist">
 </div>
 <section id="id1">
-<h1><span class="section-number">15. </span>INDUCTION_COIL Namelist<a class="headerlink" href="#id1" title="Permalink to this headline"></a></h1>
+<h1><span class="section-number">15. </span>INDUCTION_COIL Namelist<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
 <section id="overview">
-<h2><span class="section-number">15.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">15.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
 <p>The variables in an <a class="reference internal" href="#induction-coil-namelist"><span class="std std-ref">INDUCTION_COIL</span></a> namelist specify the physical characteristics of an induction coil that is to produce an external magnetic field to drive the electromagnetic Joule heat calculation. <a class="reference internal" href="#fig-induc-coil-schematic"><span class="std std-numref">Figure 15.1.1</span></a> shows the idealized model of a coil that is used to analytically evaluate the driving field. The coil axis is assumed to be oriented with the problem <a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html#em-sa"><span class="std std-ref">symmetry axis</span></a> as defined in the <a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html#electromagnetics-namelist"><span class="std std-ref">ELECTROMAGNETICS</span></a> namelist. Multiple coils may be specified; the net driving field is the superposition of the fields due to the individual coils, and a spatially <a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html#em-us"><span class="std std-ref">uniform field</span></a> that can be specified in the <a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html#electromagnetics-namelist"><span class="std std-ref">ELECTROMAGNETICS</span></a> namelist. The coils carry a sinusoidally-varying current with a common frequency and phase. The <a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html#em-sf"><span class="std std-ref">frequency</span></a> is specified in the <a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html#electromagnetics-namelist"><span class="std std-ref">ELECTROMAGNETICS</span></a> namelist, while the phase value is irrelevant due to the time averaging of the calculated Joule heat. Each coil, however, has an independent current amplitude which is specified here. In addition, the current and frequency may be piecewise constant functions of time.</p>
 <figure class="align-center" id="id2">
 <span id="fig-induc-coil-schematic"></span><a class="reference internal image-reference" href="../_images/ic-coil.jpg"><img alt="../_images/ic-coil.jpg" src="../_images/ic-coil.jpg" style="width: 650px;" /></a>
@@ -131,14 +132,14 @@
 </figure>
 </section>
 <section id="induction-coil-namelist-features">
-<h2><span class="section-number">15.2. </span>INDUCTION_COIL Namelist Features<a class="headerlink" href="#induction-coil-namelist-features" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">15.2. </span>INDUCTION_COIL Namelist Features<a class="headerlink" href="#induction-coil-namelist-features" title="Permalink to this heading"></a></h2>
 <div class="line-block">
 <div class="line"><strong>Required/Optional        :</strong> Optional</div>
 <div class="line"><strong>Single/Multiple Instances:</strong> Multiple</div>
 </div>
 </section>
 <section id="components">
-<h2><span class="section-number">15.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this headline"></a></h2>
+<h2><span class="section-number">15.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="#ic-cen"><span class="std std-ref">Center</span></a></p></li>
 <li><p><a class="reference internal" href="#ic-cur"><span class="std std-ref">Current</span></a></p></li>
@@ -147,7 +148,7 @@
 <li><p><a class="reference internal" href="#ic-rad"><span class="std std-ref">Radius</span></a></p></li>
 </ul>
 <section id="center">
-<span id="ic-cen"></span><h3>Center<a class="headerlink" href="#center" title="Permalink to this headline"></a></h3>
+<span id="ic-cen"></span><h3>Center<a class="headerlink" href="#center" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A 3-vector <span class="math notranslate nohighlight">\(x_0\)</span> giving the position of the center of the coil; cf. <a class="reference internal" href="#fig-induc-coil-schematic"><span class="std std-numref">Figure 15.1.1</span></a>.</div>
 <div class="line"><strong>Physical dimension</strong>: L</div>
@@ -157,7 +158,7 @@
 </div>
 </section>
 <section id="current">
-<span id="ic-cur"></span><h3>Current<a class="headerlink" href="#current" title="Permalink to this headline"></a></h3>
+<span id="ic-cur"></span><h3>Current<a class="headerlink" href="#current" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Amplitude of the sinusoidally-varying current in the coil.</div>
 <div class="line"><strong>Physical dimension</strong>: I</div>
@@ -168,7 +169,7 @@
 </div>
 </section>
 <section id="length">
-<span id="ic-len"></span><h3>Length<a class="headerlink" href="#length" title="Permalink to this headline"></a></h3>
+<span id="ic-len"></span><h3>Length<a class="headerlink" href="#length" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Length <span class="math notranslate nohighlight">\(l\)</span> of the coil; cf. <a class="reference internal" href="#fig-induc-coil-schematic"><span class="std std-numref">Figure 15.1.1</span></a></div>
 <div class="line"><strong>Physical dimension</strong>: L</div>
@@ -179,7 +180,7 @@
 </div>
 </section>
 <section id="nturns">
-<span id="ic-nt"></span><h3>NTurns<a class="headerlink" href="#nturns" title="Permalink to this headline"></a></h3>
+<span id="ic-nt"></span><h3>NTurns<a class="headerlink" href="#nturns" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Number of turns of the coil; cf. <a class="reference internal" href="#fig-induc-coil-schematic"><span class="std std-numref">Figure 15.1.1</span></a></div>
 <div class="line"><strong>Type</strong>        : integer</div>
@@ -188,7 +189,7 @@
 </div>
 </section>
 <section id="radius">
-<span id="ic-rad"></span><h3>Radius<a class="headerlink" href="#radius" title="Permalink to this headline"></a></h3>
+<span id="ic-rad"></span><h3>Radius<a class="headerlink" href="#radius" title="Permalink to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Radius <span class="math notranslate nohighlight">\(r\)</span> of the coil; cf. <a class="reference internal" href="#fig-induc-coil-schematic"><span class="std std-numref">Figure 15.1.1</span></a></div>
 <div class="line"><strong>Physical dimension</strong>: L</div>

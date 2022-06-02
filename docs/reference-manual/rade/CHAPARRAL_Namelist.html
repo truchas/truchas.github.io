@@ -15,6 +15,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -120,7 +121,7 @@
            <div itemprop="articleBody">
              
   <section id="chaparral-namelist">
-<h1>CHAPARRAL Namelist<a class="headerlink" href="#chaparral-namelist" title="Permalink to this headline"></a></h1>
+<h1>CHAPARRAL Namelist<a class="headerlink" href="#chaparral-namelist" title="Permalink to this heading"></a></h1>
 <p>The <strong>CHAPARRAL</strong> namelist specifies solver parameters for the Chaparral view
 factor library <a class="footnote-reference brackets" href="#footcite-glass-chaparral-1995" id="id1">1</a>.</p>
 <dl class="field-list simple">
@@ -142,7 +143,7 @@ surface for correctness prior to performing the expensive view factor
 calculation.</p>
 </div>
 <section id="general-guidance">
-<h2>General Guidance<a class="headerlink" href="#general-guidance" title="Permalink to this headline"></a></h2>
+<h2>General Guidance<a class="headerlink" href="#general-guidance" title="Permalink to this heading"></a></h2>
 <ul class="simple">
 <li><p>Use <a class="reference internal" href="#blocking-enclosure">blocking_enclosure</a>, <a class="reference internal" href="#partial-enclosure">partial_enclosure</a>, and <a class="reference internal" href="#partial-area">partial_area</a> to define
 the problem.</p></li>
@@ -225,7 +226,7 @@ needs to be increased (assuming METIS patching).</p></li>
 </ul>
 </div>
 <section id="blocking-enclosure">
-<h3><a class="toc-backref" href="#id9">blocking_enclosure</a><a class="headerlink" href="#blocking-enclosure" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id9">blocking_enclosure</a><a class="headerlink" href="#blocking-enclosure" title="Permalink to this heading"></a></h3>
 <p>Defines whether this is a blocking problem; i.e., whether the line segment
 connecting two enclosure surface points may intersect the surface at an
 intermediate point. If the shape produced by the enabled radiating surfaces is
@@ -247,7 +248,7 @@ run slower than necessary.</p>
 </div>
 </section>
 <section id="partial-enclosure">
-<h3><a class="toc-backref" href="#id10">partial_enclosure</a><a class="headerlink" href="#partial-enclosure" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id10">partial_enclosure</a><a class="headerlink" href="#partial-enclosure" title="Permalink to this heading"></a></h3>
 <p>Defines whether this is a partial enclosure problem (i.e., one with gaps to an
 ambient temperature).</p>
 <dl class="field-list simple">
@@ -276,7 +277,7 @@ enclosure might leak when filled with water, it is a partial enclosure.</p>
 </div>
 </section>
 <section id="partial-area">
-<h3><a class="toc-backref" href="#id11">partial_area</a><a class="headerlink" href="#partial-area" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id11">partial_area</a><a class="headerlink" href="#partial-area" title="Permalink to this heading"></a></h3>
 <p>Area of the gaps in a partial enclosure problem, <em>before</em> symmetries are
 applied. Required when <code class="docutils literal notranslate"><span class="pre">partial_enclosure</span></code> is true.</p>
 <dl class="field-list simple">
@@ -316,7 +317,7 @@ with that value provided as the <code class="docutils literal notranslate"><span
 </div>
 </section>
 <section id="hemicube-resolution">
-<h3><a class="toc-backref" href="#id12">hemicube_resolution</a><a class="headerlink" href="#hemicube-resolution" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id12">hemicube_resolution</a><a class="headerlink" href="#hemicube-resolution" title="Permalink to this heading"></a></h3>
 <p>The number of 1D subdivisions for the hemicube over each face. Given a
 <code class="docutils literal notranslate"><span class="pre">hemicube_resolution</span></code> of <span class="math notranslate nohighlight">\(n\)</span>, there will be a total of <span class="math notranslate nohighlight">\(n^2\)</span> total
 subdivisions per hemicube.</p>
@@ -347,7 +348,7 @@ while higher resolution hemicubes are needed to accurately hit faces.</p>
 </div>
 </section>
 <section id="min-separation">
-<h3><a class="toc-backref" href="#id13">min_separation</a><a class="headerlink" href="#min-separation" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id13">min_separation</a><a class="headerlink" href="#min-separation" title="Permalink to this heading"></a></h3>
 <p>The minimum ratio of distance to diameter between any two faces.</p>
 <p>A face <span class="math notranslate nohighlight">\(j\)</span> is subdivided until the following condition is satisfied for
 all subfaces <span class="math notranslate nohighlight">\(k\)</span>:</p>
@@ -386,7 +387,7 @@ while coarse faces are more likely to need subdivision.</p>
 </div>
 </section>
 <section id="verbosity-level">
-<h3><a class="toc-backref" href="#id14">verbosity_level</a><a class="headerlink" href="#verbosity-level" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id14">verbosity_level</a><a class="headerlink" href="#verbosity-level" title="Permalink to this heading"></a></h3>
 <p>Determines the detail and frequency of terminal output.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -401,7 +402,7 @@ while coarse faces are more likely to need subdivision.</p>
 </dl>
 </section>
 <section id="max-subdivisions-expert">
-<h3><a class="toc-backref" href="#id15">max_subdivisions (expert)</a><a class="headerlink" href="#max-subdivisions-expert" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id15">max_subdivisions (expert)</a><a class="headerlink" href="#max-subdivisions-expert" title="Permalink to this heading"></a></h3>
 <p>The maximum face subdivisions allowed to satisfy <a class="reference internal" href="#min-separation">min_separation</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -439,7 +440,7 @@ the maximum desired surface subdivision did not reach the maximum allowed.</p>
 </div>
 </section>
 <section id="bsp-max-tree-depth-expert">
-<h3><a class="toc-backref" href="#id16">BSP_max_tree_depth (expert)</a><a class="headerlink" href="#bsp-max-tree-depth-expert" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id16">BSP_max_tree_depth (expert)</a><a class="headerlink" href="#bsp-max-tree-depth-expert" title="Permalink to this heading"></a></h3>
 <p>This is a Chaparral-internal parameter. <a class="footnote-reference brackets" href="#footcite-glass-chaparral-1995" id="id3">1</a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -454,7 +455,7 @@ the maximum desired surface subdivision did not reach the maximum allowed.</p>
 </dl>
 </section>
 <section id="bsp-min-leaf-length-expert">
-<h3><a class="toc-backref" href="#id17">BSP_min_leaf_length (expert)</a><a class="headerlink" href="#bsp-min-leaf-length-expert" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id17">BSP_min_leaf_length (expert)</a><a class="headerlink" href="#bsp-min-leaf-length-expert" title="Permalink to this heading"></a></h3>
 <p>This is a Chaparral-internal parameter. <a class="footnote-reference brackets" href="#footcite-glass-chaparral-1995" id="id4">1</a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -469,7 +470,7 @@ the maximum desired surface subdivision did not reach the maximum allowed.</p>
 </dl>
 </section>
 <section id="spatial-tolerance-expert">
-<h3><a class="toc-backref" href="#id18">spatial_tolerance (expert)</a><a class="headerlink" href="#spatial-tolerance-expert" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id18">spatial_tolerance (expert)</a><a class="headerlink" href="#spatial-tolerance-expert" title="Permalink to this heading"></a></h3>
 <p>This is a Chaparral-internal parameter. <a class="footnote-reference brackets" href="#footcite-glass-chaparral-1995" id="id5">1</a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -484,7 +485,7 @@ the maximum desired surface subdivision did not reach the maximum allowed.</p>
 </dl>
 </section>
 <section id="smoothing-max-iter-expert">
-<h3><a class="toc-backref" href="#id19">smoothing_max_iter (expert)</a><a class="headerlink" href="#smoothing-max-iter-expert" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id19">smoothing_max_iter (expert)</a><a class="headerlink" href="#smoothing-max-iter-expert" title="Permalink to this heading"></a></h3>
 <p>This is an upper limit to the number of smoothing iterations permitted</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -518,7 +519,7 @@ message will appear:</p>
 </div>
 </section>
 <section id="smoothing-tolerance-expert">
-<h3><a class="toc-backref" href="#id20">smoothing_tolerance (expert)</a><a class="headerlink" href="#smoothing-tolerance-expert" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id20">smoothing_tolerance (expert)</a><a class="headerlink" href="#smoothing-tolerance-expert" title="Permalink to this heading"></a></h3>
 <p>This is a Chaparral-internal parameter. <a class="footnote-reference brackets" href="#footcite-glass-chaparral-1995" id="id6">1</a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -533,7 +534,7 @@ message will appear:</p>
 </dl>
 </section>
 <section id="smoothing-weight-expert">
-<h3><a class="toc-backref" href="#id21">smoothing_weight (expert)</a><a class="headerlink" href="#smoothing-weight-expert" title="Permalink to this headline"></a></h3>
+<h3><a class="toc-backref" href="#id21">smoothing_weight (expert)</a><a class="headerlink" href="#smoothing-weight-expert" title="Permalink to this heading"></a></h3>
 <p>This is a Chaparral-internal parameter. <a class="footnote-reference brackets" href="#footcite-glass-chaparral-1995" id="id7">1</a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>

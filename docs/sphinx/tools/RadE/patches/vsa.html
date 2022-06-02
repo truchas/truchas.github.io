@@ -18,6 +18,7 @@
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/jquery.js"></script>
         <script src="../../../_static/underscore.js"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../../_static/js/theme.js"></script>
@@ -123,7 +124,7 @@
            <div itemprop="articleBody">
              
   <section id="variational-shape-approximation-vsa">
-<h1>Variational Shape Approximation (VSA)<a class="headerlink" href="#variational-shape-approximation-vsa" title="Permalink to this headline"></a></h1>
+<h1>Variational Shape Approximation (VSA)<a class="headerlink" href="#variational-shape-approximation-vsa" title="Permalink to this heading"></a></h1>
 <figure class="align-center" id="id9" style="width: 50%">
 <img alt="../../../_images/basic_hemi_vsa_2.png" src="../../../_images/basic_hemi_vsa_2.png" />
 <figcaption>
@@ -178,7 +179,7 @@ convergence criterion is met.</p>
 </ul>
 </div>
 <section id="algorithm">
-<h2>Algorithm<a class="headerlink" href="#algorithm" title="Permalink to this headline"></a></h2>
+<h2>Algorithm<a class="headerlink" href="#algorithm" title="Permalink to this heading"></a></h2>
 <p>The VSA algorithm continuously alternates between two phases of <em>geometry partitioning</em> and <em>proxy
 fitting</em> until a convergence criterion is met. Each phase attempts to reduce the total distortion
 across all patches. Once the algorithm converges, we have found a patch configuration that minimizes
@@ -200,7 +201,7 @@ distortion as the new seed patch.</p>
 low distortion to one with high distortion. These operations help reduce total distortion by moving
 patches to where they are needed most.</p>
 <section id="outline">
-<h3>Outline<a class="headerlink" href="#outline" title="Permalink to this headline"></a></h3>
+<h3>Outline<a class="headerlink" href="#outline" title="Permalink to this heading"></a></h3>
 <ol class="arabic">
 <li><p><strong>Initialization</strong></p>
 <ol class="arabic simple">
@@ -318,7 +319,7 @@ one face have a weight of 0, <span class="math notranslate nohighlight">\(P_i\)<
 </ul>
 </section>
 <section id="error-minimization">
-<h3>Error Minimization<a class="headerlink" href="#error-minimization" title="Permalink to this headline"></a></h3>
+<h3>Error Minimization<a class="headerlink" href="#error-minimization" title="Permalink to this heading"></a></h3>
 <p>Given a partition of a mesh into a collection of patches <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> and the corresponding
 collection of patch proxies <span class="math notranslate nohighlight">\(\mathcal{P}\)</span>, the VSA algorithm attempts to minimize the total
 distortion error <span class="math notranslate nohighlight">\(E(\mathcal{R}, \mathcal{P})\)</span>.</p>
@@ -337,7 +338,7 @@ stages, VSA drives down the total distortion error <span class="math notranslate
 \[E(P_i, \rho_i) = \mathcal{L}^{2,1}(P_i, \rho_i) + \mathcal{L}^2(P_i, \rho_i)\]</div>
 <p>The terms of <span class="math notranslate nohighlight">\(E(P_i, \rho_i)\)</span> are defined below.</p>
 <section id="l21-metric">
-<h4><span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric<a class="headerlink" href="#l21-metric" title="Permalink to this headline"></a></h4>
+<h4><span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric<a class="headerlink" href="#l21-metric" title="Permalink to this heading"></a></h4>
 <p>Cohen-Steiner et al. <span id="id3">[<a class="reference internal" href="#id6" title="David Cohen-Steiner, Pierre Alliez, and Mathieu Desbrun. Variational Shape Approximation. In ACM SIGGRAPH 2004 Papers, SIGGRAPH '04, 905–914. New York, NY, USA, 2004. ACM. doi:10.1145/1186562.1015817.">1</a>]</span> define the so-called <span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric to measure
 the planarity of a patch. The <span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric is based on an <span class="math notranslate nohighlight">\(\mathcal{L}^2\)</span> measure of the normal field over the
 patch. Given a patch <span class="math notranslate nohighlight">\(P_i\)</span> and proxy <span class="math notranslate nohighlight">\(\rho_i = (X_i, \vec{n}_i)\)</span> we define</p>
@@ -346,7 +347,7 @@ patch. Given a patch <span class="math notranslate nohighlight">\(P_i\)</span> a
 <p>where <span class="math notranslate nohighlight">\(\vec{n}(x)\)</span> is the normal at the point <span class="math notranslate nohighlight">\(x \in P_i\)</span>.</p>
 </section>
 <section id="l2-metric">
-<h4><span class="math notranslate nohighlight">\(\mathcal{L}^2\)</span> metric<a class="headerlink" href="#l2-metric" title="Permalink to this headline"></a></h4>
+<h4><span class="math notranslate nohighlight">\(\mathcal{L}^2\)</span> metric<a class="headerlink" href="#l2-metric" title="Permalink to this heading"></a></h4>
 <p>To measure the compactness of a patch, we use a simple Euclidean distance or <span class="math notranslate nohighlight">\(\mathcal{L}^2\)</span> metric. Given a
 patch <span class="math notranslate nohighlight">\(P_i\)</span> with centroid <span class="math notranslate nohighlight">\(X_i\)</span> we define</p>
 <div class="math notranslate nohighlight">
@@ -356,7 +357,7 @@ tessellations.</p>
 </section>
 </section>
 <section id="geometry-partitioning">
-<h3>Geometry Partitioning<a class="headerlink" href="#geometry-partitioning" title="Permalink to this headline"></a></h3>
+<h3>Geometry Partitioning<a class="headerlink" href="#geometry-partitioning" title="Permalink to this heading"></a></h3>
 <p>The partitioning phase ‘grows’ a collection of seed faces into connected patches by successively
 adding adjacent faces to a patch. In order to construct a partition that minimizes total distortion,
 we cluster faces that are ‘close together’ in the error metric <span class="math notranslate nohighlight">\(E(P_i, \rho_i)\)</span>.</p>
@@ -376,7 +377,7 @@ times. Note also that the partitioning phase runs in time <span class="math notr
 <span id="id4">[<a class="reference internal" href="#id6" title="David Cohen-Steiner, Pierre Alliez, and Mathieu Desbrun. Variational Shape Approximation. In ACM SIGGRAPH 2004 Papers, SIGGRAPH '04, 905–914. New York, NY, USA, 2004. ACM. doi:10.1145/1186562.1015817.">1</a>]</span>. Therefore, VSA is able to perform partitions very quickly,
 reducing overall computation time.</p>
 <section id="face-weight">
-<h4>Face Weight<a class="headerlink" href="#face-weight" title="Permalink to this headline"></a></h4>
+<h4>Face Weight<a class="headerlink" href="#face-weight" title="Permalink to this heading"></a></h4>
 <p>Each entry of the global priority queue has an associated weight which determines their order in the
 queue. The VSA queue prioritizes entries with a lower weight, so the faces with least distortion
 relative to a patch will get added to that patch first.</p>
@@ -388,7 +389,7 @@ metric:</p>
 \[E(F_k, \rho_i) = E_{normal}(F_k, \rho_i) + E_{dist}(F_k, \rho_i) + E_{size}(F_k, \rho_i)\]</div>
 <p>The terms of <span class="math notranslate nohighlight">\(E(F_k, \rho_i)\)</span> are discussed below.</p>
 <section id="normal-bias">
-<h5>Normal Bias<a class="headerlink" href="#normal-bias" title="Permalink to this headline"></a></h5>
+<h5>Normal Bias<a class="headerlink" href="#normal-bias" title="Permalink to this heading"></a></h5>
 <p>We define the <em>normal bias</em> of a face <span class="math notranslate nohighlight">\(F_k\)</span> relative to a patch <span class="math notranslate nohighlight">\(P_i\)</span> with proxy <span class="math notranslate nohighlight">\(\rho_i=(X_i,
 \vec{n}_i)\)</span> as the <span class="math notranslate nohighlight">\(\mathcal{L}^{2,1}\)</span> metric of the face normal <span class="math notranslate nohighlight">\(\vec{n}_k\)</span> relative to the proxy normal
 <span class="math notranslate nohighlight">\(\vec{n}_i\)</span>:</p>
@@ -399,7 +400,7 @@ when these vectors are <a class="reference external" href="https://en.wikipedia.
 \le E_{normal}(F_k, \rho_i) \le 4\)</span> for any tuple <span class="math notranslate nohighlight">\((F_k, \rho_i)\)</span>.</p>
 </section>
 <section id="distance-bias">
-<h5>Distance Bias<a class="headerlink" href="#distance-bias" title="Permalink to this headline"></a></h5>
+<h5>Distance Bias<a class="headerlink" href="#distance-bias" title="Permalink to this heading"></a></h5>
 <p>We define the <em>distance bias</em> of a face <span class="math notranslate nohighlight">\(F_k\)</span> relative to a patch <span class="math notranslate nohighlight">\(P_i\)</span> with proxy <span class="math notranslate nohighlight">\(\rho_i=(X_i,
 \vec{n}_i)\)</span> as the square of the <span class="math notranslate nohighlight">\(\mathcal{L}^2\)</span> distance between the face centroid <span class="math notranslate nohighlight">\(X_k\)</span> and the proxy centroid
 <span class="math notranslate nohighlight">\(X_i\)</span>, normalized by the face radius <span class="math notranslate nohighlight">\(r_k\)</span>.</p>
@@ -421,7 +422,7 @@ centroids are further from the nodes of the face. In particular, this causes lar
 preferentially selected as initial seeds, resulting in components covered with one face patches.</p>
 </section>
 <section id="size-bias">
-<h5>Size Bias<a class="headerlink" href="#size-bias" title="Permalink to this headline"></a></h5>
+<h5>Size Bias<a class="headerlink" href="#size-bias" title="Permalink to this heading"></a></h5>
 <p>We define the <em>size bias</em> of a face <span class="math notranslate nohighlight">\(F_k\)</span> relative to a patch <span class="math notranslate nohighlight">\(P_i\)</span> with proxy <span class="math notranslate nohighlight">\(\rho_i=(X_i,
 \vec{n}_i)\)</span> as</p>
 <div class="math notranslate nohighlight">
@@ -441,7 +442,7 @@ unless it is explicitly set to a value comparable to the mesh size.</p>
 </section>
 </section>
 <section id="proxy-fitting">
-<h3>Proxy Fitting<a class="headerlink" href="#proxy-fitting" title="Permalink to this headline"></a></h3>
+<h3>Proxy Fitting<a class="headerlink" href="#proxy-fitting" title="Permalink to this heading"></a></h3>
 <p>Each patch <span class="math notranslate nohighlight">\(P_i\)</span> has an associated proxy <span class="math notranslate nohighlight">\(\rho_i = (X_i, \vec{n}_i)\)</span> that represents the patch with
 two quantities, namely the coordinate <span class="math notranslate nohighlight">\(X_i\)</span> and the normal vector <span class="math notranslate nohighlight">\(\vec{n}_i\)</span>.</p>
 <p>Once a partition of the enclosure <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> is found, we wish to update the patch proxies to
@@ -469,7 +470,7 @@ and <span class="math notranslate nohighlight">\(W_i = \sum_{F_k \in P_i} w_k\)<
 </section>
 </section>
 <section id="namelist-parameters">
-<h2>Namelist Parameters<a class="headerlink" href="#namelist-parameters" title="Permalink to this headline"></a></h2>
+<h2>Namelist Parameters<a class="headerlink" href="#namelist-parameters" title="Permalink to this heading"></a></h2>
 <p>The <a class="reference internal" href="patches_namelist.html"><span class="doc">PATCHES namelist</span></a> allows a user to configure the VSA algorithm
 parameters. Although the PATCHES namelist supports many parameters, only eight are used by VSA, and
 only six of those are unique to VSA.</p>
@@ -479,7 +480,7 @@ information on those parameters.</p>
 <p>The six parameters unique to VSA are all prefixed with <em>VSA</em>. We discuss these parameters
 briefly below.</p>
 <section id="vsa-max-iter">
-<h3>VSA_MAX_ITER<a class="headerlink" href="#vsa-max-iter" title="Permalink to this headline"></a></h3>
+<h3>VSA_MAX_ITER<a class="headerlink" href="#vsa-max-iter" title="Permalink to this heading"></a></h3>
 <p>Defines the maximum number of iterations for the <a class="reference internal" href="#outline"><span class="std std-ref">error minimization</span></a> step of the algorithm.</p>
 <blockquote class="nml-param">
 <div><p><strong>Type:</strong> <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code></p>
@@ -490,7 +491,7 @@ briefly below.</p>
 terminating conditions.</p>
 </section>
 <section id="vsa-min-delta">
-<h3>VSA_MIN_DELTA<a class="headerlink" href="#vsa-min-delta" title="Permalink to this headline"></a></h3>
+<h3>VSA_MIN_DELTA<a class="headerlink" href="#vsa-min-delta" title="Permalink to this heading"></a></h3>
 <p>Defines the minimum allowable change in patch proxies between successive iterations.</p>
 <blockquote class="nml-param">
 <div><p><strong>Type:</strong> <code class="docutils literal notranslate"><span class="pre">REAL</span></code></p>
@@ -506,7 +507,7 @@ said to converge and will terminate at that iteration.</p>
 the <a class="reference internal" href="#outline"><span class="std std-ref">algorithm outline</span></a>.</p>
 </section>
 <section id="vsa-face-patch-ratio">
-<h3>VSA_FACE_PATCH_RATIO<a class="headerlink" href="#vsa-face-patch-ratio" title="Permalink to this headline"></a></h3>
+<h3>VSA_FACE_PATCH_RATIO<a class="headerlink" href="#vsa-face-patch-ratio" title="Permalink to this heading"></a></h3>
 <p>Defines the ratio of total faces to total patches, and by extension the total number of patches.</p>
 <blockquote class="nml-param">
 <div><p><strong>Type:</strong> <code class="docutils literal notranslate"><span class="pre">REAL</span></code></p>
@@ -521,7 +522,7 @@ final configuration:</p>
 parameter as a ratio allows the same value to apply to a variety of meshes.</p>
 </section>
 <section id="vsa-max-patch-radius">
-<h3>VSA_MAX_PATCH_RADIUS<a class="headerlink" href="#vsa-max-patch-radius" title="Permalink to this headline"></a></h3>
+<h3>VSA_MAX_PATCH_RADIUS<a class="headerlink" href="#vsa-max-patch-radius" title="Permalink to this heading"></a></h3>
 <p>Defines the desired maximum radius for a patch.</p>
 <blockquote class="nml-param">
 <div><p><strong>Type:</strong> <code class="docutils literal notranslate"><span class="pre">REAL</span></code></p>
@@ -531,12 +532,12 @@ parameter as a ratio allows the same value to apply to a variety of meshes.</p>
 <p>This parameter is used to compute the <em>size bias</em> term of the weight of a face relative to
 a patch proxy. Refer to the <a class="reference internal" href="#size-bias"><span class="std std-ref">size bias section</span></a> of the
 VSA documentation for more information on how the parameter affects the face weight computation.</p>
-<p>Note that the default value of this parameter is <code class="code fortran docutils literal notranslate"><span class="name builtin"><span class="pre">sqrt</span></span><span class="punctuation"><span class="pre">(</span></span><span class="name builtin"><span class="pre">huge</span></span><span class="punctuation"><span class="pre">(</span></span><span class="literal number float"><span class="pre">0.0_r8</span></span><span class="punctuation"><span class="pre">))</span></span></code> because it is squared
-in the face weight computation. By taking the root of <code class="code fortran docutils literal notranslate"><span class="name builtin"><span class="pre">huge</span></span><span class="punctuation"><span class="pre">(</span></span><span class="literal number float"><span class="pre">0.0_r8</span></span><span class="punctuation"><span class="pre">)</span></span></code> we prevent floating
+<p>Note that the default value of this parameter is <code class="code highlight fortran docutils literal highlight-fortran"><span class="nb">sqrt</span><span class="p">(</span><span class="nb">huge</span><span class="p">(</span><span class="mf">0.0_r8</span><span class="p">))</span><span class="w"></span></code> because it is squared
+in the face weight computation. By taking the root of <code class="code highlight fortran docutils literal highlight-fortran"><span class="nb">huge</span><span class="p">(</span><span class="mf">0.0_r8</span><span class="p">)</span><span class="w"></span></code> we prevent floating
 point overflow errors. Numerically, the default value on the order of <span class="math notranslate nohighlight">\(1.34*10^{154}\)</span>.</p>
 </section>
 <section id="vsa-normalize-dist">
-<h3>VSA_NORMALIZE_DIST<a class="headerlink" href="#vsa-normalize-dist" title="Permalink to this headline"></a></h3>
+<h3>VSA_NORMALIZE_DIST<a class="headerlink" href="#vsa-normalize-dist" title="Permalink to this heading"></a></h3>
 <p>Determines whether to normalize the distance bias.</p>
 <blockquote class="nml-param">
 <div><p><strong>Type:</strong> <code class="docutils literal notranslate"><span class="pre">LOGICAL</span></code></p>
@@ -553,7 +554,7 @@ of the VSA documentation for more information on how the parameter affects the f
 computation.</p>
 </section>
 <section id="vsa-random-seed">
-<h3>VSA_RANDOM_SEED<a class="headerlink" href="#vsa-random-seed" title="Permalink to this headline"></a></h3>
+<h3>VSA_RANDOM_SEED<a class="headerlink" href="#vsa-random-seed" title="Permalink to this heading"></a></h3>
 <p>Defines the seed for the random number generator used to pick the initial seed patches.</p>
 <blockquote class="nml-param">
 <div><p><strong>Type:</strong> <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code></p>
@@ -571,7 +572,7 @@ and results will likely vary from run to run.</p>
 </section>
 </section>
 <section id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline"></a></h2>
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading"></a></h2>
 <div class="docutils container" id="id5">
 <dl class="citation">
 <dt class="label" id="id6"><span class="brackets">1</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>,<a href="#id3">3</a>,<a href="#id4">4</a>)</span></dt>
