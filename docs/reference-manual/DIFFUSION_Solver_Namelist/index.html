@@ -52,6 +52,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#abs-enthalpy-tol">Abs_Enthalpy_Tol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#abs-temp-tol">Abs_Temp_Tol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cond-vfrac-threshold">Cond_Vfrac_Threshold</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cutvof-expert">Cutvof (expert)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#hypre-amg-debug">Hypre_AMG_Debug</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#hypre-amg-logging-level">Hypre_AMG_Logging_Level</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#hypre-amg-print-level">Hypre_AMG_Print_Level</a></li>
@@ -161,6 +162,7 @@
 <li><p><a class="reference internal" href="#diff-sol-aet"><span class="std std-ref">Abs_Enthalpy_Tol</span></a></p></li>
 <li><p><a class="reference internal" href="#diff-sol-att"><span class="std std-ref">Abs_Temp_Tol</span></a></p></li>
 <li><p><a class="reference internal" href="#diff-sol-cvt"><span class="std std-ref">Cond_Vfrac_Threshold</span></a></p></li>
+<li><p><a class="reference internal" href="#diff-sol-cv"><span class="std std-ref">Cutvof</span></a></p></li>
 <li><p><a class="reference internal" href="#diff-sol-had"><span class="std std-ref">Hypre_AMG_Debug</span></a></p></li>
 <li><p><a class="reference internal" href="#diff-sol-hall"><span class="std std-ref">Hypre_AMG_Logging_Level</span></a></p></li>
 <li><p><a class="reference internal" href="#diff-sol-hapl"><span class="std std-ref">Hypre_AMG_Print_Level</span></a></p></li>
@@ -244,6 +246,19 @@
 <div class="line"><strong>Default</strong>     : 0.001</div>
 <div class="line"><strong>Valid Values</strong>: (0,1)</div>
 <div class="line"><strong>Notes</strong> : Fluid flow systems that include void will result in partially filled cells, often times with only a tiny fragment of material. Including such cells in the heat conduction problem can cause severe numerical difficulties. By excluding cells with a material volume fraction less than this threshold from participation in heat conduction we can obtain a much better conditioned system. Note that we continue to track enthalpy for such cells, including enthalpy that may be advected into or out of the cell; we just do not consider diffusive transport of enthalpy.</div>
+</div>
+</section>
+<section id="cutvof-expert">
+<span id="diff-sol-cv"></span><h3>Cutvof (expert)<a class="headerlink" href="#cutvof-expert" title="Permalink to this heading"></a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong>       : When flow with void is enabled, the heat transfer solver will remove
+all material from any cell whose non-void volume fraction falls below
+the value of this threshold.</div>
+<div class="line"><strong>Physical dimension</strong>: dimensionless</div>
+<div class="line"><strong>Type</strong>              : real</div>
+<div class="line"><strong>Default</strong>           : 1e-8</div>
+<div class="line"><strong>Valid Values</strong>      : [0.0, 1.0)</div>
+<div class="line"><strong>Notes</strong>             : See also <a class="reference internal" href="../FLOW_Namelist/index.html#flow-vfc"><span class="std std-ref">vol_frac_cutoff</span></a>.</div>
 </div>
 </section>
 <section id="hypre-amg-debug">

@@ -61,8 +61,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#overview">17.1. Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ds-source-namelist-features">17.2. DS_SOURCE Namelist Features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#components">17.3. Components</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#alittle">Alittle</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cutvof">Cutvof</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cycle-max">Cycle_Max</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cycle-number">Cycle_Number</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#dt-constant">Dt_Constant</a></li>
@@ -138,8 +136,6 @@
 <section id="components">
 <h2><span class="section-number">17.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this heading"></a></h2>
 <ul class="simple">
-<li><p><a class="reference internal" href="#numerics-a"><span class="std std-ref">Alittle</span></a></p></li>
-<li><p><a class="reference internal" href="#numerics-c"><span class="std std-ref">Cutvof</span></a></p></li>
 <li><p><a class="reference internal" href="#numerics-cm"><span class="std std-ref">Cycle_Max</span></a></p></li>
 <li><p><a class="reference internal" href="#numerics-cn"><span class="std std-ref">Cycle_Number</span></a></p></li>
 <li><p><a class="reference internal" href="#numerics-dtc"><span class="std std-ref">Dt_Constant</span></a></p></li>
@@ -149,27 +145,6 @@
 <li><p><a class="reference internal" href="#numerics-dtmin"><span class="std std-ref">Dt_Min</span></a></p></li>
 <li><p><a class="reference internal" href="#numerics-t"><span class="std std-ref">t</span></a></p></li>
 </ul>
-<section id="alittle">
-<span id="numerics-a"></span><h3>Alittle<a class="headerlink" href="#alittle" title="Permalink to this heading"></a></h3>
-<div class="line-block">
-<div class="line"><strong>Description</strong>       : A small, positive real number (relative to unity) used to avoid division by zero or to compare against other numbers to deduce relative significance.</div>
-<div class="line"><strong>Physical dimension</strong>: dimensionless</div>
-<div class="line"><strong>Type</strong>              : real</div>
-<div class="line"><strong>Default</strong>           : EPSILON(x), where <strong>x</strong> is of type <strong>real</strong>. If the precision of <strong>x</strong> is <strong>double</strong>, EPSILON(x) returns <span class="math notranslate nohighlight">\(1.0^{−16}\)</span> for most combinations of software (Fortran 90 compiler) and hardware platforms tested.</div>
-<div class="line"><strong>Valid Values</strong>      : (0.0, 0.001]</div>
-</div>
-</section>
-<section id="cutvof">
-<span id="numerics-c"></span><h3>Cutvof<a class="headerlink" href="#cutvof" title="Permalink to this heading"></a></h3>
-<div class="line-block">
-<div class="line"><strong>Description</strong>       : The value of a material cell volume fraction below which that material is ignored. If any material has a cell volume fraction less than Cutvof, then that material is deleted from that cell, with all other materials present receiving a proportional increase in volume fraction. The only exception is the “background” material, which if present receives the entire allocation (equal to the volume fraction deleted).</div>
-<div class="line"><strong>Physical dimension</strong>: dimensionless</div>
-<div class="line"><strong>Type</strong>              : real</div>
-<div class="line"><strong>Default</strong>           : <span class="math notranslate nohighlight">\(10^{−8}\)</span></div>
-<div class="line"><strong>Valid Values</strong>      : (0.0, 1.0)</div>
-<div class="line"><strong>Notes</strong>             : Relative to most other volume-fraction-based algorithms, <a class="reference internal" href="#numerics-c"><span class="std std-ref">Cutvof</span></a> is defaulted and used at a much lower value. If a prototypical value of <a class="reference internal" href="#numerics-c"><span class="std std-ref">Cutvof</span></a> equal to <span class="math notranslate nohighlight">\(10^{−4}\)</span> were used, as is the case in most commercial software, local and global mass conservation would suffer, and lack of algorithmic robustness would be masked. The default <span class="math notranslate nohighlight">\(10^{−8}\)</span> value for <a class="reference internal" href="#numerics-c"><span class="std std-ref">Cutvof</span></a> yields good results, hence setting it higher is generally not necessary.</div>
-</div>
-</section>
 <section id="cycle-max">
 <span id="numerics-cm"></span><h3>Cycle_Max<a class="headerlink" href="#cycle-max" title="Permalink to this heading"></a></h3>
 <div class="line-block">
