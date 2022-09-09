@@ -1012,7 +1012,7 @@ wait for Python garbage collection to clean it up.</p>
 <span id="truchasstudy"></span><h3><a class="toc-backref" href="#id9">TruchasStudy</a><a class="headerlink" href="#module-truchas.TruchasStudy" title="Permalink to this heading"></a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="truchas.TruchasStudy.TruchasStudy">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TruchasStudy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tenv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tdb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nprocs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">njobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasStudy.TruchasStudy" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TruchasStudy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tenv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tdb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nprocs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">njobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasStudy.TruchasStudy" title="Permalink to this definition"></a></dt>
 <dd><p>A class for performing Truchas parameter studies which vary in one
 parameter (1D). This class expects a Truchas environment which will perform
 the tests (or generate input decks) and a Truchas Database which will cache
@@ -1038,6 +1038,8 @@ simulations.</p>
 <li><p><strong>nproc</strong> (<em>int</em>) – Number of MPI ranks to use. When used with
 <a class="reference internal" href="#truchas.TruchasStudy.TruchasStudy.generate_1d_parameter_study_inputs" title="truchas.TruchasStudy.TruchasStudy.generate_1d_parameter_study_inputs"><code class="xref py py-func docutils literal notranslate"><span class="pre">generate_1d_parameter_study_inputs()</span></code></a>, this parameter is ignored.</p></li>
 <li><p><strong>njobs</strong> (<em>int</em><em>, </em><em>optional</em><em> (</em><em>default 1</em><em>)</em>) – Number of Truchas simulations to run in simultaneously.</p></li>
+<li><p><strong>restart_file</strong> (<em>str</em><em>, </em><em>optional</em><em> (</em><em>default None</em><em>)</em>) – Filename of Truchas restart file. This restart will be
+used for all runs.</p></li>
 </ul>
 </dd>
 </dl>
