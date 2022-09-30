@@ -17,6 +17,7 @@
         <script src="../_static/underscore.js"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -83,12 +84,32 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#components">36.2. Components</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#module-truchas.TruchasEnvironment">TruchasEnvironment</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-truchas.TruchasData">TruchasData</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-truchas.TruchasMappedData">TruchasMappedData</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-truchas.TruchasStudy">TruchasStudy</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-truchas.TruchasDatabase">TruchasDatabase</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-truchas.TruchasTest">TruchasTest</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-truchas.TruchasEnvironment">TruchasEnvironment</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#truchas.TruchasEnvironment.TruchasEnvironment"><code class="docutils literal notranslate"><span class="pre">TruchasEnvironment</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-truchas.TruchasData">TruchasData</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#truchas.TruchasData.TruchasData"><code class="docutils literal notranslate"><span class="pre">TruchasData</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-truchas.TruchasMappedData">TruchasMappedData</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#truchas.TruchasMappedData.TruchasMappedData"><code class="docutils literal notranslate"><span class="pre">TruchasMappedData</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-truchas.TruchasStudy">TruchasStudy</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#truchas.TruchasStudy.TruchasStudy"><code class="docutils literal notranslate"><span class="pre">TruchasStudy</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-truchas.TruchasDatabase">TruchasDatabase</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#truchas.TruchasDatabase.TruchasDatabase"><code class="docutils literal notranslate"><span class="pre">TruchasDatabase</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-truchas.TruchasTest">TruchasTest</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#truchas.TruchasTest.compare_l2"><code class="docutils literal notranslate"><span class="pre">compare_l2()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#truchas.TruchasTest.compare_max"><code class="docutils literal notranslate"><span class="pre">compare_max()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#truchas.TruchasTest.compare_max_rel"><code class="docutils literal notranslate"><span class="pre">compare_max_rel()</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1062,7 +1083,7 @@ key could hold a lambda which always returns double the value of the
 “h1” key.</p></li>
 <li><p><strong>variable</strong> (<em>str</em>) – The name of a variable in the initial_parameters
 dictionary which is to be varied for the parameter study.</p></li>
-<li><p><strong>points</strong> (<em>list of values</em>) – The values of the variable to iterate over for the
+<li><p><strong>points</strong> (<em>list</em><em> of </em><em>values</em>) – The values of the variable to iterate over for the
 parameter study.</p></li>
 <li><p><strong>output_metrics</strong> (<em>dict with str keys and function values.</em>) – A dictionary of output metrics to be printed to
 the output file. Functions are expected to accept two arguments: the
