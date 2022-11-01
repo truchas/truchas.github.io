@@ -327,7 +327,7 @@
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The partitioning method used to generate the parallel decomposition of the mesh.</div>
 <div class="line"><strong>Type</strong>        : case-insensitive string</div>
-<div class="line"><strong>Default</strong>     : “chaco”</div>
+<div class="line"><strong>Default</strong>     : “metis”</div>
 <div class="line"><strong>Valid Values</strong>: “chaco”, “metis”, “file”, “block”</div>
 <div class="line"><strong>Notes</strong>       :</div>
 </div>
@@ -343,7 +343,7 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p><strong>chaco</strong></p></td>
-<td><p>uses a graph partitioning method from the Chaco library <a class="footnote-reference brackets" href="#footcite-leland1995chaco" id="id3">2</a> to compute the mesh decomposition at run time. This is the standard method long used by Truchas.</p></td>
+<td><p>uses a graph partitioning method from the Chaco library <a class="footnote-reference brackets" href="#footcite-leland1995chaco" id="id3">2</a> to compute the mesh decomposition at run time. Support for this legacy library may be removed in the future.</p></td>
 </tr>
 <tr class="row-odd"><td><p><strong>metis</strong></p></td>
 <td><p>uses the well-known METIS library <a class="footnote-reference brackets" href="#footcite-karypis1998fast" id="id4">3</a> to partition the dual graph of the mesh at runtime. This method has a number of options which are described below.</p></td>
