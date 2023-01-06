@@ -1,38 +1,75 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>25. SOLID_MECHANICS Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+  <title>26. SOLID_MECHANICS Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="26. SOLID_MECHANICS_BC Namelist" href="../SOLID_MECHANICS_BC_Namelist/index.html" />
-    <link rel="prev" title="24. SIMULATION_CONTROL Namelist (Experimental)" href="../SIMULATION_CONTROL_Namelist/index.html" /> 
+    <link rel="next" title="27. SOLID_MECHANICS_BC Namelist" href="../SOLID_MECHANICS_BC_Namelist/index.html" />
+    <link rel="prev" title="25. SIMULATION_CONTROL Namelist (Experimental)" href="../SIMULATION_CONTROL_Namelist/index.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
+          
+
+          
             <a href="../index.html" class="icon icon-home"> Truchas Reference Manual
+          
+
+          
           </a>
+
+          
+            
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -40,7 +77,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ALTMESH_Namelist/index.html">2. ALTMESH Namelist</a></li>
@@ -58,21 +106,22 @@
 <li class="toctree-l1"><a class="reference internal" href="../INDUCTION_COIL_Namelist/index.html">14. INDUCTION_COIL Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">15. MATERIAL and PHASE Namelists</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">16. MESH Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">17. NUMERICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">18. OUTPUTS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">19. PHASE_CHANGE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">20. PHYSICAL_CONSTANTS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">21. PHYSICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">22. PROBE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">23. RESTART Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">24. SIMULATION_CONTROL Namelist (Experimental)</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">25. SOLID_MECHANICS Namelist</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#physics-options">25.1. Physics Options</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../MICROSTRUCTURE_Namelist/index.html">17. MICROSTRUCTURE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">18. NUMERICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">19. OUTPUTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">20. PHASE_CHANGE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">21. PHYSICAL_CONSTANTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">22. PHYSICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">23. PROBE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">24. RESTART Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">25. SIMULATION_CONTROL Namelist (Experimental)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">26. SOLID_MECHANICS Namelist</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#physics-options">26.1. Physics Options</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#contact-distance">contact_distance</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#contact-norm-trac">contact_norm_trac</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#numerical-parameters">25.2. Numerical Parameters</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#numerical-parameters">26.2. Numerical Parameters</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#maximum-iterations">maximum_iterations</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#nlk-vector-tolerance">nlk_vector_tolerance</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#nlk-max-vectors">nlk_max_vectors</a></li>
@@ -93,45 +142,86 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">26. SOLID_MECHANICS_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">27. SPECIES_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">28. THERMAL_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">29. THERMAL_SOURCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">30. TOOLHEAD Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">31. TOOLPATH Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">32. TURBULENCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">33. VFUNCTION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">34. VISCOPLASTIC_MODEL Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">35. Radiation Enclosure Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/index.html">36. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">27. SOLID_MECHANICS_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">28. SPECIES_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">29. THERMAL_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">30. THERMAL_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">31. TOOLHEAD Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">32. TOOLPATH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">33. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">34. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">35. VISCOPLASTIC_MODEL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">36. Radiation Enclosure Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">37. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Truchas Reference Manual</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active"><span class="section-number">25. </span>SOLID_MECHANICS Namelist</li>
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">26. </span>SOLID_MECHANICS Namelist</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
             <a href="../_sources/SOLID_MECHANICS_Namelist/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
+            
   <section id="solid-mechanics-namelist">
-<h1><span class="section-number">25. </span>SOLID_MECHANICS Namelist<a class="headerlink" href="#solid-mechanics-namelist" title="Permalink to this heading"></a></h1>
+<h1><span class="section-number">26. </span>SOLID_MECHANICS Namelist<a class="headerlink" href="#solid-mechanics-namelist" title="Permalink to this heading">¶</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">SOLID_MECHANICS</span></code> namelist sets parameters that are specific to the solid
 mechanics model and algorithm. This namelist is read whenever the <a class="reference internal" href="../PHYSICS_Namelist/index.html#id1"><span class="std std-ref">PHYSICS
 Namelist</span></a> option
@@ -139,14 +229,14 @@ Namelist</span></a> option
 mechanics boundary conditions are defined using <a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html#solid-mechanics-bc-namelist"><span class="std std-ref">SOLID_MECHANICS_BC
 Namelists</span></a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Required/Optional</dt>
+<dt class="field-odd">Required/Optional<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Required when solid mechanics physics is enabled.</p>
 </dd>
-<dt class="field-even">Single/Multiple Instances</dt>
+<dt class="field-even">Single/Multiple Instances<span class="colon">:</span></dt>
 <dd class="field-even"><p>Single</p>
 </dd>
 </dl>
-<div class="contents local topic" id="components">
+<nav class="contents local" id="components">
 <p class="topic-title">Components</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#physics-options" id="id1">Physics Options</a></p>
@@ -176,11 +266,11 @@ Namelists</span></a>.</p>
 </ul>
 </li>
 </ul>
-</div>
+</nav>
 <section id="physics-options">
-<h2><a class="toc-backref" href="#id1"><span class="section-number">25.1. </span>Physics Options</a><a class="headerlink" href="#physics-options" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id1" role="doc-backlink"><span class="section-number">26.1. </span>Physics Options</a><a class="headerlink" href="#physics-options" title="Permalink to this heading">¶</a></h2>
 <section id="contact-distance">
-<h3><a class="toc-backref" href="#id2">contact_distance</a><a class="headerlink" href="#contact-distance" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id2" role="doc-backlink">contact_distance</a><a class="headerlink" href="#contact-distance" title="Permalink to this heading">¶</a></h3>
 <p>A length scale parameter <span class="math notranslate nohighlight">\(\beta\)</span> for the contact function</p>
 <p><span class="math notranslate nohighlight">\(\lambda = \lambda_s * \lambda_{\tau}\)</span></p>
 <div class="math notranslate nohighlight" id="equation-poly-lambda-s">
@@ -217,16 +307,16 @@ Namelists</span></a>.</p>
 \end{array}
 \right.
 \]</div><dl class="field-list simple">
-<dt class="field-odd">Physical dimension</dt>
+<dt class="field-odd">Physical dimension<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span class="math notranslate nohighlight">\(L\)</span></p>
 </dd>
-<dt class="field-even">Type</dt>
+<dt class="field-even">Type<span class="colon">:</span></dt>
 <dd class="field-even"><p>real</p>
 </dd>
-<dt class="field-odd">Default</dt>
+<dt class="field-odd">Default<span class="colon">:</span></dt>
 <dd class="field-odd"><p>1.0e-7</p>
 </dd>
-<dt class="field-even">Valid Values</dt>
+<dt class="field-even">Valid Values<span class="colon">:</span></dt>
 <dd class="field-even"><p>(0, <span class="math notranslate nohighlight">\(\infty\)</span>]</p>
 </dd>
 </dl>
@@ -237,7 +327,7 @@ mm size range.</p>
 </div>
 </section>
 <section id="contact-norm-trac">
-<h3><a class="toc-backref" href="#id3">contact_norm_trac</a><a class="headerlink" href="#contact-norm-trac" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">contact_norm_trac</a><a class="headerlink" href="#contact-norm-trac" title="Permalink to this heading">¶</a></h3>
 <p>A parameter <span class="math notranslate nohighlight">\(\tau^{*}\)</span> for the contact function</p>
 <p><span class="math notranslate nohighlight">\(\lambda = \lambda_s * \lambda_{\tau}\)</span></p>
 <p>where</p>
@@ -277,16 +367,16 @@ mm size range.</p>
 \]</div><p><span class="math notranslate nohighlight">\(\tau_n\)</span> is the normal traction at the interface where a positive value
 corresponds to a tensile force normal to the surface.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Physical dimension</dt>
+<dt class="field-odd">Physical dimension<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span class="math notranslate nohighlight">\(F/L^2\)</span></p>
 </dd>
-<dt class="field-even">Type</dt>
+<dt class="field-even">Type<span class="colon">:</span></dt>
 <dd class="field-even"><p>real</p>
 </dd>
-<dt class="field-odd">Default</dt>
+<dt class="field-odd">Default<span class="colon">:</span></dt>
 <dd class="field-odd"><p>1.0e4</p>
 </dd>
-<dt class="field-even">Valid Values</dt>
+<dt class="field-even">Valid Values<span class="colon">:</span></dt>
 <dd class="field-even"><p>[0, <span class="math notranslate nohighlight">\(\infty\)</span>]</p>
 </dd>
 </dl>
@@ -299,75 +389,75 @@ be scaled proportionately for elastic constants that differ from this range.</p>
 </section>
 </section>
 <section id="numerical-parameters">
-<h2><a class="toc-backref" href="#id4"><span class="section-number">25.2. </span>Numerical Parameters</a><a class="headerlink" href="#numerical-parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id4" role="doc-backlink"><span class="section-number">26.2. </span>Numerical Parameters</a><a class="headerlink" href="#numerical-parameters" title="Permalink to this heading">¶</a></h2>
 <section id="maximum-iterations">
-<h3><a class="toc-backref" href="#id5">maximum_iterations</a><a class="headerlink" href="#maximum-iterations" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">maximum_iterations</a><a class="headerlink" href="#maximum-iterations" title="Permalink to this heading">¶</a></h3>
 <p>Maximum allowed number of iterations of the nonlinear solver.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>integer</p>
 </dd>
-<dt class="field-even">Default</dt>
+<dt class="field-even">Default<span class="colon">:</span></dt>
 <dd class="field-even"><p>100</p>
 </dd>
-<dt class="field-odd">Valid Values</dt>
+<dt class="field-odd">Valid Values<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span class="math notranslate nohighlight">\([0,\infty)\)</span></p>
 </dd>
 </dl>
 </section>
 <section id="nlk-vector-tolerance">
-<h3><a class="toc-backref" href="#id6">nlk_vector_tolerance</a><a class="headerlink" href="#nlk-vector-tolerance" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">nlk_vector_tolerance</a><a class="headerlink" href="#nlk-vector-tolerance" title="Permalink to this heading">¶</a></h3>
 <p>The vector drop tolerance for the NLK method. When assembling the acceleration
 subspace vector by vector, a vector is dropped when the sine of the angle
 between the vector and the subspace less than this value.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>real</p>
 </dd>
-<dt class="field-even">Default</dt>
+<dt class="field-even">Default<span class="colon">:</span></dt>
 <dd class="field-even"><p>0.01</p>
 </dd>
-<dt class="field-odd">Valid Values</dt>
+<dt class="field-odd">Valid Values<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span class="math notranslate nohighlight">\((0,1)\)</span></p>
 </dd>
 </dl>
 </section>
 <section id="nlk-max-vectors">
-<h3><a class="toc-backref" href="#id7">nlk_max_vectors</a><a class="headerlink" href="#nlk-max-vectors" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">nlk_max_vectors</a><a class="headerlink" href="#nlk-max-vectors" title="Permalink to this heading">¶</a></h3>
 <p>For the NLK method, the maximum number of acceleration vectors to be used.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>integer</p>
 </dd>
-<dt class="field-even">Default</dt>
+<dt class="field-even">Default<span class="colon">:</span></dt>
 <dd class="field-even"><p>20</p>
 </dd>
-<dt class="field-odd">Valid Values</dt>
+<dt class="field-odd">Valid Values<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span class="math notranslate nohighlight">\([0,\infty)\)</span></p>
 </dd>
 </dl>
 </section>
 <section id="abs-stress-tol">
-<h3><a class="toc-backref" href="#id8">abs_stress_tol</a><a class="headerlink" href="#abs-stress-tol" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">abs_stress_tol</a><a class="headerlink" href="#abs-stress-tol" title="Permalink to this heading">¶</a></h3>
 <p>The tolerance for the absolute error of the residual used by the solid mechanics
 solver.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Physical Dimension</dt>
+<dt class="field-odd">Physical Dimension<span class="colon">:</span></dt>
 <dd class="field-odd"><p>same as the ‘stress’ variable</p>
 </dd>
-<dt class="field-even">Type</dt>
+<dt class="field-even">Type<span class="colon">:</span></dt>
 <dd class="field-even"><p>real</p>
 </dd>
-<dt class="field-odd">Default</dt>
+<dt class="field-odd">Default<span class="colon">:</span></dt>
 <dd class="field-odd"><p>1e-10</p>
 </dd>
-<dt class="field-even">Valid Values</dt>
+<dt class="field-even">Valid Values<span class="colon">:</span></dt>
 <dd class="field-even"><p><span class="math notranslate nohighlight">\(\gt 0\)</span></p>
 </dd>
 </dl>
 </section>
 <section id="abs-displ-tol">
-<h3><a class="toc-backref" href="#id9">abs_displ_tol</a><a class="headerlink" href="#abs-displ-tol" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">abs_displ_tol</a><a class="headerlink" href="#abs-displ-tol" title="Permalink to this heading">¶</a></h3>
 <p>The tolerance <span class="math notranslate nohighlight">\(\epsilon\)</span> for the absolute error component of the
 displacement error norm used by the nonlinear solver. If <span class="math notranslate nohighlight">\(\delta u\)</span> is a
 displacement field increment with reference displacement field <span class="math notranslate nohighlight">\(u\)</span>,then
@@ -376,16 +466,16 @@ this error norm is</p>
 \[|||\delta u||| \equiv \mathop{{max}_j} |\delta u_j|/(\epsilon + \eta |u_j|)\]</div>
 <p>The relative error tolerance <span class="math notranslate nohighlight">\(\eta\)</span> is given by <a class="reference internal" href="#rel-displ-tol">rel_displ_tol</a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Physical Dimension</dt>
+<dt class="field-odd">Physical Dimension<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span class="math notranslate nohighlight">\(\Theta\)</span></p>
 </dd>
-<dt class="field-even">Type</dt>
+<dt class="field-even">Type<span class="colon">:</span></dt>
 <dd class="field-even"><p>real</p>
 </dd>
-<dt class="field-odd">Default</dt>
+<dt class="field-odd">Default<span class="colon">:</span></dt>
 <dd class="field-odd"><p>1e-10</p>
 </dd>
-<dt class="field-even">Valid Values</dt>
+<dt class="field-even">Valid Values<span class="colon">:</span></dt>
 <dd class="field-even"><p><span class="math notranslate nohighlight">\(\geq 0\)</span></p>
 </dd>
 </dl>
@@ -403,7 +493,7 @@ displacement must be bounded away from 0.</p>
 </div>
 </section>
 <section id="rel-displ-tol">
-<h3><a class="toc-backref" href="#id10">rel_displ_tol</a><a class="headerlink" href="#rel-displ-tol" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">rel_displ_tol</a><a class="headerlink" href="#rel-displ-tol" title="Permalink to this heading">¶</a></h3>
 <p>The tolerance <span class="math notranslate nohighlight">\(\eta\)</span> for the relative error component of the displacement
 error norm used by the nonlinear solver. If <span class="math notranslate nohighlight">\(\delta u\)</span> is a displacement
 field increment with reference displacement field <span class="math notranslate nohighlight">\(u\)</span>, then this error
@@ -412,16 +502,16 @@ norm is</p>
 \[|||\delta u||| \equiv \mathop{{max}_j} |\delta u_j|/(\epsilon + \eta |u_j|)\]</div>
 <p>The absolute error tolerance <span class="math notranslate nohighlight">\(\epsilon\)</span> is given by <a class="reference internal" href="#abs-displ-tol">abs_displ_tol</a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Physcial Dimension</dt>
+<dt class="field-odd">Physcial Dimension<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dimensionless</p>
 </dd>
-<dt class="field-even">Type</dt>
+<dt class="field-even">Type<span class="colon">:</span></dt>
 <dd class="field-even"><p>real</p>
 </dd>
-<dt class="field-odd">Default</dt>
+<dt class="field-odd">Default<span class="colon">:</span></dt>
 <dd class="field-odd"><p>1e-10</p>
 </dd>
-<dt class="field-even">Valid Values</dt>
+<dt class="field-even">Valid Values<span class="colon">:</span></dt>
 <dd class="field-even"><p>(0, 1)</p>
 </dd>
 </dl>
@@ -431,7 +521,7 @@ norm is</p>
 </div>
 </section>
 <section id="abs-plastic-strain-tol">
-<h3><a class="toc-backref" href="#id11">abs_plastic_strain_tol</a><a class="headerlink" href="#abs-plastic-strain-tol" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">abs_plastic_strain_tol</a><a class="headerlink" href="#abs-plastic-strain-tol" title="Permalink to this heading">¶</a></h3>
 <p>The tolerance <span class="math notranslate nohighlight">\(\epsilon\)</span> for the absolute error component of the plastic
 strain error norm used by the nonlinear solver. If <span class="math notranslate nohighlight">\(\delta u\)</span> is a plastic
 strain field increment with reference plastic strain field <span class="math notranslate nohighlight">\(u\)</span>,then this
@@ -440,16 +530,16 @@ error norm is</p>
 \[|||\delta u||| \equiv \mathop{{max}_j} |\delta u_j|/(\epsilon + \eta |u_j|)\]</div>
 <p>The relative error tolerance <span class="math notranslate nohighlight">\(\eta\)</span> is given by <a class="reference internal" href="#rel-plastic-strain-tol">rel_plastic_strain_tol</a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Physical Dimension</dt>
+<dt class="field-odd">Physical Dimension<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span class="math notranslate nohighlight">\(\Theta\)</span></p>
 </dd>
-<dt class="field-even">Type</dt>
+<dt class="field-even">Type<span class="colon">:</span></dt>
 <dd class="field-even"><p>real</p>
 </dd>
-<dt class="field-odd">Default</dt>
+<dt class="field-odd">Default<span class="colon">:</span></dt>
 <dd class="field-odd"><p>1e-12</p>
 </dd>
-<dt class="field-even">Valid Values</dt>
+<dt class="field-even">Valid Values<span class="colon">:</span></dt>
 <dd class="field-even"><p><span class="math notranslate nohighlight">\(\geq 0\)</span></p>
 </dd>
 </dl>
@@ -467,7 +557,7 @@ plastic strain must be bounded away from 0.</p>
 </div>
 </section>
 <section id="rel-plastic-strain-tol">
-<h3><a class="toc-backref" href="#id12">rel_plastic_strain_tol</a><a class="headerlink" href="#rel-plastic-strain-tol" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">rel_plastic_strain_tol</a><a class="headerlink" href="#rel-plastic-strain-tol" title="Permalink to this heading">¶</a></h3>
 <p>The tolerance <span class="math notranslate nohighlight">\(\eta\)</span> for the relative error component of the plastic
 strain error norm used by the nonlinear solver. If <span class="math notranslate nohighlight">\(\delta u\)</span> is a plastic
 strain field increment with reference displacement field <span class="math notranslate nohighlight">\(u\)</span>, then this
@@ -476,16 +566,16 @@ error norm is</p>
 \[|||\delta u||| \equiv \mathop{{max}_j} |\delta u_j|/(\epsilon + \eta |u_j|)\]</div>
 <p>The absolute error tolerance <span class="math notranslate nohighlight">\(\epsilon\)</span> is given by <a class="reference internal" href="#abs-plastic-strain-tol">abs_plastic_strain_tol</a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Physcial Dimension</dt>
+<dt class="field-odd">Physcial Dimension<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dimensionless</p>
 </dd>
-<dt class="field-even">Type</dt>
+<dt class="field-even">Type<span class="colon">:</span></dt>
 <dd class="field-even"><p>real</p>
 </dd>
-<dt class="field-odd">Default</dt>
+<dt class="field-odd">Default<span class="colon">:</span></dt>
 <dd class="field-odd"><p>1e-3</p>
 </dd>
-<dt class="field-even">Valid Values</dt>
+<dt class="field-even">Valid Values<span class="colon">:</span></dt>
 <dd class="field-even"><p>(0, 1)</p>
 </dd>
 </dl>
@@ -495,7 +585,7 @@ error norm is</p>
 </div>
 </section>
 <section id="viscoplastic-strain-limit">
-<h3><a class="toc-backref" href="#id13">viscoplastic_strain_limit</a><a class="headerlink" href="#viscoplastic-strain-limit" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">viscoplastic_strain_limit</a><a class="headerlink" href="#viscoplastic-strain-limit" title="Permalink to this heading">¶</a></h3>
 <p>This parameter controls the use of the ODE integrator in the plastic strain
 calculation. When the plastic strain at an integration point is below this
 limit, a single Heun step is taken. When the plastic strain is at or above this
@@ -503,13 +593,13 @@ limit, the solver requested by <a class="reference internal" href="#viscoplastic
 an initial step size such that the predicted plastic strain delta does not
 exceed the limit.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>real</p>
 </dd>
-<dt class="field-even">Default</dt>
+<dt class="field-even">Default<span class="colon">:</span></dt>
 <dd class="field-even"><p>1e-10</p>
 </dd>
-<dt class="field-odd">Valid Values</dt>
+<dt class="field-odd">Valid Values<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span class="math notranslate nohighlight">\(\geq 0\)</span></p>
 </dd>
 </dl>
@@ -521,18 +611,18 @@ material model is used, it may help to reduce this value.</p>
 </div>
 </section>
 <section id="nlk-tol-expert">
-<h3><a class="toc-backref" href="#id14">nlk_tol (expert)</a><a class="headerlink" href="#nlk-tol-expert" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">nlk_tol (expert)</a><a class="headerlink" href="#nlk-tol-expert" title="Permalink to this heading">¶</a></h3>
 <p>The convergence tolerance for the NLK nonlinear solver. The nonlinear system is
 considered solved by the current iterate if the norm of the last solution
 correction is less than this value.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>real</p>
 </dd>
-<dt class="field-even">Default</dt>
+<dt class="field-even">Default<span class="colon">:</span></dt>
 <dd class="field-even"><p>1.0</p>
 </dd>
-<dt class="field-odd">Valid Values</dt>
+<dt class="field-odd">Valid Values<span class="colon">:</span></dt>
 <dd class="field-odd"><p>(0, 1]</p>
 </dd>
 </dl>
@@ -546,92 +636,92 @@ wasted effort.</p>
 </div>
 </section>
 <section id="relaxation-parameter-expert">
-<h3><a class="toc-backref" href="#id15">relaxation_parameter (expert)</a><a class="headerlink" href="#relaxation-parameter-expert" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">relaxation_parameter (expert)</a><a class="headerlink" href="#relaxation-parameter-expert" title="Permalink to this heading">¶</a></h3>
 <p>The relaxation parameter for the diagonal scaling preconditioner.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>real</p>
 </dd>
-<dt class="field-even">Default</dt>
+<dt class="field-even">Default<span class="colon">:</span></dt>
 <dd class="field-even"><p>1.0</p>
 </dd>
-<dt class="field-odd">Valid Values</dt>
+<dt class="field-odd">Valid Values<span class="colon">:</span></dt>
 <dd class="field-odd"><p>(0, 1]</p>
 </dd>
 </dl>
 </section>
 <section id="stress-relaxation-parameter-expert">
-<h3><a class="toc-backref" href="#id16">stress_relaxation_parameter (expert)</a><a class="headerlink" href="#stress-relaxation-parameter-expert" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">stress_relaxation_parameter (expert)</a><a class="headerlink" href="#stress-relaxation-parameter-expert" title="Permalink to this heading">¶</a></h3>
 <p>The relaxation parameter for the stress part of the diagonal scaling
 preconditioner. For reference, the original solid mechanics solver used a value of 16 / 9.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>real</p>
 </dd>
-<dt class="field-even">Default</dt>
+<dt class="field-even">Default<span class="colon">:</span></dt>
 <dd class="field-even"><p>1.0</p>
 </dd>
-<dt class="field-odd">Valid Values</dt>
+<dt class="field-odd">Valid Values<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span class="math notranslate nohighlight">\(\gt 0\)</span></p>
 </dd>
 </dl>
 </section>
 <section id="preconditioning-steps-expert">
-<h3><a class="toc-backref" href="#id17">preconditioning_steps (expert)</a><a class="headerlink" href="#preconditioning-steps-expert" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id17" role="doc-backlink">preconditioning_steps (expert)</a><a class="headerlink" href="#preconditioning-steps-expert" title="Permalink to this heading">¶</a></h3>
 <p>Number of iterations for the preconditioner. In the current version, a diagonal
 scaling preconditioner is used, such that there is no sense in changing this
 value unless the <a class="reference internal" href="#relaxation-parameter-expert">relaxation_parameter (expert)</a> variable is also changed from the
 default.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>integer</p>
 </dd>
-<dt class="field-even">Default</dt>
+<dt class="field-even">Default<span class="colon">:</span></dt>
 <dd class="field-even"><p>1</p>
 </dd>
-<dt class="field-odd">Valid Values</dt>
+<dt class="field-odd">Valid Values<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span class="math notranslate nohighlight">\(\geq 1\)</span></p>
 </dd>
 </dl>
 </section>
 <section id="contact-penalty-expert">
-<h3><a class="toc-backref" href="#id18">contact_penalty (expert)</a><a class="headerlink" href="#contact-penalty-expert" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id18" role="doc-backlink">contact_penalty (expert)</a><a class="headerlink" href="#contact-penalty-expert" title="Permalink to this heading">¶</a></h3>
 <p>A penalty factor for the penetration constraint in the contact algorithm.
 Changing this is probably not a good idea in the current version.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Physical Dimension</dt>
+<dt class="field-odd">Physical Dimension<span class="colon">:</span></dt>
 <dd class="field-odd"><p>dimensionless</p>
 </dd>
-<dt class="field-even">Type</dt>
+<dt class="field-even">Type<span class="colon">:</span></dt>
 <dd class="field-even"><p>real</p>
 </dd>
-<dt class="field-odd">Default</dt>
+<dt class="field-odd">Default<span class="colon">:</span></dt>
 <dd class="field-odd"><p>1e3</p>
 </dd>
-<dt class="field-even">Valid Values</dt>
+<dt class="field-even">Valid Values<span class="colon">:</span></dt>
 <dd class="field-even"><p>[0, <span class="math notranslate nohighlight">\(\infty\)</span>)</p>
 </dd>
 </dl>
 </section>
 <section id="viscoplastic-nlk-tol-expert">
-<h3><a class="toc-backref" href="#id19">viscoplastic_nlk_tol (expert)</a><a class="headerlink" href="#viscoplastic-nlk-tol-expert" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id19" role="doc-backlink">viscoplastic_nlk_tol (expert)</a><a class="headerlink" href="#viscoplastic-nlk-tol-expert" title="Permalink to this heading">¶</a></h3>
 <p>The convergence tolerance for the NLK nonlinear solver for viscoplasticity. The
 nonlinear system is considered solved by the current iterate if the norm of the
 last solution correction is less than this value.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>real</p>
 </dd>
-<dt class="field-even">Default</dt>
+<dt class="field-even">Default<span class="colon">:</span></dt>
 <dd class="field-even"><p>1e-2</p>
 </dd>
-<dt class="field-odd">Valid Values</dt>
+<dt class="field-odd">Valid Values<span class="colon">:</span></dt>
 <dd class="field-odd"><p>(0, 1]</p>
 </dd>
 </dl>
 </section>
 <section id="viscoplastic-solver-expert">
-<h3><a class="toc-backref" href="#id20">viscoplastic_solver (expert)</a><a class="headerlink" href="#viscoplastic-solver-expert" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id20" role="doc-backlink">viscoplastic_solver (expert)</a><a class="headerlink" href="#viscoplastic-solver-expert" title="Permalink to this heading">¶</a></h3>
 <p>The choice of viscoplastic solver. The default is fast and accurate, and an end
 user won’t benefit by changing this option. The default is to use the
 <code class="docutils literal notranslate"><span class="pre">bdf2_integrator</span></code> backend. The <cite>“jacobian”</cite> option uses an implicit
@@ -639,13 +729,13 @@ NLK-accelerated <code class="docutils literal notranslate"><span class="pre">ida
 algorithm identical to the <code class="docutils literal notranslate"><span class="pre">bdf2_integrator</span></code>, but implemented on the
 <code class="docutils literal notranslate"><span class="pre">idaesol</span></code> type.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>string</p>
 </dd>
-<dt class="field-even">Default</dt>
+<dt class="field-even">Default<span class="colon">:</span></dt>
 <dd class="field-even"><p><cite>“bdf2”</cite></p>
 </dd>
-<dt class="field-odd">Valid Values</dt>
+<dt class="field-odd">Valid Values<span class="colon">:</span></dt>
 <dd class="field-odd"><p><cite>“bdf2”</cite>, <cite>“jacobian”</cite>, or <cite>“jfree”</cite></p>
 </dd>
 </dl>
@@ -655,33 +745,50 @@ algorithm identical to the <code class="docutils literal notranslate"><span clas
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../SIMULATION_CONTROL_Namelist/index.html" class="btn btn-neutral float-left" title="24. SIMULATION_CONTROL Namelist (Experimental)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../SOLID_MECHANICS_BC_Namelist/index.html" class="btn btn-neutral float-right" title="26. SOLID_MECHANICS_BC Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../SOLID_MECHANICS_BC_Namelist/index.html" class="btn btn-neutral float-right" title="27. SOLID_MECHANICS_BC Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../SIMULATION_CONTROL_Namelist/index.html" class="btn btn-neutral float-left" title="25. SIMULATION_CONTROL Namelist (Experimental)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, LANL.</p>
-  </div>
+    <p>
+        &#169; Copyright 2021, LANL.
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

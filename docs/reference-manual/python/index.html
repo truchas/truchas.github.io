@@ -1,37 +1,74 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>36. truchas Python Module &mdash; Truchas Reference Manual 1.0.0 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+  <title>37. truchas Python Module &mdash; Truchas Reference Manual 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="prev" title="PATCHES Namelist (Expert Options)" href="../rade/PATCHES_Namelist_Expert_Options.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
+          
+
+          
             <a href="../index.html" class="icon icon-home"> Truchas Reference Manual
+          
+
+          
           </a>
+
+          
+            
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -39,7 +76,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ALTMESH_Namelist/index.html">2. ALTMESH Namelist</a></li>
@@ -57,33 +105,34 @@
 <li class="toctree-l1"><a class="reference internal" href="../INDUCTION_COIL_Namelist/index.html">14. INDUCTION_COIL Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">15. MATERIAL and PHASE Namelists</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">16. MESH Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">17. NUMERICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">18. OUTPUTS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">19. PHASE_CHANGE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">20. PHYSICAL_CONSTANTS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">21. PHYSICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">22. PROBE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">23. RESTART Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">24. SIMULATION_CONTROL Namelist (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">25. SOLID_MECHANICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">26. SOLID_MECHANICS_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">27. SPECIES_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">28. THERMAL_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">29. THERMAL_SOURCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">30. TOOLHEAD Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">31. TOOLPATH Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">32. TURBULENCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">33. VFUNCTION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">34. VISCOPLASTIC_MODEL Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">35. Radiation Enclosure Tools</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">36. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#examples">36.1. Examples</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../MICROSTRUCTURE_Namelist/index.html">17. MICROSTRUCTURE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">18. NUMERICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">19. OUTPUTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">20. PHASE_CHANGE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">21. PHYSICAL_CONSTANTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">22. PHYSICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">23. PROBE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">24. RESTART Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">25. SIMULATION_CONTROL Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">26. SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">27. SOLID_MECHANICS_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">28. SPECIES_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">29. THERMAL_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">30. THERMAL_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">31. TOOLHEAD Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">32. TOOLPATH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">33. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">34. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">35. VISCOPLASTIC_MODEL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">36. Radiation Enclosure Tools</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">37. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#examples">37.1. Examples</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#custom-restart">Custom Restart</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#optimization">Optimization</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#parameter-study">Parameter Study</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#components">36.2. Components</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#components">37.2. Components</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#module-truchas.TruchasEnvironment">TruchasEnvironment</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#truchas.TruchasEnvironment.TruchasEnvironment"><code class="docutils literal notranslate"><span class="pre">TruchasEnvironment</span></code></a></li>
 </ul>
@@ -116,36 +165,77 @@
 </li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Truchas Reference Manual</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active"><span class="section-number">36. </span><code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</li>
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">37. </span><code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
             <a href="../_sources/python/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
+            
   <section id="truchas-python-module">
-<h1><span class="section-number">36. </span><code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module<a class="headerlink" href="#truchas-python-module" title="Permalink to this heading"></a></h1>
+<h1><span class="section-number">37. </span><code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module<a class="headerlink" href="#truchas-python-module" title="Permalink to this heading">¶</a></h1>
 <p>Truchas provides a Python package for scripting. This is useful for generating
 custom restarts, performing automated optimization, and performing automated
 parameter studies, or computing custom metrics.</p>
-<div class="contents local topic" id="contents">
+<nav class="contents local" id="contents">
 <p class="topic-title">Contents</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#examples" id="id1">Examples</a></p>
@@ -166,11 +256,11 @@ parameter studies, or computing custom metrics.</p>
 </ul>
 </li>
 </ul>
-</div>
+</nav>
 <section id="examples">
-<h2><a class="toc-backref" href="#id1"><span class="section-number">36.1. </span>Examples</a><a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id1" role="doc-backlink"><span class="section-number">37.1. </span>Examples</a><a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
 <section id="custom-restart">
-<h3><a class="toc-backref" href="#id2">Custom Restart</a><a class="headerlink" href="#custom-restart" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id2" role="doc-backlink">Custom Restart</a><a class="headerlink" href="#custom-restart" title="Permalink to this heading">¶</a></h3>
 <p>Frequently it is necessary to generate custom mapped restarts. For example, if
 we need to map data to a new mesh, where there is a new block which needs to be
 initialized. Generally, we will need to initialize this block with a material
@@ -217,7 +307,7 @@ it to a new mesh, and modify some field data before generating a restart file.</
 <p><sup>Example Truchas Python script. This script reads a Truchas output file, generates a mapped restart onto a new mesh, and overwrites data for some variables on a specific block on that new mesh.</sup></p>
 </section>
 <section id="optimization">
-<h3><a class="toc-backref" href="#id3">Optimization</a><a class="headerlink" href="#optimization" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">Optimization</a><a class="headerlink" href="#optimization" title="Permalink to this heading">¶</a></h3>
 <p>Python scripting can be used to execute Truchas in a loop, for example to modify
 some heat flux boundary condition until the temperature at some point in the
 mesh fits an expected value. We can wrap this entire process into a Python
@@ -288,7 +378,7 @@ solve <span class="math notranslate nohighlight">\(T(F) = 500\)</span> for the t
 </div>
 </section>
 <section id="parameter-study">
-<h3><a class="toc-backref" href="#id4">Parameter Study</a><a class="headerlink" href="#parameter-study" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Parameter Study</a><a class="headerlink" href="#parameter-study" title="Permalink to this heading">¶</a></h3>
 <p>Suppose we wish to perform the following parameter study: Vary the heat flux on
 one boundary condition, and measure the maximum and average temperature in block
 1. The following script will define the custom output metrics (max and avg
@@ -355,12 +445,12 @@ to re-run entire simulations which have already been computed.</p>
 </section>
 </section>
 <section id="components">
-<h2><a class="toc-backref" href="#id5"><span class="section-number">36.2. </span>Components</a><a class="headerlink" href="#components" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id5" role="doc-backlink"><span class="section-number">37.2. </span>Components</a><a class="headerlink" href="#components" title="Permalink to this heading">¶</a></h2>
 <section id="module-truchas.TruchasEnvironment">
-<span id="truchasenvironment"></span><h3><a class="toc-backref" href="#id6">TruchasEnvironment</a><a class="headerlink" href="#module-truchas.TruchasEnvironment" title="Permalink to this heading"></a></h3>
+<span id="truchasenvironment"></span><h3><a class="toc-backref" href="#id6" role="doc-backlink">TruchasEnvironment</a><a class="headerlink" href="#module-truchas.TruchasEnvironment" title="Permalink to this heading">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="truchas.TruchasEnvironment.TruchasEnvironment">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TruchasEnvironment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mpiexec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">truchas_executable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_restart_executable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">working_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite_output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasEnvironment.TruchasEnvironment" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TruchasEnvironment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mpiexec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">truchas_executable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write_restart_executable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">working_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite_output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasEnvironment.TruchasEnvironment" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is the main interface for running Truchas via Python, grabbing outputs,
 and writing restarts. It is usually recommended to initialize your
 environment using the default initializer:</p>
@@ -370,11 +460,11 @@ environment using the default initializer:</p>
 <p>See the <code class="docutils literal notranslate"><span class="pre">default</span></code> method for more parameters.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasEnvironment.TruchasEnvironment.default">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite_output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasEnvironment.TruchasEnvironment.default" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">default</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite_output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasEnvironment.TruchasEnvironment.default" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize using the CMake-generated default configuration. The working
 directory is initialized to the <code class="docutils literal notranslate"><span class="pre">input_dir</span></code>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>input_dir</strong> (<em>str</em><em>, </em><em>optional</em>) – The directory which contains the input file and where
 the output directory should be created. May be an absolute path, or
@@ -391,7 +481,7 @@ defined to a nonzero value, and False otherwise.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasEnvironment.TruchasEnvironment.from_argv">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_argv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasEnvironment.TruchasEnvironment.from_argv" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_argv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasEnvironment.TruchasEnvironment.from_argv" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize from command line arguments.</p>
 <p>usage: <code class="docutils literal notranslate"><span class="pre">test.py</span> <span class="pre">[-h]</span> <span class="pre">-c</span> <span class="pre">CONFIG</span> <span class="pre">[-o</span> <span class="pre">OUTPUT]</span></code></p>
 <dl class="option-list">
@@ -409,11 +499,11 @@ defined to a nonzero value, and False otherwise.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasEnvironment.TruchasEnvironment.from_config_file">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_config_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">working_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasEnvironment.TruchasEnvironment.from_config_file" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_config_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">config_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_dir</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">working_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'.'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasEnvironment.TruchasEnvironment.from_config_file" title="Permalink to this definition">¶</a></dt>
 <dd><p>Initialize from a json configuration file, input directory, and an
 optional working directory.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>config_file</strong> (<em>str</em>) – Filename of the input JSON file containing the
 configuration parameters described below. May be relative to the
@@ -428,7 +518,7 @@ working directory. Defaults to the current working directory.</p></li>
 </dl>
 <p>JSON configuration file parameters:</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>&quot;mpiexec&quot;</strong> (<em>str</em>) – Path to the <code class="docutils literal notranslate"><span class="pre">mpiexec</span></code> executable.</p></li>
 <li><p><strong>&quot;truchas_executable&quot;</strong> (<em>str</em>) – Path to the <code class="docutils literal notranslate"><span class="pre">truchas</span></code> executable.</p></li>
@@ -443,7 +533,7 @@ default or not.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasEnvironment.TruchasEnvironment.generate_input_deck">
-<span class="sig-name descname"><span class="pre">generate_input_deck</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">replacements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template_filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasEnvironment.TruchasEnvironment.generate_input_deck" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">generate_input_deck</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">replacements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template_filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasEnvironment.TruchasEnvironment.generate_input_deck" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates a truchas input file from a template and replacements.
 Expects a dictionary of replacements, e.g. <code class="docutils literal notranslate"><span class="pre">{&quot;sigma&quot;:</span> <span class="pre">1.2e-3}</span></code>.
 Will replace Python format-strings in the input template file,
@@ -451,7 +541,7 @@ e.g. <code class="docutils literal notranslate"><span class="pre">{sigma}</span>
 specified in the input template in the typical Python way, such
 as <code class="docutils literal notranslate"><span class="pre">{sigma:.2e}</span></code>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>replacements</strong> (<em>dict</em>) – A dictionary of replacements to be inserted into
 the Truchas input deck according to the given template. Dictionary
@@ -469,21 +559,21 @@ deck. Should contain Python format-strings, such as <code class="docutils litera
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasEnvironment.TruchasEnvironment.input_directory">
-<span class="sig-name descname"><span class="pre">input_directory</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasEnvironment.TruchasEnvironment.input_directory" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">input_directory</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasEnvironment.TruchasEnvironment.input_directory" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the input directory</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasEnvironment.TruchasEnvironment.open_data">
-<span class="sig-name descname"><span class="pre">open_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h5file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasEnvironment.TruchasEnvironment.open_data" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">open_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h5file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasEnvironment.TruchasEnvironment.open_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an output data object from an h5file, expected to be
 relative to the working directory.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>h5file</strong> (<em>str</em>) – A Truchas output .h5 file. Expected to be relative to
 the working directory.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#truchas.TruchasData.TruchasData" title="truchas.TruchasData.TruchasData">TruchasData</a></p>
 </dd>
 </dl>
@@ -491,15 +581,15 @@ the working directory.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasEnvironment.TruchasEnvironment.output">
-<span class="sig-name descname"><span class="pre">output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasEnvironment.TruchasEnvironment.output" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasEnvironment.TruchasEnvironment.output" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an output data object from an h5file, expected to be
 relative to the input directory.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>h5file</strong> (<em>str</em>) – A Truchas output .h5 file. Expected to be relative to
 the input directory.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#truchas.TruchasData.TruchasData" title="truchas.TruchasData.TruchasData">TruchasData</a></p>
 </dd>
 </dl>
@@ -507,14 +597,14 @@ the input directory.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasEnvironment.TruchasEnvironment.truchas">
-<span class="sig-name descname"><span class="pre">truchas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nprocs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite_output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasEnvironment.TruchasEnvironment.truchas" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">truchas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nprocs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">overwrite_output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasEnvironment.TruchasEnvironment.truchas" title="Permalink to this definition">¶</a></dt>
 <dd><p>Runs truchas with specified number of MPI ranks, and returns the
 terminal output and the output data.</p>
 <blockquote>
 <div><p><code class="docutils literal notranslate"><span class="pre">stdout,</span> <span class="pre">output</span> <span class="pre">=</span> <span class="pre">tenv.truchas(4,</span> <span class="pre">&quot;cast.inp&quot;)</span></code></p>
 </div></blockquote>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>nprocs</strong> (<em>int</em>) – Number of MPI ranks.</p></li>
 <li><p><strong>input_file</strong> (<em>str</em>) – Filename of a Truchas input deck.</p></li>
@@ -525,10 +615,10 @@ exists. Defaults to the value provided to the TruchasEnvironment
 initializer.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>stdout and Truchas output data.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>str, <a class="reference internal" href="#truchas.TruchasData.TruchasData" title="truchas.TruchasData.TruchasData">TruchasData</a></p>
 </dd>
 </dl>
@@ -536,20 +626,20 @@ initializer.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasEnvironment.TruchasEnvironment.working_directory">
-<span class="sig-name descname"><span class="pre">working_directory</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasEnvironment.TruchasEnvironment.working_directory" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">working_directory</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasEnvironment.TruchasEnvironment.working_directory" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the working directory</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasEnvironment.TruchasEnvironment.write_restart">
-<span class="sig-name descname"><span class="pre">write_restart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h5file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cycle_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart_file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasEnvironment.TruchasEnvironment.write_restart" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">write_restart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">h5file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cycle_number</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart_file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasEnvironment.TruchasEnvironment.write_restart" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write a restart file from the given H5 dump and cycle number to
 the given file. Files expected to be relative to working directory.</p>
 <p>WARNING: This calls the <code class="docutils literal notranslate"><span class="pre">write-restart.py</span></code> program, and is primarily
 used for testing. Usually in Python scripts, it is better to use the
 <code class="xref py py-func docutils literal notranslate"><span class="pre">TruchasData.write_restart()</span></code> method.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>h5file</strong> (<em>str</em>) – A Truchas output .h5 file. Expected to be relative to
 the working directory.</p></li>
@@ -564,10 +654,10 @@ the working directory.</p></li>
 
 </section>
 <section id="module-truchas.TruchasData">
-<span id="truchasdata"></span><h3><a class="toc-backref" href="#id7">TruchasData</a><a class="headerlink" href="#module-truchas.TruchasData" title="Permalink to this heading"></a></h3>
+<span id="truchasdata"></span><h3><a class="toc-backref" href="#id7" role="doc-backlink">TruchasData</a><a class="headerlink" href="#module-truchas.TruchasData" title="Permalink to this heading">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="truchas.TruchasData.TruchasData">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TruchasData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TruchasData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData" title="Permalink to this definition">¶</a></dt>
 <dd><p>A class for reading and interacting with Truchas output data. It provides
 access to fields, and allows users to manipulate them.</p>
 <p>Field manipulation is in-memory, not saved to the H5 file. The Truchas
@@ -579,13 +669,13 @@ of those two methods.</p>
 TruchasData objects are also provided by <code class="xref py py-func docutils literal notranslate"><span class="pre">TruchasEnvironment.truchas()</span></code>
 and <code class="xref py py-func docutils literal notranslate"><span class="pre">TruchasEnvironment.output()</span></code>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>filename</strong> (<em>str</em>) – Filename of the Truchas h5 output file.</p>
 </dd>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasData.TruchasData.assign_field">
-<span class="sig-name descname"><span class="pre">assign_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.assign_field" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">assign_field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.assign_field" title="Permalink to this definition">¶</a></dt>
 <dd><p>Reassign a field with a user-defined copy. Future calls to
 <a class="reference internal" href="#truchas.TruchasData.TruchasData.field" title="truchas.TruchasData.TruchasData.field"><code class="xref py py-func docutils literal notranslate"><span class="pre">TruchasData.field()</span></code></a> will return this copy, and this copy will
 be used in any restarts.</p>
@@ -593,7 +683,7 @@ be used in any restarts.</p>
 in the <code class="docutils literal notranslate"><span class="pre">PHYSICS</span></code> namelist <code class="docutils literal notranslate"><span class="pre">materials</span></code> parameter and <code class="docutils literal notranslate"><span class="pre">MATERIAL</span></code>
 namelists <code class="docutils literal notranslate"><span class="pre">phases</span></code> parameter.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>series_id</strong> (<em>int</em>) – The ID of a series in the Truchas output file. Valid
 values are in the range <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">TruchasData.num_series()]</span></code>.</p></li>
@@ -621,10 +711,10 @@ length as the second dimension of the field being overwritten
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasData.TruchasData.assign_value_block">
-<span class="sig-name descname"><span class="pre">assign_value_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blockid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.assign_value_block" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">assign_value_block</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">blockid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.assign_value_block" title="Permalink to this definition">¶</a></dt>
 <dd><p>Assign a value to a field within an element block.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>series_id</strong> (<em>int</em>) – The ID of a series in the Truchas output file. Valid
 values are in the range <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">TruchasData.num_series()]</span></code>.</p></li>
@@ -653,7 +743,7 @@ length as the second dimension of the field being overwritten
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasData.TruchasData.assign_value_cell">
-<span class="sig-name descname"><span class="pre">assign_value_cell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cellid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.assign_value_cell" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">assign_value_cell</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cellid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.assign_value_cell" title="Permalink to this definition">¶</a></dt>
 <dd><p>Assign a value to a field at a given cell. This is equivalent to:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">TruchasData</span><span class="o">.</span><span class="n">output</span><span class="p">(</span><span class="n">sid</span><span class="p">,</span> <span class="s2">&quot;xxx&quot;</span><span class="p">)</span>
 <span class="n">f</span><span class="p">[</span><span class="n">cellid</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span>
@@ -661,7 +751,7 @@ length as the second dimension of the field being overwritten
 </pre></div>
 </div>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>series_id</strong> (<em>int</em>) – The ID of a series in the Truchas output file. Valid
 values are in the range <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">TruchasData.num_series()]</span></code>.</p></li>
@@ -687,13 +777,13 @@ overwritten (<code class="docutils literal notranslate"><span class="pre">field.
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasData.TruchasData.blockid">
-<span class="sig-name descname"><span class="pre">blockid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.blockid" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">blockid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.blockid" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A ncell length field of integers, holding the Exodus block ID
 at for each cell.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></p>
 </dd>
 </dl>
@@ -701,12 +791,12 @@ at for each cell.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasData.TruchasData.centroids">
-<span class="sig-name descname"><span class="pre">centroids</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.centroids" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">centroids</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.centroids" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A <code class="docutils literal notranslate"><span class="pre">[ncell,3]</span></code> field of cell centroids.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></p>
 </dd>
 </dl>
@@ -714,17 +804,17 @@ at for each cell.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasData.TruchasData.cycle">
-<span class="sig-name descname"><span class="pre">cycle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.cycle" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">cycle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.cycle" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the cycle number of a given series.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>series_id</strong> (<em>int</em>) – The ID of a series in the Truchas output file. Valid
 values are in the range <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">TruchasData.num_series()]</span></code>.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The cycle number at the given series_id</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int</p>
 </dd>
 </dl>
@@ -732,12 +822,12 @@ values are in the range <code class="docutils literal notranslate"><span class="
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasData.TruchasData.field">
-<span class="sig-name descname"><span class="pre">field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.field" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">field</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.field" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the requested field of the requested series as a ndarray.
 This will read the entire field from disk. If the field has been
 reassigned, returns the user-defined copy.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>series_id</strong> (<em>int</em>) – The ID of a series in the Truchas output file. Valid
 values are in the range <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">TruchasData.num_series()]</span></code>.</p></li>
@@ -752,11 +842,11 @@ h5 file can be found with the <a class="reference internal" href="#truchas.Truch
 function.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The requested field from the H5 file. If the field has been
 reassigned, returns the user-defined copy.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></p>
 </dd>
 </dl>
@@ -764,19 +854,19 @@ reassigned, returns the user-defined copy.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasData.TruchasData.field_names">
-<span class="sig-name descname"><span class="pre">field_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.field_names" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">field_names</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.field_names" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a list of field names present in the first series.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>series_id</strong> (<em>int</em><em>, </em><em>optional</em>) – The ID of a series in the Truchas output file. Valid
 values are in the range <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">TruchasData.num_series()]</span></code>. Defaults
 to 1. Usually the fields present does not change over the course
 of a simulation.</p>
 </dd>
-<dt class="field-even">Result</dt>
+<dt class="field-even">Result<span class="colon">:</span></dt>
 <dd class="field-even"><p>A list of field names present in the requested series.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>list of strings</p>
 </dd>
 </dl>
@@ -784,18 +874,18 @@ of a simulation.</p>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="truchas.TruchasData.TruchasData.filename">
-<span class="sig-name descname"><span class="pre">filename</span></span><a class="headerlink" href="#truchas.TruchasData.TruchasData.filename" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">filename</span></span><a class="headerlink" href="#truchas.TruchasData.TruchasData.filename" title="Permalink to this definition">¶</a></dt>
 <dd><p>The filename of the HDF5 Truchas output.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasData.TruchasData.node_coordinates">
-<span class="sig-name descname"><span class="pre">node_coordinates</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.node_coordinates" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">node_coordinates</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.node_coordinates" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A <code class="docutils literal notranslate"><span class="pre">[nnode,3]</span></code> field of node coordinates.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></p>
 </dd>
 </dl>
@@ -803,12 +893,12 @@ of a simulation.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasData.TruchasData.num_series">
-<span class="sig-name descname"><span class="pre">num_series</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.num_series" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">num_series</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.num_series" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The number of series in this file.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
 </dd>
 </dl>
@@ -816,12 +906,12 @@ of a simulation.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasData.TruchasData.num_species">
-<span class="sig-name descname"><span class="pre">num_species</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.num_species" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">num_species</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.num_species" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>The number of species in this file.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>int</p>
 </dd>
 </dl>
@@ -829,17 +919,17 @@ of a simulation.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasData.TruchasData.probe_data">
-<span class="sig-name descname"><span class="pre">probe_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">probe_filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.probe_data" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">probe_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">probe_filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.probe_data" title="Permalink to this definition">¶</a></dt>
 <dd><p>Read data from a probe file.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>probe_filename</strong> (<em>str</em>) – Name of a probe file. Expected to be
 relative to the directory holding the h5 file.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>2D array containing the text file data.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></p>
 </dd>
 </dl>
@@ -847,11 +937,11 @@ relative to the directory holding the h5 file.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasData.TruchasData.region">
-<span class="sig-name descname"><span class="pre">region</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">region_blockids</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.region" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">region</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">region_blockids</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.region" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a list of bools indicating which cells are part of a given
 set of block ids. Input is an arbitrary number of block id integers.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>region_blockids</strong> (<em>int</em>) – <p>An arbitrary number of block id integers. This
 function takes an arbitrary number of arguments, not a list. E.g.,</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">TruchasData</span><span class="o">.</span><span class="n">region</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -860,7 +950,7 @@ function takes an arbitrary number of arguments, not a list. E.g.,</p>
 </div>
 </p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><p>A list of bools indicating which cells are part of a given
 set of block ids. E.g., <code class="docutils literal notranslate"><span class="pre">[True,</span> <span class="pre">False,</span> <span class="pre">False,</span> <span class="pre">True,</span> <span class="pre">...]</span></code>. This is
 useful for masking off operations, for example:</p>
@@ -871,7 +961,7 @@ useful for masking off operations, for example:</p>
 </div>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> of bools</p>
 </dd>
 </dl>
@@ -879,13 +969,13 @@ useful for masking off operations, for example:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasData.TruchasData.region_node">
-<span class="sig-name descname"><span class="pre">region_node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">region_blockids</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.region_node" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">region_node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">region_blockids</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.region_node" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return a list of bools indicating which nodes are part of a given
 set of block ids. Input is an arbitrary number of block id integers.
 A node is considered part of the given block set if any one of the cells
 adjacent to it is part of one block in that set.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>region_blockids</strong> (<em>int</em>) – <p>An arbitrary number of block id integers. This
 function takes an arbitrary number of arguments, not a list. E.g.,</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">TruchasData</span><span class="o">.</span><span class="n">region</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -894,7 +984,7 @@ function takes an arbitrary number of arguments, not a list. E.g.,</p>
 </div>
 </p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p><p>A list of bools indicating which nodes are part of a given
 set of block ids. E.g., <code class="docutils literal notranslate"><span class="pre">[True,</span> <span class="pre">False,</span> <span class="pre">False,</span> <span class="pre">True,</span> <span class="pre">...]</span></code>. This is
 useful for masking off operations, for example:</p>
@@ -905,7 +995,7 @@ useful for masking off operations, for example:</p>
 </div>
 </p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code> of bools</p>
 </dd>
 </dl>
@@ -913,17 +1003,17 @@ useful for masking off operations, for example:</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasData.TruchasData.series_id">
-<span class="sig-name descname"><span class="pre">series_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cycle</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.series_id" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">series_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cycle</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.series_id" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the series id of a given cycle. If not found, returns None.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>cycle</strong> (<em>int</em>) – The number of a Truchas cycle.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The series ID matching a given cycle. If there is no series
 exactly matching the cycle, returns None.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>int or None</p>
 </dd>
 </dl>
@@ -931,17 +1021,17 @@ exactly matching the cycle, returns None.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasData.TruchasData.time">
-<span class="sig-name descname"><span class="pre">time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.time" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">time</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.time" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the time at a given series number.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>series_id</strong> (<em>int</em>) – The ID of a series in the Truchas output file. Valid
 values are in the range <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">TruchasData.num_series()]</span></code>.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The time at the given series_id</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>number</p>
 </dd>
 </dl>
@@ -949,17 +1039,17 @@ values are in the range <code class="docutils literal notranslate"><span class="
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasData.TruchasData.time_step">
-<span class="sig-name descname"><span class="pre">time_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.time_step" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">time_step</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">series_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.time_step" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the time step size at a given series number.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>series_id</strong> (<em>int</em>) – The ID of a series in the Truchas output file. Valid
 values are in the range <code class="docutils literal notranslate"><span class="pre">[1,</span> <span class="pre">TruchasData.num_series()]</span></code>.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>The time step size at the given series_id</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>number</p>
 </dd>
 </dl>
@@ -967,12 +1057,12 @@ values are in the range <code class="docutils literal notranslate"><span class="
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasData.TruchasData.volumes">
-<span class="sig-name descname"><span class="pre">volumes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.volumes" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">volumes</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.volumes" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>A length <code class="docutils literal notranslate"><span class="pre">ncell</span></code> field of cell volumes.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">numpy.ndarray</span></code></p>
 </dd>
 </dl>
@@ -980,10 +1070,10 @@ values are in the range <code class="docutils literal notranslate"><span class="
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasData.TruchasData.write_restart">
-<span class="sig-name descname"><span class="pre">write_restart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">outfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">series_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.write_restart" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">write_restart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">outfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">series_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasData.TruchasData.write_restart" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write a restart file from given Truchas data object and series ID.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>outfile</strong> (<em>str</em>) – The name of the restart file to be generated.</p></li>
 <li><p><strong>series_id</strong> (<em>int</em>) – The ID of a series in the Truchas output file. Valid
@@ -997,17 +1087,17 @@ values are in the range <code class="docutils literal notranslate"><span class="
 
 </section>
 <section id="module-truchas.TruchasMappedData">
-<span id="truchasmappeddata"></span><h3><a class="toc-backref" href="#id8">TruchasMappedData</a><a class="headerlink" href="#module-truchas.TruchasMappedData" title="Permalink to this heading"></a></h3>
+<span id="truchasmappeddata"></span><h3><a class="toc-backref" href="#id8" role="doc-backlink">TruchasMappedData</a><a class="headerlink" href="#module-truchas.TruchasMappedData" title="Permalink to this heading">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="truchas.TruchasMappedData.TruchasMappedData">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TruchasMappedData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exodus_filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_portage</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasMappedData.TruchasMappedData" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TruchasMappedData</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output_filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">exodus_filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale_factor</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_portage</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasMappedData.TruchasMappedData" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#truchas.TruchasData.TruchasData" title="truchas.TruchasData.TruchasData"><code class="xref py py-class docutils literal notranslate"><span class="pre">TruchasData</span></code></a></p>
 <p>Interface for mapping Truchas Data to new exodus mesh. This class
 inherits all of the methods from the <code class="xref py py-class docutils literal notranslate"><span class="pre">TruchasData</span></code> class, and
 invisibly maps fields to the new mesh prior to returning them.
 Initialization takes extra parameters for mapping.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>filename</strong> (<em>str</em>) – Filename of the Truchas h5 output file.</p></li>
 <li><p><strong>exodus_filename</strong> (<em>str</em>) – Filename of the exodus mesh file to which the data
@@ -1020,7 +1110,7 @@ built-in mapper. Defaults to False, using the Truchas built-in mapper.</p></li>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasMappedData.TruchasMappedData.finalize">
-<span class="sig-name descname"><span class="pre">finalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasMappedData.TruchasMappedData.finalize" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">finalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasMappedData.TruchasMappedData.finalize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Free the memory used by the grid mapper. If mapping between multiple
 different mesh combinations, it’s best to call this directly rather than
 wait for Python garbage collection to clean it up.</p>
@@ -1030,10 +1120,10 @@ wait for Python garbage collection to clean it up.</p>
 
 </section>
 <section id="module-truchas.TruchasStudy">
-<span id="truchasstudy"></span><h3><a class="toc-backref" href="#id9">TruchasStudy</a><a class="headerlink" href="#module-truchas.TruchasStudy" title="Permalink to this heading"></a></h3>
+<span id="truchasstudy"></span><h3><a class="toc-backref" href="#id9" role="doc-backlink">TruchasStudy</a><a class="headerlink" href="#module-truchas.TruchasStudy" title="Permalink to this heading">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="truchas.TruchasStudy.TruchasStudy">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TruchasStudy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tenv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tdb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nprocs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">njobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasStudy.TruchasStudy" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TruchasStudy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tenv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tdb</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nprocs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">njobs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">restart_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasStudy.TruchasStudy" title="Permalink to this definition">¶</a></dt>
 <dd><p>A class for performing Truchas parameter studies which vary in one
 parameter (1D). This class expects a Truchas environment which will perform
 the tests (or generate input decks) and a Truchas Database which will cache
@@ -1052,7 +1142,7 @@ outputs from the database of Truchas outputs instead of executing
 simulations.</p>
 <p>To initialize:</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>tenv</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">TruchasEnvironment</span></code>) – A <code class="xref py py-class docutils literal notranslate"><span class="pre">TruchasEnvironment</span></code> for running the parameter study.</p></li>
 <li><p><strong>tdb</strong> (<code class="xref py py-class docutils literal notranslate"><span class="pre">TruchasDatabase</span></code>) – A <code class="xref py py-class docutils literal notranslate"><span class="pre">TruchasDatabase</span></code> where results will be cached.</p></li>
@@ -1066,11 +1156,11 @@ used for all runs.</p></li>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasStudy.TruchasStudy.do_1d_parameter_study">
-<span class="sig-name descname"><span class="pre">do_1d_parameter_study</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">template_input_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_metrics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_outputs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasStudy.TruchasStudy.do_1d_parameter_study" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">do_1d_parameter_study</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">template_input_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">points</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_metrics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_outputs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasStudy.TruchasStudy.do_1d_parameter_study" title="Permalink to this definition">¶</a></dt>
 <dd><p>Do a 1D parameter study of the given variable, across the given
 points. Output metrics are recorded to a text file.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>initial_parameters</strong> (<em>dict with str keys</em>) – A dictionary of input parameters to supply to
 <code class="xref py py-func docutils literal notranslate"><span class="pre">TruchasEnvironment.generate_input_deck()</span></code>. Keys are the python
@@ -1127,7 +1217,7 @@ the input file.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasStudy.TruchasStudy.generate_1d_parameter_study_inputs">
-<span class="sig-name descname"><span class="pre">generate_1d_parameter_study_inputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">template_input_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">points</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasStudy.TruchasStudy.generate_1d_parameter_study_inputs" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">generate_1d_parameter_study_inputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">template_input_file</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">points</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasStudy.TruchasStudy.generate_1d_parameter_study_inputs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generate input decks across a given span of data points. This is
 intended for generating inputs to then be simulated on a cluster via
 SLURM, not in a Python environment. These output files will be stored
@@ -1148,23 +1238,23 @@ the database, so only the postprocessing will be performed.</p></li>
 generated input files in a single array job.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#SBATCH -a 1-16  # Run 16 duplicates of this job in parallel</span>
 
-<span class="nb">cd</span> &lt;path-to-parameter-study-inputs&gt;
+<span class="nb">cd</span><span class="w"> </span>&lt;path-to-parameter-study-inputs&gt;
 
 <span class="c1"># exit if this run doesn&#39;t correspond to a file</span>
-<span class="nv">nfiles</span><span class="o">=</span><span class="k">$(</span>ls -1 *.inp <span class="p">|</span> wc -l<span class="k">)</span>
-<span class="o">((</span> <span class="nv">$SLURM_ARRAY_TASK_ID</span> &gt; <span class="nv">$nfiles</span> <span class="o">))</span> <span class="o">&amp;&amp;</span> <span class="nb">exit</span>
+<span class="nv">nfiles</span><span class="o">=</span><span class="k">$(</span>ls<span class="w"> </span>-1<span class="w"> </span>*.inp<span class="w"> </span><span class="p">|</span><span class="w"> </span>wc<span class="w"> </span>-l<span class="k">)</span>
+<span class="o">((</span><span class="w"> </span><span class="nv">$SLURM_ARRAY_TASK_ID</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$nfiles</span><span class="w"> </span><span class="o">))</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">exit</span>
 
 <span class="c1"># select a unique input file from an alphabatized list and my job array ID</span>
-<span class="nv">inputfile</span><span class="o">=</span><span class="k">$(</span>ls -1 *.inp <span class="p">|</span> sed -n <span class="s2">&quot;</span><span class="si">${</span><span class="nv">SLURM_ARRAY_TASK_ID</span><span class="si">}</span><span class="s2">p&quot;</span><span class="k">)</span>
-ml truchas
-srun truchas <span class="nv">$inputfile</span>
+<span class="nv">inputfile</span><span class="o">=</span><span class="k">$(</span>ls<span class="w"> </span>-1<span class="w"> </span>*.inp<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span>-n<span class="w"> </span><span class="s2">&quot;</span><span class="si">${</span><span class="nv">SLURM_ARRAY_TASK_ID</span><span class="si">}</span><span class="s2">p&quot;</span><span class="k">)</span>
+ml<span class="w"> </span>truchas
+srun<span class="w"> </span>truchas<span class="w"> </span><span class="nv">$inputfile</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasStudy.TruchasStudy.register_1d_parameter_study_outputs">
-<span class="sig-name descname"><span class="pre">register_1d_parameter_study_outputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">points</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasStudy.TruchasStudy.register_1d_parameter_study_outputs" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">register_1d_parameter_study_outputs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">initial_parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">variable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">points</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasStudy.TruchasStudy.register_1d_parameter_study_outputs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Register Truchas simulation outputs and input decks to a database. If
 <a class="reference internal" href="#truchas.TruchasStudy.TruchasStudy.generate_1d_parameter_study_inputs" title="truchas.TruchasStudy.TruchasStudy.generate_1d_parameter_study_inputs"><code class="xref py py-func docutils literal notranslate"><span class="pre">generate_1d_parameter_study_inputs()</span></code></a> is used to generate input
 files in the directory <code class="docutils literal notranslate"><span class="pre">parameter_study_inputs</span></code>, then Truchas is used
@@ -1179,15 +1269,15 @@ function is used to register those outputs to a
 
 </section>
 <section id="module-truchas.TruchasDatabase">
-<span id="truchasdatabase"></span><h3><a class="toc-backref" href="#id10">TruchasDatabase</a><a class="headerlink" href="#module-truchas.TruchasDatabase" title="Permalink to this heading"></a></h3>
+<span id="truchasdatabase"></span><h3><a class="toc-backref" href="#id10" role="doc-backlink">TruchasDatabase</a><a class="headerlink" href="#module-truchas.TruchasDatabase" title="Permalink to this heading">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="truchas.TruchasDatabase.TruchasDatabase">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TruchasDatabase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasDatabase.TruchasDatabase" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">TruchasDatabase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">directory</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasDatabase.TruchasDatabase" title="Permalink to this definition">¶</a></dt>
 <dd><p>Records Truchas outputs into a database for easy lookup. This class is
 used by <code class="xref py py-class docutils literal notranslate"><span class="pre">TruchasStudy</span></code>, and for most user code will not need to be
 used directly except for initialization.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>directory</strong> (<em>str</em>) – A directory where the database will be stored. Should be
 either an empty directory, nonexistent directory, or the path of an
 already-existing database.</p>
@@ -1195,11 +1285,11 @@ already-existing database.</p>
 </dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasDatabase.TruchasDatabase.append_new_parameters">
-<span class="sig-name descname"><span class="pre">append_new_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasDatabase.TruchasDatabase.append_new_parameters" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">append_new_parameters</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasDatabase.TruchasDatabase.append_new_parameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>Append a new set of parameters to the database. This requires
 rehashing all identifiers.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>parameters</strong> (<em>a dict with str keys and non-function values</em>) – A dictionary of template replacements, including any
 new keys that were not present in previous database entries. For
 accuracy, any new keys must contain the value that was used in old
@@ -1210,7 +1300,7 @@ runs (where presumably they were hardcoded in the input file).</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasDatabase.TruchasDatabase.backup_database">
-<span class="sig-name descname"><span class="pre">backup_database</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasDatabase.TruchasDatabase.backup_database" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">backup_database</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasDatabase.TruchasDatabase.backup_database" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a backup file <code class="docutils literal notranslate"><span class="pre">database-backup.json</span></code> in the database
 directory. This backs up the database structure, not the Truchas inputs
 nor output data.</p>
@@ -1218,11 +1308,11 @@ nor output data.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasDatabase.TruchasDatabase.delete">
-<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasDatabase.TruchasDatabase.delete" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">delete</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasDatabase.TruchasDatabase.delete" title="Permalink to this definition">¶</a></dt>
 <dd><p>Delete the data associated with the given parameter set from the
 database. Note this will delete all associated data from disk.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>parameters</strong> (<em>a dict with str keys and non-function values</em>) – A dictionary of template replacements. Unlike
 <code class="xref py py-func docutils literal notranslate"><span class="pre">TruchasStudy.do_1d_parameter_study()</span></code>, this cannot contain
 functions (rather, it expects the functions have already been
@@ -1233,12 +1323,12 @@ evaluated). This is so that a unique identifier can be produced.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasDatabase.TruchasDatabase.donate">
-<span class="sig-name descname"><span class="pre">donate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">infile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dump_dir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasDatabase.TruchasDatabase.donate" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">donate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">infile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dump_dir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasDatabase.TruchasDatabase.donate" title="Permalink to this definition">¶</a></dt>
 <dd><p>Add the input file and Truchas output directory associated with a set
 of parameters to the database. Note this will overwrite any existing
 item associated with the parameter set in the database.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>parameters</strong> (<em>a dict with str keys and non-function values</em>) – A dictionary of template replacements. Unlike
 <code class="xref py py-func docutils literal notranslate"><span class="pre">TruchasStudy.do_1d_parameter_study()</span></code>, this cannot contain
@@ -1253,20 +1343,20 @@ evaluated). This is so that a unique identifier can be produced.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasDatabase.TruchasDatabase.exists">
-<span class="sig-name descname"><span class="pre">exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasDatabase.TruchasDatabase.exists" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">exists</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasDatabase.TruchasDatabase.exists" title="Permalink to this definition">¶</a></dt>
 <dd><p>Checks if the given parameter combination is present in the database.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>parameters</strong> (<em>a dict with str keys and non-function values</em>) – A dictionary of template replacements. Unlike
 <code class="xref py py-func docutils literal notranslate"><span class="pre">TruchasStudy.do_1d_parameter_study()</span></code>, this cannot contain
 functions (rather, it expects the functions have already been
 evaluated). This is so that a unique identifier can be produced.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>True if the Truchas results associated with <code class="docutils literal notranslate"><span class="pre">parameters</span></code> is
 already present in the database, False otherwise.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>bool</p>
 </dd>
 </dl>
@@ -1274,19 +1364,19 @@ already present in the database, False otherwise.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasDatabase.TruchasDatabase.identifier">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">identifier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasDatabase.TruchasDatabase.identifier" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">identifier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasDatabase.TruchasDatabase.identifier" title="Permalink to this definition">¶</a></dt>
 <dd><p>Generates a unique identifier for the given parameter dictionary.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>parameters</strong> (<em>a dict with str keys and non-function values</em>) – A dictionary of template replacements. Unlike
 <code class="xref py py-func docutils literal notranslate"><span class="pre">TruchasStudy.do_1d_parameter_study()</span></code>, this cannot contain
 functions (rather, it expects the functions have already been
 evaluated). This is so that a unique identifier can be produced.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Unique identifier hash</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>str</p>
 </dd>
 </dl>
@@ -1294,20 +1384,20 @@ evaluated). This is so that a unique identifier can be produced.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasDatabase.TruchasDatabase.truchas_output">
-<span class="sig-name descname"><span class="pre">truchas_output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasDatabase.TruchasDatabase.truchas_output" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">truchas_output</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">parameters</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasDatabase.TruchasDatabase.truchas_output" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return the Truchas output corresponding to the given parameters. If
 such an output does not exist, return None.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>parameters</strong> (<em>a dict with str keys and non-function values</em>) – A dictionary of template replacements. Unlike
 <code class="xref py py-func docutils literal notranslate"><span class="pre">TruchasStudy.do_1d_parameter_study()</span></code>, this cannot contain
 functions (rather, it expects the functions have already been
 evaluated). This is so that a unique identifier can be produced.</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Truchas output associated with <code class="docutils literal notranslate"><span class="pre">parameters</span></code></p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="xref py py-class docutils literal notranslate"><span class="pre">TruchasData</span></code></p>
 </dd>
 </dl>
@@ -1317,10 +1407,10 @@ evaluated). This is so that a unique identifier can be produced.</p>
 
 </section>
 <section id="module-truchas.TruchasTest">
-<span id="truchastest"></span><h3><a class="toc-backref" href="#id11">TruchasTest</a><a class="headerlink" href="#module-truchas.TruchasTest" title="Permalink to this heading"></a></h3>
+<span id="truchastest"></span><h3><a class="toc-backref" href="#id11" role="doc-backlink">TruchasTest</a><a class="headerlink" href="#module-truchas.TruchasTest" title="Permalink to this heading">¶</a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="truchas.TruchasTest.compare_l2">
-<span class="sig-name descname"><span class="pre">compare_l2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasTest.compare_l2" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">compare_l2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasTest.compare_l2" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the L2 norm between two fields,
 and compares against an input tolerance. Returns 0 if error is below
 tolerance and 1 otherwise. Prints result of comparison to terminal.
@@ -1329,7 +1419,7 @@ Fields may be a scalar value.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="truchas.TruchasTest.compare_max">
-<span class="sig-name descname"><span class="pre">compare_max</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasTest.compare_max" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">compare_max</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasTest.compare_max" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the maximum absolute difference between two fields,
 and compares against an input tolerance. Returns 0 if error is below
 tolerance and 1 otherwise. Prints result of comparison to terminal.
@@ -1338,7 +1428,7 @@ Fields may be a scalar value.</p>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="truchas.TruchasTest.compare_max_rel">
-<span class="sig-name descname"><span class="pre">compare_max_rel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasTest.compare_max_rel" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">compare_max_rel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">field1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tol</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasTest.compare_max_rel" title="Permalink to this definition">¶</a></dt>
 <dd><p>Calculates the maximum relative absolute difference between two fields,
 and compares against an input tolerance. Returns 0 if error is below
 tolerance and 1 otherwise. Prints result of comparison to terminal.
@@ -1351,32 +1441,49 @@ Fields may be a scalar value.</p>
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="../rade/PATCHES_Namelist_Expert_Options.html" class="btn btn-neutral float-left" title="PATCHES Namelist (Expert Options)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, LANL.</p>
-  </div>
+    <p>
+        &#169; Copyright 2021, LANL.
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

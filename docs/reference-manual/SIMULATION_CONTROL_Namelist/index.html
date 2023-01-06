@@ -1,38 +1,75 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>24. SIMULATION_CONTROL Namelist (Experimental) &mdash; Truchas Reference Manual 1.0.0 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+  <title>25. SIMULATION_CONTROL Namelist (Experimental) &mdash; Truchas Reference Manual 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="25. SOLID_MECHANICS Namelist" href="../SOLID_MECHANICS_Namelist/index.html" />
-    <link rel="prev" title="23. RESTART Namelist" href="../RESTART_Namelist/index.html" /> 
+    <link rel="next" title="26. SOLID_MECHANICS Namelist" href="../SOLID_MECHANICS_Namelist/index.html" />
+    <link rel="prev" title="24. RESTART Namelist" href="../RESTART_Namelist/index.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
+          
+
+          
             <a href="../index.html" class="icon icon-home"> Truchas Reference Manual
+          
+
+          
           </a>
+
+          
+            
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -40,7 +77,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ALTMESH_Namelist/index.html">2. ALTMESH Namelist</a></li>
@@ -58,17 +106,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../INDUCTION_COIL_Namelist/index.html">14. INDUCTION_COIL Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">15. MATERIAL and PHASE Namelists</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">16. MESH Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">17. NUMERICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">18. OUTPUTS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">19. PHASE_CHANGE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">20. PHYSICAL_CONSTANTS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">21. PHYSICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">22. PROBE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">23. RESTART Namelist</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">24. SIMULATION_CONTROL Namelist (Experimental)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#overview">24.1. Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#simulation-control-namelist-features">24.2. SIMULATION_CONTROL Namelist Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#components">24.3. Components</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../MICROSTRUCTURE_Namelist/index.html">17. MICROSTRUCTURE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">18. NUMERICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">19. OUTPUTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">20. PHASE_CHANGE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">21. PHYSICAL_CONSTANTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">22. PHYSICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">23. PROBE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">24. RESTART Namelist</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">25. SIMULATION_CONTROL Namelist (Experimental)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">25.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#simulation-control-namelist-features">25.2. SIMULATION_CONTROL Namelist Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#components">25.3. Components</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#equation">Equation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#phase-init-dt">Phase_Init_Dt</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#phase-init-dt-factor">Phase_Init_Dt_Factor</a></li>
@@ -77,61 +126,102 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">25. SOLID_MECHANICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">26. SOLID_MECHANICS_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">27. SPECIES_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">28. THERMAL_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">29. THERMAL_SOURCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">30. TOOLHEAD Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">31. TOOLPATH Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">32. TURBULENCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">33. VFUNCTION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">34. VISCOPLASTIC_MODEL Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">35. Radiation Enclosure Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/index.html">36. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">26. SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">27. SOLID_MECHANICS_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">28. SPECIES_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">29. THERMAL_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">30. THERMAL_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">31. TOOLHEAD Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">32. TOOLPATH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">33. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">34. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">35. VISCOPLASTIC_MODEL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">36. Radiation Enclosure Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">37. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Truchas Reference Manual</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active"><span class="section-number">24. </span>SIMULATION_CONTROL Namelist (Experimental)</li>
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">25. </span>SIMULATION_CONTROL Namelist (Experimental)</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
             <a href="../_sources/SIMULATION_CONTROL_Namelist/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
+            
   <div class="toctree-wrapper compound" id="simulation-control-namelist">
 </div>
 <section id="simulation-control-namelist-experimental">
-<h1><span class="section-number">24. </span>SIMULATION_CONTROL Namelist (Experimental)<a class="headerlink" href="#simulation-control-namelist-experimental" title="Permalink to this heading"></a></h1>
+<h1><span class="section-number">25. </span>SIMULATION_CONTROL Namelist (Experimental)<a class="headerlink" href="#simulation-control-namelist-experimental" title="Permalink to this heading">¶</a></h1>
 <section id="overview">
-<h2><span class="section-number">24.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">25.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h2>
 <p>There may be points in time during a simulation when something changes abruptly; a boundary condition or source turns on/off, or a physics model is enabled/disabled, for example. In such circumstances it is best to hit these times precisely with a time step and then continue from that point with a reduced step size appropriate to resolving the time transients that result from the impulsive forcing of the model—in essence, to split the simulation seamlessly into a sequence of phases where each phase is a new simulation whose initial state is the final state of the preceding phase. This experimental namelist provides a means for achieving this. The start time of each additional phase subsequent to the initial phase is specified using the <a class="reference internal" href="#sc-pst"><span class="std std-ref">Phase_Start_Times</span></a> array, and the initial step size using either the <a class="reference internal" href="#sc-pid"><span class="std std-ref">Phase_Init_Dt</span></a> or <a class="reference internal" href="#sc-pidf"><span class="std std-ref">Phase_Init_Dt_Factor</span></a> variables. Truchas will hit those times precisely with a time step, smoothly adjusting the step size in advance to avoid abrupt step size changes, and then effectively <strong>restart</strong> the timestepping. Currently this only effects the second-order diffusion solver which maintains a (smooth) history of states at recent time steps. When restarting that history is deleted and time stepping begins fresh using only the current state.</p>
 </section>
 <section id="simulation-control-namelist-features">
-<h2><span class="section-number">24.2. </span>SIMULATION_CONTROL Namelist Features<a class="headerlink" href="#simulation-control-namelist-features" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">25.2. </span>SIMULATION_CONTROL Namelist Features<a class="headerlink" href="#simulation-control-namelist-features" title="Permalink to this heading">¶</a></h2>
 <div class="line-block">
 <div class="line"><strong>Required/Optional        :</strong> Optional</div>
 <div class="line"><strong>Single/Multiple Instances:</strong> Single</div>
 </div>
 </section>
 <section id="components">
-<h2><span class="section-number">24.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">25.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="#sc-el"><span class="std std-ref">Event_Lookahead</span></a></p></li>
 <li><p><a class="reference internal" href="#sc-pid"><span class="std std-ref">Phase_Init_Dt</span></a></p></li>
@@ -139,7 +229,7 @@
 <li><p><a class="reference internal" href="#sc-pst"><span class="std std-ref">Phase_Start_Times</span></a></p></li>
 </ul>
 <section id="equation">
-<span id="sc-el"></span><h3>Equation<a class="headerlink" href="#equation" title="Permalink to this heading"></a></h3>
+<span id="sc-el"></span><h3>Equation<a class="headerlink" href="#equation" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : When approaching an event time, such as an output time, the time step sizes are gradually adjusted to hit the time precisely. This variable specifies the number of steps over which this occurs.</div>
 <div class="line"><strong>Type</strong>        : integer</div>
@@ -149,7 +239,7 @@
 </div>
 </section>
 <section id="phase-init-dt">
-<span id="sc-pid"></span><h3>Phase_Init_Dt<a class="headerlink" href="#phase-init-dt" title="Permalink to this heading"></a></h3>
+<span id="sc-pid"></span><h3>Phase_Init_Dt<a class="headerlink" href="#phase-init-dt" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The initial time step size to use for each of the simulation phases. This is the analog of <a class="reference internal" href="../NUMERICS_Namelist/index.html#numerics-dti"><span class="std std-ref">Dt_Init</span></a>, which is used for the initial (and default) phase of the simulation. Either <a class="reference internal" href="#sc-pid"><span class="std std-ref">Phase_Init_Dt</span></a> or <a class="reference internal" href="#sc-pidf"><span class="std std-ref">Phase_Init_Dt_Factor</span></a> must be specified, but not both.</div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -157,7 +247,7 @@
 </div>
 </section>
 <section id="phase-init-dt-factor">
-<span id="sc-pidf"></span><h3>Phase_Init_Dt_Factor<a class="headerlink" href="#phase-init-dt-factor" title="Permalink to this heading"></a></h3>
+<span id="sc-pidf"></span><h3>Phase_Init_Dt_Factor<a class="headerlink" href="#phase-init-dt-factor" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The initial time step size used for each of the simulation phases is this factor times the last step size of the preceding phase. Either <a class="reference internal" href="#sc-pid"><span class="std std-ref">Phase_Init_Dt</span></a> or <a class="reference internal" href="#sc-pidf"><span class="std std-ref">Phase_Init_Dt_Factor</span></a> must be specified, but not both.</div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -165,7 +255,7 @@
 </div>
 </section>
 <section id="phase-start-times">
-<span id="sc-pst"></span><h3>Phase_Start_Times<a class="headerlink" href="#phase-start-times" title="Permalink to this heading"></a></h3>
+<span id="sc-pst"></span><h3>Phase_Start_Times<a class="headerlink" href="#phase-start-times" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The list of starting times of each of the phases.</div>
 <div class="line"><strong>Type</strong>        : real array</div>
@@ -178,33 +268,50 @@
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../RESTART_Namelist/index.html" class="btn btn-neutral float-left" title="23. RESTART Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../SOLID_MECHANICS_Namelist/index.html" class="btn btn-neutral float-right" title="25. SOLID_MECHANICS Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../SOLID_MECHANICS_Namelist/index.html" class="btn btn-neutral float-right" title="26. SOLID_MECHANICS Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../RESTART_Namelist/index.html" class="btn btn-neutral float-left" title="24. RESTART Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, LANL.</p>
-  </div>
+    <p>
+        &#169; Copyright 2021, LANL.
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

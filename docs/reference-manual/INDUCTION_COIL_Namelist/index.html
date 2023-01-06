@@ -1,38 +1,75 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
   <title>14. INDUCTION_COIL Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="15. MATERIAL and PHASE Namelists" href="../MATERIAL_and_PHASE_Namelists/index.html" />
     <link rel="prev" title="13. FUNCTION Namelist" href="../FUNCTION_Namelist/index.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
+          
+
+          
             <a href="../index.html" class="icon icon-home"> Truchas Reference Manual
+          
+
+          
           </a>
+
+          
+            
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -40,7 +77,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ALTMESH_Namelist/index.html">2. ALTMESH Namelist</a></li>
@@ -70,75 +118,117 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">15. MATERIAL and PHASE Namelists</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">16. MESH Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">17. NUMERICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">18. OUTPUTS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">19. PHASE_CHANGE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">20. PHYSICAL_CONSTANTS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">21. PHYSICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">22. PROBE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">23. RESTART Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">24. SIMULATION_CONTROL Namelist (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">25. SOLID_MECHANICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">26. SOLID_MECHANICS_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">27. SPECIES_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">28. THERMAL_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">29. THERMAL_SOURCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">30. TOOLHEAD Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">31. TOOLPATH Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">32. TURBULENCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">33. VFUNCTION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">34. VISCOPLASTIC_MODEL Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">35. Radiation Enclosure Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/index.html">36. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MICROSTRUCTURE_Namelist/index.html">17. MICROSTRUCTURE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">18. NUMERICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">19. OUTPUTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">20. PHASE_CHANGE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">21. PHYSICAL_CONSTANTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">22. PHYSICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">23. PROBE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">24. RESTART Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">25. SIMULATION_CONTROL Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">26. SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">27. SOLID_MECHANICS_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">28. SPECIES_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">29. THERMAL_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">30. THERMAL_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">31. TOOLHEAD Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">32. TOOLPATH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">33. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">34. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">35. VISCOPLASTIC_MODEL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">36. Radiation Enclosure Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">37. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Truchas Reference Manual</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active"><span class="section-number">14. </span>INDUCTION_COIL Namelist</li>
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">14. </span>INDUCTION_COIL Namelist</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
             <a href="../_sources/INDUCTION_COIL_Namelist/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
+            
   <div class="toctree-wrapper compound" id="induction-coil-namelist">
 </div>
 <section id="id1">
-<h1><span class="section-number">14. </span>INDUCTION_COIL Namelist<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
+<h1><span class="section-number">14. </span>INDUCTION_COIL Namelist<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
 <section id="overview">
-<h2><span class="section-number">14.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">14.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h2>
 <p>The variables in an <a class="reference internal" href="#induction-coil-namelist"><span class="std std-ref">INDUCTION_COIL</span></a> namelist specify the physical characteristics of an induction coil that is to produce an external magnetic field to drive the electromagnetic Joule heat calculation. <a class="reference internal" href="#fig-induc-coil-schematic"><span class="std std-numref">Figure 14.1.1</span></a> shows the idealized model of a coil that is used to analytically evaluate the driving field. The coil axis is assumed to be oriented with the problem <a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html#em-sa"><span class="std std-ref">symmetry axis</span></a> as defined in the <a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html#electromagnetics-namelist"><span class="std std-ref">ELECTROMAGNETICS</span></a> namelist. Multiple coils may be specified; the net driving field is the superposition of the fields due to the individual coils, and a spatially <a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html#em-us"><span class="std std-ref">uniform field</span></a> that can be specified in the <a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html#electromagnetics-namelist"><span class="std std-ref">ELECTROMAGNETICS</span></a> namelist. The coils carry a sinusoidally-varying current with a common frequency and phase. The <a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html#em-sf"><span class="std std-ref">frequency</span></a> is specified in the <a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html#electromagnetics-namelist"><span class="std std-ref">ELECTROMAGNETICS</span></a> namelist, while the phase value is irrelevant due to the time averaging of the calculated Joule heat. Each coil, however, has an independent current amplitude which is specified here. In addition, the current and frequency may be piecewise constant functions of time.</p>
 <figure class="align-center" id="id2">
 <span id="fig-induc-coil-schematic"></span><a class="reference internal image-reference" href="../_images/ic-coil.jpg"><img alt="../_images/ic-coil.jpg" src="../_images/ic-coil.jpg" style="width: 650px;" /></a>
 <figcaption>
-<p><span class="caption-number">Figure 14.1.1 </span><span class="caption-text">Physical 4-turn helical coil with extended wire cross section (left), and its idealized model as a stacked array of circular current loops (right).</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+<p><span class="caption-number">Figure 14.1.1 </span><span class="caption-text">Physical 4-turn helical coil with extended wire cross section (left), and its idealized model as a stacked array of circular current loops (right).</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
 </figcaption>
 </figure>
 </section>
 <section id="induction-coil-namelist-features">
-<h2><span class="section-number">14.2. </span>INDUCTION_COIL Namelist Features<a class="headerlink" href="#induction-coil-namelist-features" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">14.2. </span>INDUCTION_COIL Namelist Features<a class="headerlink" href="#induction-coil-namelist-features" title="Permalink to this heading">¶</a></h2>
 <div class="line-block">
 <div class="line"><strong>Required/Optional        :</strong> Optional</div>
 <div class="line"><strong>Single/Multiple Instances:</strong> Multiple</div>
 </div>
 </section>
 <section id="components">
-<h2><span class="section-number">14.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">14.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="#ic-cen"><span class="std std-ref">Center</span></a></p></li>
 <li><p><a class="reference internal" href="#ic-cur"><span class="std std-ref">Current</span></a></p></li>
@@ -147,7 +237,7 @@
 <li><p><a class="reference internal" href="#ic-rad"><span class="std std-ref">Radius</span></a></p></li>
 </ul>
 <section id="center">
-<span id="ic-cen"></span><h3>Center<a class="headerlink" href="#center" title="Permalink to this heading"></a></h3>
+<span id="ic-cen"></span><h3>Center<a class="headerlink" href="#center" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A 3-vector <span class="math notranslate nohighlight">\(x_0\)</span> giving the position of the center of the coil; cf. <a class="reference internal" href="#fig-induc-coil-schematic"><span class="std std-numref">Figure 14.1.1</span></a>.</div>
 <div class="line"><strong>Physical dimension</strong>: L</div>
@@ -157,7 +247,7 @@
 </div>
 </section>
 <section id="current">
-<span id="ic-cur"></span><h3>Current<a class="headerlink" href="#current" title="Permalink to this heading"></a></h3>
+<span id="ic-cur"></span><h3>Current<a class="headerlink" href="#current" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Amplitude of the sinusoidally-varying current in the coil.</div>
 <div class="line"><strong>Physical dimension</strong>: I</div>
@@ -168,7 +258,7 @@
 </div>
 </section>
 <section id="length">
-<span id="ic-len"></span><h3>Length<a class="headerlink" href="#length" title="Permalink to this heading"></a></h3>
+<span id="ic-len"></span><h3>Length<a class="headerlink" href="#length" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Length <span class="math notranslate nohighlight">\(l\)</span> of the coil; cf. <a class="reference internal" href="#fig-induc-coil-schematic"><span class="std std-numref">Figure 14.1.1</span></a></div>
 <div class="line"><strong>Physical dimension</strong>: L</div>
@@ -179,7 +269,7 @@
 </div>
 </section>
 <section id="nturns">
-<span id="ic-nt"></span><h3>NTurns<a class="headerlink" href="#nturns" title="Permalink to this heading"></a></h3>
+<span id="ic-nt"></span><h3>NTurns<a class="headerlink" href="#nturns" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Number of turns of the coil; cf. <a class="reference internal" href="#fig-induc-coil-schematic"><span class="std std-numref">Figure 14.1.1</span></a></div>
 <div class="line"><strong>Type</strong>        : integer</div>
@@ -188,7 +278,7 @@
 </div>
 </section>
 <section id="radius">
-<span id="ic-rad"></span><h3>Radius<a class="headerlink" href="#radius" title="Permalink to this heading"></a></h3>
+<span id="ic-rad"></span><h3>Radius<a class="headerlink" href="#radius" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Radius <span class="math notranslate nohighlight">\(r\)</span> of the coil; cf. <a class="reference internal" href="#fig-induc-coil-schematic"><span class="std std-numref">Figure 14.1.1</span></a></div>
 <div class="line"><strong>Physical dimension</strong>: L</div>
@@ -202,33 +292,50 @@
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../FUNCTION_Namelist/index.html" class="btn btn-neutral float-left" title="13. FUNCTION Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="../MATERIAL_and_PHASE_Namelists/index.html" class="btn btn-neutral float-right" title="15. MATERIAL and PHASE Namelists" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../FUNCTION_Namelist/index.html" class="btn btn-neutral float-left" title="13. FUNCTION Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, LANL.</p>
-  </div>
+    <p>
+        &#169; Copyright 2021, LANL.
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

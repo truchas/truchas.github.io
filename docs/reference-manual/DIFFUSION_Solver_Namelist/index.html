@@ -1,38 +1,75 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
   <title>4. DIFFUSION Solver Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="5. DS_SOURCE Namelist" href="../DS_SOURCE_Namelist/index.html" />
     <link rel="prev" title="3. BODY Namelist" href="../BODY_Namelist/index.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
+          
+
+          
             <a href="../index.html" class="icon icon-home"> Truchas Reference Manual
+          
+
+          
           </a>
+
+          
+            
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -40,7 +77,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ALTMESH_Namelist/index.html">2. ALTMESH Namelist</a></li>
@@ -91,58 +139,100 @@
 <li class="toctree-l1"><a class="reference internal" href="../INDUCTION_COIL_Namelist/index.html">14. INDUCTION_COIL Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">15. MATERIAL and PHASE Namelists</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">16. MESH Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">17. NUMERICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">18. OUTPUTS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">19. PHASE_CHANGE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">20. PHYSICAL_CONSTANTS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">21. PHYSICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">22. PROBE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">23. RESTART Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">24. SIMULATION_CONTROL Namelist (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">25. SOLID_MECHANICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">26. SOLID_MECHANICS_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">27. SPECIES_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">28. THERMAL_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">29. THERMAL_SOURCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">30. TOOLHEAD Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">31. TOOLPATH Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">32. TURBULENCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">33. VFUNCTION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">34. VISCOPLASTIC_MODEL Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">35. Radiation Enclosure Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/index.html">36. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MICROSTRUCTURE_Namelist/index.html">17. MICROSTRUCTURE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">18. NUMERICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">19. OUTPUTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">20. PHASE_CHANGE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">21. PHYSICAL_CONSTANTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">22. PHYSICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">23. PROBE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">24. RESTART Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">25. SIMULATION_CONTROL Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">26. SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">27. SOLID_MECHANICS_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">28. SPECIES_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">29. THERMAL_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">30. THERMAL_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">31. TOOLHEAD Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">32. TOOLPATH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">33. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">34. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">35. VISCOPLASTIC_MODEL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">36. Radiation Enclosure Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">37. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Truchas Reference Manual</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active"><span class="section-number">4. </span>DIFFUSION Solver Namelist</li>
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">4. </span>DIFFUSION Solver Namelist</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
             <a href="../_sources/DIFFUSION_Solver_Namelist/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
+            
   <div class="toctree-wrapper compound" id="diffusion-solver-namelist">
 </div>
 <section id="id1">
-<h1><span class="section-number">4. </span>DIFFUSION Solver Namelist<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
+<h1><span class="section-number">4. </span>DIFFUSION Solver Namelist<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h1>
 <section id="overview">
-<h2><span class="section-number">4.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">4.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h2>
 <p>The DIFFUSION_SOLVER namelist sets the parameters that are specific to the heat and species transport solver. The namelist is read when either of the <a class="reference internal" href="../PHYSICS_Namelist/index.html#physics-namelist"><span class="std std-ref">PHYSICS</span></a> namelist options <a class="reference internal" href="../PHYSICS_Namelist/index.html#physics-ht"><span class="std std-ref">Heat_Transport</span></a> or <a class="reference internal" href="../PHYSICS_Namelist/index.html#physics-st"><span class="std std-ref">Species_Transport</span></a> are enabled.</p>
 <p>The solver has two time integration methods which are selected by the variable <a class="reference internal" href="#diff-sol-sm"><span class="std std-ref">Stepping_Method</span></a>. The default is a variable step-size, implicit second-order BDF2 method that controls the local truncation error of each step to a user-defined tolerance by adaptively adjusting the step size. The step size is chosen so that an a priori estimate of the error will be within tolerance, and steps are rejected when the actual erroris too large. A failed step may be retried with successively smaller step sizes.</p>
 <p>The other integration method is a non-adaptive, implicit first-order BDF1 method specifically designed to handle the exceptional difficulties that arise when heat transfer is coupled to a fluid flow system that includes void. In this context the heat transfer domain changes from one step to the next because of the moving void region, and mesh cells may only be partially filled with material. For this method the timestep is controlled by flow or other physics models.</p>
@@ -150,14 +240,14 @@
 <p>The initial step size and upper and lower bounds for the step size are set in the <a class="reference internal" href="../NUMERICS_Namelist/index.html#numerics-namelist"><span class="std std-ref">NUMERICS</span></a> namelist. In addition, the step size selected by the adaptive solver may be further limited by other physics models or by the <a class="reference internal" href="../NUMERICS_Namelist/index.html#numerics-namelist"><span class="std std-ref">NUMERICS</span></a> variables <a class="reference internal" href="../NUMERICS_Namelist/index.html#numerics-dtg"><span class="std std-ref">Dt_Grow</span></a> and <a class="reference internal" href="../NUMERICS_Namelist/index.html#numerics-dtc"><span class="std std-ref">Dt_Constant</span></a>. When only diffusion solver physics are enabled, it isimportant that these variables be set appropriately so as not to unnecessarily impede the normal functioning of the diffusion solver.</p>
 </section>
 <section id="diffusion-solver-namelist-features">
-<h2><span class="section-number">4.2. </span>DIFFUSION_Solver Namelist Features<a class="headerlink" href="#diffusion-solver-namelist-features" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">4.2. </span>DIFFUSION_Solver Namelist Features<a class="headerlink" href="#diffusion-solver-namelist-features" title="Permalink to this heading">¶</a></h2>
 <div class="line-block">
 <div class="line"><strong>Required/Optional        :</strong> Required when <a class="reference internal" href="../PHYSICS_Namelist/index.html#physics-ht"><span class="std std-ref">heat_transport</span></a> and/or <a class="reference internal" href="../PHYSICS_Namelist/index.html#physics-st"><span class="std std-ref">species_transport</span></a> physics is enabled.</div>
 <div class="line"><strong>Single/Multiple Instances:</strong> Single</div>
 </div>
 </section>
 <section id="components">
-<h2><span class="section-number">4.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">4.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="#diff-sol-act"><span class="std std-ref">Abs_Conc_Tol</span></a></p></li>
 <li><p><a class="reference internal" href="#diff-sol-aet"><span class="std std-ref">Abs_Enthalpy_Tol</span></a></p></li>
@@ -187,7 +277,7 @@
 <li><p><a class="reference internal" href="#diff-sol-vt"><span class="std std-ref">Void_Temperature</span></a></p></li>
 </ul>
 <section id="abs-conc-tol">
-<span id="diff-sol-act"></span><h3>Abs_Conc_Tol<a class="headerlink" href="#abs-conc-tol" title="Permalink to this heading"></a></h3>
+<span id="diff-sol-act"></span><h3>Abs_Conc_Tol<a class="headerlink" href="#abs-conc-tol" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The tolerance <span class="math notranslate nohighlight">\(\epsilon\)</span> for the absolute error component of the concentration error norm used by the BDF2 integrator. If <span class="math notranslate nohighlight">\(\delta c\)</span> is a concentration field increment with reference concentration field <span class="math notranslate nohighlight">\(c\)</span>,then this error norm is</div>
 </div>
@@ -204,7 +294,7 @@
 <p>For <span class="math notranslate nohighlight">\(c_j\)</span> sufficiently small the norm approximates an absolute norm with tolerance <span class="math notranslate nohighlight">\(\epsilon\)</span>, and for <span class="math notranslate nohighlight">\(c_j\)</span> sufficiently large the norm approximates a relative norm with tolerance <span class="math notranslate nohighlight">\(\eta\)</span>. If <span class="math notranslate nohighlight">\(\epsilon\)</span> = 0 then the norm is a pure relative norm and the concentration must be bounded away from 0. The same tolerance is used for all concentration components.</p>
 </section>
 <section id="abs-enthalpy-tol">
-<span id="diff-sol-aet"></span><h3>Abs_Enthalpy_Tol<a class="headerlink" href="#abs-enthalpy-tol" title="Permalink to this heading"></a></h3>
+<span id="diff-sol-aet"></span><h3>Abs_Enthalpy_Tol<a class="headerlink" href="#abs-enthalpy-tol" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The tolerance <span class="math notranslate nohighlight">\(\epsilon\)</span> for the absolute error component of the enthalpy error norm used by the BDF2 integrator. If <span class="math notranslate nohighlight">\(\delta H\)</span> is a enthalpy field increment with reference enthalpy field <span class="math notranslate nohighlight">\(H\)</span>, then this error norm is</div>
 </div>
@@ -222,7 +312,7 @@
 <p>The same tolerance is used for all concentration components.</p>
 </section>
 <section id="abs-temp-tol">
-<span id="diff-sol-att"></span><h3>Abs_Temp_Tol<a class="headerlink" href="#abs-temp-tol" title="Permalink to this heading"></a></h3>
+<span id="diff-sol-att"></span><h3>Abs_Temp_Tol<a class="headerlink" href="#abs-temp-tol" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The tolerance <span class="math notranslate nohighlight">\(\epsilon\)</span>  for the absolute error component of the temperature error norm used by the BDF2 integrator. If <span class="math notranslate nohighlight">\(\delta T\)</span> is a temperature field increment with reference temperature field <span class="math notranslate nohighlight">\(T\)</span>,then this error norm is</div>
 </div>
@@ -240,7 +330,7 @@
 <p>The same tolerance is used for all concentration components.</p>
 </section>
 <section id="cond-vfrac-threshold">
-<span id="diff-sol-cvt"></span><h3>Cond_Vfrac_Threshold<a class="headerlink" href="#cond-vfrac-threshold" title="Permalink to this heading"></a></h3>
+<span id="diff-sol-cvt"></span><h3>Cond_Vfrac_Threshold<a class="headerlink" href="#cond-vfrac-threshold" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Material volume fraction threshold for inclusion in heat conduction when using the non-adaptive integrator.</div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -250,7 +340,7 @@
 </div>
 </section>
 <section id="cutvof-expert">
-<span id="diff-sol-cv"></span><h3>Cutvof (expert)<a class="headerlink" href="#cutvof-expert" title="Permalink to this heading"></a></h3>
+<span id="diff-sol-cv"></span><h3>Cutvof (expert)<a class="headerlink" href="#cutvof-expert" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong>       : When flow with void is enabled, the heat transfer solver will remove
 all material from any cell whose non-void volume fraction falls below
@@ -263,7 +353,7 @@ the value of this threshold.</div>
 </div>
 </section>
 <section id="hypre-amg-debug">
-<span id="diff-sol-had"></span><h3>Hypre_AMG_Debug<a class="headerlink" href="#hypre-amg-debug" title="Permalink to this heading"></a></h3>
+<span id="diff-sol-had"></span><h3>Hypre_AMG_Debug<a class="headerlink" href="#hypre-amg-debug" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Enable debugging output from Hypre’s <strong>BoomerAMG</strong> solver. Only relevant when <a class="reference internal" href="#diff-sol-np"><span class="std std-ref">NLK_Preconditioner</span></a> is set to <strong>’Hypre_AMG’</strong>.</div>
 <div class="line"><strong>Type</strong>        : logical</div>
@@ -272,7 +362,7 @@ the value of this threshold.</div>
 </div>
 </section>
 <section id="hypre-amg-logging-level">
-<span id="diff-sol-hall"></span><h3>Hypre_AMG_Logging_Level<a class="headerlink" href="#hypre-amg-logging-level" title="Permalink to this heading"></a></h3>
+<span id="diff-sol-hall"></span><h3>Hypre_AMG_Logging_Level<a class="headerlink" href="#hypre-amg-logging-level" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Enable additional diagnostic computation by Hypre’s BoomerAMG solver. Only relevant when <a class="reference internal" href="#diff-sol-np"><span class="std std-ref">NLK_Preconditioner</span></a> is set to <strong>’Hypre_AMG’</strong>.</div>
 <div class="line"><strong>Type</strong>        : integer</div>
@@ -282,7 +372,7 @@ the value of this threshold.</div>
 </div>
 </section>
 <section id="hypre-amg-print-level">
-<span id="diff-sol-hapl"></span><h3>Hypre_AMG_Print_Level<a class="headerlink" href="#hypre-amg-print-level" title="Permalink to this heading"></a></h3>
+<span id="diff-sol-hapl"></span><h3>Hypre_AMG_Print_Level<a class="headerlink" href="#hypre-amg-print-level" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The diagnostic output verbosity level of Hypre’s BoomerAMG solver. Only relevant when <a class="reference internal" href="#diff-sol-np"><span class="std std-ref">NLK_Preconditioner</span></a> is set to <strong>’Hypre_AMG’</strong>.</div>
 </div>
@@ -291,7 +381,7 @@ the value of this threshold.</div>
 <div class="line"><strong>Default</strong>     : 0</div>
 <div class="line"><strong>Valid Values</strong>:</div>
 </div>
-<table class="colwidths-given tight-table docutils align-default">
+<table class="tight-table docutils align-default">
 <colgroup>
 <col style="width: 17%" />
 <col style="width: 83%" />
@@ -321,7 +411,7 @@ the value of this threshold.</div>
 </div>
 </section>
 <section id="max-nlk-itr">
-<span id="diff-sol-mni"></span><h3>Max_NLK_Itr<a class="headerlink" href="#max-nlk-itr" title="Permalink to this heading"></a></h3>
+<span id="diff-sol-mni"></span><h3>Max_NLK_Itr<a class="headerlink" href="#max-nlk-itr" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The maximum number of NLK nonlinear solver iterations allowed.</div>
 <div class="line"><strong>Type</strong>        : integer</div>
@@ -334,7 +424,7 @@ the value of this threshold.</div>
 <p>The default value is appropriate for the adaptive integrator.</p>
 </section>
 <section id="max-nlk-vec">
-<span id="diff-sol-mnv"></span><h3>Max_NLK_Vec<a class="headerlink" href="#max-nlk-vec" title="Permalink to this heading"></a></h3>
+<span id="diff-sol-mnv"></span><h3>Max_NLK_Vec<a class="headerlink" href="#max-nlk-vec" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The maximum number of acceleration vectors to use in the NLK nonlinear solver.</div>
 <div class="line"><strong>Type</strong>        : integer</div>
@@ -344,7 +434,7 @@ the value of this threshold.</div>
 </div>
 </section>
 <section id="max-step-tries">
-<span id="diff-sol-mst"></span><h3>Max_Step_Tries<a class="headerlink" href="#max-step-tries" title="Permalink to this heading"></a></h3>
+<span id="diff-sol-mst"></span><h3>Max_Step_Tries<a class="headerlink" href="#max-step-tries" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The maximum number of attempts to successfully take a time step before giving up. The step size is reduced between each try. This is only relevant to the adaptive solver.</div>
 <div class="line"><strong>Type</strong>        : integer</div>
@@ -354,7 +444,7 @@ the value of this threshold.</div>
 </div>
 </section>
 <section id="nlk-preconditioner">
-<span id="diff-sol-np"></span><h3>NLK_Preconditioner<a class="headerlink" href="#nlk-preconditioner" title="Permalink to this heading"></a></h3>
+<span id="diff-sol-np"></span><h3>NLK_Preconditioner<a class="headerlink" href="#nlk-preconditioner" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The choice of preconditioner for the NLK iteration. There are currently two preconditioners to choose from: symmetric successive over-relaxation (SSOR) and the BoomerAMG implementation of algebraic multigrid (AMG) from the HYPRE library. AMG is the default preconditioning method and should normally be used; SSOR is intended mainly for developer use.</div>
 <div class="line"><strong>Type</strong>        : string</div>
@@ -373,7 +463,7 @@ the value of this threshold.</div>
 <p>When <cite>“ssor”</cite> is selected, use the variable <a class="reference internal" href="#diff-sol-psr"><span class="std std-ref">PC_SSOR_Relax</span></a> to specify the overrelaxation parameter and <a class="reference internal" href="#diff-sol-pss"><span class="std std-ref">PC_SSOR_Sweeps</span></a> to specify the number of SSOR sweeps per preconditioning step.</p>
 </section>
 <section id="nlk-tol">
-<span id="diff-sol-nt"></span><h3>NLK_Tol<a class="headerlink" href="#nlk-tol" title="Permalink to this heading"></a></h3>
+<span id="diff-sol-nt"></span><h3>NLK_Tol<a class="headerlink" href="#nlk-tol" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The convergence tolerance for the NLK nonlinear solver. The nonlinear system is considered solved by the current iterate if the BDF2 integrator norm of the last solution correction is less than this value. This variable is only relevant to the adaptive integrator.</div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -383,7 +473,7 @@ the value of this threshold.</div>
 </div>
 </section>
 <section id="nlk-vec-tol">
-<span id="diff-sol-nvt"></span><h3>NLK_Vec_Tol<a class="headerlink" href="#nlk-vec-tol" title="Permalink to this heading"></a></h3>
+<span id="diff-sol-nvt"></span><h3>NLK_Vec_Tol<a class="headerlink" href="#nlk-vec-tol" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The NLK vector drop tolerance. When assembling the acceleration subspace vector by vector, a vector is dropped when the sine of the angle between the vector and the subspace less than this value.</div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -392,7 +482,7 @@ the value of this threshold.</div>
 </div>
 </section>
 <section id="pc-amg-cycles">
-<span id="diff-sol-pac"></span><h3>PC_AMG_Cycles<a class="headerlink" href="#pc-amg-cycles" title="Permalink to this heading"></a></h3>
+<span id="diff-sol-pac"></span><h3>PC_AMG_Cycles<a class="headerlink" href="#pc-amg-cycles" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The number of V-cycles to take per preconditioning step of the nonlinear iteration.</div>
 <div class="line"><strong>Physcial Dimension</strong>: dimensionless</div>
@@ -403,7 +493,7 @@ the value of this threshold.</div>
 </div>
 </section>
 <section id="pc-freq">
-<span id="diff-sol-pf"></span><h3>PC_Freq<a class="headerlink" href="#pc-freq" title="Permalink to this heading"></a></h3>
+<span id="diff-sol-pf"></span><h3>PC_Freq<a class="headerlink" href="#pc-freq" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : This controls how frequently the preconditioner is updated in the adaptive BDF2 integrator. A value of <strong>N</strong> will allow a preconditioner to be used for as many as N consecutive time steps before being updated, although it may be updated more frequently based on other criteria. A value of 1 causes the preconditioner to be updated every time step. The default behavior is to not require any minimum update frequency.</div>
 <div class="line"><strong>Type</strong>        : integer</div>
@@ -413,7 +503,7 @@ the value of this threshold.</div>
 </div>
 </section>
 <section id="pc-ssor-relax">
-<span id="diff-sol-psr"></span><h3>PC_SSOR_Relax<a class="headerlink" href="#pc-ssor-relax" title="Permalink to this heading"></a></h3>
+<span id="diff-sol-psr"></span><h3>PC_SSOR_Relax<a class="headerlink" href="#pc-ssor-relax" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The relaxation parameter used in the SSOR preconditioning of the nonlinear system.</div>
 <div class="line"><strong>Physcial Dimension</strong>: dimensionless</div>
@@ -424,7 +514,7 @@ the value of this threshold.</div>
 </div>
 </section>
 <section id="pc-ssor-sweeps">
-<span id="diff-sol-pss"></span><h3>PC_SSOR_Sweeps<a class="headerlink" href="#pc-ssor-sweeps" title="Permalink to this heading"></a></h3>
+<span id="diff-sol-pss"></span><h3>PC_SSOR_Sweeps<a class="headerlink" href="#pc-ssor-sweeps" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The number of sweeps used in the SSOR preconditioning of the nonlinear system.</div>
 <div class="line"><strong>Type</strong>        : integer</div>
@@ -434,7 +524,7 @@ the value of this threshold.</div>
 </div>
 </section>
 <section id="rel-conc-tol">
-<span id="diff-sol-rct"></span><h3>Rel_Conc_Tol<a class="headerlink" href="#rel-conc-tol" title="Permalink to this heading"></a></h3>
+<span id="diff-sol-rct"></span><h3>Rel_Conc_Tol<a class="headerlink" href="#rel-conc-tol" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The tolerance  <span class="math notranslate nohighlight">\(\eta\)</span>  for the relative error component of the concentration error norm used by the BDF2 integrator. If <span class="math notranslate nohighlight">\(\delta c\)</span>  is a concentration field increment with reference concentration field <span class="math notranslate nohighlight">\(c\)</span>, then this error norm is</div>
 </div>
@@ -450,7 +540,7 @@ the value of this threshold.</div>
 </div>
 </section>
 <section id="rel-enthalpy-tol">
-<span id="diff-sol-ret"></span><h3>Rel_Enthalpy_Tol<a class="headerlink" href="#rel-enthalpy-tol" title="Permalink to this heading"></a></h3>
+<span id="diff-sol-ret"></span><h3>Rel_Enthalpy_Tol<a class="headerlink" href="#rel-enthalpy-tol" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The tolerance  <span class="math notranslate nohighlight">\(\eta\)</span>  for the relative error component of the enthalpy error norm used by the BDF2 integrator. If <span class="math notranslate nohighlight">\(\delta H\)</span>  is a concentration field increment with reference concentration field <span class="math notranslate nohighlight">\(H\)</span>, then this error norm is</div>
 </div>
@@ -466,7 +556,7 @@ the value of this threshold.</div>
 </div>
 </section>
 <section id="rel-temp-tol">
-<span id="diff-sol-rtt"></span><h3>Rel_Temp_Tol<a class="headerlink" href="#rel-temp-tol" title="Permalink to this heading"></a></h3>
+<span id="diff-sol-rtt"></span><h3>Rel_Temp_Tol<a class="headerlink" href="#rel-temp-tol" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The tolerance  <span class="math notranslate nohighlight">\(\eta\)</span>  for the relative error component of the temperature error norm used by the BDF2 integrator. If <span class="math notranslate nohighlight">\(\delta T\)</span>  is a concentration field increment with reference concentration field <span class="math notranslate nohighlight">\(T\)</span>, then this error norm is</div>
 </div>
@@ -482,7 +572,7 @@ the value of this threshold.</div>
 </div>
 </section>
 <section id="residual-atol">
-<span id="diff-sol-ra"></span><h3>Residual_Atol<a class="headerlink" href="#residual-atol" title="Permalink to this heading"></a></h3>
+<span id="diff-sol-ra"></span><h3>Residual_Atol<a class="headerlink" href="#residual-atol" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The absolute residual tolerance <span class="math notranslate nohighlight">\(\epsilon_1\)</span>  used by the iterative nonlinear solver of the non-adaptive integrator. If <span class="math notranslate nohighlight">\(r_o\)</span> denotes the initial nonlinear residual, iteration stops when the current residual <strong>r</strong> satisfies</div>
 </div>
@@ -496,7 +586,7 @@ the value of this threshold.</div>
 </div>
 </section>
 <section id="residual-rtol">
-<span id="diff-sol-rr"></span><h3>Residual_Rtol<a class="headerlink" href="#residual-rtol" title="Permalink to this heading"></a></h3>
+<span id="diff-sol-rr"></span><h3>Residual_Rtol<a class="headerlink" href="#residual-rtol" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The relative residual tolerance <span class="math notranslate nohighlight">\(\epsilon_2\)</span>  used by the iterative nonlinear solver of the non-adaptive integrator. If <span class="math notranslate nohighlight">\(r_o\)</span> denotes the initial nonlinear residual, iteration stops when the current residual <strong>r</strong> satisfies</div>
 </div>
@@ -509,7 +599,7 @@ the value of this threshold.</div>
 </div>
 </section>
 <section id="stepping-method">
-<span id="diff-sol-sm"></span><h3>Stepping_Method<a class="headerlink" href="#stepping-method" title="Permalink to this heading"></a></h3>
+<span id="diff-sol-sm"></span><h3>Stepping_Method<a class="headerlink" href="#stepping-method" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The choice of time integration method.</div>
 <div class="line"><strong>Type</strong>        : string</div>
@@ -519,7 +609,7 @@ the value of this threshold.</div>
 </div>
 </section>
 <section id="verbose-stepping">
-<span id="diff-sol-vs"></span><h3>Verbose_Stepping<a class="headerlink" href="#verbose-stepping" title="Permalink to this heading"></a></h3>
+<span id="diff-sol-vs"></span><h3>Verbose_Stepping<a class="headerlink" href="#verbose-stepping" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A flag that enables the output of detailed BDF2 time stepping information. The human-readable information is written to a file with the suffix <code class="docutils literal notranslate"><span class="pre">.bdf2.out</span></code> in the output directory.</div>
 <div class="line"><strong>Type</strong>        : logical</div>
@@ -527,7 +617,7 @@ the value of this threshold.</div>
 </div>
 </section>
 <section id="void-temperature">
-<span id="diff-sol-vt"></span><h3>Void_Temperature<a class="headerlink" href="#void-temperature" title="Permalink to this heading"></a></h3>
+<span id="diff-sol-vt"></span><h3>Void_Temperature<a class="headerlink" href="#void-temperature" title="Permalink to this heading">¶</a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : An arbitrary temperature assigned to cells that contain only the void material. The value has no effect on the simulation, and is only significant to visualization.</div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -539,33 +629,50 @@ the value of this threshold.</div>
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../BODY_Namelist/index.html" class="btn btn-neutral float-left" title="3. BODY Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="../DS_SOURCE_Namelist/index.html" class="btn btn-neutral float-right" title="5. DS_SOURCE Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../BODY_Namelist/index.html" class="btn btn-neutral float-left" title="3. BODY Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, LANL.</p>
-  </div>
+    <p>
+        &#169; Copyright 2021, LANL.
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

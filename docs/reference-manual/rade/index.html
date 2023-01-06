@@ -1,37 +1,74 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>35. Radiation Enclosure Tools &mdash; Truchas Reference Manual 1.0.0 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+  <title>36. Radiation Enclosure Tools &mdash; Truchas Reference Manual 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
-    <script src="../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="ENCLOSURE Namelist" href="ENCLOSURE_Namelist.html" />
-    <link rel="prev" title="34. VISCOPLASTIC_MODEL Namelist" href="../VISCOPLASTIC_MODEL_Namelist/index.html" /> 
+    <link rel="prev" title="35. VISCOPLASTIC_MODEL Namelist" href="../VISCOPLASTIC_MODEL_Namelist/index.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
+          
+
+          
             <a href="../index.html" class="icon icon-home"> Truchas Reference Manual
+          
+
+          
           </a>
+
+          
+            
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -39,7 +76,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ALTMESH_Namelist/index.html">2. ALTMESH Namelist</a></li>
@@ -57,70 +105,112 @@
 <li class="toctree-l1"><a class="reference internal" href="../INDUCTION_COIL_Namelist/index.html">14. INDUCTION_COIL Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">15. MATERIAL and PHASE Namelists</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">16. MESH Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">17. NUMERICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">18. OUTPUTS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">19. PHASE_CHANGE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">20. PHYSICAL_CONSTANTS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">21. PHYSICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">22. PROBE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">23. RESTART Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">24. SIMULATION_CONTROL Namelist (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">25. SOLID_MECHANICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">26. SOLID_MECHANICS_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">27. SPECIES_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">28. THERMAL_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">29. THERMAL_SOURCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">30. TOOLHEAD Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">31. TOOLPATH Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">32. TURBULENCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">33. VFUNCTION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">34. VISCOPLASTIC_MODEL Namelist</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">35. Radiation Enclosure Tools</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#introduction">35.1. Introduction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#invoking-genre">35.2. Invoking GENRE</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../MICROSTRUCTURE_Namelist/index.html">17. MICROSTRUCTURE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">18. NUMERICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">19. OUTPUTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">20. PHASE_CHANGE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">21. PHYSICAL_CONSTANTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">22. PHYSICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">23. PROBE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">24. RESTART Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">25. SIMULATION_CONTROL Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">26. SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">27. SOLID_MECHANICS_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">28. SPECIES_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">29. THERMAL_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">30. THERMAL_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">31. TOOLHEAD Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">32. TOOLPATH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">33. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">34. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">35. VISCOPLASTIC_MODEL Namelist</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">36. Radiation Enclosure Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#introduction">36.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#invoking-genre">36.2. Invoking GENRE</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="ENCLOSURE_Namelist.html">ENCLOSURE Namelist</a></li>
 <li class="toctree-l3"><a class="reference internal" href="CHAPARRAL_Namelist.html">CHAPARRAL Namelist</a></li>
 <li class="toctree-l3"><a class="reference internal" href="PATCHES_Namelist.html">PATCHES Namelist</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#invoking-vizre">35.3. Invoking VIZRE</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#invoking-vizre">36.3. Invoking VIZRE</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#viewing-vizre-s-gmv-output">Viewing VIZRE’s GMV Output</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#invoking-cmpre">35.4. Invoking CMPRE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#invoking-cmpre">36.4. Invoking CMPRE</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../python/index.html">36. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">37. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Truchas Reference Manual</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active"><span class="section-number">35. </span>Radiation Enclosure Tools</li>
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">36. </span>Radiation Enclosure Tools</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
             <a href="../_sources/rade/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
+            
   <section id="radiation-enclosure-tools">
-<h1><span class="section-number">35. </span>Radiation Enclosure Tools<a class="headerlink" href="#radiation-enclosure-tools" title="Permalink to this heading"></a></h1>
+<h1><span class="section-number">36. </span>Radiation Enclosure Tools<a class="headerlink" href="#radiation-enclosure-tools" title="Permalink to this heading">¶</a></h1>
 <section id="introduction">
-<h2><span class="section-number">35.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">36.1. </span>Introduction<a class="headerlink" href="#introduction" title="Permalink to this heading">¶</a></h2>
 <p>Truchas includes several tools for working with radiation enclosure datasets.</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">genre</span></code>: Used to compute view factors and generate radiation enclosure
@@ -130,13 +220,13 @@ files.</p></li>
 </ul>
 </section>
 <section id="invoking-genre">
-<h2><span class="section-number">35.2. </span>Invoking GENRE<a class="headerlink" href="#invoking-genre" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">36.2. </span>Invoking GENRE<a class="headerlink" href="#invoking-genre" title="Permalink to this heading">¶</a></h2>
 <p>Genre generates a radiation enclosure dataset.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Serial</dt>
+<dt class="field-odd">Serial<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">genre</span> <span class="pre">[-f]</span> <span class="pre">input_file</span> <span class="pre">encl_file</span></code></p>
 </dd>
-<dt class="field-even">Parallel</dt>
+<dt class="field-even">Parallel<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">mpirun</span> <span class="pre">-np</span> <span class="pre">N</span> <span class="pre">genre</span> <span class="pre">[-f]</span> <span class="pre">input_file</span> <span class="pre">encl_file</span></code></p>
 </dd>
 </dl>
@@ -181,15 +271,15 @@ example, the following namelist is ignored by Genre due to the leading <code cla
 </div>
 </section>
 <section id="invoking-vizre">
-<h2><span class="section-number">35.3. </span>Invoking VIZRE<a class="headerlink" href="#invoking-vizre" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">36.3. </span>Invoking VIZRE<a class="headerlink" href="#invoking-vizre" title="Permalink to this heading">¶</a></h2>
 <p>Writes a GMV-format visualization file for the specified enclosure. If the
 enclosure includes view factor data, the ambient view factor and view factor
 matrix row sums are written as face variables.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Serial</dt>
+<dt class="field-odd">Serial<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">vizre</span> <span class="pre">[options]</span> <span class="pre">enclosure_file</span> <span class="pre">gmv_file</span></code></p>
 </dd>
-<dt class="field-even">Parallel</dt>
+<dt class="field-even">Parallel<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">mpirun</span> <span class="pre">-np</span> <span class="pre">N</span> <span class="pre">vizre</span> <span class="pre">[options]</span> <span class="pre">enclosure_file</span> <span class="pre">gmv_file</span></code> (only useful
 if the matrix is too large to be held on a single process.)</p>
 </dd>
@@ -229,7 +319,7 @@ held on a single process.</p></li>
 </ul>
 </div>
 <section id="viewing-vizre-s-gmv-output">
-<h3>Viewing VIZRE’s GMV Output<a class="headerlink" href="#viewing-vizre-s-gmv-output" title="Permalink to this heading"></a></h3>
+<h3>Viewing VIZRE’s GMV Output<a class="headerlink" href="#viewing-vizre-s-gmv-output" title="Permalink to this heading">¶</a></h3>
 <p><a class="reference external" href="https://www.paraview.org/">Paraview</a> can be used to view the GMV output file
 produced by VIZRE. However, it is necessary to enable a plugin following these
 steps:</p>
@@ -243,15 +333,15 @@ Plugins…</em></p></li>
 </section>
 </section>
 <section id="invoking-cmpre">
-<h2><span class="section-number">35.4. </span>Invoking CMPRE<a class="headerlink" href="#invoking-cmpre" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">36.4. </span>Invoking CMPRE<a class="headerlink" href="#invoking-cmpre" title="Permalink to this heading">¶</a></h2>
 <p>If you’ve generated multiple datasets for the same enclosure using different
 sets of Chaparral parameters, it is useful to compare the calculated view factor
 matrices. You can do this with cmpre:</p>
 <dl class="field-list simple">
-<dt class="field-odd">Serial</dt>
+<dt class="field-odd">Serial<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">cmpre</span> <span class="pre">encl_file1</span> <span class="pre">encl_file2</span></code></p>
 </dd>
-<dt class="field-even">Parallel</dt>
+<dt class="field-even">Parallel<span class="colon">:</span></dt>
 <dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">mpirun</span> <span class="pre">-np</span> <span class="pre">N</span> <span class="pre">cmpre</span> <span class="pre">encl_file1</span> <span class="pre">encl_file2</span></code> (only useful if the
 matrix is too large to be held on a single process.)</p>
 </dd>
@@ -265,33 +355,50 @@ contain VF data, and the enclosure surfaces must be the same.</p>
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../VISCOPLASTIC_MODEL_Namelist/index.html" class="btn btn-neutral float-left" title="34. VISCOPLASTIC_MODEL Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
         <a href="ENCLOSURE_Namelist.html" class="btn btn-neutral float-right" title="ENCLOSURE Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../VISCOPLASTIC_MODEL_Namelist/index.html" class="btn btn-neutral float-left" title="35. VISCOPLASTIC_MODEL Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, LANL.</p>
-  </div>
+    <p>
+        &#169; Copyright 2021, LANL.
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>

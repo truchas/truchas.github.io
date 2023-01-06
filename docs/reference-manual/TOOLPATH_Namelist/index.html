@@ -1,38 +1,75 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" />
+  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>31. TOOLPATH Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  
+  <title>32. TOOLPATH Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="../_static/js/theme.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="32. TURBULENCE Namelist" href="../TURBULENCE_Namelist/index.html" />
-    <link rel="prev" title="30. TOOLHEAD Namelist" href="../TOOLHEAD_Namelist/index.html" /> 
+    <link rel="next" title="33. TURBULENCE Namelist" href="../TURBULENCE_Namelist/index.html" />
+    <link rel="prev" title="31. TOOLHEAD Namelist" href="../TOOLHEAD_Namelist/index.html" /> 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+
+   
   <div class="wy-grid-for-nav">
+    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
+          
+
+          
             <a href="../index.html" class="icon icon-home"> Truchas Reference Manual
+          
+
+          
           </a>
+
+          
+            
+            
+          
+
+          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" />
@@ -40,7 +77,18 @@
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ALTMESH_Namelist/index.html">2. ALTMESH Namelist</a></li>
@@ -58,22 +106,23 @@
 <li class="toctree-l1"><a class="reference internal" href="../INDUCTION_COIL_Namelist/index.html">14. INDUCTION_COIL Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">15. MATERIAL and PHASE Namelists</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">16. MESH Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">17. NUMERICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">18. OUTPUTS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">19. PHASE_CHANGE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">20. PHYSICAL_CONSTANTS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">21. PHYSICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">22. PROBE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">23. RESTART Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">24. SIMULATION_CONTROL Namelist (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">25. SOLID_MECHANICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">26. SOLID_MECHANICS_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">27. SPECIES_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">28. THERMAL_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">29. THERMAL_SOURCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">30. TOOLHEAD Namelist</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">31. TOOLPATH Namelist</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#namelist-variables">31.1. Namelist Variables</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../MICROSTRUCTURE_Namelist/index.html">17. MICROSTRUCTURE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">18. NUMERICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">19. OUTPUTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">20. PHASE_CHANGE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">21. PHYSICAL_CONSTANTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">22. PHYSICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">23. PROBE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">24. RESTART Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">25. SIMULATION_CONTROL Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">26. SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">27. SOLID_MECHANICS_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">28. SPECIES_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">29. THERMAL_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">30. THERMAL_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">31. TOOLHEAD Namelist</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">32. TOOLPATH Namelist</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#namelist-variables">32.1. Namelist Variables</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#name">name</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#command-string">command_string</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#command-file">command_file</a></li>
@@ -86,42 +135,83 @@
 <li class="toctree-l3"><a class="reference internal" href="#partition-ds">partition_ds</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#the-toolpath-command-language">31.2. The Toolpath Command Language</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-toolpath-command-language">32.2. The Toolpath Command Language</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">32. TURBULENCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">33. VFUNCTION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">34. VISCOPLASTIC_MODEL Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">35. Radiation Enclosure Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/index.html">36. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">33. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">34. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">35. VISCOPLASTIC_MODEL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">36. Radiation Enclosure Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">37. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
 </ul>
 
+            
+          
         </div>
+        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../index.html">Truchas Reference Manual</a>
+        
       </nav>
 
+
       <div class="wy-nav-content">
+        
         <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a></li>
-      <li class="breadcrumb-item active"><span class="section-number">31. </span>TOOLPATH Namelist</li>
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">32. </span>TOOLPATH Namelist</li>
+    
+    
       <li class="wy-breadcrumbs-aside">
+        
+          
             <a href="../_sources/TOOLPATH_Namelist/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
       </li>
+    
   </ul>
+
+  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-             
+            
   <section id="toolpath-namelist">
-<span id="id1"></span><h1><span class="section-number">31. </span>TOOLPATH Namelist<a class="headerlink" href="#toolpath-namelist" title="Permalink to this heading"></a></h1>
+<span id="id1"></span><h1><span class="section-number">32. </span>TOOLPATH Namelist<a class="headerlink" href="#toolpath-namelist" title="Permalink to this heading">¶</a></h1>
 <p>The TOOLPATH namelist defines a path through space, especially that taken
 by a machine tool, such as a laser or build platform, in the course of a
 manufacturing process. Its use is not limited to such cases, however. The
@@ -132,17 +222,17 @@ the end of the section.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <dl class="field-list simple">
-<dt class="field-odd">Required/Optional</dt>
+<dt class="field-odd">Required/Optional<span class="colon">:</span></dt>
 <dd class="field-odd"><p>Optional</p>
 </dd>
-<dt class="field-even">Single/Multiple Instances</dt>
+<dt class="field-even">Single/Multiple Instances<span class="colon">:</span></dt>
 <dd class="field-even"><p>Multiple</p>
 </dd>
 </dl>
 </div>
 <section id="namelist-variables">
-<h2><span class="section-number">31.1. </span>Namelist Variables<a class="headerlink" href="#namelist-variables" title="Permalink to this heading"></a></h2>
-<div class="contents local topic" id="contents">
+<h2><span class="section-number">32.1. </span>Namelist Variables<a class="headerlink" href="#namelist-variables" title="Permalink to this heading">¶</a></h2>
+<nav class="contents local" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#name" id="id2">name</a></p></li>
 <li><p><a class="reference internal" href="#command-string" id="id3">command_string</a></p></li>
@@ -155,30 +245,30 @@ the end of the section.</p>
 <li><p><a class="reference internal" href="#plotfile-dt" id="id10">plotfile_dt</a></p></li>
 <li><p><a class="reference internal" href="#partition-ds" id="id11">partition_ds</a></p></li>
 </ul>
-</div>
+</nav>
 <section id="name">
-<h3><a class="toc-backref" href="#id2">name</a><a class="headerlink" href="#name" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id2" role="doc-backlink">name</a><a class="headerlink" href="#name" title="Permalink to this heading">¶</a></h3>
 <p>A unique name used to identify a particular instance of this namelist.
 Clients will reference the toolpath using this name.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>case sensitive string (31 characters max)</p>
 </dd>
-<dt class="field-even">Default</dt>
+<dt class="field-even">Default<span class="colon">:</span></dt>
 <dd class="field-even"><p>none</p>
 </dd>
 </dl>
 </section>
 <section id="command-string">
-<h3><a class="toc-backref" href="#id3">command_string</a><a class="headerlink" href="#command-string" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">command_string</a><a class="headerlink" href="#command-string" title="Permalink to this heading">¶</a></h3>
 <p>A string from which to read the commands that define the toolpath. This is
 only suitable for very simple paths; use <a class="reference internal" href="#command-file">command_file</a> instead for more
 complex paths.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>string (1000 characters max)</p>
 </dd>
-<dt class="field-even">Default</dt>
+<dt class="field-even">Default<span class="colon">:</span></dt>
 <dd class="field-even"><p>none</p>
 </dd>
 </dl>
@@ -189,15 +279,15 @@ quotes used within the commands.</p>
 </div>
 </section>
 <section id="command-file">
-<h3><a class="toc-backref" href="#id4">command_file</a><a class="headerlink" href="#command-file" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">command_file</a><a class="headerlink" href="#command-file" title="Permalink to this heading">¶</a></h3>
 <p>The path to a file from which to read the commands that define the toolpath.
 If not an absolute path, it will be interpreted as a path relative to the
 Truchas input file directory.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>string</p>
 </dd>
-<dt class="field-even">Default</dt>
+<dt class="field-even">Default<span class="colon">:</span></dt>
 <dd class="field-even"><p>none</p>
 </dd>
 </dl>
@@ -208,74 +298,74 @@ to the end of the line is ignored.</p>
 </div>
 </section>
 <section id="start-time">
-<h3><a class="toc-backref" href="#id5">start_time</a><a class="headerlink" href="#start-time" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">start_time</a><a class="headerlink" href="#start-time" title="Permalink to this heading">¶</a></h3>
 <p>The starting time of the toolpath.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>real</p>
 </dd>
-<dt class="field-even">Default</dt>
+<dt class="field-even">Default<span class="colon">:</span></dt>
 <dd class="field-even"><p>0</p>
 </dd>
 </dl>
 </section>
 <section id="start-coord">
-<h3><a class="toc-backref" href="#id6">start_coord</a><a class="headerlink" href="#start-coord" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">start_coord</a><a class="headerlink" href="#start-coord" title="Permalink to this heading">¶</a></h3>
 <p>The starting coordinates of the toolpath.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>real 3-vector</p>
 </dd>
-<dt class="field-even">Default</dt>
+<dt class="field-even">Default<span class="colon">:</span></dt>
 <dd class="field-even"><p>(0,0,0)</p>
 </dd>
 </dl>
 </section>
 <section id="time-scale-factor">
-<h3><a class="toc-backref" href="#id7">time_scale_factor</a><a class="headerlink" href="#time-scale-factor" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">time_scale_factor</a><a class="headerlink" href="#time-scale-factor" title="Permalink to this heading">¶</a></h3>
 <p>An optional multiplicative factor by which to scale all time values. This
 is applied to all relevant namelist variables as well as toolpath commands,
 including their speeds and accelerations.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>real</p>
 </dd>
-<dt class="field-even">Default</dt>
+<dt class="field-even">Default<span class="colon">:</span></dt>
 <dd class="field-even"><p>1</p>
 </dd>
-<dt class="field-odd">Valid values</dt>
+<dt class="field-odd">Valid values<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span class="math notranslate nohighlight">\(\gt 0\)</span></p>
 </dd>
 </dl>
 </section>
 <section id="coord-scale-factor">
-<h3><a class="toc-backref" href="#id8">coord_scale_factor</a><a class="headerlink" href="#coord-scale-factor" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">coord_scale_factor</a><a class="headerlink" href="#coord-scale-factor" title="Permalink to this heading">¶</a></h3>
 <p>An optional multiplicative factor by which to scale all time values. This
 is applied to all relevant namelist variables as well as toolpath commands,
 including their speeds and accelerations.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>real</p>
 </dd>
-<dt class="field-even">Default</dt>
+<dt class="field-even">Default<span class="colon">:</span></dt>
 <dd class="field-even"><p>1</p>
 </dd>
-<dt class="field-odd">Valid values</dt>
+<dt class="field-odd">Valid values<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span class="math notranslate nohighlight">\(&gt; 0\)</span></p>
 </dd>
 </dl>
 </section>
 <section id="write-plotfile">
-<h3><a class="toc-backref" href="#id9">write_plotfile</a><a class="headerlink" href="#write-plotfile" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">write_plotfile</a><a class="headerlink" href="#write-plotfile" title="Permalink to this heading">¶</a></h3>
 <p>Enable this flag to have a discrete version of the toolpath written to a
 disk file. The file will be located in the Truchas output directory and
 be named <cite>toolpath-&lt;name&gt;.dat</cite>, where <cite>&lt;name&gt;</cite> is the name assigned to the
 namelist. If enabled, <a class="reference internal" href="#plotfile-dt">plotfile_dt</a> must be specified.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>logical</p>
 </dd>
-<dt class="field-even">Default</dt>
+<dt class="field-even">Default<span class="colon">:</span></dt>
 <dd class="field-even"><p>false</p>
 </dd>
 </dl>
@@ -292,35 +382,35 @@ interval. The latter frequency is determined by <a class="reference internal" hr
 </div>
 </section>
 <section id="plotfile-dt">
-<h3><a class="toc-backref" href="#id10">plotfile_dt</a><a class="headerlink" href="#plotfile-dt" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">plotfile_dt</a><a class="headerlink" href="#plotfile-dt" title="Permalink to this heading">¶</a></h3>
 <p>Output time frequency used when writing the toolpath to a disk file.
 See <a class="reference internal" href="#write-plotfile">write_plotfile</a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>real</p>
 </dd>
-<dt class="field-even">Default</dt>
+<dt class="field-even">Default<span class="colon">:</span></dt>
 <dd class="field-even"><p>none</p>
 </dd>
-<dt class="field-odd">Valid values</dt>
+<dt class="field-odd">Valid values<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span class="math notranslate nohighlight">\(&gt; 0\)</span></p>
 </dd>
 </dl>
 </section>
 <section id="partition-ds">
-<h3><a class="toc-backref" href="#id11">partition_ds</a><a class="headerlink" href="#partition-ds" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">partition_ds</a><a class="headerlink" href="#partition-ds" title="Permalink to this heading">¶</a></h3>
 <p>Assign a value to this parameter to generate an additional discrete version
 of the toolpath that is required by some clients. The value specifies the
 desired spacing in path length. Refer to the client’s documentation on
 whether this is needed and for further details.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Type</dt>
+<dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>real</p>
 </dd>
-<dt class="field-even">Default</dt>
+<dt class="field-even">Default<span class="colon">:</span></dt>
 <dd class="field-even"><p>none</p>
 </dd>
-<dt class="field-odd">Valid values</dt>
+<dt class="field-odd">Valid values<span class="colon">:</span></dt>
 <dd class="field-odd"><p><span class="math notranslate nohighlight">\(&gt; 0\)</span></p>
 </dd>
 </dl>
@@ -335,7 +425,7 @@ equal to, but no greater than <a class="reference internal" href="#partition-ds"
 </section>
 </section>
 <section id="the-toolpath-command-language">
-<h2><span class="section-number">31.2. </span>The Toolpath Command Language<a class="headerlink" href="#the-toolpath-command-language" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">32.2. </span>The Toolpath Command Language<a class="headerlink" href="#the-toolpath-command-language" title="Permalink to this heading">¶</a></h2>
 <p>A toolpath is represented as a continuous sequence of <span class="math notranslate nohighlight">\(2+n\)</span> path
 segments defined on time intervals <span class="math notranslate nohighlight">\((-\infty,t_0]\)</span>, <span class="math notranslate nohighlight">\([t_0,t_1]\)</span>,
 <span class="math notranslate nohighlight">\([t_1,t_2]\)</span>, …, <span class="math notranslate nohighlight">\([t_n,\infty)\)</span>. The initial and final unbounded
@@ -380,33 +470,50 @@ motions (above) until changed.</p>
 
 
            </div>
+           
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../TOOLHEAD_Namelist/index.html" class="btn btn-neutral float-left" title="30. TOOLHEAD Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../TURBULENCE_Namelist/index.html" class="btn btn-neutral float-right" title="32. TURBULENCE Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="../TURBULENCE_Namelist/index.html" class="btn btn-neutral float-right" title="33. TURBULENCE Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../TOOLHEAD_Namelist/index.html" class="btn btn-neutral float-left" title="31. TOOLHEAD Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, LANL.</p>
-  </div>
+    <p>
+        &#169; Copyright 2021, LANL.
 
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
         </div>
       </div>
+
     </section>
+
   </div>
-  <script>
+  
+
+  <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script> 
+  </script>
+
+  
+  
+    
+   
 
 </body>
 </html>
