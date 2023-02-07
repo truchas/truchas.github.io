@@ -533,13 +533,13 @@ default or not.</p></li>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="truchas.TruchasEnvironment.TruchasEnvironment.generate_input_deck">
-<span class="sig-name descname"><span class="pre">generate_input_deck</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">replacements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template_filename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasEnvironment.TruchasEnvironment.generate_input_deck" title="Permalink to this definition">¶</a></dt>
-<dd><p>Generates a truchas input file from a template and replacements.
-Expects a dictionary of replacements, e.g. <code class="docutils literal notranslate"><span class="pre">{&quot;sigma&quot;:</span> <span class="pre">1.2e-3}</span></code>.
-Will replace Python format-strings in the input template file,
-e.g. <code class="docutils literal notranslate"><span class="pre">{sigma}</span></code> is then replaced with <code class="docutils literal notranslate"><span class="pre">.0012</span></code>. Formatting can be
-specified in the input template in the typical Python way, such
-as <code class="docutils literal notranslate"><span class="pre">{sigma:.2e}</span></code>.</p>
+<span class="sig-name descname"><span class="pre">generate_input_deck</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">replacements</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template_filenames</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#truchas.TruchasEnvironment.TruchasEnvironment.generate_input_deck" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generates a truchas input file from a template (or templates) and
+replacements. Expects a dictionary of replacements, e.g. <code class="docutils literal notranslate"><span class="pre">{&quot;sigma&quot;:</span>
+<span class="pre">1.2e-3}</span></code>. Will replace Python format-strings in the input template
+file, e.g. <code class="docutils literal notranslate"><span class="pre">{sigma}</span></code> is then replaced with <code class="docutils literal notranslate"><span class="pre">.0012</span></code>. Formatting can
+be specified in the input template in the typical Python way, such as
+<code class="docutils literal notranslate"><span class="pre">{sigma:.2e}</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
@@ -547,10 +547,11 @@ as <code class="docutils literal notranslate"><span class="pre">{sigma:.2e}</spa
 the Truchas input deck according to the given template. Dictionary
 keys are the strings to replace, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;sigma&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;temp&quot;</span></code>,
 and the values are the items to insert.</p></li>
-<li><p><strong>template_filename</strong> (<em>str</em>) – Filename of the template for the Truchas input
-deck. Should contain Python format-strings, such as <code class="docutils literal notranslate"><span class="pre">{sigma}</span></code> or
-<code class="docutils literal notranslate"><span class="pre">{sigma:.2e}</span></code> where replacements from the dictionary (e.g.
-<code class="docutils literal notranslate"><span class="pre">{&quot;sigma&quot;:</span> <span class="pre">1.2e-3}</span></code>) will be inserted.</p></li>
+<li><p><strong>template_filename</strong> (<em>str</em><em> or </em><em>list</em><em> of </em><em>str</em>) – Filename of the template for the Truchas input
+deck. Can also be a list of template filenames that should be
+concatenated. Should contain Python format-strings, such as
+<code class="docutils literal notranslate"><span class="pre">{sigma}</span></code> or <code class="docutils literal notranslate"><span class="pre">{sigma:.2e}</span></code> where replacements from the
+dictionary (e.g. <code class="docutils literal notranslate"><span class="pre">{&quot;sigma&quot;:</span> <span class="pre">1.2e-3}</span></code>) will be inserted.</p></li>
 <li><p><strong>output_filename</strong> (<em>str</em>) – Filename of the generated Truchas input deck.</p></li>
 </ul>
 </dd>
