@@ -1,93 +1,52 @@
-
-
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
   <title>Vertex Anchor Cluster Paving (PAVE) &mdash; Truchas 1.0 documentation</title>
-  
-
-  
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/css/sphinxdoc.css" type="text/css" />
-  <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
-
-  
-  
-
-  
-  
-
-  
-
-  
+      <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/graphviz.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/sphinxdoc.css" type="text/css" />
+      <link rel="stylesheet" href="../../../_static/css/custom.css" type="text/css" />
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/>
   <!--[if lt IE 9]>
     <script src="../../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="../../../" src="../../../_static/documentation_options.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
         <script src="../../../_static/doctools.js"></script>
         <script src="../../../_static/sphinx_highlight.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    
-    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
-
-    
+    <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
     <link rel="next" title="Variational Shape Approximation (VSA)" href="vsa.html" />
     <link rel="prev" title="Enclosure Patches" href="index.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
 
           
-            <a href="../../../index.html" class="icon icon-home"> Truchas
           
-
-          
+          <a href="../../../index.html" class="icon icon-home">
+            Truchas
+              <img src="../../../_static/logo.svg" class="logo" alt="Logo"/>
           </a>
-
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal" href="../index.html">Radiation Enclosure Tools</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html#contents">Contents</a><ul class="current">
@@ -131,81 +90,38 @@
 </li>
 </ul>
 
-            
-          
         </div>
-        
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="../../../index.html">Truchas</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="../../../index.html" class="icon icon-home"></a> &raquo;</li>
-        
-          <li><a href="../index.html">Radiation Enclosure Tools</a> &raquo;</li>
-        
-          <li><a href="index.html">Enclosure Patches</a> &raquo;</li>
-        
-      <li>Vertex Anchor Cluster Paving (PAVE)</li>
-    
-    
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Radiation Enclosure Tools</a></li>
+          <li class="breadcrumb-item"><a href="index.html">Enclosure Patches</a></li>
+      <li class="breadcrumb-item active">Vertex Anchor Cluster Paving (PAVE)</li>
       <li class="wy-breadcrumbs-aside">
-        
-          
             <a href="../../../_sources/tools/RadE/patches/pave.rst.txt" rel="nofollow"> View page source</a>
-          
-        
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <section id="vertex-anchor-cluster-paving-pave">
-<h1>Vertex Anchor Cluster Paving (PAVE)<a class="headerlink" href="#vertex-anchor-cluster-paving-pave" title="Permalink to this heading">¶</a></h1>
+<h1>Vertex Anchor Cluster Paving (PAVE)<a class="headerlink" href="#vertex-anchor-cluster-paving-pave" title="Permalink to this heading"></a></h1>
 <figure class="align-center" id="id1" style="width: 50%">
 <img alt="../../../_images/basic_hemi_pave_2.png" src="../../../_images/basic_hemi_pave_2.png" />
 <figcaption>
-<p><span class="caption-text">Result of PAVE on a quarter cyclinder.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+<p><span class="caption-text">Result of PAVE on a quarter cyclinder.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>The Vertex Anchor Cluster Paving (PAVE) patching algorithm, as it name suggests, is based on the
@@ -248,7 +164,7 @@ edges or corners, a random vertex is chosen as the anchor for its first patch.</
 </ul>
 </nav>
 <section id="algorithm">
-<h2>Algorithm<a class="headerlink" href="#algorithm" title="Permalink to this heading">¶</a></h2>
+<h2>Algorithm<a class="headerlink" href="#algorithm" title="Permalink to this heading"></a></h2>
 <p>The PAVE algorithm begins by finding the connected components of the <em>vertex graph</em> of the
 enclosure, that is, the graph defined by the mesh vertices and the edges between them. For each
 component, PAVE picks a vertex <span class="math notranslate nohighlight">\(V_j\)</span>, forms a ‘seed patch’ <span class="math notranslate nohighlight">\(P_i\)</span> from its faces, and adds the tuple
@@ -267,7 +183,7 @@ number generator used to select the seed patches can be set with the <a class="r
 <p>Once the queue is empty, all faces are assigned and we have a valid patching of the enclosure.
 Finally, PAVE merges patches where possible, in accordance with the <a class="reference internal" href="#pave-merge-level"><span class="std std-ref">PAVE_MERGE_LEVEL</span></a> namelist parameter.</p>
 <section id="outline">
-<h3>Outline<a class="headerlink" href="#outline" title="Permalink to this heading">¶</a></h3>
+<h3>Outline<a class="headerlink" href="#outline" title="Permalink to this heading"></a></h3>
 <p>The following is a high-level outline of the PAVE algorithm.</p>
 <ol class="arabic simple">
 <li><p><strong>Initialization</strong></p>
@@ -385,7 +301,7 @@ new tuple <span class="math notranslate nohighlight">\((P_k, V_j)\)</span> and a
 </ul>
 </section>
 <section id="connected-components">
-<h3>Connected Components<a class="headerlink" href="#connected-components" title="Permalink to this heading">¶</a></h3>
+<h3>Connected Components<a class="headerlink" href="#connected-components" title="Permalink to this heading"></a></h3>
 <p>The PAVE algorithm constructs two graphs from the enclosure data: the face adjacency graph and the
 vertex adjacency graph. PAVE then utilizes the connected components of each of these graphs during
 its execution.</p>
@@ -398,7 +314,7 @@ as a short-hand for refering to the connected components of the face adjacency g
 explicit when referring to the components of the vertex adjacency graph.</p>
 </div>
 <section id="face-adjacency-graph">
-<h4>Face Adjacency Graph<a class="headerlink" href="#face-adjacency-graph" title="Permalink to this heading">¶</a></h4>
+<h4>Face Adjacency Graph<a class="headerlink" href="#face-adjacency-graph" title="Permalink to this heading"></a></h4>
 <p>The face adjacency graph is defined by the topology of the mesh and the <a class="reference internal" href="patches_namelist.html#max-angle"><span class="std std-ref">MAX_ANGLE</span></a> namelist parameter which controls the maximum
 allowable angle between the (normals of) adjacent faces. Specifically, two topologically adjacent
 faces at a angle greater than MAX_ANGLE will not share an edge in the adjacency graph. The
@@ -410,7 +326,7 @@ both computing the <a class="reference internal" href="vac.html#position-bias"><
 in determining the connected components of the vertex adjacency graph.</p>
 </section>
 <section id="vertex-adjacency-graph">
-<h4>Vertex Adjacency Graph<a class="headerlink" href="#vertex-adjacency-graph" title="Permalink to this heading">¶</a></h4>
+<h4>Vertex Adjacency Graph<a class="headerlink" href="#vertex-adjacency-graph" title="Permalink to this heading"></a></h4>
 <p>The vertex adjacency graph is defined by the topology of the mesh. The vertices and edges of the
 vertex graph correspond to the vertices and edges of the mesh. The vertex graph allows PAVE to
 efficiently determine the neighbors of a particular vertex, an integral step in the paving process.</p>
@@ -424,7 +340,7 @@ seed patch selection, which is discussed in the following section.</p>
 </section>
 </section>
 <section id="choosing-seed-patches">
-<h3>Choosing Seed Patches<a class="headerlink" href="#choosing-seed-patches" title="Permalink to this heading">¶</a></h3>
+<h3>Choosing Seed Patches<a class="headerlink" href="#choosing-seed-patches" title="Permalink to this heading"></a></h3>
 <p>The paving process creates new patches from the faces of vertices neighboring the <a class="reference internal" href="vac.html#term-vertex-anchor"><span class="xref std std-term">vertex
 anchors</span></a> of existing patches. Therefore, each connected component (of the face
 adjacency graph) must have at least one patch before paving begins. The PAVE algorithm begins by
@@ -474,7 +390,7 @@ vertex anchor is an interior vertex, the seed patch must be a full patch. The se
 the paving process on that component.</p>
 </section>
 <section id="component-paving">
-<h3>Component Paving<a class="headerlink" href="#component-paving" title="Permalink to this heading">¶</a></h3>
+<h3>Component Paving<a class="headerlink" href="#component-paving" title="Permalink to this heading"></a></h3>
 <p>Starting from the seed patches, each connected component of the enclosure is iteratively ‘paved’
 with patches that neighbor existing patches. When a patch is assigned, PAVE finds the first and
 second degree vertex neighbors of the patch’s vertex anchor. For each of the neighbors, PAVE forms a
@@ -487,7 +403,7 @@ its vertex anchor are labeled.
 <strong>Bottom left:</strong> The patches formed by the first degree neighbors are colored gray. These
 are all partial patches.
 <strong>Bottom right:</strong> The patches formed by the second degree neighbors are colored blue and
-gray. Some are full patches (blue), and some are partial patches (gray).</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+gray. Some are full patches (blue), and some are partial patches (gray).</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
 </figcaption>
 </figure>
 <p>Note that the vertex anchors of two adjacent <a class="reference internal" href="vac.html#term-full-patch"><span class="xref std std-term">full patches</span></a> must be second degree
@@ -510,7 +426,7 @@ in the <a class="reference internal" href="vac.html#position-bias"><span class="
 be included to handle a corner case where a component is only one face wide.</p>
 </section>
 <section id="patch-weight">
-<h3>Patch Weight<a class="headerlink" href="#patch-weight" title="Permalink to this heading">¶</a></h3>
+<h3>Patch Weight<a class="headerlink" href="#patch-weight" title="Permalink to this heading"></a></h3>
 <p>Each entry of the global priority queue has an associated weight which determines their order in
 the queue. The PAVE queue prioritizes entries with a lower weight, so the lowest weight patches are
 assigned first.</p>
@@ -523,7 +439,7 @@ patch <span class="math notranslate nohighlight">\((P_i, V_j)\)</span> is given 
 VAC documentation.</p>
 </section>
 <section id="patch-merging">
-<h3>Patch Merging<a class="headerlink" href="#patch-merging" title="Permalink to this heading">¶</a></h3>
+<h3>Patch Merging<a class="headerlink" href="#patch-merging" title="Permalink to this heading"></a></h3>
 <p>After the paving step of the PAVE algorithm, all faces are assigned to a patch. However, we may
 still reduce the patch count by <em>merging</em> patches together. Therefore, PAVE implements several patch
 merging subroutines of increasing aggressiveness. These merging subroutines are identical to those
@@ -539,7 +455,7 @@ level.</p>
 </section>
 </section>
 <section id="namelist-parameters">
-<h2>Namelist Parameters<a class="headerlink" href="#namelist-parameters" title="Permalink to this heading">¶</a></h2>
+<h2>Namelist Parameters<a class="headerlink" href="#namelist-parameters" title="Permalink to this heading"></a></h2>
 <p>The <a class="reference internal" href="patches_namelist.html"><span class="doc">PATCHES namelist</span></a> allows a user to configure the PAVE algorithm
 parameters. Although the PATCHES namelist supports many parameters, only five are used by PAVE, and
 only three of those are unique to PAVE.</p>
@@ -549,7 +465,7 @@ information on those parameters.</p>
 <p>The three parameters unique to PAVE are all prefixed with <em>PAVE</em>. These have already been discussed,
 so we’ll only touch on them briefly here and link to the previous discussion.</p>
 <section id="pave-merge-level">
-<h3>PAVE_MERGE_LEVEL<a class="headerlink" href="#pave-merge-level" title="Permalink to this heading">¶</a></h3>
+<h3>PAVE_MERGE_LEVEL<a class="headerlink" href="#pave-merge-level" title="Permalink to this heading"></a></h3>
 <p>Controls the aggressiveness of patch merging.</p>
 <blockquote class="nml-param">
 <div><p><strong>Type:</strong> <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code></p>
@@ -592,7 +508,7 @@ This ensures that the merge is always performed.</p></td>
 <p>For more details on each merge level, refer to the section on <a class="reference internal" href="vac.html#patch-merging"><span class="std std-ref">patch merging</span></a> of the VAC documentation.</p>
 </section>
 <section id="pave-split-patch-size">
-<h3>PAVE_SPLIT_PATCH_SIZE<a class="headerlink" href="#pave-split-patch-size" title="Permalink to this heading">¶</a></h3>
+<h3>PAVE_SPLIT_PATCH_SIZE<a class="headerlink" href="#pave-split-patch-size" title="Permalink to this heading"></a></h3>
 <p>Defines the maximum size of patches to be split during patch merging.</p>
 <blockquote class="nml-param">
 <div><p><strong>Type:</strong> <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code></p>
@@ -615,7 +531,7 @@ triangular meshes. This avoids splitting too many patches.</p>
 </div>
 </section>
 <section id="pave-random-seed">
-<h3>PAVE_RANDOM_SEED<a class="headerlink" href="#pave-random-seed" title="Permalink to this heading">¶</a></h3>
+<h3>PAVE_RANDOM_SEED<a class="headerlink" href="#pave-random-seed" title="Permalink to this heading"></a></h3>
 <p>Defines the seed for the random number generator used to pick the initial seed patches.</p>
 <blockquote class="nml-param">
 <div><p><strong>Type:</strong> <code class="docutils literal notranslate"><span class="pre">INTEGER</span></code></p>
@@ -637,50 +553,33 @@ vary from run to run.</p>
 
 
            </div>
-           
           </div>
-          <footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-        <a href="vsa.html" class="btn btn-neutral float-right" title="Variational Shape Approximation (VSA)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="Enclosure Patches" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="vsa.html" class="btn btn-neutral float-right" title="Variational Shape Approximation (VSA)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &#169; Copyright 2021, Los Alamos National Laboratory.
-
-    </p>
+    <p>&#169; Copyright 2021, Los Alamos National Laboratory.</p>
   </div>
-    
-    
-    
-    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
     <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    
-    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>
