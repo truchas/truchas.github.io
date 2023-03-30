@@ -87,6 +87,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#mesh-file">mesh_file</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#ignore-block-ids">ignore_block_IDs</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#side-set-ids">side_set_ids</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#warn-non-boundary">warn_non_boundary</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#symmetries">symmetries</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#displace-side-set-ids">displace_side_set_ids</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#displacement">displacement</a></li>
@@ -147,9 +148,10 @@ sets where view factors are to be computed.</p>
 <li><p><a class="reference internal" href="#mesh-file" id="id2">mesh_file</a></p></li>
 <li><p><a class="reference internal" href="#ignore-block-ids" id="id3">ignore_block_IDs</a></p></li>
 <li><p><a class="reference internal" href="#side-set-ids" id="id4">side_set_ids</a></p></li>
-<li><p><a class="reference internal" href="#symmetries" id="id5">symmetries</a></p></li>
-<li><p><a class="reference internal" href="#displace-side-set-ids" id="id6">displace_side_set_ids</a></p></li>
-<li><p><a class="reference internal" href="#displacement" id="id7">displacement</a></p></li>
+<li><p><a class="reference internal" href="#warn-non-boundary" id="id5">warn_non_boundary</a></p></li>
+<li><p><a class="reference internal" href="#symmetries" id="id6">symmetries</a></p></li>
+<li><p><a class="reference internal" href="#displace-side-set-ids" id="id7">displace_side_set_ids</a></p></li>
+<li><p><a class="reference internal" href="#displacement" id="id8">displacement</a></p></li>
 </ul>
 </nav>
 <section id="name">
@@ -190,7 +192,9 @@ sets where view factors are to be computed.</p>
 </section>
 <section id="side-set-ids">
 <h2><a class="toc-backref" href="#id4" role="doc-backlink">side_set_ids</a><a class="headerlink" href="#side-set-ids" title="Permalink to this heading"></a></h2>
-<p>List of side sets specifying the surface.</p>
+<p>List of side sets specifying the surface. All surface faces must belong to the
+boundary of the mesh less any element blocks specified by <cite>ignore_block_IDs</cite>.
+By default it is a fatal error if not satisfied; see <cite>warn_non_boundary</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>integer list</p>
@@ -200,8 +204,23 @@ sets where view factors are to be computed.</p>
 </dd>
 </dl>
 </section>
+<section id="warn-non-boundary">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">warn_non_boundary</a><a class="headerlink" href="#warn-non-boundary" title="Permalink to this heading"></a></h2>
+<p>If any surface faces specified by <cite>side_set_ids</cite> are non-boundary faces, this
+normally fatal error is reduced to a warning when this parameter is true. Such
+faces are <em>not included in the surface</em>, and the number of such faces for each
+side set are written to the terminal.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>logical</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>F</p>
+</dd>
+</dl>
+</section>
 <section id="symmetries">
-<h2><a class="toc-backref" href="#id5" role="doc-backlink">symmetries</a><a class="headerlink" href="#symmetries" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">symmetries</a><a class="headerlink" href="#symmetries" title="Permalink to this heading"></a></h2>
 <p>List of up to 3 symmetry operations</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
@@ -219,7 +238,7 @@ sets where view factors are to be computed.</p>
 </dl>
 </section>
 <section id="displace-side-set-ids">
-<h2><a class="toc-backref" href="#id6" role="doc-backlink">displace_side_set_ids</a><a class="headerlink" href="#displace-side-set-ids" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">displace_side_set_ids</a><a class="headerlink" href="#displace-side-set-ids" title="Permalink to this heading"></a></h2>
 <p>List of side sets whose surfaces will be displaced by the vector specified by
 <a class="reference internal" href="#displacement">displacement</a>.</p>
 <dl class="field-list simple">
@@ -242,7 +261,7 @@ is needed.</p>
 </div>
 </section>
 <section id="displacement">
-<h2><a class="toc-backref" href="#id7" role="doc-backlink">displacement</a><a class="headerlink" href="#displacement" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">displacement</a><a class="headerlink" href="#displacement" title="Permalink to this heading"></a></h2>
 <p>(x,y,z) displacement vector.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
