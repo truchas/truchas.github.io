@@ -17,7 +17,8 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/doctools.js"></script>
         <script src="../_static/sphinx_highlight.js"></script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script>window.MathJax = {"chtml": {"displayAlign": "left", "displayIndent": "2em"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -236,7 +237,7 @@
 <div class="line"><strong>Type</strong>        : integer list</div>
 <div class="line"><strong>Default</strong>     : An empty list of element block IDs.</div>
 <div class="line"><strong>Valid Values</strong>: Any element block ID.</div>
-<div class="line"><strong>Notes</strong>       : Any element block ID in the mesh file can be specified, but elements that are not connected such that they can function as gap elements or are not consistent with side set definitions will almost certainly result in incorrect behavior. The code does not check for these inconsistencies. The heat/species transport solver drops these elements from its view of the mesh and treats them instead as an internal interface; see the notes to <a class="reference internal" href="#m-iss"><span class="std std-ref">interface_side_sets</span></a>. The block IDs specified here can be used as values for <a class="reference internal" href="../THERMAL_BC_Namelist/index.html#tb-fsi"><span class="std std-ref">face_set_ids</span></a> from the <a class="reference internal" href="../THERMAL_BC_Namelist/index.html#thermal-bc-namelist"><span class="std std-ref">THERMAL_BC</span></a> namelist.</div>
+<div class="line"><strong>Notes</strong>       : Any element block ID in the mesh file can be specified, but elements that are not connected such that they can function as gap elements or are not consistent with side set definitions will almost certainly result in incorrect behavior. The code does not check for these inconsistencies. The heat/species transport solver drops these elements from its view of the mesh and treats them instead as an internal interface; see the notes to <a class="reference internal" href="#m-iss"><span class="std std-ref">interface_side_sets</span></a>. The block IDs specified here can be used as values for <span class="xref std std-ref">face_set_ids</span> from the <a class="reference internal" href="../THERMAL_BC_Namelist/index.html#thermal-bc-namelist"><span class="std std-ref">THERMAL_BC</span></a> namelist.</div>
 </div>
 </section>
 <section id="exodus-block-modulus">
