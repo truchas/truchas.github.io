@@ -385,10 +385,10 @@ transfer-type boundary condition. To specify a function, use
 <dd class="field-odd"><p>The name of a <a class="reference internal" href="../FUNCTION_Namelist/index.html#id1"><span class="std std-ref">FUNCTION namelist</span></a> namelist defining a
 function that gives the mass transfer coefficient for a mass
 transfer-type boundary condition. The function is expected to be a
-function of <span class="math notranslate nohighlight">\((t,x,y,z)\)</span> for an external condition, and a
-function of <span class="math notranslate nohighlight">\((\phi_j,t,x,y,z)\)</span> for an interface condition.
-In the latter case <span class="math notranslate nohighlight">\(\phi_j\)</span> is taken to be the maximum of
-<span class="math notranslate nohighlight">\(\phi_j\)</span> on either side of the interface.</p>
+function of <span class="math notranslate nohighlight">\((T,\phi_j,t,x,y,z)\)</span>. When used as an interface
+condition, <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(\phi_j\)</span> are taken to be the
+maximums on either side of the interface. When heat transfer is
+not active, <span class="math notranslate nohighlight">\(T\)</span> is taken to be 0.</p>
 </dd>
 <dt class="field-even">Type<span class="colon">:</span></dt>
 <dd class="field-even"><p>string</p>
