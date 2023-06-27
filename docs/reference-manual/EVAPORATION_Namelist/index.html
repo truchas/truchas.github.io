@@ -55,13 +55,13 @@
 <li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_RADIATION_Namelist/index.html">7. ENCLOSURE_RADIATION Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_SURFACE_Namelist/index.html">8. ENCLOSURE_SURFACE Namelist</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">9. EVAPORATION Namelist (Experimental)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#overview">9.1. Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#evaporation-namelist-features">9.2. EVAPORATION Namelist Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#components">9.3. Components</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#face-set-ids">Face_Set_IDs</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#prefactor">Prefactor</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#temp-exponent">Temp_Exponent</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#activation-energy">Activation_Energy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#namelist-variables">9.1. Namelist Variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#face-set-ids">face_set_ids</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vaporization-heat">vaporization_heat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vaporization-temp">vaporization_temp</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#molar-mass">molar_mass</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ambient-pressure">ambient_pressure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#condensation-factor">condensation_factor</a></li>
 </ul>
 </li>
 </ul>
@@ -124,60 +124,132 @@
 </div>
 <section id="evaporation-namelist-experimental">
 <h1><span class="section-number">9. </span>EVAPORATION Namelist (Experimental)<a class="headerlink" href="#evaporation-namelist-experimental" title="Permalink to this heading"></a></h1>
-<section id="overview">
-<h2><span class="section-number">9.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
-<p>This namelist defines a special heat flux boundary condition that models heat loss due to the evaporation of material. Its intended use is in the simulation of additive manufacturing or welding processes where the laser heat source can produce localized surface temperatures approaching and exceeding the boiling temperature. The form of the heat flux is an Arrhenius-type function.</p>
+<p>This namelist applies a special boundary heat flux that models heat loss due
+to the evaporation of a material. Its intended use is in the simulation of
+additive manufacturing or welding processes where the heat source can produce
+localized surface temperatures approaching and exceeding the vaporization
+temperature.</p>
+<p>The heat flux due to evaporation,</p>
 <div class="math notranslate nohighlight">
-\[f(T) = A T^\beta e^{E_a/{RT}}\]</div>
-<p>where <strong>T</strong> is temperature, <strong>R</strong> the gas constant, and <strong>A</strong>, <span class="math notranslate nohighlight">\(\beta\)</span>, and <span class="math notranslate nohighlight">\(E_a\)</span> are model parameters defined by input. When using this model, the simulation should be using Kelvin for temperature.</p>
-</section>
-<section id="evaporation-namelist-features">
-<h2><span class="section-number">9.2. </span>EVAPORATION Namelist Features<a class="headerlink" href="#evaporation-namelist-features" title="Permalink to this heading"></a></h2>
-<div class="line-block">
-<div class="line"><strong>Required/Optional        :</strong> Optional</div>
-<div class="line"><strong>Single/Multiple Instances:</strong> Single</div>
+\[q_{\text{evap}} = L \dot{m},\]</div>
+<p>is expressed in terms of the evaporated mass flux <span class="math notranslate nohighlight">\(\dot{m}\)</span> and
+latent heat of vaporization <span class="math notranslate nohighlight">\(L\)</span>. The mass flux (mass per unit
+area per unit time) is determined from the Hertz-Knudsen equation
+<a class="footnote-reference brackets" href="#footcite-he2003alloying" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<div class="math notranslate nohighlight">
+\[\dot{m} = \lambda p_v(T)\sqrt{\frac{M}{2\pi R T}}\]</div>
+<p>where <span class="math notranslate nohighlight">\(M\)</span> is the molar mass of the evaporating material, <span class="math notranslate nohighlight">\(R\)</span> is
+the universal gas constant, <span class="math notranslate nohighlight">\(p_v\)</span> is the vapor pressure of the material
+at temperature <span class="math notranslate nohighlight">\(T\)</span>, and <span class="math notranslate nohighlight">\(\lambda\)</span> is an empirical constant that
+corrects for the condensation of a portion of the vaporized atoms. The vapor
+pressure is given by the Clausius-Claperyon equation <a class="footnote-reference brackets" href="#footcite-velasco2009clausius" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
+<div class="math notranslate nohighlight">
+\[p_v(T) = p_0 \exp\Bigl[\frac{ML}{R}\Bigl(\frac1{T}-\frac1{T_0}\Bigr)\Bigr]\]</div>
+<p>where <span class="math notranslate nohighlight">\(p_0\)</span> is the pressure of the ambient atmosphere, and
+<span class="math notranslate nohighlight">\(T_0\)</span> is the vaporization temperature at that pressure.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>This model is only compatible with problems using Kelvin for temperature.</p>
+<p>If any other problem units differ from SI units, the value of the universal
+gas constant <span class="math notranslate nohighlight">\(R\)</span> must be redefined accordingly using the
+<a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html#phyco-ugc"><span class="std std-ref">gas_constant</span></a> variable of the
+<a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html#physical-constants-namelist"><span class="std std-ref">PHYSICAL_CONSTANTS</span></a> namelist.</p>
 </div>
-</section>
-<section id="components">
-<h2><span class="section-number">9.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this heading"></a></h2>
+<div class="admonition-namelist-usage admonition">
+<p class="admonition-title">Namelist Usage</p>
+<dl class="field-list simple">
+<dt class="field-odd">Required/Optional<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Optional</p>
+</dd>
+<dt class="field-even">Single/Multiple Instances<span class="colon">:</span></dt>
+<dd class="field-even"><p>Single</p>
+</dd>
+</dl>
+</div>
+<section id="namelist-variables">
+<h2><span class="section-number">9.1. </span>Namelist Variables<a class="headerlink" href="#namelist-variables" title="Permalink to this heading"></a></h2>
+<nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#evap-fsd"><span class="std std-ref">Face_Set_IDs</span></a></p></li>
-<li><p><a class="reference internal" href="#evap-p"><span class="std std-ref">Prefactor</span></a></p></li>
-<li><p><a class="reference internal" href="#evap-te"><span class="std std-ref">Temp_Exponent</span></a></p></li>
-<li><p><a class="reference internal" href="#evap-ae"><span class="std std-ref">Activation_Energy</span></a></p></li>
+<li><p><a class="reference internal" href="#face-set-ids" id="id5">face_set_ids</a></p></li>
+<li><p><a class="reference internal" href="#vaporization-heat" id="id6">vaporization_heat</a></p></li>
+<li><p><a class="reference internal" href="#vaporization-temp" id="id7">vaporization_temp</a></p></li>
+<li><p><a class="reference internal" href="#molar-mass" id="id8">molar_mass</a></p></li>
+<li><p><a class="reference internal" href="#ambient-pressure" id="id9">ambient_pressure</a></p></li>
+<li><p><a class="reference internal" href="#condensation-factor" id="id10">condensation_factor</a></p></li>
 </ul>
+</nav>
 <section id="face-set-ids">
-<span id="evap-fsd"></span><h3>Face_Set_IDs<a class="headerlink" href="#face-set-ids" title="Permalink to this heading"></a></h3>
-<div class="line-block">
-<div class="line"><strong>Description</strong> : A list of face set IDs that define the subset of the boundary where the evaporation boundary condition model will be imposed.</div>
-<div class="line"><strong>Type</strong>        : a list of up to 32 integers</div>
-<div class="line"><strong>Default</strong>     : none</div>
-<div class="line"><strong>Valid Values</strong>: any valid mesh face set ID</div>
-<div class="line"><strong>Notes</strong>       : Exodus II mesh side sets are interpreted by Truchas as face sets having the same IDs.</div>
-</div>
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">face_set_ids</a><a class="headerlink" href="#face-set-ids" title="Permalink to this heading"></a></h3>
+<p>A list of face set IDs that define the portion of the boundary where the
+evaporation model will be applied.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>none</p>
+</dd>
+</dl>
 </section>
-<section id="prefactor">
-<span id="evap-p"></span><h3>Prefactor<a class="headerlink" href="#prefactor" title="Permalink to this heading"></a></h3>
-<div class="line-block">
-<div class="line"><strong>Description</strong> : The prefactor A.</div>
-<div class="line"><strong>Type</strong>        : real</div>
-<div class="line"><strong>Default</strong>     : none</div>
-</div>
+<section id="vaporization-heat">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">vaporization_heat</a><a class="headerlink" href="#vaporization-heat" title="Permalink to this heading"></a></h3>
+<p>The latent heat of vaporization <span class="math notranslate nohighlight">\(L\)</span> (energy per unit mass).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>none</p>
+</dd>
+</dl>
 </section>
-<section id="temp-exponent">
-<span id="evap-te"></span><h3>Temp_Exponent<a class="headerlink" href="#temp-exponent" title="Permalink to this heading"></a></h3>
-<div class="line-block">
-<div class="line"><strong>Description</strong> : The temperature exponent <span class="math notranslate nohighlight">\(\beta\)</span></div>
-<div class="line"><strong>Type</strong>        : real</div>
-<div class="line"><strong>Default</strong>     : none</div>
-</div>
+<section id="vaporization-temp">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">vaporization_temp</a><a class="headerlink" href="#vaporization-temp" title="Permalink to this heading"></a></h3>
+<p>The vaporization temperature <span class="math notranslate nohighlight">\(T_0\)</span> (K) at the ambient pressure.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>none</p>
+</dd>
+</dl>
 </section>
-<section id="activation-energy">
-<span id="evap-ae"></span><h3>Activation_Energy<a class="headerlink" href="#activation-energy" title="Permalink to this heading"></a></h3>
-<div class="line-block">
-<div class="line"><strong>Description</strong> : The activation energy <span class="math notranslate nohighlight">\(E_a\)</span>. This value must be specified in Joules per mole units, regardless of the units used elsewhere in the simulation.</div>
-<div class="line"><strong>Type</strong>        : real</div>
-<div class="line"><strong>Default</strong>     : none</div>
+<section id="molar-mass">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">molar_mass</a><a class="headerlink" href="#molar-mass" title="Permalink to this heading"></a></h3>
+<p>The molar mass <span class="math notranslate nohighlight">\(M\)</span> of the evaporating material (mass per mole).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>none</p>
+</dd>
+</dl>
+</section>
+<section id="ambient-pressure">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">ambient_pressure</a><a class="headerlink" href="#ambient-pressure" title="Permalink to this heading"></a></h3>
+<p>The pressure of the ambient atmosphere <span class="math notranslate nohighlight">\(p_0\)</span> (force per unit area).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\(1.01325\times10^5~\text{N}/\text{m}^2\)</span> (1 atm)</p>
+</dd>
+</dl>
+</section>
+<section id="condensation-factor">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">condensation_factor</a><a class="headerlink" href="#condensation-factor" title="Permalink to this heading"></a></h3>
+<p>The empirical constant <span class="math notranslate nohighlight">\(\lambda\)</span> that accounts for the condensation
+of vaporized atoms.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\(0.1\)</span></p>
+</dd>
+<dt class="field-even">Note<span class="colon">:</span></dt>
+<dd class="field-even"><p>For evaporation in a vacuum <span class="math notranslate nohighlight">\(\lambda=1\)</span>, but at 1 atm of
+pressure the Hertz-Knudsen equation overestimates the mass flux by an
+order of magnitude. <a class="footnote-reference brackets" href="#footcite-he2003alloying" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+</dd>
+</dl>
+<hr class="docutils" />
+<div class="docutils container" id="id4">
+<aside class="footnote brackets" id="footcite-he2003alloying" role="note">
+<span class="label"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></span>
+<span class="backrefs">(<a role="doc-backlink" href="#id1">1</a>,<a role="doc-backlink" href="#id3">2</a>)</span>
+<p>X He, Tarasankar DebRoy, and PW Fuerschbach. Alloying element vaporization during laser spot welding of stainless steel. <em>Journal of Physics D: Applied Physics</em>, 36(23):3079, 2003.</p>
+</aside>
+<aside class="footnote brackets" id="footcite-velasco2009clausius" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>S Velasco, FL Román, and JA White. On the Clausius–Clapeyron vapor pressure equation. <em>Journal of Chemical Education</em>, 86(1):106, 2009.</p>
+</aside>
+</aside>
 </div>
 </section>
 </section>
@@ -194,7 +266,7 @@
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2021, LANL.</p>
+    <p>&#169; Copyright 2021-2023, The Truchas Team.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
