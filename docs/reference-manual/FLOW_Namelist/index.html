@@ -63,6 +63,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#numerical-parameters">Numerical Parameters</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#inviscid">inviscid</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#courant-number">courant_number</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#porous-drag">porous_drag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drag-coef">drag_coef</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#drag-implicitness">drag_implicitness</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#viscous-number">viscous_number</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#viscous-implicitness">viscous_implicitness</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#track-interfaces">track_interfaces</a></li>
@@ -157,12 +160,15 @@
 <h3>Physics Options<a class="headerlink" href="#physics-options" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="#flow-inviscid"><span class="std std-ref">inviscid</span></a></p></li>
+<li><p><a class="reference internal" href="#flow-drag"><span class="std std-ref">porous_drag</span></a></p></li>
 </ul>
 </section>
 <section id="numerical-parameters">
 <h3>Numerical Parameters<a class="headerlink" href="#numerical-parameters" title="Permalink to this heading"></a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="#flow-cn"><span class="std std-ref">courant_number</span></a></p></li>
+<li><p><a class="reference internal" href="#flow-dc"><span class="std std-ref">drag_coef</span></a></p></li>
+<li><p><a class="reference internal" href="#flow-di"><span class="std std-ref">drag_implicitness</span></a></p></li>
 <li><p><a class="reference internal" href="#flow-vn"><span class="std std-ref">viscous_number</span></a></p></li>
 <li><p><a class="reference internal" href="#flow-vi"><span class="std std-ref">viscous_implicitness</span></a></p></li>
 <li><p><a class="reference internal" href="#flow-ti"><span class="std std-ref">track_interfaces</span></a></p></li>
@@ -199,6 +205,39 @@
 <div class="line"><strong>Notes</strong>       : The Courant number for a cell is the dimensionless value <span class="math notranslate nohighlight">\(C_i = u_i \Delta t/\Delta x_i\)</span> where <span class="math notranslate nohighlight">\(\Delta t\)</span> is the timestep, <span class="math notranslate nohighlight">\(u_i\)</span> the fluid velocity magnitude on the cell, and <span class="math notranslate nohighlight">\(\Delta x_i\)</span> a measure of the cell size. The time steplimit is the largest <span class="math notranslate nohighlight">\(\Delta t\)</span> such that <span class="math notranslate nohighlight">\(max\{C_i\}\)</span> equals the value of <a class="reference internal" href="#flow-cn"><span class="std std-ref">courant_number</span></a>. The interpretation of <span class="math notranslate nohighlight">\(u_i\)</span> and <span class="math notranslate nohighlight">\(\Delta x_i\)</span> for a general cell is somewhat sticky. Currently a ratio <span class="math notranslate nohighlight">\(u_f/h_f\)</span> is computed for each face of a cell and the maximum taken for the value of <span class="math notranslate nohighlight">\(u_i/\Delta x_i\)</span>. Here <span class="math notranslate nohighlight">\(u_f\)</span> is the normal fluxing velocity on the face, and <span class="math notranslate nohighlight">\(h_f\)</span> is the inscribed cell height at the face; that is, the minimum normal distance between the face and cell nodes not belonging to the face.</div>
 </div>
 </section>
+<section id="porous-drag">
+<span id="flow-drag"></span><h3>porous_drag<a class="headerlink" href="#porous-drag" title="Permalink to this heading"></a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : This option enables a modification<a class="footnote-reference brackets" href="#footcite-voller1987fixed" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> to the momentum equation that adds a drag force in the two-phase mushy zone of solidification problems. Flow in the mushy zone is viewed as flow of the liquid fraction through a porous medium formed by a fixed solid matrix. The added drag force is</div>
+</div>
+<div class="math notranslate nohighlight">
+\[\mathbf{F}_d = - \mu D_0 \frac{(1-\lambda)^2}{\lambda^3} \mathbf{u},\]</div>
+<p>where <span class="math notranslate nohighlight">\(\lambda\)</span> is the local liquid fraction and <span class="math notranslate nohighlight">\(\mu\)</span> is the liquid viscosity. The constant <span class="math notranslate nohighlight">\(D_0\)</span> is specified by the input variable <a class="reference internal" href="#flow-dc"><span class="std std-ref">drag_coef</span></a>. See also the variable <a class="reference internal" href="#flow-di"><span class="std std-ref">drag_implicitness</span></a>. This option is only available for viscous flows.</p>
+<div class="line-block">
+<div class="line"><strong>Type</strong>        : logical</div>
+<div class="line"><strong>Default</strong>     : false</div>
+</div>
+</section>
+<section id="drag-coef">
+<span id="flow-dc"></span><h3>drag_coef<a class="headerlink" href="#drag-coef" title="Permalink to this heading"></a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : The coefficient <span class="math notranslate nohighlight">\(D_0\)</span> in the porous drag force <span class="math notranslate nohighlight">\(\mathbf{F}_d\)</span>.</div>
+<div class="line"><strong>Physical dimension</strong> : <span class="math notranslate nohighlight">\(1/L^2\)</span></div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : none</div>
+<div class="line"><strong>Valid values</strong>       : <span class="math notranslate nohighlight">\(&gt; 0.0\)</span></div>
+</div>
+</section>
+<section id="drag-implicitness">
+<span id="flow-di"></span><h3>drag_implicitness<a class="headerlink" href="#drag-implicitness" title="Permalink to this heading"></a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : The degree of time implicitness <span class="math notranslate nohighlight">\(\theta\)</span> used for the velocity field in the discretization of the porous drag force in the fluid momentum equation. The discretized velocity is given by the <span class="math notranslate nohighlight">\(\theta\)</span>-method, <span class="math notranslate nohighlight">\(\mathbf{u} = (1-\theta)\mathbf{u}_n + \theta\mathbf{u}_{n+1}\)</span>: <span class="math notranslate nohighlight">\(\theta = 0\)</span> gives an explicit discretization and <span class="math notranslate nohighlight">\(\theta = 1\)</span> a fully implicit discretization. In practice only the values <span class="math notranslate nohighlight">\(1, \frac{1}{2}\)</span> (trapezoid method), and 0 are useful, and use of the latter explicit discretization is generally not recommended. Note that an implicit discretization, <span class="math notranslate nohighlight">\(\theta &gt; 0\)</span>, will require the solution of a linear system; see <a class="reference internal" href="../FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html#flow-pressure-solver-and-flow-viscous-solver-namelists"><span class="std std-ref">FLOW_VISCOUS_SOLVER</span></a>.</div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : 1</div>
+<div class="line"><strong>Valid values</strong>: [0, 1]</div>
+<div class="line"><strong>Notes</strong>   : The discretization is first order except for the trapezoid method (<span class="math notranslate nohighlight">\(\theta=\frac12\)</span>) which is second order. However note that the flow algorithm overall is only first order irrespective of the choice of <span class="math notranslate nohighlight">\(\theta\)</span>. The advanced velocity <span class="math notranslate nohighlight">\(u_{n+1}\)</span> is actually the predicted velocity <span class="math notranslate nohighlight">\(u_{n+1}^*\)</span> from the predictor stage of the flow algorithm.</div>
+</div>
+</section>
 <section id="viscous-number">
 <span id="flow-vn"></span><h3>viscous_number<a class="headerlink" href="#viscous-number" title="Permalink to this heading"></a></h3>
 <div class="line-block">
@@ -216,7 +255,7 @@
 <div class="line"><strong>Type</strong>    : real</div>
 <div class="line"><strong>Default</strong> : 1</div>
 <div class="line"><strong>Valid Values</strong>: [0,1]</div>
-<div class="line"><strong>Notes</strong>   : The discretization is first order except for the trapezoid method (<span class="math notranslate nohighlight">\(\theta\)</span> = 12) which is second order. However note that the flow algorithm overall is only first order irrespective of the choice of <span class="math notranslate nohighlight">\(\theta\)</span>. The advanced velocity <span class="math notranslate nohighlight">\(u_{n+1}\)</span> is actually the predicted velocity <span class="math notranslate nohighlight">\(u_{n+1}^*\)</span> from the predictor stage of the flow algorithm.</div>
+<div class="line"><strong>Notes</strong>   : The discretization is first order except for the trapezoid method (<span class="math notranslate nohighlight">\(\theta=\frac12\)</span>) which is second order. However note that the flow algorithm overall is only first order irrespective of the choice of <span class="math notranslate nohighlight">\(\theta\)</span>. The advanced velocity <span class="math notranslate nohighlight">\(u_{n+1}\)</span> is actually the predicted velocity <span class="math notranslate nohighlight">\(u_{n+1}^*\)</span> from the predictor stage of the flow algorithm.</div>
 </div>
 </section>
 <section id="track-interfaces">
@@ -241,7 +280,7 @@
 <div class="line"><strong>Description</strong> : The number of sub-time steps <span class="math notranslate nohighlight">\(n\)</span> taken by the volume tracker for every time step of the flow algorithm. If the flow time step size is <span class="math notranslate nohighlight">\(\Delta t\)</span> then the volume tracker will taken time steps of size <span class="math notranslate nohighlight">\(\Delta t/n\)</span> to compute the net flux volumes and advance the volume fractions for the flow step.</div>
 <div class="line"><strong>Type</strong>   : integer</div>
 <div class="line"><strong>Default</strong>: 2</div>
-<div class="line"><strong>Notes</strong>  : With the current unsplit advection algorithm <a class="footnote-reference brackets" href="#footcite-rider1998reconstructing" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> it is necessary to sub-cycle the the volume tracking time integration method in order to obtain good “corner coupling” of the volume flux terms.</div>
+<div class="line"><strong>Notes</strong>  : With the current unsplit advection algorithm <a class="footnote-reference brackets" href="#footcite-rider1998reconstructing" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> it is necessary to sub-cycle the the volume tracking time integration method in order to obtain good “corner coupling” of the volume flux terms.</div>
 </div>
 </section>
 <section id="nested-dissection-expert-parameter">
@@ -273,7 +312,7 @@
 <section id="fischer-dim-expert-parameter">
 <span id="flow-fd"></span><h3>fischer_dim (Expert Parameter)<a class="headerlink" href="#fischer-dim-expert-parameter" title="Permalink to this heading"></a></h3>
 <div class="line-block">
-<div class="line"><strong>Description</strong> : The dimension <span class="math notranslate nohighlight">\(d\)</span> of the subspace used in Fischer’s projection method <a class="footnote-reference brackets" href="#footcite-fischer1998projection" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> for computing aninitial guess for pressure projection system based on previous solutions. Memory requirements for the method are <span class="math notranslate nohighlight">\(2(d+ 1)\)</span> cell-based vectors. Set this variable to 0 to disable use of this method.</div>
+<div class="line"><strong>Description</strong> : The dimension <span class="math notranslate nohighlight">\(d\)</span> of the subspace used in Fischer’s projection method <a class="footnote-reference brackets" href="#footcite-fischer1998projection" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> for computing aninitial guess for pressure projection system based on previous solutions. Memory requirements for the method are <span class="math notranslate nohighlight">\(2(d+ 1)\)</span> cell-based vectors. Set this variable to 0 to disable use of this method.</div>
 <div class="line"><strong>Type</strong>   : integer</div>
 <div class="line"><strong>Default</strong>: <span class="math notranslate nohighlight">\(6\)</span></div>
 </div>
@@ -336,13 +375,17 @@
 <div class="line"><strong>Type</strong>   : real</div>
 <div class="line"><strong>Default</strong>: 0.25</div>
 </div>
-<div class="docutils container" id="id4">
-<aside class="footnote brackets" id="footcite-rider1998reconstructing" role="note">
+<div class="docutils container" id="id5">
+<aside class="footnote brackets" id="footcite-voller1987fixed" role="note">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p>Vaughan R Voller and Chander Prakash. A fixed grid numerical modelling methodology for convection-diffusion mushy region phase-change problems. <em>International journal of heat and mass transfer</em>, 30(8):1709–1719, 1987.</p>
+</aside>
+<aside class="footnote brackets" id="footcite-rider1998reconstructing" role="note">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">2</a><span class="fn-bracket">]</span></span>
 <p>William J Rider and Douglas B Kothe. Reconstructing volume tracking. <em>Journal of computational physics</em>, 141(2):112–152, 1998.</p>
 </aside>
 <aside class="footnote brackets" id="footcite-fischer1998projection" role="note">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">2</a><span class="fn-bracket">]</span></span>
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">3</a><span class="fn-bracket">]</span></span>
 <p>Paul F Fischer. Projection techniques for iterative solution of ax= b with successive right-hand sides. <em>Computer methods in applied mechanics and engineering</em>, 163(1-4):193–204, 1998.</p>
 </aside>
 </aside>
