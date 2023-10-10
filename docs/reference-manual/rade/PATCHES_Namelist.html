@@ -12,11 +12,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=8d563738"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script>window.MathJax = {"chtml": {"displayAlign": "left", "displayIndent": "2em"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -126,7 +126,7 @@
            <div itemprop="articleBody">
              
   <section id="patches-namelist">
-<h1>PATCHES Namelist<a class="headerlink" href="#patches-namelist" title="Permalink to this heading"></a></h1>
+<h1>PATCHES Namelist<a class="headerlink" href="#patches-namelist" title="Link to this heading"></a></h1>
 <p>The <strong>PATCHES</strong> namelist defines the parameters used by the patching algorithms.
 The namelist supports many parameters, but not all parameters are used by all
 algorithms. Parameters only used by a particular algorithm are prefixed with the
@@ -140,7 +140,7 @@ algorithm’s name. These parameters are described in detail below.</p>
 </dd>
 </dl>
 <section id="general-guidance">
-<h2>General Guidance<a class="headerlink" href="#general-guidance" title="Permalink to this heading"></a></h2>
+<h2>General Guidance<a class="headerlink" href="#general-guidance" title="Link to this heading"></a></h2>
 <p>Genre’s patching allows the Chaparral library to group faces together into
 patches. This has two main purposes, both especially useful in large problems:</p>
 <ol class="arabic simple">
@@ -170,7 +170,7 @@ assess their quality.</p>
 <p><sup>Result of patching on the ‘basic hemi’ enclosure.</sup></p>
 </section>
 <section id="components">
-<h2>Components<a class="headerlink" href="#components" title="Permalink to this heading"></a></h2>
+<h2>Components<a class="headerlink" href="#components" title="Link to this heading"></a></h2>
 <nav class="contents local" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#metis-parameters" id="id3">METIS Parameters</a></p>
@@ -191,7 +191,7 @@ assess their quality.</p>
 </ul>
 </div>
 <section id="metis-parameters">
-<h3><a class="toc-backref" href="#id3" role="doc-backlink">METIS Parameters</a><a class="headerlink" href="#metis-parameters" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">METIS Parameters</a><a class="headerlink" href="#metis-parameters" title="Link to this heading"></a></h3>
 <p>The following namelist parameters apply only to the METIS algorithm. For more
 information, refer to the <a class="reference external" href="https://www.truchas.org/docs/sphinx/tools/RadE/patches/metis.html">METIS algorithm documentation</a>.</p>
 <p>The METIS algorithm constructs the weighted dual graph of the enclosure and
@@ -202,7 +202,7 @@ directly to the METIS graph partitioner.</p>
 <p>We first discuss the three parameters used during initialization, and then
 briefly present the 12 METIS library parameters passed to the graph partitioner.</p>
 <section id="metis-face-patch-ratio">
-<h4><a class="toc-backref" href="#id4" role="doc-backlink">metis_face_patch_ratio</a><a class="headerlink" href="#metis-face-patch-ratio" title="Permalink to this heading"></a></h4>
+<h4><a class="toc-backref" href="#id4" role="doc-backlink">metis_face_patch_ratio</a><a class="headerlink" href="#metis-face-patch-ratio" title="Link to this heading"></a></h4>
 <p>Defines the ratio of total faces to total desired patches, and by extension the
 final number of patches generated.</p>
 <dl class="field-list simple">
@@ -237,7 +237,7 @@ short, <span class="math notranslate nohighlight">\(N_p\)</span> is only a sugge
 other parameters if an exact patch count is desired.</p>
 </section>
 <section id="metis-edge-weight">
-<h4><a class="toc-backref" href="#id5" role="doc-backlink">metis_edge_weight</a><a class="headerlink" href="#metis-edge-weight" title="Permalink to this heading"></a></h4>
+<h4><a class="toc-backref" href="#id5" role="doc-backlink">metis_edge_weight</a><a class="headerlink" href="#metis-edge-weight" title="Link to this heading"></a></h4>
 <p>Determines whether to weight the edges of the dual graph by the corresponding
 enclosure edge lengths.</p>
 <dl class="field-list simple">
@@ -256,7 +256,7 @@ of the METIS algorithm documentation for more information on how the parameter
 affects the final patch configuration.</p>
 </section>
 <section id="metis-face-weight">
-<h4><a class="toc-backref" href="#id6" role="doc-backlink">metis_face_weight</a><a class="headerlink" href="#metis-face-weight" title="Permalink to this heading"></a></h4>
+<h4><a class="toc-backref" href="#id6" role="doc-backlink">metis_face_weight</a><a class="headerlink" href="#metis-face-weight" title="Link to this heading"></a></h4>
 <p>Determines whether to weight the vertices of the dual graph by the corresponding
 enclosure face areas.</p>
 <dl class="field-list simple">
@@ -275,7 +275,7 @@ of the METIS algorithm documentation for more information on how the parameter
 affects the final patch configuration.</p>
 </section>
 <section id="metis-ncuts">
-<h4><a class="toc-backref" href="#id7" role="doc-backlink">metis_ncuts</a><a class="headerlink" href="#metis-ncuts" title="Permalink to this heading"></a></h4>
+<h4><a class="toc-backref" href="#id7" role="doc-backlink">metis_ncuts</a><a class="headerlink" href="#metis-ncuts" title="Link to this heading"></a></h4>
 <p>Specifies the number of different partitionings that will be computed. The final
 partitioning will be the one that achieves the best edge-cut or communication
 volume.</p>
@@ -292,7 +292,7 @@ volume.</p>
 </dl>
 </section>
 <section id="metis-seed">
-<h4><a class="toc-backref" href="#id8" role="doc-backlink">metis_seed</a><a class="headerlink" href="#metis-seed" title="Permalink to this heading"></a></h4>
+<h4><a class="toc-backref" href="#id8" role="doc-backlink">metis_seed</a><a class="headerlink" href="#metis-seed" title="Link to this heading"></a></h4>
 <p>Specifies the seed for the random number generator.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
@@ -310,7 +310,7 @@ identical output, set this parameter.</p>
 </div>
 </section>
 <section id="metis-ufactor">
-<h4><a class="toc-backref" href="#id9" role="doc-backlink">metis_ufactor</a><a class="headerlink" href="#metis-ufactor" title="Permalink to this heading"></a></h4>
+<h4><a class="toc-backref" href="#id9" role="doc-backlink">metis_ufactor</a><a class="headerlink" href="#metis-ufactor" title="Link to this heading"></a></h4>
 <p>Specifies the maximum allowed load imbalance among the partitions. A value of
 <span class="math notranslate nohighlight">\(n\)</span> indicates that the allowed load imbalance is <span class="math notranslate nohighlight">\((1+n)/1000\)</span>.</p>
 <dl class="field-list simple">

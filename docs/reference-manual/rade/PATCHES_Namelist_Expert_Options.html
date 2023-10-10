@@ -12,11 +12,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=8d563738"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script>window.MathJax = {"chtml": {"displayAlign": "left", "displayIndent": "2em"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -127,7 +127,7 @@
            <div itemprop="articleBody">
              
   <section id="patches-namelist-expert-options">
-<h1>PATCHES Namelist (Expert Options)<a class="headerlink" href="#patches-namelist-expert-options" title="Permalink to this heading"></a></h1>
+<h1>PATCHES Namelist (Expert Options)<a class="headerlink" href="#patches-namelist-expert-options" title="Link to this heading"></a></h1>
 <table class="docutils align-center" style="width: 100%">
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="../_images/basic_hemi_pave_1.png"><img alt="pave_patches" class="align-middle" src="../_images/basic_hemi_pave_1.png" style="width: 100%;" /></a></p></td>
@@ -243,9 +243,9 @@ limitations, and supported inputs.</p>
 </ul>
 </nav>
 <section id="general-parameters">
-<h2><a class="toc-backref" href="#id10" role="doc-backlink">General Parameters</a><a class="headerlink" href="#general-parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">General Parameters</a><a class="headerlink" href="#general-parameters" title="Link to this heading"></a></h2>
 <section id="patch-algorithm">
-<h3><a class="toc-backref" href="#id11" role="doc-backlink">patch_algorithm</a><a class="headerlink" href="#patch-algorithm" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">patch_algorithm</a><a class="headerlink" href="#patch-algorithm" title="Link to this heading"></a></h3>
 <p>Selects one of the available algorithms, or disables patching.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
@@ -271,7 +271,7 @@ patches.</p></li>
 </dl>
 </section>
 <section id="verbosity-level">
-<h3><a class="toc-backref" href="#id12" role="doc-backlink">verbosity_level</a><a class="headerlink" href="#verbosity-level" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">verbosity_level</a><a class="headerlink" href="#verbosity-level" title="Link to this heading"></a></h3>
 <p>Defines the verbosity level for all console output of the patch algorithm.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
@@ -290,7 +290,7 @@ patches.</p></li>
 </dl>
 </section>
 <section id="max-angle">
-<h3><a class="toc-backref" href="#id13" role="doc-backlink">max_angle</a><a class="headerlink" href="#max-angle" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">max_angle</a><a class="headerlink" href="#max-angle" title="Link to this heading"></a></h3>
 <p>Defines the maximum allowable angle (in degrees) between adjacent faces.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
@@ -312,7 +312,7 @@ neighbors in the internal adjacency matrix.</p>
 <figcaption>
 <p><span class="caption-number">Figure 36.2.1 </span><span class="caption-text">The connected components of the outer surface of a furnace funnel. MAX_ANGLE
 is set to 20 degrees. Each component is a different color. The face edges are
-omitted for clarity.</span><a class="headerlink" href="#id9" title="Permalink to this image"></a></p>
+omitted for clarity.</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>The patch algorithms guarantee that patches will be <em>connected sets</em> of faces.
@@ -335,10 +335,10 @@ algorithms for more details.</p>
 </section>
 </section>
 <section id="file-parameters">
-<h2><a class="toc-backref" href="#id14" role="doc-backlink">FILE Parameters</a><a class="headerlink" href="#file-parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id14" role="doc-backlink">FILE Parameters</a><a class="headerlink" href="#file-parameters" title="Link to this heading"></a></h2>
 <p>The following namelist parameter applies only to the FILE algorithm.</p>
 <section id="patch-file">
-<h3><a class="toc-backref" href="#id15" role="doc-backlink">patch_file</a><a class="headerlink" href="#patch-file" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">patch_file</a><a class="headerlink" href="#patch-file" title="Link to this heading"></a></h3>
 <p>The path to an existing radiation enclosure file containing patch information.
 The enclosure defined by the file must be identical to the current enclosure.
 This may be an absolute path or a relative path.</p>
@@ -353,11 +353,11 @@ This may be an absolute path or a relative path.</p>
 </section>
 </section>
 <section id="pave-parameters">
-<h2><a class="toc-backref" href="#id16" role="doc-backlink">PAVE Parameters</a><a class="headerlink" href="#pave-parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id16" role="doc-backlink">PAVE Parameters</a><a class="headerlink" href="#pave-parameters" title="Link to this heading"></a></h2>
 <p>The following namelist parameters apply only to the PAVE algorithm. For more
 information, refer to the <a class="reference external" href="https://www.truchas.org/docs/sphinx/tools/RadE/patches/pave.html">PAVE algorithm documentation</a>.</p>
 <section id="pave-merge-level">
-<h3><a class="toc-backref" href="#id17" role="doc-backlink">pave_merge_level</a><a class="headerlink" href="#pave-merge-level" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id17" role="doc-backlink">pave_merge_level</a><a class="headerlink" href="#pave-merge-level" title="Link to this heading"></a></h3>
 <p>Controls the aggressiveness of patch merging. After paving is complete, there
 will be a valid patching of the enclosure. The algorithm then attempts to merge
 patches in order to reduce the patch count.</p>
@@ -386,7 +386,7 @@ always performed.</p></li>
 </dl>
 </section>
 <section id="pave-split-patch-size">
-<h3><a class="toc-backref" href="#id18" role="doc-backlink">pave_split_patch_size</a><a class="headerlink" href="#pave-split-patch-size" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id18" role="doc-backlink">pave_split_patch_size</a><a class="headerlink" href="#pave-split-patch-size" title="Link to this heading"></a></h3>
 <p>Defines the maximum size of patches to be split during patch merging.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
@@ -414,7 +414,7 @@ and to 5 for triangular meshes. This avoids splitting too many patches.</p>
 </div>
 </section>
 <section id="pave-random-seed">
-<h3><a class="toc-backref" href="#id19" role="doc-backlink">pave_random_seed</a><a class="headerlink" href="#pave-random-seed" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id19" role="doc-backlink">pave_random_seed</a><a class="headerlink" href="#pave-random-seed" title="Link to this heading"></a></h3>
 <p>Defines the seed for the random number generator used to pick the initial seed
 patches.</p>
 <dl class="field-list simple">
@@ -442,11 +442,11 @@ taken from the system clock and results will likely vary from run to run.</p>
 </section>
 </section>
 <section id="vac-parameters">
-<h2><a class="toc-backref" href="#id20" role="doc-backlink">VAC Parameters</a><a class="headerlink" href="#vac-parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id20" role="doc-backlink">VAC Parameters</a><a class="headerlink" href="#vac-parameters" title="Link to this heading"></a></h2>
 <p>The following namelist parameters apply only to the VAC algorithm. For more
 information, refer to the <a class="reference external" href="https://www.truchas.org/docs/sphinx/tools/RadE/patches/vac.html">VAC algorithm documentation</a>.</p>
 <section id="vac-merge-level">
-<h3><a class="toc-backref" href="#id21" role="doc-backlink">vac_merge_level</a><a class="headerlink" href="#vac-merge-level" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id21" role="doc-backlink">vac_merge_level</a><a class="headerlink" href="#vac-merge-level" title="Link to this heading"></a></h3>
 <p>Controls the aggressiveness of patch merging. After the main stage of the VAC
 algorithm, there will be a valid patching of the enclosure. The algorithm then
 attempts to merge patches in order to reduce the patch count.</p>
@@ -475,7 +475,7 @@ always performed.</p></li>
 </dl>
 </section>
 <section id="vac-split-patch-size">
-<h3><a class="toc-backref" href="#id22" role="doc-backlink">vac_split_patch_size</a><a class="headerlink" href="#vac-split-patch-size" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id22" role="doc-backlink">vac_split_patch_size</a><a class="headerlink" href="#vac-split-patch-size" title="Link to this heading"></a></h3>
 <p>Defines the maximum size of patches to be split during patch merging.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
@@ -504,11 +504,11 @@ and to 5 for triangular meshes. This avoids splitting too many patches.</p>
 </section>
 </section>
 <section id="vsa-parameters">
-<h2><a class="toc-backref" href="#id23" role="doc-backlink">VSA Parameters</a><a class="headerlink" href="#vsa-parameters" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id23" role="doc-backlink">VSA Parameters</a><a class="headerlink" href="#vsa-parameters" title="Link to this heading"></a></h2>
 <p>The following namelist parameters apply only to the VSA algorithm. For more
 information, refer to the <a class="reference external" href="https://www.truchas.org/docs/sphinx/tools/RadE/patches/vsa.html">VSA algorithm documentation</a>.</p>
 <section id="vsa-max-iter">
-<h3><a class="toc-backref" href="#id24" role="doc-backlink">vsa_max_iter</a><a class="headerlink" href="#vsa-max-iter" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id24" role="doc-backlink">vsa_max_iter</a><a class="headerlink" href="#vsa-max-iter" title="Link to this heading"></a></h3>
 <p>Defines the maximum number of iterations.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
@@ -525,7 +525,7 @@ information, refer to the <a class="reference external" href="https://www.trucha
 terminating conditions.</p>
 </section>
 <section id="vsa-min-delta">
-<h3><a class="toc-backref" href="#id25" role="doc-backlink">vsa_min_delta</a><a class="headerlink" href="#vsa-min-delta" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id25" role="doc-backlink">vsa_min_delta</a><a class="headerlink" href="#vsa-min-delta" title="Link to this heading"></a></h3>
 <p>Defines the minimum allowable change in patch proxies between successive
 iterations.</p>
 <dl class="field-list simple">
@@ -547,7 +547,7 @@ the minimum change in patch proxies is less than <code class="docutils literal n
 algorithm stops at that iteration.</p>
 </section>
 <section id="vsa-face-patch-ratio">
-<h3><a class="toc-backref" href="#id26" role="doc-backlink">vsa_face_patch_ratio</a><a class="headerlink" href="#vsa-face-patch-ratio" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id26" role="doc-backlink">vsa_face_patch_ratio</a><a class="headerlink" href="#vsa-face-patch-ratio" title="Link to this heading"></a></h3>
 <p>Defines the ratio of total faces to total patches, and by extension the total
 number of patches.</p>
 <dl class="field-list simple">
@@ -570,7 +570,7 @@ expressing this parameter as a ratio allows the same value to apply to a variety
 of meshes.</p>
 </section>
 <section id="vsa-max-patch-radius">
-<h3><a class="toc-backref" href="#id27" role="doc-backlink">vsa_max_patch_radius</a><a class="headerlink" href="#vsa-max-patch-radius" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id27" role="doc-backlink">vsa_max_patch_radius</a><a class="headerlink" href="#vsa-max-patch-radius" title="Link to this heading"></a></h3>
 <p>Defines the desired maximum radius for a patch.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
@@ -593,7 +593,7 @@ because it is squared in the face weight computation. By taking the root of
 the default value on the order of <span class="math notranslate nohighlight">\(1.34\times 10^{154}\)</span>.</p>
 </section>
 <section id="vsa-normalize-dist">
-<h3><a class="toc-backref" href="#id28" role="doc-backlink">vsa_normalize_dist</a><a class="headerlink" href="#vsa-normalize-dist" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id28" role="doc-backlink">vsa_normalize_dist</a><a class="headerlink" href="#vsa-normalize-dist" title="Link to this heading"></a></h3>
 <p>Determines whether to normalize the distance bias.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
@@ -614,7 +614,7 @@ of the VSA documentation for more information on how the parameter affects the
 face weight computation.</p>
 </section>
 <section id="vsa-random-seed">
-<h3><a class="toc-backref" href="#id29" role="doc-backlink">vsa_random_seed</a><a class="headerlink" href="#vsa-random-seed" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id29" role="doc-backlink">vsa_random_seed</a><a class="headerlink" href="#vsa-random-seed" title="Link to this heading"></a></h3>
 <p>Defines the seed for the random number generator used to pick the initial seed
 patches.</p>
 <dl class="field-list simple">
@@ -641,13 +641,13 @@ likely vary from run to run.</p>
 </section>
 </section>
 <section id="metis-parameters-advanced">
-<h2><a class="toc-backref" href="#id30" role="doc-backlink">METIS Parameters (Advanced)</a><a class="headerlink" href="#metis-parameters-advanced" title="Permalink to this heading"></a></h2>
+<h2><a class="toc-backref" href="#id30" role="doc-backlink">METIS Parameters (Advanced)</a><a class="headerlink" href="#metis-parameters-advanced" title="Link to this heading"></a></h2>
 <p>The METIS graph partitioning routine admits the following integer-valued options
 that may be specified, though all have reasonable defaults so that none must be
 specified. See the METIS documentation <a class="footnote-reference brackets" href="#footcite-karypis-1998-metis" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>
 for more details on these options.</p>
 <section id="metis-ptype">
-<h3><a class="toc-backref" href="#id31" role="doc-backlink">metis_ptype</a><a class="headerlink" href="#metis-ptype" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id31" role="doc-backlink">metis_ptype</a><a class="headerlink" href="#metis-ptype" title="Link to this heading"></a></h3>
 <p>Specifies the partitioning method.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
@@ -665,7 +665,7 @@ for more details on these options.</p>
 </dl>
 </section>
 <section id="metis-objtype">
-<h3><a class="toc-backref" href="#id32" role="doc-backlink">metis_objtype</a><a class="headerlink" href="#metis-objtype" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id32" role="doc-backlink">metis_objtype</a><a class="headerlink" href="#metis-objtype" title="Link to this heading"></a></h3>
 <p>Specifies the type of objective.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
@@ -683,7 +683,7 @@ for more details on these options.</p>
 </dl>
 </section>
 <section id="metis-ctype">
-<h3><a class="toc-backref" href="#id33" role="doc-backlink">metis_ctype</a><a class="headerlink" href="#metis-ctype" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id33" role="doc-backlink">metis_ctype</a><a class="headerlink" href="#metis-ctype" title="Link to this heading"></a></h3>
 <p>Specifies the matching scheme to be used during coarsening.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
@@ -701,7 +701,7 @@ for more details on these options.</p>
 </dl>
 </section>
 <section id="metis-iptype">
-<h3><a class="toc-backref" href="#id34" role="doc-backlink">metis_iptype</a><a class="headerlink" href="#metis-iptype" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id34" role="doc-backlink">metis_iptype</a><a class="headerlink" href="#metis-iptype" title="Link to this heading"></a></h3>
 <p>Specifies the algorithm used during initial partitioning (recursive bisection
 only).</p>
 <dl class="field-list simple">
@@ -722,7 +722,7 @@ only).</p>
 </dl>
 </section>
 <section id="metis-niter">
-<h3><a class="toc-backref" href="#id35" role="doc-backlink">metis_niter</a><a class="headerlink" href="#metis-niter" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id35" role="doc-backlink">metis_niter</a><a class="headerlink" href="#metis-niter" title="Link to this heading"></a></h3>
 <p>Specifies the number of iterations of the refinement algorithm at each stage of
 the uncoarsening process.</p>
 <dl class="field-list simple">
@@ -738,7 +738,7 @@ the uncoarsening process.</p>
 </dl>
 </section>
 <section id="metis-minconn">
-<h3><a class="toc-backref" href="#id36" role="doc-backlink">metis_minconn</a><a class="headerlink" href="#metis-minconn" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id36" role="doc-backlink">metis_minconn</a><a class="headerlink" href="#metis-minconn" title="Link to this heading"></a></h3>
 <p>Specifies whether the partitioning procedure should seek to minimize the maximum
 degree of the subdomain graph. The subdomain graph is the graph in which each
 partition is a node, and edges connect subdomains with a shared interface.</p>
@@ -758,7 +758,7 @@ partition is a node, and edges connect subdomains with a shared interface.</p>
 </dl>
 </section>
 <section id="metis-no2hop">
-<h3><a class="toc-backref" href="#id37" role="doc-backlink">metis_no2hop</a><a class="headerlink" href="#metis-no2hop" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id37" role="doc-backlink">metis_no2hop</a><a class="headerlink" href="#metis-no2hop" title="Link to this heading"></a></h3>
 <p>Specifies that the coarsening will not perform any 2–hop matchings when the
 standard matching approach fails to sufficiently coarsen the graph.</p>
 <dl class="field-list simple">
@@ -782,7 +782,7 @@ distributions.</p>
 </div>
 </section>
 <section id="metis-contig">
-<h3><a class="toc-backref" href="#id38" role="doc-backlink">metis_contig</a><a class="headerlink" href="#metis-contig" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id38" role="doc-backlink">metis_contig</a><a class="headerlink" href="#metis-contig" title="Link to this heading"></a></h3>
 <p>Specifies whether the partitioning procedure should produce partitions that are
 contiguous. If the dual graph of the mesh is not connected this option is
 ignored.</p>
@@ -802,7 +802,7 @@ ignored.</p>
 </dl>
 </section>
 <section id="metis-dbglvl">
-<h3><a class="toc-backref" href="#id39" role="doc-backlink">metis_dbglvl</a><a class="headerlink" href="#metis-dbglvl" title="Permalink to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id39" role="doc-backlink">metis_dbglvl</a><a class="headerlink" href="#metis-dbglvl" title="Link to this heading"></a></h3>
 <p>Specifies the amount and type of diagnostic information that will be written to
 <strong>stderr</strong> by the partitioning procedure.</p>
 <dl class="field-list simple">

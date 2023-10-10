@@ -12,11 +12,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=8d563738"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script>window.MathJax = {"chtml": {"displayAlign": "left", "displayIndent": "2em"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -136,28 +136,28 @@
   <div class="toctree-wrapper compound" id="viscoplastic-model-namelist">
 </div>
 <section id="id1">
-<h1><span class="section-number">35. </span>VISCOPLASTIC_MODEL Namelist<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
+<h1><span class="section-number">35. </span>VISCOPLASTIC_MODEL Namelist<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
 <section id="overview">
-<h2><span class="section-number">35.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">35.1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
 <p>The VISCOPLASTIC_MODEL namelist defines the viscoplastic model to be used for a particular solid material phase in material stress-strain calculations. Two viscoplastic models are available: a mechanical threshold stress (MTS) model and a power law model. When no model is given for a solid material phase, it is modeled as a purely elastic material. The models specify a relation for the effective plastic strain rate ̇as a function of temperature <span class="math notranslate nohighlight">\(T\)</span> and von Mises stress <span class="math notranslate nohighlight">\(\sigma\)</span>. For more details on the models see the Truchas Physics and Algorithms manual. Briefly:</p>
 <p><strong>Power Law Model</strong>. In the simple power law model, the strain rate relation is</p>
 <div class="math notranslate nohighlight" id="equation-vpm-eq1">
-<span class="eqno">(35.1.1)<a class="headerlink" href="#equation-vpm-eq1" title="Permalink to this equation"></a></span>\[\dot{\epsilon} = A*exp(-Q/RT)*\sigma^n\]</div>
+<span class="eqno">(35.1.1)<a class="headerlink" href="#equation-vpm-eq1" title="Link to this equation"></a></span>\[\dot{\epsilon} = A*exp(-Q/RT)*\sigma^n\]</div>
 <p>where A, n, Q, and R are parameters given by this namelist.</p>
 <p><strong>MTS Model</strong>. The MTS model uses the strain rate relation</p>
 <div class="math notranslate nohighlight" id="equation-vpm-eq">
-<span class="eqno">(35.1.2)<a class="headerlink" href="#equation-vpm-eq" title="Permalink to this equation"></a></span>\[\dot{\epsilon} = \dot{\epsilon_{0i}} exp[-\frac{\mu b^3 g_{0i}}{kT}(1-(\frac{\mu_0}{\mu\sigma_i}(\sigma - \sigma_a))^{p_i})^{q_i}],  \mu = \mu_0 - \frac{D}{exp(T_0/T) - 1}\]</div>
+<span class="eqno">(35.1.2)<a class="headerlink" href="#equation-vpm-eq" title="Link to this equation"></a></span>\[\dot{\epsilon} = \dot{\epsilon_{0i}} exp[-\frac{\mu b^3 g_{0i}}{kT}(1-(\frac{\mu_0}{\mu\sigma_i}(\sigma - \sigma_a))^{p_i})^{q_i}],  \mu = \mu_0 - \frac{D}{exp(T_0/T) - 1}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\dot{\epsilon_{0i}}\)</span>, <span class="math notranslate nohighlight">\(\dot{g_{0i}}\)</span>, b, k, D, <span class="math notranslate nohighlight">\(\mu_0\)</span>, <span class="math notranslate nohighlight">\(T_0\)</span>, <span class="math notranslate nohighlight">\(\sigma_i\)</span>, <span class="math notranslate nohighlight">\(\sigma_a\)</span>, <span class="math notranslate nohighlight">\(p_i\)</span>, and <span class="math notranslate nohighlight">\(q_i\)</span> are parameters given by this namelist. When <span class="math notranslate nohighlight">\(\sigma \lt \sigma_a\)</span> we instead use <span class="math notranslate nohighlight">\(\dot{\epsilon} = K\sigma^5\)</span>, where K is chosen to give continuity with the previous relation at <span class="math notranslate nohighlight">\(\sigma = \sigma_a\)</span>. And when <span class="math notranslate nohighlight">\(\sigma - \sigma_a \gt \mu\sigma_i/\mu_0\)</span> we take <span class="math notranslate nohighlight">\(\dot{\epsilon} = \dot{\epsilon_{0i}}\)</span>.</p>
 </section>
 <section id="viscoplastic-model-namelist-features">
-<h2><span class="section-number">35.2. </span>VISCOPLASTIC_MODEL Namelist Features<a class="headerlink" href="#viscoplastic-model-namelist-features" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">35.2. </span>VISCOPLASTIC_MODEL Namelist Features<a class="headerlink" href="#viscoplastic-model-namelist-features" title="Link to this heading"></a></h2>
 <div class="line-block">
 <div class="line"><strong>Required/Optional        :</strong> Optional; only relevant when <span class="xref std std-ref">Solid_Mechanics</span> is true.</div>
 <div class="line"><strong>Single/Multiple Instances:</strong> Multiple; at most one per solid material phase.</div>
 </div>
 </section>
 <section id="components">
-<h2><span class="section-number">35.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">35.3. </span>Components<a class="headerlink" href="#components" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="#vpm-phase"><span class="std std-ref">Phase</span></a></p></li>
 <li><p><a class="reference internal" href="#vpm-model"><span class="std std-ref">Model</span></a></p></li>
@@ -178,7 +178,7 @@
 <li><p><a class="reference internal" href="#vpm-plr"><span class="std std-ref">Pwr_Law_R</span></a></p></li>
 </ul>
 <section id="phase">
-<span id="vpm-phase"></span><h3>Phase<a class="headerlink" href="#phase" title="Permalink to this heading"></a></h3>
+<span id="vpm-phase"></span><h3>Phase<a class="headerlink" href="#phase" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The name of the material <a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html#material-and-phase-namelists"><span class="std std-ref">PHASE</span></a> to which this viscoplastic model applies.</div>
 <div class="line"><strong>Type</strong>        : case-sensitive string</div>
@@ -186,7 +186,7 @@
 </div>
 </section>
 <section id="model">
-<span id="vpm-model"></span><h3>Model<a class="headerlink" href="#model" title="Permalink to this heading"></a></h3>
+<span id="vpm-model"></span><h3>Model<a class="headerlink" href="#model" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The type of viscoplastic strain rate model.</div>
 <div class="line"><strong>Type</strong>        : case-insensitive string</div>
@@ -196,7 +196,7 @@
 </div>
 </section>
 <section id="mts-b">
-<span id="vpm-mtsb"></span><h3>MTS_b<a class="headerlink" href="#mts-b" title="Permalink to this heading"></a></h3>
+<span id="vpm-mtsb"></span><h3>MTS_b<a class="headerlink" href="#mts-b" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Burgers vector length <span class="math notranslate nohighlight">\(b\)</span> in <a class="reference internal" href="#equation-vpm-eq">Eq.35.1.2</a></div>
 <div class="line"><strong>Physical Dimension</strong>: <span class="math notranslate nohighlight">\(L\)</span></div>
@@ -206,7 +206,7 @@
 </div>
 </section>
 <section id="mts-d">
-<span id="vpm-mtsd"></span><h3>MTS_d<a class="headerlink" href="#mts-d" title="Permalink to this heading"></a></h3>
+<span id="vpm-mtsd"></span><h3>MTS_d<a class="headerlink" href="#mts-d" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Constant <span class="math notranslate nohighlight">\(D\)</span> used in <a class="reference internal" href="#equation-vpm-eq">Eq.35.1.2</a></div>
 <div class="line"><strong>Physical Dimension</strong>: <span class="math notranslate nohighlight">\(F/L^2\)</span></div>
@@ -215,7 +215,7 @@
 </div>
 </section>
 <section id="mts-edot-0i">
-<span id="vpm-mtse"></span><h3>MTS_edot_0i<a class="headerlink" href="#mts-edot-0i" title="Permalink to this heading"></a></h3>
+<span id="vpm-mtse"></span><h3>MTS_edot_0i<a class="headerlink" href="#mts-edot-0i" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Reference strain rate <span class="math notranslate nohighlight">\(\dot{\epsilon_{0i}}\)</span> used in <a class="reference internal" href="#equation-vpm-eq">Eq.35.1.2</a></div>
 <div class="line"><strong>Physical Dimension</strong>: <span class="math notranslate nohighlight">\(T^{-1}\)</span></div>
@@ -225,7 +225,7 @@
 </div>
 </section>
 <section id="mts-g-0i">
-<span id="vpm-mtsg"></span><h3>MTS_g_0i<a class="headerlink" href="#mts-g-0i" title="Permalink to this heading"></a></h3>
+<span id="vpm-mtsg"></span><h3>MTS_g_0i<a class="headerlink" href="#mts-g-0i" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Material constant <span class="math notranslate nohighlight">\(g_{0i}\)</span> used in <a class="reference internal" href="#equation-vpm-eq">Eq.35.1.2</a></div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -234,7 +234,7 @@
 </div>
 </section>
 <section id="mts-k">
-<span id="vpm-mtsk"></span><h3>MTS_k<a class="headerlink" href="#mts-k" title="Permalink to this heading"></a></h3>
+<span id="vpm-mtsk"></span><h3>MTS_k<a class="headerlink" href="#mts-k" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Boltzmanns constant <span class="math notranslate nohighlight">\(k\)</span> used in <a class="reference internal" href="#equation-vpm-eq">Eq.35.1.2</a></div>
 <div class="line"><strong>Physical Dimension</strong>: <span class="math notranslate nohighlight">\(E/\Theta\)</span></div>
@@ -245,7 +245,7 @@
 </div>
 </section>
 <section id="mts-mu-0">
-<span id="vpm-mtsm"></span><h3>MTS_mu_0<a class="headerlink" href="#mts-mu-0" title="Permalink to this heading"></a></h3>
+<span id="vpm-mtsm"></span><h3>MTS_mu_0<a class="headerlink" href="#mts-mu-0" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Reference value <span class="math notranslate nohighlight">\(\mu_0\)</span> for the temperature dependent shear modulus used in <a class="reference internal" href="#equation-vpm-eq">Eq.35.1.2</a></div>
 <div class="line"><strong>Physical Dimension</strong>: <span class="math notranslate nohighlight">\(F/L^2\)</span></div>
@@ -255,7 +255,7 @@
 </div>
 </section>
 <section id="mts-p-i">
-<span id="vpm-mtsp"></span><h3>MTS_p_i<a class="headerlink" href="#mts-p-i" title="Permalink to this heading"></a></h3>
+<span id="vpm-mtsp"></span><h3>MTS_p_i<a class="headerlink" href="#mts-p-i" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Exponent term <span class="math notranslate nohighlight">\(p_i\)</span> used in <a class="reference internal" href="#equation-vpm-eq">Eq.35.1.2</a></div>
 <div class="line"><strong>Physical Dimension</strong>: <span class="math notranslate nohighlight">\(F/L^2\)</span></div>
@@ -265,7 +265,7 @@
 </div>
 </section>
 <section id="mts-q-i">
-<span id="vpm-mtsq"></span><h3>MTS_q_i<a class="headerlink" href="#mts-q-i" title="Permalink to this heading"></a></h3>
+<span id="vpm-mtsq"></span><h3>MTS_q_i<a class="headerlink" href="#mts-q-i" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Exponent term <span class="math notranslate nohighlight">\(q_i\)</span> used in <a class="reference internal" href="#equation-vpm-eq">Eq.35.1.2</a></div>
 <div class="line"><strong>Physical Dimension</strong>: <span class="math notranslate nohighlight">\(F/L^2\)</span></div>
@@ -275,7 +275,7 @@
 </div>
 </section>
 <section id="mts-sig-a">
-<span id="vpm-mtssiga"></span><h3>MTS_sig_a<a class="headerlink" href="#mts-sig-a" title="Permalink to this heading"></a></h3>
+<span id="vpm-mtssiga"></span><h3>MTS_sig_a<a class="headerlink" href="#mts-sig-a" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The athermal stress term <span class="math notranslate nohighlight">\(\sigma_a\)</span> used in <a class="reference internal" href="#equation-vpm-eq">Eq.35.1.2</a></div>
 <div class="line"><strong>Physical Dimension</strong>: <span class="math notranslate nohighlight">\(F/L^2\)</span></div>
@@ -285,7 +285,7 @@
 </div>
 </section>
 <section id="mts-sig-i">
-<span id="vpm-mtssigi"></span><h3>MTS_sig_i<a class="headerlink" href="#mts-sig-i" title="Permalink to this heading"></a></h3>
+<span id="vpm-mtssigi"></span><h3>MTS_sig_i<a class="headerlink" href="#mts-sig-i" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A stress term <span class="math notranslate nohighlight">\(\sigma_i\)</span> related to obstacles to dislocation motion in <a class="reference internal" href="#equation-vpm-eq">Eq.35.1.2</a></div>
 <div class="line"><strong>Physical Dimension</strong>: <span class="math notranslate nohighlight">\(F/L^2\)</span></div>
@@ -295,7 +295,7 @@
 </div>
 </section>
 <section id="mts-temp-0">
-<span id="vpm-mtst"></span><h3>MTS_temp_0<a class="headerlink" href="#mts-temp-0" title="Permalink to this heading"></a></h3>
+<span id="vpm-mtst"></span><h3>MTS_temp_0<a class="headerlink" href="#mts-temp-0" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Constant <span class="math notranslate nohighlight">\(T_0\)</span> used in the temperature dependent shear modulus in <a class="reference internal" href="#equation-vpm-eq">Eq.35.1.2</a></div>
 <div class="line"><strong>Physical Dimension</strong>: <span class="math notranslate nohighlight">\(\Theta\)</span></div>
@@ -305,7 +305,7 @@
 </div>
 </section>
 <section id="pwr-law-a">
-<span id="vpm-pla"></span><h3>Pwr_Law_A<a class="headerlink" href="#pwr-law-a" title="Permalink to this heading"></a></h3>
+<span id="vpm-pla"></span><h3>Pwr_Law_A<a class="headerlink" href="#pwr-law-a" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Constant term <span class="math notranslate nohighlight">\(A\)</span> in <a class="reference internal" href="#equation-vpm-eq1">Eq.35.1.1</a></div>
 <div class="line"><strong>Physical Dimension</strong>: <span class="math notranslate nohighlight">\(F/L^2\)</span></div>
@@ -315,7 +315,7 @@
 </div>
 </section>
 <section id="pwr-law-n">
-<span id="vpm-pln"></span><h3>Pwr_Law_N<a class="headerlink" href="#pwr-law-n" title="Permalink to this heading"></a></h3>
+<span id="vpm-pln"></span><h3>Pwr_Law_N<a class="headerlink" href="#pwr-law-n" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Stress exponent term <span class="math notranslate nohighlight">\(n\)</span> in <a class="reference internal" href="#equation-vpm-eq1">Eq.35.1.1</a></div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -324,7 +324,7 @@
 </div>
 </section>
 <section id="pwr-law-q">
-<span id="vpm-plq"></span><h3>Pwr_Law_Q<a class="headerlink" href="#pwr-law-q" title="Permalink to this heading"></a></h3>
+<span id="vpm-plq"></span><h3>Pwr_Law_Q<a class="headerlink" href="#pwr-law-q" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Activation energy <span class="math notranslate nohighlight">\(Q\)</span> in <a class="reference internal" href="#equation-vpm-eq1">Eq.35.1.1</a></div>
 <div class="line"><strong>Physical Dimension</strong>: <span class="math notranslate nohighlight">\(E/mol\)</span></div>
@@ -334,7 +334,7 @@
 </div>
 </section>
 <section id="pwr-law-r">
-<span id="vpm-plr"></span><h3>Pwr_Law_R<a class="headerlink" href="#pwr-law-r" title="Permalink to this heading"></a></h3>
+<span id="vpm-plr"></span><h3>Pwr_Law_R<a class="headerlink" href="#pwr-law-r" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Gas constant <span class="math notranslate nohighlight">\(R\)</span> in <a class="reference internal" href="#equation-vpm-eq1">Eq.35.1.1</a></div>
 <div class="line"><strong>Physical Dimension</strong>: <span class="math notranslate nohighlight">\(E/(\Theta mol)\)</span></div>

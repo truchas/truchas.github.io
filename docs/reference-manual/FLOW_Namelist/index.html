@@ -12,11 +12,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=8d563738"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script>window.MathJax = {"chtml": {"displayAlign": "left", "displayIndent": "2em"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -142,29 +142,29 @@
   <div class="toctree-wrapper compound" id="flow-namelist">
 </div>
 <section id="id1">
-<h1><span class="section-number">10. </span>FLOW Namelist<a class="headerlink" href="#id1" title="Permalink to this heading"></a></h1>
+<h1><span class="section-number">10. </span>FLOW Namelist<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
 <section id="overview">
-<h2><span class="section-number">10.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">10.1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
 <p>The <a class="reference internal" href="#flow-namelist"><span class="std std-ref">FLOW</span></a> namelist specifies the parameters for the fluid flow model and algorithm. This namelist is read whenever the <a class="reference internal" href="../PHYSICS_Namelist/index.html#physics-namelist"><span class="std std-ref">PHYSICS</span></a> namelist option <a class="reference internal" href="../PHYSICS_Namelist/index.html#physics-f"><span class="std std-ref">Flow</span></a> is enabled. Parameters for the linear solvers employed by the algorithm are specified using <a class="reference internal" href="../FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html#flow-pressure-solver-and-flow-viscous-solver-namelists"><span class="std std-ref">FLOW_VISCOUS_SOLVER</span></a> and <a class="reference internal" href="../FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html#flow-pressure-solver-and-flow-viscous-solver-namelists"><span class="std std-ref">FLOW_PRESSURE_SOLVER</span></a> namelists. Flow boundary conditions are defined using <a class="reference internal" href="../FLOW_BC_Namelist/index.html#flow-bc-namelist"><span class="std std-ref">FLOW_BC</span></a> namelists.</p>
 </section>
 <section id="flow-namelist-features">
-<h2><span class="section-number">10.2. </span>FLOW Namelist Features<a class="headerlink" href="#flow-namelist-features" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">10.2. </span>FLOW Namelist Features<a class="headerlink" href="#flow-namelist-features" title="Link to this heading"></a></h2>
 <div class="line-block">
 <div class="line"><strong>Required/Optional        :</strong> Required when flow physics is enabled.</div>
 <div class="line"><strong>Single/Multiple Instances:</strong> Single</div>
 </div>
 </section>
 <section id="components">
-<h2><span class="section-number">10.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">10.3. </span>Components<a class="headerlink" href="#components" title="Link to this heading"></a></h2>
 <section id="physics-options">
-<h3>Physics Options<a class="headerlink" href="#physics-options" title="Permalink to this heading"></a></h3>
+<h3>Physics Options<a class="headerlink" href="#physics-options" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="#flow-inviscid"><span class="std std-ref">inviscid</span></a></p></li>
 <li><p><a class="reference internal" href="#flow-drag"><span class="std std-ref">porous_drag</span></a></p></li>
 </ul>
 </section>
 <section id="numerical-parameters">
-<h3>Numerical Parameters<a class="headerlink" href="#numerical-parameters" title="Permalink to this heading"></a></h3>
+<h3>Numerical Parameters<a class="headerlink" href="#numerical-parameters" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p><a class="reference internal" href="#flow-cn"><span class="std std-ref">courant_number</span></a></p></li>
 <li><p><a class="reference internal" href="#flow-dc"><span class="std std-ref">drag_coef</span></a></p></li>
@@ -188,7 +188,7 @@
 </ul>
 </section>
 <section id="inviscid">
-<span id="flow-inviscid"></span><h3>inviscid<a class="headerlink" href="#inviscid" title="Permalink to this heading"></a></h3>
+<span id="flow-inviscid"></span><h3>inviscid<a class="headerlink" href="#inviscid" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : This option omits the viscous forces from the flow equations. In this case there is no viscous system to solve and the <a class="reference internal" href="../FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html#flow-pressure-solver-and-flow-viscous-solver-namelists"><span class="std std-ref">FLOW_VISCOUS_SOLVER</span></a> namelist is not required.</div>
 <div class="line"><strong>Type</strong>        : logical</div>
@@ -196,7 +196,7 @@
 </div>
 </section>
 <section id="courant-number">
-<span id="flow-cn"></span><h3>courant_number<a class="headerlink" href="#courant-number" title="Permalink to this heading"></a></h3>
+<span id="flow-cn"></span><h3>courant_number<a class="headerlink" href="#courant-number" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : This parameter sets an upper bound on the time step that is associated with stability of the explicit fluid advection algorithm. A value of 1 corresponds (roughly) to the stability limit, with smaller values resulting in proportionally smaller allowed time steps. Truchas uses the largest timestep possible subject to this and other limits.</div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -206,7 +206,7 @@
 </div>
 </section>
 <section id="porous-drag">
-<span id="flow-drag"></span><h3>porous_drag<a class="headerlink" href="#porous-drag" title="Permalink to this heading"></a></h3>
+<span id="flow-drag"></span><h3>porous_drag<a class="headerlink" href="#porous-drag" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : This option enables a modification<a class="footnote-reference brackets" href="#footcite-voller1987fixed" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> to the momentum equation that adds a drag force in the two-phase mushy zone of solidification problems. Flow in the mushy zone is viewed as flow of the liquid fraction through a porous medium formed by a fixed solid matrix. The added drag force is</div>
 </div>
@@ -219,7 +219,7 @@
 </div>
 </section>
 <section id="drag-coef">
-<span id="flow-dc"></span><h3>drag_coef<a class="headerlink" href="#drag-coef" title="Permalink to this heading"></a></h3>
+<span id="flow-dc"></span><h3>drag_coef<a class="headerlink" href="#drag-coef" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The coefficient <span class="math notranslate nohighlight">\(D_0\)</span> in the porous drag force <span class="math notranslate nohighlight">\(\mathbf{F}_d\)</span>.</div>
 <div class="line"><strong>Physical dimension</strong> : <span class="math notranslate nohighlight">\(1/L^2\)</span></div>
@@ -229,7 +229,7 @@
 </div>
 </section>
 <section id="drag-implicitness">
-<span id="flow-di"></span><h3>drag_implicitness<a class="headerlink" href="#drag-implicitness" title="Permalink to this heading"></a></h3>
+<span id="flow-di"></span><h3>drag_implicitness<a class="headerlink" href="#drag-implicitness" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The degree of time implicitness <span class="math notranslate nohighlight">\(\theta\)</span> used for the velocity field in the discretization of the porous drag force in the fluid momentum equation. The discretized velocity is given by the <span class="math notranslate nohighlight">\(\theta\)</span>-method, <span class="math notranslate nohighlight">\(\mathbf{u} = (1-\theta)\mathbf{u}_n + \theta\mathbf{u}_{n+1}\)</span>: <span class="math notranslate nohighlight">\(\theta = 0\)</span> gives an explicit discretization and <span class="math notranslate nohighlight">\(\theta = 1\)</span> a fully implicit discretization. In practice only the values <span class="math notranslate nohighlight">\(1, \frac{1}{2}\)</span> (trapezoid method), and 0 are useful, and use of the latter explicit discretization is generally not recommended. Note that an implicit discretization, <span class="math notranslate nohighlight">\(\theta &gt; 0\)</span>, will require the solution of a linear system; see <a class="reference internal" href="../FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html#flow-pressure-solver-and-flow-viscous-solver-namelists"><span class="std std-ref">FLOW_VISCOUS_SOLVER</span></a>.</div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -239,7 +239,7 @@
 </div>
 </section>
 <section id="viscous-number">
-<span id="flow-vn"></span><h3>viscous_number<a class="headerlink" href="#viscous-number" title="Permalink to this heading"></a></h3>
+<span id="flow-vn"></span><h3>viscous_number<a class="headerlink" href="#viscous-number" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : This parameter sets an upper bound on the time step that is associated with stability of an explicit treatment of viscous flow stress tensor. A value of 1 corresponds roughly to the stability limit, with smaller values resulting in proportionally smaller allowed time steps. Truchas uses the largest time step possible subject to this and other limits. For an implicit treatment of the viscous flow stress tensor with <a class="reference internal" href="#flow-vi"><span class="std std-ref">viscous_implicitness</span></a> at least 12, which is always strongly recommended, the viscous discretization is unconditionally stable and no <span class="math notranslate nohighlight">\(time \enspace step \enspace limit\)</span> is needed. In this case, the parameter can still be used to limit the time step for accuracy. A value of <span class="math notranslate nohighlight">\(0\)</span> will disable this limit entirely.</div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -249,7 +249,7 @@
 </div>
 </section>
 <section id="viscous-implicitness">
-<span id="flow-vi"></span><h3>viscous_implicitness<a class="headerlink" href="#viscous-implicitness" title="Permalink to this heading"></a></h3>
+<span id="flow-vi"></span><h3>viscous_implicitness<a class="headerlink" href="#viscous-implicitness" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The degree of time implicitness <span class="math notranslate nohighlight">\(\theta\)</span> used for the velocity field in the discretization of the viscous flow stress tensor in the fluid momentum conservation equation. The velocity is given by the <span class="math notranslate nohighlight">\(\theta\)</span>-method, <span class="math notranslate nohighlight">\(u_\theta = (1−\theta)u_n − \theta u_{n+1}:\theta = 0\)</span> gives an explicit discretization and <span class="math notranslate nohighlight">\(\theta = 1\)</span> a fully implicit discretization. In practice only the values <span class="math notranslate nohighlight">\(1, \frac{1}{2}\)</span> (trapezoid method), and 0 are useful, and use of the latter explicit discretization is generally not recommended. Note that an implicit discretization, <span class="math notranslate nohighlight">\(\theta &gt; 0\)</span>, will require the solution of a linear system; see <a class="reference internal" href="../FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html#flow-pressure-solver-and-flow-viscous-solver-namelists"><span class="std std-ref">FLOW_VISCOUS_SOLVER</span></a>. This parameter is not relevant to <a class="reference internal" href="#flow-inviscid"><span class="std std-ref">inviscid</span></a> flow problems</div>
 <div class="line"><strong>Type</strong>    : real</div>
@@ -259,7 +259,7 @@
 </div>
 </section>
 <section id="track-interfaces">
-<span id="flow-ti"></span><h3>track_interfaces<a class="headerlink" href="#track-interfaces" title="Permalink to this heading"></a></h3>
+<span id="flow-ti"></span><h3>track_interfaces<a class="headerlink" href="#track-interfaces" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : This option enables the tracking of material interfaces. The default is to track interfaces whenever the problem involves more than one material. If the problem involves a single fluid and it is known a priori that there will never be any mixed material cells containing fluid, then this option can be set to false to short-circuit some unnecessary work, but otherwise the default should be used.</div>
 <div class="line"><strong>Type</strong>    : logical</div>
@@ -267,7 +267,7 @@
 </div>
 </section>
 <section id="material-priority">
-<span id="flow-mp"></span><h3>material_priority<a class="headerlink" href="#material-priority" title="Permalink to this heading"></a></h3>
+<span id="flow-mp"></span><h3>material_priority<a class="headerlink" href="#material-priority" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A list of material names that defines the priority order in which material interfaces are reconstructed within a cell for volume tracking. All fluid material names must be listed, and if the problem includes any non-fluid materials, this list must include the case-sensitive keyword “SOLID”, which stands for all non-fluid materials lumped together. The default is the list of fluid materials in input file order, followed by “SOLID” for the lumped non-fluids.</div>
 <div class="line"><strong>Type</strong>    : string list</div>
@@ -275,7 +275,7 @@
 </div>
 </section>
 <section id="vol-track-subcycles">
-<span id="flow-vts"></span><h3>vol_track_subcycles<a class="headerlink" href="#vol-track-subcycles" title="Permalink to this heading"></a></h3>
+<span id="flow-vts"></span><h3>vol_track_subcycles<a class="headerlink" href="#vol-track-subcycles" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The number of sub-time steps <span class="math notranslate nohighlight">\(n\)</span> taken by the volume tracker for every time step of the flow algorithm. If the flow time step size is <span class="math notranslate nohighlight">\(\Delta t\)</span> then the volume tracker will taken time steps of size <span class="math notranslate nohighlight">\(\Delta t/n\)</span> to compute the net flux volumes and advance the volume fractions for the flow step.</div>
 <div class="line"><strong>Type</strong>   : integer</div>
@@ -284,7 +284,7 @@
 </div>
 </section>
 <section id="nested-dissection-expert-parameter">
-<span id="flow-nd"></span><h3>nested_dissection (Expert Parameter)<a class="headerlink" href="#nested-dissection-expert-parameter" title="Permalink to this heading"></a></h3>
+<span id="flow-nd"></span><h3>nested_dissection (Expert Parameter)<a class="headerlink" href="#nested-dissection-expert-parameter" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : This option enables use of the nested dissection algorithm to reconstruct material interfaces in cells containing 3 or more materials. If set false the less accurate and less expensive onion skin algorithm will be used.</div>
 <div class="line"><strong>Type</strong>   : logical</div>
@@ -292,7 +292,7 @@
 </div>
 </section>
 <section id="location-iter-max-expert-parameter">
-<span id="flow-lim"></span><h3>location_iter_max (Expert Parameter)<a class="headerlink" href="#location-iter-max-expert-parameter" title="Permalink to this heading"></a></h3>
+<span id="flow-lim"></span><h3>location_iter_max (Expert Parameter)<a class="headerlink" href="#location-iter-max-expert-parameter" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The number of iterations allowed to locate the interface.</div>
 <div class="line"><strong>Type</strong>   : integer</div>
@@ -301,7 +301,7 @@
 </div>
 </section>
 <section id="vol-frac-cutoff-expert-parameter">
-<span id="flow-vfc"></span><h3>vol_frac_cutoff (Expert Parameter)<a class="headerlink" href="#vol-frac-cutoff-expert-parameter" title="Permalink to this heading"></a></h3>
+<span id="flow-vfc"></span><h3>vol_frac_cutoff (Expert Parameter)<a class="headerlink" href="#vol-frac-cutoff-expert-parameter" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The smallest material volume fraction allowed. If a material volume fraction drops below this cutoff, the material is removed entirely from the cell, and its volume fraction replaced by proportional increases to the volume fractions of the remaining materials, or if the cell contains void, by increasing the void volume fraction alone.</div>
 <div class="line"><strong>Type</strong>   : real</div>
@@ -310,7 +310,7 @@
 </div>
 </section>
 <section id="fischer-dim-expert-parameter">
-<span id="flow-fd"></span><h3>fischer_dim (Expert Parameter)<a class="headerlink" href="#fischer-dim-expert-parameter" title="Permalink to this heading"></a></h3>
+<span id="flow-fd"></span><h3>fischer_dim (Expert Parameter)<a class="headerlink" href="#fischer-dim-expert-parameter" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The dimension <span class="math notranslate nohighlight">\(d\)</span> of the subspace used in Fischer’s projection method <a class="footnote-reference brackets" href="#footcite-fischer1998projection" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> for computing aninitial guess for pressure projection system based on previous solutions. Memory requirements for the method are <span class="math notranslate nohighlight">\(2(d+ 1)\)</span> cell-based vectors. Set this variable to 0 to disable use of this method.</div>
 <div class="line"><strong>Type</strong>   : integer</div>
@@ -318,7 +318,7 @@
 </div>
 </section>
 <section id="fluid-frac-threshold-expert-parameter">
-<span id="flow-fft"></span><h3>fluid_frac_threshold (Expert Parameter)<a class="headerlink" href="#fluid-frac-threshold-expert-parameter" title="Permalink to this heading"></a></h3>
+<span id="flow-fft"></span><h3>fluid_frac_threshold (Expert Parameter)<a class="headerlink" href="#fluid-frac-threshold-expert-parameter" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Cells with a total fluid volume fraction less than this threshold are ignored by the flow solver, being regarded as ‘solid’ cells.</div>
 <div class="line"><strong>Type</strong>   : real</div>
@@ -327,7 +327,7 @@
 </div>
 </section>
 <section id="min-face-fraction-expert-parameter">
-<span id="flow-mff"></span><h3>min_face_fraction (Expert Parameter)<a class="headerlink" href="#min-face-fraction-expert-parameter" title="Permalink to this heading"></a></h3>
+<span id="flow-mff"></span><h3>min_face_fraction (Expert Parameter)<a class="headerlink" href="#min-face-fraction-expert-parameter" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The variable sets the minimum value of the fluid density associated with a face for the pressure projection system. It is specified as a fraction of the minimum fluid density (excluding void) of any fluid in the problem.</div>
 <div class="line"><strong>Type</strong>   : real</div>
@@ -335,7 +335,7 @@
 </div>
 </section>
 <section id="void-collapse-experimental">
-<span id="flow-vc"></span><h3>void_collapse (Experimental)<a class="headerlink" href="#void-collapse-experimental" title="Permalink to this heading"></a></h3>
+<span id="flow-vc"></span><h3>void_collapse (Experimental)<a class="headerlink" href="#void-collapse-experimental" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The volume-of-fluid algorithm effectively treats small fragments of void entrained in fluid as incompressible, resulting in unphysical void “bubbles” that persist in the flow. A model that drives the collapse of these void fragments will be enabled when this variable is set to true. See <a class="reference internal" href="#flow-vcr"><span class="std std-ref">void_collapse_relaxation</span></a> for a model parameter.</div>
 <div class="line"><strong>Type</strong>   : logical</div>
@@ -343,7 +343,7 @@
 </div>
 </section>
 <section id="void-collapse-relaxation-experimental">
-<span id="flow-vcr"></span><h3>void_collapse_relaxation (Experimental)<a class="headerlink" href="#void-collapse-relaxation-experimental" title="Permalink to this heading"></a></h3>
+<span id="flow-vcr"></span><h3>void_collapse_relaxation (Experimental)<a class="headerlink" href="#void-collapse-relaxation-experimental" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The relaxation parameter in the void collapse model. See <a class="reference internal" href="#flow-vc"><span class="std std-ref">void_collapse</span></a>.</div>
 <div class="line"><strong>Type</strong>   : real</div>
@@ -353,7 +353,7 @@
 </div>
 </section>
 <section id="wisp-redistribution-experimental">
-<span id="flow-wr"></span><h3>wisp_redistribution (Experimental)<a class="headerlink" href="#wisp-redistribution-experimental" title="Permalink to this heading"></a></h3>
+<span id="flow-wr"></span><h3>wisp_redistribution (Experimental)<a class="headerlink" href="#wisp-redistribution-experimental" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : A cell containing a small amount of fluid (wisps) can sometimes trigger pathological behavior, manifesting as a perpetual acceleration that drives the timestep to 0. A model that redistributes these wisps to other other fluid cells will be enabled when this variable is set to true. See <a class="reference internal" href="#flow-wc"><span class="std std-ref">wisp_cutoff</span></a> and <a class="reference internal" href="#flow-wnc"><span class="std std-ref">wisp_neighbor_cutoff</span></a> model parameters.</div>
 <div class="line"><strong>Type</strong>   : logical</div>
@@ -361,7 +361,7 @@
 </div>
 </section>
 <section id="wisp-cutoff-experimental">
-<span id="flow-wc"></span><h3>wisp_cutoff (Experimental)<a class="headerlink" href="#wisp-cutoff-experimental" title="Permalink to this heading"></a></h3>
+<span id="flow-wc"></span><h3>wisp_cutoff (Experimental)<a class="headerlink" href="#wisp-cutoff-experimental" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Fluid cells with a fluid volume fraction below this value may be treated as wisps and havetheir fluid material moved around to other fluid cells. Generally, moving fluid around the domain can have an undesirable effect on the flow physics. It is therefore advisable to keep this value as small as possible. Based on numerical experimentation, the recommended value is 0.05. Smaller values, such as, 0.01 did not result in robust simulations. See <a class="reference internal" href="#flow-wr"><span class="std std-ref">wisp_redistribution</span></a>.</div>
 <div class="line"><strong>Type</strong>   : real</div>
@@ -369,7 +369,7 @@
 </div>
 </section>
 <section id="wisp-neighbor-cutoff-experimental">
-<span id="flow-wnc"></span><h3>wisp_neighbor_cutoff (Experimental)<a class="headerlink" href="#wisp-neighbor-cutoff-experimental" title="Permalink to this heading"></a></h3>
+<span id="flow-wnc"></span><h3>wisp_neighbor_cutoff (Experimental)<a class="headerlink" href="#wisp-neighbor-cutoff-experimental" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : Fluid cells with a fluid volume fraction below wisp_cutoff can only be considered a wisp if the amount of fluid in the neighboring cells is also “small”. This definition of “small” is controlled by wisp_neighbor_cutoff. In addition, for a a cell to receive wisp material, the fluid volume fraction of it and its neighbors must be larger than wisp_neighbor_cutoff. See <a class="reference internal" href="#flow-wr"><span class="std std-ref">wisp_redistribution</span></a>.</div>
 <div class="line"><strong>Type</strong>   : real</div>

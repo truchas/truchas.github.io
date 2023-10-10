@@ -15,11 +15,11 @@
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="_static/jquery.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script src="_static/sphinx_highlight.js"></script>
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -75,7 +75,7 @@
            <div itemprop="articleBody">
              
   <section id="sphinx-documentation-style-guide">
-<h1>Sphinx Documentation Style Guide<a class="headerlink" href="#sphinx-documentation-style-guide" title="Permalink to this heading"></a></h1>
+<h1>Sphinx Documentation Style Guide<a class="headerlink" href="#sphinx-documentation-style-guide" title="Link to this heading"></a></h1>
 <p>This style guide provides best-practices for writing the Truchas Sphinx documentation. We encourage
 documentation authors to follow this guide to ensure the quality and consistency of all Truchas
 documentation.</p>
@@ -109,7 +109,7 @@ documentation.</p>
 </ul>
 </nav>
 <section id="authors">
-<h2>Authors<a class="headerlink" href="#authors" title="Permalink to this heading"></a></h2>
+<h2>Authors<a class="headerlink" href="#authors" title="Link to this heading"></a></h2>
 <p>Every RST document should include the author near the top of the document. This is done with the
 <a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-sectionauthor">sectionauthor directive</a>.</p>
 <div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">sectionauthor</span><span class="p">::</span> name &lt;email&gt;
@@ -117,7 +117,7 @@ documentation.</p>
 </div>
 </section>
 <section id="headings">
-<h2>Headings<a class="headerlink" href="#headings" title="Permalink to this heading"></a></h2>
+<h2>Headings<a class="headerlink" href="#headings" title="Link to this heading"></a></h2>
 <p>reStructuredText does not assign heading levels to particular characters. Instead, heading levels
 are determined by the order in which they appear. For example, the first heading style creates a top
 level heading, and any further instances of that heading style also creates top level heading.</p>
@@ -140,9 +140,9 @@ level heading, and any further instances of that heading style also creates top 
 </div>
 </section>
 <section id="figures">
-<h2>Figures<a class="headerlink" href="#figures" title="Permalink to this heading"></a></h2>
+<h2>Figures<a class="headerlink" href="#figures" title="Link to this heading"></a></h2>
 <section id="single-figure">
-<h3>Single Figure<a class="headerlink" href="#single-figure" title="Permalink to this heading"></a></h3>
+<h3>Single Figure<a class="headerlink" href="#single-figure" title="Link to this heading"></a></h3>
 <p>When placing a single centered figure with no text wrapping around it, use a <code class="code highlight rst RST docutils literal highlight-RST">figwidth</code> of at
 most 90%. This provides a visual distinction between the text and the figure. The following code
 block produces the figure below it.</p>
@@ -156,7 +156,7 @@ block produces the figure below it.</p>
 <figure class="align-center" id="id1" style="width: 90%">
 <img alt="https://via.placeholder.com/800x600" src="https://via.placeholder.com/800x600" />
 <figcaption>
-<p><span class="caption-text">This is a caption for the figure.</span><a class="headerlink" href="#id1" title="Permalink to this image"></a></p>
+<p><span class="caption-text">This is a caption for the figure.</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Notice how the figure has some padding to its right and left that distinguishes it from the text
@@ -164,12 +164,12 @@ before and after it. This padding is not part of the CSS to prevent excessive wh
 around figures that have text wrapping around them.</p>
 </section>
 <section id="side-by-side-figures">
-<h3>Side-by-Side Figures<a class="headerlink" href="#side-by-side-figures" title="Permalink to this heading"></a></h3>
+<h3>Side-by-Side Figures<a class="headerlink" href="#side-by-side-figures" title="Link to this heading"></a></h3>
 <p>Placing figures side-by-side in reStructuredText can be tricky. The best method we’ve found so far
 is to put the figures in a table. We use the <code class="code highlight rst RST docutils literal highlight-RST">list-table</code> directive when each figure has its
 own caption, and the generic <code class="code highlight rst RST docutils literal highlight-RST">table</code> directive when a caption is shared between figures.</p>
 <section id="individual-captions">
-<h4>Individual Captions<a class="headerlink" href="#individual-captions" title="Permalink to this heading"></a></h4>
+<h4>Individual Captions<a class="headerlink" href="#individual-captions" title="Link to this heading"></a></h4>
 <p>The <code class="code highlight rst RST docutils literal highlight-RST">list-table</code> directive is useful when each figure has its own caption. For example, the
 following code produces the figures below it.</p>
 <div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">list-table</span><span class="p">::</span>
@@ -193,14 +193,14 @@ following code produces the figures below it.</p>
 <tr class="row-odd"><td><figure class="align-center" id="id2">
 <a class="reference internal image-reference" href="https://via.placeholder.com/400x300"><img alt="https://via.placeholder.com/400x300" src="https://via.placeholder.com/400x300" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-text">This is the caption.</span><a class="headerlink" href="#id2" title="Permalink to this image"></a></p>
+<p><span class="caption-text">This is the caption.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </td>
 <td><figure class="align-center" id="id3">
 <a class="reference internal image-reference" href="https://via.placeholder.com/400x300"><img alt="https://via.placeholder.com/400x300" src="https://via.placeholder.com/400x300" style="width: 100%;" /></a>
 <figcaption>
-<p><span class="caption-text">This is the caption.</span><a class="headerlink" href="#id3" title="Permalink to this image"></a></p>
+<p><span class="caption-text">This is the caption.</span><a class="headerlink" href="#id3" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </td>
@@ -209,7 +209,7 @@ following code produces the figures below it.</p>
 </table>
 </section>
 <section id="shared-captions">
-<h4>Shared Captions<a class="headerlink" href="#shared-captions" title="Permalink to this heading"></a></h4>
+<h4>Shared Captions<a class="headerlink" href="#shared-captions" title="Link to this heading"></a></h4>
 <p>The <code class="code highlight rst RST docutils literal highlight-RST">list-table</code> syntax does not allow multi-column cells, so we instead use the more general
 <code class="code highlight rst RST docutils literal highlight-RST">table</code> directive. Due to how tables are parsed, however, this means that images must be
 included indirectly through a substitution.</p>
@@ -256,7 +256,7 @@ third image (right).</p></td>
 </section>
 </section>
 <section id="namelists">
-<h2>Namelists<a class="headerlink" href="#namelists" title="Permalink to this heading"></a></h2>
+<h2>Namelists<a class="headerlink" href="#namelists" title="Link to this heading"></a></h2>
 <p>When describing a namelist and its parameters, use the following format. The exact heading level is
 not important, as long as the parameters are sub-headings of the namelist.</p>
 <div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="gh">EXAMPLE Namelist</span>
@@ -278,7 +278,7 @@ A more in-depth description of parameter 1. This can include any content
 <p>For examples of how namelists are described using this format, see the <a class="reference internal" href="tools/RadE/patches/patches_namelist.html"><span class="doc">PATCHES namelist
 documentation</span></a>.</p>
 <section id="namelist-parameter-directive">
-<h3>Namelist Parameter Directive<a class="headerlink" href="#namelist-parameter-directive" title="Permalink to this heading"></a></h3>
+<h3>Namelist Parameter Directive<a class="headerlink" href="#namelist-parameter-directive" title="Link to this heading"></a></h3>
 <p>When describing a namelist parameter, the ‘namelist_parameter’ directive should be used after the
 short description. This custom directive is provided by the Truchas Sphinx build.</p>
 <p>The directive inserts an element of the <em>nml-param</em> class, ensuring that all namelist
@@ -304,7 +304,7 @@ parameters are styled consistently throughout the documentation.</p>
 </section>
 </section>
 <section id="inline-fortran-code">
-<h2>Inline Fortran Code<a class="headerlink" href="#inline-fortran-code" title="Permalink to this heading"></a></h2>
+<h2>Inline Fortran Code<a class="headerlink" href="#inline-fortran-code" title="Link to this heading"></a></h2>
 <p>The Truchas Sphinx build provides a special ‘fortran’ role for writing inline Fortran code. For
 example, the following RST code</p>
 <div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="na">:fortran:</span><span class="nv">`integer :: x`</span>
@@ -313,9 +313,9 @@ example, the following RST code</p>
 <p>produces the inline Fortran code <code class="code highlight fortran docutils literal highlight-fortran"><span class="kt">integer</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">x</span></code>.</p>
 </section>
 <section id="other-tips">
-<h2>Other Tips<a class="headerlink" href="#other-tips" title="Permalink to this heading"></a></h2>
+<h2>Other Tips<a class="headerlink" href="#other-tips" title="Link to this heading"></a></h2>
 <section id="math-default-role">
-<h3>Math default role<a class="headerlink" href="#math-default-role" title="Permalink to this heading"></a></h3>
+<h3>Math default role<a class="headerlink" href="#math-default-role" title="Link to this heading"></a></h3>
 <p>For documents with a lot of inline math, you can set the default role to math by adding the
 line</p>
 <div class="highlight-RST notranslate"><div class="highlight"><pre><span></span><span class="p">..</span> <span class="ow">default-role</span><span class="p">::</span> math

@@ -12,11 +12,11 @@
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script src="../_static/sphinx_highlight.js"></script>
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=8d563738"></script>
+        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script>window.MathJax = {"chtml": {"displayAlign": "left", "displayIndent": "2em"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
@@ -123,20 +123,20 @@
   <div class="toctree-wrapper compound" id="simulation-control-namelist">
 </div>
 <section id="simulation-control-namelist-experimental">
-<h1><span class="section-number">25. </span>SIMULATION_CONTROL Namelist (Experimental)<a class="headerlink" href="#simulation-control-namelist-experimental" title="Permalink to this heading"></a></h1>
+<h1><span class="section-number">25. </span>SIMULATION_CONTROL Namelist (Experimental)<a class="headerlink" href="#simulation-control-namelist-experimental" title="Link to this heading"></a></h1>
 <section id="overview">
-<h2><span class="section-number">25.1. </span>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">25.1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
 <p>There may be points in time during a simulation when something changes abruptly; a boundary condition or source turns on/off, or a physics model is enabled/disabled, for example. In such circumstances it is best to hit these times precisely with a time step and then continue from that point with a reduced step size appropriate to resolving the time transients that result from the impulsive forcing of the model—in essence, to split the simulation seamlessly into a sequence of phases where each phase is a new simulation whose initial state is the final state of the preceding phase. This experimental namelist provides a means for achieving this. The start time of each additional phase subsequent to the initial phase is specified using the <a class="reference internal" href="#sc-pst"><span class="std std-ref">Phase_Start_Times</span></a> array, and the initial step size using either the <a class="reference internal" href="#sc-pid"><span class="std std-ref">Phase_Init_Dt</span></a> or <a class="reference internal" href="#sc-pidf"><span class="std std-ref">Phase_Init_Dt_Factor</span></a> variables. Truchas will hit those times precisely with a time step, smoothly adjusting the step size in advance to avoid abrupt step size changes, and then effectively <strong>restart</strong> the timestepping. Currently this only effects the second-order diffusion solver which maintains a (smooth) history of states at recent time steps. When restarting that history is deleted and time stepping begins fresh using only the current state.</p>
 </section>
 <section id="simulation-control-namelist-features">
-<h2><span class="section-number">25.2. </span>SIMULATION_CONTROL Namelist Features<a class="headerlink" href="#simulation-control-namelist-features" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">25.2. </span>SIMULATION_CONTROL Namelist Features<a class="headerlink" href="#simulation-control-namelist-features" title="Link to this heading"></a></h2>
 <div class="line-block">
 <div class="line"><strong>Required/Optional        :</strong> Optional</div>
 <div class="line"><strong>Single/Multiple Instances:</strong> Single</div>
 </div>
 </section>
 <section id="components">
-<h2><span class="section-number">25.3. </span>Components<a class="headerlink" href="#components" title="Permalink to this heading"></a></h2>
+<h2><span class="section-number">25.3. </span>Components<a class="headerlink" href="#components" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="#sc-el"><span class="std std-ref">Event_Lookahead</span></a></p></li>
 <li><p><a class="reference internal" href="#sc-pid"><span class="std std-ref">Phase_Init_Dt</span></a></p></li>
@@ -144,7 +144,7 @@
 <li><p><a class="reference internal" href="#sc-pst"><span class="std std-ref">Phase_Start_Times</span></a></p></li>
 </ul>
 <section id="equation">
-<span id="sc-el"></span><h3>Equation<a class="headerlink" href="#equation" title="Permalink to this heading"></a></h3>
+<span id="sc-el"></span><h3>Equation<a class="headerlink" href="#equation" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : When approaching an event time, such as an output time, the time step sizes are gradually adjusted to hit the time precisely. This variable specifies the number of steps over which this occurs.</div>
 <div class="line"><strong>Type</strong>        : integer</div>
@@ -154,7 +154,7 @@
 </div>
 </section>
 <section id="phase-init-dt">
-<span id="sc-pid"></span><h3>Phase_Init_Dt<a class="headerlink" href="#phase-init-dt" title="Permalink to this heading"></a></h3>
+<span id="sc-pid"></span><h3>Phase_Init_Dt<a class="headerlink" href="#phase-init-dt" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The initial time step size to use for each of the simulation phases. This is the analog of <a class="reference internal" href="../NUMERICS_Namelist/index.html#numerics-dti"><span class="std std-ref">Dt_Init</span></a>, which is used for the initial (and default) phase of the simulation. Either <a class="reference internal" href="#sc-pid"><span class="std std-ref">Phase_Init_Dt</span></a> or <a class="reference internal" href="#sc-pidf"><span class="std std-ref">Phase_Init_Dt_Factor</span></a> must be specified, but not both.</div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -162,7 +162,7 @@
 </div>
 </section>
 <section id="phase-init-dt-factor">
-<span id="sc-pidf"></span><h3>Phase_Init_Dt_Factor<a class="headerlink" href="#phase-init-dt-factor" title="Permalink to this heading"></a></h3>
+<span id="sc-pidf"></span><h3>Phase_Init_Dt_Factor<a class="headerlink" href="#phase-init-dt-factor" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The initial time step size used for each of the simulation phases is this factor times the last step size of the preceding phase. Either <a class="reference internal" href="#sc-pid"><span class="std std-ref">Phase_Init_Dt</span></a> or <a class="reference internal" href="#sc-pidf"><span class="std std-ref">Phase_Init_Dt_Factor</span></a> must be specified, but not both.</div>
 <div class="line"><strong>Type</strong>        : real</div>
@@ -170,7 +170,7 @@
 </div>
 </section>
 <section id="phase-start-times">
-<span id="sc-pst"></span><h3>Phase_Start_Times<a class="headerlink" href="#phase-start-times" title="Permalink to this heading"></a></h3>
+<span id="sc-pst"></span><h3>Phase_Start_Times<a class="headerlink" href="#phase-start-times" title="Link to this heading"></a></h3>
 <div class="line-block">
 <div class="line"><strong>Description</strong> : The list of starting times of each of the phases.</div>
 <div class="line"><strong>Type</strong>        : real array</div>
