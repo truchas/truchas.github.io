@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>17. MICROSTRUCTURE Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=c803a19b" />
+
+  
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
@@ -120,12 +122,14 @@
              
   <section id="microstructure-namelist">
 <span id="id1"></span><h1><span class="section-number">17. </span>MICROSTRUCTURE Namelist<a class="headerlink" href="#microstructure-namelist" title="Link to this heading"></a></h1>
-<p>Truchas is able to capture and analyze data about the solidification process
+<p>Truchas is able to capture and analyze data about a solidification process
 as it evolves within each mesh cell, and output the results for later analysis.
 This data is generally used by analytic 0-dimensional models to predict the
 local microstructural characteristics and defects of the solidified material.
-Use the MICROSTRUCTURE namelist to enable this feature and set the parameters
-that control it.</p>
+This capability is described in terms of the usual liquid-solid transformation
+but can be used for other transformation processes (e.g., solid-solid). Use
+the MICROSTRUCTURE namelist to enable this feature and set the parameters that
+control it.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <dl class="field-list simple">
@@ -133,38 +137,38 @@ that control it.</p>
 <dd class="field-odd"><p>Optional</p>
 </dd>
 <dt class="field-even">Single/Multiple Instances<span class="colon">:</span></dt>
-<dd class="field-even"><p>Single</p>
+<dd class="field-even"><p>Multiple</p>
 </dd>
 </dl>
 </div>
 <section id="common-namelist-variables">
 <h2><span class="section-number">17.1. </span>Common Namelist Variables<a class="headerlink" href="#common-namelist-variables" title="Link to this heading"></a></h2>
-<p>The following variables are common to all analysis modules and are required.</p>
-<p><strong>material</strong></p>
+<p>The following variables are common to all analysis modules.</p>
+<p><strong>low_temp_phase</strong></p>
 <blockquote>
-<div><p>The name of the material for which solidification data will be collected.
-The material must have a single high-temperature liquid phase and one
-or more lower-temperature solid phases. The analysis is applied to its
-liquid-solid phase transformation.</p>
+<div><p>The name of the low-temperature phase (e.g., solid) of the transformation
+for which data will be collected. This is optional. When defined, the
+fraction of low temperature phase will be made available to the analysis
+module for use.</p>
 </div></blockquote>
 <p><strong>cell_set_ids</strong></p>
 <blockquote>
-<div><p>A list of cell set IDs that specify the part of the domain where
-solidification data will be collected. Cell-based data is output for the
-entire mesh, using dummy values for cells that are not included in the
-analysis and included cells without valid data.</p>
+<div><p>A list of cell set IDs that specify the part of the domain where data
+will be collected. Cell-based data is output for the entire mesh, using
+dummy values for cells that are not included in the analysis and
+included cells without valid data. If not defined, all cell sets are
+assumed.</p>
 </div></blockquote>
 </section>
 <section id="basic-gl-analysis-module">
 <h2><span class="section-number">17.2. </span>Basic GL Analysis Module<a class="headerlink" href="#basic-gl-analysis-module" title="Link to this heading"></a></h2>
 <p>By default, the thermal gradient <span class="math notranslate nohighlight">\(G=\nabla T\)</span> and cooling rate
-rate <span class="math notranslate nohighlight">\(L=-\partial T/\partial t\)</span> are recorded at the onset of
-of solidification, and the local solidification time (time spent in the mushy
-zone) is recorded at the completion of solidification. These are written to
-the output file as the cell-based fields “ustruc-G”, “ustruc-L”, and
-“ustruc-t_sol”, respectively. A dummy value of 0 is written for cells not
-included in the analysis and cells without valid GL or solidification time
-data.</p>
+<span class="math notranslate nohighlight">\(L=-\partial T/\partial t\)</span> are recorded at the onset of solidification,
+and the local solidification time (time spent in the mushy zone) is recorded
+at the completion of solidification. These are written to the output file as
+the cell-based fields “ustruc-G”, “ustruc-L”, and “ustruc-t_sol”, respectively.
+A dummy value of 0 is written for cells not included in the analysis and cells
+without valid GL or solidification time data.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Many, if not most, analytic models for microstructure and defect prediction
@@ -176,12 +180,13 @@ example, the (vector) solidification front velocity is
 front speed is <span class="math notranslate nohighlight">\(\Vert{V}\Vert = L / \Vert{G}\Vert\)</span>.</p>
 </div>
 <p>There are two methods of specifying the parameters that control how the
-data is collected, which are pictured below: one based on solid fraction
-and the other based on temperature. They are mutually exclusive. The
-collection procedure is designed to only report data for those cells that
-have ultimately passed monotically from liquid to solid (or are in the
-process of doing so). Thus some cells included in the analysis may report
-invalid data even after all solidification is complete.</p>
+data is collected, which are pictured below: one based on the fraction of
+the low-temperature phase and the other based on temperature. They are
+mutually exclusive. The phase fraction method requires <strong>low_temp_phase</strong>
+to be defined. The collection procedure is designed to only report data for
+those cells that have ultimately passed monotically from liquid to solid
+(or are in the process of doing so). Thus some cells included in the analysis
+may report invalid data even after all solidification is complete.</p>
 <blockquote>
 <div><figure class="align-left">
 <a class="reference internal image-reference" href="../_images/fig.png"><img alt="../_images/fig.png" src="../_images/fig.png" style="width: 600px;" /></a>
@@ -224,6 +229,12 @@ G, L, and solidification time are erased. This is an optional variable;
 its value defaults to the value of end_temp, and if specified it must be
 greater than or equal to that value.</p>
 </div></blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This option can be used to capture temperature GL data for <em>any</em> cooling
+process, and not just those associated with an explicitly modeled phase
+transformation.</p>
+</div>
 </section>
 <section id="namelist-variables-for-the-solid-fraction-based-method">
 <h3>Namelist Variables for the Solid Fraction Based Method<a class="headerlink" href="#namelist-variables-for-the-solid-fraction-based-method" title="Link to this heading"></a></h3>
