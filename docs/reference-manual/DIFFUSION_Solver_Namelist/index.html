@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>4. DIFFUSION Solver Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
+  <title>3. DIFFUSION Solver Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=c803a19b" />
@@ -17,15 +17,15 @@
         <script src="../_static/jquery.js?v=5d32c60e"></script>
         <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
         <script src="../_static/documentation_options.js?v=8d563738"></script>
-        <script src="../_static/doctools.js?v=888ff710"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
         <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
         <script>window.MathJax = {"chtml": {"displayAlign": "left", "displayIndent": "2em"}}</script>
         <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="5. DS_SOURCE Namelist" href="../DS_SOURCE_Namelist/index.html" />
-    <link rel="prev" title="3. BODY Namelist" href="../BODY_Namelist/index.html" /> 
+    <link rel="next" title="4. DS_SOURCE Namelist" href="../DS_SOURCE_Namelist/index.html" />
+    <link rel="prev" title="2. BODY Namelist" href="../BODY_Namelist/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -49,12 +49,11 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">1. Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ALTMESH_Namelist/index.html">2. ALTMESH Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../BODY_Namelist/index.html">3. BODY Namelist</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">4. DIFFUSION Solver Namelist</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#overview">4.1. Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#diffusion-solver-namelist-features">4.2. DIFFUSION_Solver Namelist Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#components">4.3. Components</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../BODY_Namelist/index.html">2. BODY Namelist</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. DIFFUSION Solver Namelist</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">3.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#diffusion-solver-namelist-features">3.2. DIFFUSION_Solver Namelist Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#components">3.3. Components</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#abs-conc-tol">Abs_Conc_Tol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#abs-enthalpy-tol">Abs_Enthalpy_Tol</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#abs-temp-tol">Abs_Temp_Tol</a></li>
@@ -85,39 +84,41 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../DS_SOURCE_Namelist/index.html">5. DS_SOURCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html">6. ELECTROMAGNETICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_RADIATION_Namelist/index.html">7. ENCLOSURE_RADIATION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_SURFACE_Namelist/index.html">8. ENCLOSURE_SURFACE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../EVAPORATION_Namelist/index.html">9. EVAPORATION Namelist (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../FLOW_Namelist/index.html">10. FLOW Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../FLOW_BC_Namelist/index.html">11. FLOW_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html">12. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../FUNCTION_Namelist/index.html">13. FUNCTION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../INDUCTION_COIL_Namelist/index.html">14. INDUCTION_COIL Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">15. MATERIAL and PHASE Namelists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">16. MESH Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../MICROSTRUCTURE_Namelist/index.html">17. MICROSTRUCTURE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">18. NUMERICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">19. OUTPUTS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">20. PHASE_CHANGE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">21. PHYSICAL_CONSTANTS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">22. PHYSICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">23. PROBE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">24. RESTART Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">25. SIMULATION_CONTROL Namelist (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">26. SOLID_MECHANICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">27. SOLID_MECHANICS_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">28. SPECIES_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">29. THERMAL_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">30. THERMAL_SOURCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">31. TOOLHEAD Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">32. TOOLPATH Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">33. TURBULENCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">34. VFUNCTION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">35. VISCOPLASTIC_MODEL Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">36. Radiation Enclosure Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/index.html">37. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DS_SOURCE_Namelist/index.html">4. DS_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html">5. ELECTROMAGNETICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ELECTROMAGNETIC_BC_Namelist/index.html">6. ELECTROMAGNETIC_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../EM_MESH_Namelist/index.html">7. EM_MESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_RADIATION_Namelist/index.html">8. ENCLOSURE_RADIATION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_SURFACE_Namelist/index.html">9. ENCLOSURE_SURFACE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../EVAPORATION_Namelist/index.html">10. EVAPORATION Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_Namelist/index.html">11. FLOW Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_BC_Namelist/index.html">12. FLOW_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html">13. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FUNCTION_Namelist/index.html">14. FUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../INDUCTION_SOURCE_FIELD_Namelist/index.html">15. INDUCTION_SOURCE_FIELD Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">16. MATERIAL and PHASE Namelists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">17. MESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MICROSTRUCTURE_Namelist/index.html">18. MICROSTRUCTURE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">19. NUMERICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">20. OUTPUTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">21. PHASE_CHANGE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">22. PHYSICAL_CONSTANTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">23. PHYSICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">24. PROBE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">25. RESTART Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">26. SIMULATION_CONTROL Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">27. SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">28. SOLID_MECHANICS_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">29. SPECIES_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">30. THERMAL_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">31. THERMAL_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">32. TOOLHEAD Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">33. TOOLPATH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">34. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">35. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">36. VISCOPLASTIC_MODEL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">37. Radiation Enclosure Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">38. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
 </ul>
 
         </div>
@@ -134,7 +135,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active"><span class="section-number">4. </span>DIFFUSION Solver Namelist</li>
+      <li class="breadcrumb-item active"><span class="section-number">3. </span>DIFFUSION Solver Namelist</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/DIFFUSION_Solver_Namelist/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -147,9 +148,9 @@
   <div class="toctree-wrapper compound" id="diffusion-solver-namelist">
 </div>
 <section id="id1">
-<h1><span class="section-number">4. </span>DIFFUSION Solver Namelist<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<h1><span class="section-number">3. </span>DIFFUSION Solver Namelist<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
 <section id="overview">
-<h2><span class="section-number">4.1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<h2><span class="section-number">3.1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
 <p>The DIFFUSION_SOLVER namelist sets the parameters that are specific to the heat and species transport solver. The namelist is read when either of the <a class="reference internal" href="../PHYSICS_Namelist/index.html#physics-namelist"><span class="std std-ref">PHYSICS</span></a> namelist options <a class="reference internal" href="../PHYSICS_Namelist/index.html#physics-ht"><span class="std std-ref">Heat_Transport</span></a> or <a class="reference internal" href="../PHYSICS_Namelist/index.html#physics-st"><span class="std std-ref">Species_Transport</span></a> are enabled.</p>
 <p>The solver has two time integration methods which are selected by the variable <a class="reference internal" href="#diff-sol-sm"><span class="std std-ref">Stepping_Method</span></a>. The default is a variable step-size, implicit second-order BDF2 method that controls the local truncation error of each step to a user-defined tolerance by adaptively adjusting the step size. The step size is chosen so that an a priori estimate of the error will be within tolerance, and steps are rejected when the actual erroris too large. A failed step may be retried with successively smaller step sizes.</p>
 <p>The other integration method is a non-adaptive, implicit first-order BDF1 method specifically designed to handle the exceptional difficulties that arise when heat transfer is coupled to a fluid flow system that includes void. In this context the heat transfer domain changes from one step to the next because of the moving void region, and mesh cells may only be partially filled with material. For this method the timestep is controlled by flow or other physics models.</p>
@@ -157,14 +158,14 @@
 <p>The initial step size and upper and lower bounds for the step size are set in the <a class="reference internal" href="../NUMERICS_Namelist/index.html#numerics-namelist"><span class="std std-ref">NUMERICS</span></a> namelist. In addition, the step size selected by the adaptive solver may be further limited by other physics models or by the <a class="reference internal" href="../NUMERICS_Namelist/index.html#numerics-namelist"><span class="std std-ref">NUMERICS</span></a> variables <a class="reference internal" href="../NUMERICS_Namelist/index.html#numerics-dtg"><span class="std std-ref">Dt_Grow</span></a> and <a class="reference internal" href="../NUMERICS_Namelist/index.html#numerics-dtc"><span class="std std-ref">Dt_Constant</span></a>. When only diffusion solver physics are enabled, it isimportant that these variables be set appropriately so as not to unnecessarily impede the normal functioning of the diffusion solver.</p>
 </section>
 <section id="diffusion-solver-namelist-features">
-<h2><span class="section-number">4.2. </span>DIFFUSION_Solver Namelist Features<a class="headerlink" href="#diffusion-solver-namelist-features" title="Link to this heading"></a></h2>
+<h2><span class="section-number">3.2. </span>DIFFUSION_Solver Namelist Features<a class="headerlink" href="#diffusion-solver-namelist-features" title="Link to this heading"></a></h2>
 <div class="line-block">
 <div class="line"><strong>Required/Optional        :</strong> Required when <a class="reference internal" href="../PHYSICS_Namelist/index.html#physics-ht"><span class="std std-ref">heat_transport</span></a> and/or <a class="reference internal" href="../PHYSICS_Namelist/index.html#physics-st"><span class="std std-ref">species_transport</span></a> physics is enabled.</div>
 <div class="line"><strong>Single/Multiple Instances:</strong> Single</div>
 </div>
 </section>
 <section id="components">
-<h2><span class="section-number">4.3. </span>Components<a class="headerlink" href="#components" title="Link to this heading"></a></h2>
+<h2><span class="section-number">3.3. </span>Components<a class="headerlink" href="#components" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="#diff-sol-act"><span class="std std-ref">Abs_Conc_Tol</span></a></p></li>
 <li><p><a class="reference internal" href="#diff-sol-aet"><span class="std std-ref">Abs_Enthalpy_Tol</span></a></p></li>
@@ -548,8 +549,8 @@ the value of this threshold.</div>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../BODY_Namelist/index.html" class="btn btn-neutral float-left" title="3. BODY Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../DS_SOURCE_Namelist/index.html" class="btn btn-neutral float-right" title="5. DS_SOURCE Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../BODY_Namelist/index.html" class="btn btn-neutral float-left" title="2. BODY Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../DS_SOURCE_Namelist/index.html" class="btn btn-neutral float-right" title="4. DS_SOURCE Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
