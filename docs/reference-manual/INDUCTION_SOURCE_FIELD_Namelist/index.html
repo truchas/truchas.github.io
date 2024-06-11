@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>15. INDUCTION_SOURCE_FIELD Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
+  <title>14. INDUCTION_SOURCE_FIELD Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=93b25530" />
@@ -24,8 +24,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="16. MATERIAL and PHASE Namelists" href="../MATERIAL_and_PHASE_Namelists/index.html" />
-    <link rel="prev" title="14. FUNCTION Namelist" href="../FUNCTION_Namelist/index.html" /> 
+    <link rel="next" title="15. MATERIAL and PHASE Namelists" href="../MATERIAL_and_PHASE_Namelists/index.html" />
+    <link rel="prev" title="13. FUNCTION Namelist" href="../FUNCTION_Namelist/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -51,19 +51,18 @@
 <li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../BODY_Namelist/index.html">2. BODY Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../DIFFUSION_Solver_Namelist/index.html">3. DIFFUSION Solver Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../DS_SOURCE_Namelist/index.html">4. DS_SOURCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html">5. ELECTROMAGNETICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ELECTROMAGNETIC_BC_Namelist/index.html">6. ELECTROMAGNETIC_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../EM_MESH_Namelist/index.html">7. EM_MESH Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_RADIATION_Namelist/index.html">8. ENCLOSURE_RADIATION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_SURFACE_Namelist/index.html">9. ENCLOSURE_SURFACE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../EVAPORATION_Namelist/index.html">10. EVAPORATION Namelist (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../FLOW_Namelist/index.html">11. FLOW Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../FLOW_BC_Namelist/index.html">12. FLOW_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html">13. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../FUNCTION_Namelist/index.html">14. FUNCTION Namelist</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">15. INDUCTION_SOURCE_FIELD Namelist</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#namelist-variables">15.1. Namelist Variables</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html">4. ELECTROMAGNETICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ELECTROMAGNETIC_BC_Namelist/index.html">5. ELECTROMAGNETIC_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../EM_MESH_Namelist/index.html">6. EM_MESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_RADIATION_Namelist/index.html">7. ENCLOSURE_RADIATION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_SURFACE_Namelist/index.html">8. ENCLOSURE_SURFACE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../EVAPORATION_Namelist/index.html">9. EVAPORATION Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_Namelist/index.html">10. FLOW Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_BC_Namelist/index.html">11. FLOW_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html">12. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FUNCTION_Namelist/index.html">13. FUNCTION Namelist</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">14. INDUCTION_SOURCE_FIELD Namelist</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#namelist-variables">14.1. Namelist Variables</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#orientation">orientation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#times">times</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#frequency">frequency</a></li>
@@ -73,20 +72,21 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">16. MATERIAL and PHASE Namelists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">17. MESH Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../MICROSTRUCTURE_Namelist/index.html">18. MICROSTRUCTURE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">19. NUMERICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">20. OUTPUTS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">21. PHASE_CHANGE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">22. PHYSICAL_CONSTANTS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">23. PHYSICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">24. PROBE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">25. RESTART Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">26. SIMULATION_CONTROL Namelist (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">27. SOLID_MECHANICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">28. SOLID_MECHANICS_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">29. SPECIES_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">15. MATERIAL and PHASE Namelists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">16. MESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MICROSTRUCTURE_Namelist/index.html">17. MICROSTRUCTURE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">18. NUMERICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">19. OUTPUTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">20. PHASE_CHANGE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">21. PHYSICAL_CONSTANTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">22. PHYSICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">23. PROBE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">24. RESTART Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">25. SIMULATION_CONTROL Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">26. SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">27. SOLID_MECHANICS_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">28. SPECIES_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPECIES_SOURCE_Namelist/index.html">29. SPECIES_SOURCE Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">30. THERMAL_BC Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">31. THERMAL_SOURCE Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">32. TOOLHEAD Namelist</a></li>
@@ -112,7 +112,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active"><span class="section-number">15. </span>INDUCTION_SOURCE_FIELD Namelist</li>
+      <li class="breadcrumb-item active"><span class="section-number">14. </span>INDUCTION_SOURCE_FIELD Namelist</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/INDUCTION_SOURCE_FIELD_Namelist/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -125,7 +125,7 @@
   <div class="toctree-wrapper compound" id="induction-source-field-namelist">
 </div>
 <section id="id1">
-<h1><span class="section-number">15. </span>INDUCTION_SOURCE_FIELD Namelist<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<h1><span class="section-number">14. </span>INDUCTION_SOURCE_FIELD Namelist<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
 <p>The INDUCTION_SOURCE_FIELD namelist defines the external magnetic field that
 serves as the applied source in the computation of Joule heat for induction
 heating simulations. The field is a continuous wave (CW) function with
@@ -154,7 +154,7 @@ those times.</p>
 </dl>
 </div>
 <section id="namelist-variables">
-<h2><span class="section-number">15.1. </span>Namelist Variables<a class="headerlink" href="#namelist-variables" title="Link to this heading"></a></h2>
+<h2><span class="section-number">14.1. </span>Namelist Variables<a class="headerlink" href="#namelist-variables" title="Link to this heading"></a></h2>
 <nav class="contents local" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#orientation" id="id3">orientation</a></p></li>
@@ -251,7 +251,7 @@ along the axis of the coil/loop.</p>
 <section id="coils">
 <h3><a class="toc-backref" href="#id7" role="doc-backlink">coils</a><a class="headerlink" href="#coils" title="Link to this heading"></a></h3>
 <p>Optional data that defines the geometry and current of one or more induction
-coils. <a class="reference internal" href="#fig-coil-schematic"><span class="std std-numref">Figure 15.1.1</span></a> shows the idealized model of
+coils. <a class="reference internal" href="#fig-coil-schematic"><span class="std std-numref">Figure 14.1.1</span></a> shows the idealized model of
 a coil that is used to analytically evaluate the magnetic field it generates.
 This parameter is a structure array. Each element defines a coil and consists
 of the following components. Note that the axis orientation is defined
@@ -289,7 +289,7 @@ times must also be specified.</p></td>
 <figure class="align-center" id="id2">
 <span id="fig-coil-schematic"></span><a class="reference internal image-reference" href="../_images/ic-coil.jpg"><img alt="../_images/ic-coil.jpg" src="../_images/ic-coil.jpg" style="width: 360px;" /></a>
 <figcaption>
-<p><span class="caption-number">Figure 15.1.1 </span><span class="caption-text">Physical 4-turn helical coil with extended wire cross section (left),
+<p><span class="caption-number">Figure 14.1.1 </span><span class="caption-text">Physical 4-turn helical coil with extended wire cross section (left),
 and its idealized model as a stacked array of circular current loops (right).</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
 </figcaption>
 </figure>
@@ -301,8 +301,8 @@ and its idealized model as a stacked array of circular current loops (right).</s
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../FUNCTION_Namelist/index.html" class="btn btn-neutral float-left" title="14. FUNCTION Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../MATERIAL_and_PHASE_Namelists/index.html" class="btn btn-neutral float-right" title="16. MATERIAL and PHASE Namelists" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../FUNCTION_Namelist/index.html" class="btn btn-neutral float-left" title="13. FUNCTION Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../MATERIAL_and_PHASE_Namelists/index.html" class="btn btn-neutral float-right" title="15. MATERIAL and PHASE Namelists" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

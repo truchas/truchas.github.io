@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>14. FUNCTION Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
+  <title>13. FUNCTION Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=93b25530" />
@@ -24,8 +24,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="15. INDUCTION_SOURCE_FIELD Namelist" href="../INDUCTION_SOURCE_FIELD_Namelist/index.html" />
-    <link rel="prev" title="13. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist" href="../FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html" /> 
+    <link rel="next" title="14. INDUCTION_SOURCE_FIELD Namelist" href="../INDUCTION_SOURCE_FIELD_Namelist/index.html" />
+    <link rel="prev" title="12. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist" href="../FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -51,20 +51,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../BODY_Namelist/index.html">2. BODY Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../DIFFUSION_Solver_Namelist/index.html">3. DIFFUSION Solver Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../DS_SOURCE_Namelist/index.html">4. DS_SOURCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html">5. ELECTROMAGNETICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ELECTROMAGNETIC_BC_Namelist/index.html">6. ELECTROMAGNETIC_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../EM_MESH_Namelist/index.html">7. EM_MESH Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_RADIATION_Namelist/index.html">8. ENCLOSURE_RADIATION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_SURFACE_Namelist/index.html">9. ENCLOSURE_SURFACE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../EVAPORATION_Namelist/index.html">10. EVAPORATION Namelist (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../FLOW_Namelist/index.html">11. FLOW Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../FLOW_BC_Namelist/index.html">12. FLOW_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html">13. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">14. FUNCTION Namelist</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#overview">14.1. Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#function-namelist-features">14.2. FUNCTION Namelist Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#components">14.3. Components</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html">4. ELECTROMAGNETICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ELECTROMAGNETIC_BC_Namelist/index.html">5. ELECTROMAGNETIC_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../EM_MESH_Namelist/index.html">6. EM_MESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_RADIATION_Namelist/index.html">7. ENCLOSURE_RADIATION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_SURFACE_Namelist/index.html">8. ENCLOSURE_SURFACE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../EVAPORATION_Namelist/index.html">9. EVAPORATION Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_Namelist/index.html">10. FLOW Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_BC_Namelist/index.html">11. FLOW_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html">12. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">13. FUNCTION Namelist</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">13.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#function-namelist-features">13.2. FUNCTION Namelist Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#components">13.3. Components</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#name">Name</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#type">Type</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#library-path">Library_Path</a></li>
@@ -85,21 +84,22 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../INDUCTION_SOURCE_FIELD_Namelist/index.html">15. INDUCTION_SOURCE_FIELD Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">16. MATERIAL and PHASE Namelists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">17. MESH Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../MICROSTRUCTURE_Namelist/index.html">18. MICROSTRUCTURE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">19. NUMERICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">20. OUTPUTS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">21. PHASE_CHANGE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">22. PHYSICAL_CONSTANTS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">23. PHYSICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">24. PROBE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">25. RESTART Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">26. SIMULATION_CONTROL Namelist (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">27. SOLID_MECHANICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">28. SOLID_MECHANICS_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">29. SPECIES_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../INDUCTION_SOURCE_FIELD_Namelist/index.html">14. INDUCTION_SOURCE_FIELD Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">15. MATERIAL and PHASE Namelists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">16. MESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MICROSTRUCTURE_Namelist/index.html">17. MICROSTRUCTURE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">18. NUMERICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">19. OUTPUTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">20. PHASE_CHANGE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">21. PHYSICAL_CONSTANTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">22. PHYSICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">23. PROBE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">24. RESTART Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">25. SIMULATION_CONTROL Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">26. SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">27. SOLID_MECHANICS_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">28. SPECIES_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPECIES_SOURCE_Namelist/index.html">29. SPECIES_SOURCE Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">30. THERMAL_BC Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">31. THERMAL_SOURCE Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">32. TOOLHEAD Namelist</a></li>
@@ -125,7 +125,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active"><span class="section-number">14. </span>FUNCTION Namelist</li>
+      <li class="breadcrumb-item active"><span class="section-number">13. </span>FUNCTION Namelist</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/FUNCTION_Namelist/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -138,14 +138,14 @@
   <div class="toctree-wrapper compound" id="function-namelist">
 </div>
 <section id="id1">
-<h1><span class="section-number">14. </span>FUNCTION Namelist<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<h1><span class="section-number">13. </span>FUNCTION Namelist<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
 <section id="overview">
-<h2><span class="section-number">14.1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<h2><span class="section-number">13.1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
 <p>There is often a need to specify phase properties, boundary condition data, source data, etc., as functions rather than constants. The <a class="reference internal" href="#function-namelist"><span class="std std-ref">FUNCTION</span></a> namelist provides a means for defining functions that can be used in many situations.</p>
 <p>The namelist can define several types of functions: a multi-variable polynomial, a continuous piecewise linear function defined by a table of values, a smooth step function, and with certain Truchas build configurations, a general user-provided function from a shared object library that is dynamically loaded at runtime. The functions are functions of <span class="math notranslate nohighlight">\(m\)</span> variables. The expected number of variables and what unknowns they represent (i.e., temperature, time, x-coordinate, etc.) depends on the context in which the function is used, and this will be detailed by the documentation of those namelists where these functions can be used.</p>
 <p><strong>Polynomial Function</strong> This function is a polynomial in the variables <span class="math notranslate nohighlight">\(v = (v_1,.....,v_m)\)</span> of the form</p>
 <div class="math notranslate nohighlight" id="equation-poly-func">
-<span class="eqno">(14.1.1)<a class="headerlink" href="#equation-poly-func" title="Link to this equation"></a></span>\[f(v) = \sum_{j=1}^{n} c_j \prod_{i=1}^{m}(v_i - a_i)^{(e_{ij})}\]</div>
+<span class="eqno">(13.1.1)<a class="headerlink" href="#equation-poly-func" title="Link to this equation"></a></span>\[f(v) = \sum_{j=1}^{n} c_j \prod_{i=1}^{m}(v_i - a_i)^{(e_{ij})}\]</div>
 <p>with coefficients <span class="math notranslate nohighlight">\(c_j\)</span>, integer-valued exponents <span class="math notranslate nohighlight">\(e^{ij}\)</span>, and arbitrary reference point <span class="math notranslate nohighlight">\(a= (a_1,...,a_m)\)</span>. The coefficients are specified by <a class="reference internal" href="#func-pc"><span class="std std-ref">Poly_Coefficients</span></a>, the exponents by <a class="reference internal" href="#func-pe"><span class="std std-ref">Poly_Exponents</span></a>, and the reference point by <a class="reference internal" href="#func-pr"><span class="std std-ref">Poly_Refvars</span></a>.</p>
 <p><strong>Tabular Function</strong> This is a continuous, single-variable function <span class="math notranslate nohighlight">\(y = f(x)\)</span> interpolated from a sequence of data points <span class="math notranslate nohighlight">\((x_i,y_i), i= 1,...,n,\)</span> with <span class="math notranslate nohighlight">\(x_i &lt; x_i+1\)</span>. A smooth interpolation method is available in addition to the standard linear interpolation; see <a class="reference internal" href="#func-ti"><span class="std std-ref">Tabular_Interp</span></a>. There are also two different methods for extrapolating on <span class="math notranslate nohighlight">\(x &lt; x_1\)</span> and <span class="math notranslate nohighlight">\(x &gt; x_n\)</span>; see <a class="reference internal" href="#func-te"><span class="std std-ref">Tabular_Extrap</span></a>.</p>
 <p><strong>Smooth Step Function</strong> This function is a smoothed <span class="math notranslate nohighlight">\((C_1)\)</span> step function in a single variable <span class="math notranslate nohighlight">\(v= (x)\)</span> of the form</p>
@@ -174,14 +174,14 @@ f(x) =
 <p>The vector of variables <span class="math notranslate nohighlight">\(v= (v_1,...,v_m)\)</span> is passed in the argument <span class="math notranslate nohighlight">\(v\)</span> and a vector of parameter values specified by <a class="reference internal" href="#func-param"><span class="std std-ref">Parameters</span></a> is passed in the argument <span class="math notranslate nohighlight">\(p\)</span>. Instructions for compiling the code and creating a shared object library can be found in the Truchas Installation Guide. The path to the library is given by <a class="reference internal" href="#func-lp"><span class="std std-ref">Library_Path</span></a> and the name of the function (myfun, e.g.) is given by <a class="reference internal" href="#func-ls"><span class="std std-ref">Library_Symbol</span></a>. Note that the bind(c) attribute on the function declaration inhibits the Fortran compiler from mangling the function name (by appending an underscore, for example) as it normally would.</p>
 </section>
 <section id="function-namelist-features">
-<h2><span class="section-number">14.2. </span>FUNCTION Namelist Features<a class="headerlink" href="#function-namelist-features" title="Link to this heading"></a></h2>
+<h2><span class="section-number">13.2. </span>FUNCTION Namelist Features<a class="headerlink" href="#function-namelist-features" title="Link to this heading"></a></h2>
 <div class="line-block">
 <div class="line"><strong>Required/Optional        :</strong> Optional</div>
 <div class="line"><strong>Single/Multiple Instances:</strong> Multiple</div>
 </div>
 </section>
 <section id="components">
-<h2><span class="section-number">14.3. </span>Components<a class="headerlink" href="#components" title="Link to this heading"></a></h2>
+<h2><span class="section-number">13.3. </span>Components<a class="headerlink" href="#components" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="#func-name"><span class="std std-ref">Name</span></a></p></li>
 <li><p><a class="reference internal" href="#func-type"><span class="std std-ref">Type</span></a></p></li>
@@ -245,7 +245,7 @@ f(x) =
 <section id="poly-coefficients">
 <span id="func-pc"></span><h3>Poly_Coefficients<a class="headerlink" href="#poly-coefficients" title="Link to this heading"></a></h3>
 <div class="line-block">
-<div class="line"><strong>Description</strong> : The coefficients <span class="math notranslate nohighlight">\(c_j\)</span> of the polynomial <a class="reference internal" href="#equation-poly-func">Eq.14.1.1</a></div>
+<div class="line"><strong>Description</strong> : The coefficients <span class="math notranslate nohighlight">\(c_j\)</span> of the polynomial <a class="reference internal" href="#equation-poly-func">Eq.13.1.1</a></div>
 <div class="line"><strong>Type</strong>        : real vector of up to 64 values</div>
 <div class="line"><strong>Default</strong>     : None</div>
 </div>
@@ -253,7 +253,7 @@ f(x) =
 <section id="poly-exponents">
 <span id="func-pe"></span><h3>Poly_Exponents<a class="headerlink" href="#poly-exponents" title="Link to this heading"></a></h3>
 <div class="line-block">
-<div class="line"><strong>Description</strong> : The exponents <span class="math notranslate nohighlight">\(e_{ij}\)</span> of the polynomial <a class="reference internal" href="#equation-poly-func">Eq.14.1.1</a></div>
+<div class="line"><strong>Description</strong> : The exponents <span class="math notranslate nohighlight">\(e_{ij}\)</span> of the polynomial <a class="reference internal" href="#equation-poly-func">Eq.13.1.1</a></div>
 <div class="line"><strong>Type</strong>        : integer array</div>
 <div class="line"><strong>Default</strong>     : None</div>
 <div class="line"><strong>Notes</strong>       : Namelist array input is very flexible. The syntax</div>
@@ -266,7 +266,7 @@ f(x) =
 <section id="poly-refvars">
 <span id="func-pr"></span><h3>Poly_Refvars<a class="headerlink" href="#poly-refvars" title="Link to this heading"></a></h3>
 <div class="line-block">
-<div class="line"><strong>Description</strong> : The optional reference point a of the polynomial <a class="reference internal" href="#equation-poly-func">Eq.14.1.1</a></div>
+<div class="line"><strong>Description</strong> : The optional reference point a of the polynomial <a class="reference internal" href="#equation-poly-func">Eq.13.1.1</a></div>
 <div class="line"><strong>Type</strong>        : real vector</div>
 <div class="line"><strong>Default</strong>     : 0.0</div>
 </div>
@@ -318,19 +318,19 @@ f(x) =
 <div class="line"><strong>Type</strong>        : case-insensitive string</div>
 <div class="line"><strong>Default</strong>     : “linear”</div>
 <div class="line"><strong>Valid values</strong>: “linear”, “akima”</div>
-<div class="line"><strong>Notes</strong>       : Akima interpolation <a class="footnote-reference brackets" href="#footcite-akima1970new" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> uses Hermit cubic interpolation on each data interval, with the slope at each data point computed from the linear slopes on the neighboring four intervals. The resulting function is <span class="math notranslate nohighlight">\(C^1\)</span> smooth. To determine the slope at the first two and last two data points, two virtual data intervals are generated at the beginning and at the end using quadratic extrapolation. The algorithm seeks to avoid undulations in the interpolated function where the data suggests a flat region though its choice of slopes at data points. <a class="reference internal" href="#fig-akima"><span class="std std-numref">Figure 14.3.1 A</span></a> shows the typical smooth Akima interpolation. If the first interval was expected to be flat, the exhibited undulation would likely be unacceptable. By inserting an additional data point to create successive intervals with the same slope, as in <a class="reference internal" href="#fig-akima"><span class="std std-numref">Figure 14.3.1 BC</span></a>, the algorithm identifies it as a flat region and preserves it in the interpolation. Where two flat regions with differing slopes meet, it is impossible to simultaneously retain smoothness and preserve flatness. In this case a modification to the Akima algorithm used by Matlab’s tablelookup function is adopted, which gives preference to the region with smaller slope as shown in <a class="reference internal" href="#fig-akima"><span class="std std-numref">Figure 14.3.1 D</span></a></div>
+<div class="line"><strong>Notes</strong>       : Akima interpolation <a class="footnote-reference brackets" href="#footcite-akima1970new" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> uses Hermit cubic interpolation on each data interval, with the slope at each data point computed from the linear slopes on the neighboring four intervals. The resulting function is <span class="math notranslate nohighlight">\(C^1\)</span> smooth. To determine the slope at the first two and last two data points, two virtual data intervals are generated at the beginning and at the end using quadratic extrapolation. The algorithm seeks to avoid undulations in the interpolated function where the data suggests a flat region though its choice of slopes at data points. <a class="reference internal" href="#fig-akima"><span class="std std-numref">Figure 13.3.1 A</span></a> shows the typical smooth Akima interpolation. If the first interval was expected to be flat, the exhibited undulation would likely be unacceptable. By inserting an additional data point to create successive intervals with the same slope, as in <a class="reference internal" href="#fig-akima"><span class="std std-numref">Figure 13.3.1 BC</span></a>, the algorithm identifies it as a flat region and preserves it in the interpolation. Where two flat regions with differing slopes meet, it is impossible to simultaneously retain smoothness and preserve flatness. In this case a modification to the Akima algorithm used by Matlab’s tablelookup function is adopted, which gives preference to the region with smaller slope as shown in <a class="reference internal" href="#fig-akima"><span class="std std-numref">Figure 13.3.1 D</span></a></div>
 </div>
 <figure class="align-center" id="id4">
 <span id="fig-akima"></span><a class="reference internal image-reference" href="../_images/akima.png"><img alt="../_images/akima.png" src="../_images/akima.png" style="width: 550px;" /></a>
 <figcaption>
-<p><span class="caption-number">Figure 14.3.1 </span><span class="caption-text">Examples of smooth Akima interpolation.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 13.3.1 </span><span class="caption-text">Examples of smooth Akima interpolation.</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="smooth-step-x0">
 <span id="func-ssx0"></span><h3>Smooth_Step_X0<a class="headerlink" href="#smooth-step-x0" title="Link to this heading"></a></h3>
 <div class="line-block">
-<div class="line"><strong>Description</strong> : The parameter <span class="math notranslate nohighlight">\(x_0\)</span> of the function <a class="reference internal" href="#equation-poly-multi">Eq.14.1.2</a></div>
+<div class="line"><strong>Description</strong> : The parameter <span class="math notranslate nohighlight">\(x_0\)</span> of the function <a class="reference internal" href="#equation-poly-multi">Eq.13.1.2</a></div>
 <div class="line"><strong>Type</strong>        : real</div>
 <div class="line"><strong>Default</strong>     : none</div>
 <div class="line"><strong>Valid values</strong>: Require only <span class="math notranslate nohighlight">\(x_0 \leq x_1\)</span>.</div>
@@ -339,7 +339,7 @@ f(x) =
 <section id="smooth-step-x1">
 <span id="func-ssx1"></span><h3>Smooth_Step_X1<a class="headerlink" href="#smooth-step-x1" title="Link to this heading"></a></h3>
 <div class="line-block">
-<div class="line"><strong>Description</strong> : The parameter <span class="math notranslate nohighlight">\(x_1\)</span> of the function <a class="reference internal" href="#equation-poly-multi">Eq.14.1.2</a></div>
+<div class="line"><strong>Description</strong> : The parameter <span class="math notranslate nohighlight">\(x_1\)</span> of the function <a class="reference internal" href="#equation-poly-multi">Eq.13.1.2</a></div>
 <div class="line"><strong>Type</strong>        : real</div>
 <div class="line"><strong>Default</strong>     : none</div>
 <div class="line"><strong>Valid values</strong>: Require only <span class="math notranslate nohighlight">\(x_0 \leq x_1\)</span>.</div>
@@ -348,7 +348,7 @@ f(x) =
 <section id="smooth-step-y0">
 <span id="func-ssy0"></span><h3>Smooth_Step_Y0<a class="headerlink" href="#smooth-step-y0" title="Link to this heading"></a></h3>
 <div class="line-block">
-<div class="line"><strong>Description</strong> : The parameter <span class="math notranslate nohighlight">\(y_0\)</span> of the function <a class="reference internal" href="#equation-poly-multi">Eq.14.1.2</a></div>
+<div class="line"><strong>Description</strong> : The parameter <span class="math notranslate nohighlight">\(y_0\)</span> of the function <a class="reference internal" href="#equation-poly-multi">Eq.13.1.2</a></div>
 <div class="line"><strong>Type</strong>        : real</div>
 <div class="line"><strong>Default</strong>     : none</div>
 </div>
@@ -356,7 +356,7 @@ f(x) =
 <section id="smooth-step-y1">
 <span id="func-ssy1"></span><h3>Smooth_Step_Y1<a class="headerlink" href="#smooth-step-y1" title="Link to this heading"></a></h3>
 <div class="line-block">
-<div class="line"><strong>Description</strong> : The parameter <span class="math notranslate nohighlight">\(y_1\)</span> of the function <a class="reference internal" href="#equation-poly-multi">Eq.14.1.2</a></div>
+<div class="line"><strong>Description</strong> : The parameter <span class="math notranslate nohighlight">\(y_1\)</span> of the function <a class="reference internal" href="#equation-poly-multi">Eq.13.1.2</a></div>
 <div class="line"><strong>Type</strong>        : real</div>
 <div class="line"><strong>Default</strong>     : none</div>
 </div>
@@ -376,8 +376,8 @@ f(x) =
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html" class="btn btn-neutral float-left" title="13. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../INDUCTION_SOURCE_FIELD_Namelist/index.html" class="btn btn-neutral float-right" title="15. INDUCTION_SOURCE_FIELD Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html" class="btn btn-neutral float-left" title="12. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../INDUCTION_SOURCE_FIELD_Namelist/index.html" class="btn btn-neutral float-right" title="14. INDUCTION_SOURCE_FIELD Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

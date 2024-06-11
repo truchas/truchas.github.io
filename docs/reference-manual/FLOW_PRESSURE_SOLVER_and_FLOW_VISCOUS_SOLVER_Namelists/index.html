@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>13. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
+  <title>12. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
       <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=93b25530" />
@@ -24,8 +24,8 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="14. FUNCTION Namelist" href="../FUNCTION_Namelist/index.html" />
-    <link rel="prev" title="12. FLOW_BC Namelist" href="../FLOW_BC_Namelist/index.html" /> 
+    <link rel="next" title="13. FUNCTION Namelist" href="../FUNCTION_Namelist/index.html" />
+    <link rel="prev" title="11. FLOW_BC Namelist" href="../FLOW_BC_Namelist/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -51,20 +51,19 @@
 <li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../BODY_Namelist/index.html">2. BODY Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../DIFFUSION_Solver_Namelist/index.html">3. DIFFUSION Solver Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../DS_SOURCE_Namelist/index.html">4. DS_SOURCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html">5. ELECTROMAGNETICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ELECTROMAGNETIC_BC_Namelist/index.html">6. ELECTROMAGNETIC_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../EM_MESH_Namelist/index.html">7. EM_MESH Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_RADIATION_Namelist/index.html">8. ENCLOSURE_RADIATION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_SURFACE_Namelist/index.html">9. ENCLOSURE_SURFACE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../EVAPORATION_Namelist/index.html">10. EVAPORATION Namelist (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../FLOW_Namelist/index.html">11. FLOW Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../FLOW_BC_Namelist/index.html">12. FLOW_BC Namelist</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">13. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#overview">13.1. Overview</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#flow-viscous-solver-namelist-features">13.2. FLOW_VISCOUS_SOLVER Namelist Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#flow-pressure-solver-namelist-features">13.3. FLOW_PRESSURE_SOLVER Namelist Features</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#components">13.4. Components</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html">4. ELECTROMAGNETICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ELECTROMAGNETIC_BC_Namelist/index.html">5. ELECTROMAGNETIC_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../EM_MESH_Namelist/index.html">6. EM_MESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_RADIATION_Namelist/index.html">7. ENCLOSURE_RADIATION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_SURFACE_Namelist/index.html">8. ENCLOSURE_SURFACE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../EVAPORATION_Namelist/index.html">9. EVAPORATION Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_Namelist/index.html">10. FLOW Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_BC_Namelist/index.html">11. FLOW_BC Namelist</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">12. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#overview">12.1. Overview</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#flow-viscous-solver-namelist-features">12.2. FLOW_VISCOUS_SOLVER Namelist Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#flow-pressure-solver-namelist-features">12.3. FLOW_PRESSURE_SOLVER Namelist Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#components">12.4. Components</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#krylov-method">krylov_method</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#krylov-dim">krylov_dim</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#conv-rate-tol">conv_rate_tol</a></li>
@@ -74,25 +73,26 @@
 <li class="toctree-l3"><a class="reference internal" href="#print-level">print_level</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#additional-hypre-parameters-expert">13.5. Additional HYPRE parameters (Expert)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#additional-hypre-parameters-expert">12.5. Additional HYPRE parameters (Expert)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../FUNCTION_Namelist/index.html">14. FUNCTION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../INDUCTION_SOURCE_FIELD_Namelist/index.html">15. INDUCTION_SOURCE_FIELD Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">16. MATERIAL and PHASE Namelists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">17. MESH Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../MICROSTRUCTURE_Namelist/index.html">18. MICROSTRUCTURE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">19. NUMERICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">20. OUTPUTS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">21. PHASE_CHANGE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">22. PHYSICAL_CONSTANTS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">23. PHYSICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">24. PROBE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">25. RESTART Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">26. SIMULATION_CONTROL Namelist (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">27. SOLID_MECHANICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">28. SOLID_MECHANICS_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">29. SPECIES_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FUNCTION_Namelist/index.html">13. FUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../INDUCTION_SOURCE_FIELD_Namelist/index.html">14. INDUCTION_SOURCE_FIELD Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">15. MATERIAL and PHASE Namelists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">16. MESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MICROSTRUCTURE_Namelist/index.html">17. MICROSTRUCTURE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">18. NUMERICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">19. OUTPUTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">20. PHASE_CHANGE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">21. PHYSICAL_CONSTANTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">22. PHYSICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">23. PROBE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">24. RESTART Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">25. SIMULATION_CONTROL Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">26. SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">27. SOLID_MECHANICS_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">28. SPECIES_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPECIES_SOURCE_Namelist/index.html">29. SPECIES_SOURCE Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">30. THERMAL_BC Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">31. THERMAL_SOURCE Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">32. TOOLHEAD Namelist</a></li>
@@ -118,7 +118,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active"><span class="section-number">13. </span>FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist</li>
+      <li class="breadcrumb-item active"><span class="section-number">12. </span>FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -131,29 +131,29 @@
   <div class="toctree-wrapper compound" id="flow-pressure-solver-and-flow-viscous-solver-namelists">
 </div>
 <section id="flow-pressure-solver-and-flow-viscous-solver-namelist">
-<h1><span class="section-number">13. </span>FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist<a class="headerlink" href="#flow-pressure-solver-and-flow-viscous-solver-namelist" title="Link to this heading"></a></h1>
+<h1><span class="section-number">12. </span>FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist<a class="headerlink" href="#flow-pressure-solver-and-flow-viscous-solver-namelist" title="Link to this heading"></a></h1>
 <section id="overview">
-<h2><span class="section-number">13.1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<h2><span class="section-number">12.1. </span>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
 <p>The flow algorithm requires the solution of two linear systems at each time step: the implicit viscous velocity update system and the pressure Poisson system. Truchas uses the hybrid solver from the <a class="reference external" href="https://computing.llnl.gov/projects/hypre-scalable-linear-solvers-multigrid-methods">HYPRE software library</a> to solve these systems.</p>
 <p>The hybrid solver first uses a diagonally-scaled iterative Krylov solver. If it determines that convergence is too slow, the solver switches to a more expensive but more effective preconditioned Krylov solver that uses an algebraic multigrid (AMG) preconditioner (BoomerAMG).</p>
 <p>The <strong>FLOW_VISCOUS_SOLVER</strong> namelist sets the HYPRE hybrid solver parameters for the solution of the implicit viscous velocity update system, and the <strong>FLOW_PRESSURE_SOLVER</strong> namelist sets the solver parameters for the solution of the pressure Poisson system. The same variables are used in both namelists.</p>
 </section>
 <section id="flow-viscous-solver-namelist-features">
-<h2><span class="section-number">13.2. </span>FLOW_VISCOUS_SOLVER Namelist Features<a class="headerlink" href="#flow-viscous-solver-namelist-features" title="Link to this heading"></a></h2>
+<h2><span class="section-number">12.2. </span>FLOW_VISCOUS_SOLVER Namelist Features<a class="headerlink" href="#flow-viscous-solver-namelist-features" title="Link to this heading"></a></h2>
 <div class="line-block">
 <div class="line"><strong>Required/Optional        :</strong> Required only for viscous flow with <a class="reference internal" href="../FLOW_Namelist/index.html#flow-vi"><span class="std std-ref">viscous_implicitness</span></a> &gt; 0.</div>
 <div class="line"><strong>Single/Multiple Instances:</strong> Single</div>
 </div>
 </section>
 <section id="flow-pressure-solver-namelist-features">
-<h2><span class="section-number">13.3. </span>FLOW_PRESSURE_SOLVER Namelist Features<a class="headerlink" href="#flow-pressure-solver-namelist-features" title="Link to this heading"></a></h2>
+<h2><span class="section-number">12.3. </span>FLOW_PRESSURE_SOLVER Namelist Features<a class="headerlink" href="#flow-pressure-solver-namelist-features" title="Link to this heading"></a></h2>
 <div class="line-block">
 <div class="line"><strong>Required/Optional        :</strong> Required</div>
 <div class="line"><strong>Single/Multiple Instances:</strong> Single</div>
 </div>
 </section>
 <section id="components">
-<h2><span class="section-number">13.4. </span>Components<a class="headerlink" href="#components" title="Link to this heading"></a></h2>
+<h2><span class="section-number">12.4. </span>Components<a class="headerlink" href="#components" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="#fps-fvs-km"><span class="std std-ref">krylov_method</span></a></p></li>
 <li><p><a class="reference internal" href="#fps-fvs-kd"><span class="std std-ref">krylov_dim</span></a></p></li>
@@ -227,7 +227,7 @@
 </section>
 </section>
 <section id="additional-hypre-parameters-expert">
-<h2><span class="section-number">13.5. </span>Additional HYPRE parameters (Expert)<a class="headerlink" href="#additional-hypre-parameters-expert" title="Link to this heading"></a></h2>
+<h2><span class="section-number">12.5. </span>Additional HYPRE parameters (Expert)<a class="headerlink" href="#additional-hypre-parameters-expert" title="Link to this heading"></a></h2>
 <p>Some additional HYPRE solver parameters and options can be set using these namelists. Nearly all of these are associated with the BoomerAMG preconditioner, and all have reasonable defaults set by HYPRE. See the ParCSR Hybrid Solver section in the <a class="reference external" href="https://computing.llnl.gov/sites/default/files/public/hypre-2.11.1_ref_manual.pdf">HYPRE reference manual</a>  for details. The <a class="reference external" href="https://hypre.readthedocs.io/en/latest/ch-intro.html">HYPRE documentation</a> has some additional information. The variables that can be set are listed below. Note that the variables correspond to similarly-named HYPRE library functions and not actual HYPRE variables. Also note that there are many parameters and options that cannot currently be set by the namelists.</p>
 <ul class="simple">
 <li><p>cg_use_two_norm(logical)</p></li>
@@ -245,8 +245,8 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../FLOW_BC_Namelist/index.html" class="btn btn-neutral float-left" title="12. FLOW_BC Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../FUNCTION_Namelist/index.html" class="btn btn-neutral float-right" title="14. FUNCTION Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../FLOW_BC_Namelist/index.html" class="btn btn-neutral float-left" title="11. FLOW_BC Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../FUNCTION_Namelist/index.html" class="btn btn-neutral float-right" title="13. FUNCTION Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
