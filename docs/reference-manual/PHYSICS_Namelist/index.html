@@ -158,12 +158,12 @@ is defined by <a class="reference internal" href="#physics-nos"><span class="std
 term in <span class="xref std std-ref">eq_st</span> is only included when coupled with heat transport.
 See the <a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html#material-and-phase-namelists"><span class="std std-ref">MATERIAL</span></a> namelist for defining
 the diffusivities <span class="math notranslate nohighlight">\(D_i\)</span> and Soret coefficients <span class="math notranslate nohighlight">\(S_i\)</span>. The optional
-volumetric source <span class="math notranslate nohighlight">\(Q_i\)</span> is defined through the
-<span class="xref std std-ref">DS_SOURCE</span> namelist using “concentration i” as the
-equation name. The advected species source <span class="math notranslate nohighlight">\(Q_{i,\text{adv}}\)</span> is computed
+volumetric source <span class="math notranslate nohighlight">\(Q_i\)</span> is defined using the
+<a class="reference internal" href="../SPECIES_SOURCE_Namelist/index.html#species-source-namelist"><span class="std std-ref">SPECIES_SOURCE</span></a> namelist. The advected species
+source <span class="math notranslate nohighlight">\(Q_{i,\text{adv}}\)</span> is computed
 by the flow kernel. Boundary conditions on <span class="math notranslate nohighlight">\(\phi_i\)</span> are defined through
-the <span class="xref std std-ref">SPECIES_BC</span> namelists. The initial value of the
-<span class="math notranslate nohighlight">\(\phi_i\)</span> are defined through the <span class="xref std std-ref">Phi</span> variable of the
+the <a class="reference internal" href="../SPECIES_BC_Namelist/index.html#species-bc-namelist"><span class="std std-ref">SPECIES_BC</span></a> namelists. The initial value of the
+<span class="math notranslate nohighlight">\(\phi_i\)</span> are defined through the <cite>conc</cite> variable of the
 <a class="reference internal" href="../BODY_Namelist/index.html#body-namelist"><span class="std std-ref">BODY</span></a> namelists.</p>
 <p><strong>Induction Heating</strong>.  The induction heating physics kernel solves for the Joule heat that is used as a source in heat transport. It is enabled using the <a class="reference internal" href="#physics-em"><span class="std std-ref">Electromagnetics</span></a> flag. See the <a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html#material-and-phase-namelists"><span class="std std-ref">MATERIAL</span></a> namelist for a description of the material properties required by the electromagnetics solver. The <a class="reference internal" href="#physics-em"><span class="std std-ref">Electromagnetics</span></a> namelist is used to describe the induction heating problem.</p>
 <p><strong>Solid Mechanics</strong>.  The solid mechanics physics kernel models small strain
