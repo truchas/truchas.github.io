@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>37. VISCOPLASTIC_SOLVER Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=93b25530" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=8d563738"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script>window.MathJax = {"chtml": {"displayAlign": "left", "displayIndent": "2em"}}</script>
+        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="38. Radiation Enclosure Tools" href="../rade/index.html" />
+    <link rel="prev" title="36. VISCOPLASTIC_MODEL Namelist" href="../VISCOPLASTIC_MODEL_Namelist/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Truchas Reference Manual
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../BODY_Namelist/index.html">2. BODY Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DIFFUSION_Solver_Namelist/index.html">3. DIFFUSION Solver Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html">4. ELECTROMAGNETICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ELECTROMAGNETIC_BC_Namelist/index.html">5. ELECTROMAGNETIC_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../EM_MESH_Namelist/index.html">6. EM_MESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_RADIATION_Namelist/index.html">7. ENCLOSURE_RADIATION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_SURFACE_Namelist/index.html">8. ENCLOSURE_SURFACE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../EVAPORATION_Namelist/index.html">9. EVAPORATION Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_Namelist/index.html">10. FLOW Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_BC_Namelist/index.html">11. FLOW_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html">12. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FUNCTION_Namelist/index.html">13. FUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../INDUCTION_SOURCE_FIELD_Namelist/index.html">14. INDUCTION_SOURCE_FIELD Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">15. MATERIAL and PHASE Namelists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">16. MESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MICROSTRUCTURE_Namelist/index.html">17. MICROSTRUCTURE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">18. NUMERICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">19. OUTPUTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">20. PHASE_CHANGE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">21. PHYSICAL_CONSTANTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">22. PHYSICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">23. PROBE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">24. RESTART Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">25. SIMULATION_CONTROL Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">26. SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">27. SOLID_MECHANICS_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">28. SPECIES_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPECIES_SOURCE_Namelist/index.html">29. SPECIES_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">30. THERMAL_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">31. THERMAL_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">32. TOOLHEAD Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">33. TOOLPATH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">34. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">35. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">36. VISCOPLASTIC_MODEL Namelist</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">37. VISCOPLASTIC_SOLVER Namelist</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#strain-limit">37.1. strain_limit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#abs-plastic-strain-tol">37.2. abs_plastic_strain_tol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rel-plastic-strain-tol">37.3. rel_plastic_strain_tol</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#maximum-iterations">37.4. maximum_iterations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nlk-max-vectors">37.5. nlk_max_vectors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rate-limit">37.6. rate_limit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nlk-tol-expert">37.7. nlk_tol (expert)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nlk-vector-tolerance-expert">37.8. nlk_vector_tolerance (expert)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pc-freq-expert">37.9. pc_freq (expert)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#solver-expert">37.10. solver (expert)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">38. Radiation Enclosure Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">39. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Truchas Reference Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">37. </span>VISCOPLASTIC_SOLVER Namelist</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/VISCOPLASTIC_SOLVER_Namelist/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="viscoplastic-solver-namelist">
+<h1><span class="section-number">37. </span>VISCOPLASTIC_SOLVER Namelist<a class="headerlink" href="#viscoplastic-solver-namelist" title="Link to this heading"></a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">VISCOPLASTIC_SOLVER</span></code> namelist sets parameters that are specific to the
+viscoplasticity solver. This namelist is read whenever the <a class="reference internal" href="../PHYSICS_Namelist/index.html#id1"><span class="std std-ref">PHYSICS
+Namelist</span></a> option
+<a class="reference internal" href="../PHYSICS_Namelist/index.html#solid-mechanics"><span class="std std-ref">solid_mechanics</span></a> is enabled and a
+<a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html#id1"><span class="std std-ref">VISCOPLASTIC_MODEL
+Namelist</span></a> exists.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Required/Optional<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Required when viscoplasticity is enabled (i.e., when a :ref:<a href="#id1"><span class="problematic" id="id2">`</span></a>VISCOPLASTIC_MODEL</p>
+</dd>
+</dl>
+<p>Namelist&lt;VISCOPLASTIC_MODEL_Namelist/index:VISCOPLASTIC_MODEL Namelist&gt;` exists).
+:Single/Multiple Instances: Single</p>
+<nav class="contents local" id="components">
+<p class="topic-title">Components</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#strain-limit" id="id3">strain_limit</a></p></li>
+<li><p><a class="reference internal" href="#abs-plastic-strain-tol" id="id4">abs_plastic_strain_tol</a></p></li>
+<li><p><a class="reference internal" href="#rel-plastic-strain-tol" id="id5">rel_plastic_strain_tol</a></p></li>
+<li><p><a class="reference internal" href="#maximum-iterations" id="id6">maximum_iterations</a></p></li>
+<li><p><a class="reference internal" href="#nlk-max-vectors" id="id7">nlk_max_vectors</a></p></li>
+<li><p><a class="reference internal" href="#rate-limit" id="id8">rate_limit</a></p></li>
+<li><p><a class="reference internal" href="#nlk-tol-expert" id="id9">nlk_tol (expert)</a></p></li>
+<li><p><a class="reference internal" href="#nlk-vector-tolerance-expert" id="id10">nlk_vector_tolerance (expert)</a></p></li>
+<li><p><a class="reference internal" href="#pc-freq-expert" id="id11">pc_freq (expert)</a></p></li>
+<li><p><a class="reference internal" href="#solver-expert" id="id12">solver (expert)</a></p></li>
+</ul>
+</nav>
+<section id="strain-limit">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink"><span class="section-number">37.1. </span>strain_limit</a><a class="headerlink" href="#strain-limit" title="Link to this heading"></a></h2>
+<p>This parameter controls the use of the ODE integrator in the plastic strain
+calculation. When the plastic strain at an integration point is below this
+limit, a single Heun step is taken. When the plastic strain is at or above this
+limit, the solver requested by <span class="xref std std-ref">viscoplastic_solver</span> is invoked with
+an initial step size such that the predicted plastic strain delta does not
+exceed the limit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>real</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>1e-10</p>
+</dd>
+<dt class="field-odd">Valid Values<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\(\geq 0\)</span></p>
+</dd>
+</dl>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This should be set to the minimum significant value of the plastic strain
+increment for a time step. If convergence seems poor when a viscoplastic
+material model is used, it may help to reduce this value.</p>
+</div>
+</section>
+<section id="abs-plastic-strain-tol">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink"><span class="section-number">37.2. </span>abs_plastic_strain_tol</a><a class="headerlink" href="#abs-plastic-strain-tol" title="Link to this heading"></a></h2>
+<p>The tolerance <span class="math notranslate nohighlight">\(\epsilon\)</span> for the absolute error component of the plastic
+strain error norm used by the nonlinear solver. If <span class="math notranslate nohighlight">\(\delta u\)</span> is a plastic
+strain field increment with reference plastic strain field <span class="math notranslate nohighlight">\(u\)</span>,then this
+error norm is</p>
+<div class="math notranslate nohighlight">
+\[|||\delta u||| \equiv \mathop{{max}_j} |\delta u_j|/(\epsilon + \eta |u_j|)\]</div>
+<p>The relative error tolerance <span class="math notranslate nohighlight">\(\eta\)</span> is given by <a class="reference internal" href="#rel-plastic-strain-tol">rel_plastic_strain_tol</a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Physical Dimension<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\(\Theta\)</span></p>
+</dd>
+<dt class="field-even">Type<span class="colon">:</span></dt>
+<dd class="field-even"><p>real</p>
+</dd>
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>1e-12</p>
+</dd>
+<dt class="field-even">Valid Values<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="math notranslate nohighlight">\(\geq 0\)</span></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The error norm is dimensionless and normalized.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For <span class="math notranslate nohighlight">\(u_j\)</span> sufficiently small the norm approximates an absolute norm
+with tolerance <span class="math notranslate nohighlight">\(\epsilon\)</span>, and for <span class="math notranslate nohighlight">\(u_j\)</span> sufficiently large the
+norm approximates a relative norm with tolerance <span class="math notranslate nohighlight">\(\eta\)</span>. If
+<span class="math notranslate nohighlight">\(\epsilon = 0\)</span> then the norm is a pure relative norm and the
+plastic strain must be bounded away from 0.</p>
+</div>
+</section>
+<section id="rel-plastic-strain-tol">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink"><span class="section-number">37.3. </span>rel_plastic_strain_tol</a><a class="headerlink" href="#rel-plastic-strain-tol" title="Link to this heading"></a></h2>
+<p>The tolerance <span class="math notranslate nohighlight">\(\eta\)</span> for the relative error component of the plastic
+strain error norm used by the nonlinear solver. If <span class="math notranslate nohighlight">\(\delta u\)</span> is a plastic
+strain field increment with reference displacement field <span class="math notranslate nohighlight">\(u\)</span>, then this
+error norm is</p>
+<div class="math notranslate nohighlight">
+\[|||\delta u||| \equiv \mathop{{max}_j} |\delta u_j|/(\epsilon + \eta |u_j|)\]</div>
+<p>The absolute error tolerance <span class="math notranslate nohighlight">\(\epsilon\)</span> is given by <a class="reference internal" href="#abs-plastic-strain-tol">abs_plastic_strain_tol</a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Physcial Dimension<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dimensionless</p>
+</dd>
+<dt class="field-even">Type<span class="colon">:</span></dt>
+<dd class="field-even"><p>real</p>
+</dd>
+<dt class="field-odd">Default<span class="colon">:</span></dt>
+<dd class="field-odd"><p>1e-3</p>
+</dd>
+<dt class="field-even">Valid Values<span class="colon">:</span></dt>
+<dd class="field-even"><p>(0, 1)</p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>See the notes for <a class="reference internal" href="#abs-plastic-strain-tol">abs_plastic_strain_tol</a>.</p>
+</div>
+</section>
+<section id="maximum-iterations">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink"><span class="section-number">37.4. </span>maximum_iterations</a><a class="headerlink" href="#maximum-iterations" title="Link to this heading"></a></h2>
+<p>Maximum allowed number of iterations of the nonlinear solver.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>10</p>
+</dd>
+<dt class="field-odd">Valid Values<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\([0,\infty)\)</span></p>
+</dd>
+</dl>
+</section>
+<section id="nlk-max-vectors">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink"><span class="section-number">37.5. </span>nlk_max_vectors</a><a class="headerlink" href="#nlk-max-vectors" title="Link to this heading"></a></h2>
+<p>For the NLK method, the maximum number of acceleration vectors to be used.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>3</p>
+</dd>
+<dt class="field-odd">Valid Values<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\([0,\infty)\)</span></p>
+</dd>
+</dl>
+</section>
+<section id="rate-limit">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink"><span class="section-number">37.6. </span>rate_limit</a><a class="headerlink" href="#rate-limit" title="Link to this heading"></a></h2>
+<p>This parameter controls the use of the ODE integrator in the plastic strain
+calculation. When the relative rate of change of the plastic strain at an
+integration point is below this limit, a single Heun step is taken. Otherwise,
+(and if the <a class="reference internal" href="#strain-limit">strain_limit</a> is met), the solver requested by
+<span class="xref std std-ref">viscoplastic_solver</span> is invoked with an initial step size such that the predicted plastic
+strain delta does not exceed the limit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>real</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="math notranslate nohighlight">\(-\infty\)</span></p>
+</dd>
+<dt class="field-odd">Valid Values<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\((-\infty,\infty)\)</span></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The legacy viscoplasticity solver defaulted this value to 1.1, which seems to
+moderately speed up calculations at the cost of stability.</p>
+</div>
+</section>
+<section id="nlk-tol-expert">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink"><span class="section-number">37.7. </span>nlk_tol (expert)</a><a class="headerlink" href="#nlk-tol-expert" title="Link to this heading"></a></h2>
+<p>The convergence tolerance for the NLK nonlinear solver for viscoplasticity. The
+nonlinear system is considered solved by the current iterate if the norm of the
+last solution correction is less than this value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>real</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>1e-2</p>
+</dd>
+<dt class="field-odd">Valid Values<span class="colon">:</span></dt>
+<dd class="field-odd"><p>(0, 1]</p>
+</dd>
+</dl>
+</section>
+<section id="nlk-vector-tolerance-expert">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink"><span class="section-number">37.8. </span>nlk_vector_tolerance (expert)</a><a class="headerlink" href="#nlk-vector-tolerance-expert" title="Link to this heading"></a></h2>
+<p>The vector drop tolerance for the NLK method. When assembling the acceleration
+subspace vector by vector, a vector is dropped when the sine of the angle
+between the vector and the subspace less than this value.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>real</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>0.01</p>
+</dd>
+<dt class="field-odd">Valid Values<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\((0,1)\)</span></p>
+</dd>
+</dl>
+</section>
+<section id="pc-freq-expert">
+<h2><a class="toc-backref" href="#id11" role="doc-backlink"><span class="section-number">37.9. </span>pc_freq (expert)</a><a class="headerlink" href="#pc-freq-expert" title="Link to this heading"></a></h2>
+<p>This controls how frequently the preconditioner is updated in the adaptive BDF2
+integrator. A value of <span class="math notranslate nohighlight">\(N\)</span> will allow a preconditioner to be used for as many
+as <span class="math notranslate nohighlight">\(N\)</span> consecutive time steps before being updated, although it may be updated
+more frequently based on other criteria. A value of 1 causes the preconditioner
+to be updated every time step.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>1</p>
+</dd>
+<dt class="field-odd">Valid Values<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\(\geq 1\)</span></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>A basic strategy of the adaptive BDF2 integrator is to use a preconditioner
+for as many time steps as possible, and only update it when a nonlinear time
+step iteration fails to converge. This generally works quite well. But if you
+find that the integrator is thrashing — evidenced by the number of times a
+step failed with an old preconditioner and was retried (this is the NNR
+diagnostic value in the terminal output) being a significant fraction of the
+number of time steps — it may be more cost effective to set this value to 1,
+for example.</p>
+</div>
+</section>
+<section id="solver-expert">
+<h2><a class="toc-backref" href="#id12" role="doc-backlink"><span class="section-number">37.10. </span>solver (expert)</a><a class="headerlink" href="#solver-expert" title="Link to this heading"></a></h2>
+<p>The choice of viscoplastic solver. The default is fast and accurate, and an end
+user won’t benefit by changing this option. The default is to use the
+<code class="docutils literal notranslate"><span class="pre">bdf2_integrator</span></code> backend. The <cite>“jacobian”</cite> option uses an implicit
+NLK-accelerated <code class="docutils literal notranslate"><span class="pre">idaesol</span></code> solver. The <cite>“jfree”</cite> option uses a jacobian-free
+algorithm identical to the <code class="docutils literal notranslate"><span class="pre">bdf2_integrator</span></code>, but implemented on the
+<code class="docutils literal notranslate"><span class="pre">idaesol</span></code> type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p><cite>“bdf2”</cite></p>
+</dd>
+<dt class="field-odd">Valid Values<span class="colon">:</span></dt>
+<dd class="field-odd"><p><cite>“bdf2”</cite>, <cite>“jacobian”</cite>, or <cite>“jfree”</cite></p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../VISCOPLASTIC_MODEL_Namelist/index.html" class="btn btn-neutral float-left" title="36. VISCOPLASTIC_MODEL Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../rade/index.html" class="btn btn-neutral float-right" title="38. Radiation Enclosure Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021-2024, The Truchas Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

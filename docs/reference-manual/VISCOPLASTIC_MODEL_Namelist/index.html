@@ -24,7 +24,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="37. Radiation Enclosure Tools" href="../rade/index.html" />
+    <link rel="next" title="37. VISCOPLASTIC_SOLVER Namelist" href="../VISCOPLASTIC_SOLVER_Namelist/index.html" />
     <link rel="prev" title="35. VFUNCTION Namelist" href="../VFUNCTION_Namelist/index.html" /> 
 </head>
 
@@ -104,12 +104,14 @@
 <li class="toctree-l3"><a class="reference internal" href="#pwr-law-n">Pwr_Law_N</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pwr-law-q">Pwr_Law_Q</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pwr-law-r">Pwr_Law_R</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pwr-law-tref">Pwr_Law_Tref</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">37. Radiation Enclosure Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/index.html">38. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_SOLVER_Namelist/index.html">37. VISCOPLASTIC_SOLVER Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">38. Radiation Enclosure Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">39. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
 </ul>
 
         </div>
@@ -145,7 +147,7 @@
 <p>The VISCOPLASTIC_MODEL namelist defines the viscoplastic model to be used for a particular solid material phase in material stress-strain calculations. Two viscoplastic models are available: a mechanical threshold stress (MTS) model and a power law model. When no model is given for a solid material phase, it is modeled as a purely elastic material. The models specify a relation for the effective plastic strain rate ̇as a function of temperature <span class="math notranslate nohighlight">\(T\)</span> and von Mises stress <span class="math notranslate nohighlight">\(\sigma\)</span>. For more details on the models see the Truchas Physics and Algorithms manual. Briefly:</p>
 <p><strong>Power Law Model</strong>. In the simple power law model, the strain rate relation is</p>
 <div class="math notranslate nohighlight" id="equation-vpm-eq1">
-<span class="eqno">(36.1.1)<a class="headerlink" href="#equation-vpm-eq1" title="Link to this equation"></a></span>\[\dot{\epsilon} = A*exp(-Q/RT)*\sigma^n\]</div>
+<span class="eqno">(36.1.1)<a class="headerlink" href="#equation-vpm-eq1" title="Link to this equation"></a></span>\[\dot{\epsilon} = A*exp(-Q/R(T - T_0))*\sigma^n\]</div>
 <p>where A, n, Q, and R are parameters given by this namelist.</p>
 <p><strong>MTS Model</strong>. The MTS model uses the strain rate relation</p>
 <div class="math notranslate nohighlight" id="equation-vpm-eq">
@@ -179,6 +181,7 @@
 <li><p><a class="reference internal" href="#vpm-pln"><span class="std std-ref">Pwr_Law_N</span></a></p></li>
 <li><p><a class="reference internal" href="#vpm-plq"><span class="std std-ref">Pwr_Law_Q</span></a></p></li>
 <li><p><a class="reference internal" href="#vpm-plr"><span class="std std-ref">Pwr_Law_R</span></a></p></li>
+<li><p><span class="xref std std-ref">Pwr_Law_Tref</span></p></li>
 </ul>
 <section id="phase">
 <span id="vpm-phase"></span><h3>Phase<a class="headerlink" href="#phase" title="Link to this heading"></a></h3>
@@ -347,6 +350,16 @@
 <div class="line"><strong>Note</strong>        : Temperature should be expressed in Kelvin, or other temperature scale where <span class="math notranslate nohighlight">\(0\)</span> corresponds to absolute zero. Use the value for <span class="math notranslate nohighlight">\(R\)</span> appropriate to the units used in <a class="reference internal" href="#equation-vpm-eq1">Eq.36.1.1</a></div>
 </div>
 </section>
+<section id="pwr-law-tref">
+<span id="vpm-pltref"></span><h3>Pwr_Law_Tref<a class="headerlink" href="#pwr-law-tref" title="Link to this heading"></a></h3>
+<div class="line-block">
+<div class="line"><strong>Description</strong> : Reference temperature <span class="math notranslate nohighlight">\(T_0\)</span></div>
+<div class="line"><strong>Physical Dimension</strong>: <span class="math notranslate nohighlight">\(E\)</span></div>
+<div class="line"><strong>Type</strong>        : real</div>
+<div class="line"><strong>Default</strong>     : 0</div>
+<div class="line"><strong>Note</strong>        : Used to offset temperature units from an absolute scale like Kelvin to non-absolute units like Celsius.</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -355,7 +368,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="../VFUNCTION_Namelist/index.html" class="btn btn-neutral float-left" title="35. VFUNCTION Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../rade/index.html" class="btn btn-neutral float-right" title="37. Radiation Enclosure Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../VISCOPLASTIC_SOLVER_Namelist/index.html" class="btn btn-neutral float-right" title="37. VISCOPLASTIC_SOLVER Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
