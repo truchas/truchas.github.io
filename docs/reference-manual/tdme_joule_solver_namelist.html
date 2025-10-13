@@ -1,0 +1,402 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>34. TDME_JOULE_SOLVER Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=93b25530" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script>window.MathJax = {"chtml": {"displayAlign": "left", "displayIndent": "2em"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="35. THERMAL_BC Namelist" href="THERMAL_BC_Namelist/index.html" />
+    <link rel="prev" title="33. SPECIES_SOURCE Namelist" href="SPECIES_SOURCE_Namelist/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Truchas Reference Manual
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction/index.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BODY_Namelist/index.html">2. BODY Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complex_function_namelist.html">3. COMPLEX_FUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complex_vfunction_namelist.html">4. COMPLEX_VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIFFUSION_Solver_Namelist/index.html">5. DIFFUSION Solver Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ELECTROMAGNETIC_BC_Namelist/index.html">6. ELECTROMAGNETIC_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EM_MESH_Namelist/index.html">7. EM_MESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ENCLOSURE_RADIATION_Namelist/index.html">8. ENCLOSURE_RADIATION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ENCLOSURE_SURFACE_Namelist/index.html">9. ENCLOSURE_SURFACE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EVAPORATION_Namelist/index.html">10. EVAPORATION Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="fdme_solver_namelist.html">11. FDME_SOLVER Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FLOW_Namelist/index.html">12. FLOW Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FLOW_BC_Namelist/index.html">13. FLOW_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html">14. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FUNCTION_Namelist/index.html">15. FUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="induction_heating_namelist.html">16. INDUCTION_HEATING Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="INDUCTION_SOURCE_FIELD_Namelist/index.html">17. INDUCTION_SOURCE_FIELD Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MATERIAL_and_PHASE_Namelists/index.html">18. MATERIAL and PHASE Namelists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MESH_Namelist/index.html">19. MESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MICROSTRUCTURE_Namelist/index.html">20. MICROSTRUCTURE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="microwave_heating_namelist.html">21. MICROWAVE_HEATING Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NUMERICS_Namelist/index.html">22. NUMERICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OUTPUTS_Namelist/index.html">23. OUTPUTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PHASE_CHANGE_Namelist/index.html">24. PHASE_CHANGE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PHYSICAL_CONSTANTS_Namelist/index.html">25. PHYSICAL_CONSTANTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PHYSICS_Namelist/index.html">26. PHYSICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PROBE_Namelist/index.html">27. PROBE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RESTART_Namelist/index.html">28. RESTART Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIMULATION_CONTROL_Namelist/index.html">29. SIMULATION_CONTROL Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SOLID_MECHANICS_Namelist/index.html">30. SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SOLID_MECHANICS_BC_Namelist/index.html">31. SOLID_MECHANICS_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SPECIES_BC_Namelist/index.html">32. SPECIES_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SPECIES_SOURCE_Namelist/index.html">33. SPECIES_SOURCE Namelist</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">34. TDME_JOULE_SOLVER Namelist</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#namelist-variables">34.1. Namelist Variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#steps-per-cycle">steps_per_cycle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#steady-state-tol">steady_state_tol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#max-source-cycles">max_source_cycles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rel-tol">rel_tol</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#max-iter">max_iter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#c-ratio">c_ratio</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#graphics-output">graphics_output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#print-level">print_level</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#relax-type-experimental">relax_type (experimental)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="THERMAL_BC_Namelist/index.html">35. THERMAL_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="THERMAL_SOURCE_Namelist/index.html">36. THERMAL_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TOOLHEAD_Namelist/index.html">37. TOOLHEAD Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TOOLPATH_Namelist/index.html">38. TOOLPATH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TURBULENCE_Namelist/index.html">39. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VFUNCTION_Namelist/index.html">40. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VISCOPLASTIC_MODEL_Namelist/index.html">41. VISCOPLASTIC_MODEL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VISCOPLASTIC_SOLVER_Namelist/index.html">42. VISCOPLASTIC_SOLVER Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rade/index.html">43. Radiation Enclosure Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/index.html">44. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Truchas Reference Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">34. </span>TDME_JOULE_SOLVER Namelist</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/tdme_joule_solver_namelist.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="toctree-wrapper compound" id="tdme-joule-solver-namelist">
+</div>
+<section id="id1">
+<h1><span class="section-number">34. </span>TDME_JOULE_SOLVER Namelist<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<p>This namelist specifies the parameters that pertain to the time-domain
+Joule heat solver, which integrates the periodically-forced Maxwell equations
+in time until a periodic steady state solution is attained, and then computes
+the time-averaged Joule heat over one cycle of the forcing. This solver is used
+by the induction heating physics model; see the
+<a class="reference internal" href="induction_heating_namelist.html#induction-heating-namelist"><span class="std std-ref">INDUCTION_HEATING</span></a> namelist.</p>
+<section id="namelist-variables">
+<h2><span class="section-number">34.1. </span>Namelist Variables<a class="headerlink" href="#namelist-variables" title="Link to this heading"></a></h2>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#steps-per-cycle" id="id2">steps_per_cycle</a></p></li>
+<li><p><a class="reference internal" href="#steady-state-tol" id="id3">steady_state_tol</a></p></li>
+<li><p><a class="reference internal" href="#max-source-cycles" id="id4">max_source_cycles</a></p></li>
+<li><p><a class="reference internal" href="#rel-tol" id="id5">rel_tol</a></p></li>
+<li><p><a class="reference internal" href="#max-iter" id="id6">max_iter</a></p></li>
+<li><p><a class="reference internal" href="#c-ratio" id="id7">c_ratio</a></p></li>
+<li><p><a class="reference internal" href="#graphics-output" id="id8">graphics_output</a></p></li>
+<li><p><a class="reference internal" href="#print-level" id="id9">print_level</a></p></li>
+<li><p><a class="reference internal" href="#relax-type-experimental" id="id10">relax_type (experimental)</a></p></li>
+</ul>
+</nav>
+<section id="steps-per-cycle">
+<h3><a class="toc-backref" href="#id2" role="doc-backlink">steps_per_cycle</a><a class="headerlink" href="#steps-per-cycle" title="Link to this heading"></a></h3>
+<p>The number of time steps per cycle of the periodic forcing used to integrate
+the EM field equations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>20</p>
+</dd>
+<dt class="field-odd">Valid Values<span class="colon">:</span></dt>
+<dd class="field-odd"><p>&gt; 0</p>
+</dd>
+<dt class="field-even">Notes<span class="colon">:</span></dt>
+<dd class="field-even"><p>Increasing the number of time steps per cycle increases the accuracy
+and stability of the Joule heat computation, while generally increasing
+the execution time. A reasonable range of values is [10,40]; anything
+less than 10 is severely discouraged.</p>
+</dd>
+</dl>
+</section>
+<section id="steady-state-tol">
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">steady_state_tol</a><a class="headerlink" href="#steady-state-tol" title="Link to this heading"></a></h3>
+<p>Convergence to the periodic steady state is measured by comparing the
+computed Joule heat field averaged over the last source field cycle,
+<span class="math notranslate nohighlight">\(q_\text{last}\)</span>, with the result from the previous cycle,
+<span class="math notranslate nohighlight">\(q_\text{prev}\)</span>. The Joule heat computation is considered converged
+when <span class="math notranslate nohighlight">\(\lVert{q_\text{last}-q_\text{prev}}\rVert_\infty &lt; \delta\,
+\lVert{q_\text{last}}\rVert_\infty\)</span> where <span class="math notranslate nohighlight">\(\delta\)</span> is the value of
+this parameter.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>real</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="math notranslate nohighlight">\(10^{-2}\)</span></p>
+</dd>
+<dt class="field-odd">Valid Values<span class="colon">:</span></dt>
+<dd class="field-odd"><p>&gt; 0</p>
+</dd>
+<dt class="field-even">Notes<span class="colon">:</span></dt>
+<dd class="field-even"><p>Depending on the accuracy of the other physics, <span class="math notranslate nohighlight">\(10^{-2}\)</span> or
+<span class="math notranslate nohighlight">\(10^{-3}\)</span> are adequate values. The measured error is more
+properly the error in <span class="math notranslate nohighlight">\(q_\text{prev}\)</span>; the actual error in
+<span class="math notranslate nohighlight">\(q_\text{last}\)</span> will be significantly less.</p>
+</dd>
+</dl>
+</section>
+<section id="max-source-cycles">
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">max_source_cycles</a><a class="headerlink" href="#max-source-cycles" title="Link to this heading"></a></h3>
+<p>Specifies the time limit, measured in cycles of the periodic forcing, allowed
+for convergence to the periodic steady state. If convergence is not attained
+within this limit, the last result is returned and a warning issued, but
+execution continues.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>5</p>
+</dd>
+<dt class="field-odd">Valid Values<span class="colon">:</span></dt>
+<dd class="field-odd"><p>&gt; 0</p>
+</dd>
+<dt class="field-even">Notes<span class="colon">:</span></dt>
+<dd class="field-even"><p>To avoid ringing, the amplitude of the external source field is phased
+in and is not at full strength until after approximately two cycles
+have passed. Consequently this input variable should normally be at
+least 3. Convergence to a periodic steady state is commonly attained
+within 5 cycles; see <a class="reference internal" href="#steady-state-tol">steady_state_tol</a>.</p>
+</dd>
+</dl>
+</section>
+<section id="rel-tol">
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">rel_tol</a><a class="headerlink" href="#rel-tol" title="Link to this heading"></a></h3>
+<p>The convergence tolerance <span class="math notranslate nohighlight">\(\eta\)</span> for the conjugate gradient (CG) solution
+of the linear time step system. The CG iteration is considered converged when
+the residual <span class="math notranslate nohighlight">\(r\)</span> satisfies <span class="math notranslate nohighlight">\(\lVert{r}\rVert&lt;\eta\lVert{r_0}\rVert\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>real</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="math notranslate nohighlight">\(10^{-8}\)</span></p>
+</dd>
+<dt class="field-odd">Valid Values<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\((0, 0.1)\)</span></p>
+</dd>
+<dt class="field-even">Notes<span class="colon">:</span></dt>
+<dd class="field-even"><p>The numerical characteristics of the EM system require that the linear
+systems be solved to significantly greater accuracy than might
+otherwise be required. Too loose a tolerance will manifest itself in
+a significant build-up of noise in the solution of the electric field
+over the course of the simulation.</p>
+</dd>
+</dl>
+</section>
+<section id="max-iter">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">max_iter</a><a class="headerlink" href="#max-iter" title="Link to this heading"></a></h3>
+<p>The maximum number of conjugate gradient (CG) iterations allowed. It is a
+fatal error if convergence is not attained within this number of iterations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>500</p>
+</dd>
+<dt class="field-odd">Valid Values<span class="colon">:</span></dt>
+<dd class="field-odd"><p>&gt; 0</p>
+</dd>
+</dl>
+</section>
+<section id="c-ratio">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">c_ratio</a><a class="headerlink" href="#c-ratio" title="Link to this heading"></a></h3>
+<p>In the quasi-magnetostatic regime, Maxwell’s equations can become become very
+ill-conditioned and difficult to solve in regions with zero electrical
+conductivity, such as free space. Artificially reducing the speed of light
+in those regions helps ameliorate that difficulty, and this numerical parameter
+is that reduction factor <span class="math notranslate nohighlight">\(r\)</span>. A value of 1 means no reduction and is the
+default.</p>
+<dl class="field-list">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>real</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>1</p>
+</dd>
+<dt class="field-odd">Valid Values<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\(\in(0,1]\)</span></p>
+</dd>
+<dt class="field-even">Notes<span class="colon">:</span></dt>
+<dd class="field-even"><p>This is implemented by altering the permittivity,
+<span class="math notranslate nohighlight">\(\epsilon\to\epsilon/r^2\)</span>,
+which only modifies the displacement current term
+<span class="math notranslate nohighlight">\(\partial\epsilon\vec{E}/\partial t\)</span>.
+In the magnetostatic regime, this term functions as a very small
+perturbation in Maxwell’s equations.</p>
+<p>For common induction heating applications, this parameter can be taken
+fairly small, <span class="math notranslate nohighlight">\(10^{-3}\)</span> or <span class="math notranslate nohighlight">\(10^{-4}\)</span>, without any signficant
+effect on the computed Joule heat.</p>
+<p>More generally, <span class="math notranslate nohighlight">\(\omega\epsilon\ll\sigma\)</span> in the magnetostatic
+regime, where <span class="math notranslate nohighlight">\(\omega\)</span> is the frequency of the external driving
+field, and one wants to ensure that this separation of scales is
+maintained when choosing the reduction factor,
+<span class="math notranslate nohighlight">\(\omega\epsilon/r^2\ll\sigma\)</span>.</p>
+</dd>
+</dl>
+</section>
+<section id="graphics-output">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">graphics_output</a><a class="headerlink" href="#graphics-output" title="Link to this heading"></a></h3>
+<p>A flag that enables output of the EM solution for graphics visualization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>logical</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">.false.</span></code></p>
+</dd>
+<dt class="field-odd">Notes<span class="colon">:</span></dt>
+<dd class="field-odd"><p>When enabled, the solver generates its own graphics data file in
+VTKHDF format, which is compatible with the ParaView visualization software.
+The solver produces a separate sequentially-numbered file for each use,
+identifiable by the <code class="docutils literal notranslate"><span class="pre">.vtkhdf</span></code> suffix. This setting does not affect the
+standard graphics output generated by Truchas, which is configured
+elsewhere. Since these files are simply HDF5 files structured to the
+VTKHDF specification, they can also be used with generic HDF5 tools.</p>
+</dd>
+</dl>
+</section>
+<section id="print-level">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">print_level</a><a class="headerlink" href="#print-level" title="Link to this heading"></a></h3>
+<p>Controls the verbosity of the time-domain Joule heat solver.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>1</p>
+</dd>
+<dt class="field-odd">Valid Values<span class="colon">:</span></dt>
+<dd class="field-odd"><p>1, 2, or 3</p>
+</dd>
+<dt class="field-even">Notes<span class="colon">:</span></dt>
+<dd class="field-even"><p>At the default level, 1, a status message is output at the end of
+each source field cycle showing the progress toward steady state. Level 2
+adds a summary of the CG iteration for each time step. Level 3 adds
+convergence info for each CG iterate. Levels 1 and 2 are typical.</p>
+</dd>
+</dl>
+</section>
+<section id="relax-type-experimental">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">relax_type (experimental)</a><a class="headerlink" href="#relax-type-experimental" title="Link to this heading"></a></h3>
+<p>Specifies the type of relaxation used within the linear system preconditioner.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>0</p>
+</dd>
+<dt class="field-odd">Valid values<span class="colon">:</span></dt>
+<dd class="field-odd"><p>0, Gauss-Seidel; 1, Hypre Boomer AMG</p>
+</dd>
+<dt class="field-even">Notes<span class="colon">:</span></dt>
+<dd class="field-even"><p>Boomer is significantly more expensive without any obvious benefit.</p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="SPECIES_SOURCE_Namelist/index.html" class="btn btn-neutral float-left" title="33. SPECIES_SOURCE Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="THERMAL_BC_Namelist/index.html" class="btn btn-neutral float-right" title="35. THERMAL_BC Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021-2024, The Truchas Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

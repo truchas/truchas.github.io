@@ -1,0 +1,505 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>11. FDME_SOLVER Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=93b25530" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=8d563738"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script>window.MathJax = {"chtml": {"displayAlign": "left", "displayIndent": "2em"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="12. FLOW Namelist" href="FLOW_Namelist/index.html" />
+    <link rel="prev" title="10. EVAPORATION Namelist (Experimental)" href="EVAPORATION_Namelist/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Truchas Reference Manual
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction/index.html">1. Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BODY_Namelist/index.html">2. BODY Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complex_function_namelist.html">3. COMPLEX_FUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="complex_vfunction_namelist.html">4. COMPLEX_VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DIFFUSION_Solver_Namelist/index.html">5. DIFFUSION Solver Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ELECTROMAGNETIC_BC_Namelist/index.html">6. ELECTROMAGNETIC_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EM_MESH_Namelist/index.html">7. EM_MESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ENCLOSURE_RADIATION_Namelist/index.html">8. ENCLOSURE_RADIATION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ENCLOSURE_SURFACE_Namelist/index.html">9. ENCLOSURE_SURFACE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EVAPORATION_Namelist/index.html">10. EVAPORATION Namelist (Experimental)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">11. FDME_SOLVER Namelist</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#namelist-variables">11.1. Namelist Variables</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#solver-type">solver_type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#graphics-output">graphics_output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#print-level">print_level</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#use-mixed-form-experimental">use_mixed_form (experimental)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#minres-parameters">MINRES Parameters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rel-tol">rel_tol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#max-iter">max_iter</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#minres-preconditioner-parameters">MINRES Preconditioner Parameters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#precon-type">precon_type</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pc-damping-experimental">pc_damping (experimental)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ssor-num-cycles">ssor_num_cycles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ssor-omega">ssor_omega</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#boomer-num-cycles">boomer_num_cycles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#additional-boomeramg-parameters">Additional BoomerAMG parameters</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="FLOW_Namelist/index.html">12. FLOW Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FLOW_BC_Namelist/index.html">13. FLOW_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html">14. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FUNCTION_Namelist/index.html">15. FUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="induction_heating_namelist.html">16. INDUCTION_HEATING Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="INDUCTION_SOURCE_FIELD_Namelist/index.html">17. INDUCTION_SOURCE_FIELD Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MATERIAL_and_PHASE_Namelists/index.html">18. MATERIAL and PHASE Namelists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MESH_Namelist/index.html">19. MESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MICROSTRUCTURE_Namelist/index.html">20. MICROSTRUCTURE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="microwave_heating_namelist.html">21. MICROWAVE_HEATING Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NUMERICS_Namelist/index.html">22. NUMERICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OUTPUTS_Namelist/index.html">23. OUTPUTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PHASE_CHANGE_Namelist/index.html">24. PHASE_CHANGE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PHYSICAL_CONSTANTS_Namelist/index.html">25. PHYSICAL_CONSTANTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PHYSICS_Namelist/index.html">26. PHYSICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PROBE_Namelist/index.html">27. PROBE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RESTART_Namelist/index.html">28. RESTART Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIMULATION_CONTROL_Namelist/index.html">29. SIMULATION_CONTROL Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SOLID_MECHANICS_Namelist/index.html">30. SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SOLID_MECHANICS_BC_Namelist/index.html">31. SOLID_MECHANICS_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SPECIES_BC_Namelist/index.html">32. SPECIES_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SPECIES_SOURCE_Namelist/index.html">33. SPECIES_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tdme_joule_solver_namelist.html">34. TDME_JOULE_SOLVER Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="THERMAL_BC_Namelist/index.html">35. THERMAL_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="THERMAL_SOURCE_Namelist/index.html">36. THERMAL_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TOOLHEAD_Namelist/index.html">37. TOOLHEAD Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TOOLPATH_Namelist/index.html">38. TOOLPATH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TURBULENCE_Namelist/index.html">39. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VFUNCTION_Namelist/index.html">40. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VISCOPLASTIC_MODEL_Namelist/index.html">41. VISCOPLASTIC_MODEL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VISCOPLASTIC_SOLVER_Namelist/index.html">42. VISCOPLASTIC_SOLVER Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rade/index.html">43. Radiation Enclosure Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/index.html">44. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Truchas Reference Manual</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><span class="section-number">11. </span>FDME_SOLVER Namelist</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/fdme_solver_namelist.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="toctree-wrapper compound" id="fdme-solver-namelist">
+</div>
+<section id="id1">
+<h1><span class="section-number">11. </span>FDME_SOLVER Namelist<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<p>This namelist specifies the parameters that pertain to the frequency-domain
+solver for the time-harmonic Maxwell’s equations. In this form of the equations
+the electric field is represented as
+<span class="math notranslate nohighlight">\(\mathcal{E}(x,t) = \operatorname{Re}\{E(x)e^{-i\omega t}\}\)</span>
+where <span class="math notranslate nohighlight">\(\omega\)</span> is the angular frequency and <span class="math notranslate nohighlight">\(E(x)\)</span> is a
+complex-valued phasor that satisfies the equation</p>
+<div class="math notranslate nohighlight">
+\[\nabla\times\mu^{-1}\nabla\times E-\omega^2\epsilon E-i\omega\sigma E = 0.\]</div>
+<p>The equation is solved on the tetrahedral mesh specified by the
+<a class="reference internal" href="EM_MESH_Namelist/index.html#em-mesh-namelist"><span class="std std-ref">EM_MESH</span></a> namelist, which is generally different
+than the mesh used for heat transfer. Boundary conditions are defined using
+<a class="reference internal" href="ELECTROMAGNETIC_BC_Namelist/index.html#electromagnetic-bc-namelist"><span class="std std-ref">ELECTROMAGNETIC_BC</span></a> namelists.</p>
+<p>This solver, which is not currently a standalone physics model, is used by
+the induction heating and microwave heating physics models;
+see the <a class="reference internal" href="induction_heating_namelist.html#induction-heating-namelist"><span class="std std-ref">INDUCTION_HEATING</span></a> and
+<a class="reference internal" href="microwave_heating_namelist.html#microwave-heating-namelist"><span class="std std-ref">MICROWAVE_HEATING</span></a> namelists.</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>The electromagnetic models assume SI units by default. If you want to use
+a different system of units, you must assign appropriate values to the
+PHYSICAL_CONSTANTS namelist variables <a class="reference internal" href="PHYSICAL_CONSTANTS_Namelist/index.html#phyco-vpm"><span class="std std-ref">vacuum_permittivity</span></a>
+(<span class="math notranslate nohighlight">\(\epsilon_0\)</span>) and <a class="reference internal" href="PHYSICAL_CONSTANTS_Namelist/index.html#phyco-vpt"><span class="std std-ref">vacuum_permeability</span></a>
+(<span class="math notranslate nohighlight">\(\mu_0\)</span>).</p>
+</div>
+<section id="namelist-variables">
+<h2><span class="section-number">11.1. </span>Namelist Variables<a class="headerlink" href="#namelist-variables" title="Link to this heading"></a></h2>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#solver-type" id="id8">solver_type</a></p></li>
+<li><p><a class="reference internal" href="#graphics-output" id="id9">graphics_output</a></p></li>
+<li><p><a class="reference internal" href="#print-level" id="id10">print_level</a></p></li>
+<li><p><a class="reference internal" href="#use-mixed-form-experimental" id="id11">use_mixed_form (experimental)</a></p></li>
+<li><p><a class="reference internal" href="#minres-parameters" id="id12">MINRES Parameters</a></p>
+<ul>
+<li><p><a class="reference internal" href="#rel-tol" id="id13">rel_tol</a></p></li>
+<li><p><a class="reference internal" href="#max-iter" id="id14">max_iter</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#minres-preconditioner-parameters" id="id15">MINRES Preconditioner Parameters</a></p>
+<ul>
+<li><p><a class="reference internal" href="#precon-type" id="id16">precon_type</a></p></li>
+<li><p><a class="reference internal" href="#pc-damping-experimental" id="id17">pc_damping (experimental)</a></p></li>
+<li><p><a class="reference internal" href="#ssor-num-cycles" id="id18">ssor_num_cycles</a></p></li>
+<li><p><a class="reference internal" href="#ssor-omega" id="id19">ssor_omega</a></p></li>
+<li><p><a class="reference internal" href="#boomer-num-cycles" id="id20">boomer_num_cycles</a></p></li>
+<li><p><a class="reference internal" href="#additional-boomeramg-parameters" id="id21">Additional BoomerAMG parameters</a></p></li>
+</ul>
+</li>
+</ul>
+</nav>
+<section id="solver-type">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">solver_type</a><a class="headerlink" href="#solver-type" title="Link to this heading"></a></h3>
+<p>The type of linear solver used to solve the discrete system. The options are:</p>
+<blockquote>
+<div><table class="tight-table docutils align-default">
+<colgroup>
+<col style="width: 9.1%" />
+<col style="width: 90.9%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Value</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>“minres”</strong></p></td>
+<td><p>Iterative CS-MINRES<a class="footnote-reference brackets" href="#footcite-choi2014" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> solver for complex
+symmetric linear systems. This is the default.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>“mumps”</strong></p></td>
+<td><p>MUMPS<a class="footnote-reference brackets" href="#footcite-mumps" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> direct linear solver</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</section>
+<section id="graphics-output">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">graphics_output</a><a class="headerlink" href="#graphics-output" title="Link to this heading"></a></h3>
+<p>A flag that enables the output of the solution for graphics visualization.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>logical</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">.false.</span></code></p>
+</dd>
+<dt class="field-odd">Notes<span class="colon">:</span></dt>
+<dd class="field-odd"><p>When enabled, the solver generates its own graphics data file in
+VTKHDF format, which is compatible with the ParaView visualization software.
+The solver produces a separate sequentially-numbered file for each use,
+identifiable by the <code class="docutils literal notranslate"><span class="pre">.vtkhdf</span></code> suffix. This setting does not affect the
+standard graphics output generated by Truchas, which is configured
+elsewhere. Since these files are simply HDF5 files structured to the
+VTKHDF specification, they can also be used with generic HDF5 tools.</p>
+</dd>
+</dl>
+</section>
+<section id="print-level">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">print_level</a><a class="headerlink" href="#print-level" title="Link to this heading"></a></h3>
+<p>Controls the verbosity of the solver.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>1</p>
+</dd>
+<dt class="field-odd">Valid Values<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\(\ge0\)</span></p>
+</dd>
+<dt class="field-even">Notes<span class="colon">:</span></dt>
+<dd class="field-even"><p>At level 1 or higher the final residual error is output. When using
+the CS-MINRES iterative solver, the final number of iterations is also
+written at level 1, and level 2 adds periodic convergence information during
+the iteration.</p>
+</dd>
+</dl>
+</section>
+<section id="use-mixed-form-experimental">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">use_mixed_form (experimental)</a><a class="headerlink" href="#use-mixed-form-experimental" title="Link to this heading"></a></h3>
+<p>Change the solver from the default formulation to the mixed formulation. The
+mixed formulation enforces <span class="math notranslate nohighlight">\(\nabla\cdot D = 0\)</span> using Lagrange multipliers,
+expanding the system size. This ensures the system remains well posed as the
+frequency becomes small <a class="footnote-reference brackets" href="#footcite-greif-preconditioners-2007" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a>
+<a class="footnote-reference brackets" href="#footcite-li-parallel-2012" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>logical</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">.false.</span></code></p>
+</dd>
+</dl>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>This should be disabled for microwave problems, but enabled when using the
+FDME solver for induction heating problems, since those use low frequencies
+where the frequency-domain Maxwell equations are no longer coercive.</p>
+</div>
+</section>
+<section id="minres-parameters">
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">MINRES Parameters</a><a class="headerlink" href="#minres-parameters" title="Link to this heading"></a></h3>
+<section id="rel-tol">
+<h4><a class="toc-backref" href="#id13" role="doc-backlink">rel_tol</a><a class="headerlink" href="#rel-tol" title="Link to this heading"></a></h4>
+<p>The convergence tolerance <span class="math notranslate nohighlight">\(\eta\)</span>. The CS-MINRES iteration is considered
+converged when the residual <span class="math notranslate nohighlight">\(r\)</span> satisfies
+<span class="math notranslate nohighlight">\(\lVert{r}\rVert&lt;\eta\lVert{r_0}\rVert\)</span>, where <span class="math notranslate nohighlight">\(r_0\)</span> is the
+initial residual.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>real</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p><span class="math notranslate nohighlight">\(10^{-8}\)</span></p>
+</dd>
+<dt class="field-odd">Valid Values<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\((0, 0.1)\)</span></p>
+</dd>
+<dt class="field-even">Notes<span class="colon">:</span></dt>
+<dd class="field-even"><p>The residual is the residual of the <em>preconditioned</em> linear system.</p>
+</dd>
+</dl>
+</section>
+<section id="max-iter">
+<h4><a class="toc-backref" href="#id14" role="doc-backlink">max_iter</a><a class="headerlink" href="#max-iter" title="Link to this heading"></a></h4>
+<p>The maximum number of CS-MINRES iterations allowed. It is a fatal error if
+convergence is not attained within this number of iterations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>100,000</p>
+</dd>
+<dt class="field-odd">Valid Values<span class="colon">:</span></dt>
+<dd class="field-odd"><p>&gt; 0</p>
+</dd>
+</dl>
+</section>
+</section>
+<section id="minres-preconditioner-parameters">
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">MINRES Preconditioner Parameters</a><a class="headerlink" href="#minres-preconditioner-parameters" title="Link to this heading"></a></h3>
+<p>The preconditioner is based on the real part of the complex symmetric system
+matrix. It has the form <span class="math notranslate nohighlight">\(A-B\)</span> where <span class="math notranslate nohighlight">\(A\)</span> comes from the curl-curl
+term and is positive semi-definite, and <span class="math notranslate nohighlight">\(B\)</span> comes from the
+<span class="math notranslate nohighlight">\(\omega^2\epsilon\)</span> term and is positive definite. The indefiniteness
+of this matrix poses a challenge to constructing positive definite
+preconditioners required by CS-MINRES.</p>
+<section id="precon-type">
+<h4><a class="toc-backref" href="#id16" role="doc-backlink">precon_type</a><a class="headerlink" href="#precon-type" title="Link to this heading"></a></h4>
+<p>Selects the type of preconditioner to use. The options are:</p>
+<blockquote>
+<div><table class="tight-table docutils align-default">
+<colgroup>
+<col style="width: 9.1%" />
+<col style="width: 90.9%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Value</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><strong>“ssor”</strong></p></td>
+<td><p>Parallel block SSOR. This is the default.</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>“boomer”</strong></p></td>
+<td><p>Hypre BoomerAMG parallel algebraic multigrid solver.
+More costly than SSOR.</p></td>
+</tr>
+<tr class="row-even"><td><p><strong>“none”</strong></p></td>
+<td><p>No preconditioning. Only useful for testing/debugging.</p></td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</section>
+<section id="pc-damping-experimental">
+<h4><a class="toc-backref" href="#id17" role="doc-backlink">pc_damping (experimental)</a><a class="headerlink" href="#pc-damping-experimental" title="Link to this heading"></a></h4>
+<p>If a value <span class="math notranslate nohighlight">\(\alpha\)</span> is specified for this optional parameter, the
+preconditioner will be based on the damped matrix <span class="math notranslate nohighlight">\(A-(1-\alpha)B\)</span>
+rather than the standard <span class="math notranslate nohighlight">\(A-B\)</span>. The intent is to shift the matrix
+to something less indefinite, or even positive definite. The use of SSOR
+with under-relaxation is much more effective; use it instead.</p>
+</section>
+<section id="ssor-num-cycles">
+<h4><a class="toc-backref" href="#id18" role="doc-backlink">ssor_num_cycles</a><a class="headerlink" href="#ssor-num-cycles" title="Link to this heading"></a></h4>
+<p>The number of SSOR cycles to use.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>1</p>
+</dd>
+<dt class="field-odd">Valid values<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\(\ge1\)</span></p>
+</dd>
+<dt class="field-even">Notes<span class="colon">:</span></dt>
+<dd class="field-even"><p>Each cycle consists of a forward and backward sweep. Each additional
+cycle will generally improve the preconditioner, resulting in faster
+convergence and fewer required iterations, but with increased computational
+cost per iteration. The optimal number giving the fastest time to solution
+will depend on the characteristics and size of the problem, and must be
+determined empirically.</p>
+</dd>
+</dl>
+</section>
+<section id="ssor-omega">
+<h4><a class="toc-backref" href="#id19" role="doc-backlink">ssor_omega</a><a class="headerlink" href="#ssor-omega" title="Link to this heading"></a></h4>
+<p>The SSOR relaxation factor <span class="math notranslate nohighlight">\(\omega\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>real</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>1.0</p>
+</dd>
+<dt class="field-odd">Valid values<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="math notranslate nohighlight">\(&gt;0.0\)</span></p>
+</dd>
+<dt class="field-even">Notes<span class="colon">:</span></dt>
+<dd class="field-even"><p>While SSOR is usually associated with over-relaxation,
+<span class="math notranslate nohighlight">\(\omega&gt;1\)</span>, the characteristics of this matrix will likely require
+under-relaxation, <span class="math notranslate nohighlight">\(0&lt;\omega&lt;1\)</span>. Start with the default
+<span class="math notranslate nohighlight">\(\omega=1\)</span>. If CS-MINRES fails with the message “preconditioner
+is not positive definite”, using a small enough <span class="math notranslate nohighlight">\(\omega&lt;1\)</span> should
+yield a positive definite preconditioner. But note that the smaller the
+value, the less effective the preconditioner will be.</p>
+</dd>
+</dl>
+</section>
+<section id="boomer-num-cycles">
+<h4><a class="toc-backref" href="#id20" role="doc-backlink">boomer_num_cycles</a><a class="headerlink" href="#boomer-num-cycles" title="Link to this heading"></a></h4>
+<p>The number of BoomerAMG cycles to use.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>integer</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>1</p>
+</dd>
+</dl>
+</section>
+<section id="additional-boomeramg-parameters">
+<h4><a class="toc-backref" href="#id21" role="doc-backlink">Additional BoomerAMG parameters</a><a class="headerlink" href="#additional-boomeramg-parameters" title="Link to this heading"></a></h4>
+<p>Hypre BoomerAMG supports a great many configuration options, some which may
+be set using this namelist. The default configuration is generally suitable,
+but may be modified using the following variables. Refer to the HYPRE
+documentation<a class="footnote-reference brackets" href="#footcite-hypre-manual" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a> on BoomerAMG for details.</p>
+<ul class="simple">
+<li><p>boomer_strong_threshold (real, default 0.5)</p></li>
+<li><p>boomer_coarsen_type (integer, default 10)</p></li>
+<li><p>boomer_interp_type (integer, default 6)</p></li>
+<li><p>boomer_relax_down_type (integer, default 13)</p></li>
+<li><p>boomer_relax_up_type (integer, default 14)</p></li>
+<li><p>boomer_print_level, boomer_debug_level, boomer_logging_level</p></li>
+</ul>
+<hr class="docutils" />
+<div class="docutils container" id="id7">
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="footcite-choi2014" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">1</a><span class="fn-bracket">]</span></span>
+<p>Sou-Cheng T. Choi. Minimal residual methods for complex symmetric, skew symmetric, and skew hermitian systems. URL: <a class="reference external" href="https://arxiv.org/abs/1304.6782">https://arxiv.org/abs/1304.6782</a>, <a class="reference external" href="https://arxiv.org/abs/1304.6782">arXiv:1304.6782</a>, <a class="reference external" href="https://doi.org/10.48550/arXiv.1304.6782">doi:10.48550/arXiv.1304.6782</a>.</p>
+</aside>
+<aside class="footnote brackets" id="footcite-mumps" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">2</a><span class="fn-bracket">]</span></span>
+<p>MUMPS: A MUltifrontal Massively Parallel Sparse direct Solver. Version 5.7.3. URL: <a class="reference external" href="http://mumps-solver.org">http://mumps-solver.org</a>.</p>
+</aside>
+<aside class="footnote brackets" id="footcite-greif-preconditioners-2007" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">3</a><span class="fn-bracket">]</span></span>
+<p>Chen Greif and Dominik Schötzau. Preconditioners for the discretized time-harmonic Maxwell equations in mixed form. <em>Numerical Linear Algebra with Applications</em>, 14(4):281–297, 2007. URL: <a class="reference external" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/nla.515">https://onlinelibrary.wiley.com/doi/abs/10.1002/nla.515</a> (visited on 2023-12-19), <a class="reference external" href="https://doi.org/10.1002/nla.515">doi:10.1002/nla.515</a>.</p>
+</aside>
+<aside class="footnote brackets" id="footcite-li-parallel-2012" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">4</a><span class="fn-bracket">]</span></span>
+<p>Dan Li, Chen Greif, and Dominik Schötzau. Parallel numerical solution of the time-harmonic Maxwell equations in mixed form. <em>Numerical Linear Algebra with Applications</em>, 19(3):525–539, 2012. URL: <a class="reference external" href="https://onlinelibrary.wiley.com/doi/abs/10.1002/nla.782">https://onlinelibrary.wiley.com/doi/abs/10.1002/nla.782</a> (visited on 2023-04-22), <a class="reference external" href="https://doi.org/10.1002/nla.782">doi:10.1002/nla.782</a>.</p>
+</aside>
+<aside class="footnote brackets" id="footcite-hypre-manual" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">5</a><span class="fn-bracket">]</span></span>
+<p><em>hypre: High Performance Preconditioners. User Manual</em>. Center for Applied Scientific Computing, Lawrence Livermore National Laboratory, 2024. Version 2.31.0. URL: <a class="reference external" href="https://hypre.readthedocs.io/en/latest/">https://hypre.readthedocs.io/en/latest/</a>.</p>
+</aside>
+</aside>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="EVAPORATION_Namelist/index.html" class="btn btn-neutral float-left" title="10. EVAPORATION Namelist (Experimental)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="FLOW_Namelist/index.html" class="btn btn-neutral float-right" title="12. FLOW Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2021-2024, The Truchas Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

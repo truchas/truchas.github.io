@@ -1,31 +1,29 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="../">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>5. ELECTROMAGNETIC_BC Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=19f00094" />
+  <title>6. ELECTROMAGNETIC_BC Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="../_static/css/custom.css?v=93b25530" />
 
   
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="../_static/jquery.js?v=5d32c60e"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="../_static/documentation_options.js?v=8d563738"></script>
-        <script src="../_static/doctools.js?v=9a2dae69"></script>
-        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
-        <script>window.MathJax = {"chtml": {"displayAlign": "left", "displayIndent": "2em"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=8d563738"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script>window.MathJax = {"chtml": {"displayAlign": "left", "displayIndent": "2em"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="6. EM_MESH Namelist" href="../EM_MESH_Namelist/index.html" />
-    <link rel="prev" title="4. ELECTROMAGNETICS Namelist" href="../ELECTROMAGNETICS_Namelist/index.html" /> 
+    <link rel="next" title="7. EM_MESH Namelist" href="../EM_MESH_Namelist/index.html" />
+    <link rel="prev" title="5. DIFFUSION Solver Namelist" href="../DIFFUSION_Solver_Namelist/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -50,51 +48,76 @@
               <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">1. Introduction</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../BODY_Namelist/index.html">2. BODY Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../DIFFUSION_Solver_Namelist/index.html">3. DIFFUSION Solver Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ELECTROMAGNETICS_Namelist/index.html">4. ELECTROMAGNETICS Namelist</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">5. ELECTROMAGNETIC_BC Namelist</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#namelist-variables">5.1. Namelist Variables</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../complex_function_namelist.html">3. COMPLEX_FUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../complex_vfunction_namelist.html">4. COMPLEX_VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../DIFFUSION_Solver_Namelist/index.html">5. DIFFUSION Solver Namelist</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6. ELECTROMAGNETIC_BC Namelist</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#boundary-conditions">6.1. Boundary Conditions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#perfect-electric-conductor">Perfect electric conductor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#perfect-magnetic-conductor">Perfect magnetic conductor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#magnetic-induction-source">Magnetic induction source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#robin">Robin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#impedance">Impedance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#waveguide-port-feed">Waveguide port feed</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#namelist-variables">6.2. Namelist Variables</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#name">name</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#face-set-ids">face_set_ids</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#type">type</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#alpha">alpha</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#g">g</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#g-func">g_func</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sigma">sigma</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#power">power</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#center">center</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-axis">x_axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#y-axis">y_axis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#x-width">x_width</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#y-width">y_width</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#phase">phase</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../EM_MESH_Namelist/index.html">6. EM_MESH Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_RADIATION_Namelist/index.html">7. ENCLOSURE_RADIATION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_SURFACE_Namelist/index.html">8. ENCLOSURE_SURFACE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../EVAPORATION_Namelist/index.html">9. EVAPORATION Namelist (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../FLOW_Namelist/index.html">10. FLOW Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../FLOW_BC_Namelist/index.html">11. FLOW_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html">12. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../FUNCTION_Namelist/index.html">13. FUNCTION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../INDUCTION_SOURCE_FIELD_Namelist/index.html">14. INDUCTION_SOURCE_FIELD Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">15. MATERIAL and PHASE Namelists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">16. MESH Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../MICROSTRUCTURE_Namelist/index.html">17. MICROSTRUCTURE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">18. NUMERICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">19. OUTPUTS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">20. PHASE_CHANGE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">21. PHYSICAL_CONSTANTS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">22. PHYSICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">23. PROBE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">24. RESTART Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">25. SIMULATION_CONTROL Namelist (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">26. SOLID_MECHANICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">27. SOLID_MECHANICS_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">28. SPECIES_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../SPECIES_SOURCE_Namelist/index.html">29. SPECIES_SOURCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">30. THERMAL_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">31. THERMAL_SOURCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">32. TOOLHEAD Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">33. TOOLPATH Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">34. TURBULENCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">35. VFUNCTION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">36. VISCOPLASTIC_MODEL Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_SOLVER_Namelist/index.html">37. VISCOPLASTIC_SOLVER Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">38. Radiation Enclosure Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../python/index.html">39. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../EM_MESH_Namelist/index.html">7. EM_MESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_RADIATION_Namelist/index.html">8. ENCLOSURE_RADIATION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ENCLOSURE_SURFACE_Namelist/index.html">9. ENCLOSURE_SURFACE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../EVAPORATION_Namelist/index.html">10. EVAPORATION Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fdme_solver_namelist.html">11. FDME_SOLVER Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_Namelist/index.html">12. FLOW Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_BC_Namelist/index.html">13. FLOW_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html">14. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../FUNCTION_Namelist/index.html">15. FUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../induction_heating_namelist.html">16. INDUCTION_HEATING Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../INDUCTION_SOURCE_FIELD_Namelist/index.html">17. INDUCTION_SOURCE_FIELD Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MATERIAL_and_PHASE_Namelists/index.html">18. MATERIAL and PHASE Namelists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MESH_Namelist/index.html">19. MESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../MICROSTRUCTURE_Namelist/index.html">20. MICROSTRUCTURE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../microwave_heating_namelist.html">21. MICROWAVE_HEATING Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../NUMERICS_Namelist/index.html">22. NUMERICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../OUTPUTS_Namelist/index.html">23. OUTPUTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHASE_CHANGE_Namelist/index.html">24. PHASE_CHANGE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICAL_CONSTANTS_Namelist/index.html">25. PHYSICAL_CONSTANTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PHYSICS_Namelist/index.html">26. PHYSICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../PROBE_Namelist/index.html">27. PROBE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../RESTART_Namelist/index.html">28. RESTART Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SIMULATION_CONTROL_Namelist/index.html">29. SIMULATION_CONTROL Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_Namelist/index.html">30. SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SOLID_MECHANICS_BC_Namelist/index.html">31. SOLID_MECHANICS_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPECIES_BC_Namelist/index.html">32. SPECIES_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../SPECIES_SOURCE_Namelist/index.html">33. SPECIES_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tdme_joule_solver_namelist.html">34. TDME_JOULE_SOLVER Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_BC_Namelist/index.html">35. THERMAL_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../THERMAL_SOURCE_Namelist/index.html">36. THERMAL_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLHEAD_Namelist/index.html">37. TOOLHEAD Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TOOLPATH_Namelist/index.html">38. TOOLPATH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../TURBULENCE_Namelist/index.html">39. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VFUNCTION_Namelist/index.html">40. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_MODEL_Namelist/index.html">41. VISCOPLASTIC_MODEL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../VISCOPLASTIC_SOLVER_Namelist/index.html">42. VISCOPLASTIC_SOLVER Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../rade/index.html">43. Radiation Enclosure Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../python/index.html">44. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
 </ul>
 
         </div>
@@ -111,7 +134,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active"><span class="section-number">5. </span>ELECTROMAGNETIC_BC Namelist</li>
+      <li class="breadcrumb-item active"><span class="section-number">6. </span>ELECTROMAGNETIC_BC Namelist</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/ELECTROMAGNETIC_BC_Namelist/index.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -124,7 +147,7 @@
   <div class="toctree-wrapper compound" id="electromagnetic-bc-namelist">
 </div>
 <section id="id1">
-<h1><span class="section-number">5. </span>ELECTROMAGNETIC_BC Namelist<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<h1><span class="section-number">6. </span>ELECTROMAGNETIC_BC Namelist<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
 <p>The ELECTROMAGNETIC_BC namelist is used to define boundary conditions for the
 electromagnetic (EM) models at external boundaries. Each instance of the
 namelist defines a particular condition to impose over a subset of the domain
@@ -133,17 +156,116 @@ The namelist variable <a class="reference internal" href="#face-set-ids">face_se
 boundary condition is applied at all faces belonging to those face sets. Note
 that the mesh in view here is the one specified by the <a class="reference internal" href="../EM_MESH_Namelist/index.html#em-mesh-namelist"><span class="std std-ref">EM_MESH</span></a> namelist. Also note that ExodusII mesh side sets are
 imported into Truchas as face sets with the same IDs.</p>
+<div class="admonition-namelist-usage admonition">
+<p class="admonition-title">Namelist Usage</p>
+<dl class="field-list simple">
+<dt class="field-odd">Required/Optional<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Required</p>
+</dd>
+<dt class="field-even">Single/Multiple Instances<span class="colon">:</span></dt>
+<dd class="field-even"><p>Multiple</p>
+</dd>
+</dl>
+</div>
+<section id="boundary-conditions">
+<h2><span class="section-number">6.1. </span>Boundary Conditions<a class="headerlink" href="#boundary-conditions" title="Link to this heading"></a></h2>
+<p>The following types of boundary conditions can be defined. The outward unit
+normal to the boundary <span class="math notranslate nohighlight">\(\Gamma\)</span> is denoted <span class="math notranslate nohighlight">\(\hat{n}\)</span>.</p>
+<section id="perfect-electric-conductor">
+<h3>Perfect electric conductor<a class="headerlink" href="#perfect-electric-conductor" title="Link to this heading"></a></h3>
+<p>A perfect electric conductor condition, <span class="math notranslate nohighlight">\(\hat{n}\times\vec{E}=0\)</span> on
+<span class="math notranslate nohighlight">\(\Gamma\)</span>, is defined by setting <a class="reference internal" href="#type">type</a> to <strong>“pec”</strong>.</p>
+</section>
+<section id="perfect-magnetic-conductor">
+<h3>Perfect magnetic conductor<a class="headerlink" href="#perfect-magnetic-conductor" title="Link to this heading"></a></h3>
+<p>A perfect magnetic conductor condition, <span class="math notranslate nohighlight">\(\hat{n}\times\vec{H}=0\)</span> on
+<span class="math notranslate nohighlight">\(\Gamma\)</span>, is defined by setting <a class="reference internal" href="#type">type</a> to <strong>“pmc”</strong>.</p>
+</section>
+<section id="magnetic-induction-source">
+<span id="em-bc-ih-field"></span><h3>Magnetic induction source<a class="headerlink" href="#magnetic-induction-source" title="Link to this heading"></a></h3>
+<p>A tangential H-field condition <span class="math notranslate nohighlight">\(\hat{n}\times\vec{H} =
+\hat{n}\times\vec{H}_\text{ext}\)</span> on <span class="math notranslate nohighlight">\(\Gamma\)</span>, where
+<span class="math notranslate nohighlight">\(\vec{H}_\text{ext}\)</span> is the external magnetic field defined by
+the <a class="reference internal" href="../INDUCTION_SOURCE_FIELD_Namelist/index.html#induction-source-field-namelist"><span class="std std-ref">INDUCTION_SOURCE_FIELD</span></a> namelist,
+is defined by setting <a class="reference internal" href="#type">type</a> to <strong>“ih-hfield”</strong>. This special purpose
+boundary condition is used in induction heating simulations.</p>
+</section>
+<section id="robin">
+<h3>Robin<a class="headerlink" href="#robin" title="Link to this heading"></a></h3>
+<p>A general Robin condition</p>
+<div class="math notranslate nohighlight">
+\[\hat{n}\times\nabla\times\vec{E} +
+\alpha\,\hat{n}\times\vec{E}\times\hat{n} =
+\hat{n}\times\vec{g}\times\hat{n}
+\text{ on $\Gamma$},\]</div>
+<p>is defined by setting <a class="reference internal" href="#type">type</a> to <strong>“robin”</strong>. The complex constant
+<span class="math notranslate nohighlight">\(\alpha\)</span> is specified by <a class="reference internal" href="#alpha">alpha</a>, and the complex function
+<span class="math notranslate nohighlight">\(\vec{g}(x)\in\mathbb{C}^3\)</span> is specified using either <a class="reference internal" href="#g">g</a> for
+a constant, or <a class="reference internal" href="#g-func">g_func</a> for a function. This is only applicable to
+the frequency domain EM model.</p>
+</section>
+<section id="impedance">
+<h3>Impedance<a class="headerlink" href="#impedance" title="Link to this heading"></a></h3>
+<p>This special form of a Robin condition approximates the effect of a
+well-conducting bounding material, by choosing <span class="math notranslate nohighlight">\(\alpha=
+\sqrt{-i\mu_0\omega\sigma}\)</span> and <span class="math notranslate nohighlight">\(\vec{g}=0\)</span>. The conductivity of the
+bounding material <span class="math notranslate nohighlight">\(\sigma\)</span> is specified by <a class="reference internal" href="#sigma">sigma</a>, and the angular
+frequency <span class="math notranslate nohighlight">\(\omega\)</span> is obtained from the configuration of the frequency
+domain model. Set <a class="reference internal" href="#type">type</a> to <strong>“impedance”</strong> to select this condition.</p>
+</section>
+<section id="waveguide-port-feed">
+<h3>Waveguide port feed<a class="headerlink" href="#waveguide-port-feed" title="Link to this heading"></a></h3>
+<p>This special form of a Robin condition simulates an entry/exit port for the
+fundamental TE<sub>10</sub> mode at the boundary of a truncated rectangular
+waveguide. The shape and orientation of the waveguide cross-section, assumed
+rectangular, is specified by variables <a class="reference internal" href="#center">center</a>, <a class="reference internal" href="#x-axis">x_axis</a>, <a class="reference internal" href="#y-axis">y_axis</a>,
+<a class="reference internal" href="#x-width">x_width</a>, and <a class="reference internal" href="#y-width">y_width</a>, and the power of the injected mode by <a class="reference internal" href="#power">power</a>;
+see <a class="reference internal" href="#wg-port-fig"><span class="std std-numref">Figure 6.1.1</span></a>.
+Set <a class="reference internal" href="#type">type</a> to <strong>“wg-port”</strong> to select this condition.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The ‘’wg-port’’ condition requires that the TE<sub>10</sub> mode is the only
+mode supported by the waveguide. The propagation of electromagnetic waves
+through a conducting rectangular waveguide with dimensions <span class="math notranslate nohighlight">\(a&gt;b\)</span>
+(see <a class="reference internal" href="#wg-port-fig"><span class="std std-numref">Figure 6.1.1</span></a>) can only occur
+for frequencies <span class="math notranslate nohighlight">\(f\ge f_c = \tfrac{c}{2a}\)</span>. This constrains the
+frequency <span class="math notranslate nohighlight">\(f\)</span> for the validity of the “wg-port” condition to
+<span class="math notranslate nohighlight">\(f_c \le f \le \min(2, a/b)f_c\)</span>.</p>
+</div>
+<figure class="align-center" id="id2">
+<span id="wg-port-fig"></span><a class="reference internal image-reference" href="../_images/wg-port.png"><img alt="../_images/wg-port.png" src="../_images/wg-port.png" style="width: 220px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 6.1.1 </span><span class="caption-text">The shape and orientation of the of rectangular waveguide port boundary.
+The blue arrows depict the <span class="math notranslate nohighlight">\(\vec{y}\)</span>-direction and relative strength
+of the electric field’s linear polarization in the TE<sub>10</sub> mode
+within the rectangular waveguide.</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
 <section id="namelist-variables">
-<h2><span class="section-number">5.1. </span>Namelist Variables<a class="headerlink" href="#namelist-variables" title="Link to this heading"></a></h2>
+<h2><span class="section-number">6.2. </span>Namelist Variables<a class="headerlink" href="#namelist-variables" title="Link to this heading"></a></h2>
 <nav class="contents local" id="contents">
 <ul class="simple">
-<li><p><a class="reference internal" href="#name" id="id2">name</a></p></li>
-<li><p><a class="reference internal" href="#face-set-ids" id="id3">face_set_ids</a></p></li>
-<li><p><a class="reference internal" href="#type" id="id4">type</a></p></li>
+<li><p><a class="reference internal" href="#name" id="id3">name</a></p></li>
+<li><p><a class="reference internal" href="#face-set-ids" id="id4">face_set_ids</a></p></li>
+<li><p><a class="reference internal" href="#type" id="id5">type</a></p></li>
+<li><p><a class="reference internal" href="#alpha" id="id6">alpha</a></p></li>
+<li><p><a class="reference internal" href="#g" id="id7">g</a></p></li>
+<li><p><a class="reference internal" href="#g-func" id="id8">g_func</a></p></li>
+<li><p><a class="reference internal" href="#sigma" id="id9">sigma</a></p></li>
+<li><p><a class="reference internal" href="#power" id="id10">power</a></p></li>
+<li><p><a class="reference internal" href="#center" id="id11">center</a></p></li>
+<li><p><a class="reference internal" href="#x-axis" id="id12">x_axis</a></p></li>
+<li><p><a class="reference internal" href="#y-axis" id="id13">y_axis</a></p></li>
+<li><p><a class="reference internal" href="#x-width" id="id14">x_width</a></p></li>
+<li><p><a class="reference internal" href="#y-width" id="id15">y_width</a></p></li>
+<li><p><a class="reference internal" href="#phase" id="id16">phase</a></p></li>
 </ul>
 </nav>
 <section id="name">
-<h3><a class="toc-backref" href="#id2" role="doc-backlink">name</a><a class="headerlink" href="#name" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">name</a><a class="headerlink" href="#name" title="Link to this heading"></a></h3>
 <p>A unique name used to identify a particular instance of this namelist.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type<span class="colon">:</span></dt>
@@ -155,7 +277,7 @@ imported into Truchas as face sets with the same IDs.</p>
 </dl>
 </section>
 <section id="face-set-ids">
-<h3><a class="toc-backref" href="#id3" role="doc-backlink">face_set_ids</a><a class="headerlink" href="#face-set-ids" title="Link to this heading"></a></h3>
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">face_set_ids</a><a class="headerlink" href="#face-set-ids" title="Link to this heading"></a></h3>
 <p>A list of face set IDs that define the portion of the boundary <span class="math notranslate nohighlight">\(\Gamma\)</span>
 where the boundary condition will be imposed.</p>
 <dl class="field-list simple">
@@ -168,35 +290,207 @@ where the boundary condition will be imposed.</p>
 </dl>
 </section>
 <section id="type">
-<h3><a class="toc-backref" href="#id4" role="doc-backlink">type</a><a class="headerlink" href="#type" title="Link to this heading"></a></h3>
-<p>The type of boundary condition. The available values are:</p>
+<span id="em-bc-type"></span><h3><a class="toc-backref" href="#id5" role="doc-backlink">type</a><a class="headerlink" href="#type" title="Link to this heading"></a></h3>
+<p>The type of boundary condition. Some types apply only to the frequency
+domain (FD) model as noted. The available options are:</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>none</p>
+</dd>
+<dt class="field-odd">Valid values<span class="colon">:</span></dt>
+<dd class="field-odd"><p></p></dd>
+</dl>
 <table class="tight-table docutils align-default">
 <colgroup>
-<col style="width: 16.7%" />
-<col style="width: 83.3%" />
+<col style="width: 9.1%" />
+<col style="width: 45.5%" />
+<col style="width: 45.5%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Value</p></th>
 <th class="head"><p>Description</p></th>
+<th class="head"><p>Associated variables</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p><strong>“pec”</strong></p></td>
-<td><p>Perfect electric conductor/no tangential E-field:
-<span class="math notranslate nohighlight">\(\hat{n}\times\vec{E}=0\)</span> on <span class="math notranslate nohighlight">\(\Gamma\)</span>.</p></td>
+<td><p><a class="reference internal" href="#perfect-electric-conductor">Perfect electric conductor</a></p></td>
+<td></td>
 </tr>
-<tr class="row-odd"><td><p><strong>“ih-hfield”</strong></p></td>
-<td><p>A tangential H-field condition:
-<span class="math notranslate nohighlight">\(\hat{n}\times\vec{H} = \hat{n}\times\vec{H}_\text{ext}\)</span> on
-<span class="math notranslate nohighlight">\(\Gamma\)</span>, where <span class="math notranslate nohighlight">\(\vec{H}_\text{ext}\)</span> is the external
-magnetic field defined by the
-<a class="reference internal" href="../INDUCTION_SOURCE_FIELD_Namelist/index.html#induction-source-field-namelist"><span class="std std-ref">INDUCTION_SOURCE_FIELD</span></a> namelist.</p></td>
+<tr class="row-odd"><td><p><strong>“pmc”</strong></p></td>
+<td><p><a class="reference internal" href="#perfect-magnetic-conductor">Perfect magnetic conductor</a></p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><strong>“ih-hfield”</strong></p></td>
+<td><p><a class="reference internal" href="#magnetic-induction-source">Magnetic induction source</a></p></td>
+<td><p><a class="reference internal" href="../INDUCTION_SOURCE_FIELD_Namelist/index.html#induction-source-field-namelist"><span class="std std-ref">INDUCTION_SOURCE_FIELD</span></a> namelist</p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>“robin”</strong></p></td>
+<td><p><a class="reference internal" href="#robin">Robin</a> (FD only)</p></td>
+<td><p><a class="reference internal" href="#alpha">alpha</a>, <a class="reference internal" href="#g">g</a>, <a class="reference internal" href="#g-func">g_func</a></p></td>
+</tr>
+<tr class="row-even"><td><p><strong>“impedance”</strong></p></td>
+<td><p><a class="reference internal" href="#impedance">Impedance</a> (FD only)</p></td>
+<td><p><a class="reference internal" href="#sigma">sigma</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><strong>“wg-port”</strong></p></td>
+<td><p><a class="reference internal" href="#waveguide-port-feed">Waveguide port feed</a> (FD only)</p></td>
+<td><p><a class="reference internal" href="#center">center</a>, <a class="reference internal" href="#x-axis">x_axis</a>, <a class="reference internal" href="#y-axis">y_axis</a>, <a class="reference internal" href="#x-width">x_width</a>, <a class="reference internal" href="#y-width">y_width</a>, <a class="reference internal" href="#power">power</a>,
+<a class="reference internal" href="#phase">phase</a></p></td>
 </tr>
 </tbody>
 </table>
+</section>
+<section id="alpha">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">alpha</a><a class="headerlink" href="#alpha" title="Link to this heading"></a></h3>
+<p>The constant value of the <span class="math notranslate nohighlight">\(\alpha\)</span> parameter in the Robin boundary
+condition.</p>
 <dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>complex</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>none</p>
+</dd>
+</dl>
+</section>
+<section id="g">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">g</a><a class="headerlink" href="#g" title="Link to this heading"></a></h3>
+<p>The constant value of the <span class="math notranslate nohighlight">\(\vec{g}\)</span> parameter in the Robin boundary
+condition. To specify a function use <a class="reference internal" href="#g-func">g_func</a> instead.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>complex 3-vector</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>none</p>
+</dd>
+</dl>
+</section>
+<section id="g-func">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">g_func</a><a class="headerlink" href="#g-func" title="Link to this heading"></a></h3>
+<p>The name of a <a class="reference internal" href="../complex_vfunction_namelist.html#complex-vfunction-namelist"><span class="std std-ref">COMPLEX_VFUNCTION</span></a> namelist
+that defines the <span class="math notranslate nohighlight">\(\mathbb{C}^3\)</span>-valued function to use for the
+<span class="math notranslate nohighlight">\(\vec{g}\)</span>
+parameter in the Robin boundary condition. The function is expected to be a
+function of <span class="math notranslate nohighlight">\((x,y,z)\)</span>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>none</p>
+</dd>
+</dl>
+</section>
+<section id="sigma">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">sigma</a><a class="headerlink" href="#sigma" title="Link to this heading"></a></h3>
+<p>The electric conductivity of the bounding material in the impedance boundary
+condition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>real</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>none</p>
+</dd>
+</dl>
+</section>
+<section id="power">
+<span id="em-bc-power"></span><h3><a class="toc-backref" href="#id10" role="doc-backlink">power</a><a class="headerlink" href="#power" title="Link to this heading"></a></h3>
+<p>The power of the injected TE<sub>10</sub> mode in the waveguide port feed boundary
+condition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>real</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>none</p>
+</dd>
 <dt class="field-odd">Notes<span class="colon">:</span></dt>
-<dd class="field-odd"><p>The default boundary condition is <span class="math notranslate nohighlight">\(\hat{n}\times\vec{H}=0\)</span>.</p>
+<dd class="field-odd"><p>No value needs to be specified for instances of the boundary condition
+that are managed by the <a class="reference internal" href="../microwave_heating_namelist.html#microwave-heating-namelist"><span class="std std-ref">MICROWAVE_HEATING</span></a>
+namelist, and if a value is specified it is ignored.</p>
+</dd>
+</dl>
+</section>
+<section id="center">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">center</a><a class="headerlink" href="#center" title="Link to this heading"></a></h3>
+<p>The coordinate of the center of the boundary of the truncated rectangular
+waveguide.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>real 3-vector</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>none</p>
+</dd>
+</dl>
+</section>
+<section id="x-axis">
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">x_axis</a><a class="headerlink" href="#x-axis" title="Link to this heading"></a></h3>
+<p>The direction of the long edge of the rectangular boundary. Its length
+is not significant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>real 3-vector</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>none</p>
+</dd>
+</dl>
+</section>
+<section id="y-axis">
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">y_axis</a><a class="headerlink" href="#y-axis" title="Link to this heading"></a></h3>
+<p>The direction of the short edge of the rectangular boundary. Its length
+is not significant.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>real 3-vector</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>none</p>
+</dd>
+</dl>
+</section>
+<section id="x-width">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">x_width</a><a class="headerlink" href="#x-width" title="Link to this heading"></a></h3>
+<p>The length of the long edge of the rectangular boundary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>real</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>none</p>
+</dd>
+</dl>
+</section>
+<section id="y-width">
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">y_width</a><a class="headerlink" href="#y-width" title="Link to this heading"></a></h3>
+<p>The length of the short edge of the rectangular boundary.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>real</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>none</p>
+</dd>
+</dl>
+</section>
+<section id="phase">
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">phase</a><a class="headerlink" href="#phase" title="Link to this heading"></a></h3>
+<p>The phase of the input TE<sub>10</sub> mode for the waveguide port feed boundary
+condition. This is only truly significant when there are multiple waveguides
+with differing phases.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>real</p>
+</dd>
+<dt class="field-even">Default<span class="colon">:</span></dt>
+<dd class="field-even"><p>0.0</p>
 </dd>
 </dl>
 </section>
@@ -207,8 +501,8 @@ magnetic field defined by the
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="../ELECTROMAGNETICS_Namelist/index.html" class="btn btn-neutral float-left" title="4. ELECTROMAGNETICS Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../EM_MESH_Namelist/index.html" class="btn btn-neutral float-right" title="6. EM_MESH Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="../DIFFUSION_Solver_Namelist/index.html" class="btn btn-neutral float-left" title="5. DIFFUSION Solver Namelist" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../EM_MESH_Namelist/index.html" class="btn btn-neutral float-right" title="7. EM_MESH Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
