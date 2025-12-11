@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>11. FDME_SOLVER Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
+  <title>10. FDME_SOLVER Namelist &mdash; Truchas Reference Manual 1.0.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/css/custom.css?v=93b25530" />
@@ -22,8 +22,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="12. FLOW Namelist" href="FLOW_Namelist/index.html" />
-    <link rel="prev" title="10. EVAPORATION Namelist (Experimental)" href="EVAPORATION_Namelist/index.html" /> 
+    <link rel="next" title="11. FLOW Namelist" href="FLOW_Namelist/index.html" />
+    <link rel="prev" title="9. EVAPORATION Namelist (Experimental)" href="EVAPORATION_Namelist/index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -52,12 +52,11 @@
 <li class="toctree-l1"><a class="reference internal" href="complex_vfunction_namelist.html">4. COMPLEX_VFUNCTION Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="DIFFUSION_Solver_Namelist/index.html">5. DIFFUSION Solver Namelist</a></li>
 <li class="toctree-l1"><a class="reference internal" href="ELECTROMAGNETIC_BC_Namelist/index.html">6. ELECTROMAGNETIC_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EM_MESH_Namelist/index.html">7. EM_MESH Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ENCLOSURE_RADIATION_Namelist/index.html">8. ENCLOSURE_RADIATION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="ENCLOSURE_SURFACE_Namelist/index.html">9. ENCLOSURE_SURFACE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="EVAPORATION_Namelist/index.html">10. EVAPORATION Namelist (Experimental)</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">11. FDME_SOLVER Namelist</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#namelist-variables">11.1. Namelist Variables</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="ENCLOSURE_RADIATION_Namelist/index.html">7. ENCLOSURE_RADIATION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ENCLOSURE_SURFACE_Namelist/index.html">8. ENCLOSURE_SURFACE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EVAPORATION_Namelist/index.html">9. EVAPORATION Namelist (Experimental)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">10. FDME_SOLVER Namelist</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#namelist-variables">10.1. Namelist Variables</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#solver-type">solver_type</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#graphics-output">graphics_output</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#print-level">print_level</a></li>
@@ -80,39 +79,39 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="FLOW_Namelist/index.html">12. FLOW Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="FLOW_BC_Namelist/index.html">13. FLOW_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html">14. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="FUNCTION_Namelist/index.html">15. FUNCTION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="induction_heating_namelist.html">16. INDUCTION_HEATING Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="INDUCTION_SOURCE_FIELD_Namelist/index.html">17. INDUCTION_SOURCE_FIELD Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MATERIAL_and_PHASE_Namelists/index.html">18. MATERIAL and PHASE Namelists</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MESH_Namelist/index.html">19. MESH Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="MICROSTRUCTURE_Namelist/index.html">20. MICROSTRUCTURE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="microwave_heating_namelist.html">21. MICROWAVE_HEATING Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="NUMERICS_Namelist/index.html">22. NUMERICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="OUTPUTS_Namelist/index.html">23. OUTPUTS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PHASE_CHANGE_Namelist/index.html">24. PHASE_CHANGE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PHYSICAL_CONSTANTS_Namelist/index.html">25. PHYSICAL_CONSTANTS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PHYSICS_Namelist/index.html">26. PHYSICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="PROBE_Namelist/index.html">27. PROBE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="RESTART_Namelist/index.html">28. RESTART Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SIMULATION_CONTROL_Namelist/index.html">29. SIMULATION_CONTROL Namelist (Experimental)</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SOLID_MECHANICS_Namelist/index.html">30. SOLID_MECHANICS Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SOLID_MECHANICS_BC_Namelist/index.html">31. SOLID_MECHANICS_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SPECIES_BC_Namelist/index.html">32. SPECIES_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="SPECIES_SOURCE_Namelist/index.html">33. SPECIES_SOURCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tdme_joule_solver_namelist.html">34. TDME_JOULE_SOLVER Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="THERMAL_BC_Namelist/index.html">35. THERMAL_BC Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="THERMAL_SOURCE_Namelist/index.html">36. THERMAL_SOURCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="TOOLHEAD_Namelist/index.html">37. TOOLHEAD Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="TOOLPATH_Namelist/index.html">38. TOOLPATH Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="TURBULENCE_Namelist/index.html">39. TURBULENCE Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="VFUNCTION_Namelist/index.html">40. VFUNCTION Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="VISCOPLASTIC_MODEL_Namelist/index.html">41. VISCOPLASTIC_MODEL Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="VISCOPLASTIC_SOLVER_Namelist/index.html">42. VISCOPLASTIC_SOLVER Namelist</a></li>
-<li class="toctree-l1"><a class="reference internal" href="rade/index.html">43. Radiation Enclosure Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="python/index.html">44. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FLOW_Namelist/index.html">11. FLOW Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FLOW_BC_Namelist/index.html">12. FLOW_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FLOW_PRESSURE_SOLVER_and_FLOW_VISCOUS_SOLVER_Namelists/index.html">13. FLOW_PRESSURE_SOLVER and FLOW_VISCOUS_SOLVER Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FUNCTION_Namelist/index.html">14. FUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="induction_heating_namelist.html">15. INDUCTION_HEATING Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="INDUCTION_SOURCE_FIELD_Namelist/index.html">16. INDUCTION_SOURCE_FIELD Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MATERIAL_and_PHASE_Namelists/index.html">17. MATERIAL and PHASE Namelists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MESH_Namelist/index.html">18. MESH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MICROSTRUCTURE_Namelist/index.html">19. MICROSTRUCTURE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="microwave_heating_namelist.html">20. MICROWAVE_HEATING Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NUMERICS_Namelist/index.html">21. NUMERICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="OUTPUTS_Namelist/index.html">22. OUTPUTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PHASE_CHANGE_Namelist/index.html">23. PHASE_CHANGE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PHYSICAL_CONSTANTS_Namelist/index.html">24. PHYSICAL_CONSTANTS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PHYSICS_Namelist/index.html">25. PHYSICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PROBE_Namelist/index.html">26. PROBE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="RESTART_Namelist/index.html">27. RESTART Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SIMULATION_CONTROL_Namelist/index.html">28. SIMULATION_CONTROL Namelist (Experimental)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SOLID_MECHANICS_Namelist/index.html">29. SOLID_MECHANICS Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SOLID_MECHANICS_BC_Namelist/index.html">30. SOLID_MECHANICS_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SPECIES_BC_Namelist/index.html">31. SPECIES_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SPECIES_SOURCE_Namelist/index.html">32. SPECIES_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tdme_joule_solver_namelist.html">33. TDME_JOULE_SOLVER Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="THERMAL_BC_Namelist/index.html">34. THERMAL_BC Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="THERMAL_SOURCE_Namelist/index.html">35. THERMAL_SOURCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TOOLHEAD_Namelist/index.html">36. TOOLHEAD Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TOOLPATH_Namelist/index.html">37. TOOLPATH Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TURBULENCE_Namelist/index.html">38. TURBULENCE Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VFUNCTION_Namelist/index.html">39. VFUNCTION Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VISCOPLASTIC_MODEL_Namelist/index.html">40. VISCOPLASTIC_MODEL Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="VISCOPLASTIC_SOLVER_Namelist/index.html">41. VISCOPLASTIC_SOLVER Namelist</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rade/index.html">42. Radiation Enclosure Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="python/index.html">43. <code class="docutils literal notranslate"><span class="pre">truchas</span></code> Python Module</a></li>
 </ul>
 
         </div>
@@ -129,7 +128,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active"><span class="section-number">11. </span>FDME_SOLVER Namelist</li>
+      <li class="breadcrumb-item active"><span class="section-number">10. </span>FDME_SOLVER Namelist</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/fdme_solver_namelist.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -142,7 +141,7 @@
   <div class="toctree-wrapper compound" id="fdme-solver-namelist">
 </div>
 <section id="id1">
-<h1><span class="section-number">11. </span>FDME_SOLVER Namelist<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<h1><span class="section-number">10. </span>FDME_SOLVER Namelist<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
 <p>This namelist specifies the parameters that pertain to the frequency-domain
 solver for the time-harmonic Maxwell’s equations. In this form of the equations
 the electric field is represented as
@@ -151,9 +150,9 @@ where <span class="math notranslate nohighlight">\(\omega\)</span> is the angula
 complex-valued phasor that satisfies the equation</p>
 <div class="math notranslate nohighlight">
 \[\nabla\times\mu^{-1}\nabla\times E-\omega^2\epsilon E-i\omega\sigma E = 0.\]</div>
-<p>The equation is solved on the tetrahedral mesh specified by the
-<a class="reference internal" href="EM_MESH_Namelist/index.html#em-mesh-namelist"><span class="std std-ref">EM_MESH</span></a> namelist, which is generally different
-than the mesh used for heat transfer. Boundary conditions are defined using
+<p>The equation is solved on a tetrahedral mesh specified by the
+<a class="reference internal" href="MESH_Namelist/index.html#mesh-namelist"><span class="std std-ref">MESH</span></a> namelist that was marked for electromagnetic
+model use. Boundary conditions are defined using
 <a class="reference internal" href="ELECTROMAGNETIC_BC_Namelist/index.html#electromagnetic-bc-namelist"><span class="std std-ref">ELECTROMAGNETIC_BC</span></a> namelists.</p>
 <p>This solver, which is not currently a standalone physics model, is used by
 the induction heating and microwave heating physics models;
@@ -168,7 +167,7 @@ PHYSICAL_CONSTANTS namelist variables <a class="reference internal" href="PHYSIC
 (<span class="math notranslate nohighlight">\(\mu_0\)</span>).</p>
 </div>
 <section id="namelist-variables">
-<h2><span class="section-number">11.1. </span>Namelist Variables<a class="headerlink" href="#namelist-variables" title="Link to this heading"></a></h2>
+<h2><span class="section-number">10.1. </span>Namelist Variables<a class="headerlink" href="#namelist-variables" title="Link to this heading"></a></h2>
 <nav class="contents local" id="contents">
 <ul class="simple">
 <li><p><a class="reference internal" href="#solver-type" id="id8">solver_type</a></p></li>
@@ -475,8 +474,8 @@ documentation<a class="footnote-reference brackets" href="#footcite-hypre-manual
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="EVAPORATION_Namelist/index.html" class="btn btn-neutral float-left" title="10. EVAPORATION Namelist (Experimental)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="FLOW_Namelist/index.html" class="btn btn-neutral float-right" title="12. FLOW Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="EVAPORATION_Namelist/index.html" class="btn btn-neutral float-left" title="9. EVAPORATION Namelist (Experimental)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="FLOW_Namelist/index.html" class="btn btn-neutral float-right" title="11. FLOW Namelist" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
